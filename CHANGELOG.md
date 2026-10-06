@@ -11,7 +11,8 @@ All notable changes to this project are documented here. The format follows
 - Optional front/back photos via ML Kit document scanner or gallery; encrypted storage.
 - Live barcode/QR scanning and barcode detection in card photos.
 - Full-screen, max-brightness barcode display for 13 symbologies; loyalty cards show their code in the list.
-- CVV hidden behind biometric/device-credential authentication; per-card lock.
+- CVV hidden behind biometric/device-credential authentication; per-card lock. Protected data is only shown
+  after a prompt in the app itself, never just because the phone was unlocked recently.
 - Encrypted database (SQLCipher) and Keystore envelope encryption; auth-bound RSA keys for protected data.
 - Secure screens and dialogs, sensitive auto-clearing clipboard, re-lock when backgrounded.
   *Allow screenshots* in Settings lifts the screenshot protection until you leave the app.
@@ -27,5 +28,9 @@ All notable changes to this project are documented here. The format follows
   Persian, Polish, Portuguese (Brazil and Portugal), Romanian, Russian, Serbian (Cyrillic and Latin),
   Slovak, Spanish, Swahili, Swedish, Turkish and Ukrainian. The app language can be chosen in the system
   settings (Android 13+).
-- Settings: theme, dynamic colour, backup, privacy policy, logo credits, about.
+- Settings: theme, dynamic colour, backup, *Delete all data* (with an explicit "I understand" confirmation),
+  privacy policy, logo credits, about.
+- Leaving the card editor with unsaved changes asks before discarding them.
+- Robust error handling: damaged data, storage and camera errors show a message instead of crashing; if the
+  device lost the app's keys, a recovery screen offers to start over.
 - Google Play store listing for every language (`fastlane/metadata/android`).
