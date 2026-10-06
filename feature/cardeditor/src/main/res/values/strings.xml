@@ -1,0 +1,59 @@
+<resources>
+    <string name="editor_title_add">Add card</string>
+    <string name="editor_title_edit">Edit card</string>
+    <string name="editor_save">Save</string>
+    <string name="editor_next">Next</string>
+    <string name="editor_skip">Skip</string>
+    <string name="editor_choose_type">What kind of card is it?</string>
+
+    <!-- Sides -->
+    <string name="editor_sides_title">Add photos of your card</string>
+    <string name="editor_sides_message">Optional. Photos are encrypted and stored only on this device.</string>
+    <string name="editor_side_scan">Scan</string>
+    <string name="editor_side_choose">Gallery</string>
+    <string name="editor_side_remove">Remove photo</string>
+    <string name="editor_side_missing">No photo</string>
+
+    <!-- Common fields -->
+    <string name="editor_field_title">Name</string>
+    <string name="editor_field_title_hint">Defaults to %1$s</string>
+    <string name="editor_color">Colour</string>
+    <string name="editor_color_option">Colour %1$s</string>
+    <string name="editor_lock">Lock this card</string>
+    <string name="editor_lock_description">Require fingerprint, face or screen lock to see any of its details</string>
+    <string name="editor_protection_unavailable">Set up a screen lock on your device to use this</string>
+    <string name="editor_open_security_settings">Set up</string>
+    <string name="editor_photos">Photos</string>
+
+    <!-- Bank -->
+    <string name="editor_field_number">Card number</string>
+    <string name="editor_field_expiry">Expiry (MM/YY)</string>
+    <string name="editor_field_holder">Card holder</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Optional. Always hidden and only shown after you confirm it\'s you.</string>
+    <string name="editor_cvv_stored">A CVV is stored. Leave empty to keep it.</string>
+    <string name="editor_cvv_remove">Remove stored CVV</string>
+    <string name="editor_card_expired">This card has expired</string>
+
+    <!-- ID -->
+    <string name="editor_field_country">Issuing country</string>
+    <string name="editor_choose_country">Choose country</string>
+    <string name="editor_search_country">Search countries</string>
+    <string name="editor_field_document_number">Document number (optional)</string>
+    <string name="editor_field_id_expiry">Expiry date (optional)</string>
+    <string name="editor_clear_date">Clear</string>
+
+    <!-- Loyalty -->
+    <string name="editor_field_shop">Shop</string>
+    <string name="editor_choose_shop">Choose shop</string>
+    <string name="editor_search_shop">Search shops</string>
+    <string name="editor_custom_shop">Use \"%1$s\"</string>
+    <string name="editor_field_code">Card number / code</string>
+    <string name="editor_field_format">Code type</string>
+    <string name="editor_scan_barcode">Scan code</string>
+
+    <!-- States -->
+    <string name="editor_locked_title">This card is locked</string>
+    <string name="editor_not_found">This card no longer exists</string>
+    <string name="editor_ok">OK</string>
+</resources>

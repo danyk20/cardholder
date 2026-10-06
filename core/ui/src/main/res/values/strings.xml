@@ -1,0 +1,31 @@
+<resources>
+    <!-- Card types -->
+    <string name="card_type_bank">Bank card</string>
+    <string name="card_type_id">ID card</string>
+    <string name="card_type_loyalty">Loyalty card</string>
+    <string name="card_type_bank_description">Debit or credit card</string>
+    <string name="card_type_id_description">Identity card, passport, driving licence…</string>
+    <string name="card_type_loyalty_description">Store card with a barcode or QR code</string>
+
+    <!-- Card sides -->
+    <string name="card_side_front">Front</string>
+    <string name="card_side_back">Back</string>
+    <string name="card_locked">Locked</string>
+
+    <!-- Authentication -->
+    <string name="auth_title_unlock_card">Unlock %1$s</string>
+    <string name="auth_subtitle">Confirm it\'s you with your fingerprint, face or screen lock</string>
+    <string name="auth_key_invalidated">This data was protected by a screen lock that has since been removed and can no longer be decrypted.</string>
+
+    <!-- Validation -->
+    <string name="error_required">Required</string>
+    <string name="error_invalid_characters">Contains characters that are not allowed</string>
+    <string name="error_invalid_length">Wrong length</string>
+    <string name="error_invalid_checksum">Check digit doesn\'t match – please check for typos</string>
+    <string name="error_invalid_date">Not a valid date</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_unlock">Unlock</string>
+</resources>

@@ -15,6 +15,9 @@ complexity:
     thresholdInClasses: 15
 
 naming:
+  # Files commonly hold a composable plus its small state/callback holder classes.
+  MatchingDeclarationName:
+    active: false
   FunctionNaming:
     ignoreAnnotated: ['Composable']
   TopLevelPropertyNaming:
@@ -25,7 +28,7 @@ style:
     ignorePropertyDeclaration: true
     ignoreCompanionObjectPropertyDeclaration: true
     ignoreAnnotated: ['Composable', 'Preview']
-    excludes: ['**/test/**', '**/androidTest/**', '**/designsystem/**']
+    excludes: ['**/test/**', '**/androidTest/**', '**/testFixtures/**', '**/designsystem/**', '**/core/testing/**']
   UnusedPrivateMember:
     ignoreAnnotated: ['Preview']
   MaxLineLength:

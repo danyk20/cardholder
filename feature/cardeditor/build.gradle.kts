@@ -8,4 +8,5 @@ android {
 
 dependencies {
     implementation(projects.core.scanning)
+    implementation(libs.coil.compose)
 }
