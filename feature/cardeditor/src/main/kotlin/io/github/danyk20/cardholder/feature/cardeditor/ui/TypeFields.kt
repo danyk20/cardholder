@@ -37,6 +37,8 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.DialogProperties
+import androidx.compose.ui.window.SecureFlagPolicy
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.domain.validation.BankCardValidator
@@ -208,6 +210,7 @@ internal fun IdFields(
         )
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },
+            properties = DialogProperties(securePolicy = SecureFlagPolicy.SecureOn),
             confirmButton = {
                 TextButton(
                     onClick = {

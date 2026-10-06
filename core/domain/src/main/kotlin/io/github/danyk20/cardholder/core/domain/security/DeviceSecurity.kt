@@ -12,3 +12,8 @@ interface DeviceSecurity {
 interface SessionLockEvents {
     val events: Flow<Unit>
 }
+
+/** Clipboard for sensitive values: hidden from previews and cleared automatically after a short time. */
+interface SecureClipboard {
+    fun copy(label: String, text: String)
+}

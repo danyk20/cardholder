@@ -91,7 +91,7 @@ fun CardFace(
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
-                if (subtitle.isNotEmpty()) {
+                if (subtitle.isNotEmpty() && subtitle != title) {
                     Text(
                         text = subtitle,
                         style = MaterialTheme.typography.bodyMedium,
