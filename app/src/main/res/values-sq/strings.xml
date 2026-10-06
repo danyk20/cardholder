@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Kartat e tua nuk mund të hapen</string>
+    <string name="storage_error_message">Ky telefon nuk i ka më çelësat që mbrojnë kartat e tua, për shembull pas një rivendosjeje të sigurisë. Kartat nuk mund të rikuperohen në këtë pajisje. Fshi të gjitha të dhënat për të filluar nga e para, pastaj importo një kopje rezervë nëse ke.</string>
+</resources>

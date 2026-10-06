@@ -16,6 +16,7 @@
     <string name="settings_import">Εισαγωγή αντιγράφου ασφαλείας</string>
     <string name="settings_import_description">Επαναφορά καρτών από αρχείο αντιγράφου ασφαλείας</string>
     <string name="settings_backup_working">Σε εξέλιξη…</string>
+    <string name="settings_erase_description">Οριστική διαγραφή όλων των καρτών, των φωτογραφιών και των ρυθμίσεων από αυτή τη συσκευή</string>
     <string name="settings_password_title_export">Προστατέψτε το αντίγραφο ασφαλείας</string>
     <string name="settings_password_title_import">Εισαγάγετε τον κωδικό πρόσβασης του αντιγράφου ασφαλείας</string>
     <string name="settings_password_message_export">Το αντίγραφο ασφαλείας περιέχει όλα τα στοιχεία των καρτών, συμπεριλαμβανομένων των CVV. Επιλέξτε έναν ισχυρό κωδικό πρόσβασης – δεν μπορεί να ανακτηθεί.</string>

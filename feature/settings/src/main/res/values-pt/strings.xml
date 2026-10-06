@@ -16,6 +16,7 @@
     <string name="settings_import">Importar backup</string>
     <string name="settings_import_description">Restaurar cartões de um arquivo de backup</string>
     <string name="settings_backup_working">Processando…</string>
+    <string name="settings_erase_description">Apagar permanentemente todos os cartões, fotos e configurações deste dispositivo</string>
     <string name="settings_password_title_export">Proteja seu backup</string>
     <string name="settings_password_title_import">Digite a senha do backup</string>
     <string name="settings_password_message_export">O backup contém todos os dados dos cartões, inclusive os CVVs. Escolha uma senha forte – ela não pode ser recuperada.</string>

@@ -16,6 +16,7 @@
     <string name="settings_import">Impordi varukoopia</string>
     <string name="settings_import_description">Taasta kaardid varukoopiafailist</string>
     <string name="settings_backup_working">Töötlemine…</string>
+    <string name="settings_erase_description">Kustuta sellest seadmest jäädavalt kõik kaardid, fotod ja seaded</string>
     <string name="settings_password_title_export">Kaitske oma varukoopiat</string>
     <string name="settings_password_title_import">Sisestage varukoopia parool</string>
     <string name="settings_password_message_export">Varukoopia sisaldab kõiki kaardiandmeid, sealhulgas CVV-koode. Valige tugev parool – seda ei saa taastada.</string>

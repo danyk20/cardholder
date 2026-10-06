@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Licență: %1$s</string>
     <string name="editor_logo_attribution">Licență: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Sigla nu a putut fi descărcată. Verificați conexiunea și încercați din nou.</string>
+    <string name="editor_discard_title">Renunțați la modificări?</string>
+    <string name="editor_discard_message">Modificările aduse acestui card nu vor fi salvate.</string>
+    <string name="editor_discard">Renunțați</string>
+    <string name="editor_keep_editing">Continuați editarea</string>
     <string name="editor_locked_title">Acest card este blocat</string>
     <string name="editor_not_found">Acest card nu mai există</string>
     <string name="editor_ok">OK</string>

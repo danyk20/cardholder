@@ -200,7 +200,12 @@ fun CardEditorRoute(
         onSidesDone = viewModel::onSidesDone,
         onSave = viewModel::onSave,
         onUnlock = viewModel::onRetryAuthentication,
-        onKeyInvalidatedErrorShown = viewModel::onKeyInvalidatedErrorShown,
+        onErrorShown = viewModel::onErrorShown,
+        onKeepEditing = viewModel::onKeepEditing,
+        onDiscard = {
+            viewModel.onKeepEditing()
+            onClose()
+        },
     )
 }
 
@@ -215,7 +220,9 @@ internal fun CardEditorScreen(
     onSidesDone: () -> Unit,
     onSave: () -> Unit,
     onUnlock: () -> Unit,
-    onKeyInvalidatedErrorShown: () -> Unit,
+    onErrorShown: () -> Unit,
+    onKeepEditing: () -> Unit,
+    onDiscard: () -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -255,6 +262,8 @@ internal fun CardEditorScreen(
 
             LoadState.NOT_FOUND -> Message(stringResource(R.string.editor_not_found), padding)
 
+            LoadState.FAILED -> Message(stringResource(UiR.string.error_unexpected), padding)
+
             LoadState.READY -> when (state.step) {
                 EditorStep.TYPE -> TypeStep(onTypeSelected = onTypeSelected, contentPadding = padding)
 
@@ -270,13 +279,34 @@ internal fun CardEditorScreen(
             }
         }
     }
-    if (state.showKeyInvalidatedError) {
+    if (state.confirmDiscard) {
         AlertDialog(
-            onDismissRequest = onKeyInvalidatedErrorShown,
-            confirmButton = {
-                TextButton(onClick = onKeyInvalidatedErrorShown) { Text(stringResource(R.string.editor_ok)) }
+            onDismissRequest = onKeepEditing,
+            title = { Text(stringResource(R.string.editor_discard_title)) },
+            text = { Text(stringResource(R.string.editor_discard_message)) },
+            confirmButton = { TextButton(onClick = onDiscard) { Text(stringResource(R.string.editor_discard)) } },
+            dismissButton = {
+                TextButton(onClick = onKeepEditing) { Text(stringResource(R.string.editor_keep_editing)) }
             },
-            text = { Text(stringResource(UiR.string.auth_key_invalidated)) },
+            properties = secureDialogProperties(),
+        )
+    }
+    state.error?.let { error ->
+        AlertDialog(
+            onDismissRequest = onErrorShown,
+            confirmButton = {
+                TextButton(onClick = onErrorShown) { Text(stringResource(R.string.editor_ok)) }
+            },
+            text = {
+                Text(
+                    stringResource(
+                        when (error) {
+                            EditorError.KEY_INVALIDATED -> UiR.string.auth_key_invalidated
+                            EditorError.UNEXPECTED -> UiR.string.error_unexpected
+                        },
+                    ),
+                )
+            },
             properties = secureDialogProperties(),
         )
     }

@@ -16,6 +16,7 @@
     <string name="settings_import">बैकअप इंपोर्ट करें</string>
     <string name="settings_import_description">बैकअप फ़ाइल से कार्ड वापस लाएं</string>
     <string name="settings_backup_working">प्रोसेस हो रहा है…</string>
+    <string name="settings_erase_description">इस डिवाइस से सभी कार्ड, फ़ोटो और सेटिंग हमेशा के लिए मिटाएं</string>
     <string name="settings_password_title_export">अपना बैकअप सुरक्षित करें</string>
     <string name="settings_password_title_import">बैकअप का पासवर्ड डालें</string>
     <string name="settings_password_message_export">बैकअप में CVV के साथ-साथ सभी कार्ड की पूरी जानकारी होती है. कोई मज़बूत पासवर्ड चुनें – इसे वापस नहीं पाया जा सकता.</string>

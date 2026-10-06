@@ -31,6 +31,9 @@ class FakeCardRepository : CardRepository {
 
     var isAuthenticated: Boolean = false
     var isKeyInvalidated: Boolean = false
+
+    /** Cards whose stored data can't be read, e.g. because it's damaged. */
+    val damaged = mutableSetOf<CardId>()
     var now: Instant = Instant.parse("2026-06-01T12:00:00Z")
     val savedDrafts = mutableListOf<CardDraft>()
 
@@ -49,6 +52,7 @@ class FakeCardRepository : CardRepository {
 
     override suspend fun readDetails(id: CardId): SecureResult<CardDetails> {
         val stored = store.value[id] ?: error("No card $id")
+        if (id in damaged) return SecureResult.Failed(IllegalStateException("Damaged card data"))
         return guarded(stored.card.isLocked) { stored.details }
     }
 

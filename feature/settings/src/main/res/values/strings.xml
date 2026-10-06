@@ -18,6 +18,7 @@
     <string name="settings_import">Import backup</string>
     <string name="settings_import_description">Restore cards from a backup file</string>
     <string name="settings_backup_working">Working…</string>
+    <string name="settings_erase_description">Permanently erase all cards, photos and settings from this device</string>
 
     <string name="settings_password_title_export">Protect your backup</string>
     <string name="settings_password_title_import">Enter backup password</string>

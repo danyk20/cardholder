@@ -16,6 +16,7 @@
     <string name="settings_import">Biztonsági mentés importálása</string>
     <string name="settings_import_description">Kártyák visszaállítása biztonsági mentésből</string>
     <string name="settings_backup_working">Folyamatban…</string>
+    <string name="settings_erase_description">Az összes kártya, fotó és beállítás végleges törlése erről az eszközről</string>
     <string name="settings_password_title_export">Védje biztonsági mentését</string>
     <string name="settings_password_title_import">Adja meg a mentés jelszavát</string>
     <string name="settings_password_message_export">A biztonsági mentés az összes kártyaadatot tartalmazza, a CVV-ket is beleértve. Válasszon erős jelszót – később nem lehet visszaállítani.</string>

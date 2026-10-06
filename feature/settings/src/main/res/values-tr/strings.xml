@@ -18,6 +18,7 @@
     <string name="settings_import">Yedeği içe aktar</string>
     <string name="settings_import_description">Kartları bir yedek dosyasından geri yükleyin</string>
     <string name="settings_backup_working">İşleniyor…</string>
+    <string name="settings_erase_description">Tüm kartları, fotoğrafları ve ayarları bu cihazdan kalıcı olarak silin</string>
 
     <string name="settings_password_title_export">Yedeğinizi koruyun</string>
     <string name="settings_password_title_import">Yedek şifresini girin</string>

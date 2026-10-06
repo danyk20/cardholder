@@ -16,6 +16,7 @@
     <string name="settings_import">Importar copia de seguridad</string>
     <string name="settings_import_description">Restaurar tarjetas desde un archivo de copia de seguridad</string>
     <string name="settings_backup_working">Procesando…</string>
+    <string name="settings_erase_description">Borrar de forma permanente todas las tarjetas, fotos y ajustes de este dispositivo</string>
     <string name="settings_password_title_export">Protege tu copia de seguridad</string>
     <string name="settings_password_title_import">Introduce la contraseña de la copia</string>
     <string name="settings_password_message_export">La copia de seguridad contiene todos los datos de las tarjetas, incluidos los CVV. Elige una contraseña segura: no se podrá recuperar.</string>

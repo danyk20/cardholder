@@ -18,6 +18,7 @@
     <string name="settings_import">استيراد نسخة احتياطية</string>
     <string name="settings_import_description">استعادة البطاقات من ملف نسخة احتياطية</string>
     <string name="settings_backup_working">جارٍ التنفيذ…</string>
+    <string name="settings_erase_description">حذف جميع البطاقات والصور والإعدادات من هذا الجهاز نهائيًا</string>
 
     <string name="settings_password_title_export">حماية النسخة الاحتياطية</string>
     <string name="settings_password_title_import">إدخال كلمة مرور النسخة الاحتياطية</string>

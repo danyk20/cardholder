@@ -4,6 +4,9 @@
     <string name="scanner_hint">Irányítsa a kamerát a kártyán lévő vonalkódra vagy QR-kódra</string>
     <string name="scanner_permission_rationale">A Cardholder alkalmazásnak szüksége van a kamerára a kártyán lévő kód beolvasásához. A képek feldolgozása az eszközön történik, az alkalmazás soha nem tárolja és nem küldi el őket sehová.</string>
     <string name="scanner_grant_permission">Kamera engedélyezése</string>
+    <string name="scanner_permission_denied">A Cardholder kamera-hozzáférése ki van kapcsolva. Kódok beolvasásához kapcsolja be az alkalmazás beállításaiban.</string>
+    <string name="scanner_open_settings">Beállítások megnyitása</string>
+    <string name="scanner_camera_unavailable">Nem sikerült elindítani a kamerát. Zárja be a kamerát használó többi alkalmazást, és próbálja újra.</string>
     <string name="nfc_title">Kártya beolvasása NFC-vel</string>
     <string name="nfc_hold_card">Tartsa a kártyát laposan a telefon hátuljához, és ne mozdítsa el.</string>
     <string name="nfc_reading">Kártya beolvasása…</string>

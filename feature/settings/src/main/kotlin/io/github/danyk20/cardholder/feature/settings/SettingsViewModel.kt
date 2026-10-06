@@ -5,11 +5,13 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
+import io.github.danyk20.cardholder.core.domain.repository.AppDataRepository
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.security.ScreenCapturePolicy
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
+import io.github.danyk20.cardholder.core.ui.launchSafely
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -17,13 +19,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
     private val preferencesRepository: UserPreferencesRepository,
     private val backupRepository: BackupRepository,
     private val screenCapturePolicy: ScreenCapturePolicy,
+    private val appDataRepository: AppDataRepository,
 ) : ViewModel() {
     private val backup = MutableStateFlow(BackupUiState())
 
@@ -36,12 +38,19 @@ class SettingsViewModel @Inject constructor(
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), SettingsUiState())
 
     fun onThemeModeChange(mode: ThemeMode) {
-        viewModelScope.launch { preferencesRepository.setThemeMode(mode) }
+        launchSafely(onError = {
+            backup.value = BackupUiState(result = BackupResult.Failed(it))
+        }) { preferencesRepository.setThemeMode(mode) }
     }
 
     fun onDynamicColorChange(enabled: Boolean) {
-        viewModelScope.launch { preferencesRepository.setDynamicColor(enabled) }
+        launchSafely(onError = {
+            backup.value = BackupUiState(result = BackupResult.Failed(it))
+        }) { preferencesRepository.setDynamicColor(enabled) }
     }
+
+    /** Permanently erases everything; the system closes the app afterwards. */
+    fun onEraseAllData() = appDataRepository.eraseAllData()
 
     /** Allows screenshots of card data until the app leaves the screen. */
     fun onScreenshotsAllowedChange(allowed: Boolean) = screenCapturePolicy.setAllowed(allowed)
@@ -66,7 +75,7 @@ class SettingsViewModel @Inject constructor(
             return
         }
         backup.update { it.copy(inProgress = operation, result = null) }
-        viewModelScope.launch {
+        launchSafely(onError = { backup.value = BackupUiState(result = BackupResult.Failed(it)) }) {
             val result = try {
                 block()
             } finally {

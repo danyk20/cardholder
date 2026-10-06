@@ -21,6 +21,12 @@
     <string name="error_invalid_length">Longueur incorrecte</string>
     <string name="error_invalid_checksum">Le chiffre de contrôle ne correspond pas – vérifiez qu\'il n\'y a pas de faute de frappe</string>
     <string name="error_invalid_date">Date non valide</string>
+    <string name="error_unexpected">Un problème est survenu. Veuillez réessayer.</string>
+    <string name="erase_all_data">Supprimer toutes les données</string>
+    <string name="erase_title">Supprimer toutes les données ?</string>
+    <string name="erase_message">Toutes les cartes, photos et paramètres seront définitivement supprimés de cet appareil. Exportez d\'abord une sauvegarde si vous risquez d\'en avoir encore besoin.</string>
+    <string name="erase_acknowledge">Je comprends que cette action est irréversible</string>
+    <string name="erase_confirm">Tout supprimer</string>
     <string name="action_back">Retour</string>
     <string name="action_cancel">Annuler</string>
     <string name="action_unlock">Déverrouiller</string>

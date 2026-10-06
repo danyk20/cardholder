@@ -70,6 +70,10 @@
     <string name="editor_logo_license">Licencia: %1$s</string>
     <string name="editor_logo_attribution">Licencia: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Logo sa nepodarilo stiahnuť. Skontrolujte pripojenie a skúste to znova.</string>
+    <string name="editor_discard_title">Zahodiť zmeny?</string>
+    <string name="editor_discard_message">Zmeny tejto karty sa neuložia.</string>
+    <string name="editor_discard">Zahodiť</string>
+    <string name="editor_keep_editing">Pokračovať v úpravách</string>
 
     <!-- States -->
     <string name="editor_locked_title">Táto karta je zamknutá</string>

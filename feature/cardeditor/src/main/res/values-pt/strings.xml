@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Licença: %1$s</string>
     <string name="editor_logo_attribution">Licença: %1$s · por %2$s</string>
     <string name="editor_logo_download_failed">Não foi possível baixar o logotipo. Verifique sua conexão e tente novamente.</string>
+    <string name="editor_discard_title">Descartar alterações?</string>
+    <string name="editor_discard_message">Suas alterações neste cartão não serão salvas.</string>
+    <string name="editor_discard">Descartar</string>
+    <string name="editor_keep_editing">Continuar editando</string>
     <string name="editor_locked_title">Este cartão está bloqueado</string>
     <string name="editor_not_found">Este cartão não existe mais</string>
     <string name="editor_ok">OK</string>

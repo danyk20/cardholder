@@ -17,10 +17,12 @@ import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.ui.CardSummary
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
+import io.github.danyk20.cardholder.core.ui.launchSafely
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
@@ -29,7 +31,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 
 @HiltViewModel
 class CardListViewModel @Inject constructor(
@@ -68,16 +69,19 @@ class CardListViewModel @Inject constructor(
         }
 
     val uiState: StateFlow<CardListUiState> = combine(cards, reorderDraft) { state, draft ->
-        state.copy(reordering = draft)
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), CardListUiState.Loading)
+        state.copy(reordering = draft) as CardListUiState
+    }
+        // E.g. the database can't be read: show an error instead of crashing.
+        .catch { emit(CardListUiState.Error) }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), CardListUiState.Loading)
 
     fun onSortChange(sort: CardSort) {
-        viewModelScope.launch { preferencesRepository.setCardSort(sort) }
+        launchSafely(onError = { reorderDraft.value = null }) { preferencesRepository.setCardSort(sort) }
     }
 
     /** Switches to the custom order and lets the user rearrange all cards (filters and search don't apply). */
     fun onStartReorder() {
-        viewModelScope.launch {
+        launchSafely(onError = { reorderDraft.value = null }) {
             preferencesRepository.setCardSort(CardSort.CUSTOM)
             reorderDraft.value = summaryFactory.summarize(observeCards(sort = CardSort.CUSTOM).first())
         }
@@ -99,7 +103,7 @@ class CardListViewModel @Inject constructor(
 
     fun onReorderDone() {
         val draft = reorderDraft.value ?: return
-        viewModelScope.launch {
+        launchSafely(onError = { reorderDraft.value = null }) {
             cardRepository.reorder(draft.map { it.card.id })
             reorderDraft.value = null
         }
@@ -146,6 +150,9 @@ data class LoyaltyCode(val value: String, val format: BarcodeFormat) {
 
 sealed interface CardListUiState {
     data object Loading : CardListUiState
+
+    /** The cards couldn't be loaded. */
+    data object Error : CardListUiState
 
     data class Success(
         val cards: List<CardListItem>,

@@ -21,6 +21,12 @@
     <string name="error_invalid_length">Väärä pituus</string>
     <string name="error_invalid_checksum">Tarkistusnumero ei täsmää – tarkista kirjoitusvirheet</string>
     <string name="error_invalid_date">Virheellinen päivämäärä</string>
+    <string name="error_unexpected">Jokin meni vikaan. Yritä uudelleen.</string>
+    <string name="erase_all_data">Poista kaikki tiedot</string>
+    <string name="erase_title">Poistetaanko kaikki tiedot?</string>
+    <string name="erase_message">Kaikki kortit, kuvat ja asetukset poistetaan pysyvästi tältä laitteelta. Vie ensin varmuuskopio, jos saatat vielä tarvita niitä.</string>
+    <string name="erase_acknowledge">Ymmärrän, ettei tätä voi kumota</string>
+    <string name="erase_confirm">Poista kaikki</string>
     <string name="action_back">Takaisin</string>
     <string name="action_cancel">Peruuta</string>
     <string name="action_unlock">Avaa lukitus</string>

@@ -21,6 +21,12 @@
     <string name="error_invalid_length">Vale pikkus</string>
     <string name="error_invalid_checksum">Kontrollnumber ei klapi – kontrollige, kas on trükivigu</string>
     <string name="error_invalid_date">Kehtetu kuupäev</string>
+    <string name="error_unexpected">Midagi läks valesti. Proovige uuesti.</string>
+    <string name="erase_all_data">Kustuta kõik andmed</string>
+    <string name="erase_title">Kas kustutada kõik andmed?</string>
+    <string name="erase_message">Kõik kaardid, fotod ja seaded kustutatakse sellest seadmest jäädavalt. Kui võite neid veel vajada, eksportige enne varukoopia.</string>
+    <string name="erase_acknowledge">Saan aru, et seda ei saa tagasi võtta</string>
+    <string name="erase_confirm">Kustuta kõik</string>
     <string name="action_back">Tagasi</string>
     <string name="action_cancel">Tühista</string>
     <string name="action_unlock">Ava lukk</string>

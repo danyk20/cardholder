@@ -21,6 +21,12 @@
     <string name="error_invalid_length">Lunghezza errata</string>
     <string name="error_invalid_checksum">La cifra di controllo non corrisponde: verifica che non ci siano errori di battitura</string>
     <string name="error_invalid_date">Data non valida</string>
+    <string name="error_unexpected">Si è verificato un problema. Riprova.</string>
+    <string name="erase_all_data">Elimina tutti i dati</string>
+    <string name="erase_title">Eliminare tutti i dati?</string>
+    <string name="erase_message">Tutte le carte, le foto e le impostazioni verranno eliminate definitivamente da questo dispositivo. Se potrebbero servirti ancora, esporta prima un backup.</string>
+    <string name="erase_acknowledge">Ho capito che l\'operazione è irreversibile</string>
+    <string name="erase_confirm">Elimina tutto</string>
     <string name="action_back">Indietro</string>
     <string name="action_cancel">Annulla</string>
     <string name="action_unlock">Sblocca</string>

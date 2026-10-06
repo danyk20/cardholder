@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Kartice ne mogu da se otvore</string>
+    <string name="storage_error_message">Ovaj telefon više nema ključeve koji štite vaše kartice, na primer posle bezbednosnog resetovanja. Kartice ne mogu da se povrate na ovom uređaju. Izbrišite sve podatke da biste počeli iznova, a zatim uvezite rezervnu kopiju ako je imate.</string>
+</resources>

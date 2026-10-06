@@ -70,6 +70,10 @@
     <string name="editor_logo_license">Licence: %1$s</string>
     <string name="editor_logo_attribution">Licence: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Logo se nepodařilo stáhnout. Zkontrolujte připojení a zkuste to znovu.</string>
+    <string name="editor_discard_title">Zahodit změny?</string>
+    <string name="editor_discard_message">Změny této karty nebudou uloženy.</string>
+    <string name="editor_discard">Zahodit</string>
+    <string name="editor_keep_editing">Pokračovat v úpravách</string>
 
     <!-- States -->
     <string name="editor_locked_title">Tato karta je zamčená</string>

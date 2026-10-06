@@ -58,6 +58,10 @@
     <string name="editor_logo_license">লাইসেন্স: %1$s</string>
     <string name="editor_logo_attribution">লাইসেন্স: %1$s · নির্মাতা: %2$s</string>
     <string name="editor_logo_download_failed">লোগোটি ডাউনলোড করা যায়নি। আপনার ইন্টারনেট কানেকশন চেক করে আবার চেষ্টা করুন।</string>
+    <string name="editor_discard_title">পরিবর্তনগুলো বাদ দেবেন?</string>
+    <string name="editor_discard_message">এই কার্ডে করা আপনার পরিবর্তনগুলো সেভ হবে না।</string>
+    <string name="editor_discard">বাদ দিন</string>
+    <string name="editor_keep_editing">এডিট করা চালিয়ে যান</string>
     <string name="editor_locked_title">এই কার্ডটি লক করা আছে</string>
     <string name="editor_not_found">এই কার্ডটি আর নেই</string>
     <string name="editor_ok">ঠিক আছে</string>

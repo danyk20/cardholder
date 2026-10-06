@@ -33,6 +33,15 @@ enum class LoadState {
     AUTHENTICATION_REQUIRED,
     KEY_INVALIDATED,
     NOT_FOUND,
+
+    /** The card couldn't be read for another reason, e.g. damaged data. */
+    FAILED,
+}
+
+/** An error shown in a dialog after saving failed. */
+enum class EditorError {
+    KEY_INVALIDATED,
+    UNEXPECTED,
 }
 
 /** Why the screen asks the user to authenticate. */
@@ -90,6 +99,20 @@ data class LoyaltyForm(
     val format: BarcodeFormat = BarcodeFormat.QR_CODE,
 )
 
+/** The user-entered part of [CardEditorUiState]. */
+internal data class EditorContent(
+    val type: CardType,
+    val title: String,
+    val color: CardColor,
+    val front: SideImage,
+    val back: SideImage,
+    val logo: LogoImage,
+    val bank: BankForm,
+    val id: IdForm,
+    val loyalty: LoyaltyForm,
+    val isLocked: Boolean,
+)
+
 data class CardEditorUiState(
     val editingId: CardId? = null,
     val step: EditorStep = EditorStep.TYPE,
@@ -114,12 +137,18 @@ data class CardEditorUiState(
     val isSaving: Boolean = false,
     val pendingAuthentication: AuthPurpose? = null,
     val savedCardId: CardId? = null,
-    val showKeyInvalidatedError: Boolean = false,
+    val error: EditorError? = null,
+    /** The user tried to leave with unsaved changes. */
+    val confirmDiscard: Boolean = false,
     val shops: List<Shop> = emptyList(),
     val banks: List<Bank> = emptyList(),
     val countries: List<Country> = emptyList(),
 ) {
     val isEditing: Boolean get() = editingId != null
+
+    /** Everything the user can enter; compared to detect unsaved changes. */
+    internal val content: EditorContent
+        get() = EditorContent(type, title, color, front, back, logo, bank, id, loyalty, isLocked)
 
     /** The catalogue shop of a loyalty card, if one is selected. */
     val selectedShop: Shop?

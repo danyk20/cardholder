@@ -16,6 +16,7 @@
     <string name="settings_import">وارد کردن نسخه پشتیبان</string>
     <string name="settings_import_description">بازیابی کارت‌ها از فایل پشتیبان</string>
     <string name="settings_backup_working">درحال انجام…</string>
+    <string name="settings_erase_description">حذف دائمی همه کارت‌ها، عکس‌ها و تنظیمات از این دستگاه</string>
     <string name="settings_password_title_export">از نسخه پشتیبان محافظت کنید</string>
     <string name="settings_password_title_import">گذرواژه نسخه پشتیبان را وارد کنید</string>
     <string name="settings_password_message_export">نسخه پشتیبان شامل همه جزئیات کارت‌ها، ازجمله CVVها، است. گذرواژه‌ای قوی انتخاب کنید – قابل بازیابی نیست.</string>

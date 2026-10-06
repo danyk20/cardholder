@@ -16,6 +16,7 @@
     <string name="settings_import">ব্যাকআপ ইমপোর্ট করুন</string>
     <string name="settings_import_description">ব্যাকআপ ফাইল থেকে কার্ড ফিরিয়ে আনুন</string>
     <string name="settings_backup_working">প্রসেস করা হচ্ছে…</string>
+    <string name="settings_erase_description">এই ডিভাইস থেকে সব কার্ড, ছবি ও সেটিংস স্থায়ীভাবে মুছে ফেলুন</string>
     <string name="settings_password_title_export">আপনার ব্যাকআপ সুরক্ষিত করুন</string>
     <string name="settings_password_title_import">ব্যাকআপের পাসওয়ার্ড লিখুন</string>
     <string name="settings_password_message_export">ব্যাকআপে CVV সহ সব কার্ডের বিবরণ থাকে। একটি শক্তিশালী পাসওয়ার্ড বেছে নিন – এটি পুনরুদ্ধার করা যাবে না।</string>

@@ -24,12 +24,18 @@ internal class BarcodeAnalyzer(private val onDetected: (ScannedBarcode) -> Unit)
             imageProxy.close()
             return
         }
-        scanner.process(InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees))
-            .addOnSuccessListener { barcodes ->
-                val barcode = barcodes.mostProminent()
-                if (barcode != null && detected.compareAndSet(false, true)) onDetected(barcode)
-            }
-            .addOnCompleteListener { imageProxy.close() }
+        // Runs on the analysis thread, where an exception would kill the app; e.g. a frame arriving
+        // after the scanner was closed. Such a frame is simply skipped.
+        try {
+            scanner.process(InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees))
+                .addOnSuccessListener { barcodes ->
+                    val barcode = barcodes.mostProminent()
+                    if (barcode != null && detected.compareAndSet(false, true)) onDetected(barcode)
+                }
+                .addOnCompleteListener { imageProxy.close() }
+        } catch (@Suppress("TooGenericExceptionCaught") _: RuntimeException) {
+            imageProxy.close()
+        }
     }
 
     override fun close() = scanner.close()

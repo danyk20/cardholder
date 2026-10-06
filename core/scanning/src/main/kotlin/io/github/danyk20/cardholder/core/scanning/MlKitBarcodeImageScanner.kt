@@ -27,11 +27,19 @@ internal class MlKitBarcodeImageScanner @Inject constructor(
                 InputImage.fromFilePath(context, uri.toUri())
             } catch (_: IOException) {
                 null
+            } catch (_: SecurityException) {
+                // Access to a picked photo was revoked.
+                null
+            } catch (_: OutOfMemoryError) {
+                // A huge photo; finding a barcode in it is optional.
+                null
             }
         } ?: return null
         val scanner = BarcodeScanning.getClient()
         return try {
             scanner.process(image).awaitOrNull()?.mostProminent()
+        } catch (@Suppress("TooGenericExceptionCaught") _: RuntimeException) {
+            null
         } finally {
             scanner.close()
         }

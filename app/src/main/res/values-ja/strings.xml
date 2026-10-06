@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">カードを開けません</string>
+    <string name="storage_error_message">このスマートフォンには、カードを保護する鍵がなくなっています（セキュリティのリセット後など）。このデバイスではカードを復元できません。すべてのデータを削除してやり直し、バックアップがある場合はインポートしてください。</string>
+</resources>

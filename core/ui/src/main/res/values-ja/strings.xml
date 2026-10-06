@@ -21,6 +21,12 @@
     <string name="error_invalid_length">長さが正しくありません</string>
     <string name="error_invalid_checksum">チェックディジットが一致しません。入力ミスがないか確認してください</string>
     <string name="error_invalid_date">有効な日付ではありません</string>
+    <string name="error_unexpected">問題が発生しました。もう一度お試しください。</string>
+    <string name="erase_all_data">すべてのデータを削除</string>
+    <string name="erase_title">すべてのデータを削除しますか？</string>
+    <string name="erase_message">すべてのカード、写真、設定がこのデバイスから完全に削除されます。後で必要になる可能性がある場合は、先にバックアップをエクスポートしてください。</string>
+    <string name="erase_acknowledge">この操作は元に戻せないことを理解しました</string>
+    <string name="erase_confirm">すべて削除</string>
     <string name="action_back">戻る</string>
     <string name="action_cancel">キャンセル</string>
     <string name="action_unlock">ロック解除</string>

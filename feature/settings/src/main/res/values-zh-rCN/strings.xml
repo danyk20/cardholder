@@ -16,6 +16,7 @@
     <string name="settings_import">导入备份</string>
     <string name="settings_import_description">从备份文件恢复卡片</string>
     <string name="settings_backup_working">正在处理…</string>
+    <string name="settings_erase_description">从此设备上永久清除所有卡片、照片和设置</string>
     <string name="settings_password_title_export">保护您的备份</string>
     <string name="settings_password_title_import">输入备份密码</string>
     <string name="settings_password_message_export">备份包含所有卡片的详细信息，包括 CVV。请设置一个高强度密码——密码一旦遗忘将无法找回。</string>

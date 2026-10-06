@@ -4,6 +4,9 @@
     <string name="scanner_hint">وجِّه الكاميرا نحو الرمز الشريطي أو رمز QR الموجود على بطاقتك</string>
     <string name="scanner_permission_rationale">يحتاج Cardholder إلى الكاميرا لمسح الرمز الموجود على بطاقتك. تُحلَّل الصور على الجهاز ولا يتم تخزينها أو إرسالها إلى أي مكان.</string>
     <string name="scanner_grant_permission">السماح باستخدام الكاميرا</string>
+    <string name="scanner_permission_denied">الوصول إلى الكاميرا غير مفعَّل لتطبيق Cardholder. فعِّله من إعدادات التطبيق لمسح الرموز.</string>
+    <string name="scanner_open_settings">فتح الإعدادات</string>
+    <string name="scanner_camera_unavailable">تعذّر تشغيل الكاميرا. أغلِق التطبيقات الأخرى التي تستخدمها وحاوِل مرة أخرى.</string>
     <string name="nfc_title">قراءة البطاقة باستخدام NFC</string>
     <string name="nfc_hold_card">ضع بطاقتك بشكل مستوٍ على الجهة الخلفية من هاتفك وأبقِها ثابتة.</string>
     <string name="nfc_reading">جارٍ قراءة البطاقة…</string>

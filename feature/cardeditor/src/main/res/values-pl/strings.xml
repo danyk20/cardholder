@@ -70,6 +70,10 @@
     <string name="editor_logo_license">Licencja: %1$s</string>
     <string name="editor_logo_attribution">Licencja: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Nie udało się pobrać logo. Sprawdź połączenie i spróbuj ponownie.</string>
+    <string name="editor_discard_title">Odrzucić zmiany?</string>
+    <string name="editor_discard_message">Zmiany w tej karcie nie zostaną zapisane.</string>
+    <string name="editor_discard">Odrzuć</string>
+    <string name="editor_keep_editing">Kontynuuj edycję</string>
 
     <!-- States -->
     <string name="editor_locked_title">Ta karta jest zablokowana</string>

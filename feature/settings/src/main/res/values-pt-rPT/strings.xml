@@ -16,6 +16,7 @@
     <string name="settings_import">Importar cópia de segurança</string>
     <string name="settings_import_description">Restaurar cartões a partir de um ficheiro de cópia de segurança</string>
     <string name="settings_backup_working">A processar…</string>
+    <string name="settings_erase_description">Apagar permanentemente todos os cartões, fotografias e definições deste dispositivo</string>
     <string name="settings_password_title_export">Proteja a sua cópia de segurança</string>
     <string name="settings_password_title_import">Introduza a palavra-passe da cópia de segurança</string>
     <string name="settings_password_message_export">A cópia de segurança contém todos os dados dos cartões, incluindo os CVV. Escolha uma palavra-passe forte – não é possível recuperá-la.</string>

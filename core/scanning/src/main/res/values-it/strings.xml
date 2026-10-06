@@ -4,6 +4,9 @@
     <string name="scanner_hint">Inquadra con la fotocamera il codice a barre o il codice QR sulla tua carta</string>
     <string name="scanner_permission_rationale">Cardholder ha bisogno della fotocamera per scansionare il codice sulla tua carta. Le immagini vengono analizzate sul dispositivo e non vengono mai salvate né inviate.</string>
     <string name="scanner_grant_permission">Consenti fotocamera</string>
+    <string name="scanner_permission_denied">L\'accesso alla fotocamera è disattivato per Cardholder. Attivalo nelle impostazioni dell\'app per scansionare i codici.</string>
+    <string name="scanner_open_settings">Apri impostazioni</string>
+    <string name="scanner_camera_unavailable">Impossibile avviare la fotocamera. Chiudi le altre app che la utilizzano e riprova.</string>
     <string name="nfc_title">Leggi carta con NFC</string>
     <string name="nfc_hold_card">Appoggia la carta sul retro del telefono e tienila ferma.</string>
     <string name="nfc_reading">Lettura della carta…</string>

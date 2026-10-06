@@ -21,6 +21,12 @@
     <string name="error_invalid_length">দৈর্ঘ্য ভুল</string>
     <string name="error_invalid_checksum">চেক ডিজিট মিলছে না – টাইপের ভুল আছে কিনা দেখে নিন</string>
     <string name="error_invalid_date">তারিখটি সঠিক নয়</string>
+    <string name="error_unexpected">কোনো সমস্যা হয়েছে। আবার চেষ্টা করুন।</string>
+    <string name="erase_all_data">সব ডেটা মুছুন</string>
+    <string name="erase_title">সব ডেটা মুছবেন?</string>
+    <string name="erase_message">এই ডিভাইস থেকে সব কার্ড, ছবি ও সেটিংস স্থায়ীভাবে মুছে ফেলা হবে। এগুলো পরে দরকার হতে পারে মনে হলে আগে একটি ব্যাকআপ এক্সপোর্ট করুন।</string>
+    <string name="erase_acknowledge">আমি বুঝেছি যে এটি আর ফেরানো যাবে না</string>
+    <string name="erase_confirm">সবকিছু মুছুন</string>
     <string name="action_back">ফিরে যান</string>
     <string name="action_cancel">বাতিল করুন</string>
     <string name="action_unlock">আনলক করুন</string>

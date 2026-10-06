@@ -58,6 +58,10 @@
     <string name="editor_logo_license">授權：%1$s</string>
     <string name="editor_logo_attribution">授權：%1$s · 作者：%2$s</string>
     <string name="editor_logo_download_failed">無法下載標誌。請檢查網路連線，然後再試一次。</string>
+    <string name="editor_discard_title">要捨棄變更嗎？</string>
+    <string name="editor_discard_message">系統不會儲存你對這張卡片所做的變更。</string>
+    <string name="editor_discard">捨棄</string>
+    <string name="editor_keep_editing">繼續編輯</string>
     <string name="editor_locked_title">這張卡片已鎖定</string>
     <string name="editor_not_found">這張卡片已不存在</string>
     <string name="editor_ok">確定</string>

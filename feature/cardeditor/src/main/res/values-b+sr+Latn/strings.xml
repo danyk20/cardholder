@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Licenca: %1$s</string>
     <string name="editor_logo_attribution">Licenca: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Preuzimanje logoa nije uspelo. Proverite vezu i pokušajte ponovo.</string>
+    <string name="editor_discard_title">Želite da odbacite izmene?</string>
+    <string name="editor_discard_message">Izmene ove kartice neće biti sačuvane.</string>
+    <string name="editor_discard">Odbaci</string>
+    <string name="editor_keep_editing">Nastavi izmene</string>
     <string name="editor_locked_title">Ova kartica je zaključana</string>
     <string name="editor_not_found">Ova kartica više ne postoji</string>
     <string name="editor_ok">Potvrdi</string>

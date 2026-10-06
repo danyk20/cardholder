@@ -32,6 +32,7 @@ import io.github.danyk20.cardholder.core.model.ImageRef
 import java.io.IOException
 import java.time.Clock
 import javax.inject.Inject
+import kotlin.coroutines.cancellation.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
@@ -172,6 +173,7 @@ internal class OfflineBackupRepository(
         is SecureResult.Success -> value
         SecureResult.AuthenticationRequired -> throw ProtectedDataException(BackupResult.AuthenticationRequired)
         SecureResult.KeyInvalidated -> throw ProtectedDataException(BackupResult.KeyInvalidated)
+        is SecureResult.Failed -> throw ProtectedDataException(BackupResult.Failed(cause))
     }
 
     @Suppress("TooGenericExceptionCaught") // Any unexpected failure is reported to the user, not crashed on.
@@ -183,14 +185,17 @@ internal class OfflineBackupRepository(
         BackupResult.WrongPassword
     } catch (_: InvalidBackupException) {
         BackupResult.InvalidFile
-    } catch (e: IOException) {
+    } catch (e: CancellationException) {
+        throw e
+    } catch (e: Exception) {
         logFailure(e)
-    } catch (e: RuntimeException) {
+    } catch (e: OutOfMemoryError) {
+        // A huge backup file; the allocation failed, so the app can carry on.
         logFailure(e)
     }
 
     /** Logs only the exception (never card data) to make unexpected failures diagnosable. */
-    private fun logFailure(e: Exception): BackupResult {
+    private fun logFailure(e: Throwable): BackupResult {
         Log.w(TAG, "Backup operation failed", e)
         return BackupResult.Failed(e)
     }

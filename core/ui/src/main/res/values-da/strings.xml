@@ -21,6 +21,12 @@
     <string name="error_invalid_length">Forkert længde</string>
     <string name="error_invalid_checksum">Kontrolcifferet passer ikke – tjek for tastefejl</string>
     <string name="error_invalid_date">Ugyldig dato</string>
+    <string name="error_unexpected">Noget gik galt. Prøv igen.</string>
+    <string name="erase_all_data">Slet alle data</string>
+    <string name="erase_title">Vil du slette alle data?</string>
+    <string name="erase_message">Alle kort, billeder og indstillinger slettes permanent fra denne enhed. Eksportér en backup først, hvis du stadig kan få brug for dem.</string>
+    <string name="erase_acknowledge">Jeg forstår, at dette ikke kan fortrydes</string>
+    <string name="erase_confirm">Slet alt</string>
     <string name="action_back">Tilbage</string>
     <string name="action_cancel">Annuller</string>
     <string name="action_unlock">Lås op</string>

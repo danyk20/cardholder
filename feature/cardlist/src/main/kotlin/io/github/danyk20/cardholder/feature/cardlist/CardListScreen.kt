@@ -47,6 +47,7 @@ import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.ui.CardFace
+import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.icon
 import io.github.danyk20.cardholder.core.ui.label
 
@@ -128,6 +129,10 @@ internal fun CardListScreen(
         when (uiState) {
             CardListUiState.Loading -> Box(Modifier.fillMaxSize().padding(padding), Alignment.Center) {
                 CircularProgressIndicator()
+            }
+
+            CardListUiState.Error -> Box(Modifier.fillMaxSize().padding(padding), Alignment.Center) {
+                Text(stringResource(UiR.string.error_unexpected), Modifier.padding(24.dp), textAlign = TextAlign.Center)
             }
 
             is CardListUiState.Success -> if (uiState.hasAnyCards) {

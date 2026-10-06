@@ -2,7 +2,6 @@ package io.github.danyk20.cardholder.feature.cardeditor
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.danyk20.cardholder.core.domain.model.CardContent
@@ -33,6 +32,7 @@ import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.Shop
+import io.github.danyk20.cardholder.core.ui.launchSafely
 import io.github.danyk20.cardholder.feature.cardeditor.navigation.CardEditorDestination
 import java.time.LocalDate
 import java.time.YearMonth
@@ -42,7 +42,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 
 @HiltViewModel
 @Suppress("TooManyFunctions")
@@ -70,8 +69,17 @@ class CardEditorViewModel @Inject constructor(
 
     private var original: Card? = null
 
+    /** The content as loaded for editing; `null` for a new card. */
+    private var savedContent: EditorContent? = null
+
+    /**
+     * Whether the user authenticated in the editor. A locked card is only decrypted for editing after
+     * that, not merely because the Keystore key is still usable after the phone was unlocked.
+     */
+    private var authenticatedHere = false
+
     init {
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             val shops = catalogues.shops.shops()
             val banks = catalogues.banks.banks()
             _uiState.update { it.copy(shops = shops, banks = banks, countries = catalogues.countries.countries()) }
@@ -86,19 +94,35 @@ class CardEditorViewModel @Inject constructor(
 
     fun onSidesDone() = _uiState.update { it.copy(step = EditorStep.DETAILS) }
 
-    /** Returns `false` when there is no previous step and the screen should close. */
+    /**
+     * Returns `false` when the screen should close: there is no previous step and nothing would be
+     * lost. With unsaved changes the user is asked first ([CardEditorUiState.confirmDiscard]).
+     */
     fun onBack(): Boolean {
         val state = _uiState.value
-        if (state.isEditing || state.step == EditorStep.TYPE) return false
-        _uiState.update { it.copy(step = EditorStep.entries[state.step.ordinal - 1]) }
+        if (!state.isEditing && state.step != EditorStep.TYPE) {
+            _uiState.update { it.copy(step = EditorStep.entries[state.step.ordinal - 1]) }
+            return true
+        }
+        if (!hasUnsavedChanges(state)) return false
+        _uiState.update { it.copy(confirmDiscard = true) }
         return true
+    }
+
+    fun onKeepEditing() = _uiState.update { it.copy(confirmDiscard = false) }
+
+    private fun hasUnsavedChanges(state: CardEditorUiState): Boolean {
+        if (state.loadState != LoadState.READY) return false
+        // Picking only a type for a new card doesn't count as an edit.
+        val baseline = savedContent ?: CardEditorUiState().content.copy(type = state.type)
+        return state.content != baseline
     }
 
     fun onSideImagePicked(side: CardSide, uri: String) {
         updateSide(side, SideImage.New(uri))
         if (_uiState.value.type == CardType.LOYALTY && _uiState.value.loyalty.code.isEmpty()) {
             // Loyalty cards usually carry their code on the back: offer it without typing.
-            viewModelScope.launch {
+            launchSafely(onError = ::onUnexpectedError) {
                 barcodeImageScanner.scan(uri)?.let { barcode ->
                     if (_uiState.value.loyalty.code.isEmpty()) onBarcodeScanned(barcode.code, barcode.format)
                 }
@@ -173,7 +197,7 @@ class CardEditorViewModel @Inject constructor(
     fun onUseOfficialLogo() {
         val logo = (_uiState.value.logoChoiceFor ?: _uiState.value.officialLogo)?.logo ?: return
         _uiState.update { it.copy(logoChoiceFor = null, isDownloadingLogo = true, logoDownloadFailed = false) }
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             val bytes = logoDownloader.download(logo.url)
             _uiState.update {
                 if (bytes != null) {
@@ -213,7 +237,7 @@ class CardEditorViewModel @Inject constructor(
             return
         }
         _uiState.update { it.copy(isSaving = true, errors = emptyMap()) }
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             val result = saveCard(draft)
             _uiState.update {
                 when (result) {
@@ -224,7 +248,9 @@ class CardEditorViewModel @Inject constructor(
                     SaveCardResult.AuthenticationRequired ->
                         it.copy(isSaving = false, pendingAuthentication = AuthPurpose.SAVE)
 
-                    SaveCardResult.KeyInvalidated -> it.copy(isSaving = false, showKeyInvalidatedError = true)
+                    SaveCardResult.KeyInvalidated -> it.copy(isSaving = false, error = EditorError.KEY_INVALIDATED)
+
+                    SaveCardResult.Failed -> it.copy(isSaving = false, error = EditorError.UNEXPECTED)
                 }
             }
         }
@@ -233,15 +259,19 @@ class CardEditorViewModel @Inject constructor(
     fun onAuthenticationResult(purpose: AuthPurpose, succeeded: Boolean) {
         _uiState.update { it.copy(pendingAuthentication = null) }
         if (!succeeded) return
+        authenticatedHere = true
         when (purpose) {
-            AuthPurpose.LOAD -> editingId?.let { viewModelScope.launch { load(it) } }
+            AuthPurpose.LOAD -> editingId?.let { launchSafely(onError = ::onUnexpectedError) { load(it) } }
             AuthPurpose.SAVE -> onSave()
         }
     }
 
     fun onRetryAuthentication() = _uiState.update { it.copy(pendingAuthentication = AuthPurpose.LOAD) }
 
-    fun onKeyInvalidatedErrorShown() = _uiState.update { it.copy(showKeyInvalidatedError = false) }
+    fun onErrorShown() = _uiState.update { it.copy(error = null) }
+
+    private fun onUnexpectedError(@Suppress("UNUSED_PARAMETER") error: Throwable) =
+        _uiState.update { it.copy(isSaving = false, isDownloadingLogo = false, error = EditorError.UNEXPECTED) }
 
     private suspend fun load(id: CardId) {
         val card = cardRepository.observeCard(id).first()
@@ -249,10 +279,17 @@ class CardEditorViewModel @Inject constructor(
             _uiState.update { it.copy(loadState = LoadState.NOT_FOUND) }
             return
         }
+        if (card.isLocked && !authenticatedHere) {
+            _uiState.update {
+                it.copy(loadState = LoadState.AUTHENTICATION_REQUIRED, pendingAuthentication = AuthPurpose.LOAD)
+            }
+            return
+        }
         when (val details = cardRepository.readDetails(id)) {
             is SecureResult.Success -> {
                 original = card
                 _uiState.update { it.populatedFrom(card, details.value) }
+                savedContent = _uiState.value.content
             }
 
             SecureResult.AuthenticationRequired -> _uiState.update {
@@ -260,6 +297,8 @@ class CardEditorViewModel @Inject constructor(
             }
 
             SecureResult.KeyInvalidated -> _uiState.update { it.copy(loadState = LoadState.KEY_INVALIDATED) }
+
+            is SecureResult.Failed -> _uiState.update { it.copy(loadState = LoadState.FAILED) }
         }
     }
 

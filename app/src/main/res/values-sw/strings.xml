@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Imeshindwa kufungua kadi zako</string>
+    <string name="storage_error_message">Simu hii haina tena funguo zinazolinda kadi zako, kwa mfano baada ya kuweka upya mipangilio ya usalama. Kadi haziwezi kurejeshwa kwenye kifaa hiki. Futa data yote ili uanze upya, kisha ulete nakala rudufu ikiwa unayo.</string>
+</resources>

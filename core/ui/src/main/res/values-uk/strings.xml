@@ -30,6 +30,12 @@
     <string name="error_invalid_date">Недійсна дата</string>
 
     <!-- Common actions -->
+    <string name="error_unexpected">Щось пішло не так. Повторіть спробу.</string>
+    <string name="erase_all_data">Видалити всі дані</string>
+    <string name="erase_title">Видалити всі дані?</string>
+    <string name="erase_message">Усі картки, фото й налаштування буде остаточно видалено з цього пристрою. Якщо вони ще можуть вам знадобитися, спершу експортуйте резервну копію.</string>
+    <string name="erase_acknowledge">Я розумію, що цю дію не можна скасувати</string>
+    <string name="erase_confirm">Видалити все</string>
     <string name="action_back">Назад</string>
     <string name="action_cancel">Скасувати</string>
     <string name="action_unlock">Розблокувати</string>

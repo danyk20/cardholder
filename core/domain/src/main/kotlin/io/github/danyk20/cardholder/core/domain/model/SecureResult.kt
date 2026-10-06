@@ -12,12 +12,21 @@ sealed interface SecureResult<out T> {
      * so the protected data can never be decrypted again.
      */
     data object KeyInvalidated : SecureResult<Nothing>
+
+    /**
+     * Anything else went wrong (corrupted data, storage or I/O errors, …). Screens show a generic
+     * error instead of crashing; [cause] is for diagnostics only and may contain no user data.
+     */
+    data class Failed(val cause: Throwable) : SecureResult<Nothing> {
+        override fun toString(): String = "Failed(${cause::class.simpleName})"
+    }
 }
 
 inline fun <T, R> SecureResult<T>.map(transform: (T) -> R): SecureResult<R> = when (this) {
     is SecureResult.Success -> SecureResult.Success(transform(value))
     SecureResult.AuthenticationRequired -> SecureResult.AuthenticationRequired
     SecureResult.KeyInvalidated -> SecureResult.KeyInvalidated
+    is SecureResult.Failed -> this
 }
 
 fun <T> SecureResult<T>.getOrNull(): T? = (this as? SecureResult.Success)?.value

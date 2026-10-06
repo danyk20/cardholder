@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Licença: %1$s</string>
     <string name="editor_logo_attribution">Licença: %1$s · por %2$s</string>
     <string name="editor_logo_download_failed">Não foi possível transferir o logótipo. Verifique a ligação e tente novamente.</string>
+    <string name="editor_discard_title">Rejeitar alterações?</string>
+    <string name="editor_discard_message">As alterações a este cartão não serão guardadas.</string>
+    <string name="editor_discard">Rejeitar</string>
+    <string name="editor_keep_editing">Continuar a editar</string>
     <string name="editor_locked_title">Este cartão está bloqueado</string>
     <string name="editor_not_found">Este cartão já não existe</string>
     <string name="editor_ok">OK</string>

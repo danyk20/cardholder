@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Licence : %1$s</string>
     <string name="editor_logo_attribution">Licence : %1$s · par %2$s</string>
     <string name="editor_logo_download_failed">Impossible de télécharger le logo. Vérifiez votre connexion, puis réessayez.</string>
+    <string name="editor_discard_title">Supprimer les modifications ?</string>
+    <string name="editor_discard_message">Les modifications apportées à cette carte ne seront pas enregistrées.</string>
+    <string name="editor_discard">Supprimer</string>
+    <string name="editor_keep_editing">Continuer la modification</string>
     <string name="editor_locked_title">Cette carte est verrouillée</string>
     <string name="editor_not_found">Cette carte n\'existe plus</string>
     <string name="editor_ok">OK</string>

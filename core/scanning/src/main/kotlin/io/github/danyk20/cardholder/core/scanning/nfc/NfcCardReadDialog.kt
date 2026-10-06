@@ -129,7 +129,11 @@ fun NfcCardReadDialog(onCardRead: (EmvCardData) -> Unit, onDismiss: () -> Unit) 
     )
 }
 
-/** Runs on the NFC binder thread. */
+/**
+ * Runs on the NFC binder thread, where an uncaught exception would kill the app, so any failure
+ * while talking to an unknown card just means "couldn't read it".
+ */
+@Suppress("TooGenericExceptionCaught")
 private fun readCard(tag: Tag): EmvCardData? {
     val isoDep = IsoDep.get(tag) ?: return null
     return try {
@@ -142,6 +146,11 @@ private fun readCard(tag: Tag): EmvCardData? {
         null
     } catch (_: SecurityException) {
         // The tag went out of range while it was being read.
+        null
+    } catch (_: Exception) {
+        // Malformed or unexpected card data.
+        null
+    } catch (_: StackOverflowError) {
         null
     }
 }

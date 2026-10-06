@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">카드를 열 수 없습니다</string>
+    <string name="storage_error_message">보안 재설정 등으로 인해 이 휴대전화에 카드를 보호하는 키가 더 이상 없습니다. 이 기기에서는 카드를 복구할 수 없습니다. 모든 데이터를 삭제하여 다시 시작한 다음, 백업이 있으면 가져오세요.</string>
+</resources>

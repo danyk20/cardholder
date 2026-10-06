@@ -58,6 +58,10 @@
     <string name="editor_logo_license">مجوز: %1$s</string>
     <string name="editor_logo_attribution">مجوز: %1$s · از %2$s</string>
     <string name="editor_logo_download_failed">لوگو بارگیری نشد. اتصال اینترنت را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="editor_discard_title">از تغییرات صرف‌نظر شود؟</string>
+    <string name="editor_discard_message">تغییراتی که در این کارت داده‌اید ذخیره نمی‌شوند.</string>
+    <string name="editor_discard">صرف‌نظر کردن</string>
+    <string name="editor_keep_editing">ادامه ویرایش</string>
     <string name="editor_locked_title">این کارت قفل است</string>
     <string name="editor_not_found">این کارت دیگر وجود ندارد</string>
     <string name="editor_ok">تأیید</string>

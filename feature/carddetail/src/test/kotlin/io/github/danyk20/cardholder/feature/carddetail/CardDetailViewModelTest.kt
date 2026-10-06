@@ -113,6 +113,63 @@ class CardDetailViewModelTest {
     }
 
     @Test
+    fun `phone unlock alone does not reveal a locked card or the cvv`() = runTest {
+        // The Keystore key stays usable for a while after unlocking the phone; that's not consent.
+        repository.isAuthenticated = true
+        val lockedVisa = TestCards.visa.copy(isLocked = true)
+        repository.add(lockedVisa, TestCards.visaDetails, TestCards.VISA_CVV)
+        val viewModel = viewModel(lockedVisa)
+
+        assertEquals(DetailsState.Locked, viewModel.uiState.value.details)
+        assertEquals(AuthAction.UNLOCK_DETAILS, viewModel.uiState.value.pendingAuthentication)
+        viewModel.onAuthenticationResult(AuthAction.UNLOCK_DETAILS, succeeded = false)
+
+        viewModel.onRevealCvv()
+        assertNull(viewModel.uiState.value.cvv)
+        assertEquals(AuthAction.REVEAL_CVV, viewModel.uiState.value.pendingAuthentication)
+        viewModel.onAuthenticationResult(AuthAction.REVEAL_CVV, succeeded = false)
+
+        viewModel.onLockedChange(false)
+        assertEquals(AuthAction.REMOVE_LOCK, viewModel.uiState.value.pendingAuthentication)
+        assertTrue(repository.observeCard(lockedVisa.id).first()!!.isLocked)
+    }
+
+    @Test
+    fun `cvv of an unlocked card needs a prompt even while the key is usable`() {
+        repository.isAuthenticated = true
+        repository.add(TestCards.visa, TestCards.visaDetails, TestCards.VISA_CVV)
+        val viewModel = viewModel(TestCards.visa)
+
+        viewModel.onRevealCvv()
+
+        assertNull(viewModel.uiState.value.cvv)
+        assertEquals(AuthAction.REVEAL_CVV, viewModel.uiState.value.pendingAuthentication)
+    }
+
+    @Test
+    fun `after the app was in the background the cvv needs a new prompt`() {
+        repository.add(TestCards.visa, TestCards.visaDetails, TestCards.VISA_CVV)
+        val viewModel = viewModel(TestCards.visa)
+        repository.isAuthenticated = true
+        viewModel.onAuthenticationResult(AuthAction.REVEAL_CVV, succeeded = true)
+        assertEquals(TestCards.VISA_CVV, viewModel.uiState.value.cvv)
+
+        sessionLock.lock()
+        viewModel.onRevealCvv()
+
+        assertNull(viewModel.uiState.value.cvv)
+        assertEquals(AuthAction.REVEAL_CVV, viewModel.uiState.value.pendingAuthentication)
+    }
+
+    @Test
+    fun `damaged card data shows an error instead of crashing`() {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.damaged += TestCards.visa.id
+
+        assertEquals(DetailsState.Failed, viewModel(TestCards.visa).uiState.value.details)
+    }
+
+    @Test
     fun `copy uses the secure clipboard`() {
         repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
         val viewModel = viewModel(TestCards.loyalty)

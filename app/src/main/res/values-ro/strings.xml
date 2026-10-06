@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Cardurile nu pot fi deschise</string>
+    <string name="storage_error_message">Acest telefon nu mai are cheile care vă protejează cardurile, de exemplu după o resetare de securitate. Cardurile nu pot fi recuperate pe acest dispozitiv. Ștergeți toate datele pentru a începe din nou, apoi importați un backup dacă aveți unul.</string>
+</resources>

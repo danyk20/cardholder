@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.core.data.repository
 
+import android.graphics.BitmapFactory
 import android.util.Log
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
@@ -9,6 +10,7 @@ import java.io.InputStream
 import java.net.URL
 import javax.inject.Inject
 import javax.net.ssl.HttpsURLConnection
+import kotlin.coroutines.cancellation.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -22,11 +24,23 @@ internal class HttpsLogoDownloader @Inject constructor(@IoDispatcher private val
     override suspend fun download(url: String): ByteArray? = withContext(ioDispatcher) {
         if (!isAllowed(url)) return@withContext null
         try {
-            fetch(url)
+            // Only keep files that really decode as an image, so a bad response can't break saving later.
+            fetch(url)?.takeIf(::isDecodableImage)
+        } catch (e: CancellationException) {
+            throw e
         } catch (e: IOException) {
             Log.w(TAG, "Logo download failed", e)
             null
+        } catch (@Suppress("TooGenericExceptionCaught") e: RuntimeException) {
+            Log.w(TAG, "Logo download failed", e)
+            null
         }
+    }
+
+    private fun isDecodableImage(bytes: ByteArray): Boolean {
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        BitmapFactory.decodeByteArray(bytes, 0, bytes.size, bounds)
+        return bounds.outWidth > 0 && bounds.outHeight > 0
     }
 
     private fun fetch(url: String): ByteArray? {

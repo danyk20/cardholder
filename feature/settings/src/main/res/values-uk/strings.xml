@@ -18,6 +18,7 @@
     <string name="settings_import">Імпорт резервної копії</string>
     <string name="settings_import_description">Відновити картки з файлу резервної копії</string>
     <string name="settings_backup_working">Виконується…</string>
+    <string name="settings_erase_description">Остаточно видалити всі картки, фото й налаштування з цього пристрою</string>
 
     <string name="settings_password_title_export">Захистіть резервну копію</string>
     <string name="settings_password_title_import">Введіть пароль резервної копії</string>

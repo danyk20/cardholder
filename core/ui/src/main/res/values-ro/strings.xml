@@ -21,6 +21,12 @@
     <string name="error_invalid_length">Lungime greșită</string>
     <string name="error_invalid_checksum">Cifra de control nu corespunde – verificați dacă există greșeli de scriere</string>
     <string name="error_invalid_date">Dată nevalidă</string>
+    <string name="error_unexpected">A apărut o eroare. Încercați din nou.</string>
+    <string name="erase_all_data">Ștergeți toate datele</string>
+    <string name="erase_title">Ștergeți toate datele?</string>
+    <string name="erase_message">Toate cardurile, fotografiile și setările vor fi șterse definitiv de pe acest dispozitiv. Exportați mai întâi un backup dacă s-ar putea să mai aveți nevoie de ele.</string>
+    <string name="erase_acknowledge">Înțeleg că acțiunea nu poate fi anulată</string>
+    <string name="erase_confirm">Ștergeți tot</string>
     <string name="action_back">Înapoi</string>
     <string name="action_cancel">Anulați</string>
     <string name="action_unlock">Deblocați</string>

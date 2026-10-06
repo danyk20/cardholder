@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Litsents: %1$s</string>
     <string name="editor_logo_attribution">Litsents: %1$s · autor %2$s</string>
     <string name="editor_logo_download_failed">Logo allalaadimine ebaõnnestus. Kontrollige ühendust ja proovige uuesti.</string>
+    <string name="editor_discard_title">Kas loobuda muudatustest?</string>
+    <string name="editor_discard_message">Selle kaardi muudatusi ei salvestata.</string>
+    <string name="editor_discard">Loobu</string>
+    <string name="editor_keep_editing">Jätka muutmist</string>
     <string name="editor_locked_title">See kaart on lukustatud</string>
     <string name="editor_not_found">Seda kaarti enam ei ole</string>
     <string name="editor_ok">OK</string>

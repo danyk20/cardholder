@@ -25,6 +25,12 @@
     <string name="error_invalid_checksum">Kontrol basamağı eşleşmiyor – lütfen yazım hatası olup olmadığını kontrol edin</string>
     <string name="error_invalid_date">Geçerli bir tarih değil</string>
 
+    <string name="error_unexpected">Bir sorun oluştu. Lütfen tekrar deneyin.</string>
+    <string name="erase_all_data">Tüm verileri sil</string>
+    <string name="erase_title">Tüm veriler silinsin mi?</string>
+    <string name="erase_message">Tüm kartlar, fotoğraflar ve ayarlar bu cihazdan kalıcı olarak silinecek. Bunlara hâlâ ihtiyacınız olabilecekse önce bir yedeği dışa aktarın.</string>
+    <string name="erase_acknowledge">Bu işlemin geri alınamayacağını anlıyorum</string>
+    <string name="erase_confirm">Her şeyi sil</string>
     <string name="action_back">Geri</string>
     <string name="action_cancel">İptal</string>
     <string name="action_unlock">Kilidi aç</string>

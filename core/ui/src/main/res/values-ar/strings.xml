@@ -25,6 +25,12 @@
     <string name="error_invalid_checksum">رقم التحقق غير مطابق – يُرجى التأكد من عدم وجود أخطاء في الكتابة</string>
     <string name="error_invalid_date">تاريخ غير صالح</string>
 
+    <string name="error_unexpected">حدث خطأ ما. يُرجى المحاولة مرة أخرى.</string>
+    <string name="erase_all_data">حذف جميع البيانات</string>
+    <string name="erase_title">هل تريد حذف جميع البيانات؟</string>
+    <string name="erase_message">سيتم حذف جميع البطاقات والصور والإعدادات من هذا الجهاز نهائيًا. صدِّر نسخة احتياطية أولاً إذا كنت قد تحتاج إليها لاحقًا.</string>
+    <string name="erase_acknowledge">أدرك أنه لا يمكن التراجع عن هذا الإجراء</string>
+    <string name="erase_confirm">حذف كل شيء</string>
     <string name="action_back">رجوع</string>
     <string name="action_cancel">إلغاء</string>
     <string name="action_unlock">فتح القفل</string>

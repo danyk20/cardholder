@@ -21,6 +21,12 @@
     <string name="error_invalid_length">Λάθος μήκος</string>
     <string name="error_invalid_checksum">Το ψηφίο ελέγχου δεν ταιριάζει – ελέγξτε για τυπογραφικά λάθη</string>
     <string name="error_invalid_date">Μη έγκυρη ημερομηνία</string>
+    <string name="error_unexpected">Παρουσιάστηκε πρόβλημα. Δοκιμάστε ξανά.</string>
+    <string name="erase_all_data">Διαγραφή όλων των δεδομένων</string>
+    <string name="erase_title">Διαγραφή όλων των δεδομένων;</string>
+    <string name="erase_message">Όλες οι κάρτες, οι φωτογραφίες και οι ρυθμίσεις θα διαγραφούν οριστικά από αυτή τη συσκευή. Αν ενδέχεται να τις χρειαστείτε ακόμα, εξαγάγετε πρώτα ένα αντίγραφο ασφαλείας.</string>
+    <string name="erase_acknowledge">Κατανοώ ότι αυτή η ενέργεια δεν μπορεί να αναιρεθεί</string>
+    <string name="erase_confirm">Διαγραφή όλων</string>
     <string name="action_back">Πίσω</string>
     <string name="action_cancel">Ακύρωση</string>
     <string name="action_unlock">Ξεκλείδωμα</string>

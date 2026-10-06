@@ -18,6 +18,7 @@
     <string name="settings_import">Импорт резервной копии</string>
     <string name="settings_import_description">Восстановить карты из файла резервной копии</string>
     <string name="settings_backup_working">Выполняется…</string>
+    <string name="settings_erase_description">Безвозвратно удалить все карты, фото и настройки с этого устройства</string>
 
     <string name="settings_password_title_export">Защитите резервную копию</string>
     <string name="settings_password_title_import">Введите пароль резервной копии</string>

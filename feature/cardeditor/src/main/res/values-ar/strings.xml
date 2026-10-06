@@ -64,6 +64,10 @@
     <string name="editor_logo_license">الترخيص: %1$s</string>
     <string name="editor_logo_attribution">الترخيص: %1$s · بواسطة %2$s</string>
     <string name="editor_logo_download_failed">تعذّر تنزيل الشعار. تحقَّق من الاتصال بالإنترنت وحاوِل مرة أخرى.</string>
+    <string name="editor_discard_title">هل تريد تجاهل التغييرات؟</string>
+    <string name="editor_discard_message">لن يتم حفظ التغييرات التي أجريتها على هذه البطاقة.</string>
+    <string name="editor_discard">تجاهل</string>
+    <string name="editor_keep_editing">متابعة التعديل</string>
 
     <string name="editor_locked_title">هذه البطاقة مقفلة</string>
     <string name="editor_not_found">هذه البطاقة لم تعد موجودة</string>

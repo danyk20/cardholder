@@ -64,6 +64,10 @@
     <string name="editor_logo_license">Lisans: %1$s</string>
     <string name="editor_logo_attribution">Lisans: %1$s · Yazar: %2$s</string>
     <string name="editor_logo_download_failed">Logo indirilemedi. Bağlantınızı kontrol edip tekrar deneyin.</string>
+    <string name="editor_discard_title">Değişiklikler silinsin mi?</string>
+    <string name="editor_discard_message">Bu kartta yaptığınız değişiklikler kaydedilmeyecek.</string>
+    <string name="editor_discard">Sil</string>
+    <string name="editor_keep_editing">Düzenlemeye devam et</string>
 
     <string name="editor_locked_title">Bu kart kilitli</string>
     <string name="editor_not_found">Bu kart artık mevcut değil</string>

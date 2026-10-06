@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Karten können nicht geöffnet werden</string>
+    <string name="storage_error_message">Dieses Smartphone hat die Schlüssel, die die Karten schützen, nicht mehr – zum Beispiel nach einem Zurücksetzen der Sicherheitseinstellungen. Die Karten können auf diesem Gerät nicht wiederhergestellt werden. Alle Daten löschen, um neu zu beginnen, und anschließend eine Sicherung importieren, falls vorhanden.</string>
+</resources>
