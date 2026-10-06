@@ -14,6 +14,7 @@ import dagger.hilt.components.SingletonComponent
 import io.github.danyk20.cardholder.core.data.backup.OfflineBackupRepository
 import io.github.danyk20.cardholder.core.data.repository.AssetShopRepository
 import io.github.danyk20.cardholder.core.data.repository.DataStoreUserPreferencesRepository
+import io.github.danyk20.cardholder.core.data.repository.HttpsLogoDownloader
 import io.github.danyk20.cardholder.core.data.repository.LocaleCountryRepository
 import io.github.danyk20.cardholder.core.data.repository.OfflineCardImageRepository
 import io.github.danyk20.cardholder.core.data.repository.OfflineCardRepository
@@ -23,6 +24,7 @@ import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
+import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
 import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import java.time.Clock
@@ -43,6 +45,9 @@ internal interface DataModule {
 
     @Binds
     fun bindsCardImageRepository(impl: OfflineCardImageRepository): CardImageRepository
+
+    @Binds
+    fun bindsLogoDownloader(impl: HttpsLogoDownloader): LogoDownloader
 
     @Binds
     fun bindsShopRepository(impl: AssetShopRepository): ShopRepository

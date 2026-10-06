@@ -25,6 +25,7 @@ data class CardEntity(
     @ColumnInfo(name = "loyalty_barcode_format") val loyaltyBarcodeFormat: String?,
     @ColumnInfo(name = "front_image") val frontImage: String?,
     @ColumnInfo(name = "back_image") val backImage: String?,
+    @ColumnInfo(name = "logo_image", defaultValue = "NULL") val logoImage: String? = null,
     /** Sealed JSON of the type-specific details. */
     @ColumnInfo(name = "sealed_details", typeAffinity = ColumnInfo.BLOB) val sealedDetails: ByteArray,
     /** Sealed CVV of a bank card, always protected by user authentication. */
@@ -48,6 +49,7 @@ data class CardEntity(
                 loyaltyBarcodeFormat == other.loyaltyBarcodeFormat &&
                 frontImage == other.frontImage &&
                 backImage == other.backImage &&
+                logoImage == other.logoImage &&
                 sealedDetails.contentEquals(other.sealedDetails) &&
                 sealedCvv.contentEquals(other.sealedCvv)
             )

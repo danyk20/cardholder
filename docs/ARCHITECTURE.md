@@ -48,6 +48,7 @@ See [SECURITY.md](../SECURITY.md) for the threat model and the ADRs:
 4. [Minimum SDK 30](adr/0004-min-sdk-30.md)
 5. [Encrypted backup](adr/0005-encrypted-backup.md)
 6. [Scanning with ML Kit](adr/0006-scanning-with-ml-kit.md)
+7. [Official shop logos on request](adr/0007-shop-logos.md)
 
 ## Testing
 - JVM unit tests for models, validators, use cases, crypto envelope and barcode encoding.

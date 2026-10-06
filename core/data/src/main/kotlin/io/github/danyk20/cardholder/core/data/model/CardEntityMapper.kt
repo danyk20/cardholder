@@ -20,6 +20,7 @@ internal fun CardEntity.toCard(): Card = Card(
     color = enumValueOrNull<CardColor>(color) ?: CardColor.Default,
     info = toInfo(),
     sides = CardSides(front = frontImage?.let(::ImageRef), back = backImage?.let(::ImageRef)),
+    logo = logoImage?.let(::ImageRef),
     isLocked = isLocked,
     hasCvv = sealedCvv != null,
     createdAt = Instant.ofEpochMilli(createdAt),

@@ -56,7 +56,7 @@ class OfflineCardRepositoryTest {
     private val images by lazy {
         CardImageStore(
             files = files,
-            decode = { source -> (source as ImageSource.Bytes).bytes.copyOf() },
+            decode = { source, _ -> (source as ImageSource.Bytes).bytes.copyOf() },
             ioDispatcher = Dispatchers.Unconfined,
         )
     }

@@ -17,7 +17,8 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 - **Three card types**
   - **Bank card**: number (network detection, Luhn check), expiry, card holder and CVV. The CVV is **always hidden** and only shown after fingerprint, face or device PIN.
   - **ID card**: issuing country (searchable, with flags), optional document number and expiry.
-  - **Loyalty card**: shop from a bundled catalogue or a custom name, plus its barcode/QR code. Tapping the card shows the code **full-screen at maximum brightness** for the till scanner. 13 symbologies are supported, including EAN, UPC, Code 128/39/93, ITF, Codabar, QR, Aztec, Data Matrix and PDF417.
+  - **Loyalty card**: shop from a catalogue of 55 shops or a custom name, plus its barcode/QR code, which is shown **right on the card in the list**. Tapping the card shows the code **full-screen at maximum brightness** for the till scanner. 13 symbologies are supported, including EAN, UPC, Code 128/39/93, ITF, Codabar, QR, Aztec, Data Matrix and PDF417.
+  - **Shop logos**: pick the official logo (freely licensed, downloaded on request), upload your own, or keep the card plain.
 - **Optional photos of both sides**: scan with automatic edge detection (ML Kit document scanner) or pick from the gallery.
 - **Scan loyalty codes** with the camera, or let the app find the barcode in a card photo.
 - **Per-card lock**: any card can require authentication for *all* its data.
@@ -25,7 +26,7 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 - Material 3 with dynamic colour, dark theme, adaptive layout.
 
 ## Privacy & security
-- **No internet permission.** No analytics, no cloud.
+- **Offline by design.** No analytics, no cloud, no accounts. The only network request the app can make is downloading an official shop logo from Wikimedia Commons when you ask for it (HTTPS only).
 - Encrypted database (SQLCipher) **plus** per-value envelope encryption with Android Keystore keys.
 - CVVs and locked cards are encrypted with a key the Keystore only releases after **strong biometric or device-credential authentication**. This is real cryptographic protection, not just a UI gate.
 - Screenshots and recents thumbnails are blocked on sensitive screens. Copied values are marked sensitive and cleared after a minute. Decrypted data is dropped when the app goes to the background.
@@ -69,4 +70,4 @@ feature/*            Card list, editor, detail, full-screen barcode, settings
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). Never put real card data in issues.
 
 ## License
-[Apache License 2.0](LICENSE). Shop names in the bundled catalogue are trademarks of their respective owners and are used only to identify the shop a card belongs to; no logos are included.
+[Apache License 2.0](LICENSE). Shop names and logos are trademarks of their respective owners and are used only to identify the shop a card belongs to. The repository contains no logo files, only links to freely licensed logos on Wikimedia Commons; see [docs/LOGOS.md](docs/LOGOS.md) for sources and licences.

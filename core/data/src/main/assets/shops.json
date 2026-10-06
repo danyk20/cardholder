@@ -7,7 +7,12 @@
       "NL",
       "BE"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Albert_Heijn_Logo.svg/960px-Albert_Heijn_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Albert_Heijn_Logo.svg"
+    }
   },
   {
     "id": "aldi",
@@ -28,7 +33,12 @@
       "US",
       "AU"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Aldi_S%C3%BCd_2017_logo.svg/960px-Aldi_S%C3%BCd_2017_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Aldi_S%C3%BCd_2017_logo.svg"
+    }
   },
   {
     "id": "auchan",
@@ -43,7 +53,12 @@
       "RO",
       "LU"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Auchan_Retail_logo.svg/960px-Auchan_Retail_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Auchan_Retail_logo.svg"
+    }
   },
   {
     "id": "bauhaus",
@@ -63,7 +78,12 @@
       "NO",
       "FI"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Bauhaus_logo.svg/960px-Bauhaus_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bauhaus_logo.svg"
+    }
   },
   {
     "id": "billa",
@@ -75,7 +95,12 @@
       "CZ",
       "BG"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Billa_logo.svg/960px-Billa_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Billa_logo.svg"
+    }
   },
   {
     "id": "boots",
@@ -104,7 +129,12 @@
       "CZ",
       "SK"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/C%26A_logo.svg/960px-C%26A_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:C%26A_logo.svg"
+    }
   },
   {
     "id": "carrefour",
@@ -127,7 +157,13 @@
     "countries": [
       "IT"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Italian_Conad_Logo_Italia.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Italian_Conad_Logo_Italia.png",
+      "attribution": "Hpmachine"
+    }
   },
   {
     "id": "coop-ch",
@@ -136,7 +172,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Coop.svg/960px-Coop.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Coop.svg"
+    }
   },
   {
     "id": "costco",
@@ -154,7 +195,12 @@
       "FR",
       "SE"
     ],
-    "defaultFormat": "CODE_128"
+    "defaultFormat": "CODE_128",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/960px-Costco_Wholesale_logo_2010-10-26.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Costco_Wholesale_logo_2010-10-26.svg"
+    }
   },
   {
     "id": "cvs",
@@ -163,14 +209,24 @@
     "countries": [
       "US"
     ],
-    "defaultFormat": "CODE_128"
+    "defaultFormat": "CODE_128",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/CVS_Logo_2016.svg/960px-CVS_Logo_2016.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:CVS_Logo_2016.svg"
+    }
   },
   {
     "id": "decathlon",
     "name": "Decathlon",
     "brandColor": "#0082C3",
     "countries": [],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Decathlon_-_logo_%28France%2C_2024%29.svg/960px-Decathlon_-_logo_%28France%2C_2024%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Decathlon_-_logo_(France,_2024).svg"
+    }
   },
   {
     "id": "deichmann",
@@ -187,7 +243,12 @@
       "NL",
       "IT"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Deichmann_logo.svg/960px-Deichmann_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Deichmann_logo.svg"
+    }
   },
   {
     "id": "denner",
@@ -196,7 +257,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Denner_Logo_2014.svg/960px-Denner_Logo_2014.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Denner_Logo_2014.svg"
+    }
   },
   {
     "id": "dm",
@@ -215,7 +281,12 @@
       "PL",
       "RO"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Dm-drogerie_markt_logo.svg/960px-Dm-drogerie_markt_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Dm-drogerie_markt_logo.svg"
+    }
   },
   {
     "id": "douglas",
@@ -234,7 +305,12 @@
       "CZ",
       "SK"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Douglas_Logo_06.2018.svg/960px-Douglas_Logo_06.2018.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Douglas_Logo_06.2018.svg"
+    }
   },
   {
     "id": "edeka",
@@ -243,7 +319,12 @@
     "countries": [
       "DE"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Logo_Edeka.svg/960px-Logo_Edeka.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Edeka.svg"
+    }
   },
   {
     "id": "esselunga",
@@ -252,7 +333,12 @@
     "countries": [
       "IT"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Esselunga_logo.png/960px-Esselunga_logo.png",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Esselunga_logo.png"
+    }
   },
   {
     "id": "fielmann",
@@ -265,7 +351,13 @@
       "PL",
       "IT"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Fielmann_logo%2C_2016.svg/960px-Fielmann_logo%2C_2016.svg.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fielmann_logo,_2016.svg",
+      "attribution": "Fielmann AG"
+    }
   },
   {
     "id": "galaxus",
@@ -276,7 +368,12 @@
       "DE",
       "AT"
     ],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Galaxus-logo-vector.png",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Galaxus-logo-vector.png"
+    }
   },
   {
     "id": "globus",
@@ -285,14 +382,24 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo_Globus.svg/960px-Logo_Globus.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Globus.svg"
+    }
   },
   {
     "id": "h-m",
     "name": "H&M",
     "brandColor": "#E50010",
     "countries": [],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/960px-H%26M-Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:H%26M-Logo.svg"
+    }
   },
   {
     "id": "hornbach",
@@ -309,14 +416,24 @@
       "RO",
       "LU"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Hornbach_Logo_black.svg/960px-Hornbach_Logo_black.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Hornbach_Logo_black.svg"
+    }
   },
   {
     "id": "ikea",
     "name": "IKEA Family",
     "brandColor": "#0058A3",
     "countries": [],
-    "defaultFormat": "CODE_128"
+    "defaultFormat": "CODE_128",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/960px-Ikea_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Ikea_logo.svg"
+    }
   },
   {
     "id": "interdiscount",
@@ -325,7 +442,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Logo_Interdiscount.svg/960px-Logo_Interdiscount.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Interdiscount.svg"
+    }
   },
   {
     "id": "jumbo-ch",
@@ -334,7 +456,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Jumbo_Suisse_wordmark.svg/960px-Jumbo_Suisse_wordmark.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Jumbo_Suisse_wordmark.svg"
+    }
   },
   {
     "id": "jumbo-nl",
@@ -344,7 +471,12 @@
       "NL",
       "BE"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Jumbo_Logo.svg/960px-Jumbo_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Jumbo_Logo.svg"
+    }
   },
   {
     "id": "kaufland",
@@ -359,7 +491,12 @@
       "BG",
       "HR"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Kaufland_Logo.svg/960px-Kaufland_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Kaufland_Logo.svg"
+    }
   },
   {
     "id": "kroger",
@@ -395,14 +532,24 @@
       "HR",
       "SI"
     ],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Lidl-Logo.svg/960px-Lidl-Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Lidl-Logo.svg"
+    }
   },
   {
     "id": "lush",
     "name": "Lush",
     "brandColor": "#000000",
     "countries": [],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Lush_logo.svg/960px-Lush_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Lush_logo.svg"
+    }
   },
   {
     "id": "manor",
@@ -411,7 +558,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Logo_Manor_2017.svg/960px-Logo_Manor_2017.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Manor_2017.svg"
+    }
   },
   {
     "id": "marks-and-spencer",
@@ -421,7 +573,12 @@
       "GB",
       "IE"
     ],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/M%26S_logo.svg/960px-M%26S_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:M%26S_logo.svg"
+    }
   },
   {
     "id": "mediamarkt",
@@ -441,7 +598,12 @@
       "PT",
       "LU"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Media_Markt_logo.svg/960px-Media_Markt_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Media_Markt_logo.svg"
+    }
   },
   {
     "id": "migros",
@@ -450,7 +612,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/MiGROS_Logo.svg/960px-MiGROS_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:MiGROS_Logo.svg"
+    }
   },
   {
     "id": "mueller",
@@ -465,7 +632,12 @@
       "SI",
       "ES"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_Drogerie_Mueller.svg/960px-Logo_Drogerie_Mueller.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Drogerie_Mueller.svg"
+    }
   },
   {
     "id": "nectar",
@@ -491,7 +663,12 @@
       "IT",
       "SI"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/OBI-Logo-2026.svg/960px-OBI-Logo-2026.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:OBI-Logo-2026.svg"
+    }
   },
   {
     "id": "ochsner-sport",
@@ -500,7 +677,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Ochsner_Sport_Logo_2022.svg/960px-Ochsner_Sport_Logo_2022.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Ochsner_Sport_Logo_2022.svg"
+    }
   },
   {
     "id": "payback",
@@ -512,7 +694,12 @@
       "IT",
       "PL"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Payback_Logo_2023.svg/960px-Payback_Logo_2023.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Payback_Logo_2023.svg"
+    }
   },
   {
     "id": "penny",
@@ -526,7 +713,12 @@
       "IT",
       "RO"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Penny-Logo.svg/960px-Penny-Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Penny-Logo.svg"
+    }
   },
   {
     "id": "rewe",
@@ -535,7 +727,12 @@
     "countries": [
       "DE"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/960px-Logo_REWE.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_REWE.svg"
+    }
   },
   {
     "id": "rossmann",
@@ -550,7 +747,12 @@
       "AL",
       "XK"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Logo_rossmann_2024.svg/960px-Logo_rossmann_2024.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_rossmann_2024.svg"
+    }
   },
   {
     "id": "safeway",
@@ -559,21 +761,36 @@
     "countries": [
       "US"
     ],
-    "defaultFormat": "UPC_A"
+    "defaultFormat": "UPC_A",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Safeway_Logo.svg/960px-Safeway_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Safeway_Logo.svg"
+    }
   },
   {
     "id": "sephora",
     "name": "Sephora",
     "brandColor": "#000000",
     "countries": [],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Sephora_logo.svg/960px-Sephora_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Sephora_logo.svg"
+    }
   },
   {
     "id": "shell",
     "name": "Shell GO+",
     "brandColor": "#FBCE07",
     "countries": [],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Shell_wordmark_2019.svg/960px-Shell_wordmark_2019.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Shell_wordmark_2019.svg"
+    }
   },
   {
     "id": "spar",
@@ -592,14 +809,24 @@
       "GB",
       "NO"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Spar-logo.svg/960px-Spar-logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Spar-logo.svg"
+    }
   },
   {
     "id": "starbucks",
     "name": "Starbucks Rewards",
     "brandColor": "#00704A",
     "countries": [],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Starbucks-wordmark-green.svg/960px-Starbucks-wordmark-green.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Starbucks-wordmark-green.svg"
+    }
   },
   {
     "id": "tchibo",
@@ -614,7 +841,12 @@
       "PL",
       "HU"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Tchibo_Logo_Kachel_Ohne_Schutzzone_2017.svg/960px-Tchibo_Logo_Kachel_Ohne_Schutzzone_2017.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Tchibo_Logo_Kachel_Ohne_Schutzzone_2017.svg"
+    }
   },
   {
     "id": "tesco",
@@ -627,7 +859,12 @@
       "SK",
       "HU"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Tesco_2016_logo.svg/960px-Tesco_2016_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Tesco_2016_logo.svg"
+    }
   },
   {
     "id": "ulta",
@@ -636,7 +873,12 @@
     "countries": [
       "US"
     ],
-    "defaultFormat": "CODE_128"
+    "defaultFormat": "CODE_128",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Ulta_Beauty_logo.svg/960px-Ulta_Beauty_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Ulta_Beauty_logo.svg"
+    }
   },
   {
     "id": "volg",
@@ -645,7 +887,12 @@
     "countries": [
       "CH"
     ],
-    "defaultFormat": "EAN_13"
+    "defaultFormat": "EAN_13",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Volg-Logo.svg/960px-Volg-Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Volg-Logo.svg"
+    }
   },
   {
     "id": "walgreens",
@@ -654,13 +901,23 @@
     "countries": [
       "US"
     ],
-    "defaultFormat": "CODE_128"
+    "defaultFormat": "CODE_128",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Walgreens_2005_primary_logo.svg/960px-Walgreens_2005_primary_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Walgreens_2005_primary_logo.svg"
+    }
   },
   {
     "id": "zara",
     "name": "Zara",
     "brandColor": "#000000",
     "countries": [],
-    "defaultFormat": "QR_CODE"
+    "defaultFormat": "QR_CODE",
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/960px-Zara_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Zara_Logo.svg"
+    }
   }
 ]

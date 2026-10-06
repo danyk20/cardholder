@@ -45,6 +45,7 @@ fun CardFace(
     isLocked: Boolean,
     modifier: Modifier = Modifier,
     frontImage: ImageRef? = null,
+    logo: ImageRef? = null,
     onClick: (() -> Unit)? = null,
     onLongClick: (() -> Unit)? = null,
 ) {
@@ -76,8 +77,15 @@ fun CardFace(
             verticalArrangement = Arrangement.SpaceBetween,
         ) {
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-                if (!showPhoto) {
-                    Icon(type.icon, contentDescription = null, tint = contentColor, modifier = Modifier.size(20.dp))
+                when {
+                    logo != null -> LogoBadge(model = logo, contentDescription = null)
+
+                    !showPhoto -> Icon(
+                        type.icon,
+                        contentDescription = null,
+                        tint = contentColor,
+                        modifier = Modifier.size(20.dp),
+                    )
                 }
                 Box(Modifier.weight(1f))
                 if (isLocked) LockBadge()

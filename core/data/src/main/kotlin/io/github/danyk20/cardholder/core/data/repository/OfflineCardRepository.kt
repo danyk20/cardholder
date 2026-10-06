@@ -24,6 +24,7 @@ import io.github.danyk20.cardholder.core.security.EnvelopeCipher
 import io.github.danyk20.cardholder.core.security.ProtectionLevel
 import io.github.danyk20.cardholder.core.security.secureCall
 import io.github.danyk20.cardholder.core.storage.CardImageStore
+import io.github.danyk20.cardholder.core.storage.ImageKind
 import java.time.Clock
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -90,6 +91,8 @@ internal class OfflineCardRepository @Inject constructor(
         val level = protectionFor(draft.isLocked)
         val front = apply(draft.front, existing?.frontImage?.let(::ImageRef), level)
         val back = apply(draft.back, existing?.backImage?.let(::ImageRef), level)
+        // Logos identify the shop like the card title does, so they are never auth-protected.
+        val logo = apply(draft.logo, existing?.logoImage?.let(::ImageRef), ProtectionLevel.STANDARD, ImageKind.LOGO)
         val content = draft.content
         val info = content.toInfo()
         val columns = info.toColumns()
@@ -110,6 +113,7 @@ internal class OfflineCardRepository @Inject constructor(
                 loyaltyBarcodeFormat = columns.loyaltyBarcodeFormat,
                 frontImage = front?.name,
                 backImage = back?.name,
+                logoImage = logo?.name,
                 sealedDetails = cipher.seal(content.details.encode(), level),
                 sealedCvv = content.sealedCvv(existing?.sealedCvv),
             ),
@@ -169,7 +173,7 @@ internal class OfflineCardRepository @Inject constructor(
     private suspend fun requireCard(id: CardId): CardEntity =
         dao.get(id.value) ?: throw NoSuchElementException("No card with id $id")
 
-    private fun CardEntity.imageRefs(): List<ImageRef> = listOfNotNull(frontImage, backImage).map(::ImageRef)
+    private fun CardEntity.imageRefs(): List<ImageRef> = listOfNotNull(frontImage, backImage, logoImage).map(::ImageRef)
 
     private fun protectionFor(locked: Boolean) = if (locked) ProtectionLevel.PROTECTED else ProtectionLevel.STANDARD
 
@@ -181,7 +185,12 @@ internal class OfflineCardRepository @Inject constructor(
         private val created = mutableListOf<ImageRef>()
         private val obsolete = mutableListOf<ImageRef>()
 
-        suspend fun apply(change: ImageChange, current: ImageRef?, level: ProtectionLevel): ImageRef? = when (change) {
+        suspend fun apply(
+            change: ImageChange,
+            current: ImageRef?,
+            level: ProtectionLevel,
+            kind: ImageKind = ImageKind.PHOTO,
+        ): ImageRef? = when (change) {
             ImageChange.Keep -> current?.let { reprotect(it, level) }
 
             ImageChange.Remove -> {
@@ -191,7 +200,7 @@ internal class OfflineCardRepository @Inject constructor(
 
             is ImageChange.Replace -> {
                 current?.let(obsolete::add)
-                images.store(change.source, level).also(created::add)
+                images.store(change.source, level, kind).also(created::add)
             }
         }
 

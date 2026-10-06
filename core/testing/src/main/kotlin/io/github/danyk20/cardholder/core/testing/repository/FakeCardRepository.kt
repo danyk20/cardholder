@@ -69,6 +69,7 @@ class FakeCardRepository : CardRepository {
                 front = draft.front.resolve(existing?.card?.sides?.front, "$id-front"),
                 back = draft.back.resolve(existing?.card?.sides?.back, "$id-back"),
             ),
+            logo = draft.logo.resolve(existing?.card?.logo, "$id-logo"),
             isLocked = draft.isLocked,
             hasCvv = cvv != null,
             createdAt = existing?.card?.createdAt ?: now,

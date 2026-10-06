@@ -126,6 +126,7 @@ internal class OfflineBackupRepository(
             cvv = cvv,
             frontImage = sides.front?.export(),
             backImage = sides.back?.export(),
+            logoImage = logo?.export(),
         )
     }
 
@@ -154,6 +155,7 @@ internal class OfflineBackupRepository(
             content = content,
             front = imageChange(frontImage),
             back = imageChange(backImage),
+            logo = imageChange(logoImage),
             isLocked = isLocked,
         )
     }

@@ -52,6 +52,21 @@
     <string name="editor_field_format">Code type</string>
     <string name="editor_scan_barcode">Scan code</string>
 
+    <!-- Logo -->
+    <string name="editor_logo">Logo</string>
+    <string name="editor_logo_none">No logo</string>
+    <string name="editor_logo_official">Official logo</string>
+    <string name="editor_logo_upload">Upload</string>
+    <string name="editor_logo_remove">Remove logo</string>
+    <string name="editor_logo_choice_title">Logo for %1$s</string>
+    <string name="editor_logo_choice_message">Show the official %1$s logo on this card? It is downloaded once from Wikimedia Commons and stored on your device.</string>
+    <string name="editor_logo_use_official">Use official logo</string>
+    <string name="editor_logo_upload_own">Upload my own</string>
+    <string name="editor_logo_keep_blank">Keep blank</string>
+    <string name="editor_logo_license">Licence: %1$s</string>
+    <string name="editor_logo_attribution">Licence: %1$s · by %2$s</string>
+    <string name="editor_logo_download_failed">The logo couldn\'t be downloaded. Check your connection and try again.</string>
+
     <!-- States -->
     <string name="editor_locked_title">This card is locked</string>
     <string name="editor_not_found">This card no longer exists</string>

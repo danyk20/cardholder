@@ -7,6 +7,7 @@ import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.Shop
+import io.github.danyk20.cardholder.core.model.ShopLogo
 import java.io.InputStream
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -51,6 +52,7 @@ internal class AssetShopRepository(
         val brandColor: String,
         val countries: List<String> = emptyList(),
         val defaultFormat: BarcodeFormat = BarcodeFormat.QR_CODE,
+        val logo: LogoDto? = null,
     ) {
         fun toModel() = Shop(
             id = id,
@@ -58,8 +60,17 @@ internal class AssetShopRepository(
             brandColor = OPAQUE or brandColor.removePrefix("#").toLong(HEX),
             countries = countries.mapNotNull(CountryCode::of).toSet(),
             defaultFormat = defaultFormat,
+            logo = logo?.let { ShopLogo(it.url, it.license, it.source, it.attribution) },
         )
     }
+
+    @Serializable
+    private data class LogoDto(
+        val url: String,
+        val license: String,
+        val source: String,
+        val attribution: String? = null,
+    )
 
     private companion object {
         const val CATALOGUE = "shops.json"

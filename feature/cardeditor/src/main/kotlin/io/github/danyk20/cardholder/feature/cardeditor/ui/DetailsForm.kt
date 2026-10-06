@@ -56,6 +56,7 @@ internal class DetailsActions(
     val bank: BankActions,
     val id: IdActions,
     val loyalty: LoyaltyActions,
+    val logo: LogoActions,
 )
 
 @Composable
@@ -76,8 +77,13 @@ internal fun DetailsForm(
     ) {
         when (state.type) {
             CardType.BANK -> BankFields(state.bank, state.errors, state.canProtect, actions.bank)
+
             CardType.ID -> IdFields(state.id, state.countries, state.errors, actions.id)
-            CardType.LOYALTY -> LoyaltyFields(state.loyalty, state.shops, state.errors, actions.loyalty)
+
+            CardType.LOYALTY -> {
+                LoyaltyFields(state.loyalty, state.shops, state.errors, actions.loyalty)
+                LogoRow(state.logo, state.selectedShop, state.isDownloadingLogo, actions.logo)
+            }
         }
         OutlinedTextField(
             value = state.title,
