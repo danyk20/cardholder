@@ -280,6 +280,19 @@ class CardEditorViewModelTest {
     }
 
     @Test
+    fun `phone unlock alone does not open a locked card for editing`() = runTest {
+        // The Keystore key stays usable for a while after unlocking the phone; that's not consent.
+        repository.isAuthenticated = true
+        repository.add(TestCards.idCard, TestCards.idCardDetails)
+
+        val viewModel = viewModel(TestCards.idCard.id.value)
+
+        assertEquals(LoadState.AUTHENTICATION_REQUIRED, viewModel.uiState.value.loadState)
+        assertEquals(AuthPurpose.LOAD, viewModel.uiState.value.pendingAuthentication)
+        assertEquals("", viewModel.uiState.value.id.documentNumber)
+    }
+
+    @Test
     fun `editing keeps the stored cvv unless changed`() = runTest {
         repository.add(TestCards.visa, TestCards.visaDetails, cvv = TestCards.VISA_CVV)
         val viewModel = viewModel(TestCards.visa.id.value)

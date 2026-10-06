@@ -63,6 +63,31 @@ class BarcodeViewModelTest {
     }
 
     @Test
+    fun `phone unlock alone does not show a locked card's code`() {
+        // The Keystore key stays usable for a while after unlocking the phone; that's not consent.
+        repository.isAuthenticated = true
+        val locked = TestCards.loyalty.copy(isLocked = true)
+        repository.add(locked, TestCards.loyaltyDetails)
+
+        assertEquals(BarcodeUiState.AuthenticationRequired(fromLock = true), viewModel(locked).uiState.value)
+    }
+
+    @Test
+    fun `after the app was in the background a locked code needs a new prompt`() {
+        val locked = TestCards.loyalty.copy(isLocked = true)
+        repository.add(locked, TestCards.loyaltyDetails)
+        repository.isAuthenticated = true
+        val viewModel = viewModel(locked)
+        viewModel.onAuthenticationResult(succeeded = true)
+        sessionLock.lock()
+
+        // A database change (e.g. an edit elsewhere) must not bring the code back without a prompt.
+        repository.add(locked.copy(updatedAt = locked.updatedAt.plusSeconds(1)), TestCards.loyaltyDetails)
+
+        assertEquals(BarcodeUiState.AuthenticationRequired(fromLock = true), viewModel.uiState.value)
+    }
+
+    @Test
     fun `cancelled authentication does not prompt again automatically`() {
         val locked = TestCards.loyalty.copy(isLocked = true)
         repository.add(locked, TestCards.loyaltyDetails)

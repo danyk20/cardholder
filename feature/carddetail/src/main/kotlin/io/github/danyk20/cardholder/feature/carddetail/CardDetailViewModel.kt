@@ -39,6 +39,13 @@ class CardDetailViewModel @Inject constructor(
 
     private var promptedOnOpen = false
 
+    /**
+     * Whether the user authenticated on this screen since it opened (or since the app was last in the
+     * background). Protected data is only decrypted after that: the Keystore key alone would also open
+     * it for a while after the phone was unlocked, which must not count as consent.
+     */
+    private var authenticatedHere = false
+
     init {
         viewModelScope.launch {
             cardRepository.observeCard(cardId).distinctUntilChanged().collect { card ->
@@ -60,12 +67,21 @@ class CardDetailViewModel @Inject constructor(
     fun onUnlockDetails() = _uiState.update { it.copy(pendingAuthentication = AuthAction.UNLOCK_DETAILS) }
 
     fun onRevealCvv() {
+        if (!authenticatedHere) {
+            _uiState.update { it.copy(pendingAuthentication = AuthAction.REVEAL_CVV) }
+            return
+        }
         viewModelScope.launch { revealCvv(requestAuthentication = true) }
     }
 
     fun onHideCvv() = _uiState.update { it.copy(cvv = null) }
 
     fun onLockedChange(locked: Boolean) {
+        // Removing a lock decrypts the card, so it needs the user's confirmation like viewing it.
+        if (!locked && !authenticatedHere) {
+            _uiState.update { it.copy(pendingAuthentication = AuthAction.REMOVE_LOCK) }
+            return
+        }
         viewModelScope.launch {
             when (cardRepository.setLocked(cardId, locked)) {
                 is SecureResult.Success -> Unit
@@ -81,6 +97,7 @@ class CardDetailViewModel @Inject constructor(
     fun onAuthenticationResult(action: AuthAction, succeeded: Boolean) {
         _uiState.update { it.copy(pendingAuthentication = null) }
         if (!succeeded) return
+        authenticatedHere = true
         viewModelScope.launch {
             when (action) {
                 AuthAction.UNLOCK_DETAILS -> {
@@ -114,10 +131,14 @@ class CardDetailViewModel @Inject constructor(
     }
 
     private suspend fun loadDetails(card: Card) {
-        val details = when (val result = cardRepository.readDetails(card.id)) {
-            is SecureResult.Success -> DetailsState.Loaded(result.value)
-            SecureResult.AuthenticationRequired -> DetailsState.Locked
-            SecureResult.KeyInvalidated -> DetailsState.KeyInvalidated
+        val details = if (card.isLocked && !authenticatedHere) {
+            DetailsState.Locked
+        } else {
+            when (val result = cardRepository.readDetails(card.id)) {
+                is SecureResult.Success -> DetailsState.Loaded(result.value)
+                SecureResult.AuthenticationRequired -> DetailsState.Locked
+                SecureResult.KeyInvalidated -> DetailsState.KeyInvalidated
+            }
         }
         val promptNow = details == DetailsState.Locked && !promptedOnOpen
         if (details == DetailsState.Locked) promptedOnOpen = true
@@ -141,8 +162,9 @@ class CardDetailViewModel @Inject constructor(
         }
     }
 
-    /** Drops decrypted data when the app goes to the background. */
+    /** Drops decrypted data when the app goes to the background; coming back needs a new confirmation. */
     private fun onSessionLocked() = _uiState.update { state ->
+        authenticatedHere = false
         val locked = state.summary?.card?.isLocked == true
         state.copy(cvv = null, details = if (locked) DetailsState.Locked else state.details)
     }

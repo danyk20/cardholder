@@ -39,11 +39,18 @@ class BarcodeViewModel @Inject constructor(
     /** Set once a code was shown, so a card that disappears afterwards closes the screen. */
     private var wasShown = false
 
+    /**
+     * Whether the user authenticated on this screen. A locked card's code is only decrypted after
+     * that, not merely because the Keystore key is still usable after the phone was unlocked.
+     */
+    private var authenticatedHere = false
+
     init {
         observeCard()
         viewModelScope.launch {
             sessionLockEvents.events.collect {
                 // A locked card's code must not stay visible after the app was in the background.
+                authenticatedHere = false
                 if ((_uiState.value as? BarcodeUiState.Ready)?.isLocked == true) {
                     _uiState.value = BarcodeUiState.AuthenticationRequired(fromLock = true)
                 }
@@ -53,6 +60,7 @@ class BarcodeViewModel @Inject constructor(
 
     fun onAuthenticationResult(succeeded: Boolean) {
         if (succeeded) {
+            authenticatedHere = true
             observeCard()
         } else {
             _uiState.value = BarcodeUiState.AuthenticationRequired(fromLock = false)
@@ -74,6 +82,10 @@ class BarcodeViewModel @Inject constructor(
         val info = card?.info as? CardInfo.Loyalty
         if (card == null || info == null) {
             _uiState.value = if (wasShown) BarcodeUiState.Removed else BarcodeUiState.NotFound
+            return
+        }
+        if (card.isLocked && !authenticatedHere) {
+            _uiState.value = BarcodeUiState.AuthenticationRequired(fromLock = true)
             return
         }
         _uiState.value = when (val details = cardRepository.readDetails(cardId)) {

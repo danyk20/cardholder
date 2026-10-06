@@ -70,6 +70,12 @@ class CardEditorViewModel @Inject constructor(
 
     private var original: Card? = null
 
+    /**
+     * Whether the user authenticated in the editor. A locked card is only decrypted for editing after
+     * that, not merely because the Keystore key is still usable after the phone was unlocked.
+     */
+    private var authenticatedHere = false
+
     init {
         viewModelScope.launch {
             val shops = catalogues.shops.shops()
@@ -233,6 +239,7 @@ class CardEditorViewModel @Inject constructor(
     fun onAuthenticationResult(purpose: AuthPurpose, succeeded: Boolean) {
         _uiState.update { it.copy(pendingAuthentication = null) }
         if (!succeeded) return
+        authenticatedHere = true
         when (purpose) {
             AuthPurpose.LOAD -> editingId?.let { viewModelScope.launch { load(it) } }
             AuthPurpose.SAVE -> onSave()
@@ -247,6 +254,12 @@ class CardEditorViewModel @Inject constructor(
         val card = cardRepository.observeCard(id).first()
         if (card == null) {
             _uiState.update { it.copy(loadState = LoadState.NOT_FOUND) }
+            return
+        }
+        if (card.isLocked && !authenticatedHere) {
+            _uiState.update {
+                it.copy(loadState = LoadState.AUTHENTICATION_REQUIRED, pendingAuthentication = AuthPurpose.LOAD)
+            }
             return
         }
         when (val details = cardRepository.readDetails(id)) {
