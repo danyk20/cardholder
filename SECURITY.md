@@ -16,6 +16,7 @@ Do not open a public issue. You can expect an initial response within 7 days.
 | Decrypted photos lingering in caches | Image loader disk cache disabled; memory cache cleared when the app goes to the background; temporary scanner output deleted after encryption. |
 | Malicious backup files | Authenticated encryption (AES-GCM over header and content), zip path-traversal and size guards. |
 | Cloud/ADB backups leaking data | Android backup and device transfer are disabled; the only export path is a password-encrypted backup file (AES-256-GCM, PBKDF2-HMAC-SHA256). |
+| Card data read over NFC | Read-only EMV commands, reader mode only while the read dialog is open, data kept in memory and put straight into the (FLAG_SECURE) form. |
 | Clipboard sniffing | Copied values are marked sensitive and cleared automatically. |
 | Network exfiltration | The only network code downloads a shop logo on explicit request: HTTPS only (cleartext disabled), restricted to the Wikimedia media hosts, no redirects, image content type and 2 MB size limit. No card data is ever sent. |
 

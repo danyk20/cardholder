@@ -8,6 +8,8 @@ All notable changes to this project are documented here. The format follows
 - Shop logos: when a catalogue shop is selected, choose its official logo (freely licensed, downloaded from
   Wikimedia Commons on request), upload your own, or keep the card plain. Logos are shown on the card.
 - Database version 2 (logo column) with an automatic, tested migration.
+- Read bank cards over NFC: number, expiry and (when the card provides it) holder name are filled in
+  automatically. The CVV is never stored on the chip and still has to be typed.
 
 ### Changed
 - The app requests the `INTERNET` permission, used only for the logo download (HTTPS, Wikimedia hosts only).

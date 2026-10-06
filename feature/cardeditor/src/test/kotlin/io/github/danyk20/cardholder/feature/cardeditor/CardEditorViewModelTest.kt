@@ -198,6 +198,24 @@ class CardEditorViewModelTest {
     }
 
     @Test
+    fun `nfc read prefills number, expiry and holder but not the cvv`() {
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.BANK)
+        viewModel.onHolderChange("Typed Name")
+        viewModel.onSave()
+
+        viewModel.onBankCardRead("4111111111111111", YearMonth.of(2030, 4), holder = null)
+
+        val bank = viewModel.uiState.value.bank
+        assertEquals("4111111111111111", bank.number)
+        assertEquals("0430", bank.expiry)
+        assertEquals("Typed Name", bank.holder, "a missing chip name keeps what the user typed")
+        assertEquals("", bank.cvv)
+        assertNull(viewModel.uiState.value.errors[CardField.NUMBER])
+        assertNull(viewModel.uiState.value.errors[CardField.EXPIRY])
+    }
+
+    @Test
     fun `locking requires a secure device`() {
         deviceSecurity.isSecure = false
         val viewModel = viewModel()

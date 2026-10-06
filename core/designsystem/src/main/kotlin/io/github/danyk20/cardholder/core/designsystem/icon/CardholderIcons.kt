@@ -7,6 +7,7 @@ import androidx.compose.material.icons.rounded.Badge
 import androidx.compose.material.icons.rounded.CameraAlt
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Close
+import androidx.compose.material.icons.rounded.Contactless
 import androidx.compose.material.icons.rounded.ContentCopy
 import androidx.compose.material.icons.rounded.CreditCard
 import androidx.compose.material.icons.rounded.Delete
@@ -49,6 +50,7 @@ object CardholderIcons {
     val Lock: ImageVector = Icons.Rounded.Lock
     val LoyaltyCard: ImageVector = Icons.Rounded.Loyalty
     val More: ImageVector = Icons.Rounded.MoreVert
+    val Nfc: ImageVector = Icons.Rounded.Contactless
     val Photo: ImageVector = Icons.Rounded.Photo
     val ScanBarcode: ImageVector = Icons.Rounded.QrCodeScanner
     val Search: ImageVector = Icons.Rounded.Search

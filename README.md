@@ -15,7 +15,7 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 
 ## Features
 - **Three card types**
-  - **Bank card**: number (network detection, Luhn check), expiry, card holder and CVV. The CVV is **always hidden** and only shown after fingerprint, face or device PIN.
+  - **Bank card**: number (network detection, Luhn check), expiry, card holder and CVV. **Tap the card on the phone (NFC)** to fill in number, expiry and, if the card provides it, the holder. The CVV is **always hidden** and only shown after fingerprint, face or device PIN.
   - **ID card**: issuing country (searchable, with flags), optional document number and expiry.
   - **Loyalty card**: shop from a catalogue of 55 shops or a custom name, plus its barcode/QR code, which is shown **right on the card in the list**. Tapping the card shows the code **full-screen at maximum brightness** for the till scanner. 13 symbologies are supported, including EAN, UPC, Code 128/39/93, ITF, Codabar, QR, Aztec, Data Matrix and PDF417.
   - **Shop logos**: pick the official logo (freely licensed, downloaded on request), upload your own, or keep the card plain.

@@ -58,6 +58,8 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 internal class BankActions(
+    /** `null` when the device has no NFC. */
+    val onReadWithNfc: (() -> Unit)?,
     val onNumberChange: (String) -> Unit,
     val onExpiryChange: (String) -> Unit,
     val onHolderChange: (String) -> Unit,
@@ -88,6 +90,12 @@ internal fun BankFields(
     actions: BankActions,
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        actions.onReadWithNfc?.let { onRead ->
+            FilledTonalButton(onClick = onRead) {
+                Icon(CardholderIcons.Nfc, contentDescription = null, Modifier.size(18.dp))
+                Text(stringResource(R.string.editor_read_nfc), Modifier.padding(start = 8.dp))
+            }
+        }
         OutlinedTextField(
             value = form.number,
             onValueChange = actions.onNumberChange,

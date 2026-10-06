@@ -46,6 +46,8 @@ import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.scanning.BarcodeScanner
+import io.github.danyk20.cardholder.core.scanning.nfc.NfcCardReadDialog
+import io.github.danyk20.cardholder.core.scanning.nfc.isNfcAvailable
 import io.github.danyk20.cardholder.core.scanning.rememberCardSideScanner
 import io.github.danyk20.cardholder.core.ui.AuthenticationResult
 import io.github.danyk20.cardholder.core.ui.R as UiR
@@ -93,6 +95,8 @@ fun CardEditorRoute(
 
     var pendingSide by rememberSaveable { mutableStateOf(CardSide.FRONT) }
     var showBarcodeScanner by rememberSaveable { mutableStateOf(false) }
+    var showNfcReader by rememberSaveable { mutableStateOf(false) }
+    val nfcAvailable = remember(context) { isNfcAvailable(context) }
     val photoPicker = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         uri?.let { viewModel.onSideImagePicked(pendingSide, it.toString()) }
     }
@@ -133,6 +137,7 @@ fun CardEditorRoute(
                 context.startActivity(Intent(Settings.ACTION_SECURITY_SETTINGS))
             },
             bank = BankActions(
+                onReadWithNfc = if (nfcAvailable) ({ showNfcReader = true }) else null,
                 onNumberChange = viewModel::onNumberChange,
                 onExpiryChange = viewModel::onExpiryChange,
                 onHolderChange = viewModel::onHolderChange,
@@ -155,6 +160,15 @@ fun CardEditorRoute(
         )
     }
 
+    if (showNfcReader) {
+        NfcCardReadDialog(
+            onCardRead = { data ->
+                viewModel.onBankCardRead(data.number, data.expiry, data.holder)
+                showNfcReader = false
+            },
+            onDismiss = { showNfcReader = false },
+        )
+    }
     state.logoChoiceFor?.let { shop -> LogoChoiceDialog(shop, logoActions) }
     val logoError = stringResource(R.string.editor_logo_download_failed)
     LaunchedEffect(state.logoDownloadFailed) {
