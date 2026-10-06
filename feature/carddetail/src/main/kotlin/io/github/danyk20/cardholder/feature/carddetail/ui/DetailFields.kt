@@ -35,6 +35,7 @@ internal fun DetailFields(card: Card, subtitle: String, details: CardDetails, cv
         when (details) {
             is CardDetails.Bank -> {
                 val network = (card.info as? CardInfo.Bank)?.network
+                (card.info as? CardInfo.Bank)?.issuer?.let { Field(R.string.field_bank, it.name, monospace = false) }
                 CopyableField(
                     R.string.field_number,
                     formatCardNumber(details.number),

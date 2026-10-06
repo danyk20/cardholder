@@ -118,6 +118,8 @@ internal class OfflineCardRepository @Inject constructor(
                 createdAt = existing?.createdAt ?: now,
                 updatedAt = now,
                 bankNetwork = columns.bankNetwork,
+                bankId = columns.bankId,
+                bankName = columns.bankName,
                 idCountry = columns.idCountry,
                 loyaltyShopId = columns.loyaltyShopId,
                 loyaltyShopName = columns.loyaltyShopName,
@@ -178,7 +180,7 @@ internal class OfflineCardRepository @Inject constructor(
     }
 
     private fun CardContent.toInfo(): CardInfo = when (this) {
-        is CardContent.Bank -> CardInfo.Bank(CardNetwork.detect(details.number))
+        is CardContent.Bank -> CardInfo.Bank(CardNetwork.detect(details.number), issuer)
         is CardContent.Id -> CardInfo.Id(country)
         is CardContent.Loyalty -> CardInfo.Loyalty(shop, format)
     }

@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.core.testing.data
 
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardDetails
@@ -9,7 +10,6 @@ import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.model.CardSides
 import io.github.danyk20.cardholder.core.model.CountryCode
-import io.github.danyk20.cardholder.core.model.ShopRef
 import java.time.Instant
 import java.time.YearMonth
 
@@ -48,7 +48,7 @@ object TestCards {
         id = CardId("loyalty-1"),
         title = "Coffee club",
         color = CardColor.BROWN,
-        info = CardInfo.Loyalty(ShopRef.Custom("Corner Coffee"), BarcodeFormat.EAN_13),
+        info = CardInfo.Loyalty(BrandRef.Custom("Corner Coffee"), BarcodeFormat.EAN_13),
         sides = CardSides.None,
         isLocked = false,
         hasCvv = false,

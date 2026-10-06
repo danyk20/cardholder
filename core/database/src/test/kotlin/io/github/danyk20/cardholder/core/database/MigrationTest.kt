@@ -61,6 +61,27 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun `migrating 3 to 4 adds an empty issuing bank`() {
+        helper.createDatabase(DB, 3).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO cards (id, type, title, color, is_locked, created_at, updated_at, bank_network, sealed_details)
+                VALUES ('1', 'BANK', 'Visa', 'NAVY', 0, 1, 2, 'VISA', X'010203')
+                """.trimIndent(),
+            )
+        }
+
+        helper.runMigrationsAndValidate(DB, 4, true).use { db ->
+            db.query("SELECT bank_network, bank_id, bank_name FROM cards WHERE id = '1'").use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals("VISA", cursor.getString(0))
+                assertNull(cursor.getString(1))
+                assertNull(cursor.getString(2))
+            }
+        }
+    }
+
     private companion object {
         const val DB = "migration-test.db"
     }

@@ -31,7 +31,11 @@ data class Card(
 sealed interface CardInfo {
     val type: CardType
 
-    data class Bank(val network: CardNetwork) : CardInfo {
+    data class Bank(
+        val network: CardNetwork,
+        /** The issuing bank, if the user chose one. */
+        val issuer: BrandRef? = null,
+    ) : CardInfo {
         override val type = CardType.BANK
     }
 
@@ -39,7 +43,7 @@ sealed interface CardInfo {
         override val type = CardType.ID
     }
 
-    data class Loyalty(val shop: ShopRef, val format: BarcodeFormat) : CardInfo {
+    data class Loyalty(val shop: BrandRef, val format: BarcodeFormat) : CardInfo {
         override val type = CardType.LOYALTY
     }
 }

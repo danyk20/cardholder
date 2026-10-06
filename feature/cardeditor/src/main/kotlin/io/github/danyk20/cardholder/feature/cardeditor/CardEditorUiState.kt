@@ -3,7 +3,10 @@ package io.github.danyk20.cardholder.feature.cardeditor
 import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
+import io.github.danyk20.cardholder.core.model.Bank
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandLogo
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardNetwork
@@ -11,7 +14,6 @@ import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.ImageRef
 import io.github.danyk20.cardholder.core.model.Shop
-import io.github.danyk20.cardholder.core.model.ShopRef
 import java.time.LocalDate
 
 enum class EditorStep {
@@ -47,7 +49,10 @@ sealed interface SideImage {
     data class New(val uri: String) : SideImage
 }
 
-/** The logo shown on a loyalty card. */
+/** An official logo the user can choose for the card of [brandName]. */
+data class LogoChoice(val brandName: String, val logo: BrandLogo)
+
+/** The logo shown on a loyalty or bank card. */
 sealed interface LogoImage {
     data object None : LogoImage
 
@@ -69,6 +74,8 @@ data class BankForm(
     val cvv: String = "",
     val hasStoredCvv: Boolean = false,
     val removeStoredCvv: Boolean = false,
+    /** The issuing bank, from the catalogue or typed by the user. */
+    val issuer: BrandRef? = null,
 ) {
     val network: CardNetwork get() = CardNetwork.detect(number)
 
@@ -78,7 +85,7 @@ data class BankForm(
 data class IdForm(val country: Country? = null, val documentNumber: String = "", val expiry: LocalDate? = null)
 
 data class LoyaltyForm(
-    val shop: ShopRef? = null,
+    val shop: BrandRef? = null,
     val code: String = "",
     val format: BarcodeFormat = BarcodeFormat.QR_CODE,
 )
@@ -94,7 +101,7 @@ data class CardEditorUiState(
     val back: SideImage = SideImage.None,
     val logo: LogoImage = LogoImage.None,
     /** A shop with an official logo was just selected: ask whether to use it, upload one or keep none. */
-    val logoChoiceFor: Shop? = null,
+    val logoChoiceFor: LogoChoice? = null,
     val isDownloadingLogo: Boolean = false,
     val logoDownloadFailed: Boolean = false,
     val bank: BankForm = BankForm(),
@@ -109,19 +116,34 @@ data class CardEditorUiState(
     val savedCardId: CardId? = null,
     val showKeyInvalidatedError: Boolean = false,
     val shops: List<Shop> = emptyList(),
+    val banks: List<Bank> = emptyList(),
     val countries: List<Country> = emptyList(),
 ) {
     val isEditing: Boolean get() = editingId != null
 
     /** The catalogue shop of a loyalty card, if one is selected. */
     val selectedShop: Shop?
-        get() = (loyalty.shop as? ShopRef.Known)?.let { known -> shops.firstOrNull { it.id == known.id } }
+        get() = (loyalty.shop as? BrandRef.Known)?.let { known -> shops.firstOrNull { it.id == known.id } }
+
+    /** The catalogue bank of a bank card, if one is selected. */
+    val selectedBank: Bank?
+        get() = (bank.issuer as? BrandRef.Known)?.let { known -> banks.firstOrNull { it.id == known.id } }
+
+    /** Official logo of the selected shop or bank, if it has one. */
+    val officialLogo: LogoChoice?
+        get() = when (type) {
+            CardType.LOYALTY -> selectedShop?.let { shop -> shop.logo?.let { LogoChoice(shop.name, it) } }
+            CardType.BANK -> selectedBank?.let { bank -> bank.logo?.let { LogoChoice(bank.name, it) } }
+            CardType.ID -> null
+        }
 
     /** Suggested title used when the user leaves the title empty. */
     val defaultTitle: String
         get() = when (type) {
-            CardType.BANK -> bank.number.takeLast(LAST_DIGITS).let { last ->
-                if (last.length == LAST_DIGITS) "${bank.network.displayName} •••• $last" else bank.network.displayName
+            CardType.BANK -> {
+                val name = bank.issuer?.name ?: bank.network.displayName
+                val last = bank.number.takeLast(LAST_DIGITS)
+                if (last.length == LAST_DIGITS) "$name •••• $last" else name
             }
 
             CardType.ID -> id.country?.name.orEmpty()

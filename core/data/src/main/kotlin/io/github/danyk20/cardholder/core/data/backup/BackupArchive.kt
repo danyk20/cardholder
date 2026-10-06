@@ -28,6 +28,8 @@ internal data class BackupCard(
     val shopId: String? = null,
     val shopName: String? = null,
     val barcodeFormat: String? = null,
+    val bankId: String? = null,
+    val bankName: String? = null,
     val details: CardDetailsDto,
     val cvv: String? = null,
     val frontImage: String? = null,

@@ -137,6 +137,8 @@ fun CardEditorRoute(
                 context.startActivity(Intent(Settings.ACTION_SECURITY_SETTINGS))
             },
             bank = BankActions(
+                onBankSelected = viewModel::onBankSelected,
+                onCustomBank = viewModel::onCustomBank,
                 onReadWithNfc = if (nfcAvailable) ({ showNfcReader = true }) else null,
                 onNumberChange = viewModel::onNumberChange,
                 onExpiryChange = viewModel::onExpiryChange,
@@ -169,7 +171,7 @@ fun CardEditorRoute(
             onDismiss = { showNfcReader = false },
         )
     }
-    state.logoChoiceFor?.let { shop -> LogoChoiceDialog(shop, logoActions) }
+    state.logoChoiceFor?.let { choice -> LogoChoiceDialog(choice, logoActions) }
     val logoError = stringResource(R.string.editor_logo_download_failed)
     LaunchedEffect(state.logoDownloadFailed) {
         if (state.logoDownloadFailed) {

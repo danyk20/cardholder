@@ -27,6 +27,9 @@
 
     <!-- Bank -->
     <string name="editor_read_nfc">Read card with NFC</string>
+    <string name="editor_field_bank">Bank (optional)</string>
+    <string name="editor_choose_bank">Choose bank</string>
+    <string name="editor_search_bank">Search banks</string>
     <string name="editor_field_number">Card number</string>
     <string name="editor_field_expiry">Expiry (MM/YY)</string>
     <string name="editor_field_holder">Card holder</string>
