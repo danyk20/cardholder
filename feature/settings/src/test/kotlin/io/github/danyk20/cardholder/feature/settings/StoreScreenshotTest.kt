@@ -30,6 +30,7 @@ class StoreScreenshotTest {
                     onThemeModeChange = {},
                     onDynamicColorChange = {},
                     onScreenshotsAllowedChange = {},
+                    onEraseAllData = {},
                     onExport = {},
                     onImport = {},
                     onResultShown = {},

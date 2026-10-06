@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
+import io.github.danyk20.cardholder.core.domain.repository.AppDataRepository
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.security.ScreenCapturePolicy
@@ -24,6 +25,7 @@ class SettingsViewModel @Inject constructor(
     private val preferencesRepository: UserPreferencesRepository,
     private val backupRepository: BackupRepository,
     private val screenCapturePolicy: ScreenCapturePolicy,
+    private val appDataRepository: AppDataRepository,
 ) : ViewModel() {
     private val backup = MutableStateFlow(BackupUiState())
 
@@ -46,6 +48,9 @@ class SettingsViewModel @Inject constructor(
             backup.value = BackupUiState(result = BackupResult.Failed(it))
         }) { preferencesRepository.setDynamicColor(enabled) }
     }
+
+    /** Permanently erases everything; the system closes the app afterwards. */
+    fun onEraseAllData() = appDataRepository.eraseAllData()
 
     /** Allows screenshots of card data until the app leaves the screen. */
     fun onScreenshotsAllowedChange(allowed: Boolean) = screenCapturePolicy.setAllowed(allowed)

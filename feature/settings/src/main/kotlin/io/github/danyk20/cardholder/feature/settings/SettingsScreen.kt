@@ -2,6 +2,7 @@ package io.github.danyk20.cardholder.feature.settings
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -29,6 +30,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -43,6 +45,7 @@ import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.ui.AuthenticationResult
+import io.github.danyk20.cardholder.core.ui.EraseAllDataDialog
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.rememberAuthenticator
 import java.time.LocalDate
@@ -86,6 +89,7 @@ fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMod
         onThemeModeChange = viewModel::onThemeModeChange,
         onDynamicColorChange = viewModel::onDynamicColorChange,
         onScreenshotsAllowedChange = viewModel::onScreenshotsAllowedChange,
+        onEraseAllData = viewModel::onEraseAllData,
         onExport = { passwordPurpose = PasswordPurpose.EXPORT },
         onImport = { openDocument.launch(arrayOf("*/*")) },
         onResultShown = viewModel::onResultShown,
@@ -121,6 +125,7 @@ internal fun SettingsScreen(
     onThemeModeChange: (ThemeMode) -> Unit,
     onDynamicColorChange: (Boolean) -> Unit,
     onScreenshotsAllowedChange: (Boolean) -> Unit,
+    onEraseAllData: () -> Unit,
     onExport: () -> Unit,
     onImport: () -> Unit,
     onResultShown: () -> Unit,
@@ -194,6 +199,17 @@ internal fun SettingsScreen(
                 enabled = running == null,
                 onClick = onImport,
             )
+            var confirmErase by rememberSaveable { mutableStateOf(false) }
+            ListItem(
+                headlineContent = {
+                    Text(stringResource(UiR.string.erase_all_data), color = MaterialTheme.colorScheme.error)
+                },
+                supportingContent = { Text(stringResource(R.string.settings_erase_description)) },
+                modifier = Modifier.clickable(enabled = running == null, role = Role.Button) { confirmErase = true },
+            )
+            if (confirmErase) {
+                EraseAllDataDialog(onConfirm = onEraseAllData, onDismiss = { confirmErase = false })
+            }
             HorizontalDivider()
 
             SectionHeader(stringResource(R.string.settings_about))

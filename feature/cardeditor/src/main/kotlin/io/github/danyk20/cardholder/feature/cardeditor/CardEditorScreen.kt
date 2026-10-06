@@ -201,6 +201,11 @@ fun CardEditorRoute(
         onSave = viewModel::onSave,
         onUnlock = viewModel::onRetryAuthentication,
         onErrorShown = viewModel::onErrorShown,
+        onKeepEditing = viewModel::onKeepEditing,
+        onDiscard = {
+            viewModel.onKeepEditing()
+            onClose()
+        },
     )
 }
 
@@ -216,6 +221,8 @@ internal fun CardEditorScreen(
     onSave: () -> Unit,
     onUnlock: () -> Unit,
     onErrorShown: () -> Unit,
+    onKeepEditing: () -> Unit,
+    onDiscard: () -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -271,6 +278,18 @@ internal fun CardEditorScreen(
                 EditorStep.DETAILS -> DetailsForm(state, sideActions, detailsActions, padding)
             }
         }
+    }
+    if (state.confirmDiscard) {
+        AlertDialog(
+            onDismissRequest = onKeepEditing,
+            title = { Text(stringResource(R.string.editor_discard_title)) },
+            text = { Text(stringResource(R.string.editor_discard_message)) },
+            confirmButton = { TextButton(onClick = onDiscard) { Text(stringResource(R.string.editor_discard)) } },
+            dismissButton = {
+                TextButton(onClick = onKeepEditing) { Text(stringResource(R.string.editor_keep_editing)) }
+            },
+            properties = secureDialogProperties(),
+        )
     }
     state.error?.let { error ->
         AlertDialog(

@@ -70,6 +70,12 @@
     <string name="editor_logo_attribution">Licence: %1$s · by %2$s</string>
     <string name="editor_logo_download_failed">The logo couldn\'t be downloaded. Check your connection and try again.</string>
 
+    <!-- Leaving with unsaved changes -->
+    <string name="editor_discard_title">Discard changes?</string>
+    <string name="editor_discard_message">Your changes to this card won\'t be saved.</string>
+    <string name="editor_discard">Discard</string>
+    <string name="editor_keep_editing">Keep editing</string>
+
     <!-- States -->
     <string name="editor_locked_title">This card is locked</string>
     <string name="editor_not_found">This card no longer exists</string>

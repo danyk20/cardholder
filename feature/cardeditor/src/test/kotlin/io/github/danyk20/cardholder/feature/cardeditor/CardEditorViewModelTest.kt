@@ -77,6 +77,39 @@ class CardEditorViewModelTest {
     }
 
     @Test
+    fun `leaving a new card with entered data asks before discarding it`() {
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.LOYALTY)
+        viewModel.onSidesDone()
+        viewModel.onCodeChange("4006381333931")
+
+        assertTrue(viewModel.onBack()) // details -> sides
+        assertTrue(viewModel.onBack()) // sides -> type
+        assertTrue(viewModel.onBack()) // would close: asks instead
+        assertTrue(viewModel.uiState.value.confirmDiscard)
+
+        viewModel.onKeepEditing()
+        assertFalse(viewModel.uiState.value.confirmDiscard)
+        assertEquals("4006381333931", viewModel.uiState.value.loyalty.code)
+    }
+
+    @Test
+    fun `editing asks before discarding changes but not when nothing changed`() = runTest {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+        val viewModel = viewModel(TestCards.loyalty.id.value)
+
+        assertFalse(viewModel.onBack())
+
+        viewModel.onTitleChange("Renamed")
+        assertTrue(viewModel.onBack())
+        assertTrue(viewModel.uiState.value.confirmDiscard)
+
+        viewModel.onKeepEditing()
+        viewModel.onTitleChange(TestCards.loyalty.title)
+        assertFalse(viewModel.onBack())
+    }
+
+    @Test
     fun `saves a bank card with cvv and a default title`() = runTest {
         val viewModel = viewModel()
         viewModel.onTypeSelected(CardType.BANK)

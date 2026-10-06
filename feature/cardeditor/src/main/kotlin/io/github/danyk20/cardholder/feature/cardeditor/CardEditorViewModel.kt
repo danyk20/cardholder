@@ -69,6 +69,9 @@ class CardEditorViewModel @Inject constructor(
 
     private var original: Card? = null
 
+    /** The content as loaded for editing; `null` for a new card. */
+    private var savedContent: EditorContent? = null
+
     /**
      * Whether the user authenticated in the editor. A locked card is only decrypted for editing after
      * that, not merely because the Keystore key is still usable after the phone was unlocked.
@@ -91,12 +94,28 @@ class CardEditorViewModel @Inject constructor(
 
     fun onSidesDone() = _uiState.update { it.copy(step = EditorStep.DETAILS) }
 
-    /** Returns `false` when there is no previous step and the screen should close. */
+    /**
+     * Returns `false` when the screen should close: there is no previous step and nothing would be
+     * lost. With unsaved changes the user is asked first ([CardEditorUiState.confirmDiscard]).
+     */
     fun onBack(): Boolean {
         val state = _uiState.value
-        if (state.isEditing || state.step == EditorStep.TYPE) return false
-        _uiState.update { it.copy(step = EditorStep.entries[state.step.ordinal - 1]) }
+        if (!state.isEditing && state.step != EditorStep.TYPE) {
+            _uiState.update { it.copy(step = EditorStep.entries[state.step.ordinal - 1]) }
+            return true
+        }
+        if (!hasUnsavedChanges(state)) return false
+        _uiState.update { it.copy(confirmDiscard = true) }
         return true
+    }
+
+    fun onKeepEditing() = _uiState.update { it.copy(confirmDiscard = false) }
+
+    private fun hasUnsavedChanges(state: CardEditorUiState): Boolean {
+        if (state.loadState != LoadState.READY) return false
+        // Picking only a type for a new card doesn't count as an edit.
+        val baseline = savedContent ?: CardEditorUiState().content.copy(type = state.type)
+        return state.content != baseline
     }
 
     fun onSideImagePicked(side: CardSide, uri: String) {
@@ -270,6 +289,7 @@ class CardEditorViewModel @Inject constructor(
             is SecureResult.Success -> {
                 original = card
                 _uiState.update { it.populatedFrom(card, details.value) }
+                savedContent = _uiState.value.content
             }
 
             SecureResult.AuthenticationRequired -> _uiState.update {

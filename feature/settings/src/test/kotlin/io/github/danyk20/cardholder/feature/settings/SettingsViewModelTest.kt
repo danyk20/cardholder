@@ -5,6 +5,7 @@ import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
+import io.github.danyk20.cardholder.core.testing.repository.FakeAppDataRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeScreenCapturePolicy
 import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
 import kotlin.test.assertEquals
@@ -26,7 +27,8 @@ class SettingsViewModelTest {
     private val preferences = FakeUserPreferencesRepository()
     private val backups = RecordingBackupRepository()
     private val screenCapture = FakeScreenCapturePolicy()
-    private val viewModel by lazy { SettingsViewModel(preferences, backups, screenCapture) }
+    private val appData = FakeAppDataRepository()
+    private val viewModel by lazy { SettingsViewModel(preferences, backups, screenCapture, appData) }
 
     private fun TestScope.observeState() {
         backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) { viewModel.uiState.collect() }
@@ -61,6 +63,13 @@ class SettingsViewModelTest {
         // Revoked elsewhere, e.g. when the app leaves the screen.
         screenCapture.setAllowed(false)
         assertFalse(viewModel.uiState.value.screenshotsAllowed)
+    }
+
+    @Test
+    fun `erases all data on request`() {
+        viewModel.onEraseAllData()
+
+        assertTrue(appData.erased)
     }
 
     @Test
