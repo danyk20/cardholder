@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.core.testing.repository
 
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
+import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,4 +13,6 @@ class FakeUserPreferencesRepository : UserPreferencesRepository {
     override suspend fun setThemeMode(mode: ThemeMode) = preferences.update { it.copy(themeMode = mode) }
 
     override suspend fun setDynamicColor(enabled: Boolean) = preferences.update { it.copy(useDynamicColor = enabled) }
+
+    override suspend fun setCardSort(sort: CardSort) = preferences.update { it.copy(cardSort = sort) }
 }

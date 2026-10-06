@@ -6,28 +6,37 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.danyk20.cardholder.core.domain.model.getOrNull
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
+import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.usecase.ObserveCardsUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
+import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
+import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.ui.CardSummary
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
 import javax.inject.Inject
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class CardListViewModel @Inject constructor(
     private val observeCards: ObserveCardsUseCase,
     private val cardRepository: CardRepository,
     private val summaryFactory: CardSummaryFactory,
+    private val preferencesRepository: UserPreferencesRepository,
     private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
     private val query = savedStateHandle.getStateFlow(KEY_QUERY, "")
@@ -35,18 +44,70 @@ class CardListViewModel @Inject constructor(
     /** Card types currently shown; all of them by default. */
     private val visibleTypes = savedStateHandle.getStateFlow(KEY_VISIBLE_TYPES, ArrayList(CardType.entries))
 
-    val uiState: StateFlow<CardListUiState> = combine(query, visibleTypes) { query, types -> query to types.toSet() }
-        .flatMapLatest { (query, types) ->
+    private val sort = preferencesRepository.preferences.map { it.cardSort }.distinctUntilChanged()
+
+    /** The working order while the user rearranges cards; `null` when not reordering. */
+    private val reorderDraft = MutableStateFlow<List<CardSummary>?>(null)
+
+    private val cards = combine(query, visibleTypes, sort) { query, types, sort -> Triple(query, types.toSet(), sort) }
+        .flatMapLatest { (query, types, sort) ->
             combine(
-                observeCards(query, types).mapLatest { cards ->
+                observeCards(query, types, sort).mapLatest { cards ->
                     summaryFactory.summarize(cards).map { CardListItem(it, loyaltyCode(it.card)) }
                 },
                 observeCards().map { it.isNotEmpty() },
             ) { cards, hasAnyCards ->
-                CardListUiState.Success(cards = cards, query = query, visibleTypes = types, hasAnyCards = hasAnyCards)
+                CardListUiState.Success(
+                    cards = cards,
+                    query = query,
+                    visibleTypes = types,
+                    hasAnyCards = hasAnyCards,
+                    sort = sort,
+                )
             }
         }
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), CardListUiState.Loading)
+
+    val uiState: StateFlow<CardListUiState> = combine(cards, reorderDraft) { state, draft ->
+        state.copy(reordering = draft)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), CardListUiState.Loading)
+
+    fun onSortChange(sort: CardSort) {
+        viewModelScope.launch { preferencesRepository.setCardSort(sort) }
+    }
+
+    /** Switches to the custom order and lets the user rearrange all cards (filters and search don't apply). */
+    fun onStartReorder() {
+        viewModelScope.launch {
+            preferencesRepository.setCardSort(CardSort.CUSTOM)
+            reorderDraft.value = summaryFactory.summarize(observeCards(sort = CardSort.CUSTOM).first())
+        }
+    }
+
+    fun onMove(from: Int, to: Int) = reorderDraft.update { draft ->
+        if (draft == null || from !in draft.indices || to !in draft.indices) {
+            draft
+        } else {
+            draft.toMutableList().apply { add(to, removeAt(from)) }
+        }
+    }
+
+    /** Accessible alternative to dragging: moves one card up ([offset] -1) or down (+1). */
+    fun onMoveBy(id: CardId, offset: Int) {
+        val index = reorderDraft.value?.indexOfFirst { it.card.id == id } ?: return
+        onMove(index, index + offset)
+    }
+
+    fun onReorderDone() {
+        val draft = reorderDraft.value ?: return
+        viewModelScope.launch {
+            cardRepository.reorder(draft.map { it.card.id })
+            reorderDraft.value = null
+        }
+    }
+
+    fun onReorderCancel() {
+        reorderDraft.value = null
+    }
 
     /**
      * The code of an unlocked loyalty card, shown directly on its face so it can be scanned from the
@@ -91,5 +152,8 @@ sealed interface CardListUiState {
         val query: String,
         val visibleTypes: Set<CardType>,
         val hasAnyCards: Boolean,
+        val sort: CardSort = CardSort.NAME,
+        /** Cards in their working order while the user rearranges them; `null` otherwise. */
+        val reordering: List<CardSummary>? = null,
     ) : CardListUiState
 }

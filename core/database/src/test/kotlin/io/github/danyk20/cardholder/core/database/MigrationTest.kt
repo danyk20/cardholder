@@ -41,6 +41,26 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun `migrating 2 to 3 gives existing cards position 0`() {
+        helper.createDatabase(DB, 2).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO cards (id, type, title, color, is_locked, created_at, updated_at, loyalty_shop_name,
+                    loyalty_barcode_format, sealed_details)
+                VALUES ('1', 'LOYALTY', 'Coffee', 'BROWN', 0, 1, 2, 'Corner', 'QR_CODE', X'010203')
+                """.trimIndent(),
+            )
+        }
+
+        helper.runMigrationsAndValidate(DB, 3, true).use { db ->
+            db.query("SELECT position FROM cards WHERE id = '1'").use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals(0, cursor.getInt(0))
+            }
+        }
+    }
+
     private companion object {
         const val DB = "migration-test.db"
     }

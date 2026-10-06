@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.feature.cardlist
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -30,6 +31,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -57,8 +59,26 @@ fun CardListRoute(
     viewModel: CardListViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val sortActions = remember(viewModel) {
+        SortActions(
+            onSortChange = viewModel::onSortChange,
+            onStartReorder = viewModel::onStartReorder,
+            onMove = viewModel::onMove,
+            onMoveUp = { viewModel.onMoveBy(it, -1) },
+            onMoveDown = { viewModel.onMoveBy(it, 1) },
+            onReorderDone = viewModel::onReorderDone,
+            onReorderCancel = viewModel::onReorderCancel,
+        )
+    }
+    val reordering = (uiState as? CardListUiState.Success)?.reordering
+    if (reordering != null) {
+        BackHandler(onBack = viewModel::onReorderCancel)
+        ReorderScreen(cards = reordering, actions = sortActions)
+        return
+    }
     CardListScreen(
         uiState = uiState,
+        sortActions = sortActions,
         onQueryChange = viewModel::onQueryChange,
         onTypeToggled = viewModel::onTypeToggled,
         onCardClick = onCardClick,
@@ -72,6 +92,7 @@ fun CardListRoute(
 @Composable
 internal fun CardListScreen(
     uiState: CardListUiState,
+    sortActions: SortActions,
     onQueryChange: (String) -> Unit,
     onTypeToggled: (CardType) -> Unit,
     onCardClick: (Card) -> Unit,
@@ -86,6 +107,9 @@ internal fun CardListScreen(
             TopAppBar(
                 title = { Text(stringResource(R.string.cardlist_title)) },
                 actions = {
+                    if (uiState is CardListUiState.Success && uiState.hasAnyCards) {
+                        SortMenu(sort = uiState.sort, actions = sortActions)
+                    }
                     IconButton(onClick = onOpenSettings) {
                         Icon(CardholderIcons.Settings, contentDescription = stringResource(R.string.cardlist_settings))
                     }
@@ -261,6 +285,7 @@ private fun EmptyCardListPreview() {
     CardholderTheme {
         CardListScreen(
             uiState = CardListUiState.Success(emptyList(), "", CardType.entries.toSet(), hasAnyCards = false),
+            sortActions = SortActions({}, {}, { _, _ -> }, {}, {}, {}, {}),
             onQueryChange = {},
             onTypeToggled = {},
             onCardClick = {},

@@ -33,6 +33,7 @@ internal data class BackupCard(
     val frontImage: String? = null,
     val backImage: String? = null,
     val logoImage: String? = null,
+    val position: Int = 0,
 ) {
     override fun toString(): String = "BackupCard(id=$id, type=$type)"
 }

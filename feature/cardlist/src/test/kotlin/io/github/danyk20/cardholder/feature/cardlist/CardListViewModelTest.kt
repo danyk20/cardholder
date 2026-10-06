@@ -5,15 +5,19 @@ import app.cash.turbine.test
 import io.github.danyk20.cardholder.core.domain.usecase.ObserveCardsUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.CardId
+import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
+import java.time.Instant
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
@@ -23,11 +27,13 @@ class CardListViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     private val repository = FakeCardRepository()
+    private val preferences = FakeUserPreferencesRepository()
     private val viewModel by lazy {
         CardListViewModel(
             observeCards = ObserveCardsUseCase(repository),
             cardRepository = repository,
             summaryFactory = CardSummaryFactory(FakeShopRepository(), FakeCountryRepository()),
+            preferencesRepository = preferences,
             savedStateHandle = SavedStateHandle(),
         )
     }
@@ -88,6 +94,58 @@ class CardListViewModelTest {
             assertEquals(null, codes["Locked club"])
             assertEquals(null, codes["Everyday Visa"])
         }
+    }
+
+    @Test
+    fun `sort choice is applied and remembered`() = runTest {
+        repository.add(TestCards.visa.copy(createdAt = Instant.parse("2026-01-01T00:00:00Z")), TestCards.visaDetails)
+        repository.add(
+            TestCards.loyalty.copy(createdAt = Instant.parse("2026-06-01T00:00:00Z")),
+            TestCards.loyaltyDetails,
+        )
+
+        viewModel.uiState.test {
+            assertEquals(listOf("Coffee club", "Everyday Visa"), awaitSuccess().cards.map { it.summary.card.title })
+            viewModel.onSortChange(CardSort.DATE_ADDED)
+            val sorted = awaitSuccess()
+            assertEquals(CardSort.DATE_ADDED, sorted.sort)
+            assertEquals(CardSort.DATE_ADDED, preferences.preferences.value.cardSort)
+        }
+    }
+
+    @Test
+    fun `reordering moves cards and saves the custom order`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.add(TestCards.idCard, TestCards.idCardDetails)
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+
+        viewModel.uiState.test {
+            awaitSuccess()
+            viewModel.onStartReorder()
+            var state = awaitSuccess()
+            while (state.reordering == null) state = awaitSuccess()
+            assertEquals(CardSort.CUSTOM, preferences.preferences.value.cardSort)
+            assertEquals(
+                listOf(TestCards.visa.id, TestCards.idCard.id, TestCards.loyalty.id),
+                state.reordering!!.map {
+                    it.card.id
+                },
+            )
+
+            viewModel.onMove(from = 2, to = 0)
+            viewModel.onMoveBy(TestCards.visa.id, offset = 1)
+            assertEquals(
+                listOf(TestCards.loyalty.id, TestCards.idCard.id, TestCards.visa.id),
+                expectMostRecentItem().let { it as CardListUiState.Success }.reordering!!.map { it.card.id },
+            )
+
+            viewModel.onReorderDone()
+            cancelAndIgnoreRemainingEvents()
+        }
+        assertEquals(
+            listOf(TestCards.loyalty.id, TestCards.idCard.id, TestCards.visa.id),
+            repository.observeCards().first().sortedBy { it.position }.map { it.id },
+        )
     }
 
     private suspend fun app.cash.turbine.ReceiveTurbine<CardListUiState>.awaitSuccess(): CardListUiState.Success {

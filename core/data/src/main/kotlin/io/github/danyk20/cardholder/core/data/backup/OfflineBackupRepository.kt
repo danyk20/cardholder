@@ -90,7 +90,8 @@ internal class OfflineBackupRepository(
                 val existing = cardRepository.observeCards().first().map { it.id.value }.toSet()
                 var imported = 0
                 var skipped = 0
-                content.cards.forEach { backup ->
+                // New cards are appended to the custom order, so import them in their original order.
+                content.cards.sortedBy { it.position }.forEach { backup ->
                     if (backup.id in existing && strategy == ImportStrategy.SKIP_EXISTING) {
                         skipped++
                     } else {
@@ -127,6 +128,7 @@ internal class OfflineBackupRepository(
             frontImage = sides.front?.export(),
             backImage = sides.back?.export(),
             logoImage = logo?.export(),
+            position = position,
         )
     }
 

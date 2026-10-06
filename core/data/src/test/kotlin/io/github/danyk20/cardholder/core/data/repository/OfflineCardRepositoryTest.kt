@@ -176,6 +176,29 @@ class OfflineCardRepositoryTest {
         assertTrue(imageDir.listFiles()!!.isEmpty())
     }
 
+    @Test
+    fun `new cards are appended to the custom order and reordering persists`() = runTest {
+        val first = repository.save(idDraft()).getOrNull()!!
+        val second = repository.save(bankDraft).getOrNull()!!
+        val third = repository.save(idDraft()).getOrNull()!!
+        assertEquals(
+            listOf(0, 1, 2),
+            listOf(first, second, third).map {
+                repository.observeCard(it).first()!!.position
+            },
+        )
+
+        repository.reorder(listOf(third, first))
+
+        assertEquals(
+            listOf(third, first, second),
+            repository.observeCards().first().sortedBy { it.position }.map { it.id },
+        )
+        // Editing a card keeps its place.
+        repository.save(idDraft(id = third))
+        assertEquals(0, repository.observeCard(third).first()!!.position)
+    }
+
     private fun idDraft(
         id: CardId? = null,
         isLocked: Boolean = false,

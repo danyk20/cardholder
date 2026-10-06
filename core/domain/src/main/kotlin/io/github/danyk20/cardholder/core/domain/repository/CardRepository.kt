@@ -8,7 +8,7 @@ import io.github.danyk20.cardholder.core.model.CardId
 import kotlinx.coroutines.flow.Flow
 
 interface CardRepository {
-    /** All cards sorted by title. */
+    /** All cards in no particular order; sorting and filtering happen in `ObserveCardsUseCase`. */
     fun observeCards(): Flow<List<Card>>
 
     fun observeCard(id: CardId): Flow<Card?>
@@ -26,4 +26,7 @@ interface CardRepository {
     suspend fun setLocked(id: CardId, locked: Boolean): SecureResult<Unit>
 
     suspend fun delete(id: CardId)
+
+    /** Stores [ids] as the custom order: the first card comes first. Cards not listed keep their place after them. */
+    suspend fun reorder(ids: List<CardId>)
 }

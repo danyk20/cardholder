@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
+import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import javax.inject.Inject
@@ -19,6 +20,8 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
             themeMode = prefs[THEME_MODE]?.let { name -> ThemeMode.entries.firstOrNull { it.name == name } }
                 ?: ThemeMode.SYSTEM,
             useDynamicColor = prefs[DYNAMIC_COLOR] ?: true,
+            cardSort = prefs[CARD_SORT]?.let { name -> CardSort.entries.firstOrNull { it.name == name } }
+                ?: CardSort.NAME,
         )
     }
 
@@ -30,8 +33,13 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
         dataStore.edit { it[DYNAMIC_COLOR] = enabled }
     }
 
+    override suspend fun setCardSort(sort: CardSort) {
+        dataStore.edit { it[CARD_SORT] = sort.name }
+    }
+
     private companion object {
         val THEME_MODE = stringPreferencesKey("theme_mode")
         val DYNAMIC_COLOR = booleanPreferencesKey("dynamic_color")
+        val CARD_SORT = stringPreferencesKey("card_sort")
     }
 }

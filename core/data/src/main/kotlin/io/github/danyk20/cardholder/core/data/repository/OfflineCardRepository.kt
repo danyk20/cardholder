@@ -85,6 +85,17 @@ internal class OfflineCardRepository @Inject constructor(
         }
     }
 
+    override suspend fun reorder(ids: List<CardId>) = withContext(ioDispatcher) {
+        writeMutex.withLock {
+            val requested = ids.map { it.value }
+            val others = dao.getAll()
+                .filter { it.id !in requested }
+                .sortedWith(compareBy<CardEntity> { it.position }.thenBy { it.createdAt })
+                .map { it.id }
+            dao.reorder(requested + others)
+        }
+    }
+
     private suspend fun saveCard(draft: CardDraft): CardId = withImageTransaction {
         val existing = draft.id?.let { dao.get(it.value) }
         val id = draft.id ?: CardId.random()
@@ -114,6 +125,8 @@ internal class OfflineCardRepository @Inject constructor(
                 frontImage = front?.name,
                 backImage = back?.name,
                 logoImage = logo?.name,
+                // New cards go to the end of the custom order.
+                position = existing?.position ?: (dao.maxPosition() + 1),
                 sealedDetails = cipher.seal(content.details.encode(), level),
                 sealedCvv = content.sealedCvv(existing?.sealedCvv),
             ),
