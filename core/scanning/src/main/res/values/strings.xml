@@ -3,4 +3,12 @@
     <string name="scanner_hint">Point the camera at the barcode or QR code on your card</string>
     <string name="scanner_permission_rationale">Cardholder needs the camera to scan the code on your card. Images are analysed on the device and never stored or sent anywhere.</string>
     <string name="scanner_grant_permission">Allow camera</string>
+    <string name="nfc_title">Read card with NFC</string>
+    <string name="nfc_hold_card">Hold your card flat against the back of your phone and keep it still.</string>
+    <string name="nfc_reading">Reading card…</string>
+    <string name="nfc_failed">Couldn\'t read the card. Move it slowly around the back of the phone and try again.</string>
+    <string name="nfc_disabled">NFC is turned off.</string>
+    <string name="nfc_turn_on">Turn on NFC</string>
+    <string name="nfc_cvv_note">The CVV is not stored on the chip; please type it in yourself.</string>
+    <string name="nfc_cancel">Cancel</string>
 </resources>

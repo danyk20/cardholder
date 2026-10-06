@@ -126,6 +126,18 @@ class CardEditorViewModel @Inject constructor(
     fun onCvvChange(cvv: String) =
         update(CardField.CVV) { copy(bank = bank.copy(cvv = cvv.filter(Char::isDigit).take(MAX_CVV))) }
 
+    /** Prefills the bank form with what an NFC read returned; the CVV is never on the chip. */
+    fun onBankCardRead(number: String, expiry: YearMonth?, holder: String?) = _uiState.update { state ->
+        state.copy(
+            bank = state.bank.copy(
+                number = number.filter(Char::isDigit).take(MAX_PAN),
+                expiry = expiry?.let { "%02d%02d".format(it.monthValue, it.year % CENTURY) } ?: state.bank.expiry,
+                holder = holder ?: state.bank.holder,
+            ),
+            errors = state.errors - CardField.NUMBER - CardField.EXPIRY - CardField.HOLDER,
+        )
+    }
+
     fun onRemoveStoredCvv() = _uiState.update { it.copy(bank = it.bank.copy(cvv = "", removeStoredCvv = true)) }
 
     fun onCountrySelected(code: String) = update(CardField.COUNTRY) {

@@ -26,6 +26,7 @@
     <string name="editor_photos">Photos</string>
 
     <!-- Bank -->
+    <string name="editor_read_nfc">Read card with NFC</string>
     <string name="editor_field_number">Card number</string>
     <string name="editor_field_expiry">Expiry (MM/YY)</string>
     <string name="editor_field_holder">Card holder</string>
