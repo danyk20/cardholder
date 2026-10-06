@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Kortene dine kan ikke åpnes</string>
+    <string name="storage_error_message">Denne telefonen har ikke lenger nøklene som beskytter kortene dine, for eksempel etter en sikkerhetstilbakestilling. Kortene kan ikke gjenopprettes på denne enheten. Slett alle data for å begynne på nytt, og importer deretter en sikkerhetskopi hvis du har en.</string>
+</resources>

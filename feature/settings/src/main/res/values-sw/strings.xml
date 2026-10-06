@@ -16,6 +16,7 @@
     <string name="settings_import">Leta nakala rudufu</string>
     <string name="settings_import_description">Rejesha kadi kutoka kwenye faili ya nakala rudufu</string>
     <string name="settings_backup_working">Inashughulikia…</string>
+    <string name="settings_erase_description">Futa kabisa kadi, picha na mipangilio yote kwenye kifaa hiki</string>
     <string name="settings_password_title_export">Linda nakala yako rudufu</string>
     <string name="settings_password_title_import">Weka nenosiri la nakala rudufu</string>
     <string name="settings_password_message_export">Nakala rudufu ina maelezo yote ya kadi, ikiwa ni pamoja na CVV. Chagua nenosiri thabiti – haliwezi kurejeshwa.</string>

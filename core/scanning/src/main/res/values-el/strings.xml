@@ -4,6 +4,9 @@
     <string name="scanner_hint">Στρέψτε την κάμερα στον γραμμωτό κώδικα ή στον κωδικό QR της κάρτας σας</string>
     <string name="scanner_permission_rationale">Το Cardholder χρειάζεται την κάμερα για να σαρώσει τον κωδικό της κάρτας σας. Οι εικόνες αναλύονται στη συσκευή και δεν αποθηκεύονται ούτε αποστέλλονται πουθενά.</string>
     <string name="scanner_grant_permission">Να επιτρέπεται η κάμερα</string>
+    <string name="scanner_permission_denied">Η πρόσβαση στην κάμερα είναι απενεργοποιημένη για το Cardholder. Ενεργοποιήστε την στις ρυθμίσεις της εφαρμογής για να σαρώνετε κωδικούς.</string>
+    <string name="scanner_open_settings">Άνοιγμα ρυθμίσεων</string>
+    <string name="scanner_camera_unavailable">Δεν ήταν δυνατή η εκκίνηση της κάμερας. Κλείστε άλλες εφαρμογές που τη χρησιμοποιούν και δοκιμάστε ξανά.</string>
     <string name="nfc_title">Ανάγνωση κάρτας με NFC</string>
     <string name="nfc_hold_card">Κρατήστε την κάρτα επίπεδη στο πίσω μέρος του τηλεφώνου σας και μην την κουνάτε.</string>
     <string name="nfc_reading">Ανάγνωση κάρτας…</string>

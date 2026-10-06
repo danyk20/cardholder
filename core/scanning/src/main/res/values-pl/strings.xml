@@ -4,6 +4,9 @@
     <string name="scanner_hint">Skieruj aparat na kod kreskowy lub kod QR na karcie</string>
     <string name="scanner_permission_rationale">Cardholder potrzebuje dostępu do aparatu, aby zeskanować kod z karty. Obrazy są analizowane na urządzeniu i nigdy nie są zapisywane ani nigdzie wysyłane.</string>
     <string name="scanner_grant_permission">Zezwól na dostęp do aparatu</string>
+    <string name="scanner_permission_denied">Dostęp do aparatu jest wyłączony dla aplikacji Cardholder. Włącz go w ustawieniach aplikacji, aby skanować kody.</string>
+    <string name="scanner_open_settings">Otwórz ustawienia</string>
+    <string name="scanner_camera_unavailable">Nie udało się uruchomić aparatu. Zamknij inne aplikacje, które go używają, i spróbuj ponownie.</string>
     <string name="nfc_title">Odczytaj kartę przez NFC</string>
     <string name="nfc_hold_card">Przyłóż kartę płasko do tyłu telefonu i nie ruszaj nią.</string>
     <string name="nfc_reading">Odczytywanie karty…</string>

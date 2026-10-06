@@ -4,6 +4,9 @@
     <string name="scanner_hint">カードのバーコードまたは QR コードにカメラを向けてください</string>
     <string name="scanner_permission_rationale">カードのコードをスキャンするために、Cardholder はカメラを使用します。画像はデバイス上で解析され、保存や送信されることはありません。</string>
     <string name="scanner_grant_permission">カメラを許可</string>
+    <string name="scanner_permission_denied">Cardholder のカメラへのアクセスがオフになっています。コードをスキャンするには、アプリの設定でオンにしてください。</string>
+    <string name="scanner_open_settings">設定を開く</string>
+    <string name="scanner_camera_unavailable">カメラを起動できませんでした。カメラを使用している他のアプリを閉じて、もう一度お試しください。</string>
     <string name="nfc_title">NFC でカードを読み取る</string>
     <string name="nfc_hold_card">カードをスマートフォンの背面に平らに当てて、動かさないでください。</string>
     <string name="nfc_reading">カードを読み取っています…</string>

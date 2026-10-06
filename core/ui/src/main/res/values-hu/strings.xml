@@ -22,6 +22,11 @@
     <string name="error_invalid_checksum">Az ellenőrző számjegy nem egyezik – ellenőrizze, nincs-e elírás</string>
     <string name="error_invalid_date">Érvénytelen dátum</string>
     <string name="error_unexpected">Hiba történt. Próbálja újra.</string>
+    <string name="erase_all_data">Összes adat törlése</string>
+    <string name="erase_title">Törli az összes adatot?</string>
+    <string name="erase_message">Az összes kártya, fotó és beállítás véglegesen törlődik erről az eszközről. Ha még szüksége lehet rájuk, előbb exportáljon biztonsági mentést.</string>
+    <string name="erase_acknowledge">Tudomásul veszem, hogy ez nem vonható vissza</string>
+    <string name="erase_confirm">Az összes törlése</string>
     <string name="action_back">Vissza</string>
     <string name="action_cancel">Mégse</string>
     <string name="action_unlock">Feloldás</string>

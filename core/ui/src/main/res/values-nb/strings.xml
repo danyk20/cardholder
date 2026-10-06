@@ -22,6 +22,11 @@
     <string name="error_invalid_checksum">Kontrollsifferet stemmer ikke – sjekk for skrivefeil</string>
     <string name="error_invalid_date">Ugyldig dato</string>
     <string name="error_unexpected">Noe gikk galt. Prøv igjen.</string>
+    <string name="erase_all_data">Slett alle data</string>
+    <string name="erase_title">Vil du slette alle data?</string>
+    <string name="erase_message">Alle kort, bilder og innstillinger slettes permanent fra denne enheten. Eksporter en sikkerhetskopi først hvis du kan komme til å trenge dem.</string>
+    <string name="erase_acknowledge">Jeg forstår at dette ikke kan angres</string>
+    <string name="erase_confirm">Slett alt</string>
     <string name="action_back">Tilbake</string>
     <string name="action_cancel">Avbryt</string>
     <string name="action_unlock">Lås opp</string>

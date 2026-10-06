@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Lisenssi: %1$s</string>
     <string name="editor_logo_attribution">Lisenssi: %1$s · tekijä %2$s</string>
     <string name="editor_logo_download_failed">Logon lataaminen epäonnistui. Tarkista yhteys ja yritä uudelleen.</string>
+    <string name="editor_discard_title">Hylätäänkö muutokset?</string>
+    <string name="editor_discard_message">Tähän korttiin tehtyjä muutoksia ei tallenneta.</string>
+    <string name="editor_discard">Hylkää</string>
+    <string name="editor_keep_editing">Jatka muokkausta</string>
     <string name="editor_locked_title">Tämä kortti on lukittu</string>
     <string name="editor_not_found">Tätä korttia ei enää ole</string>
     <string name="editor_ok">OK</string>

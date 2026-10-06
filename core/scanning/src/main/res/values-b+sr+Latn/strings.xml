@@ -4,6 +4,9 @@
     <string name="scanner_hint">Usmerite kameru ka bar-kodu ili QR kodu na kartici</string>
     <string name="scanner_permission_rationale">Aplikaciji Cardholder je potrebna kamera da bi skenirala kod sa vaše kartice. Slike se analiziraju na uređaju i nikada se ne čuvaju niti šalju.</string>
     <string name="scanner_grant_permission">Dozvoli kameru</string>
+    <string name="scanner_permission_denied">Aplikaciji Cardholder je isključen pristup kameri. Uključite ga u podešavanjima aplikacije da biste skenirali kodove.</string>
+    <string name="scanner_open_settings">Otvori podešavanja</string>
+    <string name="scanner_camera_unavailable">Pokretanje kamere nije uspelo. Zatvorite druge aplikacije koje je koriste i pokušajte ponovo.</string>
     <string name="nfc_title">Očitaj karticu preko NFC-a</string>
     <string name="nfc_hold_card">Prislonite karticu ravno uz poleđinu telefona i držite je mirno.</string>
     <string name="nfc_reading">Kartica se očitava…</string>

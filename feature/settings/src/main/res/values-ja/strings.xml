@@ -16,6 +16,7 @@
     <string name="settings_import">バックアップをインポート</string>
     <string name="settings_import_description">バックアップ ファイルからカードを復元します</string>
     <string name="settings_backup_working">処理中…</string>
+    <string name="settings_erase_description">このデバイスからすべてのカード、写真、設定を完全に消去します</string>
     <string name="settings_password_title_export">バックアップを保護</string>
     <string name="settings_password_title_import">バックアップのパスワードを入力</string>
     <string name="settings_password_message_export">バックアップには、CVV を含むすべてのカード情報が含まれます。強力なパスワードを設定してください。パスワードは復元できません。</string>

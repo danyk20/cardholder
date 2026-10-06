@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Nem lehet megnyitni a kártyáit</string>
+    <string name="storage_error_message">Ez a telefon már nem rendelkezik a kártyáit védő kulcsokkal, például egy biztonsági visszaállítás után. A kártyák ezen az eszközön nem állíthatók helyre. Az újrakezdéshez törölje az összes adatot, majd importáljon biztonsági mentést, ha van.</string>
+</resources>

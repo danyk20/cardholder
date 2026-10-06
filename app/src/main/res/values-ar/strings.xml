@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">تعذّر فتح بطاقاتك</string>
+    <string name="storage_error_message">لم يعد هذا الهاتف يحتوي على المفاتيح التي تحمي بطاقاتك، على سبيل المثال بعد إعادة ضبط الأمان. لا يمكن استرداد البطاقات على هذا الجهاز. احذف جميع البيانات للبدء من جديد، ثم استورد نسخة احتياطية إذا كانت لديك.</string>
+</resources>

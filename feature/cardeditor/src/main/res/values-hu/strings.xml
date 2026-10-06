@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Licenc: %1$s</string>
     <string name="editor_logo_attribution">Licenc: %1$s · Szerző: %2$s</string>
     <string name="editor_logo_download_failed">Nem sikerült letölteni a logót. Ellenőrizze az internetkapcsolatot, és próbálja újra.</string>
+    <string name="editor_discard_title">Elveti a módosításokat?</string>
+    <string name="editor_discard_message">A kártyán végzett módosítások nem lesznek mentve.</string>
+    <string name="editor_discard">Elvetés</string>
+    <string name="editor_keep_editing">Szerkesztés folytatása</string>
     <string name="editor_locked_title">Ez a kártya zárolva van</string>
     <string name="editor_not_found">Ez a kártya már nem létezik</string>
     <string name="editor_ok">OK</string>

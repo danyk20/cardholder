@@ -22,6 +22,11 @@
     <string name="error_invalid_checksum">O dígito de controlo não corresponde – verifique se há erros de escrita</string>
     <string name="error_invalid_date">Data inválida</string>
     <string name="error_unexpected">Ocorreu um erro. Tente novamente.</string>
+    <string name="erase_all_data">Eliminar todos os dados</string>
+    <string name="erase_title">Eliminar todos os dados?</string>
+    <string name="erase_message">Todos os cartões, fotografias e definições serão eliminados permanentemente deste dispositivo. Exporte primeiro uma cópia de segurança se ainda puder precisar deles.</string>
+    <string name="erase_acknowledge">Compreendo que esta ação não pode ser anulada</string>
+    <string name="erase_confirm">Eliminar tudo</string>
     <string name="action_back">Voltar</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_unlock">Desbloquear</string>

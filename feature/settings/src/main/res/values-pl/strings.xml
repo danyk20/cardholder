@@ -18,6 +18,7 @@
     <string name="settings_import">Importuj kopię zapasową</string>
     <string name="settings_import_description">Przywróć karty z pliku kopii zapasowej</string>
     <string name="settings_backup_working">Przetwarzanie…</string>
+    <string name="settings_erase_description">Trwale usuń wszystkie karty, zdjęcia i ustawienia z tego urządzenia</string>
 
     <string name="settings_password_title_export">Zabezpiecz kopię zapasową</string>
     <string name="settings_password_title_import">Wpisz hasło kopii zapasowej</string>

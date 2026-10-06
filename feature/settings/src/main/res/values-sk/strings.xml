@@ -18,6 +18,7 @@
     <string name="settings_import">Importovať zálohu</string>
     <string name="settings_import_description">Obnoviť karty zo súboru zálohy</string>
     <string name="settings_backup_working">Spracúva sa…</string>
+    <string name="settings_erase_description">Natrvalo vymazať všetky karty, fotky a nastavenia z tohto zariadenia</string>
 
     <string name="settings_password_title_export">Ochráňte svoju zálohu</string>
     <string name="settings_password_title_import">Zadajte heslo zálohy</string>

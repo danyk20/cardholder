@@ -18,6 +18,7 @@
     <string name="settings_import">Importo kopjen rezervë</string>
     <string name="settings_import_description">Rikthe kartat nga një skedar kopjeje rezervë</string>
     <string name="settings_backup_working">Duke punuar…</string>
+    <string name="settings_erase_description">Fshi përgjithmonë të gjitha kartat, fotografitë dhe cilësimet nga kjo pajisje</string>
 
     <string name="settings_password_title_export">Mbro kopjen rezervë</string>
     <string name="settings_password_title_import">Fut fjalëkalimin e kopjes rezervë</string>

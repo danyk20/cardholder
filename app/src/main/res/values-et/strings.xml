@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Teie kaarte ei saa avada</string>
+    <string name="storage_error_message">Selles telefonis pole enam võtmeid, mis teie kaarte kaitsevad, näiteks pärast turvalähtestust. Kaarte ei saa selles seadmes taastada. Uuesti alustamiseks kustutage kõik andmed ja seejärel importige varukoopia, kui see teil on.</string>
+</resources>

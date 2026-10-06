@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Korttejasi ei voi avata</string>
+    <string name="storage_error_message">Tässä puhelimessa ei enää ole korttejasi suojaavia avaimia, esimerkiksi tietoturvanollauksen jälkeen. Kortteja ei voi palauttaa tällä laitteella. Aloita alusta poistamalla kaikki tiedot ja tuo sitten varmuuskopio, jos sinulla on sellainen.</string>
+</resources>

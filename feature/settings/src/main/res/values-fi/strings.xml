@@ -16,6 +16,7 @@
     <string name="settings_import">Tuo varmuuskopio</string>
     <string name="settings_import_description">Palauta kortit varmuuskopiotiedostosta</string>
     <string name="settings_backup_working">Käsitellään…</string>
+    <string name="settings_erase_description">Poista pysyvästi kaikki kortit, kuvat ja asetukset tältä laitteelta</string>
     <string name="settings_password_title_export">Suojaa varmuuskopiosi</string>
     <string name="settings_password_title_import">Anna varmuuskopion salasana</string>
     <string name="settings_password_message_export">Varmuuskopio sisältää kaikki korttitiedot, myös CVV-koodit. Valitse vahva salasana – sitä ei voi palauttaa.</string>

@@ -4,6 +4,9 @@
     <string name="scanner_hint">Namiřte fotoaparát na čárový nebo QR kód na kartě</string>
     <string name="scanner_permission_rationale">Cardholder potřebuje fotoaparát k naskenování kódu na kartě. Snímky se analyzují v zařízení a nikdy se neukládají ani nikam neodesílají.</string>
     <string name="scanner_grant_permission">Povolit fotoaparát</string>
+    <string name="scanner_permission_denied">Přístup k fotoaparátu je pro Cardholder vypnutý. Chcete-li skenovat kódy, zapněte ho v nastavení aplikace.</string>
+    <string name="scanner_open_settings">Otevřít nastavení</string>
+    <string name="scanner_camera_unavailable">Fotoaparát se nepodařilo spustit. Zavřete ostatní aplikace, které ho používají, a zkuste to znovu.</string>
     <string name="nfc_title">Načíst kartu přes NFC</string>
     <string name="nfc_hold_card">Přiložte kartu naplocho k zadní straně telefonu a nehýbejte s ní.</string>
     <string name="nfc_reading">Načítání karty…</string>

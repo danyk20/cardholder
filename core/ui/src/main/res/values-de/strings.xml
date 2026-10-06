@@ -31,6 +31,11 @@
 
     <!-- Common actions -->
     <string name="error_unexpected">Etwas ist schiefgelaufen. Bitte noch einmal versuchen.</string>
+    <string name="erase_all_data">Alle Daten löschen</string>
+    <string name="erase_title">Alle Daten löschen?</string>
+    <string name="erase_message">Alle Karten, Fotos und Einstellungen werden dauerhaft von diesem Gerät gelöscht. Vorher eine Sicherung exportieren, falls sie noch benötigt werden.</string>
+    <string name="erase_acknowledge">Mir ist bewusst, dass dies nicht rückgängig gemacht werden kann</string>
+    <string name="erase_confirm">Alles löschen</string>
     <string name="action_back">Zurück</string>
     <string name="action_cancel">Abbrechen</string>
     <string name="action_unlock">Entsperren</string>

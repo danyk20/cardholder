@@ -31,6 +31,11 @@
 
     <!-- Common actions -->
     <string name="error_unexpected">Что-то пошло не так. Повторите попытку.</string>
+    <string name="erase_all_data">Удалить все данные</string>
+    <string name="erase_title">Удалить все данные?</string>
+    <string name="erase_message">Все карты, фото и настройки будут безвозвратно удалены с этого устройства. Если они могут вам ещё понадобиться, сначала экспортируйте резервную копию.</string>
+    <string name="erase_acknowledge">Я понимаю, что это действие нельзя отменить</string>
+    <string name="erase_confirm">Удалить всё</string>
     <string name="action_back">Назад</string>
     <string name="action_cancel">Отмена</string>
     <string name="action_unlock">Разблокировать</string>

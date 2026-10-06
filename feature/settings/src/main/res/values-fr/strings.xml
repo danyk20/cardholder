@@ -16,6 +16,7 @@
     <string name="settings_import">Importer une sauvegarde</string>
     <string name="settings_import_description">Restaurer des cartes à partir d\'un fichier de sauvegarde</string>
     <string name="settings_backup_working">Traitement en cours…</string>
+    <string name="settings_erase_description">Effacer définitivement toutes les cartes, photos et paramètres de cet appareil</string>
     <string name="settings_password_title_export">Protégez votre sauvegarde</string>
     <string name="settings_password_title_import">Saisissez le mot de passe de la sauvegarde</string>
     <string name="settings_password_message_export">La sauvegarde contient toutes les informations des cartes, y compris les CVV. Choisissez un mot de passe fort – il ne pourra pas être récupéré.</string>

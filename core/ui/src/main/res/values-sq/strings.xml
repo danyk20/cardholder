@@ -26,6 +26,11 @@
     <string name="error_invalid_date">Datë e pavlefshme</string>
 
     <string name="error_unexpected">Diçka shkoi keq. Provo përsëri.</string>
+    <string name="erase_all_data">Fshi të gjitha të dhënat</string>
+    <string name="erase_title">Të fshihen të gjitha të dhënat?</string>
+    <string name="erase_message">Të gjitha kartat, fotografitë dhe cilësimet do të fshihen përgjithmonë nga kjo pajisje. Nëse mund të të duhen ende, eksporto fillimisht një kopje rezervë.</string>
+    <string name="erase_acknowledge">E kuptoj që ky veprim nuk mund të zhbëhet</string>
+    <string name="erase_confirm">Fshi gjithçka</string>
     <string name="action_back">Prapa</string>
     <string name="action_cancel">Anulo</string>
     <string name="action_unlock">Shkyç</string>

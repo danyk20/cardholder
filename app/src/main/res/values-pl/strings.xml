@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Nie można otworzyć kart</string>
+    <string name="storage_error_message">Ten telefon nie ma już kluczy chroniących karty, np. po zresetowaniu zabezpieczeń. Nie można odzyskać kart na tym urządzeniu. Usuń wszystkie dane, aby zacząć od nowa, a potem zaimportuj kopię zapasową, jeśli ją masz.</string>
+</resources>

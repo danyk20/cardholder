@@ -16,6 +16,7 @@
     <string name="settings_import">匯入備份</string>
     <string name="settings_import_description">從備份檔案還原卡片</string>
     <string name="settings_backup_working">處理中…</string>
+    <string name="settings_erase_description">從這部裝置上永久清除所有卡片、相片和設定</string>
     <string name="settings_password_title_export">保護你的備份</string>
     <string name="settings_password_title_import">輸入備份密碼</string>
     <string name="settings_password_message_export">備份包含所有卡片詳細資料，包括 CVV。請設定高強度密碼——密碼一旦遺忘就無法復原。</string>

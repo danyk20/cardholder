@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Vaše karty sa nedajú otvoriť</string>
+    <string name="storage_error_message">Tento telefón už nemá kľúče, ktoré chránia vaše karty, napríklad po resetovaní zabezpečenia. Karty sa v tomto zariadení nedajú obnoviť. Ak chcete začať odznova, vymažte všetky údaje a potom importujte zálohu, ak ju máte.</string>
+</resources>

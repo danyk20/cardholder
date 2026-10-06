@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">無法開啟卡片</string>
+    <string name="storage_error_message">這支手機已不再有保護卡片的金鑰（例如在重設安全性設定後），因此無法在這部裝置上復原卡片。請刪除所有資料以重新開始，然後匯入備份（如果有的話）。</string>
+</resources>

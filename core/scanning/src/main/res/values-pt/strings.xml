@@ -4,6 +4,9 @@
     <string name="scanner_hint">Aponte a câmera para o código de barras ou QR code do seu cartão</string>
     <string name="scanner_permission_rationale">O Cardholder precisa da câmera para ler o código do seu cartão. As imagens são analisadas no dispositivo e nunca são armazenadas nem enviadas.</string>
     <string name="scanner_grant_permission">Permitir câmera</string>
+    <string name="scanner_permission_denied">O acesso à câmera está desativado para o Cardholder. Ative-o nas configurações do app para ler códigos.</string>
+    <string name="scanner_open_settings">Abrir configurações</string>
+    <string name="scanner_camera_unavailable">Não foi possível iniciar a câmera. Feche outros apps que a estejam usando e tente novamente.</string>
     <string name="nfc_title">Ler cartão por NFC</string>
     <string name="nfc_hold_card">Encoste o cartão na parte de trás do celular e mantenha-o parado.</string>
     <string name="nfc_reading">Lendo o cartão…</string>

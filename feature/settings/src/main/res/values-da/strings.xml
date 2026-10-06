@@ -16,6 +16,7 @@
     <string name="settings_import">Importér backup</string>
     <string name="settings_import_description">Gendan kort fra en backupfil</string>
     <string name="settings_backup_working">Arbejder…</string>
+    <string name="settings_erase_description">Slet alle kort, billeder og indstillinger permanent fra denne enhed</string>
     <string name="settings_password_title_export">Beskyt din backup</string>
     <string name="settings_password_title_import">Angiv adgangskoden til backuppen</string>
     <string name="settings_password_message_export">Backuppen indeholder alle kortoplysninger, inklusive CVV-koder. Vælg en stærk adgangskode – den kan ikke gendannes.</string>

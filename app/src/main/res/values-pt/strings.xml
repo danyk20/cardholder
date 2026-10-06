@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Não é possível abrir seus cartões</string>
+    <string name="storage_error_message">Este celular não tem mais as chaves que protegem seus cartões, por exemplo, após uma redefinição de segurança. Os cartões não podem ser recuperados neste dispositivo. Exclua todos os dados para começar de novo e, depois, importe um backup, se tiver um.</string>
+</resources>

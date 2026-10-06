@@ -4,6 +4,9 @@
     <string name="scanner_hint">আপনার কার্ডের বারকোড বা QR কোডের দিকে ক্যামেরা ধরুন</string>
     <string name="scanner_permission_rationale">আপনার কার্ডের কোড স্ক্যান করতে Cardholder-এর ক্যামেরা প্রয়োজন। ছবিগুলো ডিভাইসেই বিশ্লেষণ করা হয় এবং কখনও সেভ করা বা কোথাও পাঠানো হয় না।</string>
     <string name="scanner_grant_permission">ক্যামেরার অনুমতি দিন</string>
+    <string name="scanner_permission_denied">Cardholder-এর জন্য ক্যামেরার অ্যাক্সেস বন্ধ আছে। কোড স্ক্যান করতে অ্যাপের সেটিংসে গিয়ে এটি চালু করুন।</string>
+    <string name="scanner_open_settings">সেটিংস খুলুন</string>
+    <string name="scanner_camera_unavailable">ক্যামেরা চালু করা যায়নি। ক্যামেরা ব্যবহার করছে এমন অন্য অ্যাপ বন্ধ করে আবার চেষ্টা করুন।</string>
     <string name="nfc_title">NFC দিয়ে কার্ড পড়ুন</string>
     <string name="nfc_hold_card">আপনার কার্ডটি ফোনের পেছনে সমানভাবে রাখুন এবং স্থির করে ধরে রাখুন।</string>
     <string name="nfc_reading">কার্ড পড়া হচ্ছে…</string>

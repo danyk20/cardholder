@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Leseni: %1$s</string>
     <string name="editor_logo_attribution">Leseni: %1$s · na %2$s</string>
     <string name="editor_logo_download_failed">Imeshindwa kupakua nembo. Angalia muunganisho wako kisha ujaribu tena.</string>
+    <string name="editor_discard_title">Ungependa kuondoa mabadiliko?</string>
+    <string name="editor_discard_message">Mabadiliko uliyofanya kwenye kadi hii hayatahifadhiwa.</string>
+    <string name="editor_discard">Ondoa</string>
+    <string name="editor_keep_editing">Endelea kubadilisha</string>
     <string name="editor_locked_title">Kadi hii imefungwa</string>
     <string name="editor_not_found">Kadi hii haipo tena</string>
     <string name="editor_ok">Sawa</string>

@@ -22,6 +22,11 @@
     <string name="error_invalid_checksum">校验位不匹配，请检查是否有输入错误</string>
     <string name="error_invalid_date">日期无效</string>
     <string name="error_unexpected">出了点问题，请重试。</string>
+    <string name="erase_all_data">删除所有数据</string>
+    <string name="erase_title">要删除所有数据吗？</string>
+    <string name="erase_message">所有卡片、照片和设置都将从此设备上永久删除。如果之后可能还需要它们，请先导出备份。</string>
+    <string name="erase_acknowledge">我了解此操作无法撤消</string>
+    <string name="erase_confirm">全部删除</string>
     <string name="action_back">返回</string>
     <string name="action_cancel">取消</string>
     <string name="action_unlock">解锁</string>

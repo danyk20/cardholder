@@ -16,6 +16,7 @@
     <string name="settings_import">Importați un backup</string>
     <string name="settings_import_description">Restabiliți cardurile dintr-un fișier de backup</string>
     <string name="settings_backup_working">Se procesează…</string>
+    <string name="settings_erase_description">Ștergeți definitiv toate cardurile, fotografiile și setările de pe acest dispozitiv</string>
     <string name="settings_password_title_export">Protejați backupul</string>
     <string name="settings_password_title_import">Introduceți parola backupului</string>
     <string name="settings_password_message_export">Backupul conține toate detaliile cardurilor, inclusiv codurile CVV. Alegeți o parolă puternică – nu poate fi recuperată.</string>

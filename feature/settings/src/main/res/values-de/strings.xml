@@ -18,6 +18,7 @@
     <string name="settings_import">Sicherung importieren</string>
     <string name="settings_import_description">Karten aus einer Sicherungsdatei wiederherstellen</string>
     <string name="settings_backup_working">Wird bearbeitet…</string>
+    <string name="settings_erase_description">Alle Karten, Fotos und Einstellungen dauerhaft von diesem Gerät löschen</string>
 
     <string name="settings_password_title_export">Sicherung schützen</string>
     <string name="settings_password_title_import">Passwort der Sicherung eingeben</string>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">No se pueden abrir tus tarjetas</string>
+    <string name="storage_error_message">Este teléfono ya no tiene las claves que protegen tus tarjetas; por ejemplo, tras un restablecimiento de seguridad. Las tarjetas no se pueden recuperar en este dispositivo. Elimina todos los datos para empezar de nuevo y, después, importa una copia de seguridad si tienes una.</string>
+</resources>

@@ -4,6 +4,9 @@
     <string name="scanner_hint">Ret kameraet mod stregkoden eller QR-koden på dit kort</string>
     <string name="scanner_permission_rationale">Cardholder skal bruge kameraet for at scanne koden på dit kort. Billederne analyseres på enheden og bliver aldrig gemt eller sendt nogen steder hen.</string>
     <string name="scanner_grant_permission">Tillad kamera</string>
+    <string name="scanner_permission_denied">Kameraadgang er slået fra for Cardholder. Slå den til i appens indstillinger for at scanne koder.</string>
+    <string name="scanner_open_settings">Åbn indstillinger</string>
+    <string name="scanner_camera_unavailable">Kameraet kunne ikke startes. Luk andre apps, der bruger det, og prøv igen.</string>
     <string name="nfc_title">Læs kort med NFC</string>
     <string name="nfc_hold_card">Hold kortet fladt mod bagsiden af telefonen, og hold det stille.</string>
     <string name="nfc_reading">Læser kort…</string>

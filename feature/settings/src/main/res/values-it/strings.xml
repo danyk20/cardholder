@@ -16,6 +16,7 @@
     <string name="settings_import">Importa backup</string>
     <string name="settings_import_description">Ripristina le carte da un file di backup</string>
     <string name="settings_backup_working">Elaborazione…</string>
+    <string name="settings_erase_description">Cancella definitivamente tutte le carte, le foto e le impostazioni da questo dispositivo</string>
     <string name="settings_password_title_export">Proteggi il backup</string>
     <string name="settings_password_title_import">Inserisci la password del backup</string>
     <string name="settings_password_message_export">Il backup contiene tutti i dati delle carte, inclusi i CVV. Scegli una password efficace: non potrà essere recuperata.</string>

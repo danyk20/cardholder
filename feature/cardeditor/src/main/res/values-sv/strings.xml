@@ -58,6 +58,10 @@
     <string name="editor_logo_license">Licens: %1$s</string>
     <string name="editor_logo_attribution">Licens: %1$s · av %2$s</string>
     <string name="editor_logo_download_failed">Det gick inte att ladda ned logotypen. Kontrollera anslutningen och försök igen.</string>
+    <string name="editor_discard_title">Vill du ignorera ändringarna?</string>
+    <string name="editor_discard_message">Ändringarna av kortet sparas inte.</string>
+    <string name="editor_discard">Ignorera</string>
+    <string name="editor_keep_editing">Fortsätt redigera</string>
     <string name="editor_locked_title">Det här kortet är låst</string>
     <string name="editor_not_found">Det här kortet finns inte längre</string>
     <string name="editor_ok">OK</string>

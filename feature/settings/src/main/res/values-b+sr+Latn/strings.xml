@@ -16,6 +16,7 @@
     <string name="settings_import">Uvezi rezervnu kopiju</string>
     <string name="settings_import_description">Vrati kartice iz fajla rezervne kopije</string>
     <string name="settings_backup_working">Obrađuje se…</string>
+    <string name="settings_erase_description">Trajno izbriši sve kartice, slike i podešavanja sa ovog uređaja</string>
     <string name="settings_password_title_export">Zaštitite rezervnu kopiju</string>
     <string name="settings_password_title_import">Unesite lozinku rezervne kopije</string>
     <string name="settings_password_message_export">Rezervna kopija sadrži sve podatke o karticama, uključujući CVV kodove. Izaberite jaku lozinku – ne može da se povrati.</string>

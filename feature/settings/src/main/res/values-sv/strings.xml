@@ -16,6 +16,7 @@
     <string name="settings_import">Importera säkerhetskopia</string>
     <string name="settings_import_description">Återställ kort från en säkerhetskopia</string>
     <string name="settings_backup_working">Bearbetar…</string>
+    <string name="settings_erase_description">Radera alla kort, foton och inställningar permanent från enheten</string>
     <string name="settings_password_title_export">Skydda säkerhetskopian</string>
     <string name="settings_password_title_import">Ange lösenordet för säkerhetskopian</string>
     <string name="settings_password_message_export">Säkerhetskopian innehåller alla kortuppgifter, även CVV-koder. Välj ett starkt lösenord – det går inte att återställa.</string>

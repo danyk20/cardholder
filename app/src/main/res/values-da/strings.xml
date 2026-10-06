@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Dine kort kan ikke åbnes</string>
+    <string name="storage_error_message">Denne telefon har ikke længere de nøgler, der beskytter dine kort, f.eks. efter en sikkerhedsnulstilling. Kortene kan ikke gendannes på denne enhed. Slet alle data for at starte forfra, og importér derefter en backup, hvis du har en.</string>
+</resources>

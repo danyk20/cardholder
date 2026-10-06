@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Det går inte att öppna dina kort</string>
+    <string name="storage_error_message">Telefonen har inte längre nycklarna som skyddar dina kort, till exempel efter en säkerhetsåterställning. Korten kan inte återställas på den här enheten. Radera all data för att börja om och importera sedan en säkerhetskopia om du har en.</string>
+</resources>

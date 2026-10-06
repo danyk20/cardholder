@@ -22,6 +22,11 @@
     <string name="error_invalid_checksum">O dígito verificador não confere – verifique se há erros de digitação</string>
     <string name="error_invalid_date">Data inválida</string>
     <string name="error_unexpected">Algo deu errado. Tente novamente.</string>
+    <string name="erase_all_data">Excluir todos os dados</string>
+    <string name="erase_title">Excluir todos os dados?</string>
+    <string name="erase_message">Todos os cartões, fotos e configurações serão excluídos permanentemente deste dispositivo. Exporte um backup antes se ainda puder precisar deles.</string>
+    <string name="erase_acknowledge">Entendo que isso não pode ser desfeito</string>
+    <string name="erase_confirm">Excluir tudo</string>
     <string name="action_back">Voltar</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_unlock">Desbloquear</string>

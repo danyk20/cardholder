@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Kartlarınız açılamıyor</string>
+    <string name="storage_error_message">Bu telefonda, örneğin bir güvenlik sıfırlamasından sonra, kartlarınızı koruyan anahtarlar artık bulunmuyor. Kartlar bu cihazda kurtarılamaz. Yeniden başlamak için tüm verileri silin, ardından varsa bir yedeği içe aktarın.</string>
+</resources>

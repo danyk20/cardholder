@@ -70,6 +70,10 @@
     <string name="editor_logo_license">Lizenz: %1$s</string>
     <string name="editor_logo_attribution">Lizenz: %1$s · von %2$s</string>
     <string name="editor_logo_download_failed">Das Logo konnte nicht heruntergeladen werden. Verbindung prüfen und noch einmal versuchen.</string>
+    <string name="editor_discard_title">Änderungen verwerfen?</string>
+    <string name="editor_discard_message">Die Änderungen an dieser Karte werden nicht gespeichert.</string>
+    <string name="editor_discard">Verwerfen</string>
+    <string name="editor_keep_editing">Weiter bearbeiten</string>
 
     <!-- States -->
     <string name="editor_locked_title">Diese Karte ist geschützt</string>

@@ -4,6 +4,9 @@
     <string name="scanner_hint">Îndreptați camera spre codul de bare sau codul QR de pe card</string>
     <string name="scanner_permission_rationale">Cardholder are nevoie de cameră pentru a scana codul de pe card. Imaginile sunt analizate pe dispozitiv și nu sunt niciodată stocate sau trimise nicăieri.</string>
     <string name="scanner_grant_permission">Permiteți camera</string>
+    <string name="scanner_permission_denied">Accesul la cameră este dezactivat pentru Cardholder. Activați-l din setările aplicației pentru a scana coduri.</string>
+    <string name="scanner_open_settings">Deschideți setările</string>
+    <string name="scanner_camera_unavailable">Camera nu a putut fi pornită. Închideți alte aplicații care o folosesc și încercați din nou.</string>
     <string name="nfc_title">Citiți cardul prin NFC</string>
     <string name="nfc_hold_card">Țineți cardul lipit de spatele telefonului și nu îl mișcați.</string>
     <string name="nfc_reading">Se citește cardul…</string>

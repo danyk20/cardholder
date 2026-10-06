@@ -16,6 +16,7 @@
     <string name="settings_import">Importer sikkerhetskopi</string>
     <string name="settings_import_description">Gjenopprett kort fra en sikkerhetskopifil</string>
     <string name="settings_backup_working">Jobber …</string>
+    <string name="settings_erase_description">Slett alle kort, bilder og innstillinger permanent fra denne enheten</string>
     <string name="settings_password_title_export">Beskytt sikkerhetskopien</string>
     <string name="settings_password_title_import">Skriv inn passordet for sikkerhetskopien</string>
     <string name="settings_password_message_export">Sikkerhetskopien inneholder alle kortdetaljene, inkludert CVV-koder. Velg et sterkt passord – det kan ikke gjenopprettes.</string>

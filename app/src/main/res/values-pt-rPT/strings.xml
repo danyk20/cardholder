@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="storage_error_title">Não é possível abrir os seus cartões</string>
+    <string name="storage_error_message">Este telemóvel já não tem as chaves que protegem os seus cartões, por exemplo, após uma reposição de segurança. Os cartões não podem ser recuperados neste dispositivo. Elimine todos os dados para recomeçar e, depois, importe uma cópia de segurança, se tiver uma.</string>
+</resources>

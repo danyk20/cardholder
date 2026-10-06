@@ -22,6 +22,11 @@
     <string name="error_invalid_checksum">Kontrolna cifra se ne poklapa – proverite da li ste pogrešno otkucali</string>
     <string name="error_invalid_date">Nevažeći datum</string>
     <string name="error_unexpected">Došlo je do greške. Pokušajte ponovo.</string>
+    <string name="erase_all_data">Izbriši sve podatke</string>
+    <string name="erase_title">Želite da izbrišete sve podatke?</string>
+    <string name="erase_message">Sve kartice, slike i podešavanja biće trajno izbrisani sa ovog uređaja. Prvo izvezite rezervnu kopiju ako vam možda još trebaju.</string>
+    <string name="erase_acknowledge">Razumem da ovo ne može da se opozove</string>
+    <string name="erase_confirm">Izbriši sve</string>
     <string name="action_back">Nazad</string>
     <string name="action_cancel">Otkaži</string>
     <string name="action_unlock">Otključaj</string>

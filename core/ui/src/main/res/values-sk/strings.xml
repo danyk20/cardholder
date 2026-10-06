@@ -31,6 +31,11 @@
 
     <!-- Common actions -->
     <string name="error_unexpected">Niečo sa pokazilo. Skúste to znova.</string>
+    <string name="erase_all_data">Vymazať všetky údaje</string>
+    <string name="erase_title">Vymazať všetky údaje?</string>
+    <string name="erase_message">Všetky karty, fotky a nastavenia sa z tohto zariadenia natrvalo odstránia. Ak ich ešte môžete potrebovať, najprv exportujte zálohu.</string>
+    <string name="erase_acknowledge">Rozumiem, že túto akciu nie je možné vrátiť späť</string>
+    <string name="erase_confirm">Vymazať všetko</string>
     <string name="action_back">Späť</string>
     <string name="action_cancel">Zrušiť</string>
     <string name="action_unlock">Odomknúť</string>
