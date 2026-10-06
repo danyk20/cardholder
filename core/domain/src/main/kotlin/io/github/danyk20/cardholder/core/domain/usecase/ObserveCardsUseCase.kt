@@ -8,15 +8,15 @@ import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-/** Observes cards filtered by [CardType] and a free-text query over title, shop and network. */
+/** Observes cards of the given [CardType]s matching a free-text query over title, shop and network. */
 class ObserveCardsUseCase
 @Inject
 constructor(private val cardRepository: CardRepository) {
-    operator fun invoke(query: String = "", type: CardType? = null): Flow<List<Card>> =
+    operator fun invoke(query: String = "", types: Set<CardType> = CardType.entries.toSet()): Flow<List<Card>> =
         cardRepository.observeCards().map { cards ->
             val needle = query.trim()
             cards.filter { card ->
-                (type == null || card.type == type) && (needle.isEmpty() || card.matches(needle))
+                card.type in types && (needle.isEmpty() || card.matches(needle))
             }
         }
 
