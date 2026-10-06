@@ -85,6 +85,7 @@ fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMod
         onBack = onBack,
         onThemeModeChange = viewModel::onThemeModeChange,
         onDynamicColorChange = viewModel::onDynamicColorChange,
+        onScreenshotsAllowedChange = viewModel::onScreenshotsAllowedChange,
         onExport = { passwordPurpose = PasswordPurpose.EXPORT },
         onImport = { openDocument.launch(arrayOf("*/*")) },
         onResultShown = viewModel::onResultShown,
@@ -119,6 +120,7 @@ internal fun SettingsScreen(
     onBack: () -> Unit,
     onThemeModeChange: (ThemeMode) -> Unit,
     onDynamicColorChange: (Boolean) -> Unit,
+    onScreenshotsAllowedChange: (Boolean) -> Unit,
     onExport: () -> Unit,
     onImport: () -> Unit,
     onResultShown: () -> Unit,
@@ -159,6 +161,19 @@ internal fun SettingsScreen(
                     value = state.preferences.useDynamicColor,
                     role = Role.Switch,
                     onValueChange = onDynamicColorChange,
+                ),
+            )
+            HorizontalDivider()
+
+            SectionHeader(stringResource(R.string.settings_security))
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.settings_allow_screenshots)) },
+                supportingContent = { Text(stringResource(R.string.settings_allow_screenshots_description)) },
+                trailingContent = { Switch(checked = state.screenshotsAllowed, onCheckedChange = null) },
+                modifier = Modifier.toggleable(
+                    value = state.screenshotsAllowed,
+                    role = Role.Switch,
+                    onValueChange = onScreenshotsAllowedChange,
                 ),
             )
             HorizontalDivider()

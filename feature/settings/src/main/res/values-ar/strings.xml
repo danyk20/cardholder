@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">الألوان الديناميكية</string>
     <string name="settings_dynamic_color_description">استخدام ألوان من خلفية الشاشة</string>
 
+    <string name="settings_security">الأمان</string>
+    <string name="settings_allow_screenshots">السماح بلقطات الشاشة</string>
+    <string name="settings_allow_screenshots_description">حتى تغادر التطبيق. قد تُظهر لقطات الشاشة أرقام البطاقات، وتُحفظ في صورك التي قد يتم نسخها احتياطيًا إلى السحابة.</string>
     <string name="settings_backup">النسخ الاحتياطي</string>
     <string name="settings_export">تصدير نسخة احتياطية</string>
     <string name="settings_export_description">حفظ جميع البطاقات في ملف محمي بكلمة مرور</string>

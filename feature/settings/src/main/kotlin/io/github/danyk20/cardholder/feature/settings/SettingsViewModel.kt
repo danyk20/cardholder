@@ -7,6 +7,7 @@ import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
+import io.github.danyk20.cardholder.core.domain.security.ScreenCapturePolicy
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import javax.inject.Inject
@@ -22,11 +23,16 @@ import kotlinx.coroutines.launch
 class SettingsViewModel @Inject constructor(
     private val preferencesRepository: UserPreferencesRepository,
     private val backupRepository: BackupRepository,
+    private val screenCapturePolicy: ScreenCapturePolicy,
 ) : ViewModel() {
     private val backup = MutableStateFlow(BackupUiState())
 
-    val uiState: StateFlow<SettingsUiState> = combine(preferencesRepository.preferences, backup) { prefs, backup ->
-        SettingsUiState(preferences = prefs, backup = backup)
+    val uiState: StateFlow<SettingsUiState> = combine(
+        preferencesRepository.preferences,
+        backup,
+        screenCapturePolicy.isAllowed,
+    ) { prefs, backup, screenshotsAllowed ->
+        SettingsUiState(preferences = prefs, backup = backup, screenshotsAllowed = screenshotsAllowed)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), SettingsUiState())
 
     fun onThemeModeChange(mode: ThemeMode) {
@@ -36,6 +42,9 @@ class SettingsViewModel @Inject constructor(
     fun onDynamicColorChange(enabled: Boolean) {
         viewModelScope.launch { preferencesRepository.setDynamicColor(enabled) }
     }
+
+    /** Allows screenshots of card data until the app leaves the screen. */
+    fun onScreenshotsAllowedChange(allowed: Boolean) = screenCapturePolicy.setAllowed(allowed)
 
     /** Called once the user chose a password, a destination and authenticated. */
     fun export(destinationUri: String, password: CharArray) = runBackup(BackupOperation.EXPORT, password) {
@@ -75,6 +84,7 @@ class SettingsViewModel @Inject constructor(
 data class SettingsUiState(
     val preferences: UserPreferences = UserPreferences(),
     val backup: BackupUiState = BackupUiState(),
+    val screenshotsAllowed: Boolean = false,
 )
 
 enum class BackupOperation { EXPORT, IMPORT }

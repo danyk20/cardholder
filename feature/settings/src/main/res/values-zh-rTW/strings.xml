@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">深色</string>
     <string name="settings_dynamic_color">動態色彩</string>
     <string name="settings_dynamic_color_description">使用桌布中的色彩</string>
+    <string name="settings_security">安全性</string>
+    <string name="settings_allow_screenshots">允許螢幕截圖</string>
+    <string name="settings_allow_screenshots_description">在你離開應用程式前有效。螢幕截圖可能會顯示卡號，並會儲存到你的相簿，相簿可能會備份到雲端。</string>
     <string name="settings_backup">備份</string>
     <string name="settings_export">匯出備份</string>
     <string name="settings_export_description">將所有卡片儲存到受密碼保護的檔案中</string>

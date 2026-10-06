@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">Dinamik renk</string>
     <string name="settings_dynamic_color_description">Duvar kağıdınızdaki renkleri kullanın</string>
 
+    <string name="settings_security">Güvenlik</string>
+    <string name="settings_allow_screenshots">Ekran görüntülerine izin ver</string>
+    <string name="settings_allow_screenshots_description">Uygulamadan çıkana kadar. Ekran görüntüleri kart numaralarını gösterebilir ve buluta yedeklenebilecek fotoğraflarınıza kaydedilir.</string>
     <string name="settings_backup">Yedekleme</string>
     <string name="settings_export">Yedeği dışa aktar</string>
     <string name="settings_export_description">Tüm kartları şifre korumalı bir dosyaya kaydedin</string>

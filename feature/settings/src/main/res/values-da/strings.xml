@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Mørkt</string>
     <string name="settings_dynamic_color">Dynamiske farver</string>
     <string name="settings_dynamic_color_description">Brug farver fra din baggrund</string>
+    <string name="settings_security">Sikkerhed</string>
+    <string name="settings_allow_screenshots">Tillad screenshots</string>
+    <string name="settings_allow_screenshots_description">Indtil du forlader appen. Screenshots kan vise kortnumre og gemmes i dine billeder, som kan blive sikkerhedskopieret til skyen.</string>
     <string name="settings_backup">Backup</string>
     <string name="settings_export">Eksportér backup</string>
     <string name="settings_export_description">Gem alle kort i en adgangskodebeskyttet fil</string>

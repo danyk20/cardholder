@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">ダーク</string>
     <string name="settings_dynamic_color">ダイナミック カラー</string>
     <string name="settings_dynamic_color_description">壁紙の色を使用します</string>
+    <string name="settings_security">セキュリティ</string>
+    <string name="settings_allow_screenshots">スクリーンショットを許可</string>
+    <string name="settings_allow_screenshots_description">アプリを離れるまで有効です。スクリーンショットにはカード番号が写る場合があり、写真に保存されます。写真はクラウドにバックアップされることがあります。</string>
     <string name="settings_backup">バックアップ</string>
     <string name="settings_export">バックアップをエクスポート</string>
     <string name="settings_export_description">すべてのカードをパスワードで保護されたファイルに保存します</string>

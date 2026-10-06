@@ -21,6 +21,7 @@ All notable changes to this project are documented here. The format follows
   Slovak, Spanish, Swahili, Swedish, Turkish and Ukrainian. The app language can be chosen in the system
   settings (Android 13+).
 - Privacy policy, linked from Settings.
+- *Allow screenshots* in Settings: lifts the screenshot protection until you leave the app.
 - Google Play store listing for every language (`fastlane/metadata/android`).
 
 ### Changed

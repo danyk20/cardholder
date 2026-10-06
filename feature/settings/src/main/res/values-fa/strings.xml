@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">تیره</string>
     <string name="settings_dynamic_color">رنگ پویا</string>
     <string name="settings_dynamic_color_description">استفاده از رنگ‌های کاغذدیواری</string>
+    <string name="settings_security">امنیت</string>
+    <string name="settings_allow_screenshots">اجازه دادن به نماگرفت</string>
+    <string name="settings_allow_screenshots_description">تا زمانی که از برنامه خارج شوید. نماگرفت‌ها ممکن است شماره کارت‌ها را نشان دهند و در عکس‌های شما ذخیره می‌شوند که ممکن است در فضای ابری پشتیبان‌گیری شوند.</string>
     <string name="settings_backup">پشتیبان‌گیری</string>
     <string name="settings_export">صادر کردن نسخه پشتیبان</string>
     <string name="settings_export_description">ذخیره همه کارت‌ها در یک فایل محافظت‌شده با گذرواژه</string>

@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Sombre</string>
     <string name="settings_dynamic_color">Couleurs dynamiques</string>
     <string name="settings_dynamic_color_description">Utiliser les couleurs de votre fond d\'écran</string>
+    <string name="settings_security">Sécurité</string>
+    <string name="settings_allow_screenshots">Autoriser les captures d\'écran</string>
+    <string name="settings_allow_screenshots_description">Jusqu\'à ce que vous quittiez l\'application. Les captures d\'écran peuvent montrer des numéros de carte et sont enregistrées dans vos photos, qui peuvent être sauvegardées dans le cloud.</string>
     <string name="settings_backup">Sauvegarde</string>
     <string name="settings_export">Exporter une sauvegarde</string>
     <string name="settings_export_description">Enregistrer toutes les cartes dans un fichier protégé par mot de passe</string>

@@ -29,7 +29,7 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 - **Offline by design.** No analytics, no cloud, no accounts. The only network request the app can make is downloading an official shop logo from Wikimedia Commons when you ask for it (HTTPS only).
 - Encrypted database (SQLCipher) **plus** per-value envelope encryption with Android Keystore keys.
 - CVVs and locked cards are encrypted with a key the Keystore only releases after **strong biometric or device-credential authentication**. This is real cryptographic protection, not just a UI gate.
-- Screenshots and recents thumbnails are blocked on sensitive screens. Copied values are marked sensitive and cleared after a minute. Decrypted data is dropped when the app goes to the background.
+- Screenshots and recents thumbnails are blocked on sensitive screens (screenshots can be allowed temporarily in Settings, until you leave the app). Copied values are marked sensitive and cleared after a minute. Decrypted data is dropped when the app goes to the background.
 
 Details: [SECURITY.md](SECURITY.md) and the [architecture decision records](docs/adr).
 

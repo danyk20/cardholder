@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">Ngjyra dinamike</string>
     <string name="settings_dynamic_color_description">Përdor ngjyrat e imazhit të sfondit</string>
 
+    <string name="settings_security">Siguria</string>
+    <string name="settings_allow_screenshots">Lejo pamjet e ekranit</string>
+    <string name="settings_allow_screenshots_description">Derisa të dalësh nga aplikacioni. Pamjet e ekranit mund të shfaqin numrat e kartave dhe ruhen te fotografitë e tua, të cilat mund të rezervohen në re.</string>
     <string name="settings_backup">Kopja rezervë</string>
     <string name="settings_export">Eksporto kopjen rezervë</string>
     <string name="settings_export_description">Ruaj të gjitha kartat në një skedar të mbrojtur me fjalëkalim</string>

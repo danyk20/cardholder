@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Oscuro</string>
     <string name="settings_dynamic_color">Color dinámico</string>
     <string name="settings_dynamic_color_description">Usar los colores de tu fondo de pantalla</string>
+    <string name="settings_security">Seguridad</string>
+    <string name="settings_allow_screenshots">Permitir capturas de pantalla</string>
+    <string name="settings_allow_screenshots_description">Hasta que salgas de la aplicación. Las capturas pueden mostrar números de tarjeta y se guardan en tus fotos, que pueden copiarse en la nube.</string>
     <string name="settings_backup">Copia de seguridad</string>
     <string name="settings_export">Exportar copia de seguridad</string>
     <string name="settings_export_description">Guardar todas las tarjetas en un archivo protegido con contraseña</string>

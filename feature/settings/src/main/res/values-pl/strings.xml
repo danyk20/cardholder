@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">Kolory dynamiczne</string>
     <string name="settings_dynamic_color_description">Używaj kolorów z tapety</string>
 
+    <string name="settings_security">Bezpieczeństwo</string>
+    <string name="settings_allow_screenshots">Zezwól na zrzuty ekranu</string>
+    <string name="settings_allow_screenshots_description">Do momentu opuszczenia aplikacji. Zrzuty ekranu mogą pokazywać numery kart i są zapisywane w zdjęciach, które mogą być kopiowane do chmury.</string>
     <string name="settings_backup">Kopia zapasowa</string>
     <string name="settings_export">Eksportuj kopię zapasową</string>
     <string name="settings_export_description">Zapisz wszystkie karty w pliku chronionym hasłem</string>

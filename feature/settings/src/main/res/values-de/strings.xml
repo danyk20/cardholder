@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">Dynamische Farben</string>
     <string name="settings_dynamic_color_description">Farben des Hintergrundbilds verwenden</string>
 
+    <string name="settings_security">Sicherheit</string>
+    <string name="settings_allow_screenshots">Screenshots erlauben</string>
+    <string name="settings_allow_screenshots_description">Gilt, bis die App verlassen wird. Screenshots können Kartennummern zeigen und werden in den Fotos gespeichert, die eventuell in der Cloud gesichert werden.</string>
     <string name="settings_backup">Sicherung</string>
     <string name="settings_export">Sicherung exportieren</string>
     <string name="settings_export_description">Alle Karten in einer passwortgeschützten Datei speichern</string>

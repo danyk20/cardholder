@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Giza</string>
     <string name="settings_dynamic_color">Rangi zinazobadilika</string>
     <string name="settings_dynamic_color_description">Tumia rangi kutoka kwenye mandhari yako</string>
+    <string name="settings_security">Usalama</string>
+    <string name="settings_allow_screenshots">Ruhusu picha za skrini</string>
+    <string name="settings_allow_screenshots_description">Hadi utakapoondoka kwenye programu. Picha za skrini zinaweza kuonyesha nambari za kadi na huhifadhiwa kwenye picha zako, ambazo zinaweza kuhifadhiwa nakala kwenye wingu.</string>
     <string name="settings_backup">Nakala rudufu</string>
     <string name="settings_export">Hamisha nakala rudufu</string>
     <string name="settings_export_description">Hifadhi kadi zote kwenye faili inayolindwa kwa nenosiri</string>

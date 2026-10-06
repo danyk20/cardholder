@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">Динамічні кольори</string>
     <string name="settings_dynamic_color_description">Використовувати кольори шпалер</string>
 
+    <string name="settings_security">Безпека</string>
+    <string name="settings_allow_screenshots">Дозволити знімки екрана</string>
+    <string name="settings_allow_screenshots_description">До виходу з додатка. На знімках екрана можуть бути видно номери карток; вони зберігаються у фото, які можуть копіюватися в хмару.</string>
     <string name="settings_backup">Резервне копіювання</string>
     <string name="settings_export">Експорт резервної копії</string>
     <string name="settings_export_description">Зберегти всі картки у файл, захищений паролем</string>

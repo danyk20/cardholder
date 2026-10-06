@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Tume</string>
     <string name="settings_dynamic_color">Dünaamiline värv</string>
     <string name="settings_dynamic_color_description">Kasuta taustapildi värve</string>
+    <string name="settings_security">Turvalisus</string>
+    <string name="settings_allow_screenshots">Luba ekraanipildid</string>
+    <string name="settings_allow_screenshots_description">Kuni rakendusest lahkute. Ekraanipiltidel võivad olla näha kaardinumbrid ja need salvestatakse fotode hulka, mida võidakse pilve varundada.</string>
     <string name="settings_backup">Varundamine</string>
     <string name="settings_export">Ekspordi varukoopia</string>
     <string name="settings_export_description">Salvesta kõik kaardid parooliga kaitstud faili</string>

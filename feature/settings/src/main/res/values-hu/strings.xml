@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Sötét</string>
     <string name="settings_dynamic_color">Dinamikus színek</string>
     <string name="settings_dynamic_color_description">A háttérkép színeinek használata</string>
+    <string name="settings_security">Biztonság</string>
+    <string name="settings_allow_screenshots">Képernyőképek engedélyezése</string>
+    <string name="settings_allow_screenshots_description">Amíg el nem hagyja az alkalmazást. A képernyőképeken kártyaszámok látszhatnak, és a fotók közé kerülnek, amelyekről a felhőbe is készülhet biztonsági mentés.</string>
     <string name="settings_backup">Biztonsági mentés</string>
     <string name="settings_export">Biztonsági mentés exportálása</string>
     <string name="settings_export_description">Az összes kártya mentése jelszóval védett fájlba</string>

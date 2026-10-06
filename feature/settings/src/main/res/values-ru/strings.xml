@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">Динамические цвета</string>
     <string name="settings_dynamic_color_description">Использовать цвета обоев</string>
 
+    <string name="settings_security">Безопасность</string>
+    <string name="settings_allow_screenshots">Разрешить скриншоты</string>
+    <string name="settings_allow_screenshots_description">До выхода из приложения. На скриншотах могут быть видны номера карт; они сохраняются в фотографиях, которые могут копироваться в облако.</string>
     <string name="settings_backup">Резервное копирование</string>
     <string name="settings_export">Экспорт резервной копии</string>
     <string name="settings_export_description">Сохранить все карты в файл, защищённый паролем</string>

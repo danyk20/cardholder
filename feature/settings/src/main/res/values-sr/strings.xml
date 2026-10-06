@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Тамна</string>
     <string name="settings_dynamic_color">Динамичне боје</string>
     <string name="settings_dynamic_color_description">Користи боје позадине</string>
+    <string name="settings_security">Безбедност</string>
+    <string name="settings_allow_screenshots">Дозволи снимке екрана</string>
+    <string name="settings_allow_screenshots_description">Док не напустите апликацију. Снимци екрана могу да прикажу бројеве картица и чувају се у фотографијама, чија резервна копија може бити у облаку.</string>
     <string name="settings_backup">Резервна копија</string>
     <string name="settings_export">Извези резервну копију</string>
     <string name="settings_export_description">Сачувај све картице у фајл заштићен лозинком</string>

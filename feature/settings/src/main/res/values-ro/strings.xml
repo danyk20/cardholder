@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Întunecată</string>
     <string name="settings_dynamic_color">Culori dinamice</string>
     <string name="settings_dynamic_color_description">Folosiți culorile din imaginea de fundal</string>
+    <string name="settings_security">Securitate</string>
+    <string name="settings_allow_screenshots">Permiteți capturile de ecran</string>
+    <string name="settings_allow_screenshots_description">Până când părăsiți aplicația. Capturile de ecran pot afișa numerele cardurilor și sunt salvate în fotografii, care pot fi copiate în cloud.</string>
     <string name="settings_backup">Backup</string>
     <string name="settings_export">Exportați backupul</string>
     <string name="settings_export_description">Salvați toate cardurile într-un fișier protejat cu parolă</string>

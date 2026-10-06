@@ -9,6 +9,9 @@
     <string name="settings_dynamic_color">Dynamické farby</string>
     <string name="settings_dynamic_color_description">Použiť farby z tapety</string>
 
+    <string name="settings_security">Zabezpečenie</string>
+    <string name="settings_allow_screenshots">Povoliť snímky obrazovky</string>
+    <string name="settings_allow_screenshots_description">Kým neopustíte aplikáciu. Snímky obrazovky môžu zobrazovať čísla kariet a ukladajú sa do fotiek, ktoré sa môžu zálohovať do cloudu.</string>
     <string name="settings_backup">Záloha</string>
     <string name="settings_export">Exportovať zálohu</string>
     <string name="settings_export_description">Uložiť všetky karty do súboru chráneného heslom</string>

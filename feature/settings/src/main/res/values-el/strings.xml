@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Σκούρο</string>
     <string name="settings_dynamic_color">Δυναμικό χρώμα</string>
     <string name="settings_dynamic_color_description">Χρήση χρωμάτων από την ταπετσαρία σας</string>
+    <string name="settings_security">Ασφάλεια</string>
+    <string name="settings_allow_screenshots">Να επιτρέπονται στιγμιότυπα οθόνης</string>
+    <string name="settings_allow_screenshots_description">Μέχρι να βγείτε από την εφαρμογή. Τα στιγμιότυπα οθόνης μπορεί να δείχνουν αριθμούς καρτών και αποθηκεύονται στις φωτογραφίες σας, για τις οποίες μπορεί να δημιουργούνται αντίγραφα ασφαλείας στο cloud.</string>
     <string name="settings_backup">Αντίγραφο ασφαλείας</string>
     <string name="settings_export">Εξαγωγή αντιγράφου ασφαλείας</string>
     <string name="settings_export_description">Αποθήκευση όλων των καρτών σε αρχείο με κωδικό πρόσβασης</string>

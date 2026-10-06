@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">डार्क</string>
     <string name="settings_dynamic_color">डाइनैमिक कलर</string>
     <string name="settings_dynamic_color_description">अपने वॉलपेपर के रंगों का इस्तेमाल करें</string>
+    <string name="settings_security">सुरक्षा</string>
+    <string name="settings_allow_screenshots">स्क्रीनशॉट की अनुमति दें</string>
+    <string name="settings_allow_screenshots_description">जब तक आप ऐप से बाहर नहीं निकलते. स्क्रीनशॉट में कार्ड नंबर दिख सकते हैं और वे आपकी फ़ोटो में सेव होते हैं, जिनका क्लाउड पर बैकअप हो सकता है.</string>
     <string name="settings_backup">बैकअप</string>
     <string name="settings_export">बैकअप एक्सपोर्ट करें</string>
     <string name="settings_export_description">सभी कार्ड, पासवर्ड से सुरक्षित फ़ाइल में सेव करें</string>

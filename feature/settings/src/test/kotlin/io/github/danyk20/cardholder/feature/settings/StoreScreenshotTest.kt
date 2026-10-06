@@ -29,6 +29,7 @@ class StoreScreenshotTest {
                     onBack = {},
                     onThemeModeChange = {},
                     onDynamicColorChange = {},
+                    onScreenshotsAllowedChange = {},
                     onExport = {},
                     onImport = {},
                     onResultShown = {},
