@@ -8,11 +8,13 @@ import io.github.danyk20.cardholder.core.database.model.CardEntity
 
 @Database(
     entities = [CardEntity::class],
-    version = 2,
+    version = 3,
     exportSchema = true,
     autoMigrations = [
         // 1 -> 2: card logos
         AutoMigration(from = 1, to = 2),
+        // 2 -> 3: custom card order
+        AutoMigration(from = 2, to = 3),
     ],
 )
 abstract class CardholderDatabase : RoomDatabase() {

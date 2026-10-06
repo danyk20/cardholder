@@ -21,6 +21,8 @@ data class Card(
     val hasCvv: Boolean,
     val createdAt: Instant,
     val updatedAt: Instant,
+    /** Place in the user's custom order; lower comes first. */
+    val position: Int = 0,
 ) {
     val type: CardType get() = info.type
 }

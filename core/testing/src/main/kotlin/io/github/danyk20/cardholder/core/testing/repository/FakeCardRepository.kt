@@ -34,8 +34,12 @@ class FakeCardRepository : CardRepository {
     var now: Instant = Instant.parse("2026-06-01T12:00:00Z")
     val savedDrafts = mutableListOf<CardDraft>()
 
+    /** Adds a card at the end of the custom order, like a newly created card. */
     fun add(card: Card, details: CardDetails, cvv: String? = null) {
-        store.update { it + (card.id to Stored(card.copy(hasCvv = cvv != null), details, cvv)) }
+        store.update {
+            val stored = card.copy(hasCvv = cvv != null, position = it.size)
+            it + (card.id to Stored(stored, details, cvv))
+        }
     }
 
     override fun observeCards(): Flow<List<Card>> =
@@ -74,6 +78,7 @@ class FakeCardRepository : CardRepository {
             hasCvv = cvv != null,
             createdAt = existing?.card?.createdAt ?: now,
             updatedAt = now,
+            position = existing?.card?.position ?: ((store.value.values.maxOfOrNull { it.card.position } ?: -1) + 1),
         )
         store.update { it + (id to Stored(card, content.details, cvv)) }
         return SecureResult.Success(id)
@@ -83,6 +88,15 @@ class FakeCardRepository : CardRepository {
         val stored = store.value[id] ?: error("No card $id")
         return guarded(protected = !locked) {
             store.update { it + (id to stored.copy(card = stored.card.copy(isLocked = locked))) }
+        }
+    }
+
+    override suspend fun reorder(ids: List<CardId>) {
+        val others = store.value.values.map { it.card }.filter { it.id !in ids }.sortedBy { it.position }.map { it.id }
+        store.update { cards ->
+            (ids + others).mapIndexedNotNull { position, id ->
+                cards[id]?.let { id to it.copy(card = it.card.copy(position = position)) }
+            }.toMap()
         }
     }
 

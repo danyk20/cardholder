@@ -25,6 +25,7 @@ internal fun CardEntity.toCard(): Card = Card(
     hasCvv = sealedCvv != null,
     createdAt = Instant.ofEpochMilli(createdAt),
     updatedAt = Instant.ofEpochMilli(updatedAt),
+    position = position,
 )
 
 private fun CardEntity.toInfo(): CardInfo = when (CardType.valueOf(type)) {

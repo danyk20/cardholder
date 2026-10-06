@@ -26,6 +26,7 @@ data class CardEntity(
     @ColumnInfo(name = "front_image") val frontImage: String?,
     @ColumnInfo(name = "back_image") val backImage: String?,
     @ColumnInfo(name = "logo_image", defaultValue = "NULL") val logoImage: String? = null,
+    @ColumnInfo(name = "position", defaultValue = "0") val position: Int = 0,
     /** Sealed JSON of the type-specific details. */
     @ColumnInfo(name = "sealed_details", typeAffinity = ColumnInfo.BLOB) val sealedDetails: ByteArray,
     /** Sealed CVV of a bank card, always protected by user authentication. */
@@ -50,6 +51,7 @@ data class CardEntity(
                 frontImage == other.frontImage &&
                 backImage == other.backImage &&
                 logoImage == other.logoImage &&
+                position == other.position &&
                 sealedDetails.contentEquals(other.sealedDetails) &&
                 sealedCvv.contentEquals(other.sealedCvv)
             )

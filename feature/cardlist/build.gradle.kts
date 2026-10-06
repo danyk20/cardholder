@@ -8,4 +8,5 @@ android {
 
 dependencies {
     implementation(projects.core.barcode)
+    implementation(libs.reorderable)
 }

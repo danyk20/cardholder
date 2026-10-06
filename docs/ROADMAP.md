@@ -34,11 +34,11 @@ Product decisions:
 | Auth-bound AES key + in-memory `UnlockSession` | **RSA-OAEP key pair**: encrypt with the public key, decrypt only within 30 s of authentication; decrypted data dropped on background | Saving a CVV or locking a card needs no prompt, and protection is cryptographic ([ADR 3](adr/0003-auth-bound-keys.md)). |
 | Coil with custom fetcher | As planned, with **disk cache disabled** and memory cache cleared on background | Never write decrypted photos to disk. |
 | Live scanner in a dialog | Full-screen composable in the editor window | Keeps the window's `FLAG_SECURE` and avoids SurfaceView layering issues. |
-| Drag-to-reorder cards | Sorted alphabetically with search and per-type toggles | Deferred to the backlog. |
+| Drag-to-reorder cards | Sort by name, date added or a custom order with a dedicated *Reorder cards* mode | Dragging compact rows is easier than dragging full card faces. |
 | Generated card faces in the list | Loyalty cards show their **scannable code directly on the card**; a tap opens it full-screen | Faster at the till; requested after the first review. |
 
 ## Backlog (post-v1)
-- Drag-to-reorder and favourites / most-used loyalty cards first.
+- Favourites / most-used loyalty cards first.
 - OCR prefill of card number and expiry from the front photo.
 - Home-screen widget / app shortcuts for favourite loyalty cards.
 - Optional app-wide lock on open.

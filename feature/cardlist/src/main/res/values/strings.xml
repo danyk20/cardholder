@@ -9,4 +9,15 @@
     <string name="cardlist_no_results">No cards match your search</string>
     <string name="cardlist_show_code">Show code full screen</string>
     <string name="cardlist_tap_to_unlock">Tap to unlock</string>
+    <string name="cardlist_sort">Sort cards</string>
+    <string name="cardlist_sort_name">Name (A–Z)</string>
+    <string name="cardlist_sort_date">Date added (newest first)</string>
+    <string name="cardlist_sort_custom">Custom order</string>
+    <string name="cardlist_reorder">Reorder cards</string>
+    <string name="cardlist_reorder_done">Done</string>
+    <string name="cardlist_reorder_cancel">Cancel reordering</string>
+    <string name="cardlist_reorder_hint">Drag cards by the handle to change their order.</string>
+    <string name="cardlist_drag_handle">Drag to move %1$s</string>
+    <string name="cardlist_move_up">Move up</string>
+    <string name="cardlist_move_down">Move down</string>
 </resources>
