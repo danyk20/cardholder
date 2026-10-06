@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card types -->
+    <string name="card_type_bank">Банковская карта</string>
+    <string name="card_type_id">Документ</string>
+    <string name="card_type_loyalty">Карта лояльности</string>
+    <string name="card_type_bank_description">Дебетовая или кредитная карта</string>
+    <string name="card_type_id_description">Удостоверение личности, паспорт, водительские права…</string>
+    <string name="card_type_loyalty_description">Карта магазина со штрихкодом или QR-кодом</string>
+
+    <!-- Card sides -->
+    <string name="card_side_front">Лицевая сторона</string>
+    <string name="card_side_back">Оборотная сторона</string>
+    <string name="card_locked">Заблокирована</string>
+    <string name="card_locked_message">Эта карта заблокирована</string>
+    <string name="auth_title_show_cvv">Показать CVV</string>
+    <string name="auth_title_export">Экспорт резервной копии</string>
+    <string name="card_not_found">Этой карты больше нет</string>
+
+    <!-- Authentication -->
+    <string name="auth_title_unlock_card">Разблокировать «%1$s»</string>
+    <string name="auth_subtitle">Подтвердите личность с помощью отпечатка пальца, распознавания лица или блокировки экрана</string>
+    <string name="auth_key_invalidated">Эти данные были защищены блокировкой экрана, которая затем была отключена, поэтому их больше нельзя расшифровать.</string>
+
+    <!-- Validation -->
+    <string name="error_required">Обязательное поле</string>
+    <string name="error_invalid_characters">Содержит недопустимые символы</string>
+    <string name="error_invalid_length">Неверная длина</string>
+    <string name="error_invalid_checksum">Контрольная цифра не совпадает — проверьте, нет ли опечаток</string>
+    <string name="error_invalid_date">Недопустимая дата</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Назад</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_unlock">Разблокировать</string>
+
+    <!-- Barcode symbology -->
+    <string name="format_qr_code">QR-код</string>
+
+    <!-- Card colours -->
+    <string name="color_navy">Тёмно-синий</string>
+    <string name="color_blue">Синий</string>
+    <string name="color_teal">Бирюзовый</string>
+    <string name="color_green">Зелёный</string>
+    <string name="color_lime">Лаймовый</string>
+    <string name="color_amber">Янтарный</string>
+    <string name="color_orange">Оранжевый</string>
+    <string name="color_red">Красный</string>
+    <string name="color_pink">Розовый</string>
+    <string name="color_purple">Фиолетовый</string>
+    <string name="color_brown">Коричневый</string>
+    <string name="color_graphite">Графитовый</string>
+</resources>

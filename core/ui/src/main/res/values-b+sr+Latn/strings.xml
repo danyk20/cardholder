@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Bankovna kartica</string>
+    <string name="card_type_id">Lični dokument</string>
+    <string name="card_type_loyalty">Kartica lojalnosti</string>
+    <string name="card_type_bank_description">Debitna ili kreditna kartica</string>
+    <string name="card_type_id_description">Lična karta, pasoš, vozačka dozvola…</string>
+    <string name="card_type_loyalty_description">Kartica prodavnice sa bar-kodom ili QR kodom</string>
+    <string name="card_side_front">Prednja strana</string>
+    <string name="card_side_back">Zadnja strana</string>
+    <string name="card_locked">Zaključano</string>
+    <string name="card_locked_message">Ova kartica je zaključana</string>
+    <string name="auth_title_show_cvv">Prikaži CVV</string>
+    <string name="auth_title_export">Izvezi rezervnu kopiju</string>
+    <string name="card_not_found">Ova kartica više ne postoji</string>
+    <string name="auth_title_unlock_card">Otključaj: %1$s</string>
+    <string name="auth_subtitle">Potvrdite da ste to vi pomoću otiska prsta, lica ili zaključavanja ekrana</string>
+    <string name="auth_key_invalidated">Ovi podaci su bili zaštićeni zaključavanjem ekrana koje je u međuvremenu uklonjeno, pa više ne mogu da se dešifruju.</string>
+    <string name="error_required">Obavezno</string>
+    <string name="error_invalid_characters">Sadrži nedozvoljene znakove</string>
+    <string name="error_invalid_length">Pogrešna dužina</string>
+    <string name="error_invalid_checksum">Kontrolna cifra se ne poklapa – proverite da li ste pogrešno otkucali</string>
+    <string name="error_invalid_date">Nevažeći datum</string>
+    <string name="action_back">Nazad</string>
+    <string name="action_cancel">Otkaži</string>
+    <string name="action_unlock">Otključaj</string>
+    <string name="format_qr_code">QR kod</string>
+    <string name="color_navy">Tamnoplava</string>
+    <string name="color_blue">Plava</string>
+    <string name="color_teal">Tirkizna</string>
+    <string name="color_green">Zelena</string>
+    <string name="color_lime">Žutozelena</string>
+    <string name="color_amber">Ćilibarska</string>
+    <string name="color_orange">Narandžasta</string>
+    <string name="color_red">Crvena</string>
+    <string name="color_pink">Ružičasta</string>
+    <string name="color_purple">Ljubičasta</string>
+    <string name="color_brown">Smeđa</string>
+    <string name="color_graphite">Grafitna</string>
+</resources>

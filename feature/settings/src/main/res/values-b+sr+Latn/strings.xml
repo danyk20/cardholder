@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Podešavanja</string>
+    <string name="settings_appearance">Izgled</string>
+    <string name="settings_theme_system">Podrazumevano za sistem</string>
+    <string name="settings_theme_light">Svetla</string>
+    <string name="settings_theme_dark">Tamna</string>
+    <string name="settings_dynamic_color">Dinamične boje</string>
+    <string name="settings_dynamic_color_description">Koristi boje pozadine</string>
+    <string name="settings_backup">Rezervna kopija</string>
+    <string name="settings_export">Izvezi rezervnu kopiju</string>
+    <string name="settings_export_description">Sačuvaj sve kartice u fajl zaštićen lozinkom</string>
+    <string name="settings_import">Uvezi rezervnu kopiju</string>
+    <string name="settings_import_description">Vrati kartice iz fajla rezervne kopije</string>
+    <string name="settings_backup_working">Obrađuje se…</string>
+    <string name="settings_password_title_export">Zaštitite rezervnu kopiju</string>
+    <string name="settings_password_title_import">Unesite lozinku rezervne kopije</string>
+    <string name="settings_password_message_export">Rezervna kopija sadrži sve podatke o karticama, uključujući CVV kodove. Izaberite jaku lozinku – ne može da se povrati.</string>
+    <string name="settings_password">Lozinka</string>
+    <string name="settings_password_confirm">Ponovite lozinku</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Koristite najmanje %1$d znak</item>
+        <item quantity="few">Koristite najmanje %1$d znaka</item>
+        <item quantity="other">Koristite najmanje %1$d znakova</item>
+    </plurals>
+    <string name="settings_password_mismatch">Lozinke se ne podudaraju</string>
+    <string name="settings_replace_existing">Zameni kartice koje već postoje</string>
+    <string name="settings_continue">Nastavi</string>
+    <string name="settings_cancel">Otkaži</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">Izvezena je %1$d kartica</item>
+        <item quantity="few">Izvezene su %1$d kartice</item>
+        <item quantity="other">Izvezeno je %1$d kartica</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Uvezena je %1$d kartica</item>
+        <item quantity="few">Uvezene su %1$d kartice</item>
+        <item quantity="other">Uvezeno je %1$d kartica</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d kartica je već postojala i preskočena je</item>
+        <item quantity="few">%1$d kartice su već postojale i preskočene su</item>
+        <item quantity="other">%1$d kartica je već postojalo i preskočeno je</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Pogrešna lozinka</string>
+    <string name="settings_result_invalid_file">Ovo nije rezervna kopija aplikacije Cardholder ili je fajl oštećen</string>
+    <string name="settings_result_auth_required">Potvrdite da ste to vi da biste izvezli zaštićene kartice</string>
+    <string name="settings_result_device_not_secure">Podesite zaključavanje ekrana da biste uvezli kartice sa CVV kodovima ili zaključavanjem</string>
+    <string name="settings_result_failed">Došlo je do greške. Pokušajte ponovo.</string>
+    <string name="settings_about">O aplikaciji</string>
+    <string name="settings_version">Verzija %1$s</string>
+    <string name="settings_privacy">Vaše kartice su šifrovane i nikada ne napuštaju ovaj uređaj osim ako ih ne izvezete. Aplikacija pristupa internetu samo kada zatražite preuzimanje zvaničnog logoa prodavnice ili banke.</string>
+    <string name="settings_privacy_policy">Politika privatnosti</string>
+    <string name="settings_logo_credits">Autorstvo logoa</string>
+    <string name="settings_logo_credits_description">Izvori i licence zvaničnih logoa</string>
+</resources>

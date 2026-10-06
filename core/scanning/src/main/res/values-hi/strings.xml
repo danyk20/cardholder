@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">स्कैनर बंद करें</string>
+    <string name="scanner_hint">अपने कार्ड पर मौजूद बारकोड या QR कोड की ओर कैमरा रखें</string>
+    <string name="scanner_permission_rationale">आपके कार्ड पर मौजूद कोड स्कैन करने के लिए Cardholder को कैमरे की ज़रूरत है. इमेज का विश्लेषण डिवाइस पर ही होता है और उन्हें न तो सेव किया जाता है, न ही कहीं भेजा जाता है.</string>
+    <string name="scanner_grant_permission">कैमरे की अनुमति दें</string>
+    <string name="nfc_title">NFC से कार्ड पढ़ें</string>
+    <string name="nfc_hold_card">अपने कार्ड को फ़ोन के पिछले हिस्से पर सीधा रखें और उसे हिलाएं नहीं.</string>
+    <string name="nfc_reading">कार्ड पढ़ा जा रहा है…</string>
+    <string name="nfc_failed">कार्ड पढ़ा नहीं जा सका. उसे फ़ोन के पिछले हिस्से पर धीरे-धीरे घुमाएं और फिर से कोशिश करें.</string>
+    <string name="nfc_disabled">NFC बंद है.</string>
+    <string name="nfc_turn_on">NFC चालू करें</string>
+    <string name="nfc_cvv_note">CVV चिप पर सेव नहीं होता. कृपया इसे खुद डालें.</string>
+    <string name="nfc_cancel">रद्द करें</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Ρυθμίσεις</string>
+    <string name="settings_appearance">Εμφάνιση</string>
+    <string name="settings_theme_system">Προεπιλογή συστήματος</string>
+    <string name="settings_theme_light">Φωτεινό</string>
+    <string name="settings_theme_dark">Σκούρο</string>
+    <string name="settings_dynamic_color">Δυναμικό χρώμα</string>
+    <string name="settings_dynamic_color_description">Χρήση χρωμάτων από την ταπετσαρία σας</string>
+    <string name="settings_backup">Αντίγραφο ασφαλείας</string>
+    <string name="settings_export">Εξαγωγή αντιγράφου ασφαλείας</string>
+    <string name="settings_export_description">Αποθήκευση όλων των καρτών σε αρχείο με κωδικό πρόσβασης</string>
+    <string name="settings_import">Εισαγωγή αντιγράφου ασφαλείας</string>
+    <string name="settings_import_description">Επαναφορά καρτών από αρχείο αντιγράφου ασφαλείας</string>
+    <string name="settings_backup_working">Σε εξέλιξη…</string>
+    <string name="settings_password_title_export">Προστατέψτε το αντίγραφο ασφαλείας</string>
+    <string name="settings_password_title_import">Εισαγάγετε τον κωδικό πρόσβασης του αντιγράφου ασφαλείας</string>
+    <string name="settings_password_message_export">Το αντίγραφο ασφαλείας περιέχει όλα τα στοιχεία των καρτών, συμπεριλαμβανομένων των CVV. Επιλέξτε έναν ισχυρό κωδικό πρόσβασης – δεν μπορεί να ανακτηθεί.</string>
+    <string name="settings_password">Κωδικός πρόσβασης</string>
+    <string name="settings_password_confirm">Επανάληψη κωδικού πρόσβασης</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Χρησιμοποιήστε τουλάχιστον %1$d χαρακτήρα</item>
+        <item quantity="other">Χρησιμοποιήστε τουλάχιστον %1$d χαρακτήρες</item>
+    </plurals>
+    <string name="settings_password_mismatch">Οι κωδικοί πρόσβασης δεν ταιριάζουν</string>
+    <string name="settings_replace_existing">Αντικατάσταση καρτών που υπάρχουν ήδη</string>
+    <string name="settings_continue">Συνέχεια</string>
+    <string name="settings_cancel">Ακύρωση</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">Εξήχθη %1$d κάρτα</item>
+        <item quantity="other">Εξήχθησαν %1$d κάρτες</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Εισήχθη %1$d κάρτα</item>
+        <item quantity="other">Εισήχθησαν %1$d κάρτες</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d κάρτα υπήρχε ήδη και παραλείφθηκε</item>
+        <item quantity="other">%1$d κάρτες υπήρχαν ήδη και παραλείφθηκαν</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Λανθασμένος κωδικός πρόσβασης</string>
+    <string name="settings_result_invalid_file">Αυτό δεν είναι αντίγραφο ασφαλείας του Cardholder ή το αρχείο είναι κατεστραμμένο</string>
+    <string name="settings_result_auth_required">Επιβεβαιώστε ότι είστε εσείς για να εξαγάγετε προστατευμένες κάρτες</string>
+    <string name="settings_result_device_not_secure">Ορίστε κλείδωμα οθόνης για να εισαγάγετε κάρτες με CVV ή κλείδωμα</string>
+    <string name="settings_result_failed">Παρουσιάστηκε πρόβλημα. Δοκιμάστε ξανά.</string>
+    <string name="settings_about">Πληροφορίες</string>
+    <string name="settings_version">Έκδοση %1$s</string>
+    <string name="settings_privacy">Οι κάρτες σας είναι κρυπτογραφημένες και δεν φεύγουν ποτέ από αυτή τη συσκευή, εκτός αν τις εξαγάγετε. Η εφαρμογή συνδέεται στο διαδίκτυο μόνο όταν ζητάτε τη λήψη του επίσημου λογότυπου ενός καταστήματος ή μιας τράπεζας.</string>
+    <string name="settings_privacy_policy">Πολιτική απορρήτου</string>
+    <string name="settings_logo_credits">Προέλευση λογότυπων</string>
+    <string name="settings_logo_credits_description">Πηγές και άδειες των επίσημων λογότυπων</string>
+</resources>

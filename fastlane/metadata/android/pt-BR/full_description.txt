@@ -1,0 +1,39 @@
+O Cardholder guarda seus cartões bancários, documentos e cartões fidelidade em um só lugar no celular – criptografados, offline e sem anúncios nem rastreamento.
+
+<b>Cartões fidelidade no caixa</b>
+• Cada cartão fidelidade mostra o código de barras ou QR code direto na lista
+• Toque para mostrar o código em tela cheia com brilho máximo, pronto para o leitor
+• Leia o código do seu cartão de plástico com a câmera – ou digite-o
+• Compatível com QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec e Data Matrix
+
+<b>Cartões bancários</b>
+• Guarde o número do cartão, a validade, o titular e o CVV
+• Preencha os dados encostando um cartão por aproximação no celular (NFC)
+• O CVV fica sempre oculto e só aparece após impressão digital, rosto ou bloqueio de tela
+• Bandeira do cartão detectada automaticamente
+
+<b>Documentos</b>
+• Carteira de identidade, passaporte, CNH e muito mais
+• País emissor, número do documento e data de validade
+
+<b>Fotos dos dois lados</b>
+• Se quiser, digitalize a frente e o verso de qualquer cartão com detecção automática de bordas
+• As fotos são criptografadas e nunca saem do seu dispositivo
+
+<b>Segurança e privacidade</b>
+• Tudo é criptografado com chaves guardadas no hardware seguro do celular
+• Bloqueie qualquer cartão para que ele só possa ser aberto com impressão digital, rosto ou bloqueio de tela
+• Capturas de tela são bloqueadas nas telas com dados sensíveis
+• Números copiados são apagados da área de transferência após um minuto
+• Sem conta, sem anúncios, sem análises – seus cartões nunca saem do seu dispositivo
+• O app só se conecta à internet quando você decide baixar o logotipo oficial de uma loja ou banco
+
+<b>Organizado do seu jeito</b>
+• Pesquise e filtre por tipo de cartão
+• Ordene por nome, data de adição ou na sua própria ordem
+• Cores e logotipos de lojas e bancos conhecidos, ou envie os seus
+
+<b>Backup criptografado</b>
+• Exporte todos os cartões para um único arquivo protegido por senha e restaure-o em um celular novo
+
+O Cardholder é de código aberto: https://github.com/danyk20/cardholder

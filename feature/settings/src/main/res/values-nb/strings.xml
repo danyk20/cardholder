@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Innstillinger</string>
+    <string name="settings_appearance">Utseende</string>
+    <string name="settings_theme_system">Systemstandard</string>
+    <string name="settings_theme_light">Lyst</string>
+    <string name="settings_theme_dark">Mørkt</string>
+    <string name="settings_dynamic_color">Dynamiske farger</string>
+    <string name="settings_dynamic_color_description">Bruk farger fra bakgrunnsbildet</string>
+    <string name="settings_backup">Sikkerhetskopi</string>
+    <string name="settings_export">Eksporter sikkerhetskopi</string>
+    <string name="settings_export_description">Lagre alle kortene i en passordbeskyttet fil</string>
+    <string name="settings_import">Importer sikkerhetskopi</string>
+    <string name="settings_import_description">Gjenopprett kort fra en sikkerhetskopifil</string>
+    <string name="settings_backup_working">Jobber …</string>
+    <string name="settings_password_title_export">Beskytt sikkerhetskopien</string>
+    <string name="settings_password_title_import">Skriv inn passordet for sikkerhetskopien</string>
+    <string name="settings_password_message_export">Sikkerhetskopien inneholder alle kortdetaljene, inkludert CVV-koder. Velg et sterkt passord – det kan ikke gjenopprettes.</string>
+    <string name="settings_password">Passord</string>
+    <string name="settings_password_confirm">Gjenta passordet</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Bruk minst %1$d tegn</item>
+        <item quantity="other">Bruk minst %1$d tegn</item>
+    </plurals>
+    <string name="settings_password_mismatch">Passordene samsvarer ikke</string>
+    <string name="settings_replace_existing">Erstatt kort som allerede finnes</string>
+    <string name="settings_continue">Fortsett</string>
+    <string name="settings_cancel">Avbryt</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d kort er eksportert</item>
+        <item quantity="other">%1$d kort er eksportert</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d kort er importert</item>
+        <item quantity="other">%1$d kort er importert</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d fantes allerede og ble hoppet over</item>
+        <item quantity="other">%1$d fantes allerede og ble hoppet over</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Feil passord</string>
+    <string name="settings_result_invalid_file">Dette er ikke en sikkerhetskopi fra Cardholder, eller filen er skadet</string>
+    <string name="settings_result_auth_required">Bekreft at det er deg, for å eksportere beskyttede kort</string>
+    <string name="settings_result_device_not_secure">Konfigurer skjermlås for å importere kort med CVV eller lås</string>
+    <string name="settings_result_failed">Noe gikk galt. Prøv igjen.</string>
+    <string name="settings_about">Om</string>
+    <string name="settings_version">Versjon %1$s</string>
+    <string name="settings_privacy">Kortene dine er kryptert og forlater aldri denne enheten med mindre du eksporterer dem. Appen kobler seg bare til Internett for å laste ned en offisiell butikk- eller banklogo når du ber om det.</string>
+    <string name="settings_privacy_policy">Personvernerklæring</string>
+    <string name="settings_logo_credits">Logokreditering</string>
+    <string name="settings_logo_credits_description">Kilder og lisenser for offisielle logoer</string>
+</resources>

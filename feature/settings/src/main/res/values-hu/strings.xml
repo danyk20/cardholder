@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Beállítások</string>
+    <string name="settings_appearance">Megjelenés</string>
+    <string name="settings_theme_system">Rendszerbeállítás</string>
+    <string name="settings_theme_light">Világos</string>
+    <string name="settings_theme_dark">Sötét</string>
+    <string name="settings_dynamic_color">Dinamikus színek</string>
+    <string name="settings_dynamic_color_description">A háttérkép színeinek használata</string>
+    <string name="settings_backup">Biztonsági mentés</string>
+    <string name="settings_export">Biztonsági mentés exportálása</string>
+    <string name="settings_export_description">Az összes kártya mentése jelszóval védett fájlba</string>
+    <string name="settings_import">Biztonsági mentés importálása</string>
+    <string name="settings_import_description">Kártyák visszaállítása biztonsági mentésből</string>
+    <string name="settings_backup_working">Folyamatban…</string>
+    <string name="settings_password_title_export">Védje biztonsági mentését</string>
+    <string name="settings_password_title_import">Adja meg a mentés jelszavát</string>
+    <string name="settings_password_message_export">A biztonsági mentés az összes kártyaadatot tartalmazza, a CVV-ket is beleértve. Válasszon erős jelszót – később nem lehet visszaállítani.</string>
+    <string name="settings_password">Jelszó</string>
+    <string name="settings_password_confirm">Jelszó megismétlése</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Legalább %1$d karaktert használjon</item>
+        <item quantity="other">Legalább %1$d karaktert használjon</item>
+    </plurals>
+    <string name="settings_password_mismatch">A jelszavak nem egyeznek</string>
+    <string name="settings_replace_existing">Már meglévő kártyák cseréje</string>
+    <string name="settings_continue">Tovább</string>
+    <string name="settings_cancel">Mégse</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d kártya exportálva</item>
+        <item quantity="other">%1$d kártya exportálva</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d kártya importálva</item>
+        <item quantity="other">%1$d kártya importálva</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d kártya már létezett, ezért kimaradt</item>
+        <item quantity="other">%1$d kártya már létezett, ezért kimaradt</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Hibás jelszó</string>
+    <string name="settings_result_invalid_file">Ez nem Cardholder-mentés, vagy a fájl sérült</string>
+    <string name="settings_result_auth_required">A védett kártyák exportálásához igazolja személyazonosságát</string>
+    <string name="settings_result_device_not_secure">A CVV-t tartalmazó vagy zárolt kártyák importálásához állítson be képernyőzárat</string>
+    <string name="settings_result_failed">Hiba történt. Próbálja újra.</string>
+    <string name="settings_about">Névjegy</string>
+    <string name="settings_version">Verzió: %1$s</string>
+    <string name="settings_privacy">Kártyái titkosítva vannak, és soha nem hagyják el ezt az eszközt, hacsak nem exportálja őket. Az alkalmazás csak akkor kapcsolódik az internethez, ha Ön egy üzlet vagy bank hivatalos logójának letöltését kéri.</string>
+    <string name="settings_privacy_policy">Adatvédelmi irányelvek</string>
+    <string name="settings_logo_credits">Logók forrása</string>
+    <string name="settings_logo_credits_description">A hivatalos logók forrásai és licencei</string>
+</resources>

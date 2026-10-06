@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Bearbeiten</string>
+    <string name="detail_delete">Löschen</string>
+    <string name="detail_more">Weitere Optionen</string>
+    <string name="detail_flip">Andere Seite anzeigen</string>
+    <string name="detail_show_code">Code anzeigen</string>
+    <string name="detail_copied">%1$s kopiert. Wird in einer Minute aus der Zwischenablage gelöscht.</string>
+    <string name="detail_copy">%1$s kopieren</string>
+    <string name="detail_show_cvv">CVV anzeigen</string>
+    <string name="detail_hide_cvv">CVV ausblenden</string>
+    <string name="detail_locked_details">Details sind ausgeblendet, weil diese Karte geschützt ist</string>
+    <string name="detail_lock">Karte schützen</string>
+    <string name="detail_lock_on">Zum Anzeigen dieser Karte ist Fingerabdruck, Gesichtserkennung oder Displaysperre erforderlich</string>
+    <string name="detail_lock_off">Diese Karte ist für alle sichtbar, die das Smartphone nutzen</string>
+    <string name="detail_lock_unavailable">Zum Schützen von Karten eine Displaysperre auf dem Gerät einrichten</string>
+    <string name="detail_delete_title">Diese Karte löschen?</string>
+    <string name="detail_delete_message">%1$s und die zugehörigen Fotos werden endgültig von diesem Gerät gelöscht.</string>
+    <string name="detail_cancel">Abbrechen</string>
+    <string name="detail_close_photo">Foto schließen</string>
+    <string name="detail_ok">OK</string>
+
+    <string name="field_bank">Bank</string>
+    <string name="field_number">Kartennummer</string>
+    <string name="field_expiry">Gültig bis</string>
+    <string name="field_holder">Karteninhaber</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Kartennetzwerk</string>
+    <string name="field_country">Land</string>
+    <string name="field_document_number">Dokumentnummer</string>
+    <string name="field_shop">Geschäft</string>
+    <string name="field_code">Code</string>
+    <string name="field_format">Codetyp</string>
+</resources>

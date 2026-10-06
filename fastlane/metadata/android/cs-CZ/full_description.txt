@@ -1,0 +1,39 @@
+Cardholder uchovává vaše platební karty, doklady a věrnostní karty na jednom místě v telefonu – zašifrované, offline a bez reklam a sledování.
+
+<b>Věrnostní karty u pokladny</b>
+• Každá věrnostní karta zobrazuje svůj čárový nebo QR kód přímo v seznamu
+• Klepnutím zobrazíte kód na celou obrazovku s maximálním jasem, připravený pro čtečku
+• Naskenujte kód z plastové karty fotoaparátem – nebo ho zadejte ručně
+• Podporuje QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec a Data Matrix
+
+<b>Platební karty</b>
+• Uložte číslo karty, datum platnosti, držitele karty a CVV
+• Údaje vyplníte přiložením bezkontaktní karty k telefonu (NFC)
+• CVV je vždy skryté a zobrazí se až po ověření otiskem prstu, obličejem nebo zámkem obrazovky
+• Karetní společnost se rozpozná automaticky
+
+<b>Doklady</b>
+• Občanské průkazy, pasy, řidičské průkazy a další
+• Země vydání, číslo dokladu a datum platnosti
+
+<b>Fotky obou stran</b>
+• Volitelně naskenujte přední i zadní stranu libovolné karty s automatickým rozpoznáním okrajů
+• Fotky jsou zašifrované a nikdy neopustí vaše zařízení
+
+<b>Zabezpečení a soukromí</b>
+• Vše je zašifrováno klíči uloženými v zabezpečeném hardwaru telefonu
+• Zamkněte libovolnou kartu, aby šla otevřít jen otiskem prstu, obličejem nebo zámkem obrazovky
+• Na obrazovkách s citlivými údaji jsou snímky obrazovky blokovány
+• Zkopírovaná čísla se po minutě odstraní ze schránky
+• Bez účtu, bez reklam, bez analytiky – vaše karty nikdy neopustí zařízení
+• Aplikace se připojuje k internetu pouze tehdy, když si chcete stáhnout oficiální logo obchodu nebo banky
+
+<b>Uspořádané podle vás</b>
+• Vyhledávání a filtrování podle typu karty
+• Řazení podle názvu, data přidání nebo vlastního pořadí
+• Barvy a loga známých obchodů a bank – nebo nahrajte vlastní
+
+<b>Šifrovaná záloha</b>
+• Exportujte všechny karty do jednoho souboru chráněného heslem a obnovte je v novém telefonu
+
+Cardholder je open source: https://github.com/danyk20/cardholder

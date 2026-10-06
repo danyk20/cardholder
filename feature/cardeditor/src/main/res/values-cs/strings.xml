@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Přidat kartu</string>
+    <string name="editor_title_edit">Upravit kartu</string>
+    <string name="editor_save">Uložit</string>
+    <string name="editor_next">Další</string>
+    <string name="editor_skip">Přeskočit</string>
+    <string name="editor_choose_type">O jaký typ karty jde?</string>
+
+    <!-- Sides -->
+    <string name="editor_sides_title">Přidejte fotky karty</string>
+    <string name="editor_sides_message">Volitelné. Fotky jsou zašifrované a uložené pouze v tomto zařízení.</string>
+    <string name="editor_side_scan">Naskenovat</string>
+    <string name="editor_side_choose">Galerie</string>
+    <string name="editor_side_remove">Odstranit fotku</string>
+    <string name="editor_side_missing">Bez fotky</string>
+
+    <!-- Common fields -->
+    <string name="editor_field_title">Název</string>
+    <string name="editor_field_title_hint">Výchozí: %1$s</string>
+    <string name="editor_color">Barva</string>
+    <string name="editor_lock">Zamknout tuto kartu</string>
+    <string name="editor_lock_description">K zobrazení jakýchkoli údajů vyžadovat otisk prstu, obličej nebo zámek obrazovky</string>
+    <string name="editor_protection_unavailable">Chcete-li tuto funkci použít, nastavte v zařízení zámek obrazovky</string>
+    <string name="editor_open_security_settings">Nastavit</string>
+    <string name="editor_photos">Fotky</string>
+
+    <!-- Bank -->
+    <string name="editor_read_nfc">Načíst kartu přes NFC</string>
+    <string name="editor_field_bank">Banka (volitelné)</string>
+    <string name="editor_choose_bank">Vybrat banku</string>
+    <string name="editor_search_bank">Hledat banky</string>
+    <string name="editor_field_number">Číslo karty</string>
+    <string name="editor_field_expiry">Platnost (MM/RR)</string>
+    <string name="editor_field_holder">Držitel karty</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Volitelné. Vždy skryté, zobrazí se až po ověření vaší totožnosti.</string>
+    <string name="editor_cvv_stored">CVV je uloženo. Chcete-li ho zachovat, nechte pole prázdné.</string>
+    <string name="editor_cvv_remove">Odstranit uložené CVV</string>
+    <string name="editor_card_expired">Platnost této karty vypršela</string>
+
+    <!-- ID -->
+    <string name="editor_field_country">Země vydání</string>
+    <string name="editor_choose_country">Vybrat zemi</string>
+    <string name="editor_search_country">Hledat země</string>
+    <string name="editor_field_document_number">Číslo dokladu (volitelné)</string>
+    <string name="editor_field_id_expiry">Datum platnosti (volitelné)</string>
+    <string name="editor_clear_date">Vymazat</string>
+
+    <!-- Loyalty -->
+    <string name="editor_field_shop">Obchod</string>
+    <string name="editor_choose_shop">Vybrat obchod</string>
+    <string name="editor_search_shop">Hledat obchody</string>
+    <string name="editor_custom_shop">Použít „%1$s“</string>
+    <string name="editor_field_code">Číslo karty / kód</string>
+    <string name="editor_field_format">Typ kódu</string>
+    <string name="editor_scan_barcode">Naskenovat kód</string>
+
+    <!-- Logo -->
+    <string name="editor_logo">Logo</string>
+    <string name="editor_logo_none">Bez loga</string>
+    <string name="editor_logo_official">Oficiální logo</string>
+    <string name="editor_logo_upload">Nahrát</string>
+    <string name="editor_logo_remove">Odstranit logo</string>
+    <string name="editor_logo_choice_title">Logo pro %1$s</string>
+    <string name="editor_logo_choice_message">Zobrazit na této kartě oficiální logo %1$s? Stáhne se jednou z Wikimedia Commons a uloží se ve vašem zařízení.</string>
+    <string name="editor_logo_use_official">Použít oficiální logo</string>
+    <string name="editor_logo_upload_own">Nahrát vlastní</string>
+    <string name="editor_logo_keep_blank">Ponechat prázdné</string>
+    <string name="editor_logo_license">Licence: %1$s</string>
+    <string name="editor_logo_attribution">Licence: %1$s · autor: %2$s</string>
+    <string name="editor_logo_download_failed">Logo se nepodařilo stáhnout. Zkontrolujte připojení a zkuste to znovu.</string>
+
+    <!-- States -->
+    <string name="editor_locked_title">Tato karta je zamčená</string>
+    <string name="editor_not_found">Tato karta už neexistuje</string>
+    <string name="editor_ok">OK</string>
+</resources>

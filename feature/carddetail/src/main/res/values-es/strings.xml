@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Editar</string>
+    <string name="detail_delete">Eliminar</string>
+    <string name="detail_more">Más opciones</string>
+    <string name="detail_flip">Mostrar la otra cara</string>
+    <string name="detail_show_code">Mostrar código</string>
+    <string name="detail_copied">%1$s copiado. Se borrará del portapapeles en un minuto.</string>
+    <string name="detail_copy">Copiar: %1$s</string>
+    <string name="detail_show_cvv">Mostrar CVV</string>
+    <string name="detail_hide_cvv">Ocultar CVV</string>
+    <string name="detail_locked_details">Los detalles están ocultos porque esta tarjeta está bloqueada</string>
+    <string name="detail_lock">Bloquear tarjeta</string>
+    <string name="detail_lock_on">Se necesita la huella digital, la cara o el bloqueo de pantalla para ver esta tarjeta</string>
+    <string name="detail_lock_off">Cualquier persona que use tu teléfono puede ver esta tarjeta</string>
+    <string name="detail_lock_unavailable">Configura un bloqueo de pantalla en tu dispositivo para bloquear tarjetas</string>
+    <string name="detail_delete_title">¿Eliminar esta tarjeta?</string>
+    <string name="detail_delete_message">«%1$s» y sus fotos se eliminarán de forma permanente de este dispositivo.</string>
+    <string name="detail_cancel">Cancelar</string>
+    <string name="detail_close_photo">Cerrar foto</string>
+    <string name="detail_ok">Aceptar</string>
+    <string name="field_bank">Banco</string>
+    <string name="field_number">Número de tarjeta</string>
+    <string name="field_expiry">Caducidad</string>
+    <string name="field_holder">Titular</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Red</string>
+    <string name="field_country">País</string>
+    <string name="field_document_number">Número de documento</string>
+    <string name="field_shop">Tienda</string>
+    <string name="field_code">Código</string>
+    <string name="field_format">Tipo de código</string>
+</resources>

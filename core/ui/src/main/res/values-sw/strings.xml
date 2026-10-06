@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Kadi ya benki</string>
+    <string name="card_type_id">Kitambulisho</string>
+    <string name="card_type_loyalty">Kadi ya uaminifu</string>
+    <string name="card_type_bank_description">Kadi ya malipo au kadi ya mkopo</string>
+    <string name="card_type_id_description">Kitambulisho cha taifa, pasipoti, leseni ya udereva…</string>
+    <string name="card_type_loyalty_description">Kadi ya duka yenye msimbopau au msimbo wa QR</string>
+    <string name="card_side_front">Mbele</string>
+    <string name="card_side_back">Nyuma</string>
+    <string name="card_locked">Imefungwa</string>
+    <string name="card_locked_message">Kadi hii imefungwa</string>
+    <string name="auth_title_show_cvv">Onyesha CVV</string>
+    <string name="auth_title_export">Hamisha nakala rudufu</string>
+    <string name="card_not_found">Kadi hii haipo tena</string>
+    <string name="auth_title_unlock_card">Fungua %1$s</string>
+    <string name="auth_subtitle">Thibitisha kuwa ni wewe kwa alama ya kidole, uso au mbinu ya kufunga skrini</string>
+    <string name="auth_key_invalidated">Data hii ililindwa kwa mbinu ya kufunga skrini ambayo imeondolewa, kwa hivyo haiwezi kusimbuliwa tena.</string>
+    <string name="error_required">Inahitajika</string>
+    <string name="error_invalid_characters">Ina herufi zisizoruhusiwa</string>
+    <string name="error_invalid_length">Urefu si sahihi</string>
+    <string name="error_invalid_checksum">Tarakimu ya ukaguzi hailingani – tafadhali kagua makosa ya kuandika</string>
+    <string name="error_invalid_date">Si tarehe sahihi</string>
+    <string name="action_back">Rudi</string>
+    <string name="action_cancel">Ghairi</string>
+    <string name="action_unlock">Fungua</string>
+    <string name="format_qr_code">Msimbo wa QR</string>
+    <string name="color_navy">Samawati iliyokolea</string>
+    <string name="color_blue">Samawati</string>
+    <string name="color_teal">Kijani-samawati</string>
+    <string name="color_green">Kijani</string>
+    <string name="color_lime">Kijani cha limau</string>
+    <string name="color_amber">Kaharabu</string>
+    <string name="color_orange">Rangi ya chungwa</string>
+    <string name="color_red">Nyekundu</string>
+    <string name="color_pink">Waridi</string>
+    <string name="color_purple">Zambarau</string>
+    <string name="color_brown">Kahawia</string>
+    <string name="color_graphite">Grafiti</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Cartão bancário</string>
+    <string name="card_type_id">Documento</string>
+    <string name="card_type_loyalty">Cartão fidelidade</string>
+    <string name="card_type_bank_description">Cartão de débito ou crédito</string>
+    <string name="card_type_id_description">RG, passaporte, CNH…</string>
+    <string name="card_type_loyalty_description">Cartão de loja com código de barras ou QR code</string>
+    <string name="card_side_front">Frente</string>
+    <string name="card_side_back">Verso</string>
+    <string name="card_locked">Bloqueado</string>
+    <string name="card_locked_message">Este cartão está bloqueado</string>
+    <string name="auth_title_show_cvv">Mostrar CVV</string>
+    <string name="auth_title_export">Exportar backup</string>
+    <string name="card_not_found">Este cartão não existe mais</string>
+    <string name="auth_title_unlock_card">Desbloquear %1$s</string>
+    <string name="auth_subtitle">Confirme sua identidade com impressão digital, rosto ou bloqueio de tela</string>
+    <string name="auth_key_invalidated">Estes dados eram protegidos por um bloqueio de tela que foi removido e não podem mais ser descriptografados.</string>
+    <string name="error_required">Obrigatório</string>
+    <string name="error_invalid_characters">Contém caracteres não permitidos</string>
+    <string name="error_invalid_length">Tamanho incorreto</string>
+    <string name="error_invalid_checksum">O dígito verificador não confere – verifique se há erros de digitação</string>
+    <string name="error_invalid_date">Data inválida</string>
+    <string name="action_back">Voltar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_unlock">Desbloquear</string>
+    <string name="format_qr_code">QR code</string>
+    <string name="color_navy">Azul-marinho</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_teal">Azul-petróleo</string>
+    <string name="color_green">Verde</string>
+    <string name="color_lime">Verde-limão</string>
+    <string name="color_amber">Âmbar</string>
+    <string name="color_orange">Laranja</string>
+    <string name="color_red">Vermelho</string>
+    <string name="color_pink">Rosa</string>
+    <string name="color_purple">Roxo</string>
+    <string name="color_brown">Marrom</string>
+    <string name="color_graphite">Grafite</string>
+</resources>

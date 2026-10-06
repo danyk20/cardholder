@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Închideți scanerul</string>
+    <string name="scanner_hint">Îndreptați camera spre codul de bare sau codul QR de pe card</string>
+    <string name="scanner_permission_rationale">Cardholder are nevoie de cameră pentru a scana codul de pe card. Imaginile sunt analizate pe dispozitiv și nu sunt niciodată stocate sau trimise nicăieri.</string>
+    <string name="scanner_grant_permission">Permiteți camera</string>
+    <string name="nfc_title">Citiți cardul prin NFC</string>
+    <string name="nfc_hold_card">Țineți cardul lipit de spatele telefonului și nu îl mișcați.</string>
+    <string name="nfc_reading">Se citește cardul…</string>
+    <string name="nfc_failed">Cardul nu a putut fi citit. Mișcați-l încet pe spatele telefonului și încercați din nou.</string>
+    <string name="nfc_disabled">NFC este dezactivat.</string>
+    <string name="nfc_turn_on">Activați NFC</string>
+    <string name="nfc_cvv_note">Codul CVV nu este stocat pe cip. Introduceți-l manual.</string>
+    <string name="nfc_cancel">Anulați</string>
+</resources>

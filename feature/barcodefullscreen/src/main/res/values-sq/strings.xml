@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Mbyll</string>
+    <string name="barcode_details">Detajet e kartës</string>
+    <string name="barcode_description">%1$s për %2$s</string>
+    <string name="barcode_unencodable">Ky kod nuk mund të shfaqet si %1$s. Redakto kartën për të rregulluar kodin ose zgjidh një lloj tjetër kodi.</string>
+    <string name="barcode_hint">Mbaje ekranin të sheshtë dhe të palëvizur para skanerit.</string>
+</resources>

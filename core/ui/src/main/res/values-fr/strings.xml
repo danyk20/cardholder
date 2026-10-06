@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Carte bancaire</string>
+    <string name="card_type_id">Pièce d\'identité</string>
+    <string name="card_type_loyalty">Carte de fidélité</string>
+    <string name="card_type_bank_description">Carte de débit ou de crédit</string>
+    <string name="card_type_id_description">Carte d\'identité, passeport, permis de conduire…</string>
+    <string name="card_type_loyalty_description">Carte de magasin avec code-barres ou code QR</string>
+    <string name="card_side_front">Recto</string>
+    <string name="card_side_back">Verso</string>
+    <string name="card_locked">Verrouillée</string>
+    <string name="card_locked_message">Cette carte est verrouillée</string>
+    <string name="auth_title_show_cvv">Afficher le CVV</string>
+    <string name="auth_title_export">Exporter la sauvegarde</string>
+    <string name="card_not_found">Cette carte n\'existe plus</string>
+    <string name="auth_title_unlock_card">Déverrouiller %1$s</string>
+    <string name="auth_subtitle">Confirmez votre identité avec votre empreinte digitale, votre visage ou le verrouillage de l\'écran</string>
+    <string name="auth_key_invalidated">Ces données étaient protégées par un verrouillage de l\'écran qui a été supprimé depuis. Elles ne peuvent plus être déchiffrées.</string>
+    <string name="error_required">Obligatoire</string>
+    <string name="error_invalid_characters">Contient des caractères non autorisés</string>
+    <string name="error_invalid_length">Longueur incorrecte</string>
+    <string name="error_invalid_checksum">Le chiffre de contrôle ne correspond pas – vérifiez qu\'il n\'y a pas de faute de frappe</string>
+    <string name="error_invalid_date">Date non valide</string>
+    <string name="action_back">Retour</string>
+    <string name="action_cancel">Annuler</string>
+    <string name="action_unlock">Déverrouiller</string>
+    <string name="format_qr_code">Code QR</string>
+    <string name="color_navy">Marine</string>
+    <string name="color_blue">Bleu</string>
+    <string name="color_teal">Bleu canard</string>
+    <string name="color_green">Vert</string>
+    <string name="color_lime">Citron vert</string>
+    <string name="color_amber">Ambre</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_red">Rouge</string>
+    <string name="color_pink">Rose</string>
+    <string name="color_purple">Violet</string>
+    <string name="color_brown">Marron</string>
+    <string name="color_graphite">Graphite</string>
+</resources>

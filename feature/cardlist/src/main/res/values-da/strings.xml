@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Indstillinger</string>
+    <string name="cardlist_add_card">Tilføj kort</string>
+    <string name="cardlist_search">Søg i kort</string>
+    <string name="cardlist_clear_search">Ryd søgning</string>
+    <string name="cardlist_empty_title">Ingen kort endnu</string>
+    <string name="cardlist_empty_message">Opbevar dine betalings-, ID- og kundekort sikkert på din telefon. Alt er krypteret og bliver på din enhed.</string>
+    <string name="cardlist_no_results">Ingen kort matcher din søgning</string>
+    <string name="cardlist_show_code">Vis koden i fuld skærm</string>
+    <string name="cardlist_tap_to_unlock">Tryk for at låse op</string>
+    <string name="cardlist_sort">Sortér kort</string>
+    <string name="cardlist_sort_name">Navn (A–Å)</string>
+    <string name="cardlist_sort_date">Dato tilføjet (nyeste først)</string>
+    <string name="cardlist_sort_custom">Tilpasset rækkefølge</string>
+    <string name="cardlist_reorder">Skift rækkefølge</string>
+    <string name="cardlist_reorder_done">Færdig</string>
+    <string name="cardlist_reorder_cancel">Annuller ændring af rækkefølge</string>
+    <string name="cardlist_reorder_hint">Træk kortene i håndtaget for at ændre rækkefølgen.</string>
+    <string name="cardlist_drag_handle">Træk for at flytte %1$s</string>
+    <string name="cardlist_move_up">Flyt op</string>
+    <string name="cardlist_move_down">Flyt ned</string>
+</resources>

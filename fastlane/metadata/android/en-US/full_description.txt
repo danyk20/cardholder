@@ -1,0 +1,39 @@
+Cardholder keeps your bank cards, ID cards and loyalty cards in one place on your phone – encrypted, offline and free of ads and tracking.
+
+<b>Loyalty cards at the checkout</b>
+• Every loyalty card shows its barcode or QR code right in the list
+• Tap it to show the code full screen at maximum brightness, ready for the scanner
+• Scan the code from your plastic card with the camera – or type it in
+• Supports QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec and Data Matrix
+
+<b>Bank cards</b>
+• Store card number, expiry date, card holder and CVV
+• Fill in the details by holding a contactless card to your phone (NFC)
+• The CVV is always hidden and only shown after fingerprint, face or screen lock
+• Card network detected automatically
+
+<b>ID cards</b>
+• Identity cards, passports, driving licences and more
+• Issuing country, document number and expiry date
+
+<b>Photos of both sides</b>
+• Optionally scan the front and back of any card with automatic edge detection
+• Photos are encrypted and never leave your device
+
+<b>Security and privacy</b>
+• Everything is encrypted with keys kept in your phone's secure hardware
+• Lock any card so that it can only be opened with fingerprint, face or screen lock
+• Screenshots are blocked on screens with sensitive details
+• Copied numbers are removed from the clipboard after a minute
+• No account, no ads, no analytics – your cards never leave your device
+• The app only goes online when you choose to download an official shop or bank logo
+
+<b>Organised your way</b>
+• Search and filter by card type
+• Sort by name, date added or your own custom order
+• Colours and logos for known shops and banks, or upload your own
+
+<b>Encrypted backup</b>
+• Export all cards to a single password-protected file and restore it on a new phone
+
+Cardholder is open source: https://github.com/danyk20/cardholder

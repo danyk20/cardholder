@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Editați</string>
+    <string name="detail_delete">Ștergeți</string>
+    <string name="detail_more">Mai multe opțiuni</string>
+    <string name="detail_flip">Afișați cealaltă față</string>
+    <string name="detail_show_code">Afișați codul</string>
+    <string name="detail_copied">Copiat: %1$s. Clipboardul va fi golit peste un minut.</string>
+    <string name="detail_copy">Copiați %1$s</string>
+    <string name="detail_show_cvv">Afișați codul CVV</string>
+    <string name="detail_hide_cvv">Ascundeți codul CVV</string>
+    <string name="detail_locked_details">Detaliile sunt ascunse deoarece acest card este blocat</string>
+    <string name="detail_lock">Blocați cardul</string>
+    <string name="detail_lock_on">Pentru a vedea acest card este nevoie de amprentă, față sau blocarea ecranului</string>
+    <string name="detail_lock_off">Oricine vă folosește telefonul poate vedea acest card</string>
+    <string name="detail_lock_unavailable">Configurați o blocare a ecranului pe dispozitiv pentru a bloca cardurile</string>
+    <string name="detail_delete_title">Ștergeți acest card?</string>
+    <string name="detail_delete_message">%1$s și fotografiile sale vor fi șterse definitiv de pe acest dispozitiv.</string>
+    <string name="detail_cancel">Anulați</string>
+    <string name="detail_close_photo">Închideți fotografia</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Bancă</string>
+    <string name="field_number">Numărul cardului</string>
+    <string name="field_expiry">Data expirării</string>
+    <string name="field_holder">Titularul cardului</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Rețea</string>
+    <string name="field_country">Țară</string>
+    <string name="field_document_number">Numărul documentului</string>
+    <string name="field_shop">Magazin</string>
+    <string name="field_code">Cod</string>
+    <string name="field_format">Tipul codului</string>
+</resources>

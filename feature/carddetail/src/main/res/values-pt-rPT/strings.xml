@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Editar</string>
+    <string name="detail_delete">Eliminar</string>
+    <string name="detail_more">Mais opções</string>
+    <string name="detail_flip">Mostrar o outro lado</string>
+    <string name="detail_show_code">Mostrar código</string>
+    <string name="detail_copied">Copiado: %1$s. A área de transferência será limpa dentro de um minuto.</string>
+    <string name="detail_copy">Copiar %1$s</string>
+    <string name="detail_show_cvv">Mostrar CVV</string>
+    <string name="detail_hide_cvv">Ocultar CVV</string>
+    <string name="detail_locked_details">Os detalhes estão ocultos porque este cartão está bloqueado</string>
+    <string name="detail_lock">Bloquear cartão</string>
+    <string name="detail_lock_on">É necessária a impressão digital, o rosto ou o bloqueio de ecrã para ver este cartão</string>
+    <string name="detail_lock_off">Qualquer pessoa que use o seu telemóvel pode ver este cartão</string>
+    <string name="detail_lock_unavailable">Configure um bloqueio de ecrã no dispositivo para bloquear cartões</string>
+    <string name="detail_delete_title">Eliminar este cartão?</string>
+    <string name="detail_delete_message">%1$s e as respetivas fotos serão eliminados permanentemente deste dispositivo.</string>
+    <string name="detail_cancel">Cancelar</string>
+    <string name="detail_close_photo">Fechar foto</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Banco</string>
+    <string name="field_number">Número do cartão</string>
+    <string name="field_expiry">Validade</string>
+    <string name="field_holder">Titular</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Rede</string>
+    <string name="field_country">País</string>
+    <string name="field_document_number">Número do documento</string>
+    <string name="field_shop">Loja</string>
+    <string name="field_code">Código</string>
+    <string name="field_format">Tipo de código</string>
+</resources>

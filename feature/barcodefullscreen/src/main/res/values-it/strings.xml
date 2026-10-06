@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Chiudi</string>
+    <string name="barcode_details">Dettagli carta</string>
+    <string name="barcode_description">%1$s di %2$s</string>
+    <string name="barcode_unencodable">Impossibile mostrare questo codice come %1$s. Modifica la carta per correggere il codice o scegli un altro tipo di codice.</string>
+    <string name="barcode_hint">Tieni lo schermo piatto e fermo davanti allo scanner.</string>
+</resources>

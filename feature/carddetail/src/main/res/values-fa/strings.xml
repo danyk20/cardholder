@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">ویرایش</string>
+    <string name="detail_delete">حذف</string>
+    <string name="detail_more">گزینه‌های بیشتر</string>
+    <string name="detail_flip">نمایش طرف دیگر</string>
+    <string name="detail_show_code">نمایش کد</string>
+    <string name="detail_copied">%1$s کپی شد. تا یک دقیقه دیگر از بریده‌دان پاک می‌شود.</string>
+    <string name="detail_copy">کپی %1$s</string>
+    <string name="detail_show_cvv">نمایش CVV</string>
+    <string name="detail_hide_cvv">پنهان کردن CVV</string>
+    <string name="detail_locked_details">جزئیات پنهان است، چون این کارت قفل است</string>
+    <string name="detail_lock">قفل کردن کارت</string>
+    <string name="detail_lock_on">برای دیدن این کارت، اثر انگشت، چهره یا قفل صفحه لازم است</string>
+    <string name="detail_lock_off">هرکسی که از تلفن شما استفاده کند می‌تواند این کارت را ببیند</string>
+    <string name="detail_lock_unavailable">برای قفل کردن کارت‌ها، قفل صفحه را در دستگاهتان تنظیم کنید</string>
+    <string name="detail_delete_title">این کارت حذف شود؟</string>
+    <string name="detail_delete_message">%1$s و عکس‌هایش برای همیشه از این دستگاه حذف می‌شوند.</string>
+    <string name="detail_cancel">لغو</string>
+    <string name="detail_close_photo">بستن عکس</string>
+    <string name="detail_ok">تأیید</string>
+    <string name="field_bank">بانک</string>
+    <string name="field_number">شماره کارت</string>
+    <string name="field_expiry">تاریخ انقضا</string>
+    <string name="field_holder">دارنده کارت</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">شبکه</string>
+    <string name="field_country">کشور</string>
+    <string name="field_document_number">شماره مدرک</string>
+    <string name="field_shop">فروشگاه</string>
+    <string name="field_code">کد</string>
+    <string name="field_format">نوع کد</string>
+</resources>

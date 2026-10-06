@@ -1,0 +1,39 @@
+Cardholder przechowuje Twoje karty bankowe, dokumenty i karty lojalnościowe w jednym miejscu w telefonie – zaszyfrowane, offline, bez reklam i śledzenia.
+
+<b>Karty lojalnościowe przy kasie</b>
+• Kod kreskowy lub kod QR każdej karty lojalnościowej widać od razu na liście
+• Kliknij go, aby wyświetlić kod na pełnym ekranie z maksymalną jasnością, gotowy do zeskanowania
+• Zeskanuj kod z plastikowej karty aparatem lub wpisz go ręcznie
+• Obsługiwane formaty: QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec i Data Matrix
+
+<b>Karty bankowe</b>
+• Numer karty, data ważności, posiadacz karty i kod CVV
+• Uzupełnij dane, przykładając kartę zbliżeniową do telefonu (NFC)
+• Kod CVV jest zawsze ukryty i wyświetla się dopiero po potwierdzeniu odciskiem palca, skanem twarzy lub blokadą ekranu
+• Automatyczne rozpoznawanie organizacji płatniczej
+
+<b>Dokumenty</b>
+• Dowody osobiste, paszporty, prawa jazdy i inne
+• Kraj wydania, numer dokumentu i data ważności
+
+<b>Zdjęcia obu stron</b>
+• Opcjonalnie zeskanuj przód i tył dowolnej karty z automatycznym wykrywaniem krawędzi
+• Zdjęcia są szyfrowane i nigdy nie opuszczają urządzenia
+
+<b>Bezpieczeństwo i prywatność</b>
+• Wszystko jest szyfrowane kluczami przechowywanymi w bezpiecznym module sprzętowym telefonu
+• Zablokuj dowolną kartę, aby można ją było otworzyć tylko odciskiem palca, skanem twarzy lub blokadą ekranu
+• Zrzuty ekranu są blokowane na ekranach z poufnymi danymi
+• Skopiowane numery są usuwane ze schowka po minucie
+• Bez konta, reklam i analityki – Twoje karty nigdy nie opuszczają urządzenia
+• Aplikacja łączy się z internetem tylko wtedy, gdy zdecydujesz się pobrać oficjalne logo sklepu lub banku
+
+<b>Porządek po Twojemu</b>
+• Wyszukiwanie i filtrowanie według typu karty
+• Sortowanie według nazwy, daty dodania lub własnej kolejności
+• Kolory i logo znanych sklepów i banków albo własne obrazy
+
+<b>Zaszyfrowana kopia zapasowa</b>
+• Wyeksportuj wszystkie karty do jednego pliku chronionego hasłem i przywróć je na nowym telefonie
+
+Cardholder to aplikacja open source: https://github.com/danyk20/cardholder

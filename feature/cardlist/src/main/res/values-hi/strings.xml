@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">सेटिंग</string>
+    <string name="cardlist_add_card">कार्ड जोड़ें</string>
+    <string name="cardlist_search">कार्ड खोजें</string>
+    <string name="cardlist_clear_search">खोज मिटाएं</string>
+    <string name="cardlist_empty_title">अभी तक कोई कार्ड नहीं है</string>
+    <string name="cardlist_empty_message">अपने बैंक, आईडी और लॉयल्टी कार्ड अपने फ़ोन पर सुरक्षित रखें. सब कुछ एन्क्रिप्ट किया जाता है और आपके डिवाइस पर ही रहता है.</string>
+    <string name="cardlist_no_results">आपकी खोज से कोई कार्ड मेल नहीं खाता</string>
+    <string name="cardlist_show_code">कोड को फ़ुल स्क्रीन में दिखाएं</string>
+    <string name="cardlist_tap_to_unlock">अनलॉक करने के लिए टैप करें</string>
+    <string name="cardlist_sort">कार्ड क्रम से लगाएं</string>
+    <string name="cardlist_sort_name">नाम (A–Z)</string>
+    <string name="cardlist_sort_date">जोड़ने की तारीख (नए पहले)</string>
+    <string name="cardlist_sort_custom">कस्टम क्रम</string>
+    <string name="cardlist_reorder">कार्ड का क्रम बदलें</string>
+    <string name="cardlist_reorder_done">हो गया</string>
+    <string name="cardlist_reorder_cancel">क्रम बदलना रद्द करें</string>
+    <string name="cardlist_reorder_hint">कार्ड का क्रम बदलने के लिए उन्हें हैंडल से खींचें.</string>
+    <string name="cardlist_drag_handle">%1$s को खिसकाने के लिए खींचें</string>
+    <string name="cardlist_move_up">ऊपर ले जाएं</string>
+    <string name="cardlist_move_down">नीचे ले जाएं</string>
+</resources>

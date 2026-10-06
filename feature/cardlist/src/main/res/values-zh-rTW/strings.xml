@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">設定</string>
+    <string name="cardlist_add_card">新增卡片</string>
+    <string name="cardlist_search">搜尋卡片</string>
+    <string name="cardlist_clear_search">清除搜尋內容</string>
+    <string name="cardlist_empty_title">尚未新增任何卡片</string>
+    <string name="cardlist_empty_message">將你的銀行卡、證件和會員卡安全地存放在手機上。所有資料都會經過加密，且只會保留在你的裝置上。</string>
+    <string name="cardlist_no_results">找不到符合搜尋條件的卡片</string>
+    <string name="cardlist_show_code">以全螢幕顯示代碼</string>
+    <string name="cardlist_tap_to_unlock">輕觸即可解鎖</string>
+    <string name="cardlist_sort">排序卡片</string>
+    <string name="cardlist_sort_name">名稱（A–Z）</string>
+    <string name="cardlist_sort_date">新增日期（由新到舊）</string>
+    <string name="cardlist_sort_custom">自訂順序</string>
+    <string name="cardlist_reorder">調整卡片順序</string>
+    <string name="cardlist_reorder_done">完成</string>
+    <string name="cardlist_reorder_cancel">取消調整順序</string>
+    <string name="cardlist_reorder_hint">拖曳卡片上的控點即可變更順序。</string>
+    <string name="cardlist_drag_handle">拖曳以移動「%1$s」</string>
+    <string name="cardlist_move_up">上移</string>
+    <string name="cardlist_move_down">下移</string>
+</resources>

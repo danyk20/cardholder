@@ -1,0 +1,39 @@
+Cardholder i mban kartat e tua bankare, kartat e identitetit dhe kartat e besnikërisë në një vend të vetëm në telefon – të enkriptuara, jashtë linje dhe pa reklama e gjurmim.
+
+<b>Kartat e besnikërisë në arkë</b>
+• Çdo kartë besnikërie e shfaq barkodin ose kodin QR direkt në listë
+• Trokit mbi të për ta shfaqur kodin në ekran të plotë me ndriçim maksimal, gati për skanerin
+• Skano kodin e kartës plastike me kamerë – ose shkruaje vetë
+• Mbështet QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec dhe Data Matrix
+
+<b>Kartat bankare</b>
+• Ruaj numrin e kartës, datën e skadimit, mbajtësin e kartës dhe CVV-në
+• Plotëso të dhënat duke e afruar një kartë pa kontakt te telefoni (NFC)
+• CVV-ja është gjithmonë e fshehur dhe shfaqet vetëm pas gjurmës së gishtit, fytyrës ose kyçjes së ekranit
+• Rrjeti i kartës njihet automatikisht
+
+<b>Kartat e identitetit</b>
+• Karta identiteti, pasaporta, leje drejtimi dhe të tjera
+• Shteti lëshues, numri i dokumentit dhe data e skadimit
+
+<b>Fotografi të të dyja anëve</b>
+• Nëse dëshiron, skano pjesën e përparme dhe të pasme të çdo karte me zbulim automatik të skajeve
+• Fotografitë enkriptohen dhe nuk largohen kurrë nga pajisja jote
+
+<b>Siguria dhe privatësia</b>
+• Gjithçka enkriptohet me çelësa që ruhen në harduerin e sigurt të telefonit
+• Kyç çdo kartë që të hapet vetëm me gjurmën e gishtit, fytyrën ose kyçjen e ekranit
+• Pamjet e ekranit bllokohen në ekranet me të dhëna të ndjeshme
+• Numrat e kopjuar hiqen nga kujtesa e fragmenteve pas një minute
+• Pa llogari, pa reklama, pa analitika – kartat e tua nuk largohen kurrë nga pajisja
+• Aplikacioni lidhet me internetin vetëm kur zgjedh të shkarkosh një logo zyrtare dyqani ose banke
+
+<b>Të organizuara si të duash</b>
+• Kërko dhe filtro sipas llojit të kartës
+• Rendit sipas emrit, datës së shtimit ose renditjes tënde të personalizuar
+• Ngjyra dhe logo për dyqanet dhe bankat e njohura, ose ngarko logon tënde
+
+<b>Kopje rezervë e enkriptuar</b>
+• Eksporto të gjitha kartat në një skedar të vetëm të mbrojtur me fjalëkalim dhe riktheji në një telefon të ri
+
+Cardholder është me burim të hapur: https://github.com/danyk20/cardholder

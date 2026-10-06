@@ -1,0 +1,39 @@
+Cardholder huhifadhi kadi zako za benki, vitambulisho na kadi za uaminifu mahali pamoja kwenye simu yako – zikiwa zimesimbwa kwa njia fiche, bila intaneti, bila matangazo wala ufuatiliaji.
+
+<b>Kadi za uaminifu wakati wa kulipa</b>
+• Kila kadi ya uaminifu huonyesha msimbopau au msimbo wa QR moja kwa moja kwenye orodha
+• Gusa ili uonyeshe msimbo kwenye skrini nzima kwa mwangaza wa juu kabisa, tayari kwa kichanganuzi
+• Changanua msimbo ulio kwenye kadi yako ya plastiki kwa kamera – au uuandike
+• Inatumia QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec na Data Matrix
+
+<b>Kadi za benki</b>
+• Hifadhi nambari ya kadi, tarehe ya kuisha, jina la mmiliki na CVV
+• Jaza maelezo kwa kushikilia kadi ya kielektroniki karibu na simu yako (NFC)
+• CVV hufichwa kila wakati na huonyeshwa tu baada ya alama ya kidole, uso au mbinu ya kufunga skrini
+• Mtandao wa kadi hutambuliwa kiotomatiki
+
+<b>Vitambulisho</b>
+• Vitambulisho vya taifa, pasipoti, leseni za udereva na zaidi
+• Nchi iliyotoa, nambari ya hati na tarehe ya kuisha
+
+<b>Picha za pande zote mbili</b>
+• Ukipenda, changanua upande wa mbele na wa nyuma wa kadi yoyote kwa utambuzi wa kingo kiotomatiki
+• Picha husimbwa kwa njia fiche na kamwe haziondoki kwenye kifaa chako
+
+<b>Usalama na faragha</b>
+• Kila kitu husimbwa kwa njia fiche kwa funguo zinazohifadhiwa kwenye maunzi salama ya simu yako
+• Funga kadi yoyote ili ifunguliwe tu kwa alama ya kidole, uso au mbinu ya kufunga skrini
+• Picha za skrini huzuiwa kwenye skrini zenye maelezo nyeti
+• Nambari ulizonakili huondolewa kwenye ubao wa kunakili baada ya dakika moja
+• Hakuna akaunti, hakuna matangazo, hakuna takwimu – kadi zako kamwe haziondoki kwenye kifaa chako
+• Programu huunganishwa kwenye intaneti tu unapochagua kupakua nembo rasmi ya duka au benki
+
+<b>Zipange upendavyo</b>
+• Tafuta na uchuje kwa aina ya kadi
+• Panga kwa jina, tarehe ya kuongezwa au mpangilio wako maalum
+• Rangi na nembo za maduka na benki zinazojulikana, au pakia zako mwenyewe
+
+<b>Nakala rudufu iliyosimbwa kwa njia fiche</b>
+• Hamisha kadi zote kwenye faili moja inayolindwa kwa nenosiri na uirejeshe kwenye simu mpya
+
+Cardholder ni programu huria: https://github.com/danyk20/cardholder

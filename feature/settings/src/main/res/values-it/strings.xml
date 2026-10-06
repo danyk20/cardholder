@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Impostazioni</string>
+    <string name="settings_appearance">Aspetto</string>
+    <string name="settings_theme_system">Predefinito di sistema</string>
+    <string name="settings_theme_light">Chiaro</string>
+    <string name="settings_theme_dark">Scuro</string>
+    <string name="settings_dynamic_color">Colori dinamici</string>
+    <string name="settings_dynamic_color_description">Usa i colori dello sfondo</string>
+    <string name="settings_backup">Backup</string>
+    <string name="settings_export">Esporta backup</string>
+    <string name="settings_export_description">Salva tutte le carte in un file protetto da password</string>
+    <string name="settings_import">Importa backup</string>
+    <string name="settings_import_description">Ripristina le carte da un file di backup</string>
+    <string name="settings_backup_working">Elaborazione…</string>
+    <string name="settings_password_title_export">Proteggi il backup</string>
+    <string name="settings_password_title_import">Inserisci la password del backup</string>
+    <string name="settings_password_message_export">Il backup contiene tutti i dati delle carte, inclusi i CVV. Scegli una password efficace: non potrà essere recuperata.</string>
+    <string name="settings_password">Password</string>
+    <string name="settings_password_confirm">Ripeti password</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Usa almeno %1$d carattere</item>
+        <item quantity="many">Usa almeno %1$d caratteri</item>
+        <item quantity="other">Usa almeno %1$d caratteri</item>
+    </plurals>
+    <string name="settings_password_mismatch">Le password non corrispondono</string>
+    <string name="settings_replace_existing">Sostituisci le carte già esistenti</string>
+    <string name="settings_continue">Continua</string>
+    <string name="settings_cancel">Annulla</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d carta esportata</item>
+        <item quantity="many">%1$d carte esportate</item>
+        <item quantity="other">%1$d carte esportate</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d carta importata</item>
+        <item quantity="many">%1$d carte importate</item>
+        <item quantity="other">%1$d carte importate</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d carta esisteva già ed è stata saltata</item>
+        <item quantity="many">%1$d carte esistevano già e sono state saltate</item>
+        <item quantity="other">%1$d carte esistevano già e sono state saltate</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Password errata</string>
+    <string name="settings_result_invalid_file">Questo file non è un backup di Cardholder o è danneggiato</string>
+    <string name="settings_result_auth_required">Conferma la tua identità per esportare le carte protette</string>
+    <string name="settings_result_device_not_secure">Imposta un blocco schermo per importare carte con CVV o blocchi</string>
+    <string name="settings_result_failed">Si è verificato un problema. Riprova.</string>
+    <string name="settings_about">Informazioni</string>
+    <string name="settings_version">Versione %1$s</string>
+    <string name="settings_privacy">Le tue carte sono criptate e non lasciano mai questo dispositivo, a meno che tu non le esporti. L\'app si connette a Internet solo per scaricare il logo ufficiale di un negozio o di una banca quando lo richiedi.</string>
+    <string name="settings_privacy_policy">Norme sulla privacy</string>
+    <string name="settings_logo_credits">Crediti dei loghi</string>
+    <string name="settings_logo_credits_description">Fonti e licenze dei loghi ufficiali</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Επεξεργασία</string>
+    <string name="detail_delete">Διαγραφή</string>
+    <string name="detail_more">Περισσότερες επιλογές</string>
+    <string name="detail_flip">Εμφάνιση άλλης πλευράς</string>
+    <string name="detail_show_code">Εμφάνιση κωδικού</string>
+    <string name="detail_copied">Αντιγράφηκε: %1$s. Θα διαγραφεί από το πρόχειρο σε ένα λεπτό.</string>
+    <string name="detail_copy">Αντιγραφή: %1$s</string>
+    <string name="detail_show_cvv">Εμφάνιση CVV</string>
+    <string name="detail_hide_cvv">Απόκρυψη CVV</string>
+    <string name="detail_locked_details">Τα στοιχεία είναι κρυφά επειδή η κάρτα είναι κλειδωμένη</string>
+    <string name="detail_lock">Κλείδωμα κάρτας</string>
+    <string name="detail_lock_on">Απαιτείται δακτυλικό αποτύπωμα, πρόσωπο ή κλείδωμα οθόνης για την προβολή αυτής της κάρτας</string>
+    <string name="detail_lock_off">Όποιος χρησιμοποιεί το τηλέφωνό σας μπορεί να δει αυτή την κάρτα</string>
+    <string name="detail_lock_unavailable">Ορίστε κλείδωμα οθόνης στη συσκευή σας για να κλειδώνετε κάρτες</string>
+    <string name="detail_delete_title">Διαγραφή αυτής της κάρτας;</string>
+    <string name="detail_delete_message">Η κάρτα «%1$s» και οι φωτογραφίες της θα διαγραφούν οριστικά από αυτή τη συσκευή.</string>
+    <string name="detail_cancel">Ακύρωση</string>
+    <string name="detail_close_photo">Κλείσιμο φωτογραφίας</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Τράπεζα</string>
+    <string name="field_number">Αριθμός κάρτας</string>
+    <string name="field_expiry">Λήξη</string>
+    <string name="field_holder">Κάτοχος κάρτας</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Δίκτυο</string>
+    <string name="field_country">Χώρα</string>
+    <string name="field_document_number">Αριθμός εγγράφου</string>
+    <string name="field_shop">Κατάστημα</string>
+    <string name="field_code">Κωδικός</string>
+    <string name="field_format">Τύπος κωδικού</string>
+</resources>

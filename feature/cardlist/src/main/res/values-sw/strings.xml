@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Mipangilio</string>
+    <string name="cardlist_add_card">Ongeza kadi</string>
+    <string name="cardlist_search">Tafuta kadi</string>
+    <string name="cardlist_clear_search">Futa utafutaji</string>
+    <string name="cardlist_empty_title">Bado hakuna kadi</string>
+    <string name="cardlist_empty_message">Weka kadi zako za benki, vitambulisho na kadi za uaminifu salama kwenye simu yako. Kila kitu husimbwa kwa njia fiche na hubaki kwenye kifaa chako.</string>
+    <string name="cardlist_no_results">Hakuna kadi zinazolingana na utafutaji wako</string>
+    <string name="cardlist_show_code">Onyesha msimbo kwenye skrini nzima</string>
+    <string name="cardlist_tap_to_unlock">Gusa ili ufungue</string>
+    <string name="cardlist_sort">Panga kadi</string>
+    <string name="cardlist_sort_name">Jina (A–Z)</string>
+    <string name="cardlist_sort_date">Tarehe ya kuongezwa (mpya kwanza)</string>
+    <string name="cardlist_sort_custom">Mpangilio maalum</string>
+    <string name="cardlist_reorder">Panga upya kadi</string>
+    <string name="cardlist_reorder_done">Nimemaliza</string>
+    <string name="cardlist_reorder_cancel">Ghairi kupanga upya</string>
+    <string name="cardlist_reorder_hint">Buruta kadi kwa kishikio ili kubadilisha mpangilio wake.</string>
+    <string name="cardlist_drag_handle">Buruta ili usogeze %1$s</string>
+    <string name="cardlist_move_up">Sogeza juu</string>
+    <string name="cardlist_move_down">Sogeza chini</string>
+</resources>

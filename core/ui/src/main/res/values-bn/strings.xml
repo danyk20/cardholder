@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">ব্যাংক কার্ড</string>
+    <string name="card_type_id">আইডি কার্ড</string>
+    <string name="card_type_loyalty">লয়্যালটি কার্ড</string>
+    <string name="card_type_bank_description">ডেবিট বা ক্রেডিট কার্ড</string>
+    <string name="card_type_id_description">জাতীয় পরিচয়পত্র, পাসপোর্ট, ড্রাইভিং লাইসেন্স…</string>
+    <string name="card_type_loyalty_description">বারকোড বা QR কোডসহ স্টোর কার্ড</string>
+    <string name="card_side_front">সামনের দিক</string>
+    <string name="card_side_back">পেছনের দিক</string>
+    <string name="card_locked">লক করা আছে</string>
+    <string name="card_locked_message">এই কার্ডটি লক করা আছে</string>
+    <string name="auth_title_show_cvv">CVV দেখুন</string>
+    <string name="auth_title_export">ব্যাকআপ এক্সপোর্ট করুন</string>
+    <string name="card_not_found">এই কার্ডটি আর নেই</string>
+    <string name="auth_title_unlock_card">%1$s আনলক করুন</string>
+    <string name="auth_subtitle">ফিঙ্গারপ্রিন্ট, ফেস বা স্ক্রিন লক দিয়ে যাচাই করুন যে এটি আপনিই</string>
+    <string name="auth_key_invalidated">এই ডেটা যে স্ক্রিন লক দিয়ে সুরক্ষিত ছিল সেটি সরিয়ে ফেলা হয়েছে, তাই এটি আর ডিক্রিপ্ট করা যাবে না।</string>
+    <string name="error_required">আবশ্যক</string>
+    <string name="error_invalid_characters">এতে এমন অক্ষর আছে যা অনুমোদিত নয়</string>
+    <string name="error_invalid_length">দৈর্ঘ্য ভুল</string>
+    <string name="error_invalid_checksum">চেক ডিজিট মিলছে না – টাইপের ভুল আছে কিনা দেখে নিন</string>
+    <string name="error_invalid_date">তারিখটি সঠিক নয়</string>
+    <string name="action_back">ফিরে যান</string>
+    <string name="action_cancel">বাতিল করুন</string>
+    <string name="action_unlock">আনলক করুন</string>
+    <string name="format_qr_code">QR কোড</string>
+    <string name="color_navy">নেভি ব্লু</string>
+    <string name="color_blue">নীল</string>
+    <string name="color_teal">টিল</string>
+    <string name="color_green">সবুজ</string>
+    <string name="color_lime">লাইম</string>
+    <string name="color_amber">অ্যাম্বার</string>
+    <string name="color_orange">কমলা</string>
+    <string name="color_red">লাল</string>
+    <string name="color_pink">গোলাপি</string>
+    <string name="color_purple">বেগুনি</string>
+    <string name="color_brown">বাদামি</string>
+    <string name="color_graphite">গ্রাফাইট</string>
+</resources>

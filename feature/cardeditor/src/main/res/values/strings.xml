@@ -18,7 +18,6 @@
     <string name="editor_field_title">Name</string>
     <string name="editor_field_title_hint">Defaults to %1$s</string>
     <string name="editor_color">Colour</string>
-    <string name="editor_color_option">Colour %1$s</string>
     <string name="editor_lock">Lock this card</string>
     <string name="editor_lock_description">Require fingerprint, face or screen lock to see any of its details</string>
     <string name="editor_protection_unavailable">Set up a screen lock on your device to use this</string>

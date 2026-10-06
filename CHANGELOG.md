@@ -15,6 +15,13 @@ All notable changes to this project are documented here. The format follows
   (with "Move up/down" accessibility actions). Database version 3 stores the order.
 - Read bank cards over NFC: number, expiry and (when the card provides it) holder name are filled in
   automatically. The CVV is never stored on the chip and still has to be typed.
+- Translations into 30 languages: Albanian, Arabic, Bengali, Chinese (Simplified and Traditional), Czech,
+  Danish, Estonian, Finnish, French, German, Greek, Hindi, Hungarian, Italian, Japanese, Korean, Norwegian,
+  Persian, Polish, Portuguese (Brazil and Portugal), Romanian, Russian, Serbian (Cyrillic and Latin),
+  Slovak, Spanish, Swahili, Swedish, Turkish and Ukrainian. The app language can be chosen in the system
+  settings (Android 13+).
+- Privacy policy, linked from Settings.
+- Google Play store listing for every language (`fastlane/metadata/android`).
 
 ### Changed
 - The app requests the `INTERNET` permission, used only for the logo download (HTTPS, Wikimedia hosts only).

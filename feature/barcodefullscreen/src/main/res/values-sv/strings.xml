@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Stäng</string>
+    <string name="barcode_details">Kortuppgifter</string>
+    <string name="barcode_description">%1$s för %2$s</string>
+    <string name="barcode_unencodable">Den här koden kan inte visas som %1$s. Redigera kortet för att rätta koden eller välj en annan kodtyp.</string>
+    <string name="barcode_hint">Håll skärmen plant och stilla framför skannern.</string>
+</resources>

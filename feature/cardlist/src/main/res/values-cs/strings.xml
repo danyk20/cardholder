@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Nastavení</string>
+    <string name="cardlist_add_card">Přidat kartu</string>
+    <string name="cardlist_search">Hledat karty</string>
+    <string name="cardlist_clear_search">Vymazat vyhledávání</string>
+    <string name="cardlist_empty_title">Zatím žádné karty</string>
+    <string name="cardlist_empty_message">Mějte své platební a věrnostní karty i doklady bezpečně v telefonu. Vše je zašifrované a zůstává ve vašem zařízení.</string>
+    <string name="cardlist_no_results">Vyhledávání neodpovídají žádné karty</string>
+    <string name="cardlist_show_code">Zobrazit kód na celou obrazovku</string>
+    <string name="cardlist_tap_to_unlock">Klepnutím odemknete</string>
+    <string name="cardlist_sort">Seřadit karty</string>
+    <string name="cardlist_sort_name">Název (A–Z)</string>
+    <string name="cardlist_sort_date">Datum přidání (nejnovější první)</string>
+    <string name="cardlist_sort_custom">Vlastní pořadí</string>
+    <string name="cardlist_reorder">Změnit pořadí karet</string>
+    <string name="cardlist_reorder_done">Hotovo</string>
+    <string name="cardlist_reorder_cancel">Zrušit změnu pořadí</string>
+    <string name="cardlist_reorder_hint">Pořadí karet změníte přetažením za úchyt.</string>
+    <string name="cardlist_drag_handle">Přesunout %1$s</string>
+    <string name="cardlist_move_up">Posunout nahoru</string>
+    <string name="cardlist_move_down">Posunout dolů</string>
+</resources>

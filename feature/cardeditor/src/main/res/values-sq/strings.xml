@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Shto kartë</string>
+    <string name="editor_title_edit">Redakto kartën</string>
+    <string name="editor_save">Ruaj</string>
+    <string name="editor_next">Përpara</string>
+    <string name="editor_skip">Kapërce</string>
+    <string name="editor_choose_type">Çfarë lloj karte është?</string>
+
+    <string name="editor_sides_title">Shto fotografi të kartës</string>
+    <string name="editor_sides_message">Opsionale. Fotografitë enkriptohen dhe ruhen vetëm në këtë pajisje.</string>
+    <string name="editor_side_scan">Skano</string>
+    <string name="editor_side_choose">Galeria</string>
+    <string name="editor_side_remove">Hiq fotografinë</string>
+    <string name="editor_side_missing">Nuk ka fotografi</string>
+
+    <string name="editor_field_title">Emri</string>
+    <string name="editor_field_title_hint">Si parazgjedhje: %1$s</string>
+    <string name="editor_color">Ngjyra</string>
+    <string name="editor_lock">Kyçe këtë kartë</string>
+    <string name="editor_lock_description">Kërko gjurmën e gishtit, fytyrën ose kyçjen e ekranit për të parë çdo detaj të saj</string>
+    <string name="editor_protection_unavailable">Konfiguro një kyçje ekrani në pajisje për ta përdorur këtë</string>
+    <string name="editor_open_security_settings">Konfiguro</string>
+    <string name="editor_photos">Fotografitë</string>
+
+    <string name="editor_read_nfc">Lexo kartën me NFC</string>
+    <string name="editor_field_bank">Banka (opsionale)</string>
+    <string name="editor_choose_bank">Zgjidh bankën</string>
+    <string name="editor_search_bank">Kërko banka</string>
+    <string name="editor_field_number">Numri i kartës</string>
+    <string name="editor_field_expiry">Skadimi (MM/VV)</string>
+    <string name="editor_field_holder">Mbajtësi i kartës</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Opsional. Është gjithmonë i fshehur dhe shfaqet vetëm pasi të konfirmosh që je ti.</string>
+    <string name="editor_cvv_stored">Një CVV është ruajtur. Lëre bosh për ta mbajtur.</string>
+    <string name="editor_cvv_remove">Hiq CVV-në e ruajtur</string>
+    <string name="editor_card_expired">Kjo kartë ka skaduar</string>
+
+    <string name="editor_field_country">Shteti lëshues</string>
+    <string name="editor_choose_country">Zgjidh shtetin</string>
+    <string name="editor_search_country">Kërko shtete</string>
+    <string name="editor_field_document_number">Numri i dokumentit (opsional)</string>
+    <string name="editor_field_id_expiry">Data e skadimit (opsionale)</string>
+    <string name="editor_clear_date">Pastro</string>
+
+    <string name="editor_field_shop">Dyqani</string>
+    <string name="editor_choose_shop">Zgjidh dyqanin</string>
+    <string name="editor_search_shop">Kërko dyqane</string>
+    <string name="editor_custom_shop">Përdor “%1$s”</string>
+    <string name="editor_field_code">Numri i kartës / kodi</string>
+    <string name="editor_field_format">Lloji i kodit</string>
+    <string name="editor_scan_barcode">Skano kodin</string>
+
+    <string name="editor_logo">Logoja</string>
+    <string name="editor_logo_none">Pa logo</string>
+    <string name="editor_logo_official">Logoja zyrtare</string>
+    <string name="editor_logo_upload">Ngarko</string>
+    <string name="editor_logo_remove">Hiq logon</string>
+    <string name="editor_logo_choice_title">Logoja për %1$s</string>
+    <string name="editor_logo_choice_message">Të shfaqet logoja zyrtare e %1$s në këtë kartë? Ajo shkarkohet një herë nga Wikimedia Commons dhe ruhet në pajisjen tënde.</string>
+    <string name="editor_logo_use_official">Përdor logon zyrtare</string>
+    <string name="editor_logo_upload_own">Ngarko timen</string>
+    <string name="editor_logo_keep_blank">Lëre bosh</string>
+    <string name="editor_logo_license">Licenca: %1$s</string>
+    <string name="editor_logo_attribution">Licenca: %1$s · nga %2$s</string>
+    <string name="editor_logo_download_failed">Logoja nuk mund të shkarkohej. Kontrollo lidhjen dhe provo përsëri.</string>
+
+    <string name="editor_locked_title">Kjo kartë është e kyçur</string>
+    <string name="editor_not_found">Kjo kartë nuk ekziston më</string>
+    <string name="editor_ok">Në rregull</string>
+</resources>

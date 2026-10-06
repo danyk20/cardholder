@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Banka kartı</string>
+    <string name="card_type_id">Kimlik kartı</string>
+    <string name="card_type_loyalty">Sadakat kartı</string>
+    <string name="card_type_bank_description">Banka kartı veya kredi kartı</string>
+    <string name="card_type_id_description">Kimlik kartı, pasaport, ehliyet…</string>
+    <string name="card_type_loyalty_description">Barkodlu veya QR kodlu mağaza kartı</string>
+
+    <string name="card_side_front">Ön yüz</string>
+    <string name="card_side_back">Arka yüz</string>
+    <string name="card_locked">Kilitli</string>
+    <string name="card_locked_message">Bu kart kilitli</string>
+    <string name="auth_title_show_cvv">CVV\'yi göster</string>
+    <string name="auth_title_export">Yedeği dışa aktar</string>
+    <string name="card_not_found">Bu kart artık mevcut değil</string>
+
+    <string name="auth_title_unlock_card">Kilidi aç: %1$s</string>
+    <string name="auth_subtitle">Parmak iziniz, yüzünüz veya ekran kilidinizle kimliğinizi doğrulayın</string>
+    <string name="auth_key_invalidated">Bu veriler, daha sonra kaldırılan bir ekran kilidiyle korunuyordu ve artık şifreleri çözülemez.</string>
+
+    <string name="error_required">Zorunlu</string>
+    <string name="error_invalid_characters">İzin verilmeyen karakterler içeriyor</string>
+    <string name="error_invalid_length">Uzunluk hatalı</string>
+    <string name="error_invalid_checksum">Kontrol basamağı eşleşmiyor – lütfen yazım hatası olup olmadığını kontrol edin</string>
+    <string name="error_invalid_date">Geçerli bir tarih değil</string>
+
+    <string name="action_back">Geri</string>
+    <string name="action_cancel">İptal</string>
+    <string name="action_unlock">Kilidi aç</string>
+
+    <string name="format_qr_code">QR kod</string>
+
+    <string name="color_navy">Lacivert</string>
+    <string name="color_blue">Mavi</string>
+    <string name="color_teal">Petrol mavisi</string>
+    <string name="color_green">Yeşil</string>
+    <string name="color_lime">Limon yeşili</string>
+    <string name="color_amber">Kehribar</string>
+    <string name="color_orange">Turuncu</string>
+    <string name="color_red">Kırmızı</string>
+    <string name="color_pink">Pembe</string>
+    <string name="color_purple">Mor</string>
+    <string name="color_brown">Kahverengi</string>
+    <string name="color_graphite">Grafit</string>
+</resources>

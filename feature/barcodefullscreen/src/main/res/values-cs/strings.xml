@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Zavřít</string>
+    <string name="barcode_details">Podrobnosti karty</string>
+    <string name="barcode_description">%1$s karty %2$s</string>
+    <string name="barcode_unencodable">Tento kód nelze zobrazit jako %1$s. Upravte kartu a opravte kód, nebo zvolte jiný typ kódu.</string>
+    <string name="barcode_hint">Držte obrazovku rovně a klidně před čtečkou.</string>
+</resources>

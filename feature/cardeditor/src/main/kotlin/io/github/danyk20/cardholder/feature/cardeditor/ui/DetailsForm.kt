@@ -43,6 +43,7 @@ import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.ui.label
 import io.github.danyk20.cardholder.core.ui.message
 import io.github.danyk20.cardholder.feature.cardeditor.CardEditorUiState
 import io.github.danyk20.cardholder.feature.cardeditor.R
@@ -126,7 +127,7 @@ private fun ColorPicker(selected: CardColor, onSelect: (CardColor) -> Unit) {
         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             CardColor.entries.forEach { color ->
                 val isSelected = color == selected
-                val description = stringResource(R.string.editor_color_option, color.name.lowercase())
+                val description = stringResource(color.label)
                 Box(
                     contentAlignment = Alignment.Center,
                     modifier = Modifier

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Setări</string>
+    <string name="settings_appearance">Aspect</string>
+    <string name="settings_theme_system">Prestabilită de sistem</string>
+    <string name="settings_theme_light">Luminoasă</string>
+    <string name="settings_theme_dark">Întunecată</string>
+    <string name="settings_dynamic_color">Culori dinamice</string>
+    <string name="settings_dynamic_color_description">Folosiți culorile din imaginea de fundal</string>
+    <string name="settings_backup">Backup</string>
+    <string name="settings_export">Exportați backupul</string>
+    <string name="settings_export_description">Salvați toate cardurile într-un fișier protejat cu parolă</string>
+    <string name="settings_import">Importați un backup</string>
+    <string name="settings_import_description">Restabiliți cardurile dintr-un fișier de backup</string>
+    <string name="settings_backup_working">Se procesează…</string>
+    <string name="settings_password_title_export">Protejați backupul</string>
+    <string name="settings_password_title_import">Introduceți parola backupului</string>
+    <string name="settings_password_message_export">Backupul conține toate detaliile cardurilor, inclusiv codurile CVV. Alegeți o parolă puternică – nu poate fi recuperată.</string>
+    <string name="settings_password">Parolă</string>
+    <string name="settings_password_confirm">Repetați parola</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Folosiți cel puțin %1$d caracter</item>
+        <item quantity="few">Folosiți cel puțin %1$d caractere</item>
+        <item quantity="other">Folosiți cel puțin %1$d de caractere</item>
+    </plurals>
+    <string name="settings_password_mismatch">Parolele nu se potrivesc</string>
+    <string name="settings_replace_existing">Înlocuiți cardurile care există deja</string>
+    <string name="settings_continue">Continuați</string>
+    <string name="settings_cancel">Anulați</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d card exportat</item>
+        <item quantity="few">%1$d carduri exportate</item>
+        <item quantity="other">%1$d de carduri exportate</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d card importat</item>
+        <item quantity="few">%1$d carduri importate</item>
+        <item quantity="other">%1$d de carduri importate</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d card exista deja și a fost omis</item>
+        <item quantity="few">%1$d carduri existau deja și au fost omise</item>
+        <item quantity="other">%1$d de carduri existau deja și au fost omise</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Parolă greșită</string>
+    <string name="settings_result_invalid_file">Acesta nu este un backup Cardholder sau fișierul este deteriorat</string>
+    <string name="settings_result_auth_required">Confirmați că sunteți dvs. pentru a exporta cardurile protejate</string>
+    <string name="settings_result_device_not_secure">Configurați o blocare a ecranului pentru a importa carduri cu CVV sau blocate</string>
+    <string name="settings_result_failed">A apărut o eroare. Încercați din nou.</string>
+    <string name="settings_about">Despre</string>
+    <string name="settings_version">Versiunea %1$s</string>
+    <string name="settings_privacy">Cardurile sunt criptate și nu părăsesc niciodată acest dispozitiv decât dacă le exportați. Aplicația se conectează la internet doar pentru a descărca sigla oficială a unui magazin sau a unei bănci, atunci când solicitați acest lucru.</string>
+    <string name="settings_privacy_policy">Politica de confidențialitate</string>
+    <string name="settings_logo_credits">Credite pentru sigle</string>
+    <string name="settings_logo_credits_description">Sursele și licențele siglelor oficiale</string>
+</resources>

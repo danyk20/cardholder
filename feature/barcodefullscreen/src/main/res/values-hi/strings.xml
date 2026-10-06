@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">बंद करें</string>
+    <string name="barcode_details">कार्ड की जानकारी</string>
+    <string name="barcode_description">%2$s का %1$s</string>
+    <string name="barcode_unencodable">यह कोड %1$s के रूप में नहीं दिखाया जा सकता. कोड ठीक करने के लिए कार्ड में बदलाव करें या कोई दूसरा कोड टाइप चुनें.</string>
+    <string name="barcode_hint">स्क्रीन को स्कैनर के सामने सीधा और स्थिर रखें.</string>
+</resources>

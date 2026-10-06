@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Sulje skanneri</string>
+    <string name="scanner_hint">Osoita kameralla kortin viivakoodia tai QR-koodia</string>
+    <string name="scanner_permission_rationale">Cardholder tarvitsee kameraa kortin koodin skannaamiseen. Kuvat analysoidaan laitteella, eikä niitä tallenneta tai lähetetä minnekään.</string>
+    <string name="scanner_grant_permission">Salli kamera</string>
+    <string name="nfc_title">Lue kortti NFC:llä</string>
+    <string name="nfc_hold_card">Pidä korttia tasaisesti puhelimen takaosaa vasten ja paikallaan.</string>
+    <string name="nfc_reading">Luetaan korttia…</string>
+    <string name="nfc_failed">Korttia ei voitu lukea. Liikuta sitä hitaasti puhelimen takaosassa ja yritä uudelleen.</string>
+    <string name="nfc_disabled">NFC on pois päältä.</string>
+    <string name="nfc_turn_on">Ota NFC käyttöön</string>
+    <string name="nfc_cvv_note">CVV-koodia ei ole tallennettu sirulle, joten kirjoita se itse.</string>
+    <string name="nfc_cancel">Peruuta</string>
+</resources>

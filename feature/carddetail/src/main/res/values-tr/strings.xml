@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Düzenle</string>
+    <string name="detail_delete">Sil</string>
+    <string name="detail_more">Diğer seçenekler</string>
+    <string name="detail_flip">Diğer yüzü göster</string>
+    <string name="detail_show_code">Kodu göster</string>
+    <string name="detail_copied">%1$s kopyalandı. Bir dakika içinde panodan silinecek.</string>
+    <string name="detail_copy">Kopyala: %1$s</string>
+    <string name="detail_show_cvv">CVV\'yi göster</string>
+    <string name="detail_hide_cvv">CVV\'yi gizle</string>
+    <string name="detail_locked_details">Bu kart kilitli olduğu için ayrıntılar gizlendi</string>
+    <string name="detail_lock">Kartı kilitle</string>
+    <string name="detail_lock_on">Bu kartı görmek için parmak izi, yüz veya ekran kilidi gerekir</string>
+    <string name="detail_lock_off">Telefonunuzu kullanan herkes bu kartı görebilir</string>
+    <string name="detail_lock_unavailable">Kartları kilitlemek için cihazınızda ekran kilidi ayarlayın</string>
+    <string name="detail_delete_title">Bu kart silinsin mi?</string>
+    <string name="detail_delete_message">%1$s ve fotoğrafları bu cihazdan kalıcı olarak silinecek.</string>
+    <string name="detail_cancel">İptal</string>
+    <string name="detail_close_photo">Fotoğrafı kapat</string>
+    <string name="detail_ok">Tamam</string>
+
+    <string name="field_bank">Banka</string>
+    <string name="field_number">Kart numarası</string>
+    <string name="field_expiry">Son kullanma tarihi</string>
+    <string name="field_holder">Kart sahibi</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Kart ağı</string>
+    <string name="field_country">Ülke</string>
+    <string name="field_document_number">Belge numarası</string>
+    <string name="field_shop">Mağaza</string>
+    <string name="field_code">Kod</string>
+    <string name="field_format">Kod türü</string>
+</resources>

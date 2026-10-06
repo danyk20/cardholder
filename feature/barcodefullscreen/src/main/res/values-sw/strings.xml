@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Funga</string>
+    <string name="barcode_details">Maelezo ya kadi</string>
+    <string name="barcode_description">%1$s kwa %2$s</string>
+    <string name="barcode_unencodable">Msimbo huu hauwezi kuonyeshwa kama %1$s. Badilisha kadi ili urekebishe msimbo au uchague aina nyingine ya msimbo.</string>
+    <string name="barcode_hint">Shikilia skrini ikiwa bapa na tulivu mbele ya kichanganuzi.</string>
+</resources>

@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
+import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardType
 
 val CardType.icon: ImageVector
@@ -37,4 +38,21 @@ val ValidationError.message: Int
         ValidationError.INVALID_LENGTH -> R.string.error_invalid_length
         ValidationError.INVALID_CHECKSUM -> R.string.error_invalid_checksum
         ValidationError.INVALID_DATE -> R.string.error_invalid_date
+    }
+
+@get:StringRes
+val CardColor.label: Int
+    get() = when (this) {
+        CardColor.NAVY -> R.string.color_navy
+        CardColor.BLUE -> R.string.color_blue
+        CardColor.TEAL -> R.string.color_teal
+        CardColor.GREEN -> R.string.color_green
+        CardColor.LIME -> R.string.color_lime
+        CardColor.AMBER -> R.string.color_amber
+        CardColor.ORANGE -> R.string.color_orange
+        CardColor.RED -> R.string.color_red
+        CardColor.PINK -> R.string.color_pink
+        CardColor.PURPLE -> R.string.color_purple
+        CardColor.BROWN -> R.string.color_brown
+        CardColor.GRAPHITE -> R.string.color_graphite
     }

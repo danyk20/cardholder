@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Izmeni</string>
+    <string name="detail_delete">Izbriši</string>
+    <string name="detail_more">Još opcija</string>
+    <string name="detail_flip">Prikaži drugu stranu</string>
+    <string name="detail_show_code">Prikaži kod</string>
+    <string name="detail_copied">Kopirano: %1$s. Biće obrisano iz privremene memorije za jedan minut.</string>
+    <string name="detail_copy">Kopiraj: %1$s</string>
+    <string name="detail_show_cvv">Prikaži CVV</string>
+    <string name="detail_hide_cvv">Sakrij CVV</string>
+    <string name="detail_locked_details">Detalji su sakriveni jer je ova kartica zaključana</string>
+    <string name="detail_lock">Zaključaj karticu</string>
+    <string name="detail_lock_on">Za prikaz ove kartice potreban je otisak prsta, lice ili zaključavanje ekrana</string>
+    <string name="detail_lock_off">Svako ko koristi vaš telefon može da vidi ovu karticu</string>
+    <string name="detail_lock_unavailable">Podesite zaključavanje ekrana na uređaju da biste mogli da zaključavate kartice</string>
+    <string name="detail_delete_title">Želite da izbrišete ovu karticu?</string>
+    <string name="detail_delete_message">Kartica „%1$s“ i njene slike biće trajno izbrisane sa ovog uređaja.</string>
+    <string name="detail_cancel">Otkaži</string>
+    <string name="detail_close_photo">Zatvori sliku</string>
+    <string name="detail_ok">Potvrdi</string>
+    <string name="field_bank">Banka</string>
+    <string name="field_number">Broj kartice</string>
+    <string name="field_expiry">Važi do</string>
+    <string name="field_holder">Vlasnik kartice</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Kartičarska mreža</string>
+    <string name="field_country">Država</string>
+    <string name="field_document_number">Broj dokumenta</string>
+    <string name="field_shop">Prodavnica</string>
+    <string name="field_code">Kod</string>
+    <string name="field_format">Tip koda</string>
+</resources>

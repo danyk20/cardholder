@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Закрити сканер</string>
+    <string name="scanner_hint">Наведіть камеру на штрихкод або QR-код на картці</string>
+    <string name="scanner_permission_rationale">Додатку Cardholder потрібен доступ до камери, щоб сканувати код на картці. Зображення аналізуються на пристрої, не зберігаються й нікуди не надсилаються.</string>
+    <string name="scanner_grant_permission">Дозволити доступ до камери</string>
+    <string name="nfc_title">Зчитати картку через NFC</string>
+    <string name="nfc_hold_card">Прикладіть картку до задньої панелі телефона й не рухайте її.</string>
+    <string name="nfc_reading">Зчитування картки…</string>
+    <string name="nfc_failed">Не вдалося зчитати картку. Повільно проведіть нею по задній панелі телефона й повторіть спробу.</string>
+    <string name="nfc_disabled">NFC вимкнено.</string>
+    <string name="nfc_turn_on">Увімкнути NFC</string>
+    <string name="nfc_cvv_note">CVV не зберігається на чипі, тож введіть його вручну.</string>
+    <string name="nfc_cancel">Скасувати</string>
+</resources>

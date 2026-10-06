@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Setări</string>
+    <string name="cardlist_add_card">Adăugați un card</string>
+    <string name="cardlist_search">Căutați carduri</string>
+    <string name="cardlist_clear_search">Ștergeți căutarea</string>
+    <string name="cardlist_empty_title">Niciun card deocamdată</string>
+    <string name="cardlist_empty_message">Păstrați în siguranță pe telefon cardurile bancare, actele de identitate și cardurile de fidelitate. Totul este criptat și rămâne pe dispozitiv.</string>
+    <string name="cardlist_no_results">Niciun card nu corespunde căutării</string>
+    <string name="cardlist_show_code">Afișați codul pe ecran complet</string>
+    <string name="cardlist_tap_to_unlock">Atingeți pentru a debloca</string>
+    <string name="cardlist_sort">Sortați cardurile</string>
+    <string name="cardlist_sort_name">Nume (A–Z)</string>
+    <string name="cardlist_sort_date">Data adăugării (cele mai noi primele)</string>
+    <string name="cardlist_sort_custom">Ordine personalizată</string>
+    <string name="cardlist_reorder">Reordonați cardurile</string>
+    <string name="cardlist_reorder_done">Gata</string>
+    <string name="cardlist_reorder_cancel">Anulați reordonarea</string>
+    <string name="cardlist_reorder_hint">Trageți cardurile de mâner pentru a le schimba ordinea.</string>
+    <string name="cardlist_drag_handle">Trageți pentru a muta %1$s</string>
+    <string name="cardlist_move_up">Mutați în sus</string>
+    <string name="cardlist_move_down">Mutați în jos</string>
+</resources>

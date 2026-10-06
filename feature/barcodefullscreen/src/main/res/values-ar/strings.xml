@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">إغلاق</string>
+    <string name="barcode_details">تفاصيل البطاقة</string>
+    <string name="barcode_description">%1$s الخاص بـ %2$s</string>
+    <string name="barcode_unencodable">لا يمكن عرض هذا الرمز بتنسيق %1$s. عدِّل البطاقة لتصحيح الرمز أو اختر نوع رمز آخر.</string>
+    <string name="barcode_hint">أبقِ الشاشة مستوية وثابتة أمام الماسح الضوئي.</string>
+</resources>

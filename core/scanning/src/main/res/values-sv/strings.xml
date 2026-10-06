@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Stäng skannern</string>
+    <string name="scanner_hint">Rikta kameran mot streckkoden eller QR-koden på kortet</string>
+    <string name="scanner_permission_rationale">Cardholder behöver kameran för att skanna koden på kortet. Bilderna analyseras på enheten och sparas eller skickas aldrig någonstans.</string>
+    <string name="scanner_grant_permission">Tillåt kamera</string>
+    <string name="nfc_title">Läs av kortet med NFC</string>
+    <string name="nfc_hold_card">Håll kortet plant mot telefonens baksida och håll det stilla.</string>
+    <string name="nfc_reading">Läser av kortet…</string>
+    <string name="nfc_failed">Det gick inte att läsa av kortet. Flytta det långsamt runt telefonens baksida och försök igen.</string>
+    <string name="nfc_disabled">NFC är avstängt.</string>
+    <string name="nfc_turn_on">Slå på NFC</string>
+    <string name="nfc_cvv_note">CVV-koden finns inte lagrad på chipet, så skriv in den själv.</string>
+    <string name="nfc_cancel">Avbryt</string>
+</resources>

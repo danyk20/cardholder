@@ -1,0 +1,39 @@
+Cardholder bewahrt Bankkarten, Ausweise und Kundenkarten an einem Ort auf dem Smartphone auf – verschlüsselt, offline und ohne Werbung oder Tracking.
+
+<b>Kundenkarten an der Kasse</b>
+• Jede Kundenkarte zeigt ihren Barcode oder QR-Code direkt in der Liste
+• Antippen, um den Code im Vollbild mit maximaler Helligkeit für den Scanner anzuzeigen
+• Code der Plastikkarte mit der Kamera scannen – oder manuell eingeben
+• Unterstützt QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec und Data Matrix
+
+<b>Bankkarten</b>
+• Kartennummer, Ablaufdatum, Karteninhaber und CVV speichern
+• Details ausfüllen, indem eine kontaktlose Karte an das Smartphone gehalten wird (NFC)
+• Die CVV ist immer ausgeblendet und wird erst nach Fingerabdruck, Gesichtserkennung oder Displaysperre angezeigt
+• Kartennetzwerk wird automatisch erkannt
+
+<b>Ausweise</b>
+• Personalausweise, Reisepässe, Führerscheine und mehr
+• Ausstellungsland, Dokumentnummer und Ablaufdatum
+
+<b>Fotos beider Seiten</b>
+• Vorder- und Rückseite jeder Karte optional mit automatischer Kantenerkennung scannen
+• Fotos werden verschlüsselt und verlassen nie das Gerät
+
+<b>Sicherheit und Datenschutz</b>
+• Alles wird mit Schlüsseln verschlüsselt, die in der sicheren Hardware des Smartphones liegen
+• Einzelne Karten schützen, sodass sie sich nur per Fingerabdruck, Gesichtserkennung oder Displaysperre öffnen lassen
+• Screenshots sind auf Bildschirmen mit sensiblen Daten blockiert
+• Kopierte Nummern werden nach einer Minute aus der Zwischenablage entfernt
+• Kein Konto, keine Werbung, keine Analysen – die Karten verlassen nie das Gerät
+• Die App geht nur online, wenn ein offizielles Logo eines Geschäfts oder einer Bank heruntergeladen werden soll
+
+<b>Individuell organisiert</b>
+• Suchen und nach Kartentyp filtern
+• Nach Name, Hinzufügedatum oder eigener Reihenfolge sortieren
+• Farben und Logos für bekannte Geschäfte und Banken – oder eigene hochladen
+
+<b>Verschlüsselte Sicherung</b>
+• Alle Karten in eine einzige passwortgeschützte Datei exportieren und auf einem neuen Smartphone wiederherstellen
+
+Cardholder ist Open Source: https://github.com/danyk20/cardholder

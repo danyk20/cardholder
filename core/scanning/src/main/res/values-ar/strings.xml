@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">إغلاق الماسح الضوئي</string>
+    <string name="scanner_hint">وجِّه الكاميرا نحو الرمز الشريطي أو رمز QR الموجود على بطاقتك</string>
+    <string name="scanner_permission_rationale">يحتاج Cardholder إلى الكاميرا لمسح الرمز الموجود على بطاقتك. تُحلَّل الصور على الجهاز ولا يتم تخزينها أو إرسالها إلى أي مكان.</string>
+    <string name="scanner_grant_permission">السماح باستخدام الكاميرا</string>
+    <string name="nfc_title">قراءة البطاقة باستخدام NFC</string>
+    <string name="nfc_hold_card">ضع بطاقتك بشكل مستوٍ على الجهة الخلفية من هاتفك وأبقِها ثابتة.</string>
+    <string name="nfc_reading">جارٍ قراءة البطاقة…</string>
+    <string name="nfc_failed">تعذّرت قراءة البطاقة. حرِّكها ببطء على الجهة الخلفية من الهاتف وحاوِل مرة أخرى.</string>
+    <string name="nfc_disabled">ميزة NFC غير مفعّلة.</string>
+    <string name="nfc_turn_on">تفعيل NFC</string>
+    <string name="nfc_cvv_note">لا يتم تخزين رمز CVV على الشريحة، لذا يُرجى إدخاله بنفسك.</string>
+    <string name="nfc_cancel">إلغاء</string>
+</resources>

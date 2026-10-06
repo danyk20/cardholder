@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">銀行カード</string>
+    <string name="card_type_id">身分証明書</string>
+    <string name="card_type_loyalty">ポイントカード</string>
+    <string name="card_type_bank_description">デビットカードまたはクレジットカード</string>
+    <string name="card_type_id_description">身分証明書、パスポート、運転免許証など</string>
+    <string name="card_type_loyalty_description">バーコードや QR コード付きのお店のカード</string>
+    <string name="card_side_front">表面</string>
+    <string name="card_side_back">裏面</string>
+    <string name="card_locked">ロック中</string>
+    <string name="card_locked_message">このカードはロックされています</string>
+    <string name="auth_title_show_cvv">CVV を表示</string>
+    <string name="auth_title_export">バックアップをエクスポート</string>
+    <string name="card_not_found">このカードは存在しません</string>
+    <string name="auth_title_unlock_card">「%1$s」のロックを解除</string>
+    <string name="auth_subtitle">指紋認証、顔認証、または画面ロックで本人確認を行ってください</string>
+    <string name="auth_key_invalidated">このデータを保護していた画面ロックが削除されたため、復号できなくなりました。</string>
+    <string name="error_required">必須</string>
+    <string name="error_invalid_characters">使用できない文字が含まれています</string>
+    <string name="error_invalid_length">長さが正しくありません</string>
+    <string name="error_invalid_checksum">チェックディジットが一致しません。入力ミスがないか確認してください</string>
+    <string name="error_invalid_date">有効な日付ではありません</string>
+    <string name="action_back">戻る</string>
+    <string name="action_cancel">キャンセル</string>
+    <string name="action_unlock">ロック解除</string>
+    <string name="format_qr_code">QR コード</string>
+    <string name="color_navy">ネイビー</string>
+    <string name="color_blue">ブルー</string>
+    <string name="color_teal">ティール</string>
+    <string name="color_green">グリーン</string>
+    <string name="color_lime">ライム</string>
+    <string name="color_amber">アンバー</string>
+    <string name="color_orange">オレンジ</string>
+    <string name="color_red">レッド</string>
+    <string name="color_pink">ピンク</string>
+    <string name="color_purple">パープル</string>
+    <string name="color_brown">ブラウン</string>
+    <string name="color_graphite">グラファイト</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Ustawienia</string>
+    <string name="cardlist_add_card">Dodaj kartę</string>
+    <string name="cardlist_search">Szukaj kart</string>
+    <string name="cardlist_clear_search">Wyczyść wyszukiwanie</string>
+    <string name="cardlist_empty_title">Nie masz jeszcze kart</string>
+    <string name="cardlist_empty_message">Przechowuj karty bankowe, dokumenty i karty lojalnościowe bezpiecznie w telefonie. Wszystko jest zaszyfrowane i pozostaje na urządzeniu.</string>
+    <string name="cardlist_no_results">Brak kart pasujących do wyszukiwania</string>
+    <string name="cardlist_show_code">Pokaż kod na pełnym ekranie</string>
+    <string name="cardlist_tap_to_unlock">Kliknij, aby odblokować</string>
+    <string name="cardlist_sort">Sortuj karty</string>
+    <string name="cardlist_sort_name">Nazwa (A–Z)</string>
+    <string name="cardlist_sort_date">Data dodania (od najnowszych)</string>
+    <string name="cardlist_sort_custom">Własna kolejność</string>
+    <string name="cardlist_reorder">Zmień kolejność kart</string>
+    <string name="cardlist_reorder_done">Gotowe</string>
+    <string name="cardlist_reorder_cancel">Anuluj zmianę kolejności</string>
+    <string name="cardlist_reorder_hint">Przeciągaj karty za uchwyt, aby zmienić ich kolejność.</string>
+    <string name="cardlist_drag_handle">Przeciągnij, aby przenieść „%1$s”</string>
+    <string name="cardlist_move_up">Przenieś w górę</string>
+    <string name="cardlist_move_down">Przenieś w dół</string>
+</resources>

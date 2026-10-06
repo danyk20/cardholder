@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">بستن اسکنر</string>
+    <string name="scanner_hint">دوربین را به سمت بارکد یا کد QR روی کارتتان بگیرید</string>
+    <string name="scanner_permission_rationale">Cardholder برای اسکن کد روی کارت شما به دوربین نیاز دارد. تصاویر روی همین دستگاه پردازش می‌شوند و هرگز ذخیره یا به جایی ارسال نمی‌شوند.</string>
+    <string name="scanner_grant_permission">اجازه دسترسی به دوربین</string>
+    <string name="nfc_title">خواندن کارت با NFC</string>
+    <string name="nfc_hold_card">کارت را صاف پشت تلفنتان نگه دارید و آن را حرکت ندهید.</string>
+    <string name="nfc_reading">درحال خواندن کارت…</string>
+    <string name="nfc_failed">کارت خوانده نشد. آن را آرام در پشت تلفن جابه‌جا کنید و دوباره امتحان کنید.</string>
+    <string name="nfc_disabled">NFC خاموش است.</string>
+    <string name="nfc_turn_on">روشن کردن NFC</string>
+    <string name="nfc_cvv_note">CVV روی تراشه ذخیره نمی‌شود؛ لطفاً آن را خودتان وارد کنید.</string>
+    <string name="nfc_cancel">لغو</string>
+</resources>

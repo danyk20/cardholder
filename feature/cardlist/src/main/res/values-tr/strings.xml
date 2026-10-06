@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Ayarlar</string>
+    <string name="cardlist_add_card">Kart ekle</string>
+    <string name="cardlist_search">Kartlarda ara</string>
+    <string name="cardlist_clear_search">Aramayı temizle</string>
+    <string name="cardlist_empty_title">Henüz kart yok</string>
+    <string name="cardlist_empty_message">Banka, kimlik ve sadakat kartlarınızı telefonunuzda güvenle saklayın. Her şey şifrelenir ve cihazınızda kalır.</string>
+    <string name="cardlist_no_results">Aramanızla eşleşen kart yok</string>
+    <string name="cardlist_show_code">Kodu tam ekranda göster</string>
+    <string name="cardlist_tap_to_unlock">Kilidi açmak için dokunun</string>
+    <string name="cardlist_sort">Kartları sırala</string>
+    <string name="cardlist_sort_name">Ad (A–Z)</string>
+    <string name="cardlist_sort_date">Eklenme tarihi (önce en yeni)</string>
+    <string name="cardlist_sort_custom">Özel sıralama</string>
+    <string name="cardlist_reorder">Kartları yeniden sırala</string>
+    <string name="cardlist_reorder_done">Bitti</string>
+    <string name="cardlist_reorder_cancel">Yeniden sıralamayı iptal et</string>
+    <string name="cardlist_reorder_hint">Sıralarını değiştirmek için kartları tutamaklarından sürükleyin.</string>
+    <string name="cardlist_drag_handle">Taşımak için sürükleyin: %1$s</string>
+    <string name="cardlist_move_up">Yukarı taşı</string>
+    <string name="cardlist_move_down">Aşağı taşı</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">닫기</string>
+    <string name="barcode_details">카드 세부정보</string>
+    <string name="barcode_description">%2$s의 %1$s</string>
+    <string name="barcode_unencodable">이 코드는 %1$s 형식으로 표시할 수 없습니다. 카드를 수정하여 코드를 고치거나 다른 코드 유형을 선택하세요.</string>
+    <string name="barcode_hint">화면을 스캐너 앞에 평평하게 대고 움직이지 마세요.</string>
+</resources>

@@ -1,0 +1,39 @@
+Cardholder uchováva vaše platobné karty, doklady a vernostné karty na jednom mieste v telefóne – zašifrované, offline a bez reklám a sledovania.
+
+<b>Vernostné karty pri pokladni</b>
+• Každá vernostná karta zobrazuje svoj čiarový alebo QR kód priamo v zozname
+• Klepnutím zobrazíte kód na celú obrazovku s maximálnym jasom, pripravený pre čítačku
+• Naskenujte kód z plastovej karty fotoaparátom – alebo ho zadajte ručne
+• Podporuje QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec a Data Matrix
+
+<b>Platobné karty</b>
+• Uložte číslo karty, dátum platnosti, držiteľa karty a CVV
+• Údaje vyplníte priložením bezkontaktnej karty k telefónu (NFC)
+• CVV je vždy skryté a zobrazí sa až po overení odtlačkom prsta, tvárou alebo zámkou obrazovky
+• Kartová spoločnosť sa rozpozná automaticky
+
+<b>Doklady</b>
+• Občianske preukazy, pasy, vodičské preukazy a ďalšie
+• Krajina vydania, číslo dokladu a dátum platnosti
+
+<b>Fotky oboch strán</b>
+• Voliteľne naskenujte prednú aj zadnú stranu ľubovoľnej karty s automatickým rozpoznaním okrajov
+• Fotky sú zašifrované a nikdy neopustia vaše zariadenie
+
+<b>Bezpečnosť a súkromie</b>
+• Všetko je zašifrované kľúčmi uloženými v zabezpečenom hardvéri telefónu
+• Zamknite ľubovoľnú kartu, aby sa dala otvoriť iba odtlačkom prsta, tvárou alebo zámkou obrazovky
+• Na obrazovkách s citlivými údajmi sú snímky obrazovky zablokované
+• Skopírované čísla sa po minúte odstránia zo schránky
+• Bez účtu, bez reklám, bez analytiky – vaše karty nikdy neopustia zariadenie
+• Aplikácia sa pripája na internet iba vtedy, keď si chcete stiahnuť oficiálne logo obchodu alebo banky
+
+<b>Usporiadané podľa vás</b>
+• Vyhľadávanie a filtrovanie podľa typu karty
+• Zoradenie podľa názvu, dátumu pridania alebo vlastného poradia
+• Farby a logá známych obchodov a bánk – alebo nahrajte vlastné
+
+<b>Šifrovaná záloha</b>
+• Exportujte všetky karty do jedného súboru chráneného heslom a obnovte ich v novom telefóne
+
+Cardholder je open source: https://github.com/danyk20/cardholder

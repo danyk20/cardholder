@@ -1,0 +1,39 @@
+O Cardholder guarda os seus cartões bancários, documentos de identificação e cartões de cliente num só lugar no telemóvel – encriptados, offline e sem anúncios nem rastreio.
+
+<b>Cartões de cliente na caixa</b>
+• Cada cartão de cliente mostra o código de barras ou código QR diretamente na lista
+• Toque para mostrar o código em ecrã inteiro com o brilho máximo, pronto para o leitor
+• Leia o código do seu cartão físico com a câmara – ou introduza-o manualmente
+• Suporta QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec e Data Matrix
+
+<b>Cartões bancários</b>
+• Guarde o número do cartão, a validade, o titular e o CVV
+• Preencha os dados encostando um cartão contactless ao telemóvel (NFC)
+• O CVV está sempre oculto e só é mostrado após impressão digital, rosto ou bloqueio de ecrã
+• Rede do cartão detetada automaticamente
+
+<b>Documentos de identificação</b>
+• Cartão de Cidadão, passaporte, carta de condução e muito mais
+• País emissor, número do documento e data de validade
+
+<b>Fotos de ambos os lados</b>
+• Opcionalmente, digitalize a frente e o verso de qualquer cartão com deteção automática de margens
+• As fotos são encriptadas e nunca saem do seu dispositivo
+
+<b>Segurança e privacidade</b>
+• Tudo é encriptado com chaves guardadas no hardware seguro do telemóvel
+• Bloqueie qualquer cartão para que só possa ser aberto com impressão digital, rosto ou bloqueio de ecrã
+• As capturas de ecrã são bloqueadas nos ecrãs com dados sensíveis
+• Os números copiados são removidos da área de transferência após um minuto
+• Sem conta, sem anúncios, sem estatísticas – os seus cartões nunca saem do seu dispositivo
+• A app só acede à Internet quando decide transferir o logótipo oficial de uma loja ou banco
+
+<b>Organizado à sua maneira</b>
+• Pesquise e filtre por tipo de cartão
+• Ordene por nome, data de adição ou pela sua própria ordem
+• Cores e logótipos de lojas e bancos conhecidos, ou carregue os seus
+
+<b>Cópia de segurança encriptada</b>
+• Exporte todos os cartões para um único ficheiro protegido por palavra-passe e restaure-o num telemóvel novo
+
+O Cardholder é de código aberto: https://github.com/danyk20/cardholder

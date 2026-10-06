@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">設定</string>
+    <string name="settings_appearance">外觀</string>
+    <string name="settings_theme_system">系統預設</string>
+    <string name="settings_theme_light">淺色</string>
+    <string name="settings_theme_dark">深色</string>
+    <string name="settings_dynamic_color">動態色彩</string>
+    <string name="settings_dynamic_color_description">使用桌布中的色彩</string>
+    <string name="settings_backup">備份</string>
+    <string name="settings_export">匯出備份</string>
+    <string name="settings_export_description">將所有卡片儲存到受密碼保護的檔案中</string>
+    <string name="settings_import">匯入備份</string>
+    <string name="settings_import_description">從備份檔案還原卡片</string>
+    <string name="settings_backup_working">處理中…</string>
+    <string name="settings_password_title_export">保護你的備份</string>
+    <string name="settings_password_title_import">輸入備份密碼</string>
+    <string name="settings_password_message_export">備份包含所有卡片詳細資料，包括 CVV。請設定高強度密碼——密碼一旦遺忘就無法復原。</string>
+    <string name="settings_password">密碼</string>
+    <string name="settings_password_confirm">再次輸入密碼</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="other">請至少使用 %1$d 個字元</item>
+    </plurals>
+    <string name="settings_password_mismatch">兩次輸入的密碼不一致</string>
+    <string name="settings_replace_existing">取代已存在的卡片</string>
+    <string name="settings_continue">繼續</string>
+    <string name="settings_cancel">取消</string>
+    <plurals name="settings_result_exported">
+        <item quantity="other">已匯出 %1$d 張卡片</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="other">已匯入 %1$d 張卡片</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="other">%1$d 張卡片已存在，因此略過</item>
+    </plurals>
+    <string name="settings_result_wrong_password">密碼錯誤</string>
+    <string name="settings_result_invalid_file">這不是 Cardholder 備份檔案，或檔案已毀損</string>
+    <string name="settings_result_auth_required">請確認是你本人，才能匯出受保護的卡片</string>
+    <string name="settings_result_device_not_secure">請先設定螢幕鎖定，才能匯入含有 CVV 或已鎖定的卡片</string>
+    <string name="settings_result_failed">發生錯誤，請再試一次。</string>
+    <string name="settings_about">關於</string>
+    <string name="settings_version">版本 %1$s</string>
+    <string name="settings_privacy">你的卡片經過加密，除非你主動匯出，否則絕不會離開這部裝置。只有在你要求下載商店或銀行的官方標誌時，應用程式才會連上網路。</string>
+    <string name="settings_privacy_policy">隱私權政策</string>
+    <string name="settings_logo_credits">標誌來源</string>
+    <string name="settings_logo_credits_description">官方標誌的來源與授權</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Nastavenia</string>
+
+    <string name="settings_appearance">Vzhľad</string>
+    <string name="settings_theme_system">Predvolené systémom</string>
+    <string name="settings_theme_light">Svetlý</string>
+    <string name="settings_theme_dark">Tmavý</string>
+    <string name="settings_dynamic_color">Dynamické farby</string>
+    <string name="settings_dynamic_color_description">Použiť farby z tapety</string>
+
+    <string name="settings_backup">Záloha</string>
+    <string name="settings_export">Exportovať zálohu</string>
+    <string name="settings_export_description">Uložiť všetky karty do súboru chráneného heslom</string>
+    <string name="settings_import">Importovať zálohu</string>
+    <string name="settings_import_description">Obnoviť karty zo súboru zálohy</string>
+    <string name="settings_backup_working">Spracúva sa…</string>
+
+    <string name="settings_password_title_export">Ochráňte svoju zálohu</string>
+    <string name="settings_password_title_import">Zadajte heslo zálohy</string>
+    <string name="settings_password_message_export">Záloha obsahuje všetky údaje kariet vrátane CVV. Zvoľte silné heslo – nedá sa obnoviť.</string>
+    <string name="settings_password">Heslo</string>
+    <string name="settings_password_confirm">Zopakujte heslo</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Použite aspoň %1$d znak</item>
+        <item quantity="few">Použite aspoň %1$d znaky</item>
+        <item quantity="many">Použite aspoň %1$d znakov</item>
+        <item quantity="other">Použite aspoň %1$d znakov</item>
+    </plurals>
+    <string name="settings_password_mismatch">Heslá sa nezhodujú</string>
+    <string name="settings_replace_existing">Nahradiť karty, ktoré už existujú</string>
+    <string name="settings_continue">Pokračovať</string>
+    <string name="settings_cancel">Zrušiť</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">Exportovaná %1$d karta</item>
+        <item quantity="few">Exportované %1$d karty</item>
+        <item quantity="many">Exportovaných %1$d kariet</item>
+        <item quantity="other">Exportovaných %1$d kariet</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Importovaná %1$d karta</item>
+        <item quantity="few">Importované %1$d karty</item>
+        <item quantity="many">Importovaných %1$d kariet</item>
+        <item quantity="other">Importovaných %1$d kariet</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d karta už existovala a bola preskočená</item>
+        <item quantity="few">%1$d karty už existovali a boli preskočené</item>
+        <item quantity="many">%1$d kariet už existovalo a bolo preskočených</item>
+        <item quantity="other">%1$d kariet už existovalo a bolo preskočených</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Nesprávne heslo</string>
+    <string name="settings_result_invalid_file">Toto nie je záloha aplikácie Cardholder alebo je súbor poškodený</string>
+    <string name="settings_result_auth_required">Ak chcete exportovať chránené karty, potvrďte svoju totožnosť</string>
+    <string name="settings_result_device_not_secure">Ak chcete importovať karty s CVV alebo zámkou, nastavte si zámku obrazovky</string>
+    <string name="settings_result_failed">Niečo sa pokazilo. Skúste to znova.</string>
+
+    <string name="settings_about">Informácie</string>
+    <string name="settings_version">Verzia %1$s</string>
+    <string name="settings_privacy">Vaše karty sú zašifrované a nikdy neopustia toto zariadenie, pokiaľ ich neexportujete. Aplikácia sa pripája na internet iba vtedy, keď si vyžiadate stiahnutie oficiálneho loga obchodu alebo banky.</string>
+    <string name="settings_privacy_policy">Pravidlá ochrany súkromia</string>
+    <string name="settings_logo_credits">Zdroje log</string>
+    <string name="settings_logo_credits_description">Zdroje a licencie oficiálnych log</string>
+</resources>

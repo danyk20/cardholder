@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Sulge</string>
+    <string name="barcode_details">Kaardi üksikasjad</string>
+    <string name="barcode_description">%2$s – %1$s</string>
+    <string name="barcode_unencodable">Seda koodi ei saa kuvada vormingus %1$s. Muutke kaarti, et koodi parandada, või valige muu koodi tüüp.</string>
+    <string name="barcode_hint">Hoidke ekraani skanneri ees tasaselt ja liikumatult.</string>
+</resources>

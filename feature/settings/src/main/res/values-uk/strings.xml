@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Налаштування</string>
+
+    <string name="settings_appearance">Вигляд</string>
+    <string name="settings_theme_system">Як у системі</string>
+    <string name="settings_theme_light">Світла</string>
+    <string name="settings_theme_dark">Темна</string>
+    <string name="settings_dynamic_color">Динамічні кольори</string>
+    <string name="settings_dynamic_color_description">Використовувати кольори шпалер</string>
+
+    <string name="settings_backup">Резервне копіювання</string>
+    <string name="settings_export">Експорт резервної копії</string>
+    <string name="settings_export_description">Зберегти всі картки у файл, захищений паролем</string>
+    <string name="settings_import">Імпорт резервної копії</string>
+    <string name="settings_import_description">Відновити картки з файлу резервної копії</string>
+    <string name="settings_backup_working">Виконується…</string>
+
+    <string name="settings_password_title_export">Захистіть резервну копію</string>
+    <string name="settings_password_title_import">Введіть пароль резервної копії</string>
+    <string name="settings_password_message_export">Резервна копія містить усі дані карток, зокрема CVV. Виберіть надійний пароль — відновити його буде неможливо.</string>
+    <string name="settings_password">Пароль</string>
+    <string name="settings_password_confirm">Повторіть пароль</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Щонайменше %1$d символ</item>
+        <item quantity="few">Щонайменше %1$d символи</item>
+        <item quantity="many">Щонайменше %1$d символів</item>
+        <item quantity="other">Щонайменше %1$d символу</item>
+    </plurals>
+    <string name="settings_password_mismatch">Паролі не збігаються</string>
+    <string name="settings_replace_existing">Замінювати наявні картки</string>
+    <string name="settings_continue">Продовжити</string>
+    <string name="settings_cancel">Скасувати</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">Експортовано %1$d картку</item>
+        <item quantity="few">Експортовано %1$d картки</item>
+        <item quantity="many">Експортовано %1$d карток</item>
+        <item quantity="other">Експортовано %1$d картки</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Імпортовано %1$d картку</item>
+        <item quantity="few">Імпортовано %1$d картки</item>
+        <item quantity="many">Імпортовано %1$d карток</item>
+        <item quantity="other">Імпортовано %1$d картки</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d картка вже існувала, тому її пропущено</item>
+        <item quantity="few">%1$d картки вже існували, тому їх пропущено</item>
+        <item quantity="many">%1$d карток уже існували, тому їх пропущено</item>
+        <item quantity="other">%1$d картки вже існували, тому їх пропущено</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Неправильний пароль</string>
+    <string name="settings_result_invalid_file">Це не резервна копія Cardholder, або файл пошкоджено</string>
+    <string name="settings_result_auth_required">Підтвердьте свою особу, щоб експортувати захищені картки</string>
+    <string name="settings_result_device_not_secure">Налаштуйте блокування екрана, щоб імпортувати картки з CVV або блокуванням</string>
+    <string name="settings_result_failed">Щось пішло не так. Повторіть спробу.</string>
+
+    <string name="settings_about">Про додаток</string>
+    <string name="settings_version">Версія %1$s</string>
+    <string name="settings_privacy">Ваші картки зашифровано, і вони не залишають цей пристрій, якщо ви їх не експортуєте. Додаток під\'єднується до інтернету, лише щоб завантажити офіційний логотип магазину чи банку на ваш запит.</string>
+    <string name="settings_privacy_policy">Політика конфіденційності</string>
+    <string name="settings_logo_credits">Авторство логотипів</string>
+    <string name="settings_logo_credits_description">Джерела та ліцензії офіційних логотипів</string>
+</resources>

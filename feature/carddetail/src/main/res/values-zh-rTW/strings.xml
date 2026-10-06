@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">編輯</string>
+    <string name="detail_delete">刪除</string>
+    <string name="detail_more">更多選項</string>
+    <string name="detail_flip">顯示另一面</string>
+    <string name="detail_show_code">顯示代碼</string>
+    <string name="detail_copied">已複製%1$s，一分鐘後會從剪貼簿中清除。</string>
+    <string name="detail_copy">複製%1$s</string>
+    <string name="detail_show_cvv">顯示 CVV</string>
+    <string name="detail_hide_cvv">隱藏 CVV</string>
+    <string name="detail_locked_details">這張卡片已鎖定，因此詳細資料已隱藏</string>
+    <string name="detail_lock">鎖定卡片</string>
+    <string name="detail_lock_on">必須使用指紋、臉孔或螢幕鎖定才能查看這張卡片</string>
+    <string name="detail_lock_off">任何使用你手機的人都能查看這張卡片</string>
+    <string name="detail_lock_unavailable">請先在裝置上設定螢幕鎖定，才能鎖定卡片</string>
+    <string name="detail_delete_title">要刪除這張卡片嗎？</string>
+    <string name="detail_delete_message">「%1$s」及其相片將從這部裝置中永久刪除。</string>
+    <string name="detail_cancel">取消</string>
+    <string name="detail_close_photo">關閉相片</string>
+    <string name="detail_ok">確定</string>
+    <string name="field_bank">銀行</string>
+    <string name="field_number">卡號</string>
+    <string name="field_expiry">有效期限</string>
+    <string name="field_holder">持卡人</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">發卡組織</string>
+    <string name="field_country">國家/地區</string>
+    <string name="field_document_number">證件號碼</string>
+    <string name="field_shop">商店</string>
+    <string name="field_code">代碼</string>
+    <string name="field_format">代碼類型</string>
+</resources>

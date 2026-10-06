@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">은행 카드</string>
+    <string name="card_type_id">신분증</string>
+    <string name="card_type_loyalty">멤버십 카드</string>
+    <string name="card_type_bank_description">체크카드 또는 신용카드</string>
+    <string name="card_type_id_description">신분증, 여권, 운전면허증 등</string>
+    <string name="card_type_loyalty_description">바코드 또는 QR 코드가 있는 매장 카드</string>
+    <string name="card_side_front">앞면</string>
+    <string name="card_side_back">뒷면</string>
+    <string name="card_locked">잠김</string>
+    <string name="card_locked_message">이 카드는 잠겨 있습니다</string>
+    <string name="auth_title_show_cvv">CVV 표시</string>
+    <string name="auth_title_export">백업 내보내기</string>
+    <string name="card_not_found">이 카드는 더 이상 존재하지 않습니다</string>
+    <string name="auth_title_unlock_card">%1$s 잠금 해제</string>
+    <string name="auth_subtitle">지문, 얼굴 또는 화면 잠금으로 본인 인증을 하세요</string>
+    <string name="auth_key_invalidated">이 데이터를 보호하던 화면 잠금이 삭제되어 더 이상 복호화할 수 없습니다.</string>
+    <string name="error_required">필수</string>
+    <string name="error_invalid_characters">허용되지 않는 문자가 포함되어 있습니다</string>
+    <string name="error_invalid_length">길이가 올바르지 않습니다</string>
+    <string name="error_invalid_checksum">검증 숫자가 일치하지 않습니다. 오타가 있는지 확인하세요</string>
+    <string name="error_invalid_date">올바른 날짜가 아닙니다</string>
+    <string name="action_back">뒤로</string>
+    <string name="action_cancel">취소</string>
+    <string name="action_unlock">잠금 해제</string>
+    <string name="format_qr_code">QR 코드</string>
+    <string name="color_navy">네이비</string>
+    <string name="color_blue">파란색</string>
+    <string name="color_teal">청록색</string>
+    <string name="color_green">초록색</string>
+    <string name="color_lime">라임색</string>
+    <string name="color_amber">호박색</string>
+    <string name="color_orange">주황색</string>
+    <string name="color_red">빨간색</string>
+    <string name="color_pink">분홍색</string>
+    <string name="color_purple">보라색</string>
+    <string name="color_brown">갈색</string>
+    <string name="color_graphite">그래파이트</string>
+</resources>

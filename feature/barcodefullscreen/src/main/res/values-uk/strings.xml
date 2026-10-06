@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Закрити</string>
+    <string name="barcode_details">Дані картки</string>
+    <string name="barcode_description">%1$s картки «%2$s»</string>
+    <string name="barcode_unencodable">Цей код неможливо показати у форматі %1$s. Виправте код у картці або виберіть інший тип коду.</string>
+    <string name="barcode_hint">Тримайте екран рівно й нерухомо перед сканером.</string>
+</resources>

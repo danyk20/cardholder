@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Bankkort</string>
+    <string name="card_type_id">ID-kort</string>
+    <string name="card_type_loyalty">Kundkort</string>
+    <string name="card_type_bank_description">Betal- eller kreditkort</string>
+    <string name="card_type_id_description">Identitetskort, pass, körkort…</string>
+    <string name="card_type_loyalty_description">Butikskort med streckkod eller QR-kod</string>
+    <string name="card_side_front">Framsida</string>
+    <string name="card_side_back">Baksida</string>
+    <string name="card_locked">Låst</string>
+    <string name="card_locked_message">Det här kortet är låst</string>
+    <string name="auth_title_show_cvv">Visa CVV</string>
+    <string name="auth_title_export">Exportera säkerhetskopia</string>
+    <string name="card_not_found">Det här kortet finns inte längre</string>
+    <string name="auth_title_unlock_card">Lås upp %1$s</string>
+    <string name="auth_subtitle">Bekräfta att det är du med fingeravtryck, ansikte eller skärmlås</string>
+    <string name="auth_key_invalidated">Den här informationen skyddades av ett skärmlås som sedan har tagits bort och kan inte längre dekrypteras.</string>
+    <string name="error_required">Obligatoriskt</string>
+    <string name="error_invalid_characters">Innehåller tecken som inte är tillåtna</string>
+    <string name="error_invalid_length">Fel längd</string>
+    <string name="error_invalid_checksum">Kontrollsiffran stämmer inte – kontrollera att du har skrivit rätt</string>
+    <string name="error_invalid_date">Ogiltigt datum</string>
+    <string name="action_back">Tillbaka</string>
+    <string name="action_cancel">Avbryt</string>
+    <string name="action_unlock">Lås upp</string>
+    <string name="format_qr_code">QR-kod</string>
+    <string name="color_navy">Marinblå</string>
+    <string name="color_blue">Blå</string>
+    <string name="color_teal">Blågrön</string>
+    <string name="color_green">Grön</string>
+    <string name="color_lime">Limegrön</string>
+    <string name="color_amber">Bärnsten</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_red">Röd</string>
+    <string name="color_pink">Rosa</string>
+    <string name="color_purple">Lila</string>
+    <string name="color_brown">Brun</string>
+    <string name="color_graphite">Grafit</string>
+</resources>

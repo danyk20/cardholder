@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Redigera</string>
+    <string name="detail_delete">Radera</string>
+    <string name="detail_more">Fler alternativ</string>
+    <string name="detail_flip">Visa andra sidan</string>
+    <string name="detail_show_code">Visa koden</string>
+    <string name="detail_copied">%1$s har kopierats. Urklippet rensas om en minut.</string>
+    <string name="detail_copy">Kopiera %1$s</string>
+    <string name="detail_show_cvv">Visa CVV</string>
+    <string name="detail_hide_cvv">Dölj CVV</string>
+    <string name="detail_locked_details">Uppgifterna är dolda eftersom kortet är låst</string>
+    <string name="detail_lock">Lås kortet</string>
+    <string name="detail_lock_on">Fingeravtryck, ansikte eller skärmlås krävs för att se kortet</string>
+    <string name="detail_lock_off">Alla som använder din telefon kan se kortet</string>
+    <string name="detail_lock_unavailable">Konfigurera ett skärmlås på enheten för att kunna låsa kort</string>
+    <string name="detail_delete_title">Vill du radera kortet?</string>
+    <string name="detail_delete_message">%1$s och tillhörande foton raderas permanent från enheten.</string>
+    <string name="detail_cancel">Avbryt</string>
+    <string name="detail_close_photo">Stäng fotot</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Bank</string>
+    <string name="field_number">Kortnummer</string>
+    <string name="field_expiry">Giltigt t.o.m.</string>
+    <string name="field_holder">Kortinnehavare</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Kortnätverk</string>
+    <string name="field_country">Land</string>
+    <string name="field_document_number">Dokumentnummer</string>
+    <string name="field_shop">Butik</string>
+    <string name="field_code">Kod</string>
+    <string name="field_format">Kodtyp</string>
+</resources>

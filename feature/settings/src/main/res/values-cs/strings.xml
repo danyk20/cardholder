@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Nastavení</string>
+
+    <string name="settings_appearance">Vzhled</string>
+    <string name="settings_theme_system">Podle systému</string>
+    <string name="settings_theme_light">Světlý</string>
+    <string name="settings_theme_dark">Tmavý</string>
+    <string name="settings_dynamic_color">Dynamické barvy</string>
+    <string name="settings_dynamic_color_description">Použít barvy z tapety</string>
+
+    <string name="settings_backup">Záloha</string>
+    <string name="settings_export">Exportovat zálohu</string>
+    <string name="settings_export_description">Uložit všechny karty do souboru chráněného heslem</string>
+    <string name="settings_import">Importovat zálohu</string>
+    <string name="settings_import_description">Obnovit karty ze souboru zálohy</string>
+    <string name="settings_backup_working">Zpracování…</string>
+
+    <string name="settings_password_title_export">Chraňte svou zálohu</string>
+    <string name="settings_password_title_import">Zadejte heslo zálohy</string>
+    <string name="settings_password_message_export">Záloha obsahuje všechny údaje karet včetně CVV. Zvolte silné heslo – nelze ho obnovit.</string>
+    <string name="settings_password">Heslo</string>
+    <string name="settings_password_confirm">Zopakujte heslo</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Použijte alespoň %1$d znak</item>
+        <item quantity="few">Použijte alespoň %1$d znaky</item>
+        <item quantity="many">Použijte alespoň %1$d znaků</item>
+        <item quantity="other">Použijte alespoň %1$d znaků</item>
+    </plurals>
+    <string name="settings_password_mismatch">Hesla se neshodují</string>
+    <string name="settings_replace_existing">Nahradit karty, které už existují</string>
+    <string name="settings_continue">Pokračovat</string>
+    <string name="settings_cancel">Zrušit</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">Exportována %1$d karta</item>
+        <item quantity="few">Exportovány %1$d karty</item>
+        <item quantity="many">Exportováno %1$d karet</item>
+        <item quantity="other">Exportováno %1$d karet</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Importována %1$d karta</item>
+        <item quantity="few">Importovány %1$d karty</item>
+        <item quantity="many">Importováno %1$d karet</item>
+        <item quantity="other">Importováno %1$d karet</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d karta už existovala a byla přeskočena</item>
+        <item quantity="few">%1$d karty už existovaly a byly přeskočeny</item>
+        <item quantity="many">%1$d karet už existovalo a bylo přeskočeno</item>
+        <item quantity="other">%1$d karet už existovalo a bylo přeskočeno</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Nesprávné heslo</string>
+    <string name="settings_result_invalid_file">Toto není záloha aplikace Cardholder nebo je soubor poškozený</string>
+    <string name="settings_result_auth_required">Chcete-li exportovat chráněné karty, potvrďte svou totožnost</string>
+    <string name="settings_result_device_not_secure">Chcete-li importovat karty s CVV nebo zámkem, nastavte zámek obrazovky</string>
+    <string name="settings_result_failed">Něco se pokazilo. Zkuste to znovu.</string>
+
+    <string name="settings_about">O aplikaci</string>
+    <string name="settings_version">Verze %1$s</string>
+    <string name="settings_privacy">Vaše karty jsou zašifrované a nikdy neopustí toto zařízení, pokud je neexportujete. Aplikace se připojuje k internetu pouze tehdy, když si vyžádáte stažení oficiálního loga obchodu nebo banky.</string>
+    <string name="settings_privacy_policy">Zásady ochrany soukromí</string>
+    <string name="settings_logo_credits">Zdroje log</string>
+    <string name="settings_logo_credits_description">Zdroje a licence oficiálních log</string>
+</resources>

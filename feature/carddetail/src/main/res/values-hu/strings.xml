@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Szerkesztés</string>
+    <string name="detail_delete">Törlés</string>
+    <string name="detail_more">További lehetőségek</string>
+    <string name="detail_flip">Másik oldal megjelenítése</string>
+    <string name="detail_show_code">Kód megjelenítése</string>
+    <string name="detail_copied">Kimásolva: %1$s. Egy perc múlva törlődik a vágólapról.</string>
+    <string name="detail_copy">%1$s másolása</string>
+    <string name="detail_show_cvv">CVV megjelenítése</string>
+    <string name="detail_hide_cvv">CVV elrejtése</string>
+    <string name="detail_locked_details">Az adatok rejtve vannak, mert ez a kártya zárolva van</string>
+    <string name="detail_lock">Kártya zárolása</string>
+    <string name="detail_lock_on">A kártya megtekintéséhez ujjlenyomat, arc vagy képernyőzár szükséges</string>
+    <string name="detail_lock_off">Bárki megtekintheti ezt a kártyát, aki használja a telefonját</string>
+    <string name="detail_lock_unavailable">A kártyák zárolásához állítson be képernyőzárat az eszközén</string>
+    <string name="detail_delete_title">Törli ezt a kártyát?</string>
+    <string name="detail_delete_message">%1$s és a hozzá tartozó fotók véglegesen törlődnek erről az eszközről.</string>
+    <string name="detail_cancel">Mégse</string>
+    <string name="detail_close_photo">Fotó bezárása</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Bank</string>
+    <string name="field_number">Kártyaszám</string>
+    <string name="field_expiry">Lejárat</string>
+    <string name="field_holder">Kártyabirtokos</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Kártyatársaság</string>
+    <string name="field_country">Ország</string>
+    <string name="field_document_number">Okmányazonosító</string>
+    <string name="field_shop">Üzlet</string>
+    <string name="field_code">Kód</string>
+    <string name="field_format">Kódtípus</string>
+</resources>

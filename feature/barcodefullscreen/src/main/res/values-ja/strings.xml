@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">閉じる</string>
+    <string name="barcode_details">カードの詳細</string>
+    <string name="barcode_description">%2$s の%1$s</string>
+    <string name="barcode_unencodable">このコードは %1$s として表示できません。カードを編集してコードを修正するか、別のコードの種類を選択してください。</string>
+    <string name="barcode_hint">画面を平らにして、スキャナの前で動かさないでください。</string>
+</resources>

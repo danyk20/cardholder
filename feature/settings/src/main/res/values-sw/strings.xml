@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Mipangilio</string>
+    <string name="settings_appearance">Mwonekano</string>
+    <string name="settings_theme_system">Chaguomsingi la mfumo</string>
+    <string name="settings_theme_light">Mwangaza</string>
+    <string name="settings_theme_dark">Giza</string>
+    <string name="settings_dynamic_color">Rangi zinazobadilika</string>
+    <string name="settings_dynamic_color_description">Tumia rangi kutoka kwenye mandhari yako</string>
+    <string name="settings_backup">Nakala rudufu</string>
+    <string name="settings_export">Hamisha nakala rudufu</string>
+    <string name="settings_export_description">Hifadhi kadi zote kwenye faili inayolindwa kwa nenosiri</string>
+    <string name="settings_import">Leta nakala rudufu</string>
+    <string name="settings_import_description">Rejesha kadi kutoka kwenye faili ya nakala rudufu</string>
+    <string name="settings_backup_working">Inashughulikia…</string>
+    <string name="settings_password_title_export">Linda nakala yako rudufu</string>
+    <string name="settings_password_title_import">Weka nenosiri la nakala rudufu</string>
+    <string name="settings_password_message_export">Nakala rudufu ina maelezo yote ya kadi, ikiwa ni pamoja na CVV. Chagua nenosiri thabiti – haliwezi kurejeshwa.</string>
+    <string name="settings_password">Nenosiri</string>
+    <string name="settings_password_confirm">Rudia nenosiri</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Tumia angalau herufi %1$d</item>
+        <item quantity="other">Tumia angalau herufi %1$d</item>
+    </plurals>
+    <string name="settings_password_mismatch">Manenosiri hayalingani</string>
+    <string name="settings_replace_existing">Badilisha kadi ambazo tayari zipo</string>
+    <string name="settings_continue">Endelea</string>
+    <string name="settings_cancel">Ghairi</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">Kadi %1$d imehamishwa</item>
+        <item quantity="other">Kadi %1$d zimehamishwa</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Kadi %1$d imeletwa</item>
+        <item quantity="other">Kadi %1$d zimeletwa</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">Kadi %1$d tayari ilikuwepo na imerukwa</item>
+        <item quantity="other">Kadi %1$d tayari zilikuwepo na zimerukwa</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Nenosiri si sahihi</string>
+    <string name="settings_result_invalid_file">Hii si nakala rudufu ya Cardholder au faili imeharibika</string>
+    <string name="settings_result_auth_required">Thibitisha kuwa ni wewe ili uhamishe kadi zinazolindwa</string>
+    <string name="settings_result_device_not_secure">Weka mbinu ya kufunga skrini ili uingize kadi zenye CVV au zilizofungwa</string>
+    <string name="settings_result_failed">Hitilafu fulani imetokea. Tafadhali jaribu tena.</string>
+    <string name="settings_about">Kuhusu</string>
+    <string name="settings_version">Toleo la %1$s</string>
+    <string name="settings_privacy">Kadi zako husimbwa kwa njia fiche na kamwe haziondoki kwenye kifaa hiki isipokuwa ukizihamisha. Programu huunganishwa kwenye intaneti tu unapoomba kupakua nembo rasmi ya duka au benki.</string>
+    <string name="settings_privacy_policy">Sera ya faragha</string>
+    <string name="settings_logo_credits">Vyanzo vya nembo</string>
+    <string name="settings_logo_credits_description">Vyanzo na leseni za nembo rasmi</string>
+</resources>

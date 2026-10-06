@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">編集</string>
+    <string name="detail_delete">削除</string>
+    <string name="detail_more">その他のオプション</string>
+    <string name="detail_flip">反対の面を表示</string>
+    <string name="detail_show_code">コードを表示</string>
+    <string name="detail_copied">%1$s をコピーしました。1 分後にクリップボードから消去されます。</string>
+    <string name="detail_copy">%1$s をコピー</string>
+    <string name="detail_show_cvv">CVV を表示</string>
+    <string name="detail_hide_cvv">CVV を非表示</string>
+    <string name="detail_locked_details">このカードはロックされているため、詳細は表示されません</string>
+    <string name="detail_lock">カードをロック</string>
+    <string name="detail_lock_on">このカードを表示するには、指紋認証、顔認証、または画面ロックが必要です</string>
+    <string name="detail_lock_off">スマートフォンを使用する人は誰でもこのカードを表示できます</string>
+    <string name="detail_lock_unavailable">カードをロックするには、デバイスで画面ロックを設定してください</string>
+    <string name="detail_delete_title">このカードを削除しますか？</string>
+    <string name="detail_delete_message">「%1$s」とその写真がこのデバイスから完全に削除されます。</string>
+    <string name="detail_cancel">キャンセル</string>
+    <string name="detail_close_photo">写真を閉じる</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">銀行</string>
+    <string name="field_number">カード番号</string>
+    <string name="field_expiry">有効期限</string>
+    <string name="field_holder">カード名義人</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">国際ブランド</string>
+    <string name="field_country">国</string>
+    <string name="field_document_number">証明書番号</string>
+    <string name="field_shop">店舗</string>
+    <string name="field_code">コード</string>
+    <string name="field_format">コードの種類</string>
+</resources>

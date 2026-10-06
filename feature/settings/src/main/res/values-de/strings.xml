@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Einstellungen</string>
+
+    <string name="settings_appearance">Darstellung</string>
+    <string name="settings_theme_system">Systemstandard</string>
+    <string name="settings_theme_light">Hell</string>
+    <string name="settings_theme_dark">Dunkel</string>
+    <string name="settings_dynamic_color">Dynamische Farben</string>
+    <string name="settings_dynamic_color_description">Farben des Hintergrundbilds verwenden</string>
+
+    <string name="settings_backup">Sicherung</string>
+    <string name="settings_export">Sicherung exportieren</string>
+    <string name="settings_export_description">Alle Karten in einer passwortgeschützten Datei speichern</string>
+    <string name="settings_import">Sicherung importieren</string>
+    <string name="settings_import_description">Karten aus einer Sicherungsdatei wiederherstellen</string>
+    <string name="settings_backup_working">Wird bearbeitet…</string>
+
+    <string name="settings_password_title_export">Sicherung schützen</string>
+    <string name="settings_password_title_import">Passwort der Sicherung eingeben</string>
+    <string name="settings_password_message_export">Die Sicherung enthält alle Kartendetails einschließlich CVVs. Ein sicheres Passwort wählen – es kann nicht wiederhergestellt werden.</string>
+    <string name="settings_password">Passwort</string>
+    <string name="settings_password_confirm">Passwort wiederholen</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Mindestens %1$d Zeichen verwenden</item>
+        <item quantity="other">Mindestens %1$d Zeichen verwenden</item>
+    </plurals>
+    <string name="settings_password_mismatch">Passwörter stimmen nicht überein</string>
+    <string name="settings_replace_existing">Bereits vorhandene Karten ersetzen</string>
+    <string name="settings_continue">Weiter</string>
+    <string name="settings_cancel">Abbrechen</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d Karte exportiert</item>
+        <item quantity="other">%1$d Karten exportiert</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d Karte importiert</item>
+        <item quantity="other">%1$d Karten importiert</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d war bereits vorhanden und wurde übersprungen</item>
+        <item quantity="other">%1$d waren bereits vorhanden und wurden übersprungen</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Falsches Passwort</string>
+    <string name="settings_result_invalid_file">Dies ist keine Cardholder-Sicherung oder die Datei ist beschädigt</string>
+    <string name="settings_result_auth_required">Identität bestätigen, um geschützte Karten zu exportieren</string>
+    <string name="settings_result_device_not_secure">Displaysperre einrichten, um Karten mit CVV oder Schutz zu importieren</string>
+    <string name="settings_result_failed">Etwas ist schiefgelaufen. Bitte noch einmal versuchen.</string>
+
+    <string name="settings_about">Über die App</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_privacy">Die Karten sind verschlüsselt und verlassen dieses Gerät nur, wenn sie exportiert werden. Die App geht nur online, um auf Wunsch ein offizielles Logo eines Geschäfts oder einer Bank herunterzuladen.</string>
+    <string name="settings_privacy_policy">Datenschutzerklärung</string>
+    <string name="settings_logo_credits">Logo-Nachweise</string>
+    <string name="settings_logo_credits_description">Quellen und Lizenzen der offiziellen Logos</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Beállítások</string>
+    <string name="cardlist_add_card">Kártya hozzáadása</string>
+    <string name="cardlist_search">Kártyák keresése</string>
+    <string name="cardlist_clear_search">Keresés törlése</string>
+    <string name="cardlist_empty_title">Még nincsenek kártyák</string>
+    <string name="cardlist_empty_message">Tárolja bankkártyáit, igazolványait és hűségkártyáit biztonságosan a telefonján. Minden titkosítva van, és az eszközén marad.</string>
+    <string name="cardlist_no_results">Nincs a keresésnek megfelelő kártya</string>
+    <string name="cardlist_show_code">Kód megjelenítése teljes képernyőn</string>
+    <string name="cardlist_tap_to_unlock">Koppintson a feloldáshoz</string>
+    <string name="cardlist_sort">Kártyák rendezése</string>
+    <string name="cardlist_sort_name">Név (A–Z)</string>
+    <string name="cardlist_sort_date">Hozzáadás dátuma (legújabb elöl)</string>
+    <string name="cardlist_sort_custom">Egyéni sorrend</string>
+    <string name="cardlist_reorder">Kártyák átrendezése</string>
+    <string name="cardlist_reorder_done">Kész</string>
+    <string name="cardlist_reorder_cancel">Átrendezés megszakítása</string>
+    <string name="cardlist_reorder_hint">A sorrend módosításához húzza a kártyákat a fogantyújuknál.</string>
+    <string name="cardlist_drag_handle">%1$s áthelyezése húzással</string>
+    <string name="cardlist_move_up">Mozgatás felfelé</string>
+    <string name="cardlist_move_down">Mozgatás lefelé</string>
+</resources>

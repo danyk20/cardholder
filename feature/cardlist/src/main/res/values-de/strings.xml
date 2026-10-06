@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Einstellungen</string>
+    <string name="cardlist_add_card">Karte hinzufügen</string>
+    <string name="cardlist_search">Karten suchen</string>
+    <string name="cardlist_clear_search">Suche löschen</string>
+    <string name="cardlist_empty_title">Noch keine Karten</string>
+    <string name="cardlist_empty_message">Bank-, Ausweis- und Kundenkarten sicher auf dem Smartphone aufbewahren. Alles wird verschlüsselt und bleibt auf dem Gerät.</string>
+    <string name="cardlist_no_results">Keine passenden Karten gefunden</string>
+    <string name="cardlist_show_code">Code im Vollbild anzeigen</string>
+    <string name="cardlist_tap_to_unlock">Zum Entsperren tippen</string>
+    <string name="cardlist_sort">Karten sortieren</string>
+    <string name="cardlist_sort_name">Name (A–Z)</string>
+    <string name="cardlist_sort_date">Hinzugefügt (neueste zuerst)</string>
+    <string name="cardlist_sort_custom">Eigene Reihenfolge</string>
+    <string name="cardlist_reorder">Karten neu anordnen</string>
+    <string name="cardlist_reorder_done">Fertig</string>
+    <string name="cardlist_reorder_cancel">Neuanordnung abbrechen</string>
+    <string name="cardlist_reorder_hint">Karten am Ziehpunkt ziehen, um die Reihenfolge zu ändern.</string>
+    <string name="cardlist_drag_handle">%1$s verschieben</string>
+    <string name="cardlist_move_up">Nach oben</string>
+    <string name="cardlist_move_down">Nach unten</string>
+</resources>

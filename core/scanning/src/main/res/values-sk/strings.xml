@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Zavrieť skener</string>
+    <string name="scanner_hint">Namierte fotoaparát na čiarový alebo QR kód na karte</string>
+    <string name="scanner_permission_rationale">Cardholder potrebuje fotoaparát na naskenovanie kódu na karte. Snímky sa analyzujú v zariadení a nikdy sa neukladajú ani nikam neodosielajú.</string>
+    <string name="scanner_grant_permission">Povoliť fotoaparát</string>
+    <string name="nfc_title">Načítať kartu cez NFC</string>
+    <string name="nfc_hold_card">Priložte kartu naplocho k zadnej strane telefónu a nehýbte s ňou.</string>
+    <string name="nfc_reading">Načítava sa karta…</string>
+    <string name="nfc_failed">Kartu sa nepodarilo načítať. Pomaly ňou pohybujte po zadnej strane telefónu a skúste to znova.</string>
+    <string name="nfc_disabled">NFC je vypnuté.</string>
+    <string name="nfc_turn_on">Zapnúť NFC</string>
+    <string name="nfc_cvv_note">CVV nie je uložené na čipe, zadajte ho, prosím, ručne.</string>
+    <string name="nfc_cancel">Zrušiť</string>
+</resources>

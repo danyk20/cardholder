@@ -1,0 +1,39 @@
+Cardholder guarda tus tarjetas bancarias, documentos de identidad y tarjetas de fidelidad en un solo lugar de tu teléfono: cifradas, sin conexión y sin anuncios ni seguimiento.
+
+<b>Tarjetas de fidelidad en caja</b>
+• Cada tarjeta de fidelidad muestra su código de barras o código QR directamente en la lista
+• Tócala para ver el código en pantalla completa con el brillo al máximo, listo para el escáner
+• Escanea el código de tu tarjeta de plástico con la cámara o introdúcelo a mano
+• Compatible con QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec y Data Matrix
+
+<b>Tarjetas bancarias</b>
+• Guarda el número de tarjeta, la fecha de caducidad, el titular y el CVV
+• Rellena los datos acercando una tarjeta contactless al teléfono (NFC)
+• El CVV siempre está oculto y solo se muestra tras usar la huella digital, la cara o el bloqueo de pantalla
+• Detección automática de la red de la tarjeta
+
+<b>Documentos de identidad</b>
+• DNI, pasaportes, carnés de conducir y más
+• País de expedición, número de documento y fecha de caducidad
+
+<b>Fotos de ambas caras</b>
+• Si quieres, escanea el anverso y el reverso de cualquier tarjeta con detección automática de bordes
+• Las fotos se cifran y nunca salen de tu dispositivo
+
+<b>Seguridad y privacidad</b>
+• Todo se cifra con claves guardadas en el hardware seguro de tu teléfono
+• Bloquea cualquier tarjeta para que solo se pueda abrir con la huella digital, la cara o el bloqueo de pantalla
+• Las capturas de pantalla se bloquean en las pantallas con datos sensibles
+• Los números copiados se borran del portapapeles al cabo de un minuto
+• Sin cuenta, sin anuncios, sin analíticas: tus tarjetas nunca salen de tu dispositivo
+• La aplicación solo se conecta a Internet cuando decides descargar el logotipo oficial de una tienda o un banco
+
+<b>Organizadas a tu manera</b>
+• Busca y filtra por tipo de tarjeta
+• Ordena por nombre, por fecha de adición o en tu propio orden personalizado
+• Colores y logotipos de tiendas y bancos conocidos, o sube los tuyos
+
+<b>Copia de seguridad cifrada</b>
+• Exporta todas las tarjetas a un único archivo protegido con contraseña y restáuralo en un teléfono nuevo
+
+Cardholder es de código abierto: https://github.com/danyk20/cardholder

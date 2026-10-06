@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Inställningar</string>
+    <string name="settings_appearance">Utseende</string>
+    <string name="settings_theme_system">Systemstandard</string>
+    <string name="settings_theme_light">Ljust</string>
+    <string name="settings_theme_dark">Mörkt</string>
+    <string name="settings_dynamic_color">Dynamisk färg</string>
+    <string name="settings_dynamic_color_description">Använd färger från bakgrundsbilden</string>
+    <string name="settings_backup">Säkerhetskopiering</string>
+    <string name="settings_export">Exportera säkerhetskopia</string>
+    <string name="settings_export_description">Spara alla kort i en lösenordsskyddad fil</string>
+    <string name="settings_import">Importera säkerhetskopia</string>
+    <string name="settings_import_description">Återställ kort från en säkerhetskopia</string>
+    <string name="settings_backup_working">Bearbetar…</string>
+    <string name="settings_password_title_export">Skydda säkerhetskopian</string>
+    <string name="settings_password_title_import">Ange lösenordet för säkerhetskopian</string>
+    <string name="settings_password_message_export">Säkerhetskopian innehåller alla kortuppgifter, även CVV-koder. Välj ett starkt lösenord – det går inte att återställa.</string>
+    <string name="settings_password">Lösenord</string>
+    <string name="settings_password_confirm">Upprepa lösenordet</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Använd minst %1$d tecken</item>
+        <item quantity="other">Använd minst %1$d tecken</item>
+    </plurals>
+    <string name="settings_password_mismatch">Lösenorden matchar inte</string>
+    <string name="settings_replace_existing">Ersätt kort som redan finns</string>
+    <string name="settings_continue">Fortsätt</string>
+    <string name="settings_cancel">Avbryt</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d kort har exporterats</item>
+        <item quantity="other">%1$d kort har exporterats</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d kort har importerats</item>
+        <item quantity="other">%1$d kort har importerats</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d fanns redan och hoppades över</item>
+        <item quantity="other">%1$d fanns redan och hoppades över</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Fel lösenord</string>
+    <string name="settings_result_invalid_file">Det här är ingen säkerhetskopia från Cardholder eller så är filen skadad</string>
+    <string name="settings_result_auth_required">Bekräfta att det är du för att exportera skyddade kort</string>
+    <string name="settings_result_device_not_secure">Konfigurera ett skärmlås för att importera kort med CVV-koder eller lås</string>
+    <string name="settings_result_failed">Något gick fel. Försök igen.</string>
+    <string name="settings_about">Om</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_privacy">Dina kort är krypterade och lämnar aldrig enheten om du inte exporterar dem. Appen ansluter bara till internet när du ber den ladda ned en officiell logotyp för en butik eller bank.</string>
+    <string name="settings_privacy_policy">Integritetspolicy</string>
+    <string name="settings_logo_credits">Källor för logotyper</string>
+    <string name="settings_logo_credits_description">Källor och licenser för officiella logotyper</string>
+</resources>

@@ -1,0 +1,39 @@
+Cardholder säilyttää pankkikorttisi, henkilöllisyystodistuksesi ja kanta-asiakaskorttisi yhdessä paikassa puhelimessasi – salattuina, ilman verkkoyhteyttä, mainoksia ja seurantaa.
+
+<b>Kanta-asiakaskortit kassalla</b>
+• Jokaisen kanta-asiakaskortin viivakoodi tai QR-koodi näkyy suoraan luettelossa
+• Napauta sitä, niin koodi näytetään koko näytöllä täydellä kirkkaudella valmiina lukijalle
+• Skannaa koodi muovikortista kameralla – tai kirjoita se itse
+• Tuetut muodot: QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec ja Data Matrix
+
+<b>Pankkikortit</b>
+• Tallenna kortin numero, voimassaoloaika, kortinhaltija ja CVV
+• Täytä tiedot pitämällä lähimaksukorttia puhelinta vasten (NFC)
+• CVV on aina piilotettu, ja se näytetään vasta sormenjäljen, kasvojen tai näytön lukituksen jälkeen
+• Korttiverkosto tunnistetaan automaattisesti
+
+<b>Henkilöllisyystodistukset</b>
+• Henkilökortit, passit, ajokortit ja muut
+• Myöntäjämaa, asiakirjan numero ja voimassaolon päättymispäivä
+
+<b>Kuvat kortin molemmilta puolilta</b>
+• Skannaa halutessasi minkä tahansa kortin etu- ja takapuoli automaattisella reunojen tunnistuksella
+• Kuvat salataan, eivätkä ne koskaan poistu laitteeltasi
+
+<b>Tietoturva ja yksityisyys</b>
+• Kaikki salataan avaimilla, joita säilytetään puhelimesi suojatussa laitteistossa
+• Lukitse mikä tahansa kortti niin, että sen voi avata vain sormenjäljellä, kasvoilla tai näytön lukituksella
+• Kuvakaappaukset on estetty näkymissä, joissa on arkaluonteisia tietoja
+• Kopioidut numerot poistetaan leikepöydältä minuutin kuluttua
+• Ei tiliä, ei mainoksia, ei analytiikkaa – korttisi eivät koskaan poistu laitteeltasi
+• Sovellus muodostaa verkkoyhteyden vain, kun haluat ladata kaupan tai pankin virallisen logon
+
+<b>Järjestä omalla tavallasi</b>
+• Hae ja suodata korttityypin mukaan
+• Lajittele nimen, lisäyspäivän tai oman järjestyksen mukaan
+• Tunnettujen kauppojen ja pankkien värit ja logot – tai lataa omasi
+
+<b>Salattu varmuuskopio</b>
+• Vie kaikki kortit yhteen salasanalla suojattuun tiedostoon ja palauta se uudella puhelimella
+
+Cardholder on avointa lähdekoodia: https://github.com/danyk20/cardholder

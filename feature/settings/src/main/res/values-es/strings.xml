@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_appearance">Aspecto</string>
+    <string name="settings_theme_system">Predeterminado del sistema</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_dark">Oscuro</string>
+    <string name="settings_dynamic_color">Color dinámico</string>
+    <string name="settings_dynamic_color_description">Usar los colores de tu fondo de pantalla</string>
+    <string name="settings_backup">Copia de seguridad</string>
+    <string name="settings_export">Exportar copia de seguridad</string>
+    <string name="settings_export_description">Guardar todas las tarjetas en un archivo protegido con contraseña</string>
+    <string name="settings_import">Importar copia de seguridad</string>
+    <string name="settings_import_description">Restaurar tarjetas desde un archivo de copia de seguridad</string>
+    <string name="settings_backup_working">Procesando…</string>
+    <string name="settings_password_title_export">Protege tu copia de seguridad</string>
+    <string name="settings_password_title_import">Introduce la contraseña de la copia</string>
+    <string name="settings_password_message_export">La copia de seguridad contiene todos los datos de las tarjetas, incluidos los CVV. Elige una contraseña segura: no se podrá recuperar.</string>
+    <string name="settings_password">Contraseña</string>
+    <string name="settings_password_confirm">Repetir contraseña</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Usa al menos %1$d carácter</item>
+        <item quantity="many">Usa al menos %1$d caracteres</item>
+        <item quantity="other">Usa al menos %1$d caracteres</item>
+    </plurals>
+    <string name="settings_password_mismatch">Las contraseñas no coinciden</string>
+    <string name="settings_replace_existing">Sustituir las tarjetas que ya existen</string>
+    <string name="settings_continue">Continuar</string>
+    <string name="settings_cancel">Cancelar</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d tarjeta exportada</item>
+        <item quantity="many">%1$d tarjetas exportadas</item>
+        <item quantity="other">%1$d tarjetas exportadas</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d tarjeta importada</item>
+        <item quantity="many">%1$d tarjetas importadas</item>
+        <item quantity="other">%1$d tarjetas importadas</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d ya existía y se ha omitido</item>
+        <item quantity="many">%1$d ya existían y se han omitido</item>
+        <item quantity="other">%1$d ya existían y se han omitido</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Contraseña incorrecta</string>
+    <string name="settings_result_invalid_file">Este archivo no es una copia de seguridad de Cardholder o está dañado</string>
+    <string name="settings_result_auth_required">Confirma que eres tú para exportar las tarjetas protegidas</string>
+    <string name="settings_result_device_not_secure">Configura un bloqueo de pantalla para importar tarjetas con CVV o bloqueo</string>
+    <string name="settings_result_failed">Se ha producido un error. Vuelve a intentarlo.</string>
+    <string name="settings_about">Información</string>
+    <string name="settings_version">Versión %1$s</string>
+    <string name="settings_privacy">Tus tarjetas están cifradas y nunca salen de este dispositivo, a menos que las exportes. La aplicación solo se conecta a Internet para descargar el logotipo oficial de una tienda o un banco cuando se lo pides.</string>
+    <string name="settings_privacy_policy">Política de privacidad</string>
+    <string name="settings_logo_credits">Créditos de logotipos</string>
+    <string name="settings_logo_credits_description">Fuentes y licencias de los logotipos oficiales</string>
+</resources>

@@ -1,0 +1,39 @@
+Cardholder; banka kartlarınızı, kimlik kartlarınızı ve sadakat kartlarınızı telefonunuzda tek bir yerde tutar – şifreli, çevrimdışı, reklamsız ve izlemesiz.
+
+<b>Kasada sadakat kartları</b>
+• Her sadakat kartı, barkodunu veya QR kodunu doğrudan listede gösterir
+• Kodu tarayıcıya hazır şekilde, tam ekranda ve en yüksek parlaklıkta göstermek için dokunun
+• Plastik kartınızdaki kodu kamerayla tarayın – veya elle girin
+• QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec ve Data Matrix desteği
+
+<b>Banka kartları</b>
+• Kart numarası, son kullanma tarihi, kart sahibi ve CVV saklayın
+• Temassız bir kartı telefonunuza yaklaştırarak bilgileri doldurun (NFC)
+• CVV her zaman gizlidir ve yalnızca parmak izi, yüz veya ekran kilidinden sonra gösterilir
+• Kart ağı otomatik olarak algılanır
+
+<b>Kimlik kartları</b>
+• Kimlik kartları, pasaportlar, ehliyetler ve daha fazlası
+• Veren ülke, belge numarası ve son kullanma tarihi
+
+<b>İki yüzün fotoğrafı</b>
+• İsterseniz herhangi bir kartın ön ve arka yüzünü otomatik kenar algılamayla tarayın
+• Fotoğraflar şifrelenir ve cihazınızdan asla çıkmaz
+
+<b>Güvenlik ve gizlilik</b>
+• Her şey, telefonunuzun güvenli donanımında tutulan anahtarlarla şifrelenir
+• Herhangi bir kartı yalnızca parmak izi, yüz veya ekran kilidiyle açılabilecek şekilde kilitleyin
+• Hassas bilgiler içeren ekranlarda ekran görüntüsü alınması engellenir
+• Kopyalanan numaralar bir dakika sonra panodan silinir
+• Hesap yok, reklam yok, analiz yok – kartlarınız cihazınızdan asla çıkmaz
+• Uygulama yalnızca resmi bir mağaza veya banka logosu indirmeyi seçtiğinizde internete bağlanır
+
+<b>İstediğiniz gibi düzenleyin</b>
+• Kart türüne göre arayın ve filtreleyin
+• Ada, eklenme tarihine veya kendi özel sıralamanıza göre sıralayın
+• Bilinen mağaza ve bankalar için renkler ve logolar ya da kendi logonuzu yükleyin
+
+<b>Şifreli yedekleme</b>
+• Tüm kartları şifre korumalı tek bir dosyaya aktarın ve yeni bir telefonda geri yükleyin
+
+Cardholder açık kaynaklıdır: https://github.com/danyk20/cardholder

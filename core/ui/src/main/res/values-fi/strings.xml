@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Pankkikortti</string>
+    <string name="card_type_id">Henkilökortti</string>
+    <string name="card_type_loyalty">Kanta-asiakaskortti</string>
+    <string name="card_type_bank_description">Debit- tai luottokortti</string>
+    <string name="card_type_id_description">Henkilökortti, passi, ajokortti…</string>
+    <string name="card_type_loyalty_description">Liikkeen kortti, jossa on viivakoodi tai QR-koodi</string>
+    <string name="card_side_front">Etupuoli</string>
+    <string name="card_side_back">Takapuoli</string>
+    <string name="card_locked">Lukittu</string>
+    <string name="card_locked_message">Tämä kortti on lukittu</string>
+    <string name="auth_title_show_cvv">Näytä CVV</string>
+    <string name="auth_title_export">Vie varmuuskopio</string>
+    <string name="card_not_found">Tätä korttia ei enää ole</string>
+    <string name="auth_title_unlock_card">Avaa lukitus: %1$s</string>
+    <string name="auth_subtitle">Vahvista henkilöllisyytesi sormenjäljellä, kasvoilla tai näytön lukituksella</string>
+    <string name="auth_key_invalidated">Nämä tiedot oli suojattu näytön lukituksella, joka on sittemmin poistettu, eikä niiden salausta voi enää purkaa.</string>
+    <string name="error_required">Pakollinen</string>
+    <string name="error_invalid_characters">Sisältää merkkejä, jotka eivät ole sallittuja</string>
+    <string name="error_invalid_length">Väärä pituus</string>
+    <string name="error_invalid_checksum">Tarkistusnumero ei täsmää – tarkista kirjoitusvirheet</string>
+    <string name="error_invalid_date">Virheellinen päivämäärä</string>
+    <string name="action_back">Takaisin</string>
+    <string name="action_cancel">Peruuta</string>
+    <string name="action_unlock">Avaa lukitus</string>
+    <string name="format_qr_code">QR-koodi</string>
+    <string name="color_navy">Laivastonsininen</string>
+    <string name="color_blue">Sininen</string>
+    <string name="color_teal">Sinivihreä</string>
+    <string name="color_green">Vihreä</string>
+    <string name="color_lime">Limetinvihreä</string>
+    <string name="color_amber">Meripihka</string>
+    <string name="color_orange">Oranssi</string>
+    <string name="color_red">Punainen</string>
+    <string name="color_pink">Vaaleanpunainen</string>
+    <string name="color_purple">Violetti</string>
+    <string name="color_brown">Ruskea</string>
+    <string name="color_graphite">Grafiitti</string>
+</resources>

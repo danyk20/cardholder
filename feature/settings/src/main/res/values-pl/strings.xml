@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Ustawienia</string>
+
+    <string name="settings_appearance">Wygląd</string>
+    <string name="settings_theme_system">Ustawienie systemowe</string>
+    <string name="settings_theme_light">Jasny</string>
+    <string name="settings_theme_dark">Ciemny</string>
+    <string name="settings_dynamic_color">Kolory dynamiczne</string>
+    <string name="settings_dynamic_color_description">Używaj kolorów z tapety</string>
+
+    <string name="settings_backup">Kopia zapasowa</string>
+    <string name="settings_export">Eksportuj kopię zapasową</string>
+    <string name="settings_export_description">Zapisz wszystkie karty w pliku chronionym hasłem</string>
+    <string name="settings_import">Importuj kopię zapasową</string>
+    <string name="settings_import_description">Przywróć karty z pliku kopii zapasowej</string>
+    <string name="settings_backup_working">Przetwarzanie…</string>
+
+    <string name="settings_password_title_export">Zabezpiecz kopię zapasową</string>
+    <string name="settings_password_title_import">Wpisz hasło kopii zapasowej</string>
+    <string name="settings_password_message_export">Kopia zapasowa zawiera wszystkie dane kart, w tym kody CVV. Wybierz silne hasło – nie da się go odzyskać.</string>
+    <string name="settings_password">Hasło</string>
+    <string name="settings_password_confirm">Powtórz hasło</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Wpisz co najmniej %1$d znak</item>
+        <item quantity="few">Wpisz co najmniej %1$d znaki</item>
+        <item quantity="many">Wpisz co najmniej %1$d znaków</item>
+        <item quantity="other">Wpisz co najmniej %1$d znaku</item>
+    </plurals>
+    <string name="settings_password_mismatch">Hasła się nie zgadzają</string>
+    <string name="settings_replace_existing">Zastąp karty, które już istnieją</string>
+    <string name="settings_continue">Dalej</string>
+    <string name="settings_cancel">Anuluj</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">Wyeksportowano %1$d kartę</item>
+        <item quantity="few">Wyeksportowano %1$d karty</item>
+        <item quantity="many">Wyeksportowano %1$d kart</item>
+        <item quantity="other">Wyeksportowano %1$d karty</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Zaimportowano %1$d kartę</item>
+        <item quantity="few">Zaimportowano %1$d karty</item>
+        <item quantity="many">Zaimportowano %1$d kart</item>
+        <item quantity="other">Zaimportowano %1$d karty</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d karta już istniała i została pominięta</item>
+        <item quantity="few">%1$d karty już istniały i zostały pominięte</item>
+        <item quantity="many">%1$d kart już istniało i zostało pominiętych</item>
+        <item quantity="other">%1$d karty już istniały i zostały pominięte</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Nieprawidłowe hasło</string>
+    <string name="settings_result_invalid_file">To nie jest kopia zapasowa Cardholder lub plik jest uszkodzony</string>
+    <string name="settings_result_auth_required">Potwierdź swoją tożsamość, aby wyeksportować chronione karty</string>
+    <string name="settings_result_device_not_secure">Skonfiguruj blokadę ekranu, aby zaimportować karty z kodami CVV lub blokadą</string>
+    <string name="settings_result_failed">Coś poszło nie tak. Spróbuj ponownie.</string>
+
+    <string name="settings_about">Informacje</string>
+    <string name="settings_version">Wersja %1$s</string>
+    <string name="settings_privacy">Twoje karty są zaszyfrowane i nigdy nie opuszczają tego urządzenia, chyba że je wyeksportujesz. Aplikacja łączy się z internetem tylko wtedy, gdy poprosisz o pobranie oficjalnego logo sklepu lub banku.</string>
+    <string name="settings_privacy_policy">Polityka prywatności</string>
+    <string name="settings_logo_credits">Autorzy logo</string>
+    <string name="settings_logo_credits_description">Źródła i licencje oficjalnych logo</string>
+</resources>

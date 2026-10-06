@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Funga kichanganuzi</string>
+    <string name="scanner_hint">Elekeza kamera kwenye msimbopau au msimbo wa QR ulio kwenye kadi yako</string>
+    <string name="scanner_permission_rationale">Cardholder inahitaji kamera ili kuchanganua msimbo ulio kwenye kadi yako. Picha huchakatwa kwenye kifaa na kamwe hazihifadhiwi wala kutumwa popote.</string>
+    <string name="scanner_grant_permission">Ruhusu kamera</string>
+    <string name="nfc_title">Soma kadi kwa NFC</string>
+    <string name="nfc_hold_card">Shikilia kadi yako ikiwa bapa nyuma ya simu yako na usiisogeze.</string>
+    <string name="nfc_reading">Inasoma kadi…</string>
+    <string name="nfc_failed">Imeshindwa kusoma kadi. Isogeze polepole nyuma ya simu kisha ujaribu tena.</string>
+    <string name="nfc_disabled">NFC imezimwa.</string>
+    <string name="nfc_turn_on">Washa NFC</string>
+    <string name="nfc_cvv_note">CVV haihifadhiwi kwenye chipu; tafadhali iandike mwenyewe.</string>
+    <string name="nfc_cancel">Ghairi</string>
+</resources>

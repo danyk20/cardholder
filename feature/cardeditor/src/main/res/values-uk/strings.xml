@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Додати картку</string>
+    <string name="editor_title_edit">Змінити картку</string>
+    <string name="editor_save">Зберегти</string>
+    <string name="editor_next">Далі</string>
+    <string name="editor_skip">Пропустити</string>
+    <string name="editor_choose_type">Що це за картка?</string>
+
+    <!-- Sides -->
+    <string name="editor_sides_title">Додайте фото картки</string>
+    <string name="editor_sides_message">Необов\'язково. Фото шифруються та зберігаються лише на цьому пристрої.</string>
+    <string name="editor_side_scan">Сканувати</string>
+    <string name="editor_side_choose">Галерея</string>
+    <string name="editor_side_remove">Видалити фото</string>
+    <string name="editor_side_missing">Немає фото</string>
+
+    <!-- Common fields -->
+    <string name="editor_field_title">Назва</string>
+    <string name="editor_field_title_hint">За замовчуванням: %1$s</string>
+    <string name="editor_color">Колір</string>
+    <string name="editor_lock">Заблокувати картку</string>
+    <string name="editor_lock_description">Вимагати відбиток пальця, розпізнавання обличчя або блокування екрана для перегляду будь-яких даних картки</string>
+    <string name="editor_protection_unavailable">Щоб скористатися цією функцією, налаштуйте блокування екрана на пристрої</string>
+    <string name="editor_open_security_settings">Налаштувати</string>
+    <string name="editor_photos">Фото</string>
+
+    <!-- Bank -->
+    <string name="editor_read_nfc">Зчитати картку через NFC</string>
+    <string name="editor_field_bank">Банк (необов\'язково)</string>
+    <string name="editor_choose_bank">Виберіть банк</string>
+    <string name="editor_search_bank">Пошук банків</string>
+    <string name="editor_field_number">Номер картки</string>
+    <string name="editor_field_expiry">Термін дії (ММ/РР)</string>
+    <string name="editor_field_holder">Власник картки</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Необов\'язково. Код завжди приховано, і він показується лише після підтвердження вашої особи.</string>
+    <string name="editor_cvv_stored">CVV збережено. Залиште поле порожнім, щоб не змінювати його.</string>
+    <string name="editor_cvv_remove">Видалити збережений CVV</string>
+    <string name="editor_card_expired">Термін дії картки минув</string>
+
+    <!-- ID -->
+    <string name="editor_field_country">Країна видачі</string>
+    <string name="editor_choose_country">Виберіть країну</string>
+    <string name="editor_search_country">Пошук країн</string>
+    <string name="editor_field_document_number">Номер документа (необов\'язково)</string>
+    <string name="editor_field_id_expiry">Термін дії (необов\'язково)</string>
+    <string name="editor_clear_date">Очистити</string>
+
+    <!-- Loyalty -->
+    <string name="editor_field_shop">Магазин</string>
+    <string name="editor_choose_shop">Виберіть магазин</string>
+    <string name="editor_search_shop">Пошук магазинів</string>
+    <string name="editor_custom_shop">Використати «%1$s»</string>
+    <string name="editor_field_code">Номер картки / код</string>
+    <string name="editor_field_format">Тип коду</string>
+    <string name="editor_scan_barcode">Сканувати код</string>
+
+    <!-- Logo -->
+    <string name="editor_logo">Логотип</string>
+    <string name="editor_logo_none">Без логотипу</string>
+    <string name="editor_logo_official">Офіційний логотип</string>
+    <string name="editor_logo_upload">Завантажити</string>
+    <string name="editor_logo_remove">Видалити логотип</string>
+    <string name="editor_logo_choice_title">Логотип %1$s</string>
+    <string name="editor_logo_choice_message">Показувати на цій картці офіційний логотип %1$s? Його буде один раз завантажено з Wikimedia Commons і збережено на пристрої.</string>
+    <string name="editor_logo_use_official">Використати офіційний</string>
+    <string name="editor_logo_upload_own">Завантажити власний</string>
+    <string name="editor_logo_keep_blank">Залишити порожнім</string>
+    <string name="editor_logo_license">Ліцензія: %1$s</string>
+    <string name="editor_logo_attribution">Ліцензія: %1$s · автор: %2$s</string>
+    <string name="editor_logo_download_failed">Не вдалося завантажити логотип. Перевірте підключення до інтернету й повторіть спробу.</string>
+
+    <!-- States -->
+    <string name="editor_locked_title">Цю картку заблоковано</string>
+    <string name="editor_not_found">Цієї картки більше немає</string>
+    <string name="editor_ok">OK</string>
+</resources>

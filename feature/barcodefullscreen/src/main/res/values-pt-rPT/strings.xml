@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Fechar</string>
+    <string name="barcode_details">Detalhes do cartão</string>
+    <string name="barcode_description">%1$s de %2$s</string>
+    <string name="barcode_unencodable">Este código não pode ser apresentado como %1$s. Edite o cartão para corrigir o código ou escolha outro tipo de código.</string>
+    <string name="barcode_hint">Mantenha o ecrã direito e imóvel em frente ao leitor.</string>
+</resources>

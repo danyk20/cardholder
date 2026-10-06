@@ -1,0 +1,39 @@
+Cardholder păstrează cardurile bancare, actele de identitate și cardurile de fidelitate într-un singur loc pe telefon – criptate, offline și fără reclame sau urmărire.
+
+<b>Carduri de fidelitate la casă</b>
+• Fiecare card de fidelitate își afișează codul de bare sau codul QR direct în listă
+• Atingeți-l pentru a afișa codul pe tot ecranul, la luminozitate maximă, gata de scanare
+• Scanați codul de pe cardul din plastic cu camera – sau introduceți-l manual
+• Acceptă QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec și Data Matrix
+
+<b>Carduri bancare</b>
+• Stocați numărul cardului, data expirării, titularul și codul CVV
+• Completați detaliile apropiind un card contactless de telefon (NFC)
+• Codul CVV este mereu ascuns și se afișează numai după amprentă, față sau blocarea ecranului
+• Rețeaua cardului este detectată automat
+
+<b>Acte de identitate</b>
+• Cărți de identitate, pașapoarte, permise de conducere și altele
+• Țara emitentă, numărul documentului și data expirării
+
+<b>Fotografii cu ambele fețe</b>
+• Opțional, scanați fața și versoul oricărui card, cu detectarea automată a marginilor
+• Fotografiile sunt criptate și nu părăsesc niciodată dispozitivul
+
+<b>Securitate și confidențialitate</b>
+• Totul este criptat cu chei păstrate în hardware-ul securizat al telefonului
+• Blocați orice card, astfel încât să poată fi deschis doar cu amprenta, fața sau blocarea ecranului
+• Capturile de ecran sunt blocate pe ecranele cu detalii sensibile
+• Numerele copiate sunt eliminate din clipboard după un minut
+• Fără cont, fără reclame, fără statistici – cardurile nu părăsesc niciodată dispozitivul
+• Aplicația se conectează la internet doar când alegeți să descărcați sigla oficială a unui magazin sau a unei bănci
+
+<b>Organizate cum doriți</b>
+• Căutați și filtrați după tipul cardului
+• Sortați după nume, data adăugării sau în propria ordine personalizată
+• Culori și sigle pentru magazine și bănci cunoscute sau încărcați-le pe ale dvs.
+
+<b>Backup criptat</b>
+• Exportați toate cardurile într-un singur fișier protejat cu parolă și restaurați-l pe un telefon nou
+
+Cardholder este open source: https://github.com/danyk20/cardholder

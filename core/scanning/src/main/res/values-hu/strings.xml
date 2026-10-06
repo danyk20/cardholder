@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Szkenner bezárása</string>
+    <string name="scanner_hint">Irányítsa a kamerát a kártyán lévő vonalkódra vagy QR-kódra</string>
+    <string name="scanner_permission_rationale">A Cardholder alkalmazásnak szüksége van a kamerára a kártyán lévő kód beolvasásához. A képek feldolgozása az eszközön történik, az alkalmazás soha nem tárolja és nem küldi el őket sehová.</string>
+    <string name="scanner_grant_permission">Kamera engedélyezése</string>
+    <string name="nfc_title">Kártya beolvasása NFC-vel</string>
+    <string name="nfc_hold_card">Tartsa a kártyát laposan a telefon hátuljához, és ne mozdítsa el.</string>
+    <string name="nfc_reading">Kártya beolvasása…</string>
+    <string name="nfc_failed">Nem sikerült beolvasni a kártyát. Mozgassa lassan a telefon hátulján, és próbálja újra.</string>
+    <string name="nfc_disabled">Az NFC ki van kapcsolva.</string>
+    <string name="nfc_turn_on">NFC bekapcsolása</string>
+    <string name="nfc_cvv_note">A CVV nincs tárolva a chipen, ezért kérjük, adja meg kézzel.</string>
+    <string name="nfc_cancel">Mégse</string>
+</resources>

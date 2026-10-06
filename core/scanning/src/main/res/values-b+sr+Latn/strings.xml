@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Zatvori skener</string>
+    <string name="scanner_hint">Usmerite kameru ka bar-kodu ili QR kodu na kartici</string>
+    <string name="scanner_permission_rationale">Aplikaciji Cardholder je potrebna kamera da bi skenirala kod sa vaše kartice. Slike se analiziraju na uređaju i nikada se ne čuvaju niti šalju.</string>
+    <string name="scanner_grant_permission">Dozvoli kameru</string>
+    <string name="nfc_title">Očitaj karticu preko NFC-a</string>
+    <string name="nfc_hold_card">Prislonite karticu ravno uz poleđinu telefona i držite je mirno.</string>
+    <string name="nfc_reading">Kartica se očitava…</string>
+    <string name="nfc_failed">Očitavanje kartice nije uspelo. Polako pomerajte karticu preko poleđine telefona i pokušajte ponovo.</string>
+    <string name="nfc_disabled">NFC je isključen.</string>
+    <string name="nfc_turn_on">Uključi NFC</string>
+    <string name="nfc_cvv_note">CVV se ne čuva na čipu, pa ga unesite sami.</string>
+    <string name="nfc_cancel">Otkaži</string>
+</resources>

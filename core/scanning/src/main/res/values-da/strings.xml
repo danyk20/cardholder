@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Luk scanneren</string>
+    <string name="scanner_hint">Ret kameraet mod stregkoden eller QR-koden på dit kort</string>
+    <string name="scanner_permission_rationale">Cardholder skal bruge kameraet for at scanne koden på dit kort. Billederne analyseres på enheden og bliver aldrig gemt eller sendt nogen steder hen.</string>
+    <string name="scanner_grant_permission">Tillad kamera</string>
+    <string name="nfc_title">Læs kort med NFC</string>
+    <string name="nfc_hold_card">Hold kortet fladt mod bagsiden af telefonen, og hold det stille.</string>
+    <string name="nfc_reading">Læser kort…</string>
+    <string name="nfc_failed">Kortet kunne ikke læses. Bevæg det langsomt rundt på bagsiden af telefonen, og prøv igen.</string>
+    <string name="nfc_disabled">NFC er slået fra.</string>
+    <string name="nfc_turn_on">Aktivér NFC</string>
+    <string name="nfc_cvv_note">CVV-koden er ikke gemt på chippen. Indtast den selv.</string>
+    <string name="nfc_cancel">Annuller</string>
+</resources>

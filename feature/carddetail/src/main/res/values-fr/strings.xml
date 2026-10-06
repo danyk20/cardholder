@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Modifier</string>
+    <string name="detail_delete">Supprimer</string>
+    <string name="detail_more">Plus d\'options</string>
+    <string name="detail_flip">Afficher l\'autre face</string>
+    <string name="detail_show_code">Afficher le code</string>
+    <string name="detail_copied">%1$s copié. Il sera effacé du presse-papiers dans une minute.</string>
+    <string name="detail_copy">Copier : %1$s</string>
+    <string name="detail_show_cvv">Afficher le CVV</string>
+    <string name="detail_hide_cvv">Masquer le CVV</string>
+    <string name="detail_locked_details">Les détails sont masqués, car cette carte est verrouillée</string>
+    <string name="detail_lock">Verrouiller la carte</string>
+    <string name="detail_lock_on">Empreinte digitale, visage ou verrouillage de l\'écran requis pour voir cette carte</string>
+    <string name="detail_lock_off">Toute personne qui utilise votre téléphone peut voir cette carte</string>
+    <string name="detail_lock_unavailable">Configurez le verrouillage de l\'écran sur votre appareil pour verrouiller des cartes</string>
+    <string name="detail_delete_title">Supprimer cette carte ?</string>
+    <string name="detail_delete_message">La carte « %1$s » et ses photos seront définitivement supprimées de cet appareil.</string>
+    <string name="detail_cancel">Annuler</string>
+    <string name="detail_close_photo">Fermer la photo</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Banque</string>
+    <string name="field_number">Numéro de carte</string>
+    <string name="field_expiry">Expiration</string>
+    <string name="field_holder">Titulaire</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Réseau</string>
+    <string name="field_country">Pays</string>
+    <string name="field_document_number">Numéro du document</string>
+    <string name="field_shop">Magasin</string>
+    <string name="field_code">Code</string>
+    <string name="field_format">Type de code</string>
+</resources>
