@@ -133,7 +133,7 @@ private fun CardGrid(
     onCardLongClick: (Card) -> Unit,
 ) {
     LazyVerticalGrid(
-        columns = GridCells.Adaptive(minSize = 280.dp),
+        columns = GridCells.Adaptive(minSize = 160.dp),
         contentPadding = PaddingValues(
             start = 16.dp,
             end = 16.dp,
