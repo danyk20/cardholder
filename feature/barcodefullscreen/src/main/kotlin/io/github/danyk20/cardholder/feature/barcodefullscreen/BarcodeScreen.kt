@@ -52,6 +52,8 @@ fun BarcodeRoute(onClose: () -> Unit, onOpenDetails: (CardId) -> Unit, viewModel
     }
     LaunchedEffect(state) {
         if ((state as? BarcodeUiState.AuthenticationRequired)?.fromLock == true) requestAuthentication()
+        // Deleted from the details screen opened on top of this one: there is nothing left to show.
+        if (state == BarcodeUiState.Removed) onClose()
     }
     BarcodeScreen(
         state = state,
@@ -114,6 +116,9 @@ internal fun BarcodeScreen(
                 BarcodeUiState.KeyInvalidated -> LockedContent(stringResource(UiR.string.auth_key_invalidated), null)
 
                 BarcodeUiState.NotFound -> Text(stringResource(UiR.string.card_not_found))
+
+                // Closing; never show the removed card's code.
+                BarcodeUiState.Removed -> Unit
             }
         }
     }

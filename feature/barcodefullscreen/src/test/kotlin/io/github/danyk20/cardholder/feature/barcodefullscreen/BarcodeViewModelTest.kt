@@ -3,12 +3,16 @@ package io.github.danyk20.cardholder.feature.barcodefullscreen
 import androidx.lifecycle.SavedStateHandle
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.Card
+import io.github.danyk20.cardholder.core.model.CardDetails
+import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeSessionLockEvents
 import kotlin.test.assertEquals
+import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -67,6 +71,34 @@ class BarcodeViewModelTest {
         viewModel.onAuthenticationResult(succeeded = false)
 
         assertEquals(BarcodeUiState.AuthenticationRequired(fromLock = false), viewModel.uiState.value)
+    }
+
+    @Test
+    fun `shows the new code after the card was edited`() {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+        val viewModel = viewModel(TestCards.loyalty)
+
+        val edited = TestCards.loyalty.copy(
+            title = "Coffee club gold",
+            info = CardInfo.Loyalty(BrandRef.Custom("Corner Coffee"), BarcodeFormat.QR_CODE),
+            updatedAt = TestCards.loyalty.updatedAt.plusSeconds(60),
+        )
+        repository.add(edited, CardDetails.Loyalty(code = "GOLD-42"))
+
+        val state = viewModel.uiState.value as BarcodeUiState.Ready
+        assertEquals("GOLD-42", state.code)
+        assertEquals(BarcodeFormat.QR_CODE, state.format)
+        assertEquals("Coffee club gold", state.title)
+    }
+
+    @Test
+    fun `closes when the card is deleted while its code is shown`() = runTest {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+        val viewModel = viewModel(TestCards.loyalty)
+
+        repository.delete(TestCards.loyalty.id)
+
+        assertEquals(BarcodeUiState.Removed, viewModel.uiState.value)
     }
 
     @Test
