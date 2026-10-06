@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.cardholder.android.feature)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -7,6 +8,8 @@ android {
 }
 
 dependencies {
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.roborazzi.compose)
     implementation(projects.core.barcode)
     implementation(libs.reorderable)
 }

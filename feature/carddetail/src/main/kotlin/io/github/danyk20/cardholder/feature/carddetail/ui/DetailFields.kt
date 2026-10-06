@@ -15,6 +15,7 @@ import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardInfo
+import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.ui.barcodeFormatLabel
 import io.github.danyk20.cardholder.core.ui.formatCardNumber
 import io.github.danyk20.cardholder.core.ui.formatExpiry
@@ -34,7 +35,8 @@ internal fun DetailFields(card: Card, subtitle: String, details: CardDetails, cv
     Column {
         when (details) {
             is CardDetails.Bank -> {
-                val network = (card.info as? CardInfo.Bank)?.network
+                // "Card" (the unknown network's name) tells the user nothing, so the row is left out.
+                val network = (card.info as? CardInfo.Bank)?.network?.takeIf { it != CardNetwork.UNKNOWN }
                 (card.info as? CardInfo.Bank)?.issuer?.let { Field(R.string.field_bank, it.name, monospace = false) }
                 CopyableField(
                     R.string.field_number,
