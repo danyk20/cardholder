@@ -1,0 +1,177 @@
+package io.github.danyk20.cardholder.core.scanning
+
+import android.Manifest
+import android.content.pm.PackageManager
+import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.camera.compose.CameraXViewfinder
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.Preview
+import androidx.camera.core.SurfaceRequest
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.camera.lifecycle.awaitInstance
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
+import io.github.danyk20.cardholder.core.domain.repository.ScannedBarcode
+import java.util.concurrent.Executors
+import kotlinx.coroutines.awaitCancellation
+
+/**
+ * Full-screen camera scanner for loyalty card barcodes and QR codes; asks for the camera permission.
+ * Meant to replace the screen content (not a dialog), so the hosting window's security flags apply.
+ */
+@Composable
+fun BarcodeScanner(onScanned: (ScannedBarcode) -> Unit, onDismiss: () -> Unit, modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    var hasPermission by remember {
+        mutableStateOf(
+            ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED,
+        )
+    }
+    val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
+        hasPermission = it
+    }
+    LaunchedEffect(Unit) {
+        if (!hasPermission) permissionLauncher.launch(Manifest.permission.CAMERA)
+    }
+    BackHandler(onBack = onDismiss)
+    Box(
+        modifier
+            .fillMaxSize()
+            .background(Color.Black),
+    ) {
+        if (hasPermission) {
+            CameraPreview(onScanned = onScanned)
+            ViewfinderOverlay()
+        } else {
+            PermissionRationale(onRequest = { permissionLauncher.launch(Manifest.permission.CAMERA) })
+        }
+        IconButton(
+            onClick = onDismiss,
+            colors = IconButtonDefaults.iconButtonColors(containerColor = Scrim),
+            modifier = Modifier
+                .safeDrawingPadding()
+                .padding(8.dp),
+        ) {
+            Icon(CardholderIcons.Close, stringResource(R.string.scanner_close), tint = Color.White)
+        }
+    }
+}
+
+@Composable
+private fun CameraPreview(onScanned: (ScannedBarcode) -> Unit) {
+    val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
+    val currentOnScanned by rememberUpdatedState(onScanned)
+    var surfaceRequest by remember { mutableStateOf<SurfaceRequest?>(null) }
+    val executor = remember { Executors.newSingleThreadExecutor() }
+    val analyzer =
+        remember {
+            BarcodeAnalyzer { barcode -> ContextCompat.getMainExecutor(context).execute { currentOnScanned(barcode) } }
+        }
+
+    DisposableEffect(Unit) {
+        onDispose {
+            analyzer.close()
+            executor.shutdown()
+        }
+    }
+    LaunchedEffect(lifecycleOwner) {
+        val provider = ProcessCameraProvider.awaitInstance(context)
+        val preview = Preview.Builder().build().apply { setSurfaceProvider { surfaceRequest = it } }
+        val analysis = ImageAnalysis.Builder()
+            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+            .build()
+            .apply { setAnalyzer(executor, analyzer) }
+        provider.unbindAll()
+        provider.bindToLifecycle(lifecycleOwner, CameraSelector.DEFAULT_BACK_CAMERA, preview, analysis)
+        try {
+            awaitCancellation()
+        } finally {
+            provider.unbind(preview, analysis)
+        }
+    }
+    surfaceRequest?.let { CameraXViewfinder(surfaceRequest = it, modifier = Modifier.fillMaxSize()) }
+}
+
+@Composable
+private fun ViewfinderOverlay() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(32.dp),
+    ) {
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .aspectRatio(VIEWFINDER_ASPECT_RATIO)
+                .border(3.dp, Color.White, RoundedCornerShape(16.dp)),
+        )
+        Text(
+            stringResource(R.string.scanner_hint),
+            color = Color.White,
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier
+                .background(Scrim, RoundedCornerShape(12.dp))
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+        )
+    }
+}
+
+@Composable
+private fun PermissionRationale(onRequest: () -> Unit) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(32.dp),
+    ) {
+        Icon(CardholderIcons.Camera, contentDescription = null, tint = Color.White)
+        Text(stringResource(R.string.scanner_permission_rationale), color = Color.White, textAlign = TextAlign.Center)
+        Button(onClick = onRequest) { Text(stringResource(R.string.scanner_grant_permission)) }
+    }
+}
+
+private const val VIEWFINDER_ASPECT_RATIO = 1.4f
+
+/** Keeps white overlay content readable on top of a bright camera image. */
+private val Scrim = Color.Black.copy(alpha = 0.55f)

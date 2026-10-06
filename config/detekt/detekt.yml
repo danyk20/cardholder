@@ -1,6 +1,9 @@
 # Overrides on top of detekt's default configuration (buildUponDefaultConfig = true).
 
 complexity:
+  CyclomaticComplexMethod:
+    # One-to-one mappings (enum -> enum) are simple despite many branches.
+    ignoreSimpleWhenEntries: true
   LongParameterList:
     # Composables idiomatically take many parameters (state + callbacks + modifier).
     functionThreshold: 10

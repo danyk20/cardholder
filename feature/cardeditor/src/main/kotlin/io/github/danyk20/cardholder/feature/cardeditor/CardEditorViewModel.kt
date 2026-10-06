@@ -11,6 +11,7 @@ import io.github.danyk20.cardholder.core.domain.model.CvvChange
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
+import io.github.danyk20.cardholder.core.domain.repository.BarcodeImageScanner
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
@@ -53,6 +54,7 @@ class CardEditorViewModel @Inject constructor(
     private val countryRepository: CountryRepository,
     private val deviceSecurity: DeviceSecurity,
     private val validator: CardDraftValidator,
+    private val barcodeImageScanner: BarcodeImageScanner,
 ) : ViewModel() {
     private val editingId: CardId? = savedStateHandle.toRoute<CardEditorDestination>().cardId?.let(::CardId)
 
@@ -91,7 +93,17 @@ class CardEditorViewModel @Inject constructor(
         return true
     }
 
-    fun onSideImagePicked(side: CardSide, uri: String) = updateSide(side, SideImage.New(uri))
+    fun onSideImagePicked(side: CardSide, uri: String) {
+        updateSide(side, SideImage.New(uri))
+        if (_uiState.value.type == CardType.LOYALTY && _uiState.value.loyalty.code.isEmpty()) {
+            // Loyalty cards usually carry their code on the back: offer it without typing.
+            viewModelScope.launch {
+                barcodeImageScanner.scan(uri)?.let { barcode ->
+                    if (_uiState.value.loyalty.code.isEmpty()) onBarcodeScanned(barcode.code, barcode.format)
+                }
+            }
+        }
+    }
 
     fun onSideImageRemoved(side: CardSide) = updateSide(side, SideImage.None)
 

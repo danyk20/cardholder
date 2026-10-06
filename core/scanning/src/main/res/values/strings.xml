@@ -1,0 +1,6 @@
+<resources>
+    <string name="scanner_close">Close scanner</string>
+    <string name="scanner_hint">Point the camera at the barcode or QR code on your card</string>
+    <string name="scanner_permission_rationale">Cardholder needs the camera to scan the code on your card. Images are analysed on the device and never stored or sent anywhere.</string>
+    <string name="scanner_grant_permission">Allow camera</string>
+</resources>

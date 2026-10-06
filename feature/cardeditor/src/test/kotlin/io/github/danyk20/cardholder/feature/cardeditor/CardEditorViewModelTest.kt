@@ -5,6 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import io.github.danyk20.cardholder.core.domain.model.CardContent
 import io.github.danyk20.cardholder.core.domain.model.CvvChange
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
+import io.github.danyk20.cardholder.core.domain.repository.ScannedBarcode
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardUseCase
 import io.github.danyk20.cardholder.core.domain.validation.CardDraftValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardField
@@ -15,6 +16,7 @@ import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.ShopRef
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
+import io.github.danyk20.cardholder.core.testing.repository.FakeBarcodeImageScanner
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
@@ -38,6 +40,7 @@ class CardEditorViewModelTest {
 
     private val repository = FakeCardRepository()
     private val deviceSecurity = FakeDeviceSecurity()
+    private val barcodeScanner = FakeBarcodeImageScanner()
 
     private fun viewModel(cardId: String? = null) = CardEditorViewModel(
         savedStateHandle = SavedStateHandle(mapOf("cardId" to cardId)),
@@ -47,6 +50,7 @@ class CardEditorViewModelTest {
         countryRepository = FakeCountryRepository(),
         deviceSecurity = deviceSecurity,
         validator = CardDraftValidator(),
+        barcodeImageScanner = barcodeScanner,
     )
 
     @Test
@@ -122,6 +126,22 @@ class CardEditorViewModelTest {
         assertEquals(ShopRef.Known("migros", "Migros Cumulus"), loyalty.shop)
         assertEquals(BarcodeFormat.EAN_13, loyalty.format)
         assertEquals("Migros Cumulus", viewModel.uiState.value.defaultTitle)
+    }
+
+    @Test
+    fun `barcode on a loyalty card photo fills an empty code`() {
+        barcodeScanner.barcodes["content://back"] = ScannedBarcode("4006381333931", BarcodeFormat.EAN_13)
+        barcodeScanner.barcodes["content://other"] = ScannedBarcode("OTHER", BarcodeFormat.QR_CODE)
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.LOYALTY)
+
+        viewModel.onSideImagePicked(CardSide.BACK, "content://back")
+        viewModel.onSideImagePicked(CardSide.FRONT, "content://other")
+
+        assertEquals(
+            LoyaltyForm(code = "4006381333931", format = BarcodeFormat.EAN_13),
+            viewModel.uiState.value.loyalty,
+        )
     }
 
     @Test
