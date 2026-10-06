@@ -50,6 +50,7 @@ import io.github.danyk20.cardholder.core.ui.AuthenticationResult
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.SecureScreen
 import io.github.danyk20.cardholder.core.ui.rememberAuthenticator
+import io.github.danyk20.cardholder.core.ui.secureDialogProperties
 import io.github.danyk20.cardholder.feature.cardeditor.ui.BankActions
 import io.github.danyk20.cardholder.feature.cardeditor.ui.DetailsActions
 import io.github.danyk20.cardholder.feature.cardeditor.ui.DetailsForm
@@ -236,6 +237,7 @@ internal fun CardEditorScreen(
                 TextButton(onClick = onKeyInvalidatedErrorShown) { Text(stringResource(R.string.editor_ok)) }
             },
             text = { Text(stringResource(UiR.string.auth_key_invalidated)) },
+            properties = secureDialogProperties(),
         )
     }
 }

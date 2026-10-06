@@ -23,14 +23,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
-import androidx.compose.ui.window.SecureFlagPolicy
 import io.github.danyk20.cardholder.core.designsystem.component.CardSurface
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.model.ImageRef
 import io.github.danyk20.cardholder.core.ui.CardFace
 import io.github.danyk20.cardholder.core.ui.CardImage
 import io.github.danyk20.cardholder.core.ui.CardSummary
+import io.github.danyk20.cardholder.core.ui.secureDialogProperties
 import io.github.danyk20.cardholder.feature.carddetail.R
 
 private const val FLIP_DEGREES = 180f
@@ -89,7 +88,7 @@ internal fun CardSidesView(summary: CardSummary, photosVisible: Boolean, modifie
 private fun PhotoDialog(ref: ImageRef, description: String, onDismiss: () -> Unit) {
     Dialog(
         onDismissRequest = onDismiss,
-        properties = DialogProperties(usePlatformDefaultWidth = false, securePolicy = SecureFlagPolicy.SecureOn),
+        properties = secureDialogProperties(usePlatformDefaultWidth = false),
     ) {
         Box(
             Modifier
