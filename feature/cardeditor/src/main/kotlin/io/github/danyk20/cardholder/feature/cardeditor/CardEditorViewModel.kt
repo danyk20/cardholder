@@ -14,6 +14,7 @@ import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.domain.repository.BarcodeImageScanner
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
+import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
 import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardResult
@@ -55,6 +56,7 @@ class CardEditorViewModel @Inject constructor(
     private val deviceSecurity: DeviceSecurity,
     private val validator: CardDraftValidator,
     private val barcodeImageScanner: BarcodeImageScanner,
+    private val logoDownloader: LogoDownloader,
 ) : ViewModel() {
     private val editingId: CardId? = savedStateHandle.toRoute<CardEditorDestination>().cardId?.let(::CardId)
 
@@ -141,8 +143,33 @@ class CardEditorViewModel @Inject constructor(
                 shop = ShopRef.Known(shop.id, shop.name),
                 format = if (loyalty.code.isEmpty()) shop.defaultFormat else loyalty.format,
             ),
+            logoChoiceFor = shop.takeIf { it.logo != null },
         )
     }
+
+    /** Downloads the selected shop's official logo; the app's only network request. */
+    fun onUseOfficialLogo() {
+        val logo = (_uiState.value.logoChoiceFor ?: _uiState.value.selectedShop)?.logo ?: return
+        _uiState.update { it.copy(logoChoiceFor = null, isDownloadingLogo = true, logoDownloadFailed = false) }
+        viewModelScope.launch {
+            val bytes = logoDownloader.download(logo.url)
+            _uiState.update {
+                if (bytes != null) {
+                    it.copy(isDownloadingLogo = false, logo = LogoImage.Downloaded(bytes))
+                } else {
+                    it.copy(isDownloadingLogo = false, logoDownloadFailed = true)
+                }
+            }
+        }
+    }
+
+    fun onLogoPicked(uri: String) = _uiState.update { it.copy(logoChoiceFor = null, logo = LogoImage.Picked(uri)) }
+
+    fun onRemoveLogo() = _uiState.update { it.copy(logoChoiceFor = null, logo = LogoImage.None) }
+
+    fun onLogoChoiceDismissed() = _uiState.update { it.copy(logoChoiceFor = null) }
+
+    fun onLogoDownloadErrorShown() = _uiState.update { it.copy(logoDownloadFailed = false) }
 
     fun onCustomShop(name: String) =
         update(CardField.SHOP) { copy(loyalty = loyalty.copy(shop = ShopRef.Custom(name.trim()))) }
@@ -223,6 +250,7 @@ class CardEditorViewModel @Inject constructor(
             isLocked = card.isLocked,
             front = card.sides.front?.let(SideImage::Existing) ?: SideImage.None,
             back = card.sides.back?.let(SideImage::Existing) ?: SideImage.None,
+            logo = card.logo?.let(LogoImage::Existing) ?: LogoImage.None,
         )
         return when {
             details is CardDetails.Bank -> base.copy(
@@ -266,6 +294,7 @@ class CardEditorViewModel @Inject constructor(
             content = content,
             front = imageChange(state.front, original?.sides?.front != null),
             back = imageChange(state.back, original?.sides?.back != null),
+            logo = if (state.type == CardType.LOYALTY) logoChange(state.logo) else ImageChange.Keep,
             isLocked = state.isLocked,
         )
         val errors = validator.validate(draft) + formErrors
@@ -312,6 +341,13 @@ class CardEditorViewModel @Inject constructor(
         is SideImage.Existing -> ImageChange.Keep
         is SideImage.New -> ImageChange.Replace(ImageSource.Uri(side.uri))
         SideImage.None -> if (hadImage) ImageChange.Remove else ImageChange.Keep
+    }
+
+    private fun logoChange(logo: LogoImage): ImageChange = when (logo) {
+        is LogoImage.Existing -> ImageChange.Keep
+        is LogoImage.Downloaded -> ImageChange.Replace(ImageSource.Bytes(logo.bytes))
+        is LogoImage.Picked -> ImageChange.Replace(ImageSource.Uri(logo.uri))
+        LogoImage.None -> if (original?.logo != null) ImageChange.Remove else ImageChange.Keep
     }
 
     private fun updateSide(side: CardSide, image: SideImage) = _uiState.update {

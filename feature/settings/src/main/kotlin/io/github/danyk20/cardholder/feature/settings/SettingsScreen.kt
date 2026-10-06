@@ -32,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -185,6 +186,14 @@ internal fun SettingsScreen(
                 headlineContent = { Text(stringResource(R.string.settings_version, appVersion())) },
                 supportingContent = { Text(stringResource(R.string.settings_privacy)) },
             )
+            val uriHandler = LocalUriHandler.current
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.settings_logo_credits)) },
+                supportingContent = { Text(stringResource(R.string.settings_logo_credits_description)) },
+                modifier = Modifier.selectable(selected = false, role = Role.Button) {
+                    uriHandler.openUri(LOGO_CREDITS_URL)
+                },
+            )
         }
     }
 }
@@ -271,5 +280,6 @@ private fun appVersion(): String {
     }
 }
 
+private const val LOGO_CREDITS_URL = "https://github.com/danyk20/cardholder/blob/main/docs/LOGOS.md"
 private const val BACKUP_MIME_TYPE = "application/octet-stream"
 private const val BACKUP_EXTENSION = "cardholder"

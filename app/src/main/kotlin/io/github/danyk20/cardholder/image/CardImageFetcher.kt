@@ -22,7 +22,8 @@ class CardImageFetcher(
     override suspend fun fetch(): FetchResult = when (val result = repository.read(ref)) {
         is SecureResult.Success -> SourceFetchResult(
             source = ImageSource(Buffer().write(result.value), options.fileSystem),
-            mimeType = "image/jpeg",
+            // Photos are JPEG, logos PNG; the decoder detects the format from the content.
+            mimeType = null,
             dataSource = DataSource.DISK,
         )
 

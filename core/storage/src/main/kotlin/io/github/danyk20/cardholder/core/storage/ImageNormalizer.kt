@@ -10,18 +10,30 @@ import javax.inject.Inject
 import kotlin.math.max
 import kotlin.math.roundToInt
 
-/** Decodes card photos, applies EXIF rotation, downsizes them and re-encodes them as JPEG. */
+/** How an image is stored: card photos as JPEG, logos as PNG to keep transparency. */
+enum class ImageKind(
+    internal val maxDimensionPx: Int,
+    internal val format: Bitmap.CompressFormat,
+    internal val quality: Int,
+) {
+    /** Enough for sharp barcodes and text on an ID-1 card while keeping files around 300 KB. */
+    PHOTO(maxDimensionPx = 2048, format = Bitmap.CompressFormat.JPEG, quality = 90),
+    LOGO(maxDimensionPx = 512, format = Bitmap.CompressFormat.PNG, quality = 100),
+}
+
+/** Decodes images, applies EXIF rotation, downsizes them and re-encodes them for storage. */
 class ImageNormalizer @Inject constructor() {
-    fun fromUri(contentResolver: ContentResolver, uri: Uri): ByteArray =
-        normalize(ImageDecoder.createSource(contentResolver, uri))
+    fun fromUri(contentResolver: ContentResolver, uri: Uri, kind: ImageKind = ImageKind.PHOTO): ByteArray =
+        normalize(ImageDecoder.createSource(contentResolver, uri), kind)
 
-    fun fromBytes(bytes: ByteArray): ByteArray = normalize(ImageDecoder.createSource(ByteBuffer.wrap(bytes)))
+    fun fromBytes(bytes: ByteArray, kind: ImageKind = ImageKind.PHOTO): ByteArray =
+        normalize(ImageDecoder.createSource(ByteBuffer.wrap(bytes)), kind)
 
-    private fun normalize(source: ImageDecoder.Source): ByteArray {
+    private fun normalize(source: ImageDecoder.Source, kind: ImageKind): ByteArray {
         val bitmap = ImageDecoder.decodeBitmap(source) { decoder, info, _ ->
             val longestSide = max(info.size.width, info.size.height)
-            if (longestSide > MAX_DIMENSION_PX) {
-                val scale = MAX_DIMENSION_PX.toFloat() / longestSide
+            if (longestSide > kind.maxDimensionPx) {
+                val scale = kind.maxDimensionPx.toFloat() / longestSide
                 decoder.setTargetSize(
                     (info.size.width * scale).roundToInt(),
                     (info.size.height * scale).roundToInt(),
@@ -31,17 +43,11 @@ class ImageNormalizer @Inject constructor() {
         }
         return try {
             ByteArrayOutputStream().use { output ->
-                bitmap.compress(Bitmap.CompressFormat.JPEG, JPEG_QUALITY, output)
+                bitmap.compress(kind.format, kind.quality, output)
                 output.toByteArray()
             }
         } finally {
             bitmap.recycle()
         }
-    }
-
-    private companion object {
-        /** Enough for sharp barcodes and text on an ID-1 card while keeping files around 300 KB. */
-        const val MAX_DIMENSION_PX = 2048
-        const val JPEG_QUALITY = 90
     }
 }

@@ -30,6 +30,7 @@ import io.github.danyk20.cardholder.core.barcode.BarcodeImage
 import io.github.danyk20.cardholder.core.designsystem.component.CardSurface
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.ui.CardSummary
+import io.github.danyk20.cardholder.core.ui.LogoBadge
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.barcodeFormatLabel
 import io.github.danyk20.cardholder.core.ui.icon
@@ -69,7 +70,17 @@ internal fun LoyaltyCardFace(
                 .padding(14.dp),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(card.type.icon, contentDescription = null, tint = colors.content, modifier = Modifier.size(20.dp))
+                val logo = card.logo
+                if (logo != null) {
+                    LogoBadge(model = logo, contentDescription = null, height = 36.dp)
+                } else {
+                    Icon(
+                        card.type.icon,
+                        contentDescription = null,
+                        tint = colors.content,
+                        modifier = Modifier.size(20.dp),
+                    )
+                }
                 Text(
                     text = card.title,
                     style = MaterialTheme.typography.titleMedium,
@@ -79,7 +90,7 @@ internal fun LoyaltyCardFace(
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier
                         .weight(1f)
-                        .padding(start = 8.dp),
+                        .padding(start = 10.dp),
                 )
             }
             Box(

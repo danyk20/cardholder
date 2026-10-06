@@ -2,6 +2,7 @@ package io.github.danyk20.cardholder.feature.cardeditor
 
 import android.content.Intent
 import android.provider.Settings
+import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
@@ -55,6 +56,8 @@ import io.github.danyk20.cardholder.feature.cardeditor.ui.BankActions
 import io.github.danyk20.cardholder.feature.cardeditor.ui.DetailsActions
 import io.github.danyk20.cardholder.feature.cardeditor.ui.DetailsForm
 import io.github.danyk20.cardholder.feature.cardeditor.ui.IdActions
+import io.github.danyk20.cardholder.feature.cardeditor.ui.LogoActions
+import io.github.danyk20.cardholder.feature.cardeditor.ui.LogoChoiceDialog
 import io.github.danyk20.cardholder.feature.cardeditor.ui.LoyaltyActions
 import io.github.danyk20.cardholder.feature.cardeditor.ui.SideActions
 import io.github.danyk20.cardholder.feature.cardeditor.ui.SidesStep
@@ -94,6 +97,17 @@ fun CardEditorRoute(
         uri?.let { viewModel.onSideImagePicked(pendingSide, it.toString()) }
     }
     val pickPhoto = { photoPicker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) }
+    val logoPicker = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+        uri?.let { viewModel.onLogoPicked(it.toString()) } ?: viewModel.onLogoChoiceDismissed()
+    }
+    val logoActions = remember(viewModel) {
+        LogoActions(
+            onUseOfficial = viewModel::onUseOfficialLogo,
+            onUpload = { logoPicker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) },
+            onRemove = viewModel::onRemoveLogo,
+            onDismissChoice = viewModel::onLogoChoiceDismissed,
+        )
+    }
     val sideScanner = rememberCardSideScanner(
         onResult = { uri -> uri?.let { viewModel.onSideImagePicked(pendingSide, it) } },
         // Without Google Play services, fall back to choosing an existing photo.
@@ -137,7 +151,17 @@ fun CardEditorRoute(
                 onFormatChange = viewModel::onFormatChange,
                 onScanBarcode = { showBarcodeScanner = true },
             ),
+            logo = logoActions,
         )
+    }
+
+    state.logoChoiceFor?.let { shop -> LogoChoiceDialog(shop, logoActions) }
+    val logoError = stringResource(R.string.editor_logo_download_failed)
+    LaunchedEffect(state.logoDownloadFailed) {
+        if (state.logoDownloadFailed) {
+            Toast.makeText(context, logoError, Toast.LENGTH_LONG).show()
+            viewModel.onLogoDownloadErrorShown()
+        }
     }
 
     if (showBarcodeScanner) {

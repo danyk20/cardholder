@@ -20,7 +20,7 @@ import kotlinx.coroutines.withContext
 @Singleton
 class CardImageStore(
     private val files: EncryptedFileStore,
-    private val decode: (ImageSource) -> ByteArray,
+    private val decode: (ImageSource, ImageKind) -> ByteArray,
     private val ioDispatcher: CoroutineDispatcher,
 ) {
     @Inject
@@ -31,30 +31,31 @@ class CardImageStore(
         @IoDispatcher ioDispatcher: CoroutineDispatcher,
     ) : this(
         files = EncryptedFileStore(File(context.filesDir, DIRECTORY), cipher),
-        decode = { source ->
+        decode = { source, kind ->
             when (source) {
                 is ImageSource.Uri -> {
                     val uri = source.value.toUri()
-                    normalizer.fromUri(context.contentResolver, uri).also { deleteIfTemporary(context, uri) }
+                    normalizer.fromUri(context.contentResolver, uri, kind).also { deleteIfTemporary(context, uri) }
                 }
 
-                is ImageSource.Bytes -> normalizer.fromBytes(source.bytes)
+                is ImageSource.Bytes -> normalizer.fromBytes(source.bytes, kind)
             }
         },
         ioDispatcher = ioDispatcher,
     )
 
     /** Normalizes the image from [source], stores it encrypted with [level] and returns its reference. */
-    suspend fun store(source: ImageSource, level: ProtectionLevel): ImageRef = withContext(ioDispatcher) {
-        val ref = newRef()
-        val jpeg = decode(source)
-        try {
-            files.write(ref.name, jpeg, level)
-        } finally {
-            jpeg.fill(0)
+    suspend fun store(source: ImageSource, level: ProtectionLevel, kind: ImageKind = ImageKind.PHOTO): ImageRef =
+        withContext(ioDispatcher) {
+            val ref = newRef()
+            val jpeg = decode(source, kind)
+            try {
+                files.write(ref.name, jpeg, level)
+            } finally {
+                jpeg.fill(0)
+            }
+            ref
         }
-        ref
-    }
 
     /**
      * Stores a copy of [ref] protected with [level] and returns the new reference. Copying instead of

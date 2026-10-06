@@ -15,6 +15,8 @@ data class Card(
     val color: CardColor,
     val info: CardInfo,
     val sides: CardSides,
+    /** Logo shown on the card face, e.g. the shop's logo of a loyalty card. */
+    val logo: ImageRef? = null,
     val isLocked: Boolean,
     val hasCvv: Boolean,
     val createdAt: Instant,

@@ -68,6 +68,7 @@ fun CardFace(
         colors = summary.faceColors,
         isLocked = card.isLocked,
         frontImage = card.sides.front,
+        logo = card.logo,
         modifier = modifier,
         onClick = onClick,
         onLongClick = onLongClick,

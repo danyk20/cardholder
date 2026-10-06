@@ -27,6 +27,19 @@ class AssetShopRepositoryTest {
     }
 
     @Test
+    fun `official logos come from allowed hosts with a licence and source`() = runTest {
+        val logos = repository(StandardTestDispatcher(testScheduler)).shops().mapNotNull { it.logo }
+
+        assertTrue(logos.size >= 50)
+        logos.forEach { logo ->
+            assertTrue(HttpsLogoDownloader.isAllowed(logo.url), logo.url)
+            assertTrue(logo.license.isNotBlank())
+            assertTrue(logo.sourcePage.startsWith("https://commons.wikimedia.org/"), logo.sourcePage)
+            if (logo.license.startsWith("CC BY")) assertTrue(!logo.attribution.isNullOrBlank(), logo.url)
+        }
+    }
+
+    @Test
     fun `finds a shop by id`() = runTest {
         val shop = repository(StandardTestDispatcher(testScheduler)).shop("migros")
 

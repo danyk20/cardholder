@@ -16,6 +16,7 @@ data class CardDraft(
     val content: CardContent,
     val front: ImageChange = ImageChange.Keep,
     val back: ImageChange = ImageChange.Keep,
+    val logo: ImageChange = ImageChange.Keep,
     val isLocked: Boolean = false,
 )
 

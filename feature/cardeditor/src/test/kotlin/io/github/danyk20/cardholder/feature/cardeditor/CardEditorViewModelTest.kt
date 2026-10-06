@@ -5,6 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import io.github.danyk20.cardholder.core.domain.model.CardContent
 import io.github.danyk20.cardholder.core.domain.model.CvvChange
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
+import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.repository.ScannedBarcode
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardUseCase
 import io.github.danyk20.cardholder.core.domain.validation.CardDraftValidator
@@ -20,8 +21,11 @@ import io.github.danyk20.cardholder.core.testing.repository.FakeBarcodeImageScan
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
+import io.github.danyk20.cardholder.core.testing.repository.FakeLogoDownloader
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
+import io.github.danyk20.cardholder.core.testing.repository.MIGROS_LOGO_URL
 import java.time.YearMonth
+import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertIs
@@ -41,6 +45,7 @@ class CardEditorViewModelTest {
     private val repository = FakeCardRepository()
     private val deviceSecurity = FakeDeviceSecurity()
     private val barcodeScanner = FakeBarcodeImageScanner()
+    private val logoDownloader = FakeLogoDownloader()
 
     private fun viewModel(cardId: String? = null) = CardEditorViewModel(
         savedStateHandle = SavedStateHandle(mapOf("cardId" to cardId)),
@@ -51,6 +56,7 @@ class CardEditorViewModelTest {
         deviceSecurity = deviceSecurity,
         validator = CardDraftValidator(),
         barcodeImageScanner = barcodeScanner,
+        logoDownloader = logoDownloader,
     )
 
     @Test
@@ -142,6 +148,53 @@ class CardEditorViewModelTest {
             LoyaltyForm(code = "4006381333931", format = BarcodeFormat.EAN_13),
             viewModel.uiState.value.loyalty,
         )
+    }
+
+    @Test
+    fun `choosing a shop with an official logo asks how to show it`() = runTest {
+        logoDownloader.logos[MIGROS_LOGO_URL] = byteArrayOf(1, 2, 3)
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.LOYALTY)
+
+        viewModel.onShopSelected(FakeShopRepository().shop("migros")!!)
+        assertEquals("migros", viewModel.uiState.value.logoChoiceFor?.id)
+        assertTrue(logoDownloader.requested.isEmpty(), "nothing is downloaded before the user decides")
+
+        viewModel.onUseOfficialLogo()
+        assertNull(viewModel.uiState.value.logoChoiceFor)
+        assertIs<LogoImage.Downloaded>(viewModel.uiState.value.logo)
+
+        viewModel.onCodeChange("4006381333931")
+        viewModel.onSave()
+        val logo = assertIs<ImageChange.Replace>(repository.savedDrafts.single().logo)
+        assertContentEquals(byteArrayOf(1, 2, 3), (logo.source as ImageSource.Bytes).bytes)
+    }
+
+    @Test
+    fun `shops without an official logo don't ask and a failed download is reported`() = runTest {
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.LOYALTY)
+
+        viewModel.onShopSelected(FakeShopRepository().shop("lidl")!!)
+        assertNull(viewModel.uiState.value.logoChoiceFor)
+
+        viewModel.onShopSelected(FakeShopRepository().shop("migros")!!)
+        viewModel.onUseOfficialLogo()
+        assertTrue(viewModel.uiState.value.logoDownloadFailed)
+        assertEquals(LogoImage.None, viewModel.uiState.value.logo)
+    }
+
+    @Test
+    fun `custom shops can use an uploaded logo or none`() {
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.LOYALTY)
+        viewModel.onCustomShop("Corner Coffee")
+
+        viewModel.onLogoPicked("content://logo")
+        assertEquals(LogoImage.Picked("content://logo"), viewModel.uiState.value.logo)
+
+        viewModel.onRemoveLogo()
+        assertEquals(LogoImage.None, viewModel.uiState.value.logo)
     }
 
     @Test

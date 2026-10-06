@@ -3,6 +3,15 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+### Added
+- Shop logos: when a catalogue shop is selected, choose its official logo (freely licensed, downloaded from
+  Wikimedia Commons on request), upload your own, or keep the card plain. Logos are shown on the card.
+- Database version 2 (logo column) with an automatic, tested migration.
+
+### Changed
+- The app requests the `INTERNET` permission, used only for the logo download (HTTPS, Wikimedia hosts only).
+
 ## [1.0.0] - 2026-10-06
 ### Added
 - Bank, ID and loyalty cards with type-specific details and validation.

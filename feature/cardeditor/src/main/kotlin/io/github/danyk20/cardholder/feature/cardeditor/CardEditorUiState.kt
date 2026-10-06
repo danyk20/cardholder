@@ -47,6 +47,19 @@ sealed interface SideImage {
     data class New(val uri: String) : SideImage
 }
 
+/** The logo shown on a loyalty card. */
+sealed interface LogoImage {
+    data object None : LogoImage
+
+    data class Existing(val ref: ImageRef) : LogoImage
+
+    /** The shop's official logo, downloaded on request. */
+    class Downloaded(val bytes: ByteArray) : LogoImage
+
+    /** A logo the user picked from the gallery. */
+    data class Picked(val uri: String) : LogoImage
+}
+
 data class BankForm(
     /** Digits only; grouping is a visual transformation. */
     val number: String = "",
@@ -79,6 +92,11 @@ data class CardEditorUiState(
     val color: CardColor = CardColor.Default,
     val front: SideImage = SideImage.None,
     val back: SideImage = SideImage.None,
+    val logo: LogoImage = LogoImage.None,
+    /** A shop with an official logo was just selected: ask whether to use it, upload one or keep none. */
+    val logoChoiceFor: Shop? = null,
+    val isDownloadingLogo: Boolean = false,
+    val logoDownloadFailed: Boolean = false,
     val bank: BankForm = BankForm(),
     val id: IdForm = IdForm(),
     val loyalty: LoyaltyForm = LoyaltyForm(),
@@ -94,6 +112,10 @@ data class CardEditorUiState(
     val countries: List<Country> = emptyList(),
 ) {
     val isEditing: Boolean get() = editingId != null
+
+    /** The catalogue shop of a loyalty card, if one is selected. */
+    val selectedShop: Shop?
+        get() = (loyalty.shop as? ShopRef.Known)?.let { known -> shops.firstOrNull { it.id == known.id } }
 
     /** Suggested title used when the user leaves the title empty. */
     val defaultTitle: String
