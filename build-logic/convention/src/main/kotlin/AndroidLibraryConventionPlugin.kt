@@ -17,6 +17,9 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 defaultConfig.consumerProguardFiles("consumer-rules.pro")
                 testOptions.animationsDisabled = true
                 testOptions.unitTests.isIncludeAndroidResources = true
+                sourceSets.getByName("test").resources.directories.add(
+                    rootProject.layout.projectDirectory.dir("config/robolectric").asFile.path,
+                )
                 lint {
                     warningsAsErrors = true
                     abortOnError = true

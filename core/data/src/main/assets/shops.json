@@ -1,0 +1,666 @@
+[
+  {
+    "id": "albert-heijn",
+    "name": "Albert Heijn",
+    "brandColor": "#00A0E2",
+    "countries": [
+      "NL",
+      "BE"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "aldi",
+    "name": "ALDI",
+    "brandColor": "#00005F",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "GB",
+      "IE",
+      "NL",
+      "BE",
+      "FR",
+      "IT",
+      "ES",
+      "PL",
+      "US",
+      "AU"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "auchan",
+    "name": "Auchan",
+    "brandColor": "#E2001A",
+    "countries": [
+      "FR",
+      "ES",
+      "IT",
+      "PL",
+      "PT",
+      "RO",
+      "LU"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "bauhaus",
+    "name": "BAUHAUS",
+    "brandColor": "#E30613",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "SK",
+      "CZ",
+      "HR",
+      "SI",
+      "NL",
+      "SE",
+      "DK",
+      "NO",
+      "FI"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "billa",
+    "name": "BILLA",
+    "brandColor": "#FFE500",
+    "countries": [
+      "AT",
+      "SK",
+      "CZ",
+      "BG"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "boots",
+    "name": "Boots Advantage Card",
+    "brandColor": "#05054B",
+    "countries": [
+      "GB",
+      "IE"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "c-and-a",
+    "name": "C&A",
+    "brandColor": "#003F87",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "NL",
+      "BE",
+      "FR",
+      "ES",
+      "IT",
+      "PL",
+      "CZ",
+      "SK"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "carrefour",
+    "name": "Carrefour",
+    "brandColor": "#004E9F",
+    "countries": [
+      "FR",
+      "ES",
+      "IT",
+      "BE",
+      "PL",
+      "RO"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "conad",
+    "name": "Conad",
+    "brandColor": "#E2001A",
+    "countries": [
+      "IT"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "coop-ch",
+    "name": "Coop Supercard",
+    "brandColor": "#E2001A",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "costco",
+    "name": "Costco",
+    "brandColor": "#E31837",
+    "countries": [
+      "US",
+      "CA",
+      "GB",
+      "MX",
+      "JP",
+      "KR",
+      "AU",
+      "ES",
+      "FR",
+      "SE"
+    ],
+    "defaultFormat": "CODE_128"
+  },
+  {
+    "id": "cvs",
+    "name": "CVS ExtraCare",
+    "brandColor": "#CC0000",
+    "countries": [
+      "US"
+    ],
+    "defaultFormat": "CODE_128"
+  },
+  {
+    "id": "decathlon",
+    "name": "Decathlon",
+    "brandColor": "#0082C3",
+    "countries": [],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "deichmann",
+    "name": "Deichmann",
+    "brandColor": "#00843D",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "CZ",
+      "SK",
+      "PL",
+      "HU",
+      "NL",
+      "IT"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "denner",
+    "name": "Denner",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "dm",
+    "name": "dm-drogerie markt",
+    "brandColor": "#002878",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "SK",
+      "CZ",
+      "HU",
+      "SI",
+      "HR",
+      "IT",
+      "PL",
+      "RO"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "douglas",
+    "name": "Douglas",
+    "brandColor": "#000000",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "NL",
+      "BE",
+      "FR",
+      "IT",
+      "ES",
+      "PL",
+      "CZ",
+      "SK"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "edeka",
+    "name": "EDEKA",
+    "brandColor": "#FFD400",
+    "countries": [
+      "DE"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "esselunga",
+    "name": "Esselunga Fidaty",
+    "brandColor": "#E2001A",
+    "countries": [
+      "IT"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "fielmann",
+    "name": "Fielmann",
+    "brandColor": "#E2001A",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "PL",
+      "IT"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "galaxus",
+    "name": "Galaxus",
+    "brandColor": "#000000",
+    "countries": [
+      "CH",
+      "DE",
+      "AT"
+    ],
+    "defaultFormat": "QR_CODE"
+  },
+  {
+    "id": "globus",
+    "name": "Globus",
+    "brandColor": "#000000",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "h-m",
+    "name": "H&M",
+    "brandColor": "#E50010",
+    "countries": [],
+    "defaultFormat": "QR_CODE"
+  },
+  {
+    "id": "hornbach",
+    "name": "HORNBACH",
+    "brandColor": "#F28C00",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "NL",
+      "CZ",
+      "SK",
+      "SE",
+      "RO",
+      "LU"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "ikea",
+    "name": "IKEA Family",
+    "brandColor": "#0058A3",
+    "countries": [],
+    "defaultFormat": "CODE_128"
+  },
+  {
+    "id": "interdiscount",
+    "name": "Interdiscount",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "jumbo-ch",
+    "name": "JUMBO",
+    "brandColor": "#FFCC00",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "jumbo-nl",
+    "name": "Jumbo",
+    "brandColor": "#FFD700",
+    "countries": [
+      "NL",
+      "BE"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "kaufland",
+    "name": "Kaufland Card",
+    "brandColor": "#E10915",
+    "countries": [
+      "DE",
+      "CZ",
+      "SK",
+      "PL",
+      "RO",
+      "BG",
+      "HR"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "kroger",
+    "name": "Kroger Plus",
+    "brandColor": "#0F5BA7",
+    "countries": [
+      "US"
+    ],
+    "defaultFormat": "UPC_A"
+  },
+  {
+    "id": "lidl",
+    "name": "Lidl Plus",
+    "brandColor": "#0050AA",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "SK",
+      "CZ",
+      "PL",
+      "HU",
+      "GB",
+      "IE",
+      "NL",
+      "BE",
+      "FR",
+      "IT",
+      "ES",
+      "PT",
+      "RO",
+      "BG",
+      "HR",
+      "SI"
+    ],
+    "defaultFormat": "QR_CODE"
+  },
+  {
+    "id": "lush",
+    "name": "Lush",
+    "brandColor": "#000000",
+    "countries": [],
+    "defaultFormat": "QR_CODE"
+  },
+  {
+    "id": "manor",
+    "name": "Manor",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "marks-and-spencer",
+    "name": "M&S Sparks",
+    "brandColor": "#000000",
+    "countries": [
+      "GB",
+      "IE"
+    ],
+    "defaultFormat": "QR_CODE"
+  },
+  {
+    "id": "mediamarkt",
+    "name": "MediaMarkt",
+    "brandColor": "#DF0000",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "NL",
+      "BE",
+      "ES",
+      "IT",
+      "PL",
+      "HU",
+      "SE",
+      "PT",
+      "LU"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "migros",
+    "name": "Migros Cumulus",
+    "brandColor": "#FF6600",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "mueller",
+    "name": "Müller",
+    "brandColor": "#F18700",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "HU",
+      "HR",
+      "SI",
+      "ES"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "nectar",
+    "name": "Nectar",
+    "brandColor": "#6C3B96",
+    "countries": [
+      "GB"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "obi",
+    "name": "OBI",
+    "brandColor": "#FF7E21",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "CZ",
+      "SK",
+      "PL",
+      "HU",
+      "IT",
+      "SI"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "ochsner-sport",
+    "name": "Ochsner Sport",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "payback",
+    "name": "PAYBACK",
+    "brandColor": "#003EB0",
+    "countries": [
+      "DE",
+      "AT",
+      "IT",
+      "PL"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "penny",
+    "name": "PENNY",
+    "brandColor": "#CD1719",
+    "countries": [
+      "DE",
+      "AT",
+      "CZ",
+      "HU",
+      "IT",
+      "RO"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "rewe",
+    "name": "REWE",
+    "brandColor": "#CC071E",
+    "countries": [
+      "DE"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "rossmann",
+    "name": "ROSSMANN",
+    "brandColor": "#C3002D",
+    "countries": [
+      "DE",
+      "CZ",
+      "PL",
+      "HU",
+      "TR",
+      "AL",
+      "XK"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "safeway",
+    "name": "Safeway",
+    "brandColor": "#E31837",
+    "countries": [
+      "US"
+    ],
+    "defaultFormat": "UPC_A"
+  },
+  {
+    "id": "sephora",
+    "name": "Sephora",
+    "brandColor": "#000000",
+    "countries": [],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "shell",
+    "name": "Shell GO+",
+    "brandColor": "#FBCE07",
+    "countries": [],
+    "defaultFormat": "QR_CODE"
+  },
+  {
+    "id": "spar",
+    "name": "SPAR",
+    "brandColor": "#00843D",
+    "countries": [
+      "AT",
+      "CH",
+      "NL",
+      "BE",
+      "IT",
+      "SI",
+      "HR",
+      "HU",
+      "IE",
+      "GB",
+      "NO"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "starbucks",
+    "name": "Starbucks Rewards",
+    "brandColor": "#00704A",
+    "countries": [],
+    "defaultFormat": "QR_CODE"
+  },
+  {
+    "id": "tchibo",
+    "name": "Tchibo",
+    "brandColor": "#2D2A26",
+    "countries": [
+      "DE",
+      "AT",
+      "CH",
+      "CZ",
+      "SK",
+      "PL",
+      "HU"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "tesco",
+    "name": "Tesco Clubcard",
+    "brandColor": "#00539F",
+    "countries": [
+      "GB",
+      "IE",
+      "CZ",
+      "SK",
+      "HU"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "ulta",
+    "name": "Ulta Beauty",
+    "brandColor": "#F47B20",
+    "countries": [
+      "US"
+    ],
+    "defaultFormat": "CODE_128"
+  },
+  {
+    "id": "volg",
+    "name": "Volg",
+    "brandColor": "#E2001A",
+    "countries": [
+      "CH"
+    ],
+    "defaultFormat": "EAN_13"
+  },
+  {
+    "id": "walgreens",
+    "name": "Walgreens",
+    "brandColor": "#E31837",
+    "countries": [
+      "US"
+    ],
+    "defaultFormat": "CODE_128"
+  },
+  {
+    "id": "zara",
+    "name": "Zara",
+    "brandColor": "#000000",
+    "countries": [],
+    "defaultFormat": "QR_CODE"
+  }
+]
