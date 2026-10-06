@@ -1,0 +1,32 @@
+<resources>
+    <string name="detail_edit">Edit</string>
+    <string name="detail_delete">Delete</string>
+    <string name="detail_more">More options</string>
+    <string name="detail_flip">Show other side</string>
+    <string name="detail_show_code">Show code</string>
+    <string name="detail_copied">%1$s copied. It will be cleared from the clipboard in a minute.</string>
+    <string name="detail_copy">Copy %1$s</string>
+    <string name="detail_show_cvv">Show CVV</string>
+    <string name="detail_hide_cvv">Hide CVV</string>
+    <string name="detail_locked_details">Details are hidden because this card is locked</string>
+    <string name="detail_lock">Lock card</string>
+    <string name="detail_lock_on">Fingerprint, face or screen lock is needed to see this card</string>
+    <string name="detail_lock_off">Anyone using your phone can see this card</string>
+    <string name="detail_lock_unavailable">Set up a screen lock on your device to lock cards</string>
+    <string name="detail_delete_title">Delete this card?</string>
+    <string name="detail_delete_message">%1$s and its photos will be permanently deleted from this device.</string>
+    <string name="detail_cancel">Cancel</string>
+    <string name="detail_close_photo">Close photo</string>
+    <string name="detail_ok">OK</string>
+
+    <string name="field_number">Card number</string>
+    <string name="field_expiry">Expiry</string>
+    <string name="field_holder">Card holder</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Network</string>
+    <string name="field_country">Country</string>
+    <string name="field_document_number">Document number</string>
+    <string name="field_shop">Shop</string>
+    <string name="field_code">Code</string>
+    <string name="field_format">Code type</string>
+</resources>

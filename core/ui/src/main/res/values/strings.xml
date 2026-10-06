@@ -11,6 +11,9 @@
     <string name="card_side_front">Front</string>
     <string name="card_side_back">Back</string>
     <string name="card_locked">Locked</string>
+    <string name="card_locked_message">This card is locked</string>
+    <string name="auth_title_show_cvv">Show CVV</string>
+    <string name="card_not_found">This card no longer exists</string>
 
     <!-- Authentication -->
     <string name="auth_title_unlock_card">Unlock %1$s</string>

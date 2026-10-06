@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.core.testing.repository
 
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
+import io.github.danyk20.cardholder.core.domain.security.SecureClipboard
 import io.github.danyk20.cardholder.core.domain.security.SessionLockEvents
 import kotlinx.coroutines.flow.MutableSharedFlow
 
@@ -13,5 +14,13 @@ class FakeSessionLockEvents : SessionLockEvents {
 
     fun lock() {
         events.tryEmit(Unit)
+    }
+}
+
+class FakeSecureClipboard : SecureClipboard {
+    val copied = mutableListOf<Pair<String, String>>()
+
+    override fun copy(label: String, text: String) {
+        copied += label to text
     }
 }

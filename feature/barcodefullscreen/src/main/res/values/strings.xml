@@ -1,0 +1,7 @@
+<resources>
+    <string name="barcode_close">Close</string>
+    <string name="barcode_details">Card details</string>
+    <string name="barcode_description">%1$s of %2$s</string>
+    <string name="barcode_unencodable">This code can\'t be shown as %1$s. Edit the card to fix the code or choose another code type.</string>
+    <string name="barcode_hint">Hold the screen flat and steady in front of the scanner.</string>
+</resources>
