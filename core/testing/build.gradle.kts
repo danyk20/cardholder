@@ -1,9 +1,5 @@
 plugins {
-    alias(libs.plugins.cardholder.android.library)
-}
-
-android {
-    namespace = "io.github.danyk20.cardholder.core.testing"
+    alias(libs.plugins.cardholder.jvm.library)
 }
 
 dependencies {
