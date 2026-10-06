@@ -26,6 +26,7 @@ import io.github.danyk20.cardholder.core.security.secureCall
 import io.github.danyk20.cardholder.core.storage.CardImageStore
 import io.github.danyk20.cardholder.core.storage.ImageKind
 import java.time.Clock
+import java.time.LocalDate
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
@@ -96,6 +97,33 @@ internal class OfflineCardRepository @Inject constructor(
         }
     }
 
+    override suspend fun setFavourite(id: CardId, favourite: Boolean) = withContext(ioDispatcher) {
+        dao.setFavourite(id.value, favourite)
+    }
+
+    override suspend fun recordUse(id: CardId) = withContext(ioDispatcher) {
+        dao.recordUse(id.value, clock.millis())
+    }
+
+    override suspend fun cardsDueForExpiryReminder(today: LocalDate, until: LocalDate): List<Card> =
+        withContext(ioDispatcher) {
+            dao.dueForExpiryReminder(today.toString(), until.toString()).map(CardEntity::toCard)
+        }
+
+    override suspend fun fillMissingExpiryDates() = withContext(ioDispatcher) {
+        writeMutex.withLock {
+            dao.missingExpiry().forEach { card ->
+                // Unlocked cards use the STANDARD key, which needs no authentication.
+                val details = secureCall { decodeCardDetails(cipher.open(card.sealedDetails)) }
+                (details as? SecureResult.Success)?.value?.expiresOn?.let { dao.setExpiresOn(card.id, it.toString()) }
+            }
+        }
+    }
+
+    override suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate) = withContext(ioDispatcher) {
+        dao.markExpiryReminded(id.value, expiresOn.toString())
+    }
+
     private suspend fun saveCard(draft: CardDraft): CardId = withImageTransaction {
         val existing = draft.id?.let { dao.get(it.value) }
         val id = draft.id ?: CardId.random()
@@ -129,6 +157,11 @@ internal class OfflineCardRepository @Inject constructor(
                 logoImage = logo?.name,
                 // New cards go to the end of the custom order.
                 position = existing?.position ?: (dao.maxPosition() + 1),
+                isFavourite = existing?.isFavourite ?: false,
+                useCount = existing?.useCount ?: 0,
+                lastUsedAt = existing?.lastUsedAt,
+                expiresOn = content.details.expiresOn?.toString(),
+                expiryRemindedFor = existing?.expiryRemindedFor,
                 sealedDetails = cipher.seal(content.details.encode(), level),
                 sealedCvv = content.sealedCvv(existing?.sealedCvv),
             ),

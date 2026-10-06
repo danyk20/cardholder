@@ -15,6 +15,7 @@ import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.model.CardSides
 import io.github.danyk20.cardholder.core.model.ImageRef
 import java.time.Instant
+import java.time.LocalDate
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
@@ -40,7 +41,7 @@ class FakeCardRepository : CardRepository {
     /** Adds a card at the end of the custom order, like a newly created card. */
     fun add(card: Card, details: CardDetails, cvv: String? = null) {
         store.update {
-            val stored = card.copy(hasCvv = cvv != null, position = it.size)
+            val stored = card.copy(hasCvv = cvv != null, position = it.size, expiresOn = details.expiresOn)
             it + (card.id to Stored(stored, details, cvv))
         }
     }
@@ -83,6 +84,10 @@ class FakeCardRepository : CardRepository {
             createdAt = existing?.card?.createdAt ?: now,
             updatedAt = now,
             position = existing?.card?.position ?: ((store.value.values.maxOfOrNull { it.card.position } ?: -1) + 1),
+            isFavourite = existing?.card?.isFavourite ?: false,
+            useCount = existing?.card?.useCount ?: 0,
+            lastUsedAt = existing?.card?.lastUsedAt,
+            expiresOn = content.details.expiresOn,
         )
         store.update { it + (id to Stored(card, content.details, cvv)) }
         return SecureResult.Success(id)
@@ -106,6 +111,33 @@ class FakeCardRepository : CardRepository {
 
     override suspend fun delete(id: CardId) {
         store.update { it - id }
+    }
+
+    /** Expiry dates the user was reminded of, by card. */
+    val remindedExpiry = mutableMapOf<CardId, LocalDate>()
+
+    override suspend fun setFavourite(id: CardId, favourite: Boolean) = updateCard(id) {
+        it.copy(isFavourite = favourite)
+    }
+
+    override suspend fun recordUse(id: CardId) =
+        updateCard(id) { it.copy(useCount = it.useCount + 1, lastUsedAt = now) }
+
+    override suspend fun cardsDueForExpiryReminder(today: LocalDate, until: LocalDate): List<Card> =
+        store.value.values.map { it.card }.filter { card ->
+            val expiresOn = card.expiresOn ?: return@filter false
+            expiresOn in today..until && remindedExpiry[card.id] != expiresOn
+        }
+
+    override suspend fun fillMissingExpiryDates() = Unit
+
+    override suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate) {
+        remindedExpiry[id] = expiresOn
+    }
+
+    private fun updateCard(id: CardId, transform: (Card) -> Card) = store.update { cards ->
+        val stored = cards[id] ?: return@update cards
+        cards + (id to stored.copy(card = transform(stored.card)))
     }
 
     private inline fun <T> guarded(protected: Boolean, block: () -> T): SecureResult<T> = when {

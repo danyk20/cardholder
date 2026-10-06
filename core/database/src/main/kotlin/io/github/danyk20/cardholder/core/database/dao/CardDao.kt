@@ -33,6 +33,32 @@ interface CardDao {
     @Query("UPDATE cards SET position = :position WHERE id = :id")
     suspend fun setPosition(id: String, position: Int)
 
+    @Query("UPDATE cards SET is_favourite = :favourite WHERE id = :id")
+    suspend fun setFavourite(id: String, favourite: Boolean)
+
+    @Query("UPDATE cards SET use_count = use_count + 1, last_used_at = :now WHERE id = :id")
+    suspend fun recordUse(id: String, now: Long)
+
+    /** Dates are ISO `yyyy-MM-dd` strings, so they compare correctly as text. */
+    @Query(
+        """
+        SELECT * FROM cards
+        WHERE expires_on IS NOT NULL AND expires_on BETWEEN :today AND :until
+            AND (expiry_reminded_for IS NULL OR expiry_reminded_for != expires_on)
+        """,
+    )
+    suspend fun dueForExpiryReminder(today: String, until: String): List<CardEntity>
+
+    /** Unlocked bank and ID cards saved before expiry dates were stored in plain columns. */
+    @Query("SELECT * FROM cards WHERE expires_on IS NULL AND type IN ('BANK', 'ID') AND is_locked = 0")
+    suspend fun missingExpiry(): List<CardEntity>
+
+    @Query("UPDATE cards SET expires_on = :expiresOn WHERE id = :id")
+    suspend fun setExpiresOn(id: String, expiresOn: String?)
+
+    @Query("UPDATE cards SET expiry_reminded_for = :expiresOn WHERE id = :id")
+    suspend fun markExpiryReminded(id: String, expiresOn: String)
+
     /** Assigns positions 0, 1, 2, … in the order of [ids]. */
     @Transaction
     suspend fun reorder(ids: List<String>) {

@@ -96,7 +96,8 @@ internal class OfflineBackupRepository(
                     if (backup.id in existing && strategy == ImportStrategy.SKIP_EXISTING) {
                         skipped++
                     } else {
-                        cardRepository.save(backup.toDraft(content.images)).orThrow()
+                        val id = cardRepository.save(backup.toDraft(content.images)).orThrow()
+                        if (backup.isFavourite) cardRepository.setFavourite(id, true)
                         imported++
                     }
                 }
@@ -128,6 +129,7 @@ internal class OfflineBackupRepository(
             bankName = (info as? CardInfo.Bank)?.issuer?.name,
             details = details.toDto(),
             cvv = cvv,
+            isFavourite = isFavourite,
             frontImage = sides.front?.export(),
             backImage = sides.back?.export(),
             logoImage = logo?.export(),

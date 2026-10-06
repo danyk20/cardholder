@@ -8,7 +8,7 @@ import io.github.danyk20.cardholder.core.database.model.CardEntity
 
 @Database(
     entities = [CardEntity::class],
-    version = 4,
+    version = 5,
     exportSchema = true,
     autoMigrations = [
         // 1 -> 2: card logos
@@ -17,6 +17,8 @@ import io.github.danyk20.cardholder.core.database.model.CardEntity
         AutoMigration(from = 2, to = 3),
         // 3 -> 4: issuing bank of bank cards
         AutoMigration(from = 3, to = 4),
+        // 4 -> 5: favourites, usage counts and expiry reminders
+        AutoMigration(from = 4, to = 5),
     ],
 )
 abstract class CardholderDatabase : RoomDatabase() {

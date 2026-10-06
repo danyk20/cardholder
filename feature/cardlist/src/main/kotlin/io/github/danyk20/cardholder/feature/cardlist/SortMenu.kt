@@ -68,4 +68,5 @@ private val CardSort.label: Int
         CardSort.NAME -> R.string.cardlist_sort_name
         CardSort.DATE_ADDED -> R.string.cardlist_sort_date
         CardSort.CUSTOM -> R.string.cardlist_sort_custom
+        CardSort.MOST_USED -> R.string.cardlist_sort_most_used
     }

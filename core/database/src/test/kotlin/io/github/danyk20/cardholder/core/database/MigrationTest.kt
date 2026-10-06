@@ -82,6 +82,31 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun `migrating 4 to 5 adds favourites, usage and expiry columns`() {
+        helper.createDatabase(DB, 4).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO cards (id, type, title, color, is_locked, created_at, updated_at, bank_network, sealed_details)
+                VALUES ('1', 'BANK', 'Visa', 'NAVY', 0, 1, 2, 'VISA', X'010203')
+                """.trimIndent(),
+            )
+        }
+
+        helper.runMigrationsAndValidate(DB, 5, true).use { db ->
+            db.query(
+                "SELECT is_favourite, use_count, last_used_at, expires_on, expiry_reminded_for FROM cards WHERE id = '1'",
+            ).use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals(0, cursor.getInt(0))
+                assertEquals(0, cursor.getInt(1))
+                assertNull(cursor.getString(2))
+                assertNull(cursor.getString(3))
+                assertNull(cursor.getString(4))
+            }
+        }
+    }
+
     private companion object {
         const val DB = "migration-test.db"
     }

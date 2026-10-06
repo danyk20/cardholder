@@ -8,6 +8,9 @@ enum class CardSort {
     /** Most recently added first. */
     DATE_ADDED,
 
+    /** The cards used most often first. */
+    MOST_USED,
+
     /** The order the user arranged. */
     CUSTOM,
 }

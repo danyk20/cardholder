@@ -29,6 +29,13 @@ data class CardEntity(
     @ColumnInfo(name = "back_image") val backImage: String?,
     @ColumnInfo(name = "logo_image", defaultValue = "NULL") val logoImage: String? = null,
     @ColumnInfo(name = "position", defaultValue = "0") val position: Int = 0,
+    @ColumnInfo(name = "is_favourite", defaultValue = "0") val isFavourite: Boolean = false,
+    @ColumnInfo(name = "use_count", defaultValue = "0") val useCount: Int = 0,
+    @ColumnInfo(name = "last_used_at", defaultValue = "NULL") val lastUsedAt: Long? = null,
+    /** ISO date (`yyyy-MM-dd`) the card stops being valid; plain so reminders work without unlocking. */
+    @ColumnInfo(name = "expires_on", defaultValue = "NULL") val expiresOn: String? = null,
+    /** The [expiresOn] value the user was last reminded of. */
+    @ColumnInfo(name = "expiry_reminded_for", defaultValue = "NULL") val expiryRemindedFor: String? = null,
     /** Sealed JSON of the type-specific details. */
     @ColumnInfo(name = "sealed_details", typeAffinity = ColumnInfo.BLOB) val sealedDetails: ByteArray,
     /** Sealed CVV of a bank card, always protected by user authentication. */
@@ -56,6 +63,11 @@ data class CardEntity(
                 backImage == other.backImage &&
                 logoImage == other.logoImage &&
                 position == other.position &&
+                isFavourite == other.isFavourite &&
+                useCount == other.useCount &&
+                lastUsedAt == other.lastUsedAt &&
+                expiresOn == other.expiresOn &&
+                expiryRemindedFor == other.expiryRemindedFor &&
                 sealedDetails.contentEquals(other.sealedDetails) &&
                 sealedCvv.contentEquals(other.sealedCvv)
             )
