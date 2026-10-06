@@ -13,6 +13,7 @@
     <string name="card_locked">Locked</string>
     <string name="card_locked_message">This card is locked</string>
     <string name="auth_title_show_cvv">Show CVV</string>
+    <string name="auth_title_export">Export backup</string>
     <string name="card_not_found">This card no longer exists</string>
 
     <!-- Authentication -->

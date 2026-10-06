@@ -1,0 +1,53 @@
+<resources>
+    <string name="settings_title">Settings</string>
+
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme_system">System default</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_dynamic_color">Dynamic colour</string>
+    <string name="settings_dynamic_color_description">Use colours from your wallpaper</string>
+
+    <string name="settings_backup">Backup</string>
+    <string name="settings_export">Export backup</string>
+    <string name="settings_export_description">Save all cards to a password-protected file</string>
+    <string name="settings_import">Import backup</string>
+    <string name="settings_import_description">Restore cards from a backup file</string>
+    <string name="settings_backup_working">Working…</string>
+
+    <string name="settings_password_title_export">Protect your backup</string>
+    <string name="settings_password_title_import">Enter backup password</string>
+    <string name="settings_password_message_export">The backup contains all card details, including CVVs. Choose a strong password – it can\'t be recovered.</string>
+    <string name="settings_password">Password</string>
+    <string name="settings_password_confirm">Repeat password</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Use at least %1$d character</item>
+        <item quantity="other">Use at least %1$d characters</item>
+    </plurals>
+    <string name="settings_password_mismatch">Passwords don\'t match</string>
+    <string name="settings_replace_existing">Replace cards that already exist</string>
+    <string name="settings_continue">Continue</string>
+    <string name="settings_cancel">Cancel</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d card exported</item>
+        <item quantity="other">%1$d cards exported</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d card imported</item>
+        <item quantity="other">%1$d cards imported</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d already existed and was skipped</item>
+        <item quantity="other">%1$d already existed and were skipped</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Wrong password</string>
+    <string name="settings_result_invalid_file">This is not a Cardholder backup or the file is damaged</string>
+    <string name="settings_result_auth_required">Confirm it\'s you to export protected cards</string>
+    <string name="settings_result_device_not_secure">Set up a screen lock to import cards with CVVs or locks</string>
+    <string name="settings_result_failed">Something went wrong. Please try again.</string>
+
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_privacy">Cardholder works fully offline. Your cards are encrypted and never leave this device unless you export them.</string>
+</resources>
