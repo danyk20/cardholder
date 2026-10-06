@@ -27,6 +27,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
                 add("testImplementation", project(":core:testing"))
                 add("testImplementation", libs.library("robolectric"))
+                add("testImplementation", libs.library("androidx-test-ext-junit"))
                 add("testImplementation", libs.library("androidx-compose-ui-test-junit4"))
                 add("debugImplementation", libs.library("androidx-compose-ui-test-manifest"))
             }

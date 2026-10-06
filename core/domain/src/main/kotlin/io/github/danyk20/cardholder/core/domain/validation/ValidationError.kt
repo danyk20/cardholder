@@ -15,6 +15,7 @@ enum class CardField {
     HOLDER,
     CVV,
     DOCUMENT_NUMBER,
+    COUNTRY,
     SHOP,
     CODE,
 }
