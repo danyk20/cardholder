@@ -30,10 +30,10 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons.Search
 import io.github.danyk20.cardholder.core.ui.R as UiR
+import io.github.danyk20.cardholder.core.ui.secureDialogProperties
 
 /** Full-screen list with a search field, used to pick a shop or a country. */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -56,7 +56,7 @@ internal fun <T> SearchablePickerDialog(
         val needle = query.trim()
         if (needle.isEmpty()) items else items.filter { label(it).contains(needle, ignoreCase = true) }
     }
-    Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
+    Dialog(onDismissRequest = onDismiss, properties = secureDialogProperties(usePlatformDefaultWidth = false)) {
         Scaffold(
             topBar = {
                 TopAppBar(

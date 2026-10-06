@@ -41,8 +41,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.DialogProperties
-import androidx.compose.ui.window.SecureFlagPolicy
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -54,6 +52,7 @@ import io.github.danyk20.cardholder.core.ui.LockedContent
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.SecureScreen
 import io.github.danyk20.cardholder.core.ui.rememberAuthenticator
+import io.github.danyk20.cardholder.core.ui.secureDialogProperties
 import io.github.danyk20.cardholder.feature.carddetail.ui.CardSidesView
 import io.github.danyk20.cardholder.feature.carddetail.ui.DetailFields
 import io.github.danyk20.cardholder.feature.carddetail.ui.FieldActions
@@ -195,7 +194,7 @@ internal fun CardDetailScreen(
             dismissButton = {
                 TextButton(onClick = { confirmDelete = false }) { Text(stringResource(R.string.detail_cancel)) }
             },
-            properties = DialogProperties(securePolicy = SecureFlagPolicy.SecureOn),
+            properties = secureDialogProperties(),
         )
     }
     if (state.showKeyInvalidatedError) {

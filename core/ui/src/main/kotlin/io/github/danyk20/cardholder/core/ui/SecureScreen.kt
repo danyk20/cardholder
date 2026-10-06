@@ -7,6 +7,8 @@ import android.view.WindowManager
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.window.DialogProperties
+import androidx.compose.ui.window.SecureFlagPolicy
 
 /**
  * Prevents screenshots, screen recording and the recents thumbnail from showing this screen
@@ -29,3 +31,10 @@ internal fun Context.findActivity(): Activity? {
     }
     return null
 }
+
+/**
+ * Dialogs are separate windows and don't inherit [SecureScreen]'s flag; use these properties for
+ * every dialog shown from a screen with sensitive data.
+ */
+fun secureDialogProperties(usePlatformDefaultWidth: Boolean = true): DialogProperties =
+    DialogProperties(usePlatformDefaultWidth = usePlatformDefaultWidth, securePolicy = SecureFlagPolicy.SecureOn)
