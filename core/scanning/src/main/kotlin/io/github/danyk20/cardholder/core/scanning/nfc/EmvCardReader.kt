@@ -66,7 +66,7 @@ class EmvCardReader(
             val (sfiByte, first, last) = entry
             val sfi = sfiByte.unsigned() shr SFI_SHIFT
             (first.unsigned()..last.unsigned()).map { record -> sfi to record }
-        }
+        }.take(MAX_RECORDS) // A real card needs a handful; a malformed AFL must not keep the reader busy.
     }
 
     private fun extract(tlv: List<Tlv>): EmvCardData? {
@@ -193,6 +193,7 @@ class EmvCardReader(
 
         const val AIP_LENGTH = 2
         const val AFL_ENTRY_LENGTH = 4
+        const val MAX_RECORDS = 32
         const val SFI_SHIFT = 3
         const val READ_BY_SFI = 0x04
         const val STATUS_LENGTH = 2

@@ -33,6 +33,15 @@ enum class LoadState {
     AUTHENTICATION_REQUIRED,
     KEY_INVALIDATED,
     NOT_FOUND,
+
+    /** The card couldn't be read for another reason, e.g. damaged data. */
+    FAILED,
+}
+
+/** An error shown in a dialog after saving failed. */
+enum class EditorError {
+    KEY_INVALIDATED,
+    UNEXPECTED,
 }
 
 /** Why the screen asks the user to authenticate. */
@@ -114,7 +123,7 @@ data class CardEditorUiState(
     val isSaving: Boolean = false,
     val pendingAuthentication: AuthPurpose? = null,
     val savedCardId: CardId? = null,
-    val showKeyInvalidatedError: Boolean = false,
+    val error: EditorError? = null,
     val shops: List<Shop> = emptyList(),
     val banks: List<Bank> = emptyList(),
     val countries: List<Country> = emptyList(),

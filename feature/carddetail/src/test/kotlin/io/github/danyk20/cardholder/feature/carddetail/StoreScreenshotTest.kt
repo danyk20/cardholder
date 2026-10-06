@@ -44,7 +44,7 @@ class StoreScreenshotTest {
                     onUnlock = {},
                     fieldActions = FieldActions(onCopy = { _, _ -> }, onRevealCvv = {}, onHideCvv = {}),
                     onCopiedMessageShown = {},
-                    onKeyInvalidatedErrorShown = {},
+                    onErrorShown = {},
                 )
             }
         }

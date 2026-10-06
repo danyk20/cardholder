@@ -30,6 +30,7 @@
     <string name="error_invalid_date">Недійсна дата</string>
 
     <!-- Common actions -->
+    <string name="error_unexpected">Щось пішло не так. Повторіть спробу.</string>
     <string name="action_back">Назад</string>
     <string name="action_cancel">Скасувати</string>
     <string name="action_unlock">Розблокувати</string>

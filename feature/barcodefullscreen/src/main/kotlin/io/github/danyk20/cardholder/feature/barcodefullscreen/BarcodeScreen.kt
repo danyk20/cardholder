@@ -117,6 +117,8 @@ internal fun BarcodeScreen(
 
                 BarcodeUiState.NotFound -> Text(stringResource(UiR.string.card_not_found))
 
+                BarcodeUiState.Failed -> Text(stringResource(UiR.string.error_unexpected))
+
                 // Closing; never show the removed card's code.
                 BarcodeUiState.Removed -> Unit
             }

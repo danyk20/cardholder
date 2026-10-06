@@ -21,6 +21,7 @@
     <string name="error_invalid_length">長さが正しくありません</string>
     <string name="error_invalid_checksum">チェックディジットが一致しません。入力ミスがないか確認してください</string>
     <string name="error_invalid_date">有効な日付ではありません</string>
+    <string name="error_unexpected">問題が発生しました。もう一度お試しください。</string>
     <string name="action_back">戻る</string>
     <string name="action_cancel">キャンセル</string>
     <string name="action_unlock">ロック解除</string>

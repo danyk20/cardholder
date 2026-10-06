@@ -2,7 +2,6 @@ package io.github.danyk20.cardholder.feature.carddetail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
@@ -13,6 +12,7 @@ import io.github.danyk20.cardholder.core.domain.security.SessionLockEvents
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
+import io.github.danyk20.cardholder.core.ui.launchSafely
 import io.github.danyk20.cardholder.feature.carddetail.navigation.CardDetailDestination
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,7 +20,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 
 @HiltViewModel
 @Suppress("TooManyFunctions")
@@ -47,7 +46,7 @@ class CardDetailViewModel @Inject constructor(
     private var authenticatedHere = false
 
     init {
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             cardRepository.observeCard(cardId).distinctUntilChanged().collect { card ->
                 if (card == null) {
                     _uiState.update { it.copy(notFound = true) }
@@ -57,7 +56,7 @@ class CardDetailViewModel @Inject constructor(
                 }
             }
         }
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             sessionLockEvents.events.collect { onSessionLocked() }
         }
     }
@@ -71,7 +70,7 @@ class CardDetailViewModel @Inject constructor(
             _uiState.update { it.copy(pendingAuthentication = AuthAction.REVEAL_CVV) }
             return
         }
-        viewModelScope.launch { revealCvv(requestAuthentication = true) }
+        launchSafely(onError = ::onUnexpectedError) { revealCvv(requestAuthentication = true) }
     }
 
     fun onHideCvv() = _uiState.update { it.copy(cvv = null) }
@@ -82,14 +81,16 @@ class CardDetailViewModel @Inject constructor(
             _uiState.update { it.copy(pendingAuthentication = AuthAction.REMOVE_LOCK) }
             return
         }
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             when (cardRepository.setLocked(cardId, locked)) {
                 is SecureResult.Success -> Unit
 
                 SecureResult.AuthenticationRequired ->
                     _uiState.update { it.copy(pendingAuthentication = AuthAction.REMOVE_LOCK) }
 
-                SecureResult.KeyInvalidated -> _uiState.update { it.copy(showKeyInvalidatedError = true) }
+                SecureResult.KeyInvalidated -> _uiState.update { it.copy(error = DetailError.KEY_INVALIDATED) }
+
+                is SecureResult.Failed -> _uiState.update { it.copy(error = DetailError.UNEXPECTED) }
             }
         }
     }
@@ -98,10 +99,10 @@ class CardDetailViewModel @Inject constructor(
         _uiState.update { it.copy(pendingAuthentication = null) }
         if (!succeeded) return
         authenticatedHere = true
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             when (action) {
                 AuthAction.UNLOCK_DETAILS -> {
-                    val card = _uiState.value.summary?.card ?: return@launch
+                    val card = _uiState.value.summary?.card ?: return@launchSafely
                     loadDetails(card)
                     // Unlocking a locked card reveals everything, including the CVV.
                     if (card.hasCvv) revealCvv(requestAuthentication = false)
@@ -121,10 +122,13 @@ class CardDetailViewModel @Inject constructor(
 
     fun onCopiedMessageShown() = _uiState.update { it.copy(copiedLabel = null) }
 
-    fun onKeyInvalidatedErrorShown() = _uiState.update { it.copy(showKeyInvalidatedError = false) }
+    fun onErrorShown() = _uiState.update { it.copy(error = null) }
+
+    private fun onUnexpectedError(@Suppress("UNUSED_PARAMETER") error: Throwable) =
+        _uiState.update { it.copy(error = DetailError.UNEXPECTED) }
 
     fun onDelete() {
-        viewModelScope.launch {
+        launchSafely(onError = ::onUnexpectedError) {
             cardRepository.delete(cardId)
             _uiState.update { it.copy(isDeleted = true) }
         }
@@ -138,6 +142,7 @@ class CardDetailViewModel @Inject constructor(
                 is SecureResult.Success -> DetailsState.Loaded(result.value)
                 SecureResult.AuthenticationRequired -> DetailsState.Locked
                 SecureResult.KeyInvalidated -> DetailsState.KeyInvalidated
+                is SecureResult.Failed -> DetailsState.Failed
             }
         }
         val promptNow = details == DetailsState.Locked && !promptedOnOpen
@@ -158,7 +163,9 @@ class CardDetailViewModel @Inject constructor(
                 _uiState.update { it.copy(pendingAuthentication = AuthAction.REVEAL_CVV) }
             }
 
-            SecureResult.KeyInvalidated -> _uiState.update { it.copy(showKeyInvalidatedError = true) }
+            SecureResult.KeyInvalidated -> _uiState.update { it.copy(error = DetailError.KEY_INVALIDATED) }
+
+            is SecureResult.Failed -> _uiState.update { it.copy(error = DetailError.UNEXPECTED) }
         }
     }
 

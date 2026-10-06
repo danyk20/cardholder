@@ -21,6 +21,7 @@
     <string name="error_invalid_length">लंबाई गलत है</string>
     <string name="error_invalid_checksum">चेक डिजिट मेल नहीं खाता – कृपया टाइपिंग की गलतियां जांचें</string>
     <string name="error_invalid_date">तारीख मान्य नहीं है</string>
+    <string name="error_unexpected">कोई गड़बड़ी हुई. कृपया फिर से कोशिश करें.</string>
     <string name="action_back">वापस जाएं</string>
     <string name="action_cancel">रद्द करें</string>
     <string name="action_unlock">अनलॉक करें</string>

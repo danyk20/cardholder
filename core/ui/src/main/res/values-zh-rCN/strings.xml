@@ -21,6 +21,7 @@
     <string name="error_invalid_length">长度不正确</string>
     <string name="error_invalid_checksum">校验位不匹配，请检查是否有输入错误</string>
     <string name="error_invalid_date">日期无效</string>
+    <string name="error_unexpected">出了点问题，请重试。</string>
     <string name="action_back">返回</string>
     <string name="action_cancel">取消</string>
     <string name="action_unlock">解锁</string>

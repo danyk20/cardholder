@@ -200,7 +200,7 @@ fun CardEditorRoute(
         onSidesDone = viewModel::onSidesDone,
         onSave = viewModel::onSave,
         onUnlock = viewModel::onRetryAuthentication,
-        onKeyInvalidatedErrorShown = viewModel::onKeyInvalidatedErrorShown,
+        onErrorShown = viewModel::onErrorShown,
     )
 }
 
@@ -215,7 +215,7 @@ internal fun CardEditorScreen(
     onSidesDone: () -> Unit,
     onSave: () -> Unit,
     onUnlock: () -> Unit,
-    onKeyInvalidatedErrorShown: () -> Unit,
+    onErrorShown: () -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -255,6 +255,8 @@ internal fun CardEditorScreen(
 
             LoadState.NOT_FOUND -> Message(stringResource(R.string.editor_not_found), padding)
 
+            LoadState.FAILED -> Message(stringResource(UiR.string.error_unexpected), padding)
+
             LoadState.READY -> when (state.step) {
                 EditorStep.TYPE -> TypeStep(onTypeSelected = onTypeSelected, contentPadding = padding)
 
@@ -270,13 +272,22 @@ internal fun CardEditorScreen(
             }
         }
     }
-    if (state.showKeyInvalidatedError) {
+    state.error?.let { error ->
         AlertDialog(
-            onDismissRequest = onKeyInvalidatedErrorShown,
+            onDismissRequest = onErrorShown,
             confirmButton = {
-                TextButton(onClick = onKeyInvalidatedErrorShown) { Text(stringResource(R.string.editor_ok)) }
+                TextButton(onClick = onErrorShown) { Text(stringResource(R.string.editor_ok)) }
             },
-            text = { Text(stringResource(UiR.string.auth_key_invalidated)) },
+            text = {
+                Text(
+                    stringResource(
+                        when (error) {
+                            EditorError.KEY_INVALIDATED -> UiR.string.auth_key_invalidated
+                            EditorError.UNEXPECTED -> UiR.string.error_unexpected
+                        },
+                    ),
+                )
+            },
             properties = secureDialogProperties(),
         )
     }

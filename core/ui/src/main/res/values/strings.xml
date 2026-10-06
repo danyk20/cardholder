@@ -28,6 +28,16 @@
     <string name="error_invalid_checksum">Check digit doesn\'t match – please check for typos</string>
     <string name="error_invalid_date">Not a valid date</string>
 
+    <!-- Errors -->
+    <string name="error_unexpected">Something went wrong. Please try again.</string>
+
+    <!-- Erasing all data -->
+    <string name="erase_all_data">Delete all data</string>
+    <string name="erase_title">Delete all data?</string>
+    <string name="erase_message">All cards, photos and settings will be permanently deleted from this device. Export a backup first if you might still need them.</string>
+    <string name="erase_acknowledge">I understand this can\'t be undone</string>
+    <string name="erase_confirm">Delete everything</string>
+
     <!-- Common actions -->
     <string name="action_back">Back</string>
     <string name="action_cancel">Cancel</string>

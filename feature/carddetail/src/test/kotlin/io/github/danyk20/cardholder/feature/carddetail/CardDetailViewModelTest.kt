@@ -162,6 +162,14 @@ class CardDetailViewModelTest {
     }
 
     @Test
+    fun `damaged card data shows an error instead of crashing`() {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.damaged += TestCards.visa.id
+
+        assertEquals(DetailsState.Failed, viewModel(TestCards.visa).uiState.value.details)
+    }
+
+    @Test
     fun `copy uses the secure clipboard`() {
         repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
         val viewModel = viewModel(TestCards.loyalty)

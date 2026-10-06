@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Feil lengde</string>
     <string name="error_invalid_checksum">Kontrollsifferet stemmer ikke – sjekk for skrivefeil</string>
     <string name="error_invalid_date">Ugyldig dato</string>
+    <string name="error_unexpected">Noe gikk galt. Prøv igjen.</string>
     <string name="action_back">Tilbake</string>
     <string name="action_cancel">Avbryt</string>
     <string name="action_unlock">Lås opp</string>

@@ -30,6 +30,9 @@ class CardImageFetcher(
         SecureResult.AuthenticationRequired -> throw ProtectedImageException("Authentication required")
 
         SecureResult.KeyInvalidated -> throw ProtectedImageException("Key invalidated")
+
+        // Coil reports fetcher exceptions as an error result; the image is simply not shown.
+        is SecureResult.Failed -> throw ProtectedImageException("Image unreadable")
     }
 
     class Factory(private val repository: CardImageRepository) : Fetcher.Factory<ImageRef> {

@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Λάθος μήκος</string>
     <string name="error_invalid_checksum">Το ψηφίο ελέγχου δεν ταιριάζει – ελέγξτε για τυπογραφικά λάθη</string>
     <string name="error_invalid_date">Μη έγκυρη ημερομηνία</string>
+    <string name="error_unexpected">Παρουσιάστηκε πρόβλημα. Δοκιμάστε ξανά.</string>
     <string name="action_back">Πίσω</string>
     <string name="action_cancel">Ακύρωση</string>
     <string name="action_unlock">Ξεκλείδωμα</string>

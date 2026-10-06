@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">Cardholder</string>
+    <string name="storage_error_title">Your cards can\'t be opened</string>
+    <string name="storage_error_message">This phone no longer has the keys that protect your cards, for example after a security reset. The cards can\'t be recovered on this device. Delete all data to start again, then import a backup if you have one.</string>
 </resources>

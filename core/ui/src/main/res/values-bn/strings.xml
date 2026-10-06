@@ -21,6 +21,7 @@
     <string name="error_invalid_length">দৈর্ঘ্য ভুল</string>
     <string name="error_invalid_checksum">চেক ডিজিট মিলছে না – টাইপের ভুল আছে কিনা দেখে নিন</string>
     <string name="error_invalid_date">তারিখটি সঠিক নয়</string>
+    <string name="error_unexpected">কোনো সমস্যা হয়েছে। আবার চেষ্টা করুন।</string>
     <string name="action_back">ফিরে যান</string>
     <string name="action_cancel">বাতিল করুন</string>
     <string name="action_unlock">আনলক করুন</string>

@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Pogrešna dužina</string>
     <string name="error_invalid_checksum">Kontrolna cifra se ne poklapa – proverite da li ste pogrešno otkucali</string>
     <string name="error_invalid_date">Nevažeći datum</string>
+    <string name="error_unexpected">Došlo je do greške. Pokušajte ponovo.</string>
     <string name="action_back">Nazad</string>
     <string name="action_cancel">Otkaži</string>
     <string name="action_unlock">Otključaj</string>

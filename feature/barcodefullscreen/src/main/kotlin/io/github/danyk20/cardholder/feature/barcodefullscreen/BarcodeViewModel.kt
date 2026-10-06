@@ -2,7 +2,6 @@ package io.github.danyk20.cardholder.feature.barcodefullscreen
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
@@ -13,6 +12,7 @@ import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
+import io.github.danyk20.cardholder.core.ui.launchSafely
 import io.github.danyk20.cardholder.feature.barcodefullscreen.navigation.BarcodeDestination
 import javax.inject.Inject
 import kotlinx.coroutines.Job
@@ -21,7 +21,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.launch
 
 @HiltViewModel
 class BarcodeViewModel @Inject constructor(
@@ -47,7 +46,7 @@ class BarcodeViewModel @Inject constructor(
 
     init {
         observeCard()
-        viewModelScope.launch {
+        launchSafely(onError = { _uiState.value = BarcodeUiState.Failed }) {
             sessionLockEvents.events.collect {
                 // A locked card's code must not stay visible after the app was in the background.
                 authenticatedHere = false
@@ -73,7 +72,7 @@ class BarcodeViewModel @Inject constructor(
      */
     private fun observeCard() {
         observeJob?.cancel()
-        observeJob = viewModelScope.launch {
+        observeJob = launchSafely(onError = { _uiState.value = BarcodeUiState.Failed }) {
             cardRepository.observeCard(cardId).distinctUntilChanged().collectLatest(::show)
         }
     }
@@ -103,6 +102,8 @@ class BarcodeViewModel @Inject constructor(
             SecureResult.AuthenticationRequired -> BarcodeUiState.AuthenticationRequired(fromLock = true)
 
             SecureResult.KeyInvalidated -> BarcodeUiState.KeyInvalidated
+
+            is SecureResult.Failed -> BarcodeUiState.Failed
         }
     }
 }
@@ -124,6 +125,9 @@ sealed interface BarcodeUiState {
     data object KeyInvalidated : BarcodeUiState
 
     data object NotFound : BarcodeUiState
+
+    /** The code couldn't be read, e.g. because the stored data is damaged. */
+    data object Failed : BarcodeUiState
 
     /** The card was deleted, or is no longer a loyalty card, while its code was on screen. */
     data object Removed : BarcodeUiState

@@ -52,7 +52,7 @@ fun rememberCardSideScanner(onResult: (uri: String?) -> Unit, onUnavailable: () 
     }
 }
 
-private fun Context.findActivity(): Activity? {
+internal fun Context.findActivity(): Activity? {
     var current: Context = this
     while (current is ContextWrapper) {
         if (current is Activity) return current

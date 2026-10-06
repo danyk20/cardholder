@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Lungime greșită</string>
     <string name="error_invalid_checksum">Cifra de control nu corespunde – verificați dacă există greșeli de scriere</string>
     <string name="error_invalid_date">Dată nevalidă</string>
+    <string name="error_unexpected">A apărut o eroare. Încercați din nou.</string>
     <string name="action_back">Înapoi</string>
     <string name="action_cancel">Anulați</string>
     <string name="action_unlock">Deblocați</string>

@@ -1,7 +1,12 @@
 package io.github.danyk20.cardholder.core.scanning
 
 import android.Manifest
+import android.content.ActivityNotFoundException
+import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
+import android.provider.Settings
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -22,6 +27,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -44,7 +50,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.domain.repository.ScannedBarcode
@@ -63,11 +71,27 @@ fun BarcodeScanner(onScanned: (ScannedBarcode) -> Unit, onDismiss: () -> Unit, m
             ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED,
         )
     }
-    val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
-        hasPermission = it
+    // After "Don't allow" twice (or "Don't ask again") the system no longer shows the permission
+    // dialog, so the user is sent to the app's settings instead.
+    var permanentlyDenied by remember { mutableStateOf(false) }
+    val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        hasPermission = granted
+        val activity = context.findActivity()
+        permanentlyDenied = !granted && activity != null &&
+            !ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.CAMERA)
     }
     LaunchedEffect(Unit) {
         if (!hasPermission) permissionLauncher.launch(Manifest.permission.CAMERA)
+    }
+    // Picks up a permission granted in the system settings when the user comes back.
+    LifecycleResumeEffect(Unit) {
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) ==
+            PackageManager.PERMISSION_GRANTED
+        ) {
+            hasPermission = true
+            permanentlyDenied = false
+        }
+        onPauseOrDispose {}
     }
     BackHandler(onBack = onDismiss)
     Box(
@@ -79,7 +103,11 @@ fun BarcodeScanner(onScanned: (ScannedBarcode) -> Unit, onDismiss: () -> Unit, m
             CameraPreview(onScanned = onScanned)
             ViewfinderOverlay()
         } else {
-            PermissionRationale(onRequest = { permissionLauncher.launch(Manifest.permission.CAMERA) })
+            PermissionRationale(
+                permanentlyDenied = permanentlyDenied,
+                onRequest = { permissionLauncher.launch(Manifest.permission.CAMERA) },
+                onOpenSettings = { context.openAppSettings() },
+            )
         }
         IconButton(
             onClick = onDismiss,
@@ -99,6 +127,7 @@ private fun CameraPreview(onScanned: (ScannedBarcode) -> Unit) {
     val lifecycleOwner = LocalLifecycleOwner.current
     val currentOnScanned by rememberUpdatedState(onScanned)
     var surfaceRequest by remember { mutableStateOf<SurfaceRequest?>(null) }
+    var cameraFailed by remember { mutableStateOf(false) }
     val executor = remember { Executors.newSingleThreadExecutor() }
     val analyzer =
         remember {
@@ -119,12 +148,29 @@ private fun CameraPreview(onScanned: (ScannedBarcode) -> Unit) {
             .build()
             .apply { setAnalyzer(executor, analyzer) }
         provider.unbindAll()
-        provider.bindToLifecycle(lifecycleOwner, CameraSelector.DEFAULT_BACK_CAMERA, preview, analysis)
+        try {
+            provider.bindToLifecycle(lifecycleOwner, CameraSelector.DEFAULT_BACK_CAMERA, preview, analysis)
+        } catch (@Suppress("TooGenericExceptionCaught") _: RuntimeException) {
+            // No back camera, or it's in use by another app.
+            cameraFailed = true
+            return@LaunchedEffect
+        }
         try {
             awaitCancellation()
         } finally {
             provider.unbind(preview, analysis)
         }
+    }
+    if (cameraFailed) {
+        Text(
+            stringResource(R.string.scanner_camera_unavailable),
+            color = Color.White,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxSize()
+                .wrapContentHeight()
+                .padding(32.dp),
+        )
     }
     surfaceRequest?.let { CameraXViewfinder(surfaceRequest = it, modifier = Modifier.fillMaxSize()) }
 }
@@ -157,7 +203,7 @@ private fun ViewfinderOverlay() {
 }
 
 @Composable
-private fun PermissionRationale(onRequest: () -> Unit) {
+private fun PermissionRationale(permanentlyDenied: Boolean, onRequest: () -> Unit, onOpenSettings: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
@@ -166,8 +212,27 @@ private fun PermissionRationale(onRequest: () -> Unit) {
             .padding(32.dp),
     ) {
         Icon(CardholderIcons.Camera, contentDescription = null, tint = Color.White)
-        Text(stringResource(R.string.scanner_permission_rationale), color = Color.White, textAlign = TextAlign.Center)
-        Button(onClick = onRequest) { Text(stringResource(R.string.scanner_grant_permission)) }
+        Text(
+            stringResource(
+                if (permanentlyDenied) R.string.scanner_permission_denied else R.string.scanner_permission_rationale,
+            ),
+            color = Color.White,
+            textAlign = TextAlign.Center,
+        )
+        if (permanentlyDenied) {
+            Button(onClick = onOpenSettings) { Text(stringResource(R.string.scanner_open_settings)) }
+        } else {
+            Button(onClick = onRequest) { Text(stringResource(R.string.scanner_grant_permission)) }
+        }
+    }
+}
+
+private fun Context.openAppSettings() {
+    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", packageName, null))
+    try {
+        startActivity(intent)
+    } catch (_: ActivityNotFoundException) {
+        // Some customised systems lack this screen; the user can still find it in Settings > Apps.
     }
 }
 

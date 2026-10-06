@@ -11,6 +11,15 @@ sealed interface DetailsState {
     data object Locked : DetailsState
 
     data object KeyInvalidated : DetailsState
+
+    /** The details couldn't be read for another reason, e.g. damaged data. */
+    data object Failed : DetailsState
+}
+
+/** An error shown in a dialog after an action failed. */
+enum class DetailError {
+    KEY_INVALIDATED,
+    UNEXPECTED,
 }
 
 /** What the user is authenticating for. */
@@ -30,7 +39,7 @@ data class CardDetailUiState(
     val pendingAuthentication: AuthAction? = null,
     val copiedLabel: String? = null,
     val isDeleted: Boolean = false,
-    val showKeyInvalidatedError: Boolean = false,
+    val error: DetailError? = null,
 ) {
     override fun toString(): String = "CardDetailUiState(details=${details::class.simpleName}, cvv=██)"
 }

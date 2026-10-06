@@ -21,6 +21,9 @@ sealed interface SaveCardResult {
     data object AuthenticationRequired : SaveCardResult
 
     data object KeyInvalidated : SaveCardResult
+
+    /** Saving failed for another reason, e.g. an unreadable photo or a full disk. */
+    data object Failed : SaveCardResult
 }
 
 /** Normalizes and validates a [CardDraft], then persists it. */
@@ -36,6 +39,7 @@ class SaveCardUseCase @Inject constructor(
             is SecureResult.Success -> SaveCardResult.Saved(result.value)
             SecureResult.AuthenticationRequired -> SaveCardResult.AuthenticationRequired
             SecureResult.KeyInvalidated -> SaveCardResult.KeyInvalidated
+            is SecureResult.Failed -> SaveCardResult.Failed
         }
     }
 

@@ -19,7 +19,8 @@ object BarcodeEncoder {
         MultiFormatWriter().encode(content, format.toZxing(), width, height, hints(format))
     } catch (_: WriterException) {
         null
-    } catch (_: IllegalArgumentException) {
+    } catch (@Suppress("TooGenericExceptionCaught") _: RuntimeException) {
+        // ZXing throws various runtime exceptions for content a symbology can't hold; never crash drawing.
         null
     }
 

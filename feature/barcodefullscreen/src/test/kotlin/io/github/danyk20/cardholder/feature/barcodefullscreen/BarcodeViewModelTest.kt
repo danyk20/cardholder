@@ -127,6 +127,14 @@ class BarcodeViewModelTest {
     }
 
     @Test
+    fun `damaged card data shows an error instead of crashing`() {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+        repository.damaged += TestCards.loyalty.id
+
+        assertEquals(BarcodeUiState.Failed, viewModel(TestCards.loyalty).uiState.value)
+    }
+
+    @Test
     fun `non-loyalty cards are not found`() {
         repository.add(TestCards.visa, TestCards.visaDetails)
 

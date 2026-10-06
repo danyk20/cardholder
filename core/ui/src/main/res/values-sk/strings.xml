@@ -30,6 +30,7 @@
     <string name="error_invalid_date">Neplatný dátum</string>
 
     <!-- Common actions -->
+    <string name="error_unexpected">Niečo sa pokazilo. Skúste to znova.</string>
     <string name="action_back">Späť</string>
     <string name="action_cancel">Zrušiť</string>
     <string name="action_unlock">Odomknúť</string>

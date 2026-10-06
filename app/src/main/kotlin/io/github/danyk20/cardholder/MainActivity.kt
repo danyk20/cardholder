@@ -43,7 +43,11 @@ class MainActivity : FragmentActivity() {
         setContent {
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
             val screenCaptureAllowed by screenCapturePolicy.isAllowed.collectAsStateWithLifecycle()
-            val preferences = (uiState as? MainActivityUiState.Ready)?.preferences ?: return@setContent
+            val preferences = when (val state = uiState) {
+                MainActivityUiState.Loading -> return@setContent
+                is MainActivityUiState.Ready -> state.preferences
+                is MainActivityUiState.StorageUnavailable -> state.preferences
+            }
             CardholderTheme(
                 darkTheme = when (preferences.themeMode) {
                     ThemeMode.SYSTEM -> isSystemInDarkTheme()
@@ -52,8 +56,12 @@ class MainActivity : FragmentActivity() {
                 },
                 dynamicColor = preferences.useDynamicColor,
             ) {
-                CompositionLocalProvider(LocalScreenCaptureAllowed provides screenCaptureAllowed) {
-                    CardholderNavHost()
+                if (uiState is MainActivityUiState.StorageUnavailable) {
+                    StorageErrorScreen(onEraseAllData = viewModel::onEraseAllData)
+                } else {
+                    CompositionLocalProvider(LocalScreenCaptureAllowed provides screenCaptureAllowed) {
+                        CardholderNavHost()
+                    }
                 }
             }
         }

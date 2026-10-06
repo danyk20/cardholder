@@ -25,6 +25,7 @@
     <string name="error_invalid_checksum">Shifra e kontrollit nuk përputhet – kontrollo për gabime shkrimi</string>
     <string name="error_invalid_date">Datë e pavlefshme</string>
 
+    <string name="error_unexpected">Diçka shkoi keq. Provo përsëri.</string>
     <string name="action_back">Prapa</string>
     <string name="action_cancel">Anulo</string>
     <string name="action_unlock">Shkyç</string>

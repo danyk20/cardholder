@@ -25,6 +25,7 @@
     <string name="error_invalid_checksum">رقم التحقق غير مطابق – يُرجى التأكد من عدم وجود أخطاء في الكتابة</string>
     <string name="error_invalid_date">تاريخ غير صالح</string>
 
+    <string name="error_unexpected">حدث خطأ ما. يُرجى المحاولة مرة أخرى.</string>
     <string name="action_back">رجوع</string>
     <string name="action_cancel">إلغاء</string>
     <string name="action_unlock">فتح القفل</string>

@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Tamanho incorreto</string>
     <string name="error_invalid_checksum">O dígito verificador não confere – verifique se há erros de digitação</string>
     <string name="error_invalid_date">Data inválida</string>
+    <string name="error_unexpected">Algo deu errado. Tente novamente.</string>
     <string name="action_back">Voltar</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_unlock">Desbloquear</string>

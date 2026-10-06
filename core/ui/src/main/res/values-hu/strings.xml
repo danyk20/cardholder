@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Hibás hossz</string>
     <string name="error_invalid_checksum">Az ellenőrző számjegy nem egyezik – ellenőrizze, nincs-e elírás</string>
     <string name="error_invalid_date">Érvénytelen dátum</string>
+    <string name="error_unexpected">Hiba történt. Próbálja újra.</string>
     <string name="action_back">Vissza</string>
     <string name="action_cancel">Mégse</string>
     <string name="action_unlock">Feloldás</string>

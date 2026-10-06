@@ -30,6 +30,7 @@
     <string name="error_invalid_date">Kein gültiges Datum</string>
 
     <!-- Common actions -->
+    <string name="error_unexpected">Etwas ist schiefgelaufen. Bitte noch einmal versuchen.</string>
     <string name="action_back">Zurück</string>
     <string name="action_cancel">Abbrechen</string>
     <string name="action_unlock">Entsperren</string>

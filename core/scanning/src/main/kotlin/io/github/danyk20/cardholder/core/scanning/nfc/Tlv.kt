@@ -6,18 +6,24 @@ internal class Tlv(val tag: Int, val value: ByteArray, val children: List<Tlv>) 
     fun find(tag: Int): Tlv? = if (this.tag == tag) this else children.firstNotNullOfOrNull { it.find(tag) }
 
     companion object {
+        /** EMV templates nest a few levels at most; deeper data is malformed and not descended into. */
+        private const val MAX_DEPTH = 8
+
         /** Parses all objects in [data]; malformed trailing data is ignored. */
-        fun parse(data: ByteArray): List<Tlv> {
+        fun parse(data: ByteArray): List<Tlv> = parse(data, depth = 0)
+
+        private fun parse(data: ByteArray, depth: Int): List<Tlv> {
             val cursor = ByteCursor(data)
-            return generateSequence { cursor.readObject() }.toList()
+            return generateSequence { cursor.readObject(depth) }.toList()
         }
 
-        private fun ByteCursor.readObject(): Tlv? {
+        private fun ByteCursor.readObject(depth: Int): Tlv? {
             // Padding between objects is allowed by EMV.
             while (hasMore() && skipPadding()) Unit
             val tag = readTag() ?: return null
             val value = readLength()?.let(::read) ?: return null
-            return Tlv(tag.value, value, if (tag.isConstructed) parse(value) else emptyList())
+            val children = if (tag.isConstructed && depth < MAX_DEPTH) parse(value, depth + 1) else emptyList()
+            return Tlv(tag.value, value, children)
         }
     }
 }

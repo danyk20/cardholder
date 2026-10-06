@@ -104,7 +104,7 @@ fun CardDetailRoute(
             )
         },
         onCopiedMessageShown = viewModel::onCopiedMessageShown,
-        onKeyInvalidatedErrorShown = viewModel::onKeyInvalidatedErrorShown,
+        onErrorShown = viewModel::onErrorShown,
     )
 }
 
@@ -120,7 +120,7 @@ internal fun CardDetailScreen(
     onUnlock: () -> Unit,
     fieldActions: FieldActions,
     onCopiedMessageShown: () -> Unit,
-    onKeyInvalidatedErrorShown: () -> Unit,
+    onErrorShown: () -> Unit,
 ) {
     SecureScreen()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -175,6 +175,7 @@ internal fun CardDetailScreen(
                 is DetailsState.Loaded -> DetailFields(card, summary.subtitle, details.details, state.cvv, fieldActions)
                 DetailsState.Locked -> LockedContent(stringResource(R.string.detail_locked_details), onUnlock)
                 DetailsState.KeyInvalidated -> LockedContent(stringResource(UiR.string.auth_key_invalidated), null)
+                DetailsState.Failed -> LockedContent(stringResource(UiR.string.error_unexpected), null)
             }
             HorizontalDivider()
             LockSwitch(isLocked = card.isLocked, canProtect = state.canProtect, onLockedChange = onLockedChange)
@@ -197,12 +198,21 @@ internal fun CardDetailScreen(
             properties = secureDialogProperties(),
         )
     }
-    if (state.showKeyInvalidatedError) {
+    state.error?.let { error ->
         AlertDialog(
-            onDismissRequest = onKeyInvalidatedErrorShown,
-            text = { Text(stringResource(UiR.string.auth_key_invalidated)) },
+            onDismissRequest = onErrorShown,
+            text = {
+                Text(
+                    stringResource(
+                        when (error) {
+                            DetailError.KEY_INVALIDATED -> UiR.string.auth_key_invalidated
+                            DetailError.UNEXPECTED -> UiR.string.error_unexpected
+                        },
+                    ),
+                )
+            },
             confirmButton = {
-                TextButton(onClick = onKeyInvalidatedErrorShown) { Text(stringResource(R.string.detail_ok)) }
+                TextButton(onClick = onErrorShown) { Text(stringResource(R.string.detail_ok)) }
             },
         )
     }

@@ -21,6 +21,7 @@
     <string name="error_invalid_length">طول نادرست</string>
     <string name="error_invalid_checksum">رقم کنترلی مطابقت ندارد – لطفاً اشتباه تایپی را بررسی کنید</string>
     <string name="error_invalid_date">تاریخ معتبر نیست</string>
+    <string name="error_unexpected">مشکلی پیش آمد. لطفاً دوباره امتحان کنید.</string>
     <string name="action_back">بازگشت</string>
     <string name="action_cancel">لغو</string>
     <string name="action_unlock">باز کردن قفل</string>

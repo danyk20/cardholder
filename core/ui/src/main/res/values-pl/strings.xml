@@ -30,6 +30,7 @@
     <string name="error_invalid_date">Nieprawidłowa data</string>
 
     <!-- Common actions -->
+    <string name="error_unexpected">Coś poszło nie tak. Spróbuj ponownie.</string>
     <string name="action_back">Wstecz</string>
     <string name="action_cancel">Anuluj</string>
     <string name="action_unlock">Odblokuj</string>

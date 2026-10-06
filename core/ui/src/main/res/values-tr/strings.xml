@@ -25,6 +25,7 @@
     <string name="error_invalid_checksum">Kontrol basamağı eşleşmiyor – lütfen yazım hatası olup olmadığını kontrol edin</string>
     <string name="error_invalid_date">Geçerli bir tarih değil</string>
 
+    <string name="error_unexpected">Bir sorun oluştu. Lütfen tekrar deneyin.</string>
     <string name="action_back">Geri</string>
     <string name="action_cancel">İptal</string>
     <string name="action_unlock">Kilidi aç</string>

@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Fel längd</string>
     <string name="error_invalid_checksum">Kontrollsiffran stämmer inte – kontrollera att du har skrivit rätt</string>
     <string name="error_invalid_date">Ogiltigt datum</string>
+    <string name="error_unexpected">Något gick fel. Försök igen.</string>
     <string name="action_back">Tillbaka</string>
     <string name="action_cancel">Avbryt</string>
     <string name="action_unlock">Lås upp</string>

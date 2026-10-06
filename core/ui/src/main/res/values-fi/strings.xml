@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Väärä pituus</string>
     <string name="error_invalid_checksum">Tarkistusnumero ei täsmää – tarkista kirjoitusvirheet</string>
     <string name="error_invalid_date">Virheellinen päivämäärä</string>
+    <string name="error_unexpected">Jokin meni vikaan. Yritä uudelleen.</string>
     <string name="action_back">Takaisin</string>
     <string name="action_cancel">Peruuta</string>
     <string name="action_unlock">Avaa lukitus</string>

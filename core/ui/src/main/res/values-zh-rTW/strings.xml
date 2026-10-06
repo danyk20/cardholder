@@ -21,6 +21,7 @@
     <string name="error_invalid_length">長度不正確</string>
     <string name="error_invalid_checksum">檢查碼不符，請檢查是否有輸入錯誤</string>
     <string name="error_invalid_date">日期無效</string>
+    <string name="error_unexpected">發生錯誤，請再試一次。</string>
     <string name="action_back">返回</string>
     <string name="action_cancel">取消</string>
     <string name="action_unlock">解鎖</string>

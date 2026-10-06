@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Vale pikkus</string>
     <string name="error_invalid_checksum">Kontrollnumber ei klapi – kontrollige, kas on trükivigu</string>
     <string name="error_invalid_date">Kehtetu kuupäev</string>
+    <string name="error_unexpected">Midagi läks valesti. Proovige uuesti.</string>
     <string name="action_back">Tagasi</string>
     <string name="action_cancel">Tühista</string>
     <string name="action_unlock">Ava lukk</string>

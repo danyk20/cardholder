@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Longueur incorrecte</string>
     <string name="error_invalid_checksum">Le chiffre de contrôle ne correspond pas – vérifiez qu\'il n\'y a pas de faute de frappe</string>
     <string name="error_invalid_date">Date non valide</string>
+    <string name="error_unexpected">Un problème est survenu. Veuillez réessayer.</string>
     <string name="action_back">Retour</string>
     <string name="action_cancel">Annuler</string>
     <string name="action_unlock">Déverrouiller</string>

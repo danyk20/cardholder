@@ -21,6 +21,7 @@
     <string name="error_invalid_length">Urefu si sahihi</string>
     <string name="error_invalid_checksum">Tarakimu ya ukaguzi hailingani – tafadhali kagua makosa ya kuandika</string>
     <string name="error_invalid_date">Si tarehe sahihi</string>
+    <string name="error_unexpected">Hitilafu fulani imetokea. Tafadhali jaribu tena.</string>
     <string name="action_back">Rudi</string>
     <string name="action_cancel">Ghairi</string>
     <string name="action_unlock">Fungua</string>

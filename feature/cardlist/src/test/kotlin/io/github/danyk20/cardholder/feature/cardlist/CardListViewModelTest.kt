@@ -62,6 +62,19 @@ class CardListViewModelTest {
     }
 
     @Test
+    fun `a damaged loyalty card doesn't break the list`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+        repository.damaged += TestCards.loyalty.id
+
+        viewModel.uiState.test {
+            val state = awaitSuccess()
+            assertEquals(2, state.cards.size)
+            assertEquals(null, state.cards.single { it.summary.card.id == TestCards.loyalty.id }.code)
+        }
+    }
+
+    @Test
     fun `filters and searches`() = runTest {
         repository.add(TestCards.visa, TestCards.visaDetails)
         repository.add(TestCards.loyalty, TestCards.loyaltyDetails)

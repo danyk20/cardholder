@@ -10,6 +10,7 @@ import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesReposi
 import io.github.danyk20.cardholder.core.domain.security.ScreenCapturePolicy
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
+import io.github.danyk20.cardholder.core.ui.launchSafely
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -17,7 +18,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
@@ -36,11 +36,15 @@ class SettingsViewModel @Inject constructor(
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), SettingsUiState())
 
     fun onThemeModeChange(mode: ThemeMode) {
-        viewModelScope.launch { preferencesRepository.setThemeMode(mode) }
+        launchSafely(onError = {
+            backup.value = BackupUiState(result = BackupResult.Failed(it))
+        }) { preferencesRepository.setThemeMode(mode) }
     }
 
     fun onDynamicColorChange(enabled: Boolean) {
-        viewModelScope.launch { preferencesRepository.setDynamicColor(enabled) }
+        launchSafely(onError = {
+            backup.value = BackupUiState(result = BackupResult.Failed(it))
+        }) { preferencesRepository.setDynamicColor(enabled) }
     }
 
     /** Allows screenshots of card data until the app leaves the screen. */
@@ -66,7 +70,7 @@ class SettingsViewModel @Inject constructor(
             return
         }
         backup.update { it.copy(inProgress = operation, result = null) }
-        viewModelScope.launch {
+        launchSafely(onError = { backup.value = BackupUiState(result = BackupResult.Failed(it)) }) {
             val result = try {
                 block()
             } finally {
