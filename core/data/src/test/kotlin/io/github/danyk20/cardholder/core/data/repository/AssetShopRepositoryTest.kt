@@ -40,6 +40,21 @@ class AssetShopRepositoryTest {
     }
 
     @Test
+    fun `bank catalogue is valid and its logos come from allowed hosts`() = runTest {
+        val banks = AssetBankRepository(
+            { File("src/main/assets/banks.json").inputStream() },
+            StandardTestDispatcher(testScheduler),
+        ).banks()
+
+        assertTrue(banks.size >= 140)
+        assertEquals(banks.size, banks.map { it.id }.toSet().size, "bank ids must be unique")
+        banks.mapNotNull { it.logo }.forEach { logo ->
+            assertTrue(HttpsLogoDownloader.isAllowed(logo.url), logo.url)
+            if (logo.license.startsWith("CC BY")) assertTrue(!logo.attribution.isNullOrBlank(), logo.url)
+        }
+    }
+
+    @Test
     fun `finds a shop by id`() = runTest {
         val shop = repository(StandardTestDispatcher(testScheduler)).shop("migros")
 

@@ -122,7 +122,7 @@ class FakeCardRepository : CardRepository {
     }
 
     private fun CardContent.toInfo(): CardInfo = when (this) {
-        is CardContent.Bank -> CardInfo.Bank(CardNetwork.detect(details.number))
+        is CardContent.Bank -> CardInfo.Bank(CardNetwork.detect(details.number), issuer)
         is CardContent.Id -> CardInfo.Id(country)
         is CardContent.Loyalty -> CardInfo.Loyalty(shop, format)
     }

@@ -2,9 +2,9 @@ package io.github.danyk20.cardholder.core.testing.repository
 
 import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandLogo
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.Shop
-import io.github.danyk20.cardholder.core.model.ShopLogo
 
 const val MIGROS_LOGO_URL = "https://upload.wikimedia.org/migros.png"
 
@@ -16,7 +16,7 @@ class FakeShopRepository(
             brandColor = 0xFFFF6600,
             countries = setOf(CountryCode.of("CH")!!),
             defaultFormat = BarcodeFormat.EAN_13,
-            logo = ShopLogo(MIGROS_LOGO_URL, "Public domain", "https://commons.wikimedia.org/wiki/File:Migros.svg"),
+            logo = BrandLogo(MIGROS_LOGO_URL, "Public domain", "https://commons.wikimedia.org/wiki/File:Migros.svg"),
         ),
         Shop("lidl", "Lidl Plus", 0xFF0050AA, emptySet(), BarcodeFormat.QR_CODE),
     ),

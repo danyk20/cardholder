@@ -39,10 +39,10 @@ import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.theme.CardAccentColors
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
-import io.github.danyk20.cardholder.core.model.ShopRef
 import io.github.danyk20.cardholder.core.ui.message
 import io.github.danyk20.cardholder.feature.cardeditor.CardEditorUiState
 import io.github.danyk20.cardholder.feature.cardeditor.R
@@ -76,13 +76,16 @@ internal fun DetailsForm(
             .widthIn(max = 600.dp),
     ) {
         when (state.type) {
-            CardType.BANK -> BankFields(state.bank, state.errors, state.canProtect, actions.bank)
+            CardType.BANK -> {
+                BankFields(state.bank, state.banks, state.errors, state.canProtect, actions.bank)
+                LogoRow(state.logo, state.officialLogo != null, state.isDownloadingLogo, actions.logo)
+            }
 
             CardType.ID -> IdFields(state.id, state.countries, state.errors, actions.id)
 
             CardType.LOYALTY -> {
                 LoyaltyFields(state.loyalty, state.shops, state.errors, actions.loyalty)
-                LogoRow(state.logo, state.selectedShop, state.isDownloadingLogo, actions.logo)
+                LogoRow(state.logo, state.officialLogo != null, state.isDownloadingLogo, actions.logo)
             }
         }
         OutlinedTextField(
@@ -98,7 +101,7 @@ internal fun DetailsForm(
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
         )
-        if (state.loyalty.shop !is ShopRef.Known || state.type != CardType.LOYALTY) {
+        if (state.loyalty.shop !is BrandRef.Known || state.type != CardType.LOYALTY) {
             ColorPicker(selected = state.color, onSelect = actions.onColorChange)
         }
         Text(stringResource(R.string.editor_photos), style = MaterialTheme.typography.titleSmall)

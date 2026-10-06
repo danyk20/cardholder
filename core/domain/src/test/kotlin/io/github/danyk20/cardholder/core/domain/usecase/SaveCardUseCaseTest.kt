@@ -7,10 +7,10 @@ import io.github.danyk20.cardholder.core.domain.validation.CardDraftValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardInfo
-import io.github.danyk20.cardholder.core.model.ShopRef
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import java.time.YearMonth
@@ -77,7 +77,7 @@ class SaveCardUseCaseTest {
             title = "Gym",
             color = CardColor.GREEN,
             content = CardContent.Loyalty(
-                shop = ShopRef.Custom("Gym"),
+                shop = BrandRef.Custom("Gym"),
                 format = BarcodeFormat.CODE_39,
                 details = CardDetails.Loyalty(" abc123 "),
             ),

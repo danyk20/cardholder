@@ -29,6 +29,7 @@ import io.github.danyk20.cardholder.core.designsystem.component.CardSurface
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.theme.CardFaceColors
 import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
+import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.ImageRef
 
@@ -46,6 +47,7 @@ fun CardFace(
     modifier: Modifier = Modifier,
     frontImage: ImageRef? = null,
     logo: ImageRef? = null,
+    network: CardNetwork? = null,
     onClick: (() -> Unit)? = null,
     onLongClick: (() -> Unit)? = null,
 ) {
@@ -90,24 +92,27 @@ fun CardFace(
                 Box(Modifier.weight(1f))
                 if (isLocked) LockBadge()
             }
-            Column {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = contentColor,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-                if (subtitle.isNotEmpty() && subtitle != title) {
+            Row(verticalAlignment = Alignment.Bottom) {
+                Column(Modifier.weight(1f)) {
                     Text(
-                        text = subtitle,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = contentColor.copy(alpha = 0.85f),
+                        text = title,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        color = contentColor,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
+                    if (subtitle.isNotEmpty() && subtitle != title) {
+                        Text(
+                            text = subtitle,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = contentColor.copy(alpha = 0.85f),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    }
                 }
+                network?.let { NetworkLogo(it, Modifier.padding(start = 8.dp)) }
             }
         }
     }

@@ -5,11 +5,12 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Modifier
 import io.github.danyk20.cardholder.core.designsystem.theme.CardAccentColors
 import io.github.danyk20.cardholder.core.designsystem.theme.CardFaceColors
+import io.github.danyk20.cardholder.core.domain.repository.BankRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardInfo
-import io.github.danyk20.cardholder.core.model.ShopRef
 import javax.inject.Inject
 
 /** A [Card] with everything needed to render its face. */
@@ -28,13 +29,19 @@ data class CardSummary(
 /** Resolves shop colours and localized country names for cards. */
 class CardSummaryFactory @Inject constructor(
     private val shopRepository: ShopRepository,
+    private val bankRepository: BankRepository,
     private val countryRepository: CountryRepository,
 ) {
     suspend fun summarize(cards: List<Card>): List<CardSummary> {
         val shops = shopRepository.shops().associateBy { it.id }
+        val banks = bankRepository.banks().associateBy { it.id }
         return cards.map { card ->
             when (val info = card.info) {
-                is CardInfo.Bank -> CardSummary(card, info.network.displayName)
+                is CardInfo.Bank -> CardSummary(
+                    card = card,
+                    subtitle = info.issuer?.name ?: info.network.displayName,
+                    brandColor = (info.issuer as? BrandRef.Known)?.let { banks[it.id]?.brandColor },
+                )
 
                 is CardInfo.Id -> CardSummary(
                     card = card,
@@ -44,7 +51,7 @@ class CardSummaryFactory @Inject constructor(
                 is CardInfo.Loyalty -> CardSummary(
                     card = card,
                     subtitle = info.shop.name,
-                    brandColor = (info.shop as? ShopRef.Known)?.let { shops[it.id]?.brandColor },
+                    brandColor = (info.shop as? BrandRef.Known)?.let { shops[it.id]?.brandColor },
                 )
             }
         }
@@ -69,6 +76,7 @@ fun CardFace(
         isLocked = card.isLocked,
         frontImage = card.sides.front,
         logo = card.logo,
+        network = (card.info as? CardInfo.Bank)?.network,
         modifier = modifier,
         onClick = onClick,
         onLongClick = onLongClick,

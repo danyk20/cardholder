@@ -1,4 +1,4 @@
-# 7. Official shop logos on request
+# 7. Official shop and bank logos on request
 
 - Status: accepted
 - Date: 2026-10-06
@@ -22,3 +22,10 @@ Apache-licensed repository raises copyright and trademark questions, and the app
 ## Consequences
 The app is no longer "no network at all", and the privacy statements say so precisely. Logos stay
 trademarks of their owners and are only used to identify the shop a card belongs to.
+
+## Addendum: banks and card networks
+- A bank catalogue (145 banks, 128 with a freely licensed logo) uses the same mechanism: link, licence and
+  source page in `banks.json`, download only on *Use official logo*.
+- The eight card network logos (Visa, Mastercard, American Express, Maestro, Discover, JCB, UnionPay,
+  Diners Club) are **public domain** and small, so they are bundled as drawables and shown automatically,
+  offline, based on the detected network. Credits for all logos are in [LOGOS.md](../LOGOS.md).

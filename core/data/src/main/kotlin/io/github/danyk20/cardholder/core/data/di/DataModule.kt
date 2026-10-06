@@ -12,6 +12,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.github.danyk20.cardholder.core.data.backup.OfflineBackupRepository
+import io.github.danyk20.cardholder.core.data.repository.AssetBankRepository
 import io.github.danyk20.cardholder.core.data.repository.AssetShopRepository
 import io.github.danyk20.cardholder.core.data.repository.DataStoreUserPreferencesRepository
 import io.github.danyk20.cardholder.core.data.repository.HttpsLogoDownloader
@@ -21,6 +22,7 @@ import io.github.danyk20.cardholder.core.data.repository.OfflineCardRepository
 import io.github.danyk20.cardholder.core.domain.di.ApplicationScope
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
+import io.github.danyk20.cardholder.core.domain.repository.BankRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
@@ -39,6 +41,9 @@ import kotlinx.coroutines.SupervisorJob
 internal interface DataModule {
     @Binds
     fun bindsCardRepository(impl: OfflineCardRepository): CardRepository
+
+    @Binds
+    fun bindsBankRepository(impl: AssetBankRepository): BankRepository
 
     @Binds
     fun bindsBackupRepository(impl: OfflineBackupRepository): BackupRepository

@@ -5,6 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
+import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
@@ -34,7 +35,7 @@ class CardDetailViewModelTest {
     private fun viewModel(card: Card) = CardDetailViewModel(
         savedStateHandle = SavedStateHandle(mapOf("cardId" to card.id.value)),
         cardRepository = repository,
-        summaryFactory = CardSummaryFactory(FakeShopRepository(), FakeCountryRepository()),
+        summaryFactory = CardSummaryFactory(FakeShopRepository(), FakeBankRepository(), FakeCountryRepository()),
         deviceSecurity = FakeDeviceSecurity(),
         clipboard = clipboard,
         sessionLockEvents = sessionLock,

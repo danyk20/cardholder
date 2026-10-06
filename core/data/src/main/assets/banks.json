@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "365-bank",
+    "name": "365.bank",
+    "brandColor": "#00A0E2",
+    "countries": [
+      "SK"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/365.bank.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:365.bank.png"
+    }
+  },
+  {
+    "id": "abn-amro",
+    "name": "ABN AMRO",
+    "brandColor": "#00857A",
+    "countries": [
+      "NL"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/ABN_AMRO_logo.svg/960px-ABN_AMRO_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:ABN_AMRO_logo.svg"
+    }
+  },
+  {
+    "id": "aib",
+    "name": "AIB",
+    "brandColor": "#6F2C91",
+    "countries": [
+      "IE"
+    ]
+  },
+  {
+    "id": "air-bank",
+    "name": "Air Bank",
+    "brandColor": "#00A651",
+    "countries": [
+      "CZ"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/AB_Logo_200percent_PPF_RGB.png/960px-AB_Logo_200percent_PPF_RGB.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:AB_Logo_200percent_PPF_RGB.png"
+    }
+  },
+  {
+    "id": "ally",
+    "name": "Ally Bank",
+    "brandColor": "#650360",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Ally_Financial.svg/960px-Ally_Financial.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Ally_Financial.svg"
+    }
+  },
+  {
+    "id": "alpha-bank",
+    "name": "Alpha Bank",
+    "brandColor": "#003C71",
+    "countries": [
+      "GR",
+      "CY"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Alpha_Bank_logo.svg/960px-Alpha_Bank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Alpha_Bank_logo.svg"
+    }
+  },
+  {
+    "id": "american-express",
+    "name": "American Express",
+    "brandColor": "#006FCF",
+    "countries": [],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/American_Express_logo.png",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:American_Express_logo.png"
+    }
+  },
+  {
+    "id": "banca-transilvania",
+    "name": "Banca Transilvania",
+    "brandColor": "#00468C",
+    "countries": [
+      "RO"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Banca_Transilvania_logo.svg/960px-Banca_Transilvania_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Banca_Transilvania_logo.svg"
+    }
+  },
+  {
+    "id": "banco-bpm",
+    "name": "Banco BPM",
+    "brandColor": "#003C71",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "id": "sabadell",
+    "name": "Banco Sabadell",
+    "brandColor": "#0066B3",
+    "countries": [
+      "ES"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Banco-Sabadell-Logo.svg/960px-Banco-Sabadell-Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Banco-Sabadell-Logo.svg"
+    }
+  },
+  {
+    "id": "bank-austria",
+    "name": "Bank Austria",
+    "brandColor": "#E30613",
+    "countries": [
+      "AT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Bank_Austria_logo.svg/960px-Bank_Austria_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bank_Austria_logo.svg"
+    }
+  },
+  {
+    "id": "bank-cler",
+    "name": "Bank Cler",
+    "brandColor": "#003C71",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Bank_Cler_logo.svg/960px-Bank_Cler_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bank_Cler_logo.svg"
+    }
+  },
+  {
+    "id": "bank-of-america",
+    "name": "Bank of America",
+    "brandColor": "#E31837",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Bank_of_America_logo_%281998%E2%80%932018%29.svg/960px-Bank_of_America_logo_%281998%E2%80%932018%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bank_of_America_logo_(1998%E2%80%932018).svg"
+    }
+  },
+  {
+    "id": "bank-of-cyprus",
+    "name": "Bank of Cyprus",
+    "brandColor": "#0066B3",
+    "countries": [
+      "CY"
+    ]
+  },
+  {
+    "id": "bank-of-ireland",
+    "name": "Bank of Ireland",
+    "brandColor": "#0066B3",
+    "countries": [
+      "IE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Bank_of_Ireland_Logo_2020.svg/960px-Bank_of_Ireland_Logo_2020.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bank_of_Ireland_Logo_2020.svg"
+    }
+  },
+  {
+    "id": "bov",
+    "name": "Bank of Valletta",
+    "brandColor": "#E30613",
+    "countries": [
+      "MT"
+    ]
+  },
+  {
+    "id": "pekao",
+    "name": "Bank Pekao",
+    "brandColor": "#E30613",
+    "countries": [
+      "PL"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Bank_Pekao_SA_Logo_%282017%29.svg/960px-Bank_Pekao_SA_Logo_%282017%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bank_Pekao_SA_Logo_(2017).svg"
+    }
+  },
+  {
+    "id": "creditas",
+    "name": "Banka CREDITAS",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "CZ"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Skupina_CREDITAS.png/960px-Skupina_CREDITAS.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Skupina_CREDITAS.png",
+      "attribution": "CREDITAS Group"
+    }
+  },
+  {
+    "id": "bankinter",
+    "name": "Bankinter",
+    "brandColor": "#FF6600",
+    "countries": [
+      "ES",
+      "PT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Bankinter.svg/960px-Bankinter.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bankinter.svg"
+    }
+  },
+  {
+    "id": "bcge",
+    "name": "Banque Cantonale de Genève",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ]
+  },
+  {
+    "id": "bcv",
+    "name": "Banque Cantonale Vaudoise",
+    "brandColor": "#00843D",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Banque_Cantonale_Vaudoise_logo.svg/960px-Banque_Cantonale_Vaudoise_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Banque_Cantonale_Vaudoise_logo.svg"
+    }
+  },
+  {
+    "id": "banque-populaire",
+    "name": "Banque Populaire",
+    "brandColor": "#0066B3",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Banque_Populaire_2018_logo.svg/960px-Banque_Populaire_2018_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Banque_Populaire_2018_logo.svg"
+    }
+  },
+  {
+    "id": "barclays",
+    "name": "Barclays",
+    "brandColor": "#00AEEF",
+    "countries": [
+      "GB"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Barclays-Logo.svg/960px-Barclays-Logo.svg.png",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Barclays-Logo.svg"
+    }
+  },
+  {
+    "id": "bkb",
+    "name": "Basler Kantonalbank",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Logo_Basler_Kantonalbank_ab_2016.svg/960px-Logo_Basler_Kantonalbank_ab_2016.svg.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Basler_Kantonalbank_ab_2016.svg",
+      "attribution": "Jürgen Kübler, BKB"
+    }
+  },
+  {
+    "id": "bawag",
+    "name": "BAWAG P.S.K.",
+    "brandColor": "#E30613",
+    "countries": [
+      "AT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Logo_Bawag_PSK_2005.svg/960px-Logo_Bawag_PSK_2005.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Bawag_PSK_2005.svg"
+    }
+  },
+  {
+    "id": "bbva",
+    "name": "BBVA",
+    "brandColor": "#004481",
+    "countries": [
+      "ES",
+      "MX",
+      "IT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/BBVA_2019.svg/960px-BBVA_2019.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:BBVA_2019.svg"
+    }
+  },
+  {
+    "id": "bcr",
+    "name": "BCR",
+    "brandColor": "#0066B3",
+    "countries": [
+      "RO"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Banca_Comercial%C4%83_Rom%C3%A2n%C4%83_logo.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Banca_Comercial%C4%83_Rom%C3%A2n%C4%83_logo.png"
+    }
+  },
+  {
+    "id": "belfius",
+    "name": "Belfius",
+    "brandColor": "#E30613",
+    "countries": [
+      "BE"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Belfius-Logo_M%C3%A4rz_2012.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Belfius-Logo_M%C3%A4rz_2012.png"
+    }
+  },
+  {
+    "id": "bekb",
+    "name": "Berner Kantonalbank",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Logo_der_Berner_Kantonalbank.svg/960px-Logo_der_Berner_Kantonalbank.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_der_Berner_Kantonalbank.svg"
+    }
+  },
+  {
+    "id": "bnp-paribas",
+    "name": "BNP Paribas",
+    "brandColor": "#00915A",
+    "countries": [
+      "FR",
+      "BE",
+      "IT",
+      "LU",
+      "PL"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Logo_BNP_Paribas_2016.svg/960px-Logo_BNP_Paribas_2016.svg.png",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_BNP_Paribas_2016.svg",
+      "attribution": "BNP Paribas Groupe SA"
+    }
+  },
+  {
+    "id": "boursobank",
+    "name": "BoursoBank",
+    "brandColor": "#E5007D",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Logo_Boursorama.svg/960px-Logo_Boursorama.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Boursorama.svg"
+    }
+  },
+  {
+    "id": "bper",
+    "name": "BPER Banca",
+    "brandColor": "#00843D",
+    "countries": [
+      "IT"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Logo_BPER_Banca.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_BPER_Banca.png",
+      "attribution": "pistilla"
+    }
+  },
+  {
+    "id": "brd",
+    "name": "BRD",
+    "brandColor": "#E9041E",
+    "countries": [
+      "RO"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/BRD_logo.svg/960px-BRD_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:BRD_logo.svg"
+    }
+  },
+  {
+    "id": "bunq",
+    "name": "bunq",
+    "brandColor": "#3394D7",
+    "countries": [],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Bunq_%28bank%29_company_logo_2017.svg/960px-Bunq_%28bank%29_company_logo_2017.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Bunq_(bank)_company_logo_2017.svg"
+    }
+  },
+  {
+    "id": "c24",
+    "name": "C24 Bank",
+    "brandColor": "#003C71",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/C24_Bank_-_Logo.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:C24_Bank_-_Logo.png"
+    }
+  },
+  {
+    "id": "caisse-epargne",
+    "name": "Caisse d'Épargne",
+    "brandColor": "#E30613",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Team_Caisse_d%E2%80%99Epargne.svg/960px-Team_Caisse_d%E2%80%99Epargne.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Team_Caisse_d%E2%80%99Epargne.svg"
+    }
+  },
+  {
+    "id": "cgd",
+    "name": "Caixa Geral de Depósitos",
+    "brandColor": "#0066B3",
+    "countries": [
+      "PT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Caixa_Geral_de_Dep%C3%B3sitos_blue_logo.svg/960px-Caixa_Geral_de_Dep%C3%B3sitos_blue_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Caixa_Geral_de_Dep%C3%B3sitos_blue_logo.svg"
+    }
+  },
+  {
+    "id": "caixabank",
+    "name": "CaixaBank",
+    "brandColor": "#007EAE",
+    "countries": [
+      "ES",
+      "PT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_CaixaBank.svg/960px-Logo_CaixaBank.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_CaixaBank.svg"
+    }
+  },
+  {
+    "id": "capital-one",
+    "name": "Capital One",
+    "brandColor": "#004977",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Capital_One_logo.svg/960px-Capital_One_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Capital_One_logo.svg"
+    }
+  },
+  {
+    "id": "cembra",
+    "name": "Cembra",
+    "brandColor": "#0066B3",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Cembra_Logo_RGB.svg/960px-Cembra_Logo_RGB.svg.png",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cembra_Logo_RGB.svg"
+    }
+  },
+  {
+    "id": "schwab",
+    "name": "Charles Schwab",
+    "brandColor": "#00A0DF",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Charles_Schwab_Corporation_logo.svg/960px-Charles_Schwab_Corporation_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Charles_Schwab_Corporation_logo.svg"
+    }
+  },
+  {
+    "id": "chase",
+    "name": "Chase",
+    "brandColor": "#117ACA",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Chase_logo_2007.svg/960px-Chase_logo_2007.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Chase_logo_2007.svg"
+    }
+  },
+  {
+    "id": "chime",
+    "name": "Chime",
+    "brandColor": "#1EC677",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Chime_company_logo.svg/960px-Chime_company_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Chime_company_logo.svg"
+    }
+  },
+  {
+    "id": "cic",
+    "name": "CIC",
+    "brandColor": "#0066B3",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Cr%C3%A9dit_Industriel_et_Commercial_Logo.svg/960px-Cr%C3%A9dit_Industriel_et_Commercial_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Cr%C3%A9dit_Industriel_et_Commercial_Logo.svg"
+    }
+  },
+  {
+    "id": "citi",
+    "name": "Citi",
+    "brandColor": "#056DAE",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Citi_logo_March_2023.svg/960px-Citi_logo_March_2023.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Citi_logo_March_2023.svg"
+    }
+  },
+  {
+    "id": "comdirect",
+    "name": "comdirect",
+    "brandColor": "#FFCC00",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Comdirect_Logo_2017.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Comdirect_Logo_2017.png"
+    }
+  },
+  {
+    "id": "commerzbank",
+    "name": "Commerzbank",
+    "brandColor": "#FFCC00",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Commerzbank-Logo.svg/960px-Commerzbank-Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Commerzbank-Logo.svg"
+    }
+  },
+  {
+    "id": "consorsbank",
+    "name": "Consorsbank",
+    "brandColor": "#003C71",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Consorsbank_Logo.png/960px-Consorsbank_Logo.png",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Consorsbank_Logo.png"
+    }
+  },
+  {
+    "id": "credit-suisse",
+    "name": "Credit Suisse",
+    "brandColor": "#003868",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Credit_Suisse_Logo_2022.svg/960px-Credit_Suisse_Logo_2022.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Credit_Suisse_Logo_2022.svg"
+    }
+  },
+  {
+    "id": "credit-agricole",
+    "name": "Crédit Agricole",
+    "brandColor": "#007A5E",
+    "countries": [
+      "FR",
+      "IT",
+      "PL"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Cr%C3%A9dit_Agricole_logo_2017.svg/960px-Cr%C3%A9dit_Agricole_logo_2017.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Cr%C3%A9dit_Agricole_logo_2017.svg"
+    }
+  },
+  {
+    "id": "credit-mutuel",
+    "name": "Crédit Mutuel",
+    "brandColor": "#0066B3",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Cr%C3%A9dit_Mutuel_2022_logo.svg/960px-Cr%C3%A9dit_Mutuel_2022_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Cr%C3%A9dit_Mutuel_2022_logo.svg"
+    }
+  },
+  {
+    "id": "curve",
+    "name": "Curve",
+    "brandColor": "#1E1E1E",
+    "countries": []
+  },
+  {
+    "id": "danske-bank",
+    "name": "Danske Bank",
+    "brandColor": "#003755",
+    "countries": [
+      "DK",
+      "FI",
+      "SE",
+      "NO"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Danske_Bank_Logo.svg/960px-Danske_Bank_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Danske_Bank_Logo.svg"
+    }
+  },
+  {
+    "id": "deutsche-bank",
+    "name": "Deutsche Bank",
+    "brandColor": "#0018A8",
+    "countries": [
+      "DE",
+      "BE",
+      "ES",
+      "IT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Deutsche_Bank_logo_without_wordmark.svg/960px-Deutsche_Bank_logo_without_wordmark.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Deutsche_Bank_logo_without_wordmark.svg"
+    }
+  },
+  {
+    "id": "discover",
+    "name": "Discover",
+    "brandColor": "#FF6000",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Discover_Card_logo.svg/960px-Discover_Card_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Discover_Card_logo.svg"
+    }
+  },
+  {
+    "id": "dkb",
+    "name": "DKB",
+    "brandColor": "#0066B3",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Deutsche_Kreditbank_AG_Logo_2016.svg/960px-Deutsche_Kreditbank_AG_Logo_2016.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Deutsche_Kreditbank_AG_Logo_2016.svg"
+    }
+  },
+  {
+    "id": "dnb",
+    "name": "DNB",
+    "brandColor": "#007272",
+    "countries": [
+      "NO"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/DNB_ASA_logo.svg/960px-DNB_ASA_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:DNB_ASA_logo.svg"
+    }
+  },
+  {
+    "id": "dsk",
+    "name": "DSK Bank",
+    "brandColor": "#00843D",
+    "countries": [
+      "BG"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/DSK_Bank_logo.svg/960px-DSK_Bank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:DSK_Bank_logo.svg"
+    }
+  },
+  {
+    "id": "erste",
+    "name": "Erste Bank",
+    "brandColor": "#0066B3",
+    "countries": [
+      "AT",
+      "HU",
+      "HR",
+      "RO",
+      "RS"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Logo_Erste_Bank_2023.svg/960px-Logo_Erste_Bank_2023.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Erste_Bank_2023.svg"
+    }
+  },
+  {
+    "id": "eurobank",
+    "name": "Eurobank",
+    "brandColor": "#E30613",
+    "countries": [
+      "GR",
+      "CY"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Eurobank_logo_2021.svg/960px-Eurobank_logo_2021.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Eurobank_logo_2021.svg"
+    }
+  },
+  {
+    "id": "fineco",
+    "name": "Fineco",
+    "brandColor": "#003C71",
+    "countries": [
+      "IT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/FinecoBank_Logo.svg/960px-FinecoBank_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:FinecoBank_Logo.svg"
+    }
+  },
+  {
+    "id": "fio",
+    "name": "Fio banka",
+    "brandColor": "#0066B3",
+    "countries": [
+      "CZ",
+      "SK"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Fio_banka_logo.svg/960px-Fio_banka_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Fio_banka_logo.svg"
+    }
+  },
+  {
+    "id": "goldman-sachs",
+    "name": "Goldman Sachs (Apple Card)",
+    "brandColor": "#6F9FD8",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Goldman_Sachs.svg/960px-Goldman_Sachs.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Goldman_Sachs.svg"
+    }
+  },
+  {
+    "id": "handelsbanken",
+    "name": "Handelsbanken",
+    "brandColor": "#005AA0",
+    "countries": [
+      "SE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Handelsbanken_logo.svg/960px-Handelsbanken_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Handelsbanken_logo.svg"
+    }
+  },
+  {
+    "id": "hsbc",
+    "name": "HSBC",
+    "brandColor": "#DB0011",
+    "countries": [],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/HSBC_China_logo_%282023%29.svg/960px-HSBC_China_logo_%282023%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:HSBC_China_logo_(2023).svg"
+    }
+  },
+  {
+    "id": "hypovereinsbank",
+    "name": "HypoVereinsbank",
+    "brandColor": "#E30613",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/HypoVereinsbank_logo.svg/960px-HypoVereinsbank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:HypoVereinsbank_logo.svg"
+    }
+  },
+  {
+    "id": "ing",
+    "name": "ING",
+    "brandColor": "#FF6200",
+    "countries": [
+      "NL",
+      "BE",
+      "DE",
+      "ES",
+      "IT",
+      "PL",
+      "RO",
+      "AT",
+      "LU"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/ING_Group_%28wordmark%29.svg/960px-ING_Group_%28wordmark%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:ING_Group_(wordmark).svg"
+    }
+  },
+  {
+    "id": "intesa-sanpaolo",
+    "name": "Intesa Sanpaolo",
+    "brandColor": "#00843D",
+    "countries": [
+      "IT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg/960px-Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Intesa_Sanpaolo_-_logo_(Italy,_2007-).svg"
+    }
+  },
+  {
+    "id": "kh",
+    "name": "K&H Bank",
+    "brandColor": "#00AEEF",
+    "countries": [
+      "HU"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/K%26H_Bank_logo.svg/960px-K%26H_Bank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:K%26H_Bank_logo.svg"
+    }
+  },
+  {
+    "id": "kbc",
+    "name": "KBC",
+    "brandColor": "#00AEEF",
+    "countries": [
+      "BE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/KBC_logo.svg/960px-KBC_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:KBC_logo.svg"
+    }
+  },
+  {
+    "id": "komercni-banka",
+    "name": "Komerční banka",
+    "brandColor": "#E30613",
+    "countries": [
+      "CZ"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Komer%C4%8Dn%C3%AD_banka_logo_%28obsolete%29.svg/960px-Komer%C4%8Dn%C3%AD_banka_logo_%28obsolete%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Komer%C4%8Dn%C3%AD_banka_logo_(obsolete).svg"
+    }
+  },
+  {
+    "id": "la-banque-postale",
+    "name": "La Banque Postale",
+    "brandColor": "#FFCC00",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_La_Banque_postale_2022.svg/960px-Logo_La_Banque_postale_2022.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_La_Banque_postale_2022.svg"
+    }
+  },
+  {
+    "id": "lcl",
+    "name": "LCL",
+    "brandColor": "#003C71",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/LCL_banque_alternative_logo.svg/960px-LCL_banque_alternative_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:LCL_banque_alternative_logo.svg"
+    }
+  },
+  {
+    "id": "lhv",
+    "name": "LHV",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "EE"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/LHV_Pank_Logo.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:LHV_Pank_Logo.png"
+    }
+  },
+  {
+    "id": "lloyds",
+    "name": "Lloyds Bank",
+    "brandColor": "#006A4D",
+    "countries": [
+      "GB"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Lloyds_Bank_1965_wordmark.svg/960px-Lloyds_Bank_1965_wordmark.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Lloyds_Bank_1965_wordmark.svg"
+    }
+  },
+  {
+    "id": "lunar",
+    "name": "Lunar",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "DK",
+      "SE",
+      "NO"
+    ]
+  },
+  {
+    "id": "lukb",
+    "name": "Luzerner Kantonalbank",
+    "brandColor": "#0066B3",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Logo_der_Luzerner_Kantonalbank.svg/960px-Logo_der_Luzerner_Kantonalbank.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_der_Luzerner_Kantonalbank.svg"
+    }
+  },
+  {
+    "id": "mbank",
+    "name": "mBank",
+    "brandColor": "#E30613",
+    "countries": [
+      "PL",
+      "CZ",
+      "SK"
+    ]
+  },
+  {
+    "id": "migros-bank",
+    "name": "Migros Bank",
+    "brandColor": "#FF6600",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Migros_Bank_Logo.svg/960px-Migros_Bank_Logo.svg.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Migros_Bank_Logo.svg",
+      "attribution": "Migros Bank"
+    }
+  },
+  {
+    "id": "millennium-bcp",
+    "name": "Millennium bcp",
+    "brandColor": "#E5007D",
+    "countries": [
+      "PT",
+      "PL"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Millennium_bcp_2024_logo.svg/960px-Millennium_bcp_2024_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Millennium_bcp_2024_logo.svg"
+    }
+  },
+  {
+    "id": "moneta",
+    "name": "MONETA Money Bank",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "CZ"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Logo_Moneta_Money_Bank.svg/960px-Logo_Moneta_Money_Bank.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Moneta_Money_Bank.svg"
+    }
+  },
+  {
+    "id": "mps",
+    "name": "Monte dei Paschi di Siena",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "id": "monzo",
+    "name": "Monzo",
+    "brandColor": "#FF4F40",
+    "countries": [
+      "GB"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Monzo_2022_logo.svg/960px-Monzo_2022_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Monzo_2022_logo.svg"
+    }
+  },
+  {
+    "id": "n26",
+    "name": "N26",
+    "brandColor": "#36A18B",
+    "countries": [],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/N26_logo.svg/960px-N26_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:N26_logo.svg"
+    }
+  },
+  {
+    "id": "nbg",
+    "name": "National Bank of Greece",
+    "brandColor": "#0066B3",
+    "countries": [
+      "GR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/National_Bank_of_Greece_wordmark.svg/960px-National_Bank_of_Greece_wordmark.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:National_Bank_of_Greece_wordmark.svg"
+    }
+  },
+  {
+    "id": "natwest",
+    "name": "NatWest",
+    "brandColor": "#5A287D",
+    "countries": [
+      "GB"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Natwest_2014_logo.svg/960px-Natwest_2014_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Natwest_2014_logo.svg"
+    }
+  },
+  {
+    "id": "navy-federal",
+    "name": "Navy Federal Credit Union",
+    "brandColor": "#003366",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Navy_Federal_Credit_Union_Logo.svg/960px-Navy_Federal_Credit_Union_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Navy_Federal_Credit_Union_Logo.svg"
+    }
+  },
+  {
+    "id": "neon",
+    "name": "neon",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Neon-logo.svg/960px-Neon-logo.svg.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Neon-logo.svg",
+      "attribution": "KDE neon"
+    }
+  },
+  {
+    "id": "nlb",
+    "name": "NLB",
+    "brandColor": "#5B2C83",
+    "countries": [
+      "SI"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Nova_Ljubljanska_banka_logo.svg/960px-Nova_Ljubljanska_banka_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Nova_Ljubljanska_banka_logo.svg"
+    }
+  },
+  {
+    "id": "nordea",
+    "name": "Nordea",
+    "brandColor": "#0000A0",
+    "countries": [
+      "FI",
+      "SE",
+      "DK",
+      "NO"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Nordea_201x_logo.svg/960px-Nordea_201x_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Nordea_201x_logo.svg"
+    }
+  },
+  {
+    "id": "norisbank",
+    "name": "norisbank",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Norisbank_Logo_2026.svg/960px-Norisbank_Logo_2026.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Norisbank_Logo_2026.svg"
+    }
+  },
+  {
+    "id": "novo-banco",
+    "name": "novobanco",
+    "brandColor": "#00A651",
+    "countries": [
+      "PT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Novo_Banco_logo.svg/960px-Novo_Banco_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Novo_Banco_logo.svg"
+    }
+  },
+  {
+    "id": "oberbank",
+    "name": "Oberbank",
+    "brandColor": "#0066B3",
+    "countries": [
+      "AT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Oberbank_Logo.svg/960px-Oberbank_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Oberbank_Logo.svg"
+    }
+  },
+  {
+    "id": "op",
+    "name": "OP",
+    "brandColor": "#FF6A10",
+    "countries": [
+      "FI"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/OP_Financial_Group.svg/960px-OP_Financial_Group.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:OP_Financial_Group.svg"
+    }
+  },
+  {
+    "id": "otp",
+    "name": "OTP Bank",
+    "brandColor": "#00843D",
+    "countries": [
+      "HU",
+      "SK",
+      "RO",
+      "HR",
+      "BG",
+      "SI"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/OTP_Bank_logo.svg/960px-OTP_Bank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:OTP_Bank_logo.svg"
+    }
+  },
+  {
+    "id": "pbz",
+    "name": "PBZ",
+    "brandColor": "#00843D",
+    "countries": [
+      "HR"
+    ]
+  },
+  {
+    "id": "piraeus",
+    "name": "Piraeus Bank",
+    "brandColor": "#F6A623",
+    "countries": [
+      "GR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Piraeus_Bank_logo_2000.svg/960px-Piraeus_Bank_logo_2000.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Piraeus_Bank_logo_2000.svg"
+    }
+  },
+  {
+    "id": "pko-bp",
+    "name": "PKO Bank Polski",
+    "brandColor": "#003C71",
+    "countries": [
+      "PL"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/PKO_Bank_Polski_logo.svg/960px-PKO_Bank_Polski_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:PKO_Bank_Polski_logo.svg"
+    }
+  },
+  {
+    "id": "pnc",
+    "name": "PNC",
+    "brandColor": "#EF7622",
+    "countries": [
+      "US"
+    ]
+  },
+  {
+    "id": "postbank",
+    "name": "Postbank",
+    "brandColor": "#FFCC00",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Postbank_Bulgaria_logo.svg/960px-Postbank_Bulgaria_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Postbank_Bulgaria_logo.svg"
+    }
+  },
+  {
+    "id": "poste-italiane",
+    "name": "Poste Italiane",
+    "brandColor": "#FFCC00",
+    "countries": [
+      "IT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Logo_Poste_Italiane.svg/960px-Logo_Poste_Italiane.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Poste_Italiane.svg"
+    }
+  },
+  {
+    "id": "postfinance",
+    "name": "PostFinance",
+    "brandColor": "#FFCC00",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/PostFinance_Logo.svg/960px-PostFinance_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:PostFinance_Logo.svg"
+    }
+  },
+  {
+    "id": "prima-banka",
+    "name": "Prima banka",
+    "brandColor": "#E30613",
+    "countries": [
+      "SK"
+    ]
+  },
+  {
+    "id": "ptsb",
+    "name": "PTSB",
+    "brandColor": "#00843D",
+    "countries": [
+      "IE"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Permanent_tsb.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Permanent_tsb.png"
+    }
+  },
+  {
+    "id": "rabobank",
+    "name": "Rabobank",
+    "brandColor": "#FF6600",
+    "countries": [
+      "NL"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Rabobank_text_logo.svg/960px-Rabobank_text_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Rabobank_text_logo.svg"
+    }
+  },
+  {
+    "id": "raiffeisen-at",
+    "name": "Raiffeisen (Austria)",
+    "brandColor": "#FFE600",
+    "countries": [
+      "AT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Raiffeisen_Bank_International_logo.svg/960px-Raiffeisen_Bank_International_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Raiffeisen_Bank_International_logo.svg"
+    }
+  },
+  {
+    "id": "raiffeisen-ch",
+    "name": "Raiffeisen Schweiz",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Raiffeisen_Schweiz_Logo.svg/960px-Raiffeisen_Schweiz_Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Raiffeisen_Schweiz_Logo.svg"
+    }
+  },
+  {
+    "id": "raiffeisen-cz",
+    "name": "Raiffeisenbank (Czechia)",
+    "brandColor": "#FFE600",
+    "countries": [
+      "CZ"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Raiffeisen_Bank_International_logo.svg/960px-Raiffeisen_Bank_International_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Raiffeisen_Bank_International_logo.svg"
+    }
+  },
+  {
+    "id": "revolut",
+    "name": "Revolut",
+    "brandColor": "#1E1E1E",
+    "countries": [],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Revolut_logo.svg/960px-Revolut_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Revolut_logo.svg"
+    }
+  },
+  {
+    "id": "santander",
+    "name": "Santander",
+    "brandColor": "#EC0000",
+    "countries": [
+      "ES",
+      "PT",
+      "PL",
+      "DE",
+      "GB",
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Banco_santander_logo.svg/960px-Banco_santander_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Banco_santander_logo.svg"
+    }
+  },
+  {
+    "id": "seb",
+    "name": "SEB",
+    "brandColor": "#60CD18",
+    "countries": [
+      "SE",
+      "EE",
+      "LV",
+      "LT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Skandinaviska_Enskilda_Banken_logo.svg/960px-Skandinaviska_Enskilda_Banken_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Skandinaviska_Enskilda_Banken_logo.svg"
+    }
+  },
+  {
+    "id": "slsp",
+    "name": "Slovenská sporiteľňa",
+    "brandColor": "#0066B3",
+    "countries": [
+      "SK"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Slovenska-sporitelna-logo.png/960px-Slovenska-sporitelna-logo.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Slovenska-sporitelna-logo.png",
+      "attribution": "Rondel"
+    }
+  },
+  {
+    "id": "de-volksbank",
+    "name": "SNS",
+    "brandColor": "#E30613",
+    "countries": [
+      "NL"
+    ]
+  },
+  {
+    "id": "societe-generale",
+    "name": "Société Générale",
+    "brandColor": "#E9041E",
+    "countries": [
+      "FR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Logo-SG-Soci%C3%A9t%C3%A9-G%C3%A9n%C3%A9rale.svg/960px-Logo-SG-Soci%C3%A9t%C3%A9-G%C3%A9n%C3%A9rale.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo-SG-Soci%C3%A9t%C3%A9-G%C3%A9n%C3%A9rale.svg"
+    }
+  },
+  {
+    "id": "sparkasse",
+    "name": "Sparkasse",
+    "brandColor": "#E30613",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Sparkasse.svg/960px-Sparkasse.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Sparkasse.svg"
+    }
+  },
+  {
+    "id": "spuerkeess",
+    "name": "Spuerkeess",
+    "brandColor": "#E30613",
+    "countries": [
+      "LU"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Spuerkeess_logo.svg/960px-Spuerkeess_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Spuerkeess_logo.svg"
+    }
+  },
+  {
+    "id": "sgkb",
+    "name": "St. Galler Kantonalbank",
+    "brandColor": "#00843D",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Logo_der_St._Galler_Kantonalbank.svg/960px-Logo_der_St._Galler_Kantonalbank.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_der_St._Galler_Kantonalbank.svg"
+    }
+  },
+  {
+    "id": "starling",
+    "name": "Starling Bank",
+    "brandColor": "#6935D3",
+    "countries": [
+      "GB"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Starling_Bank_Logo_%28Horizontal%29.svg/960px-Starling_Bank_Logo_%28Horizontal%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Starling_Bank_Logo_(Horizontal).svg"
+    }
+  },
+  {
+    "id": "swedbank",
+    "name": "Swedbank",
+    "brandColor": "#FF5F00",
+    "countries": [
+      "SE",
+      "EE",
+      "LV",
+      "LT"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Swedbank_wordmark.svg/960px-Swedbank_wordmark.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Swedbank_wordmark.svg"
+    }
+  },
+  {
+    "id": "swisscard",
+    "name": "Swisscard",
+    "brandColor": "#003C71",
+    "countries": [
+      "CH"
+    ]
+  },
+  {
+    "id": "swissquote",
+    "name": "Swissquote",
+    "brandColor": "#E30613",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Image014_Swissquote.png",
+      "license": "CC BY 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:Image014_Swissquote.png",
+      "attribution": "Unknown authorUnknown author"
+    }
+  },
+  {
+    "id": "targobank",
+    "name": "TARGOBANK",
+    "brandColor": "#003C71",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Targobank_logo.svg/960px-Targobank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Targobank_logo.svg"
+    }
+  },
+  {
+    "id": "tatra-banka",
+    "name": "Tatra banka",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "SK"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Tatra_banka_logo.svg/960px-Tatra_banka_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Tatra_banka_logo.svg"
+    }
+  },
+  {
+    "id": "td-bank",
+    "name": "TD Bank",
+    "brandColor": "#34A853",
+    "countries": [
+      "US",
+      "CA"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Toronto-Dominion_Bank_logo.svg/960px-Toronto-Dominion_Bank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Toronto-Dominion_Bank_logo.svg"
+    }
+  },
+  {
+    "id": "trade-republic",
+    "name": "Trade Republic",
+    "brandColor": "#1E1E1E",
+    "countries": [],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Trade_Republic_Bank_Logo.svg/960px-Trade_Republic_Bank_Logo.svg.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Trade_Republic_Bank_Logo.svg",
+      "attribution": "Secbot at Trade Republic"
+    }
+  },
+  {
+    "id": "truist",
+    "name": "Truist",
+    "brandColor": "#2E1A47",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Truist_Financial_logo.svg/960px-Truist_Financial_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Truist_Financial_logo.svg"
+    }
+  },
+  {
+    "id": "us-bank",
+    "name": "U.S. Bank",
+    "brandColor": "#0C2074",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/US_Bancorp_logo_2023_color.svg/960px-US_Bancorp_logo_2023_color.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:US_Bancorp_logo_2023_color.svg"
+    }
+  },
+  {
+    "id": "ubs",
+    "name": "UBS",
+    "brandColor": "#E60000",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/UBS_Logo.png/960px-UBS_Logo.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:UBS_Logo.png"
+    }
+  },
+  {
+    "id": "unicaja",
+    "name": "Unicaja",
+    "brandColor": "#00843D",
+    "countries": [
+      "ES"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Unicaja_logo.svg/960px-Unicaja_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Unicaja_logo.svg"
+    }
+  },
+  {
+    "id": "unicredit",
+    "name": "UniCredit",
+    "brandColor": "#E30613",
+    "countries": [
+      "IT",
+      "DE",
+      "AT",
+      "CZ",
+      "SK",
+      "HU",
+      "RO",
+      "HR",
+      "BG",
+      "SI"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Unicredit_logo.svg/960px-Unicredit_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Unicredit_logo.svg"
+    }
+  },
+  {
+    "id": "usaa",
+    "name": "USAA",
+    "brandColor": "#003366",
+    "countries": [
+      "US"
+    ]
+  },
+  {
+    "id": "valiant",
+    "name": "Valiant",
+    "brandColor": "#6E2C8C",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Valiant_Logo.png/960px-Valiant_Logo.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Valiant_Logo.png"
+    }
+  },
+  {
+    "id": "viseca",
+    "name": "Viseca",
+    "brandColor": "#00A0DF",
+    "countries": [
+      "CH"
+    ]
+  },
+  {
+    "id": "vivid",
+    "name": "Vivid Money",
+    "brandColor": "#1E1E1E",
+    "countries": [],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Vivid-money-logo.svg/960px-Vivid-money-logo.svg.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Vivid-money-logo.svg",
+      "attribution": "ThisUserIsVivid"
+    }
+  },
+  {
+    "id": "volksbank-at",
+    "name": "Volksbank (Austria)",
+    "brandColor": "#0066B3",
+    "countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "volksbank",
+    "name": "Volksbanken Raiffeisenbanken",
+    "brandColor": "#0066B3",
+    "countries": [
+      "DE"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Logo_des_Bundesverband_der_Deutschen_Volksbanken_und_Raiffeisenbanken_e.V._%28BVR%29.svg/960px-Logo_des_Bundesverband_der_Deutschen_Volksbanken_und_Raiffeisenbanken_e.V._%28BVR%29.svg.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_des_Bundesverband_der_Deutschen_Volksbanken_und_Raiffeisenbanken_e.V._(BVR).svg",
+      "attribution": "Bundesverband der Deutschen Volksbanken und Raiffeisenbanken e.V. (BVR)"
+    }
+  },
+  {
+    "id": "vub",
+    "name": "VÚB banka",
+    "brandColor": "#00A0E2",
+    "countries": [
+      "SK"
+    ],
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/VUB.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:VUB.png"
+    }
+  },
+  {
+    "id": "wells-fargo",
+    "name": "Wells Fargo",
+    "brandColor": "#D71E28",
+    "countries": [
+      "US"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Wells_Fargo_Logo_%282020%29.svg/960px-Wells_Fargo_Logo_%282020%29.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Wells_Fargo_Logo_(2020).svg"
+    }
+  },
+  {
+    "id": "wise",
+    "name": "Wise",
+    "brandColor": "#9FE870",
+    "countries": [],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wise_Logo_512x124.svg/960px-Wise_Logo_512x124.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Wise_Logo_512x124.svg"
+    }
+  },
+  {
+    "id": "yuh",
+    "name": "Yuh",
+    "brandColor": "#1E1E1E",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/YUH_logo_3-in-1_RGB_black_FR-1200x1200.png/960px-YUH_logo_3-in-1_RGB_black_FR-1200x1200.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:YUH_logo_3-in-1_RGB_black_FR-1200x1200.png",
+      "attribution": "Yuh SA"
+    }
+  },
+  {
+    "id": "zaba",
+    "name": "Zagrebačka banka",
+    "brandColor": "#E30613",
+    "countries": [
+      "HR"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Zagreba%C4%8Dka-banka-Logo.svg/960px-Zagreba%C4%8Dka-banka-Logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Zagreba%C4%8Dka-banka-Logo.svg"
+    }
+  },
+  {
+    "id": "zkb",
+    "name": "Zürcher Kantonalbank",
+    "brandColor": "#0066B3",
+    "countries": [
+      "CH"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Z%C3%BCrcher_Kantonalbank_logo.svg/960px-Z%C3%BCrcher_Kantonalbank_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrcher_Kantonalbank_logo.svg"
+    }
+  },
+  {
+    "id": "ceska-sporitelna",
+    "name": "Česká spořitelna",
+    "brandColor": "#0066B3",
+    "countries": [
+      "CZ"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/%C4%8Cesk%C3%A1_spo%C5%99itelna_-_logo_2023.png/960px-%C4%8Cesk%C3%A1_spo%C5%99itelna_-_logo_2023.png",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%C4%8Cesk%C3%A1_spo%C5%99itelna_-_logo_2023.png",
+      "attribution": "Česká spořitelna"
+    }
+  },
+  {
+    "id": "csob-cz",
+    "name": "ČSOB (Czechia)",
+    "brandColor": "#003C71",
+    "countries": [
+      "CZ"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/%C4%8CSOB_logo.svg/960px-%C4%8CSOB_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:%C4%8CSOB_logo.svg"
+    }
+  },
+  {
+    "id": "csob-sk",
+    "name": "ČSOB (Slovakia)",
+    "brandColor": "#003C71",
+    "countries": [
+      "SK"
+    ],
+    "logo": {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/%C4%8CSOB_logo.svg/960px-%C4%8CSOB_logo.svg.png",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:%C4%8CSOB_logo.svg"
+    }
+  }
+]

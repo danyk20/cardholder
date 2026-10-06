@@ -9,11 +9,11 @@ data class Shop(
     val countries: Set<CountryCode>,
     val defaultFormat: BarcodeFormat,
     /** Freely licensed official logo that can be downloaded on request; `null` if none is known. */
-    val logo: ShopLogo? = null,
+    val logo: BrandLogo? = null,
 )
 
 /** Where an official shop logo can be downloaded from and under which licence. */
-data class ShopLogo(
+data class BrandLogo(
     val url: String,
     val license: String,
     /** Page describing the file, its author and licence. */
@@ -22,11 +22,11 @@ data class ShopLogo(
     val attribution: String? = null,
 )
 
-/** The shop a loyalty card belongs to: either one from the catalogue or a user-entered name. */
-sealed interface ShopRef {
+/** A shop or bank: either one from a bundled catalogue or a user-entered name. */
+sealed interface BrandRef {
     val name: String
 
-    data class Known(val id: String, override val name: String) : ShopRef
+    data class Known(val id: String, override val name: String) : BrandRef
 
-    data class Custom(override val name: String) : ShopRef
+    data class Custom(override val name: String) : BrandRef
 }

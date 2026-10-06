@@ -3,49 +3,46 @@ package io.github.danyk20.cardholder.core.data.repository
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
-import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
-import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.domain.repository.BankRepository
+import io.github.danyk20.cardholder.core.model.Bank
 import io.github.danyk20.cardholder.core.model.CountryCode
-import io.github.danyk20.cardholder.core.model.Shop
 import java.io.InputStream
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.serialization.Serializable
 
-/** Shop catalogue bundled as `assets/shops.json`. */
+/** Bank catalogue bundled as `assets/banks.json`. */
 @Singleton
-internal class AssetShopRepository(openCatalogue: () -> InputStream, ioDispatcher: CoroutineDispatcher) :
-    ShopRepository {
+internal class AssetBankRepository(openCatalogue: () -> InputStream, ioDispatcher: CoroutineDispatcher) :
+    BankRepository {
     @Inject
     constructor(
         @ApplicationContext context: Context,
         @IoDispatcher ioDispatcher: CoroutineDispatcher,
-    ) : this({ context.assets.open("shops.json") }, ioDispatcher)
+    ) : this({ context.assets.open("banks.json") }, ioDispatcher)
 
-    private val catalogue = AssetCatalogue(openCatalogue, ShopDto.serializer(), ioDispatcher, ShopDto::toModel) {
+    private val catalogue = AssetCatalogue(openCatalogue, BankDto.serializer(), ioDispatcher, BankDto::toModel) {
         it.name
     }
 
-    override suspend fun shops(): List<Shop> = catalogue.all()
+    override suspend fun banks(): List<Bank> = catalogue.all()
 
-    override suspend fun shop(id: String): Shop? = shops().firstOrNull { it.id == id }
+    override suspend fun bank(id: String): Bank? = banks().firstOrNull { it.id == id }
 
     @Serializable
-    private data class ShopDto(
+    private data class BankDto(
         val id: String,
         val name: String,
         val brandColor: String,
         val countries: List<String> = emptyList(),
-        val defaultFormat: BarcodeFormat = BarcodeFormat.QR_CODE,
         val logo: LogoDto? = null,
     ) {
-        fun toModel() = Shop(
+        fun toModel() = Bank(
             id = id,
             name = name,
             brandColor = parseBrandColor(brandColor),
             countries = countries.mapNotNull(CountryCode::of).toSet(),
-            defaultFormat = defaultFormat,
             logo = logo?.toModel(),
         )
     }

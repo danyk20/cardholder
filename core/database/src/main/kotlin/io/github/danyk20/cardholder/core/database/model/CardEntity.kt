@@ -19,6 +19,8 @@ data class CardEntity(
     @ColumnInfo(name = "created_at") val createdAt: Long,
     @ColumnInfo(name = "updated_at") val updatedAt: Long,
     @ColumnInfo(name = "bank_network") val bankNetwork: String?,
+    @ColumnInfo(name = "bank_id", defaultValue = "NULL") val bankId: String? = null,
+    @ColumnInfo(name = "bank_name", defaultValue = "NULL") val bankName: String? = null,
     @ColumnInfo(name = "id_country") val idCountry: String?,
     @ColumnInfo(name = "loyalty_shop_id") val loyaltyShopId: String?,
     @ColumnInfo(name = "loyalty_shop_name") val loyaltyShopName: String?,
@@ -44,6 +46,8 @@ data class CardEntity(
                 createdAt == other.createdAt &&
                 updatedAt == other.updatedAt &&
                 bankNetwork == other.bankNetwork &&
+                bankId == other.bankId &&
+                bankName == other.bankName &&
                 idCountry == other.idCountry &&
                 loyaltyShopId == other.loyaltyShopId &&
                 loyaltyShopName == other.loyaltyShopName &&

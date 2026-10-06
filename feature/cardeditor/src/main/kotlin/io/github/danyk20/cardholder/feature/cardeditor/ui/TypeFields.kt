@@ -42,6 +42,7 @@ import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.domain.validation.BankCardValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
+import io.github.danyk20.cardholder.core.model.Bank
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.Shop
 import io.github.danyk20.cardholder.core.ui.barcodeFormatLabel
@@ -58,6 +59,8 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 internal class BankActions(
+    val onBankSelected: (Bank) -> Unit,
+    val onCustomBank: (String) -> Unit,
     /** `null` when the device has no NFC. */
     val onReadWithNfc: (() -> Unit)?,
     val onNumberChange: (String) -> Unit,
@@ -85,11 +88,18 @@ internal class LoyaltyActions(
 @Composable
 internal fun BankFields(
     form: BankForm,
+    banks: List<Bank>,
     errors: Map<CardField, ValidationError>,
     canProtect: Boolean,
     actions: BankActions,
 ) {
+    var showBankPicker by rememberSaveable { mutableStateOf(false) }
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        PickerField(
+            label = stringResource(R.string.editor_field_bank),
+            value = form.issuer?.name.orEmpty(),
+            onClick = { showBankPicker = true },
+        )
         actions.onReadWithNfc?.let { onRead ->
             FilledTonalButton(onClick = onRead) {
                 Icon(CardholderIcons.Nfc, contentDescription = null, Modifier.size(18.dp))
@@ -149,6 +159,42 @@ internal fun BankFields(
             modifier = Modifier.fillMaxWidth(),
         )
     }
+    if (showBankPicker) {
+        BankPickerDialog(
+            banks = banks,
+            onSelect = {
+                actions.onBankSelected(it)
+                showBankPicker = false
+            },
+            onCustom = {
+                actions.onCustomBank(it)
+                showBankPicker = false
+            },
+            onDismiss = { showBankPicker = false },
+        )
+    }
+}
+
+@Composable
+private fun BankPickerDialog(
+    banks: List<Bank>,
+    onSelect: (Bank) -> Unit,
+    onCustom: (String) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    val resources = LocalResources.current
+    SearchablePickerDialog(
+        title = stringResource(R.string.editor_choose_bank),
+        searchHint = stringResource(R.string.editor_search_bank),
+        items = banks,
+        key = { it.id },
+        label = { it.name },
+        leading = { bank -> Text(bank.countries.singleOrNull()?.flagEmoji ?: "\uD83C\uDF10") },
+        onSelect = onSelect,
+        onDismiss = onDismiss,
+        customOptionLabel = { query -> resources.getString(R.string.editor_custom_shop, query) },
+        onCustomOption = onCustom,
+    )
 }
 
 @Composable

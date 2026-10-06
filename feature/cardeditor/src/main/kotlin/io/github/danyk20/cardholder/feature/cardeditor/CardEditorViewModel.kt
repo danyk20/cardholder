@@ -13,9 +13,7 @@ import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.domain.repository.BarcodeImageScanner
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
-import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
-import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardResult
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardUseCase
@@ -23,7 +21,9 @@ import io.github.danyk20.cardholder.core.domain.validation.BankCardValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardDraftValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
+import io.github.danyk20.cardholder.core.model.Bank
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardDetails
@@ -33,7 +33,6 @@ import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.Shop
-import io.github.danyk20.cardholder.core.model.ShopRef
 import io.github.danyk20.cardholder.feature.cardeditor.navigation.CardEditorDestination
 import java.time.LocalDate
 import java.time.YearMonth
@@ -51,8 +50,7 @@ class CardEditorViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val cardRepository: CardRepository,
     private val saveCard: SaveCardUseCase,
-    private val shopRepository: ShopRepository,
-    private val countryRepository: CountryRepository,
+    private val catalogues: EditorCatalogues,
     private val deviceSecurity: DeviceSecurity,
     private val validator: CardDraftValidator,
     private val barcodeImageScanner: BarcodeImageScanner,
@@ -74,8 +72,9 @@ class CardEditorViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            val shops = shopRepository.shops()
-            _uiState.update { it.copy(shops = shops, countries = countryRepository.countries()) }
+            val shops = catalogues.shops.shops()
+            val banks = catalogues.banks.banks()
+            _uiState.update { it.copy(shops = shops, banks = banks, countries = catalogues.countries.countries()) }
             if (editingId != null) load(editingId)
         }
     }
@@ -152,16 +151,27 @@ class CardEditorViewModel @Inject constructor(
     fun onShopSelected(shop: Shop) = update(CardField.SHOP) {
         copy(
             loyalty = loyalty.copy(
-                shop = ShopRef.Known(shop.id, shop.name),
+                shop = BrandRef.Known(shop.id, shop.name),
                 format = if (loyalty.code.isEmpty()) shop.defaultFormat else loyalty.format,
             ),
-            logoChoiceFor = shop.takeIf { it.logo != null },
+            logoChoiceFor = shop.logo?.let { LogoChoice(shop.name, it) },
         )
     }
 
-    /** Downloads the selected shop's official logo; the app's only network request. */
+    fun onBankSelected(bank: Bank) = _uiState.update {
+        it.copy(
+            bank = it.bank.copy(issuer = BrandRef.Known(bank.id, bank.name)),
+            logoChoiceFor = bank.logo?.let { logo -> LogoChoice(bank.name, logo) },
+        )
+    }
+
+    fun onCustomBank(name: String) = _uiState.update {
+        it.copy(bank = it.bank.copy(issuer = BrandRef.Custom(name.trim())))
+    }
+
+    /** Downloads the selected shop's or bank's official logo; the app's only network request. */
     fun onUseOfficialLogo() {
-        val logo = (_uiState.value.logoChoiceFor ?: _uiState.value.selectedShop)?.logo ?: return
+        val logo = (_uiState.value.logoChoiceFor ?: _uiState.value.officialLogo)?.logo ?: return
         _uiState.update { it.copy(logoChoiceFor = null, isDownloadingLogo = true, logoDownloadFailed = false) }
         viewModelScope.launch {
             val bytes = logoDownloader.download(logo.url)
@@ -184,7 +194,7 @@ class CardEditorViewModel @Inject constructor(
     fun onLogoDownloadErrorShown() = _uiState.update { it.copy(logoDownloadFailed = false) }
 
     fun onCustomShop(name: String) =
-        update(CardField.SHOP) { copy(loyalty = loyalty.copy(shop = ShopRef.Custom(name.trim()))) }
+        update(CardField.SHOP) { copy(loyalty = loyalty.copy(shop = BrandRef.Custom(name.trim()))) }
 
     fun onCodeChange(code: String) = update(CardField.CODE) { copy(loyalty = loyalty.copy(code = code)) }
 
@@ -271,12 +281,13 @@ class CardEditorViewModel @Inject constructor(
                     expiry = "%02d%02d".format(details.expiry.monthValue, details.expiry.year % CENTURY),
                     holder = details.holder,
                     hasStoredCvv = card.hasCvv,
+                    issuer = (card.info as? CardInfo.Bank)?.issuer,
                 ),
             )
 
             details is CardDetails.Id && card.info is CardInfo.Id -> base.copy(
                 id = IdForm(
-                    country = countryRepository.country((card.info as CardInfo.Id).country),
+                    country = catalogues.countries.country((card.info as CardInfo.Id).country),
                     documentNumber = details.documentNumber.orEmpty(),
                     expiry = details.expiry,
                 ),
@@ -306,7 +317,7 @@ class CardEditorViewModel @Inject constructor(
             content = content,
             front = imageChange(state.front, original?.sides?.front != null),
             back = imageChange(state.back, original?.sides?.back != null),
-            logo = if (state.type == CardType.LOYALTY) logoChange(state.logo) else ImageChange.Keep,
+            logo = if (state.type == CardType.ID) ImageChange.Keep else logoChange(state.logo),
             isLocked = state.isLocked,
         )
         val errors = validator.validate(draft) + formErrors
@@ -331,6 +342,7 @@ class CardEditorViewModel @Inject constructor(
                 state.bank.removeStoredCvv -> CvvChange.Remove
                 else -> CvvChange.Keep
             },
+            issuer = state.bank.issuer,
         )
 
         CardType.ID -> CardContent.Id(
@@ -341,7 +353,7 @@ class CardEditorViewModel @Inject constructor(
         )
 
         CardType.LOYALTY -> CardContent.Loyalty(
-            shop = state.loyalty.shop ?: ShopRef.Custom("").also {
+            shop = state.loyalty.shop ?: BrandRef.Custom("").also {
                 formErrors[CardField.SHOP] = ValidationError.REQUIRED
             },
             format = state.loyalty.format,

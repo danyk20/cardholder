@@ -8,6 +8,9 @@ All notable changes to this project are documented here. The format follows
 - Shop logos: when a catalogue shop is selected, choose its official logo (freely licensed, downloaded from
   Wikimedia Commons on request), upload your own, or keep the card plain. Logos are shown on the card.
 - Database version 2 (logo column) with an automatic, tested migration.
+- Bank cards: choose the issuing bank from a catalogue of 145 banks (EU, Switzerland, Slovakia/Czechia,
+  Germany/Austria, digital banks, US) or type any name; official bank logos on request, and the card network
+  logo (Visa, Mastercard, …) shown automatically. Database version 4 stores the bank.
 - Sort cards by name, date added or a custom order; *Reorder cards* lets you drag cards into place
   (with "Move up/down" accessibility actions). Database version 3 stores the order.
 - Read bank cards over NFC: number, expiry and (when the card provides it) holder name are filled in

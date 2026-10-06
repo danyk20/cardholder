@@ -19,6 +19,7 @@
     <string name="detail_close_photo">Close photo</string>
     <string name="detail_ok">OK</string>
 
+    <string name="field_bank">Bank</string>
     <string name="field_number">Card number</string>
     <string name="field_expiry">Expiry</string>
     <string name="field_holder">Card holder</string>

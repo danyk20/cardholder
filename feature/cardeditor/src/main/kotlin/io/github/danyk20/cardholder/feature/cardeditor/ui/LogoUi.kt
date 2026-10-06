@@ -16,10 +16,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.danyk20.cardholder.core.model.Shop
-import io.github.danyk20.cardholder.core.model.ShopLogo
+import io.github.danyk20.cardholder.core.model.BrandLogo
 import io.github.danyk20.cardholder.core.ui.LogoBadge
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
+import io.github.danyk20.cardholder.feature.cardeditor.LogoChoice
 import io.github.danyk20.cardholder.feature.cardeditor.LogoImage
 import io.github.danyk20.cardholder.feature.cardeditor.R
 
@@ -30,17 +30,17 @@ internal class LogoActions(
     val onDismissChoice: () -> Unit,
 )
 
-/** Asked when a shop with an official logo is selected: use it, upload one or keep the card blank. */
+/** Asked when a shop or bank with an official logo is selected: use it, upload one or keep the card blank. */
 @Composable
-internal fun LogoChoiceDialog(shop: Shop, actions: LogoActions) {
-    val logo = shop.logo ?: return
+internal fun LogoChoiceDialog(choice: LogoChoice, actions: LogoActions) {
+    val logo = choice.logo
     AlertDialog(
         onDismissRequest = actions.onDismissChoice,
         properties = secureDialogProperties(),
-        title = { Text(stringResource(R.string.editor_logo_choice_title, shop.name)) },
+        title = { Text(stringResource(R.string.editor_logo_choice_title, choice.brandName)) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text(stringResource(R.string.editor_logo_choice_message, shop.name))
+                Text(stringResource(R.string.editor_logo_choice_message, choice.brandName))
                 Text(
                     text = licenseText(logo),
                     style = MaterialTheme.typography.bodySmall,
@@ -58,9 +58,9 @@ internal fun LogoChoiceDialog(shop: Shop, actions: LogoActions) {
     )
 }
 
-/** Current logo with buttons to use the official one (if the shop has one), upload one or remove it. */
+/** Current logo with buttons to use the official one (if the shop or bank has one), upload one or remove it. */
 @Composable
-internal fun LogoRow(logo: LogoImage, shop: Shop?, isDownloading: Boolean, actions: LogoActions) {
+internal fun LogoRow(logo: LogoImage, hasOfficialLogo: Boolean, isDownloading: Boolean, actions: LogoActions) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(stringResource(R.string.editor_logo), style = MaterialTheme.typography.titleSmall)
         Row(
@@ -84,7 +84,7 @@ internal fun LogoRow(logo: LogoImage, shop: Shop?, isDownloading: Boolean, actio
             }
         }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            if (shop?.logo != null) {
+            if (hasOfficialLogo) {
                 OutlinedButton(onClick = actions.onUseOfficial, enabled = !isDownloading) {
                     Text(stringResource(R.string.editor_logo_official))
                 }
@@ -100,6 +100,6 @@ internal fun LogoRow(logo: LogoImage, shop: Shop?, isDownloading: Boolean, actio
 }
 
 @Composable
-private fun licenseText(logo: ShopLogo): String = logo.attribution
+private fun licenseText(logo: BrandLogo): String = logo.attribution
     ?.let { stringResource(R.string.editor_logo_attribution, logo.license, it) }
     ?: stringResource(R.string.editor_logo_license, logo.license)

@@ -9,6 +9,7 @@ import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
+import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
@@ -32,7 +33,7 @@ class CardListViewModelTest {
         CardListViewModel(
             observeCards = ObserveCardsUseCase(repository),
             cardRepository = repository,
-            summaryFactory = CardSummaryFactory(FakeShopRepository(), FakeCountryRepository()),
+            summaryFactory = CardSummaryFactory(FakeShopRepository(), FakeBankRepository(), FakeCountryRepository()),
             preferencesRepository = preferences,
             savedStateHandle = SavedStateHandle(),
         )

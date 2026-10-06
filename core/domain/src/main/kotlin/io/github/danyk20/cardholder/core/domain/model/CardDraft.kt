@@ -1,11 +1,11 @@
 package io.github.danyk20.cardholder.core.domain.model
 
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CountryCode
-import io.github.danyk20.cardholder.core.model.ShopRef
 
 /** Everything needed to create a new card or update an existing one. */
 data class CardDraft(
@@ -22,11 +22,16 @@ data class CardDraft(
 
 /** Type-specific content of a [CardDraft]. */
 sealed interface CardContent {
-    data class Bank(val details: CardDetails.Bank, val cvv: CvvChange = CvvChange.Keep) : CardContent
+    data class Bank(
+        val details: CardDetails.Bank,
+        val cvv: CvvChange = CvvChange.Keep,
+        /** The issuing bank, if chosen. */
+        val issuer: BrandRef? = null,
+    ) : CardContent
 
     data class Id(val country: CountryCode, val details: CardDetails.Id) : CardContent
 
-    data class Loyalty(val shop: ShopRef, val format: BarcodeFormat, val details: CardDetails.Loyalty) : CardContent
+    data class Loyalty(val shop: BrandRef, val format: BarcodeFormat, val details: CardDetails.Loyalty) : CardContent
 }
 
 val CardContent.details: CardDetails

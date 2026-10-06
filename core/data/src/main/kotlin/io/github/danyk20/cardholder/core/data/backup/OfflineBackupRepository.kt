@@ -21,6 +21,7 @@ import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardDetails
@@ -28,7 +29,6 @@ import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.ImageRef
-import io.github.danyk20.cardholder.core.model.ShopRef
 import java.io.IOException
 import java.time.Clock
 import javax.inject.Inject
@@ -120,9 +120,11 @@ internal class OfflineBackupRepository(
             createdAt = createdAt.toEpochMilli(),
             updatedAt = updatedAt.toEpochMilli(),
             country = (info as? CardInfo.Id)?.country?.value,
-            shopId = ((info as? CardInfo.Loyalty)?.shop as? ShopRef.Known)?.id,
+            shopId = ((info as? CardInfo.Loyalty)?.shop as? BrandRef.Known)?.id,
             shopName = (info as? CardInfo.Loyalty)?.shop?.name,
             barcodeFormat = (info as? CardInfo.Loyalty)?.format?.name,
+            bankId = ((info as? CardInfo.Bank)?.issuer as? BrandRef.Known)?.id,
+            bankName = (info as? CardInfo.Bank)?.issuer?.name,
             details = details.toDto(),
             cvv = cvv,
             frontImage = sides.front?.export(),
@@ -135,7 +137,11 @@ internal class OfflineBackupRepository(
     private fun BackupCard.toDraft(images: Map<String, ByteArray>): CardDraft {
         val details = this.details.toModel()
         val content = when (details) {
-            is CardDetails.Bank -> CardContent.Bank(details, cvv?.let(CvvChange::Set) ?: CvvChange.Remove)
+            is CardDetails.Bank -> CardContent.Bank(
+                details = details,
+                cvv = cvv?.let(CvvChange::Set) ?: CvvChange.Remove,
+                issuer = bankId?.let { BrandRef.Known(it, bankName.orEmpty()) } ?: bankName?.let(BrandRef::Custom),
+            )
 
             is CardDetails.Id -> CardContent.Id(
                 country = country?.let(CountryCode::of) ?: throw InvalidBackupException("ID card without country"),
@@ -143,7 +149,7 @@ internal class OfflineBackupRepository(
             )
 
             is CardDetails.Loyalty -> CardContent.Loyalty(
-                shop = shopId?.let { ShopRef.Known(it, shopName.orEmpty()) } ?: ShopRef.Custom(shopName.orEmpty()),
+                shop = shopId?.let { BrandRef.Known(it, shopName.orEmpty()) } ?: BrandRef.Custom(shopName.orEmpty()),
                 format = BarcodeFormat.entries.firstOrNull { it.name == barcodeFormat } ?: BarcodeFormat.QR_CODE,
                 details = details,
             )

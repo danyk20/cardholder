@@ -12,11 +12,12 @@ import io.github.danyk20.cardholder.core.domain.validation.CardDraftValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
+import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
-import io.github.danyk20.cardholder.core.model.ShopRef
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
+import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeBarcodeImageScanner
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
@@ -24,6 +25,7 @@ import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
 import io.github.danyk20.cardholder.core.testing.repository.FakeLogoDownloader
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
 import io.github.danyk20.cardholder.core.testing.repository.MIGROS_LOGO_URL
+import io.github.danyk20.cardholder.core.testing.repository.UBS_LOGO_URL
 import java.time.YearMonth
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
@@ -51,8 +53,7 @@ class CardEditorViewModelTest {
         savedStateHandle = SavedStateHandle(mapOf("cardId" to cardId)),
         cardRepository = repository,
         saveCard = SaveCardUseCase(repository, CardDraftValidator()),
-        shopRepository = FakeShopRepository(),
-        countryRepository = FakeCountryRepository(),
+        catalogues = EditorCatalogues(FakeShopRepository(), FakeBankRepository(), FakeCountryRepository()),
         deviceSecurity = deviceSecurity,
         validator = CardDraftValidator(),
         barcodeImageScanner = barcodeScanner,
@@ -129,7 +130,7 @@ class CardEditorViewModelTest {
         viewModel.onShopSelected(FakeShopRepository().shop("migros")!!)
 
         val loyalty = viewModel.uiState.value.loyalty
-        assertEquals(ShopRef.Known("migros", "Migros Cumulus"), loyalty.shop)
+        assertEquals(BrandRef.Known("migros", "Migros Cumulus"), loyalty.shop)
         assertEquals(BarcodeFormat.EAN_13, loyalty.format)
         assertEquals("Migros Cumulus", viewModel.uiState.value.defaultTitle)
     }
@@ -157,7 +158,7 @@ class CardEditorViewModelTest {
         viewModel.onTypeSelected(CardType.LOYALTY)
 
         viewModel.onShopSelected(FakeShopRepository().shop("migros")!!)
-        assertEquals("migros", viewModel.uiState.value.logoChoiceFor?.id)
+        assertEquals("Migros Cumulus", viewModel.uiState.value.logoChoiceFor?.brandName)
         assertTrue(logoDownloader.requested.isEmpty(), "nothing is downloaded before the user decides")
 
         viewModel.onUseOfficialLogo()
@@ -213,6 +214,38 @@ class CardEditorViewModelTest {
         assertEquals("", bank.cvv)
         assertNull(viewModel.uiState.value.errors[CardField.NUMBER])
         assertNull(viewModel.uiState.value.errors[CardField.EXPIRY])
+    }
+
+    @Test
+    fun `choosing a bank stores the issuer and offers its official logo`() = runTest {
+        logoDownloader.logos[UBS_LOGO_URL] = byteArrayOf(9)
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.BANK)
+
+        viewModel.onBankSelected(FakeBankRepository().bank("ubs")!!)
+        assertEquals("UBS", viewModel.uiState.value.logoChoiceFor?.brandName)
+        viewModel.onUseOfficialLogo()
+        viewModel.onNumberChange("4111111111111111")
+        viewModel.onExpiryChange("0430")
+        viewModel.onHolderChange("Jane Doe")
+        viewModel.onSave()
+
+        val draft = repository.savedDrafts.single()
+        assertEquals("UBS •••• 1111", draft.title)
+        assertEquals(BrandRef.Known("ubs", "UBS"), (draft.content as CardContent.Bank).issuer)
+        assertIs<ImageChange.Replace>(draft.logo)
+    }
+
+    @Test
+    fun `banks without an official logo and custom banks don't prompt`() = runTest {
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.BANK)
+
+        viewModel.onBankSelected(FakeBankRepository().bank("neon")!!)
+        assertNull(viewModel.uiState.value.logoChoiceFor)
+        viewModel.onCustomBank(" My Credit Union ")
+        assertEquals(BrandRef.Custom("My Credit Union"), viewModel.uiState.value.bank.issuer)
+        assertNull(viewModel.uiState.value.officialLogo)
     }
 
     @Test

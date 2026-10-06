@@ -43,8 +43,13 @@ constructor(private val cardRepository: CardRepository) {
         val searchable = buildList {
             add(title)
             when (val info = info) {
-                is CardInfo.Bank -> add(info.network.displayName)
+                is CardInfo.Bank -> {
+                    add(info.network.displayName)
+                    info.issuer?.let { add(it.name) }
+                }
+
                 is CardInfo.Id -> add(info.country.value)
+
                 is CardInfo.Loyalty -> add(info.shop.name)
             }
         }
