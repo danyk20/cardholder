@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Modifica</string>
+    <string name="detail_delete">Elimina</string>
+    <string name="detail_more">Altre opzioni</string>
+    <string name="detail_flip">Mostra l\'altro lato</string>
+    <string name="detail_show_code">Mostra codice</string>
+    <string name="detail_copied">%1$s copiato. Verrà cancellato dagli appunti tra un minuto.</string>
+    <string name="detail_copy">Copia: %1$s</string>
+    <string name="detail_show_cvv">Mostra CVV</string>
+    <string name="detail_hide_cvv">Nascondi CVV</string>
+    <string name="detail_locked_details">I dettagli sono nascosti perché questa carta è bloccata</string>
+    <string name="detail_lock">Blocca carta</string>
+    <string name="detail_lock_on">Per vedere questa carta servono l\'impronta, il volto o il blocco schermo</string>
+    <string name="detail_lock_off">Chiunque usi il tuo telefono può vedere questa carta</string>
+    <string name="detail_lock_unavailable">Imposta un blocco schermo sul dispositivo per bloccare le carte</string>
+    <string name="detail_delete_title">Eliminare questa carta?</string>
+    <string name="detail_delete_message">«%1$s» e le relative foto verranno eliminate definitivamente da questo dispositivo.</string>
+    <string name="detail_cancel">Annulla</string>
+    <string name="detail_close_photo">Chiudi foto</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Banca</string>
+    <string name="field_number">Numero carta</string>
+    <string name="field_expiry">Scadenza</string>
+    <string name="field_holder">Titolare</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Circuito</string>
+    <string name="field_country">Paese</string>
+    <string name="field_document_number">Numero documento</string>
+    <string name="field_shop">Negozio</string>
+    <string name="field_code">Codice</string>
+    <string name="field_format">Tipo di codice</string>
+</resources>

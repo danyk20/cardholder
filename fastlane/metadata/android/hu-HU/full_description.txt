@@ -1,0 +1,39 @@
+A Cardholder egy helyen tárolja bankkártyáit, igazolványait és hűségkártyáit a telefonján – titkosítva, offline, reklámok és követés nélkül.
+
+<b>Hűségkártyák a pénztárnál</b>
+• Minden hűségkártya vonalkódja vagy QR-kódja közvetlenül a listában látható
+• Koppintson rá, és a kód teljes képernyőn, maximális fényerővel jelenik meg, készen a leolvasásra
+• Olvassa be a műanyag kártyán lévő kódot a kamerával – vagy írja be kézzel
+• Támogatott formátumok: QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec és Data Matrix
+
+<b>Bankkártyák</b>
+• Kártyaszám, lejárati dátum, kártyabirtokos és CVV tárolása
+• Az adatok kitöltése egy érintésmentes kártya telefonhoz tartásával (NFC)
+• A CVV mindig rejtve marad, és csak ujjlenyomat, arc vagy képernyőzár után jelenik meg
+• A kártyatársaság automatikus felismerése
+
+<b>Igazolványok</b>
+• Személyi igazolvány, útlevél, jogosítvány és egyebek
+• Kibocsátó ország, okmányazonosító és lejárati dátum
+
+<b>Fotók mindkét oldalról</b>
+• Bármely kártya elő- és hátoldala igény szerint beszkennelhető, automatikus szélfelismeréssel
+• A fotók titkosítva vannak, és soha nem hagyják el az eszközt
+
+<b>Biztonság és adatvédelem</b>
+• Minden adat titkosítva van, a kulcsokat a telefon biztonsági hardvere őrzi
+• Bármely kártya zárolható, így csak ujjlenyomattal, arccal vagy képernyőzárral nyitható meg
+• A bizalmas adatokat tartalmazó képernyőkön nem lehet képernyőképet készíteni
+• A kimásolt számok egy perc után törlődnek a vágólapról
+• Nincs fiók, nincsenek reklámok és elemzések – kártyái soha nem hagyják el az eszközt
+• Az alkalmazás csak akkor csatlakozik az internethez, ha Ön egy üzlet vagy bank hivatalos logójának letöltését választja
+
+<b>Az Ön igényei szerint rendezve</b>
+• Keresés és szűrés kártyatípus szerint
+• Rendezés név, hozzáadás dátuma vagy saját egyéni sorrend szerint
+• Színek és logók ismert üzletekhez és bankokhoz, vagy saját logó feltöltése
+
+<b>Titkosított biztonsági mentés</b>
+• Az összes kártya exportálása egyetlen, jelszóval védett fájlba, majd visszaállítása az új telefonon
+
+A Cardholder nyílt forráskódú: https://github.com/danyk20/cardholder

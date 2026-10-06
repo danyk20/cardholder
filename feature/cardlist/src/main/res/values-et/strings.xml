@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Seaded</string>
+    <string name="cardlist_add_card">Lisa kaart</string>
+    <string name="cardlist_search">Otsi kaarte</string>
+    <string name="cardlist_clear_search">Tühjenda otsing</string>
+    <string name="cardlist_empty_title">Kaarte veel pole</string>
+    <string name="cardlist_empty_message">Hoidke oma panga-, ID- ja kliendikaarte turvaliselt telefonis. Kõik on krüpteeritud ja jääb teie seadmesse.</string>
+    <string name="cardlist_no_results">Otsingule vastavaid kaarte pole</string>
+    <string name="cardlist_show_code">Kuva kood täisekraanil</string>
+    <string name="cardlist_tap_to_unlock">Puudutage avamiseks</string>
+    <string name="cardlist_sort">Sordi kaardid</string>
+    <string name="cardlist_sort_name">Nimi (A–Z)</string>
+    <string name="cardlist_sort_date">Lisamise kuupäev (uuemad eespool)</string>
+    <string name="cardlist_sort_custom">Kohandatud järjestus</string>
+    <string name="cardlist_reorder">Muuda kaartide järjestust</string>
+    <string name="cardlist_reorder_done">Valmis</string>
+    <string name="cardlist_reorder_cancel">Tühista ümberjärjestamine</string>
+    <string name="cardlist_reorder_hint">Järjestuse muutmiseks lohistage kaarte pidemest.</string>
+    <string name="cardlist_drag_handle">Lohista, et teisaldada: %1$s</string>
+    <string name="cardlist_move_up">Liiguta üles</string>
+    <string name="cardlist_move_down">Liiguta alla</string>
+</resources>

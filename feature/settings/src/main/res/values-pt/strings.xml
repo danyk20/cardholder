@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Configurações</string>
+    <string name="settings_appearance">Aparência</string>
+    <string name="settings_theme_system">Padrão do sistema</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_dark">Escuro</string>
+    <string name="settings_dynamic_color">Cores dinâmicas</string>
+    <string name="settings_dynamic_color_description">Usar as cores do seu plano de fundo</string>
+    <string name="settings_security">Segurança</string>
+    <string name="settings_allow_screenshots">Permitir capturas de tela</string>
+    <string name="settings_allow_screenshots_description">Até você sair do app. As capturas de tela podem mostrar números de cartão e são salvas nas suas fotos, que podem ter backup na nuvem.</string>
+    <string name="settings_backup">Backup</string>
+    <string name="settings_export">Exportar backup</string>
+    <string name="settings_export_description">Salvar todos os cartões em um arquivo protegido por senha</string>
+    <string name="settings_import">Importar backup</string>
+    <string name="settings_import_description">Restaurar cartões de um arquivo de backup</string>
+    <string name="settings_backup_working">Processando…</string>
+    <string name="settings_password_title_export">Proteja seu backup</string>
+    <string name="settings_password_title_import">Digite a senha do backup</string>
+    <string name="settings_password_message_export">O backup contém todos os dados dos cartões, inclusive os CVVs. Escolha uma senha forte – ela não pode ser recuperada.</string>
+    <string name="settings_password">Senha</string>
+    <string name="settings_password_confirm">Repetir senha</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Use pelo menos %1$d caractere</item>
+        <item quantity="many">Use pelo menos %1$d caracteres</item>
+        <item quantity="other">Use pelo menos %1$d caracteres</item>
+    </plurals>
+    <string name="settings_password_mismatch">As senhas não coincidem</string>
+    <string name="settings_replace_existing">Substituir cartões que já existem</string>
+    <string name="settings_continue">Continuar</string>
+    <string name="settings_cancel">Cancelar</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d cartão exportado</item>
+        <item quantity="many">%1$d cartões exportados</item>
+        <item quantity="other">%1$d cartões exportados</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d cartão importado</item>
+        <item quantity="many">%1$d cartões importados</item>
+        <item quantity="other">%1$d cartões importados</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d já existia e foi ignorado</item>
+        <item quantity="many">%1$d já existiam e foram ignorados</item>
+        <item quantity="other">%1$d já existiam e foram ignorados</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Senha incorreta</string>
+    <string name="settings_result_invalid_file">Este arquivo não é um backup do Cardholder ou está corrompido</string>
+    <string name="settings_result_auth_required">Confirme sua identidade para exportar cartões protegidos</string>
+    <string name="settings_result_device_not_secure">Configure um bloqueio de tela para importar cartões com CVV ou bloqueio</string>
+    <string name="settings_result_failed">Algo deu errado. Tente novamente.</string>
+    <string name="settings_about">Sobre</string>
+    <string name="settings_version">Versão %1$s</string>
+    <string name="settings_privacy">Seus cartões são criptografados e nunca saem deste dispositivo, a menos que você os exporte. O app só se conecta à internet para baixar o logotipo oficial de uma loja ou banco quando você pede.</string>
+    <string name="settings_privacy_policy">Política de Privacidade</string>
+    <string name="settings_logo_credits">Créditos dos logotipos</string>
+    <string name="settings_logo_credits_description">Fontes e licenças dos logotipos oficiais</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Tarayıcıyı kapat</string>
+    <string name="scanner_hint">Kamerayı kartınızdaki barkoda veya QR koduna doğrultun</string>
+    <string name="scanner_permission_rationale">Cardholder, kartınızdaki kodu taramak için kameraya erişmelidir. Görüntüler cihazda analiz edilir; hiçbir zaman saklanmaz veya bir yere gönderilmez.</string>
+    <string name="scanner_grant_permission">Kameraya izin ver</string>
+    <string name="nfc_title">Kartı NFC ile oku</string>
+    <string name="nfc_hold_card">Kartınızı telefonunuzun arka yüzüne düz bir şekilde tutun ve hareket ettirmeyin.</string>
+    <string name="nfc_reading">Kart okunuyor…</string>
+    <string name="nfc_failed">Kart okunamadı. Kartı telefonun arka yüzünde yavaşça gezdirip tekrar deneyin.</string>
+    <string name="nfc_disabled">NFC kapalı.</string>
+    <string name="nfc_turn_on">NFC\'yi aç</string>
+    <string name="nfc_cvv_note">CVV çipte saklanmaz; lütfen kendiniz girin.</string>
+    <string name="nfc_cancel">İptal</string>
+</resources>

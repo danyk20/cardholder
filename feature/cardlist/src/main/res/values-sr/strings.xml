@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Подешавања</string>
+    <string name="cardlist_add_card">Додај картицу</string>
+    <string name="cardlist_search">Претражи картице</string>
+    <string name="cardlist_clear_search">Обриши претрагу</string>
+    <string name="cardlist_empty_title">Још нема картица</string>
+    <string name="cardlist_empty_message">Чувајте банковне картице, личне документе и картице лојалности безбедно на телефону. Све је шифровано и остаје на уређају.</string>
+    <string name="cardlist_no_results">Ниједна картица не одговара претрази</string>
+    <string name="cardlist_show_code">Прикажи код преко целог екрана</string>
+    <string name="cardlist_tap_to_unlock">Додирните да бисте откључали</string>
+    <string name="cardlist_sort">Сортирај картице</string>
+    <string name="cardlist_sort_name">Назив (А–Ш)</string>
+    <string name="cardlist_sort_date">Датум додавања (прво најновије)</string>
+    <string name="cardlist_sort_custom">Прилагођени редослед</string>
+    <string name="cardlist_reorder">Промени редослед</string>
+    <string name="cardlist_reorder_done">Готово</string>
+    <string name="cardlist_reorder_cancel">Откажи промену редоследа</string>
+    <string name="cardlist_reorder_hint">Превуците картице држећи ручицу да бисте променили редослед.</string>
+    <string name="cardlist_drag_handle">Превуците да бисте преместили: %1$s</string>
+    <string name="cardlist_move_up">Помери нагоре</string>
+    <string name="cardlist_move_down">Помери надоле</string>
+</resources>

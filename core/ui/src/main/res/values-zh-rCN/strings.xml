@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">银行卡</string>
+    <string name="card_type_id">证件</string>
+    <string name="card_type_loyalty">会员卡</string>
+    <string name="card_type_bank_description">借记卡或信用卡</string>
+    <string name="card_type_id_description">身份证、护照、驾驶证…</string>
+    <string name="card_type_loyalty_description">带有条形码或二维码的商店会员卡</string>
+    <string name="card_side_front">正面</string>
+    <string name="card_side_back">背面</string>
+    <string name="card_locked">已锁定</string>
+    <string name="card_locked_message">此卡片已锁定</string>
+    <string name="auth_title_show_cvv">显示 CVV</string>
+    <string name="auth_title_export">导出备份</string>
+    <string name="card_not_found">此卡片已不存在</string>
+    <string name="auth_title_unlock_card">解锁“%1$s”</string>
+    <string name="auth_subtitle">请使用指纹、人脸或屏幕锁定确认是您本人</string>
+    <string name="auth_key_invalidated">保护此数据的屏幕锁定已被移除，因此无法再解密。</string>
+    <string name="error_required">必填</string>
+    <string name="error_invalid_characters">包含不允许使用的字符</string>
+    <string name="error_invalid_length">长度不正确</string>
+    <string name="error_invalid_checksum">校验位不匹配，请检查是否有输入错误</string>
+    <string name="error_invalid_date">日期无效</string>
+    <string name="action_back">返回</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_unlock">解锁</string>
+    <string name="format_qr_code">QR 码</string>
+    <string name="color_navy">海军蓝</string>
+    <string name="color_blue">蓝色</string>
+    <string name="color_teal">蓝绿色</string>
+    <string name="color_green">绿色</string>
+    <string name="color_lime">青柠绿</string>
+    <string name="color_amber">琥珀色</string>
+    <string name="color_orange">橙色</string>
+    <string name="color_red">红色</string>
+    <string name="color_pink">粉色</string>
+    <string name="color_purple">紫色</string>
+    <string name="color_brown">棕色</string>
+    <string name="color_graphite">石墨色</string>
+</resources>

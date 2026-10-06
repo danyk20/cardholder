@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Muuda</string>
+    <string name="detail_delete">Kustuta</string>
+    <string name="detail_more">Rohkem valikuid</string>
+    <string name="detail_flip">Kuva teine pool</string>
+    <string name="detail_show_code">Kuva kood</string>
+    <string name="detail_copied">%1$s kopeeriti. Lõikelaud tühjendatakse minuti pärast.</string>
+    <string name="detail_copy">Kopeeri: %1$s</string>
+    <string name="detail_show_cvv">Kuva CVV</string>
+    <string name="detail_hide_cvv">Peida CVV</string>
+    <string name="detail_locked_details">Üksikasjad on peidetud, kuna see kaart on lukustatud</string>
+    <string name="detail_lock">Lukusta kaart</string>
+    <string name="detail_lock_on">Selle kaardi nägemiseks on vaja sõrmejälge, nägu või ekraanilukku</string>
+    <string name="detail_lock_off">Kõik, kes teie telefoni kasutavad, näevad seda kaarti</string>
+    <string name="detail_lock_unavailable">Kaartide lukustamiseks seadistage seadmes ekraanilukk</string>
+    <string name="detail_delete_title">Kas kustutada see kaart?</string>
+    <string name="detail_delete_message">%1$s ja selle fotod kustutatakse sellest seadmest jäädavalt.</string>
+    <string name="detail_cancel">Tühista</string>
+    <string name="detail_close_photo">Sulge foto</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Pank</string>
+    <string name="field_number">Kaardi number</string>
+    <string name="field_expiry">Kehtiv kuni</string>
+    <string name="field_holder">Kaardi omanik</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Kaardiorganisatsioon</string>
+    <string name="field_country">Riik</string>
+    <string name="field_document_number">Dokumendi number</string>
+    <string name="field_shop">Pood</string>
+    <string name="field_code">Kood</string>
+    <string name="field_format">Koodi tüüp</string>
+</resources>

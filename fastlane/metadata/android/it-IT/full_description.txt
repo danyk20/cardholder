@@ -1,0 +1,39 @@
+Cardholder riunisce carte bancarie, documenti d'identità e carte fedeltà in un unico posto sul telefono: criptati, offline e senza pubblicità né tracciamento.
+
+<b>Carte fedeltà alla cassa</b>
+• Ogni carta fedeltà mostra il codice a barre o il codice QR direttamente nell'elenco
+• Toccala per mostrare il codice a schermo intero alla massima luminosità, pronto per lo scanner
+• Scansiona il codice della tua carta di plastica con la fotocamera oppure inseriscilo a mano
+• Supporta QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec e Data Matrix
+
+<b>Carte bancarie</b>
+• Memorizza numero della carta, data di scadenza, titolare e CVV
+• Compila i dati avvicinando una carta contactless al telefono (NFC)
+• Il CVV è sempre nascosto e viene mostrato solo dopo la verifica con impronta, volto o blocco schermo
+• Riconoscimento automatico del circuito della carta
+
+<b>Documenti d'identità</b>
+• Carte d'identità, passaporti, patenti di guida e altro ancora
+• Paese di rilascio, numero del documento e data di scadenza
+
+<b>Foto di entrambi i lati</b>
+• Se vuoi, scansiona il fronte e il retro di qualsiasi carta con il rilevamento automatico dei bordi
+• Le foto sono criptate e non lasciano mai il tuo dispositivo
+
+<b>Sicurezza e privacy</b>
+• Tutto è criptato con chiavi conservate nell'hardware sicuro del telefono
+• Blocca qualsiasi carta in modo che si possa aprire solo con impronta, volto o blocco schermo
+• Gli screenshot sono bloccati nelle schermate con dati sensibili
+• I numeri copiati vengono rimossi dagli appunti dopo un minuto
+• Nessun account, nessuna pubblicità, nessuna statistica: le tue carte non lasciano mai il dispositivo
+• L'app si connette a Internet solo quando scegli di scaricare il logo ufficiale di un negozio o di una banca
+
+<b>Organizzate a modo tuo</b>
+• Cerca e filtra per tipo di carta
+• Ordina per nome, per data di aggiunta o secondo un ordine personalizzato
+• Colori e loghi per negozi e banche noti, oppure carica i tuoi
+
+<b>Backup criptato</b>
+• Esporta tutte le carte in un unico file protetto da password e ripristinalo su un nuovo telefono
+
+Cardholder è open source: https://github.com/danyk20/cardholder

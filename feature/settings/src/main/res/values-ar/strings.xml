@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">الإعدادات</string>
+
+    <string name="settings_appearance">المظهر</string>
+    <string name="settings_theme_system">الإعداد التلقائي للنظام</string>
+    <string name="settings_theme_light">فاتح</string>
+    <string name="settings_theme_dark">داكن</string>
+    <string name="settings_dynamic_color">الألوان الديناميكية</string>
+    <string name="settings_dynamic_color_description">استخدام ألوان من خلفية الشاشة</string>
+
+    <string name="settings_security">الأمان</string>
+    <string name="settings_allow_screenshots">السماح بلقطات الشاشة</string>
+    <string name="settings_allow_screenshots_description">حتى تغادر التطبيق. قد تُظهر لقطات الشاشة أرقام البطاقات، وتُحفظ في صورك التي قد يتم نسخها احتياطيًا إلى السحابة.</string>
+    <string name="settings_backup">النسخ الاحتياطي</string>
+    <string name="settings_export">تصدير نسخة احتياطية</string>
+    <string name="settings_export_description">حفظ جميع البطاقات في ملف محمي بكلمة مرور</string>
+    <string name="settings_import">استيراد نسخة احتياطية</string>
+    <string name="settings_import_description">استعادة البطاقات من ملف نسخة احتياطية</string>
+    <string name="settings_backup_working">جارٍ التنفيذ…</string>
+
+    <string name="settings_password_title_export">حماية النسخة الاحتياطية</string>
+    <string name="settings_password_title_import">إدخال كلمة مرور النسخة الاحتياطية</string>
+    <string name="settings_password_message_export">تحتوي النسخة الاحتياطية على جميع تفاصيل البطاقات، بما في ذلك رموز CVV. اختر كلمة مرور قوية – لا يمكن استرجاعها.</string>
+    <string name="settings_password">كلمة المرور</string>
+    <string name="settings_password_confirm">تكرار كلمة المرور</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="zero">استخدم %1$d حرف على الأقل</item>
+        <item quantity="one">استخدم %1$d حرف على الأقل</item>
+        <item quantity="two">استخدم %1$d حرفين على الأقل</item>
+        <item quantity="few">استخدم %1$d أحرف على الأقل</item>
+        <item quantity="many">استخدم %1$d حرفًا على الأقل</item>
+        <item quantity="other">استخدم %1$d حرف على الأقل</item>
+    </plurals>
+    <string name="settings_password_mismatch">كلمتا المرور غير متطابقتين</string>
+    <string name="settings_replace_existing">استبدال البطاقات الموجودة بالفعل</string>
+    <string name="settings_continue">متابعة</string>
+    <string name="settings_cancel">إلغاء</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="zero">تم تصدير %1$d بطاقة</item>
+        <item quantity="one">تم تصدير %1$d بطاقة</item>
+        <item quantity="two">تم تصدير %1$d بطاقتين</item>
+        <item quantity="few">تم تصدير %1$d بطاقات</item>
+        <item quantity="many">تم تصدير %1$d بطاقة</item>
+        <item quantity="other">تم تصدير %1$d بطاقة</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="zero">تم استيراد %1$d بطاقة</item>
+        <item quantity="one">تم استيراد %1$d بطاقة</item>
+        <item quantity="two">تم استيراد %1$d بطاقتين</item>
+        <item quantity="few">تم استيراد %1$d بطاقات</item>
+        <item quantity="many">تم استيراد %1$d بطاقة</item>
+        <item quantity="other">تم استيراد %1$d بطاقة</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="zero">تم تخطي %1$d بطاقة لأنها موجودة بالفعل</item>
+        <item quantity="one">تم تخطي %1$d بطاقة لأنها موجودة بالفعل</item>
+        <item quantity="two">تم تخطي %1$d بطاقتين لأنهما موجودتان بالفعل</item>
+        <item quantity="few">تم تخطي %1$d بطاقات لأنها موجودة بالفعل</item>
+        <item quantity="many">تم تخطي %1$d بطاقة لأنها موجودة بالفعل</item>
+        <item quantity="other">تم تخطي %1$d بطاقة لأنها موجودة بالفعل</item>
+    </plurals>
+    <string name="settings_result_wrong_password">كلمة المرور غير صحيحة</string>
+    <string name="settings_result_invalid_file">هذا الملف ليس نسخة احتياطية من Cardholder أو أنه تالف</string>
+    <string name="settings_result_auth_required">أكِّد هويتك لتصدير البطاقات المحمية</string>
+    <string name="settings_result_device_not_secure">اضبط قفل شاشة لاستيراد البطاقات التي تحتوي على رموز CVV أو أقفال</string>
+    <string name="settings_result_failed">حدث خطأ ما. يُرجى المحاولة مرة أخرى.</string>
+
+    <string name="settings_about">حول التطبيق</string>
+    <string name="settings_version">الإصدار %1$s</string>
+    <string name="settings_privacy">يتم تشفير بطاقاتك ولا تغادر هذا الجهاز أبدًا إلا إذا صدّرتها. لا يتصل التطبيق بالإنترنت إلا لتنزيل شعار رسمي لمتجر أو بنك عندما تطلب ذلك.</string>
+    <string name="settings_privacy_policy">سياسة الخصوصية</string>
+    <string name="settings_logo_credits">حقوق الشعارات</string>
+    <string name="settings_logo_credits_description">مصادر الشعارات الرسمية وتراخيصها</string>
+</resources>

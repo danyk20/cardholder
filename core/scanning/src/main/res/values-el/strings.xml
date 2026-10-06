@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Κλείσιμο σαρωτή</string>
+    <string name="scanner_hint">Στρέψτε την κάμερα στον γραμμωτό κώδικα ή στον κωδικό QR της κάρτας σας</string>
+    <string name="scanner_permission_rationale">Το Cardholder χρειάζεται την κάμερα για να σαρώσει τον κωδικό της κάρτας σας. Οι εικόνες αναλύονται στη συσκευή και δεν αποθηκεύονται ούτε αποστέλλονται πουθενά.</string>
+    <string name="scanner_grant_permission">Να επιτρέπεται η κάμερα</string>
+    <string name="nfc_title">Ανάγνωση κάρτας με NFC</string>
+    <string name="nfc_hold_card">Κρατήστε την κάρτα επίπεδη στο πίσω μέρος του τηλεφώνου σας και μην την κουνάτε.</string>
+    <string name="nfc_reading">Ανάγνωση κάρτας…</string>
+    <string name="nfc_failed">Δεν ήταν δυνατή η ανάγνωση της κάρτας. Μετακινήστε την αργά στο πίσω μέρος του τηλεφώνου και δοκιμάστε ξανά.</string>
+    <string name="nfc_disabled">Το NFC είναι απενεργοποιημένο.</string>
+    <string name="nfc_turn_on">Ενεργοποίηση NFC</string>
+    <string name="nfc_cvv_note">Ο κωδικός CVV δεν αποθηκεύεται στο τσιπ. Πληκτρολογήστε τον εσείς.</string>
+    <string name="nfc_cancel">Ακύρωση</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Rediger</string>
+    <string name="detail_delete">Slett</string>
+    <string name="detail_more">Flere alternativer</string>
+    <string name="detail_flip">Vis den andre siden</string>
+    <string name="detail_show_code">Vis koden</string>
+    <string name="detail_copied">%1$s er kopiert. Det fjernes fra utklippstavlen om ett minutt.</string>
+    <string name="detail_copy">Kopier %1$s</string>
+    <string name="detail_show_cvv">Vis CVV</string>
+    <string name="detail_hide_cvv">Skjul CVV</string>
+    <string name="detail_locked_details">Detaljene er skjult fordi kortet er låst</string>
+    <string name="detail_lock">Lås kortet</string>
+    <string name="detail_lock_on">Fingeravtrykk, ansikt eller skjermlås kreves for å se dette kortet</string>
+    <string name="detail_lock_off">Alle som bruker telefonen din, kan se dette kortet</string>
+    <string name="detail_lock_unavailable">Konfigurer skjermlås på enheten for å låse kort</string>
+    <string name="detail_delete_title">Vil du slette dette kortet?</string>
+    <string name="detail_delete_message">%1$s og bildene av kortet slettes permanent fra denne enheten.</string>
+    <string name="detail_cancel">Avbryt</string>
+    <string name="detail_close_photo">Lukk bildet</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Bank</string>
+    <string name="field_number">Kortnummer</string>
+    <string name="field_expiry">Utløper</string>
+    <string name="field_holder">Kortinnehaver</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Kortselskap</string>
+    <string name="field_country">Land</string>
+    <string name="field_document_number">Dokumentnummer</string>
+    <string name="field_shop">Butikk</string>
+    <string name="field_code">Kode</string>
+    <string name="field_format">Kodetype</string>
+</resources>

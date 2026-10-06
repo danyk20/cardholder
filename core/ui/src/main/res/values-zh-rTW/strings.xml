@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">銀行卡</string>
+    <string name="card_type_id">證件</string>
+    <string name="card_type_loyalty">會員卡</string>
+    <string name="card_type_bank_description">金融卡或信用卡</string>
+    <string name="card_type_id_description">身分證、護照、駕照…</string>
+    <string name="card_type_loyalty_description">附有條碼或 QR 碼的商店會員卡</string>
+    <string name="card_side_front">正面</string>
+    <string name="card_side_back">背面</string>
+    <string name="card_locked">已鎖定</string>
+    <string name="card_locked_message">這張卡片已鎖定</string>
+    <string name="auth_title_show_cvv">顯示 CVV</string>
+    <string name="auth_title_export">匯出備份</string>
+    <string name="card_not_found">這張卡片已不存在</string>
+    <string name="auth_title_unlock_card">解鎖「%1$s」</string>
+    <string name="auth_subtitle">請使用指紋、臉孔或螢幕鎖定確認是你本人</string>
+    <string name="auth_key_invalidated">保護這項資料的螢幕鎖定已遭移除，因此無法再解密。</string>
+    <string name="error_required">必填</string>
+    <string name="error_invalid_characters">包含不允許使用的字元</string>
+    <string name="error_invalid_length">長度不正確</string>
+    <string name="error_invalid_checksum">檢查碼不符，請檢查是否有輸入錯誤</string>
+    <string name="error_invalid_date">日期無效</string>
+    <string name="action_back">返回</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_unlock">解鎖</string>
+    <string name="format_qr_code">QR 碼</string>
+    <string name="color_navy">海軍藍</string>
+    <string name="color_blue">藍色</string>
+    <string name="color_teal">藍綠色</string>
+    <string name="color_green">綠色</string>
+    <string name="color_lime">萊姆綠</string>
+    <string name="color_amber">琥珀色</string>
+    <string name="color_orange">橘色</string>
+    <string name="color_red">紅色</string>
+    <string name="color_pink">粉紅色</string>
+    <string name="color_purple">紫色</string>
+    <string name="color_brown">棕色</string>
+    <string name="color_graphite">石墨色</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">설정</string>
+    <string name="cardlist_add_card">카드 추가</string>
+    <string name="cardlist_search">카드 검색</string>
+    <string name="cardlist_clear_search">검색어 지우기</string>
+    <string name="cardlist_empty_title">아직 카드가 없습니다</string>
+    <string name="cardlist_empty_message">은행 카드, 신분증, 멤버십 카드를 휴대전화에 안전하게 보관하세요. 모든 정보는 암호화되어 기기에만 저장됩니다.</string>
+    <string name="cardlist_no_results">검색어와 일치하는 카드가 없습니다</string>
+    <string name="cardlist_show_code">코드를 전체 화면으로 표시</string>
+    <string name="cardlist_tap_to_unlock">탭하여 잠금 해제</string>
+    <string name="cardlist_sort">카드 정렬</string>
+    <string name="cardlist_sort_name">이름(A–Z)</string>
+    <string name="cardlist_sort_date">추가한 날짜(최신순)</string>
+    <string name="cardlist_sort_custom">사용자 지정 순서</string>
+    <string name="cardlist_reorder">카드 순서 변경</string>
+    <string name="cardlist_reorder_done">완료</string>
+    <string name="cardlist_reorder_cancel">순서 변경 취소</string>
+    <string name="cardlist_reorder_hint">핸들을 드래그하여 카드 순서를 변경하세요.</string>
+    <string name="cardlist_drag_handle">드래그하여 %1$s 이동</string>
+    <string name="cardlist_move_up">위로 이동</string>
+    <string name="cardlist_move_down">아래로 이동</string>
+</resources>

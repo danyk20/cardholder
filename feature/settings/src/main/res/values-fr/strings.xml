@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_appearance">Apparence</string>
+    <string name="settings_theme_system">Valeur par défaut du système</string>
+    <string name="settings_theme_light">Clair</string>
+    <string name="settings_theme_dark">Sombre</string>
+    <string name="settings_dynamic_color">Couleurs dynamiques</string>
+    <string name="settings_dynamic_color_description">Utiliser les couleurs de votre fond d\'écran</string>
+    <string name="settings_security">Sécurité</string>
+    <string name="settings_allow_screenshots">Autoriser les captures d\'écran</string>
+    <string name="settings_allow_screenshots_description">Jusqu\'à ce que vous quittiez l\'application. Les captures d\'écran peuvent montrer des numéros de carte et sont enregistrées dans vos photos, qui peuvent être sauvegardées dans le cloud.</string>
+    <string name="settings_backup">Sauvegarde</string>
+    <string name="settings_export">Exporter une sauvegarde</string>
+    <string name="settings_export_description">Enregistrer toutes les cartes dans un fichier protégé par mot de passe</string>
+    <string name="settings_import">Importer une sauvegarde</string>
+    <string name="settings_import_description">Restaurer des cartes à partir d\'un fichier de sauvegarde</string>
+    <string name="settings_backup_working">Traitement en cours…</string>
+    <string name="settings_password_title_export">Protégez votre sauvegarde</string>
+    <string name="settings_password_title_import">Saisissez le mot de passe de la sauvegarde</string>
+    <string name="settings_password_message_export">La sauvegarde contient toutes les informations des cartes, y compris les CVV. Choisissez un mot de passe fort – il ne pourra pas être récupéré.</string>
+    <string name="settings_password">Mot de passe</string>
+    <string name="settings_password_confirm">Confirmer le mot de passe</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Utilisez au moins %1$d caractère</item>
+        <item quantity="many">Utilisez au moins %1$d caractères</item>
+        <item quantity="other">Utilisez au moins %1$d caractères</item>
+    </plurals>
+    <string name="settings_password_mismatch">Les mots de passe ne correspondent pas</string>
+    <string name="settings_replace_existing">Remplacer les cartes qui existent déjà</string>
+    <string name="settings_continue">Continuer</string>
+    <string name="settings_cancel">Annuler</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d carte exportée</item>
+        <item quantity="many">%1$d cartes exportées</item>
+        <item quantity="other">%1$d cartes exportées</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d carte importée</item>
+        <item quantity="many">%1$d cartes importées</item>
+        <item quantity="other">%1$d cartes importées</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d carte existait déjà et a été ignorée</item>
+        <item quantity="many">%1$d cartes existaient déjà et ont été ignorées</item>
+        <item quantity="other">%1$d cartes existaient déjà et ont été ignorées</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Mot de passe incorrect</string>
+    <string name="settings_result_invalid_file">Ce fichier n\'est pas une sauvegarde Cardholder ou il est endommagé</string>
+    <string name="settings_result_auth_required">Confirmez votre identité pour exporter les cartes protégées</string>
+    <string name="settings_result_device_not_secure">Configurez le verrouillage de l\'écran pour importer des cartes avec CVV ou verrouillage</string>
+    <string name="settings_result_failed">Un problème est survenu. Veuillez réessayer.</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_privacy">Vos cartes sont chiffrées et ne quittent jamais cet appareil, sauf si vous les exportez. L\'application ne se connecte à Internet que pour télécharger le logo officiel d\'un magasin ou d\'une banque, à votre demande.</string>
+    <string name="settings_privacy_policy">Règles de confidentialité</string>
+    <string name="settings_logo_credits">Crédits des logos</string>
+    <string name="settings_logo_credits_description">Sources et licences des logos officiels</string>
+</resources>

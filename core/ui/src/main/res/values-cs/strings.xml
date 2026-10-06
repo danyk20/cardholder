@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card types -->
+    <string name="card_type_bank">Platební karta</string>
+    <string name="card_type_id">Doklad</string>
+    <string name="card_type_loyalty">Věrnostní karta</string>
+    <string name="card_type_bank_description">Debetní nebo kreditní karta</string>
+    <string name="card_type_id_description">Občanský průkaz, pas, řidičský průkaz…</string>
+    <string name="card_type_loyalty_description">Karta obchodu s čárovým nebo QR kódem</string>
+
+    <!-- Card sides -->
+    <string name="card_side_front">Přední strana</string>
+    <string name="card_side_back">Zadní strana</string>
+    <string name="card_locked">Zamčená</string>
+    <string name="card_locked_message">Tato karta je zamčená</string>
+    <string name="auth_title_show_cvv">Zobrazit CVV</string>
+    <string name="auth_title_export">Exportovat zálohu</string>
+    <string name="card_not_found">Tato karta už neexistuje</string>
+
+    <!-- Authentication -->
+    <string name="auth_title_unlock_card">Odemknout %1$s</string>
+    <string name="auth_subtitle">Potvrďte svou totožnost otiskem prstu, obličejem nebo zámkem obrazovky</string>
+    <string name="auth_key_invalidated">Tato data byla chráněna zámkem obrazovky, který byl mezitím odstraněn, a už je nelze dešifrovat.</string>
+
+    <!-- Validation -->
+    <string name="error_required">Povinné</string>
+    <string name="error_invalid_characters">Obsahuje nepovolené znaky</string>
+    <string name="error_invalid_length">Nesprávná délka</string>
+    <string name="error_invalid_checksum">Kontrolní číslice nesouhlasí – zkontrolujte překlepy</string>
+    <string name="error_invalid_date">Neplatné datum</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Zpět</string>
+    <string name="action_cancel">Zrušit</string>
+    <string name="action_unlock">Odemknout</string>
+
+    <!-- Barcode symbology -->
+    <string name="format_qr_code">QR kód</string>
+
+    <!-- Card colours -->
+    <string name="color_navy">Námořnická modrá</string>
+    <string name="color_blue">Modrá</string>
+    <string name="color_teal">Petrolejová</string>
+    <string name="color_green">Zelená</string>
+    <string name="color_lime">Limetková</string>
+    <string name="color_amber">Jantarová</string>
+    <string name="color_orange">Oranžová</string>
+    <string name="color_red">Červená</string>
+    <string name="color_pink">Růžová</string>
+    <string name="color_purple">Fialová</string>
+    <string name="color_brown">Hnědá</string>
+    <string name="color_graphite">Grafitová</string>
+</resources>

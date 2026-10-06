@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">关闭</string>
+    <string name="barcode_details">卡片详情</string>
+    <string name="barcode_description">%2$s的%1$s</string>
+    <string name="barcode_unencodable">此代码无法显示为 %1$s。请编辑卡片以修正代码，或选择其他代码类型。</string>
+    <string name="barcode_hint">请将屏幕放平并保持稳定，对准扫描器。</string>
+</resources>

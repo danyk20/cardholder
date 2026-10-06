@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Inställningar</string>
+    <string name="cardlist_add_card">Lägg till kort</string>
+    <string name="cardlist_search">Sök kort</string>
+    <string name="cardlist_clear_search">Rensa sökning</string>
+    <string name="cardlist_empty_title">Inga kort ännu</string>
+    <string name="cardlist_empty_message">Förvara dina bank-, ID- och kundkort säkert i telefonen. Allt krypteras och stannar på enheten.</string>
+    <string name="cardlist_no_results">Inga kort matchar sökningen</string>
+    <string name="cardlist_show_code">Visa koden i helskärm</string>
+    <string name="cardlist_tap_to_unlock">Tryck för att låsa upp</string>
+    <string name="cardlist_sort">Sortera kort</string>
+    <string name="cardlist_sort_name">Namn (A–Ö)</string>
+    <string name="cardlist_sort_date">Datum tillagt (nyast först)</string>
+    <string name="cardlist_sort_custom">Egen ordning</string>
+    <string name="cardlist_reorder">Ändra ordning på kort</string>
+    <string name="cardlist_reorder_done">Klar</string>
+    <string name="cardlist_reorder_cancel">Avbryt omsortering</string>
+    <string name="cardlist_reorder_hint">Dra korten i handtaget för att ändra ordningen.</string>
+    <string name="cardlist_drag_handle">Dra för att flytta %1$s</string>
+    <string name="cardlist_move_up">Flytta upp</string>
+    <string name="cardlist_move_down">Flytta ned</string>
+</resources>

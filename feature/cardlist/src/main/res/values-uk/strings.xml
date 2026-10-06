@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Налаштування</string>
+    <string name="cardlist_add_card">Додати картку</string>
+    <string name="cardlist_search">Пошук карток</string>
+    <string name="cardlist_clear_search">Очистити пошук</string>
+    <string name="cardlist_empty_title">Карток поки немає</string>
+    <string name="cardlist_empty_message">Зберігайте банківські картки, документи й картки лояльності в безпеці на телефоні. Усі дані зашифровано, і вони залишаються на пристрої.</string>
+    <string name="cardlist_no_results">Немає карток, що відповідають запиту</string>
+    <string name="cardlist_show_code">Показати код на весь екран</string>
+    <string name="cardlist_tap_to_unlock">Торкніться, щоб розблокувати</string>
+    <string name="cardlist_sort">Сортування карток</string>
+    <string name="cardlist_sort_name">Назва (А–Я)</string>
+    <string name="cardlist_sort_date">Дата додавання (спершу нові)</string>
+    <string name="cardlist_sort_custom">Власний порядок</string>
+    <string name="cardlist_reorder">Змінити порядок карток</string>
+    <string name="cardlist_reorder_done">Готово</string>
+    <string name="cardlist_reorder_cancel">Скасувати зміну порядку</string>
+    <string name="cardlist_reorder_hint">Перетягуйте картки за маркер, щоб змінити їх порядок.</string>
+    <string name="cardlist_drag_handle">Перетягніть, щоб перемістити «%1$s»</string>
+    <string name="cardlist_move_up">Перемістити вгору</string>
+    <string name="cardlist_move_down">Перемістити вниз</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Impostazioni</string>
+    <string name="cardlist_add_card">Aggiungi carta</string>
+    <string name="cardlist_search">Cerca carte</string>
+    <string name="cardlist_clear_search">Cancella ricerca</string>
+    <string name="cardlist_empty_title">Ancora nessuna carta</string>
+    <string name="cardlist_empty_message">Conserva in modo sicuro sul telefono le tue carte bancarie, i documenti d\'identità e le carte fedeltà. Tutto è criptato e rimane sul tuo dispositivo.</string>
+    <string name="cardlist_no_results">Nessuna carta corrisponde alla ricerca</string>
+    <string name="cardlist_show_code">Mostra codice a schermo intero</string>
+    <string name="cardlist_tap_to_unlock">Tocca per sbloccare</string>
+    <string name="cardlist_sort">Ordina carte</string>
+    <string name="cardlist_sort_name">Nome (A–Z)</string>
+    <string name="cardlist_sort_date">Data di aggiunta (prima le più recenti)</string>
+    <string name="cardlist_sort_custom">Ordine personalizzato</string>
+    <string name="cardlist_reorder">Riordina carte</string>
+    <string name="cardlist_reorder_done">Fine</string>
+    <string name="cardlist_reorder_cancel">Annulla riordinamento</string>
+    <string name="cardlist_reorder_hint">Trascina le carte tenendo premuta la maniglia per cambiarne l\'ordine.</string>
+    <string name="cardlist_drag_handle">Trascina per spostare %1$s</string>
+    <string name="cardlist_move_up">Sposta su</string>
+    <string name="cardlist_move_down">Sposta giù</string>
+</resources>

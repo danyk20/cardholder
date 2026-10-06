@@ -85,6 +85,7 @@ fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMod
         onBack = onBack,
         onThemeModeChange = viewModel::onThemeModeChange,
         onDynamicColorChange = viewModel::onDynamicColorChange,
+        onScreenshotsAllowedChange = viewModel::onScreenshotsAllowedChange,
         onExport = { passwordPurpose = PasswordPurpose.EXPORT },
         onImport = { openDocument.launch(arrayOf("*/*")) },
         onResultShown = viewModel::onResultShown,
@@ -119,6 +120,7 @@ internal fun SettingsScreen(
     onBack: () -> Unit,
     onThemeModeChange: (ThemeMode) -> Unit,
     onDynamicColorChange: (Boolean) -> Unit,
+    onScreenshotsAllowedChange: (Boolean) -> Unit,
     onExport: () -> Unit,
     onImport: () -> Unit,
     onResultShown: () -> Unit,
@@ -163,6 +165,19 @@ internal fun SettingsScreen(
             )
             HorizontalDivider()
 
+            SectionHeader(stringResource(R.string.settings_security))
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.settings_allow_screenshots)) },
+                supportingContent = { Text(stringResource(R.string.settings_allow_screenshots_description)) },
+                trailingContent = { Switch(checked = state.screenshotsAllowed, onCheckedChange = null) },
+                modifier = Modifier.toggleable(
+                    value = state.screenshotsAllowed,
+                    role = Role.Switch,
+                    onValueChange = onScreenshotsAllowedChange,
+                ),
+            )
+            HorizontalDivider()
+
             SectionHeader(stringResource(R.string.settings_backup))
             val running = state.backup.inProgress
             BackupItem(
@@ -187,6 +202,12 @@ internal fun SettingsScreen(
                 supportingContent = { Text(stringResource(R.string.settings_privacy)) },
             )
             val uriHandler = LocalUriHandler.current
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.settings_privacy_policy)) },
+                modifier = Modifier.selectable(selected = false, role = Role.Button) {
+                    uriHandler.openUri(PRIVACY_POLICY_URL)
+                },
+            )
             ListItem(
                 headlineContent = { Text(stringResource(R.string.settings_logo_credits)) },
                 supportingContent = { Text(stringResource(R.string.settings_logo_credits_description)) },
@@ -280,6 +301,7 @@ private fun appVersion(): String {
     }
 }
 
+private const val PRIVACY_POLICY_URL = "https://danyk20.github.io/cardholder/privacy/"
 private const val LOGO_CREDITS_URL = "https://github.com/danyk20/cardholder/blob/main/docs/LOGOS.md"
 private const val BACKUP_MIME_TYPE = "application/octet-stream"
 private const val BACKUP_EXTENSION = "cardholder"

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Badilisha</string>
+    <string name="detail_delete">Futa</string>
+    <string name="detail_more">Chaguo zaidi</string>
+    <string name="detail_flip">Onyesha upande mwingine</string>
+    <string name="detail_show_code">Onyesha msimbo</string>
+    <string name="detail_copied">%1$s imenakiliwa. Itaondolewa kwenye ubao wa kunakili baada ya dakika moja.</string>
+    <string name="detail_copy">Nakili %1$s</string>
+    <string name="detail_show_cvv">Onyesha CVV</string>
+    <string name="detail_hide_cvv">Ficha CVV</string>
+    <string name="detail_locked_details">Maelezo yamefichwa kwa sababu kadi hii imefungwa</string>
+    <string name="detail_lock">Funga kadi</string>
+    <string name="detail_lock_on">Alama ya kidole, uso au mbinu ya kufunga skrini inahitajika ili kuona kadi hii</string>
+    <string name="detail_lock_off">Mtu yeyote anayetumia simu yako anaweza kuona kadi hii</string>
+    <string name="detail_lock_unavailable">Weka mbinu ya kufunga skrini kwenye kifaa chako ili uweze kufunga kadi</string>
+    <string name="detail_delete_title">Ungependa kufuta kadi hii?</string>
+    <string name="detail_delete_message">%1$s na picha zake zitafutwa kabisa kwenye kifaa hiki.</string>
+    <string name="detail_cancel">Ghairi</string>
+    <string name="detail_close_photo">Funga picha</string>
+    <string name="detail_ok">Sawa</string>
+    <string name="field_bank">Benki</string>
+    <string name="field_number">Nambari ya kadi</string>
+    <string name="field_expiry">Tarehe ya kuisha</string>
+    <string name="field_holder">Mmiliki wa kadi</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Mtandao</string>
+    <string name="field_country">Nchi</string>
+    <string name="field_document_number">Nambari ya hati</string>
+    <string name="field_shop">Duka</string>
+    <string name="field_code">Msimbo</string>
+    <string name="field_format">Aina ya msimbo</string>
+</resources>

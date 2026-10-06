@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Dodaj kartę</string>
+    <string name="editor_title_edit">Edytuj kartę</string>
+    <string name="editor_save">Zapisz</string>
+    <string name="editor_next">Dalej</string>
+    <string name="editor_skip">Pomiń</string>
+    <string name="editor_choose_type">Jaki to rodzaj karty?</string>
+
+    <!-- Sides -->
+    <string name="editor_sides_title">Dodaj zdjęcia karty</string>
+    <string name="editor_sides_message">Opcjonalnie. Zdjęcia są szyfrowane i przechowywane tylko na tym urządzeniu.</string>
+    <string name="editor_side_scan">Skanuj</string>
+    <string name="editor_side_choose">Galeria</string>
+    <string name="editor_side_remove">Usuń zdjęcie</string>
+    <string name="editor_side_missing">Brak zdjęcia</string>
+
+    <!-- Common fields -->
+    <string name="editor_field_title">Nazwa</string>
+    <string name="editor_field_title_hint">Domyślnie: %1$s</string>
+    <string name="editor_color">Kolor</string>
+    <string name="editor_lock">Zablokuj tę kartę</string>
+    <string name="editor_lock_description">Wymagaj odcisku palca, skanu twarzy lub blokady ekranu do wyświetlenia jakichkolwiek danych karty</string>
+    <string name="editor_protection_unavailable">Aby z tego korzystać, skonfiguruj blokadę ekranu na urządzeniu</string>
+    <string name="editor_open_security_settings">Skonfiguruj</string>
+    <string name="editor_photos">Zdjęcia</string>
+
+    <!-- Bank -->
+    <string name="editor_read_nfc">Odczytaj kartę przez NFC</string>
+    <string name="editor_field_bank">Bank (opcjonalnie)</string>
+    <string name="editor_choose_bank">Wybierz bank</string>
+    <string name="editor_search_bank">Szukaj banków</string>
+    <string name="editor_field_number">Numer karty</string>
+    <string name="editor_field_expiry">Data ważności (MM/RR)</string>
+    <string name="editor_field_holder">Posiadacz karty</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Opcjonalnie. Kod jest zawsze ukryty i wyświetla się dopiero po potwierdzeniu tożsamości.</string>
+    <string name="editor_cvv_stored">Kod CVV jest zapisany. Pozostaw puste pole, aby go zachować.</string>
+    <string name="editor_cvv_remove">Usuń zapisany kod CVV</string>
+    <string name="editor_card_expired">Ta karta straciła ważność</string>
+
+    <!-- ID -->
+    <string name="editor_field_country">Kraj wydania</string>
+    <string name="editor_choose_country">Wybierz kraj</string>
+    <string name="editor_search_country">Szukaj krajów</string>
+    <string name="editor_field_document_number">Numer dokumentu (opcjonalnie)</string>
+    <string name="editor_field_id_expiry">Data ważności (opcjonalnie)</string>
+    <string name="editor_clear_date">Wyczyść</string>
+
+    <!-- Loyalty -->
+    <string name="editor_field_shop">Sklep</string>
+    <string name="editor_choose_shop">Wybierz sklep</string>
+    <string name="editor_search_shop">Szukaj sklepów</string>
+    <string name="editor_custom_shop">Użyj „%1$s”</string>
+    <string name="editor_field_code">Numer karty / kod</string>
+    <string name="editor_field_format">Typ kodu</string>
+    <string name="editor_scan_barcode">Skanuj kod</string>
+
+    <!-- Logo -->
+    <string name="editor_logo">Logo</string>
+    <string name="editor_logo_none">Bez logo</string>
+    <string name="editor_logo_official">Oficjalne logo</string>
+    <string name="editor_logo_upload">Prześlij</string>
+    <string name="editor_logo_remove">Usuń logo</string>
+    <string name="editor_logo_choice_title">Logo %1$s</string>
+    <string name="editor_logo_choice_message">Wyświetlać na tej karcie oficjalne logo %1$s? Zostanie ono jednorazowo pobrane z Wikimedia Commons i zapisane na urządzeniu.</string>
+    <string name="editor_logo_use_official">Użyj oficjalnego logo</string>
+    <string name="editor_logo_upload_own">Prześlij własne</string>
+    <string name="editor_logo_keep_blank">Pozostaw puste</string>
+    <string name="editor_logo_license">Licencja: %1$s</string>
+    <string name="editor_logo_attribution">Licencja: %1$s · autor: %2$s</string>
+    <string name="editor_logo_download_failed">Nie udało się pobrać logo. Sprawdź połączenie i spróbuj ponownie.</string>
+
+    <!-- States -->
+    <string name="editor_locked_title">Ta karta jest zablokowana</string>
+    <string name="editor_not_found">Ta karta już nie istnieje</string>
+    <string name="editor_ok">OK</string>
+</resources>

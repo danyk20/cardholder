@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">스캐너 닫기</string>
+    <string name="scanner_hint">카드의 바코드 또는 QR 코드에 카메라를 맞추세요</string>
+    <string name="scanner_permission_rationale">Cardholder에서 카드의 코드를 스캔하려면 카메라가 필요합니다. 이미지는 기기에서만 분석되며 저장되거나 어디로도 전송되지 않습니다.</string>
+    <string name="scanner_grant_permission">카메라 허용</string>
+    <string name="nfc_title">NFC로 카드 읽기</string>
+    <string name="nfc_hold_card">카드를 휴대전화 뒷면에 평평하게 대고 움직이지 마세요.</string>
+    <string name="nfc_reading">카드 읽는 중…</string>
+    <string name="nfc_failed">카드를 읽을 수 없습니다. 휴대전화 뒷면에서 카드를 천천히 움직인 후 다시 시도하세요.</string>
+    <string name="nfc_disabled">NFC가 꺼져 있습니다.</string>
+    <string name="nfc_turn_on">NFC 켜기</string>
+    <string name="nfc_cvv_note">CVV는 칩에 저장되어 있지 않으므로 직접 입력하세요.</string>
+    <string name="nfc_cancel">취소</string>
+</resources>

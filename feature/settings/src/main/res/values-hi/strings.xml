@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">सेटिंग</string>
+    <string name="settings_appearance">दिखावट</string>
+    <string name="settings_theme_system">सिस्टम डिफ़ॉल्ट</string>
+    <string name="settings_theme_light">लाइट</string>
+    <string name="settings_theme_dark">डार्क</string>
+    <string name="settings_dynamic_color">डाइनैमिक कलर</string>
+    <string name="settings_dynamic_color_description">अपने वॉलपेपर के रंगों का इस्तेमाल करें</string>
+    <string name="settings_security">सुरक्षा</string>
+    <string name="settings_allow_screenshots">स्क्रीनशॉट की अनुमति दें</string>
+    <string name="settings_allow_screenshots_description">जब तक आप ऐप से बाहर नहीं निकलते. स्क्रीनशॉट में कार्ड नंबर दिख सकते हैं और वे आपकी फ़ोटो में सेव होते हैं, जिनका क्लाउड पर बैकअप हो सकता है.</string>
+    <string name="settings_backup">बैकअप</string>
+    <string name="settings_export">बैकअप एक्सपोर्ट करें</string>
+    <string name="settings_export_description">सभी कार्ड, पासवर्ड से सुरक्षित फ़ाइल में सेव करें</string>
+    <string name="settings_import">बैकअप इंपोर्ट करें</string>
+    <string name="settings_import_description">बैकअप फ़ाइल से कार्ड वापस लाएं</string>
+    <string name="settings_backup_working">प्रोसेस हो रहा है…</string>
+    <string name="settings_password_title_export">अपना बैकअप सुरक्षित करें</string>
+    <string name="settings_password_title_import">बैकअप का पासवर्ड डालें</string>
+    <string name="settings_password_message_export">बैकअप में CVV के साथ-साथ सभी कार्ड की पूरी जानकारी होती है. कोई मज़बूत पासवर्ड चुनें – इसे वापस नहीं पाया जा सकता.</string>
+    <string name="settings_password">पासवर्ड</string>
+    <string name="settings_password_confirm">पासवर्ड फिर से डालें</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">कम से कम %1$d वर्ण इस्तेमाल करें</item>
+        <item quantity="other">कम से कम %1$d वर्ण इस्तेमाल करें</item>
+    </plurals>
+    <string name="settings_password_mismatch">पासवर्ड मेल नहीं खाते</string>
+    <string name="settings_replace_existing">पहले से मौजूद कार्ड बदलें</string>
+    <string name="settings_continue">जारी रखें</string>
+    <string name="settings_cancel">रद्द करें</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d कार्ड एक्सपोर्ट किया गया</item>
+        <item quantity="other">%1$d कार्ड एक्सपोर्ट किए गए</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d कार्ड इंपोर्ट किया गया</item>
+        <item quantity="other">%1$d कार्ड इंपोर्ट किए गए</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d कार्ड पहले से मौजूद था, इसलिए उसे छोड़ दिया गया</item>
+        <item quantity="other">%1$d कार्ड पहले से मौजूद थे, इसलिए उन्हें छोड़ दिया गया</item>
+    </plurals>
+    <string name="settings_result_wrong_password">गलत पासवर्ड</string>
+    <string name="settings_result_invalid_file">यह Cardholder का बैकअप नहीं है या फ़ाइल खराब है</string>
+    <string name="settings_result_auth_required">सुरक्षित कार्ड एक्सपोर्ट करने के लिए पुष्टि करें कि यह आप ही हैं</string>
+    <string name="settings_result_device_not_secure">CVV या लॉक वाले कार्ड इंपोर्ट करने के लिए स्क्रीन लॉक सेट करें</string>
+    <string name="settings_result_failed">कोई गड़बड़ी हुई. कृपया फिर से कोशिश करें.</string>
+    <string name="settings_about">इसके बारे में</string>
+    <string name="settings_version">वर्शन %1$s</string>
+    <string name="settings_privacy">आपके कार्ड एन्क्रिप्ट किए जाते हैं. जब तक आप उन्हें एक्सपोर्ट नहीं करते, वे इस डिवाइस से बाहर नहीं जाते. ऐप सिर्फ़ तब ऑनलाइन होता है, जब आप किसी स्टोर या बैंक का आधिकारिक लोगो डाउनलोड करने के लिए कहते हैं.</string>
+    <string name="settings_privacy_policy">निजता नीति</string>
+    <string name="settings_logo_credits">लोगो क्रेडिट</string>
+    <string name="settings_logo_credits_description">आधिकारिक लोगो के स्रोत और लाइसेंस</string>
+</resources>

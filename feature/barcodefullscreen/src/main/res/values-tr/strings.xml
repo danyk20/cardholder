@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Kapat</string>
+    <string name="barcode_details">Kart ayrıntıları</string>
+    <string name="barcode_description">%2$s: %1$s</string>
+    <string name="barcode_unencodable">Bu kod %1$s olarak gösterilemiyor. Kodu düzeltmek için kartı düzenleyin veya başka bir kod türü seçin.</string>
+    <string name="barcode_hint">Ekranı tarayıcının önünde düz ve sabit tutun.</string>
+</resources>

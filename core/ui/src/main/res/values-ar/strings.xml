@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">بطاقة مصرفية</string>
+    <string name="card_type_id">بطاقة هوية</string>
+    <string name="card_type_loyalty">بطاقة ولاء</string>
+    <string name="card_type_bank_description">بطاقة خصم مباشر أو بطاقة ائتمان</string>
+    <string name="card_type_id_description">بطاقة هوية، جواز سفر، رخصة قيادة…</string>
+    <string name="card_type_loyalty_description">بطاقة متجر تحمل رمزًا شريطيًا أو رمز QR</string>
+
+    <string name="card_side_front">الوجه الأمامي</string>
+    <string name="card_side_back">الوجه الخلفي</string>
+    <string name="card_locked">مقفلة</string>
+    <string name="card_locked_message">هذه البطاقة مقفلة</string>
+    <string name="auth_title_show_cvv">عرض رمز CVV</string>
+    <string name="auth_title_export">تصدير نسخة احتياطية</string>
+    <string name="card_not_found">هذه البطاقة لم تعد موجودة</string>
+
+    <string name="auth_title_unlock_card">فتح قفل %1$s</string>
+    <string name="auth_subtitle">أكِّد هويتك باستخدام بصمة الإصبع أو الوجه أو قفل الشاشة</string>
+    <string name="auth_key_invalidated">كانت هذه البيانات محمية بقفل شاشة تمت إزالته منذ ذلك الحين، ولم يعد من الممكن فك تشفيرها.</string>
+
+    <string name="error_required">حقل مطلوب</string>
+    <string name="error_invalid_characters">يحتوي على أحرف غير مسموح بها</string>
+    <string name="error_invalid_length">الطول غير صحيح</string>
+    <string name="error_invalid_checksum">رقم التحقق غير مطابق – يُرجى التأكد من عدم وجود أخطاء في الكتابة</string>
+    <string name="error_invalid_date">تاريخ غير صالح</string>
+
+    <string name="action_back">رجوع</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_unlock">فتح القفل</string>
+
+    <string name="format_qr_code">رمز QR</string>
+
+    <string name="color_navy">كحلي</string>
+    <string name="color_blue">أزرق</string>
+    <string name="color_teal">أزرق مخضرّ</string>
+    <string name="color_green">أخضر</string>
+    <string name="color_lime">أخضر ليموني</string>
+    <string name="color_amber">كهرماني</string>
+    <string name="color_orange">برتقالي</string>
+    <string name="color_red">أحمر</string>
+    <string name="color_pink">وردي</string>
+    <string name="color_purple">أرجواني</string>
+    <string name="color_brown">بني</string>
+    <string name="color_graphite">رمادي داكن</string>
+</resources>

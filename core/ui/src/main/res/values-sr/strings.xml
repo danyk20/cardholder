@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Банковна картица</string>
+    <string name="card_type_id">Лични документ</string>
+    <string name="card_type_loyalty">Картица лојалности</string>
+    <string name="card_type_bank_description">Дебитна или кредитна картица</string>
+    <string name="card_type_id_description">Лична карта, пасош, возачка дозвола…</string>
+    <string name="card_type_loyalty_description">Картица продавнице са бар-кодом или QR кодом</string>
+    <string name="card_side_front">Предња страна</string>
+    <string name="card_side_back">Задња страна</string>
+    <string name="card_locked">Закључано</string>
+    <string name="card_locked_message">Ова картица је закључана</string>
+    <string name="auth_title_show_cvv">Прикажи CVV</string>
+    <string name="auth_title_export">Извези резервну копију</string>
+    <string name="card_not_found">Ова картица више не постоји</string>
+    <string name="auth_title_unlock_card">Откључај: %1$s</string>
+    <string name="auth_subtitle">Потврдите да сте то ви помоћу отиска прста, лица или закључавања екрана</string>
+    <string name="auth_key_invalidated">Ови подаци су били заштићени закључавањем екрана које је у међувремену уклоњено, па више не могу да се дешифрују.</string>
+    <string name="error_required">Обавезно</string>
+    <string name="error_invalid_characters">Садржи недозвољене знакове</string>
+    <string name="error_invalid_length">Погрешна дужина</string>
+    <string name="error_invalid_checksum">Контролна цифра се не поклапа – проверите да ли сте погрешно откуцали</string>
+    <string name="error_invalid_date">Неважећи датум</string>
+    <string name="action_back">Назад</string>
+    <string name="action_cancel">Откажи</string>
+    <string name="action_unlock">Откључај</string>
+    <string name="format_qr_code">QR код</string>
+    <string name="color_navy">Тамноплава</string>
+    <string name="color_blue">Плава</string>
+    <string name="color_teal">Тиркизна</string>
+    <string name="color_green">Зелена</string>
+    <string name="color_lime">Жутозелена</string>
+    <string name="color_amber">Ћилибарска</string>
+    <string name="color_orange">Наранџаста</string>
+    <string name="color_red">Црвена</string>
+    <string name="color_pink">Ружичаста</string>
+    <string name="color_purple">Љубичаста</string>
+    <string name="color_brown">Смеђа</string>
+    <string name="color_graphite">Графитна</string>
+</resources>

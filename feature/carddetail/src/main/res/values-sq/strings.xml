@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Redakto</string>
+    <string name="detail_delete">Fshi</string>
+    <string name="detail_more">Më shumë opsione</string>
+    <string name="detail_flip">Shfaq anën tjetër</string>
+    <string name="detail_show_code">Shfaq kodin</string>
+    <string name="detail_copied">%1$s u kopjua. Do të hiqet nga kujtesa e fragmenteve pas një minute.</string>
+    <string name="detail_copy">Kopjo %1$s</string>
+    <string name="detail_show_cvv">Shfaq CVV-në</string>
+    <string name="detail_hide_cvv">Fshih CVV-në</string>
+    <string name="detail_locked_details">Detajet janë të fshehura sepse kjo kartë është e kyçur</string>
+    <string name="detail_lock">Kyç kartën</string>
+    <string name="detail_lock_on">Për të parë këtë kartë nevojitet gjurma e gishtit, fytyra ose kyçja e ekranit</string>
+    <string name="detail_lock_off">Kushdo që përdor telefonin tënd mund ta shohë këtë kartë</string>
+    <string name="detail_lock_unavailable">Konfiguro një kyçje ekrani në pajisje për të kyçur kartat</string>
+    <string name="detail_delete_title">Të fshihet kjo kartë?</string>
+    <string name="detail_delete_message">%1$s dhe fotografitë e saj do të fshihen përgjithmonë nga kjo pajisje.</string>
+    <string name="detail_cancel">Anulo</string>
+    <string name="detail_close_photo">Mbyll fotografinë</string>
+    <string name="detail_ok">Në rregull</string>
+
+    <string name="field_bank">Banka</string>
+    <string name="field_number">Numri i kartës</string>
+    <string name="field_expiry">Skadimi</string>
+    <string name="field_holder">Mbajtësi i kartës</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Rrjeti</string>
+    <string name="field_country">Shteti</string>
+    <string name="field_document_number">Numri i dokumentit</string>
+    <string name="field_shop">Dyqani</string>
+    <string name="field_code">Kodi</string>
+    <string name="field_format">Lloji i kodit</string>
+</resources>

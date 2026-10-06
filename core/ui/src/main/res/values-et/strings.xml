@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Pangakaart</string>
+    <string name="card_type_id">ID-kaart</string>
+    <string name="card_type_loyalty">Kliendikaart</string>
+    <string name="card_type_bank_description">Deebet- või krediitkaart</string>
+    <string name="card_type_id_description">Isikutunnistus, pass, juhiluba…</string>
+    <string name="card_type_loyalty_description">Poe kaart ribakoodi või QR-koodiga</string>
+    <string name="card_side_front">Esikülg</string>
+    <string name="card_side_back">Tagakülg</string>
+    <string name="card_locked">Lukustatud</string>
+    <string name="card_locked_message">See kaart on lukustatud</string>
+    <string name="auth_title_show_cvv">Kuva CVV</string>
+    <string name="auth_title_export">Ekspordi varukoopia</string>
+    <string name="card_not_found">Seda kaarti enam ei ole</string>
+    <string name="auth_title_unlock_card">Ava lukust: %1$s</string>
+    <string name="auth_subtitle">Kinnitage oma isik sõrmejälje, näo või ekraaniluku abil</string>
+    <string name="auth_key_invalidated">Need andmed olid kaitstud ekraanilukuga, mis on vahepeal eemaldatud, ning neid ei saa enam dekrüpteerida.</string>
+    <string name="error_required">Kohustuslik</string>
+    <string name="error_invalid_characters">Sisaldab lubamatuid märke</string>
+    <string name="error_invalid_length">Vale pikkus</string>
+    <string name="error_invalid_checksum">Kontrollnumber ei klapi – kontrollige, kas on trükivigu</string>
+    <string name="error_invalid_date">Kehtetu kuupäev</string>
+    <string name="action_back">Tagasi</string>
+    <string name="action_cancel">Tühista</string>
+    <string name="action_unlock">Ava lukk</string>
+    <string name="format_qr_code">QR-kood</string>
+    <string name="color_navy">Meresinine</string>
+    <string name="color_blue">Sinine</string>
+    <string name="color_teal">Sinakasroheline</string>
+    <string name="color_green">Roheline</string>
+    <string name="color_lime">Laimiroheline</string>
+    <string name="color_amber">Merevaigukollane</string>
+    <string name="color_orange">Oranž</string>
+    <string name="color_red">Punane</string>
+    <string name="color_pink">Roosa</string>
+    <string name="color_purple">Lilla</string>
+    <string name="color_brown">Pruun</string>
+    <string name="color_graphite">Grafiit</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Seaded</string>
+    <string name="settings_appearance">Välimus</string>
+    <string name="settings_theme_system">Süsteemi vaikeseade</string>
+    <string name="settings_theme_light">Hele</string>
+    <string name="settings_theme_dark">Tume</string>
+    <string name="settings_dynamic_color">Dünaamiline värv</string>
+    <string name="settings_dynamic_color_description">Kasuta taustapildi värve</string>
+    <string name="settings_security">Turvalisus</string>
+    <string name="settings_allow_screenshots">Luba ekraanipildid</string>
+    <string name="settings_allow_screenshots_description">Kuni rakendusest lahkute. Ekraanipiltidel võivad olla näha kaardinumbrid ja need salvestatakse fotode hulka, mida võidakse pilve varundada.</string>
+    <string name="settings_backup">Varundamine</string>
+    <string name="settings_export">Ekspordi varukoopia</string>
+    <string name="settings_export_description">Salvesta kõik kaardid parooliga kaitstud faili</string>
+    <string name="settings_import">Impordi varukoopia</string>
+    <string name="settings_import_description">Taasta kaardid varukoopiafailist</string>
+    <string name="settings_backup_working">Töötlemine…</string>
+    <string name="settings_password_title_export">Kaitske oma varukoopiat</string>
+    <string name="settings_password_title_import">Sisestage varukoopia parool</string>
+    <string name="settings_password_message_export">Varukoopia sisaldab kõiki kaardiandmeid, sealhulgas CVV-koode. Valige tugev parool – seda ei saa taastada.</string>
+    <string name="settings_password">Parool</string>
+    <string name="settings_password_confirm">Korrake parooli</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Kasutage vähemalt %1$d märk</item>
+        <item quantity="other">Kasutage vähemalt %1$d märki</item>
+    </plurals>
+    <string name="settings_password_mismatch">Paroolid ei ühti</string>
+    <string name="settings_replace_existing">Asenda juba olemasolevad kaardid</string>
+    <string name="settings_continue">Jätka</string>
+    <string name="settings_cancel">Tühista</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d kaart eksporditud</item>
+        <item quantity="other">%1$d kaarti eksporditud</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d kaart imporditud</item>
+        <item quantity="other">%1$d kaarti imporditud</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d oli juba olemas ja jäeti vahele</item>
+        <item quantity="other">%1$d olid juba olemas ja jäeti vahele</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Vale parool</string>
+    <string name="settings_result_invalid_file">See pole Cardholderi varukoopia või on fail rikutud</string>
+    <string name="settings_result_auth_required">Kaitstud kaartide eksportimiseks kinnitage oma isik</string>
+    <string name="settings_result_device_not_secure">CVV-koodide või lukkudega kaartide importimiseks seadistage ekraanilukk</string>
+    <string name="settings_result_failed">Midagi läks valesti. Proovige uuesti.</string>
+    <string name="settings_about">Teave</string>
+    <string name="settings_version">Versioon %1$s</string>
+    <string name="settings_privacy">Teie kaardid on krüpteeritud ega lahku sellest seadmest, kui te neid just ei ekspordi. Rakendus läheb võrku ainult siis, kui palute alla laadida poe või panga ametliku logo.</string>
+    <string name="settings_privacy_policy">Privaatsuseeskirjad</string>
+    <string name="settings_logo_credits">Logode allikad</string>
+    <string name="settings_logo_credits_description">Ametlike logode allikad ja litsentsid</string>
+</resources>

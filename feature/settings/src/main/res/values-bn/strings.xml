@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">সেটিংস</string>
+    <string name="settings_appearance">চেহারা</string>
+    <string name="settings_theme_system">সিস্টেম ডিফল্ট</string>
+    <string name="settings_theme_light">লাইট</string>
+    <string name="settings_theme_dark">ডার্ক</string>
+    <string name="settings_dynamic_color">ডায়নামিক রঙ</string>
+    <string name="settings_dynamic_color_description">আপনার ওয়ালপেপারের রঙ ব্যবহার করুন</string>
+    <string name="settings_security">নিরাপত্তা</string>
+    <string name="settings_allow_screenshots">স্ক্রিনশটের অনুমতি দিন</string>
+    <string name="settings_allow_screenshots_description">যতক্ষণ না আপনি অ্যাপ থেকে বের হন। স্ক্রিনশটে কার্ড নম্বর দেখা যেতে পারে এবং সেগুলি আপনার ছবিতে সেভ হয়, যার ক্লাউডে ব্যাকআপ হতে পারে।</string>
+    <string name="settings_backup">ব্যাকআপ</string>
+    <string name="settings_export">ব্যাকআপ এক্সপোর্ট করুন</string>
+    <string name="settings_export_description">সব কার্ড পাসওয়ার্ড-সুরক্ষিত একটি ফাইলে সেভ করুন</string>
+    <string name="settings_import">ব্যাকআপ ইমপোর্ট করুন</string>
+    <string name="settings_import_description">ব্যাকআপ ফাইল থেকে কার্ড ফিরিয়ে আনুন</string>
+    <string name="settings_backup_working">প্রসেস করা হচ্ছে…</string>
+    <string name="settings_password_title_export">আপনার ব্যাকআপ সুরক্ষিত করুন</string>
+    <string name="settings_password_title_import">ব্যাকআপের পাসওয়ার্ড লিখুন</string>
+    <string name="settings_password_message_export">ব্যাকআপে CVV সহ সব কার্ডের বিবরণ থাকে। একটি শক্তিশালী পাসওয়ার্ড বেছে নিন – এটি পুনরুদ্ধার করা যাবে না।</string>
+    <string name="settings_password">পাসওয়ার্ড</string>
+    <string name="settings_password_confirm">আবার পাসওয়ার্ড লিখুন</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">কমপক্ষে %1$dটি অক্ষর ব্যবহার করুন</item>
+        <item quantity="other">কমপক্ষে %1$dটি অক্ষর ব্যবহার করুন</item>
+    </plurals>
+    <string name="settings_password_mismatch">পাসওয়ার্ড মিলছে না</string>
+    <string name="settings_replace_existing">আগে থেকে থাকা কার্ডগুলো বদলে দিন</string>
+    <string name="settings_continue">চালিয়ে যান</string>
+    <string name="settings_cancel">বাতিল করুন</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$dটি কার্ড এক্সপোর্ট করা হয়েছে</item>
+        <item quantity="other">%1$dটি কার্ড এক্সপোর্ট করা হয়েছে</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$dটি কার্ড ইমপোর্ট করা হয়েছে</item>
+        <item quantity="other">%1$dটি কার্ড ইমপোর্ট করা হয়েছে</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$dটি কার্ড আগে থেকেই ছিল, তাই এড়িয়ে যাওয়া হয়েছে</item>
+        <item quantity="other">%1$dটি কার্ড আগে থেকেই ছিল, তাই এড়িয়ে যাওয়া হয়েছে</item>
+    </plurals>
+    <string name="settings_result_wrong_password">ভুল পাসওয়ার্ড</string>
+    <string name="settings_result_invalid_file">এটি Cardholder-এর ব্যাকআপ নয় অথবা ফাইলটি ক্ষতিগ্রস্ত</string>
+    <string name="settings_result_auth_required">সুরক্ষিত কার্ড এক্সপোর্ট করতে যাচাই করুন যে এটি আপনিই</string>
+    <string name="settings_result_device_not_secure">CVV বা লক সহ কার্ড ইমপোর্ট করতে স্ক্রিন লক সেট আপ করুন</string>
+    <string name="settings_result_failed">কোনো সমস্যা হয়েছে। আবার চেষ্টা করুন।</string>
+    <string name="settings_about">সম্পর্কে</string>
+    <string name="settings_version">ভার্সন %1$s</string>
+    <string name="settings_privacy">আপনার কার্ডগুলো এনক্রিপ্ট করা থাকে এবং আপনি এক্সপোর্ট না করলে কখনও এই ডিভাইসের বাইরে যায় না। আপনি চাইলে শুধু কোনো দোকান বা ব্যাংকের অফিসিয়াল লোগো ডাউনলোড করার জন্য অ্যাপটি অনলাইনে যায়।</string>
+    <string name="settings_privacy_policy">গোপনীয়তা নীতি</string>
+    <string name="settings_logo_credits">লোগো ক্রেডিট</string>
+    <string name="settings_logo_credits_description">অফিসিয়াল লোগোর উৎস ও লাইসেন্স</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">設定</string>
+    <string name="settings_appearance">外観</string>
+    <string name="settings_theme_system">システムのデフォルト</string>
+    <string name="settings_theme_light">ライト</string>
+    <string name="settings_theme_dark">ダーク</string>
+    <string name="settings_dynamic_color">ダイナミック カラー</string>
+    <string name="settings_dynamic_color_description">壁紙の色を使用します</string>
+    <string name="settings_security">セキュリティ</string>
+    <string name="settings_allow_screenshots">スクリーンショットを許可</string>
+    <string name="settings_allow_screenshots_description">アプリを離れるまで有効です。スクリーンショットにはカード番号が写る場合があり、写真に保存されます。写真はクラウドにバックアップされることがあります。</string>
+    <string name="settings_backup">バックアップ</string>
+    <string name="settings_export">バックアップをエクスポート</string>
+    <string name="settings_export_description">すべてのカードをパスワードで保護されたファイルに保存します</string>
+    <string name="settings_import">バックアップをインポート</string>
+    <string name="settings_import_description">バックアップ ファイルからカードを復元します</string>
+    <string name="settings_backup_working">処理中…</string>
+    <string name="settings_password_title_export">バックアップを保護</string>
+    <string name="settings_password_title_import">バックアップのパスワードを入力</string>
+    <string name="settings_password_message_export">バックアップには、CVV を含むすべてのカード情報が含まれます。強力なパスワードを設定してください。パスワードは復元できません。</string>
+    <string name="settings_password">パスワード</string>
+    <string name="settings_password_confirm">パスワードを再入力</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="other">%1$d 文字以上で入力してください</item>
+    </plurals>
+    <string name="settings_password_mismatch">パスワードが一致しません</string>
+    <string name="settings_replace_existing">既存のカードを置き換える</string>
+    <string name="settings_continue">続行</string>
+    <string name="settings_cancel">キャンセル</string>
+    <plurals name="settings_result_exported">
+        <item quantity="other">%1$d 枚のカードをエクスポートしました</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="other">%1$d 枚のカードをインポートしました</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="other">%1$d 枚は既に存在するためスキップしました</item>
+    </plurals>
+    <string name="settings_result_wrong_password">パスワードが正しくありません</string>
+    <string name="settings_result_invalid_file">Cardholder のバックアップではないか、ファイルが破損しています</string>
+    <string name="settings_result_auth_required">保護されたカードをエクスポートするには、本人確認を行ってください</string>
+    <string name="settings_result_device_not_secure">CVV またはロックを含むカードをインポートするには、画面ロックを設定してください</string>
+    <string name="settings_result_failed">問題が発生しました。もう一度お試しください。</string>
+    <string name="settings_about">アプリについて</string>
+    <string name="settings_version">バージョン %1$s</string>
+    <string name="settings_privacy">カードは暗号化され、エクスポートしない限りこのデバイスの外に出ることはありません。アプリがインターネットに接続するのは、お店や銀行の公式ロゴのダウンロードをリクエストしたときだけです。</string>
+    <string name="settings_privacy_policy">プライバシー ポリシー</string>
+    <string name="settings_logo_credits">ロゴのクレジット</string>
+    <string name="settings_logo_credits_description">公式ロゴの出典とライセンス</string>
+</resources>

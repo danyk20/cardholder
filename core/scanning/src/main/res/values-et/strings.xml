@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Sulge skanner</string>
+    <string name="scanner_hint">Suunake kaamera kaardil olevale ribakoodile või QR-koodile</string>
+    <string name="scanner_permission_rationale">Cardholder vajab kaamerat, et kaardil olevat koodi skannida. Pilte analüüsitakse seadmes ning neid ei salvestata ega saadeta kuhugi.</string>
+    <string name="scanner_grant_permission">Luba kaamera</string>
+    <string name="nfc_title">Loe kaart NFC-ga</string>
+    <string name="nfc_hold_card">Hoidke kaarti tasaselt vastu telefoni tagakülge ja ärge seda liigutage.</string>
+    <string name="nfc_reading">Kaardi lugemine…</string>
+    <string name="nfc_failed">Kaarti ei õnnestunud lugeda. Liigutage seda aeglaselt mööda telefoni tagakülge ja proovige uuesti.</string>
+    <string name="nfc_disabled">NFC on välja lülitatud.</string>
+    <string name="nfc_turn_on">Lülita NFC sisse</string>
+    <string name="nfc_cvv_note">CVV-koodi kiibile ei salvestata, palun sisestage see ise.</string>
+    <string name="nfc_cancel">Tühista</string>
+</resources>

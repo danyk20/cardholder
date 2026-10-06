@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Затвори</string>
+    <string name="barcode_details">Детаљи картице</string>
+    <string name="barcode_description">%1$s за %2$s</string>
+    <string name="barcode_unencodable">Овај код не може да се прикаже као %1$s. Измените картицу да бисте исправили код или изаберите други тип кода.</string>
+    <string name="barcode_hint">Држите екран равно и мирно испред скенера.</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">الإعدادات</string>
+    <string name="cardlist_add_card">إضافة بطاقة</string>
+    <string name="cardlist_search">البحث في البطاقات</string>
+    <string name="cardlist_clear_search">محو البحث</string>
+    <string name="cardlist_empty_title">لا توجد بطاقات بعد</string>
+    <string name="cardlist_empty_message">احتفظ ببطاقاتك المصرفية وبطاقات الهوية وبطاقات الولاء بأمان على هاتفك. يتم تشفير كل شيء ويبقى على جهازك.</string>
+    <string name="cardlist_no_results">لا توجد بطاقات مطابقة لبحثك</string>
+    <string name="cardlist_show_code">عرض الرمز بملء الشاشة</string>
+    <string name="cardlist_tap_to_unlock">انقر لفتح القفل</string>
+    <string name="cardlist_sort">ترتيب البطاقات</string>
+    <string name="cardlist_sort_name">الاسم (أ–ي)</string>
+    <string name="cardlist_sort_date">تاريخ الإضافة (الأحدث أولاً)</string>
+    <string name="cardlist_sort_custom">ترتيب مخصّص</string>
+    <string name="cardlist_reorder">إعادة ترتيب البطاقات</string>
+    <string name="cardlist_reorder_done">تم</string>
+    <string name="cardlist_reorder_cancel">إلغاء إعادة الترتيب</string>
+    <string name="cardlist_reorder_hint">اسحب البطاقات من المقبض لتغيير ترتيبها.</string>
+    <string name="cardlist_drag_handle">اسحب لنقل %1$s</string>
+    <string name="cardlist_move_up">نقل لأعلى</string>
+    <string name="cardlist_move_down">نقل لأسفل</string>
+</resources>

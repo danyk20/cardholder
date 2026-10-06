@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">এডিট করুন</string>
+    <string name="detail_delete">মুছুন</string>
+    <string name="detail_more">আরও বিকল্প</string>
+    <string name="detail_flip">অন্য দিক দেখুন</string>
+    <string name="detail_show_code">কোড দেখুন</string>
+    <string name="detail_copied">%1$s কপি করা হয়েছে। এক মিনিটের মধ্যে এটি ক্লিপবোর্ড থেকে মুছে ফেলা হবে।</string>
+    <string name="detail_copy">%1$s কপি করুন</string>
+    <string name="detail_show_cvv">CVV দেখুন</string>
+    <string name="detail_hide_cvv">CVV লুকান</string>
+    <string name="detail_locked_details">এই কার্ডটি লক করা আছে বলে বিবরণ লুকানো রয়েছে</string>
+    <string name="detail_lock">কার্ড লক করুন</string>
+    <string name="detail_lock_on">এই কার্ডটি দেখতে ফিঙ্গারপ্রিন্ট, ফেস বা স্ক্রিন লক প্রয়োজন</string>
+    <string name="detail_lock_off">আপনার ফোন ব্যবহারকারী যে কেউ এই কার্ডটি দেখতে পারবেন</string>
+    <string name="detail_lock_unavailable">কার্ড লক করতে আপনার ডিভাইসে স্ক্রিন লক সেট আপ করুন</string>
+    <string name="detail_delete_title">এই কার্ডটি মুছবেন?</string>
+    <string name="detail_delete_message">%1$s এবং এর ছবিগুলো এই ডিভাইস থেকে স্থায়ীভাবে মুছে ফেলা হবে।</string>
+    <string name="detail_cancel">বাতিল করুন</string>
+    <string name="detail_close_photo">ছবি বন্ধ করুন</string>
+    <string name="detail_ok">ঠিক আছে</string>
+    <string name="field_bank">ব্যাংক</string>
+    <string name="field_number">কার্ড নম্বর</string>
+    <string name="field_expiry">মেয়াদ</string>
+    <string name="field_holder">কার্ডধারী</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">নেটওয়ার্ক</string>
+    <string name="field_country">দেশ</string>
+    <string name="field_document_number">ডকুমেন্ট নম্বর</string>
+    <string name="field_shop">দোকান</string>
+    <string name="field_code">কোড</string>
+    <string name="field_format">কোডের ধরন</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Настройки</string>
+
+    <string name="settings_appearance">Оформление</string>
+    <string name="settings_theme_system">Как в системе</string>
+    <string name="settings_theme_light">Светлая</string>
+    <string name="settings_theme_dark">Тёмная</string>
+    <string name="settings_dynamic_color">Динамические цвета</string>
+    <string name="settings_dynamic_color_description">Использовать цвета обоев</string>
+
+    <string name="settings_security">Безопасность</string>
+    <string name="settings_allow_screenshots">Разрешить скриншоты</string>
+    <string name="settings_allow_screenshots_description">До выхода из приложения. На скриншотах могут быть видны номера карт; они сохраняются в фотографиях, которые могут копироваться в облако.</string>
+    <string name="settings_backup">Резервное копирование</string>
+    <string name="settings_export">Экспорт резервной копии</string>
+    <string name="settings_export_description">Сохранить все карты в файл, защищённый паролем</string>
+    <string name="settings_import">Импорт резервной копии</string>
+    <string name="settings_import_description">Восстановить карты из файла резервной копии</string>
+    <string name="settings_backup_working">Выполняется…</string>
+
+    <string name="settings_password_title_export">Защитите резервную копию</string>
+    <string name="settings_password_title_import">Введите пароль резервной копии</string>
+    <string name="settings_password_message_export">Резервная копия содержит все данные карт, включая CVV. Выберите надёжный пароль — восстановить его будет невозможно.</string>
+    <string name="settings_password">Пароль</string>
+    <string name="settings_password_confirm">Повторите пароль</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Не менее %1$d символа</item>
+        <item quantity="few">Не менее %1$d символов</item>
+        <item quantity="many">Не менее %1$d символов</item>
+        <item quantity="other">Не менее %1$d символа</item>
+    </plurals>
+    <string name="settings_password_mismatch">Пароли не совпадают</string>
+    <string name="settings_replace_existing">Заменять уже существующие карты</string>
+    <string name="settings_continue">Продолжить</string>
+    <string name="settings_cancel">Отмена</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">Экспортирована %1$d карта</item>
+        <item quantity="few">Экспортировано %1$d карты</item>
+        <item quantity="many">Экспортировано %1$d карт</item>
+        <item quantity="other">Экспортировано %1$d карты</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Импортирована %1$d карта</item>
+        <item quantity="few">Импортировано %1$d карты</item>
+        <item quantity="many">Импортировано %1$d карт</item>
+        <item quantity="other">Импортировано %1$d карты</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d карта уже существовала и была пропущена</item>
+        <item quantity="few">%1$d карты уже существовали и были пропущены</item>
+        <item quantity="many">%1$d карт уже существовали и были пропущены</item>
+        <item quantity="other">%1$d карты уже существовали и были пропущены</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Неверный пароль</string>
+    <string name="settings_result_invalid_file">Это не резервная копия Cardholder, или файл повреждён</string>
+    <string name="settings_result_auth_required">Подтвердите личность, чтобы экспортировать защищённые карты</string>
+    <string name="settings_result_device_not_secure">Настройте блокировку экрана, чтобы импортировать карты с CVV или блокировкой</string>
+    <string name="settings_result_failed">Что-то пошло не так. Повторите попытку.</string>
+
+    <string name="settings_about">О приложении</string>
+    <string name="settings_version">Версия %1$s</string>
+    <string name="settings_privacy">Ваши карты зашифрованы и не покидают устройство, если вы их не экспортируете. Приложение подключается к интернету, только чтобы загрузить официальный логотип магазина или банка по вашему запросу.</string>
+    <string name="settings_privacy_policy">Политика конфиденциальности</string>
+    <string name="settings_logo_credits">Авторство логотипов</string>
+    <string name="settings_logo_credits_description">Источники и лицензии официальных логотипов</string>
+</resources>

@@ -1,0 +1,39 @@
+Cardholder regroupe vos cartes bancaires, pièces d'identité et cartes de fidélité au même endroit sur votre téléphone – chiffrées, hors ligne, sans publicité ni suivi.
+
+<b>Cartes de fidélité en caisse</b>
+• Chaque carte de fidélité affiche son code-barres ou son code QR directement dans la liste
+• Appuyez dessus pour afficher le code en plein écran, à luminosité maximale, prêt pour le scanner
+• Scannez le code de votre carte en plastique avec l'appareil photo – ou saisissez-le
+• Formats pris en charge : QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec et Data Matrix
+
+<b>Cartes bancaires</b>
+• Enregistrez le numéro de carte, la date d'expiration, le titulaire et le CVV
+• Remplissez les informations en approchant une carte sans contact de votre téléphone (NFC)
+• Le CVV est toujours masqué et ne s'affiche qu'après authentification par empreinte digitale, visage ou verrouillage de l'écran
+• Détection automatique du réseau de la carte
+
+<b>Pièces d'identité</b>
+• Cartes d'identité, passeports, permis de conduire et plus encore
+• Pays de délivrance, numéro du document et date d'expiration
+
+<b>Photos recto verso</b>
+• Scannez si vous le souhaitez le recto et le verso de n'importe quelle carte, avec détection automatique des bords
+• Les photos sont chiffrées et ne quittent jamais votre appareil
+
+<b>Sécurité et confidentialité</b>
+• Tout est chiffré avec des clés conservées dans le matériel sécurisé de votre téléphone
+• Verrouillez n'importe quelle carte pour qu'elle ne s'ouvre qu'avec votre empreinte digitale, votre visage ou le verrouillage de l'écran
+• Les captures d'écran sont bloquées sur les écrans contenant des informations sensibles
+• Les numéros copiés sont effacés du presse-papiers au bout d'une minute
+• Sans compte, sans publicité, sans statistiques – vos cartes ne quittent jamais votre appareil
+• L'application ne se connecte à Internet que lorsque vous choisissez de télécharger le logo officiel d'un magasin ou d'une banque
+
+<b>Organisées à votre façon</b>
+• Recherchez et filtrez par type de carte
+• Triez par nom, par date d'ajout ou selon votre propre ordre
+• Couleurs et logos pour les magasins et banques connus, ou importez les vôtres
+
+<b>Sauvegarde chiffrée</b>
+• Exportez toutes vos cartes dans un seul fichier protégé par mot de passe et restaurez-le sur un nouveau téléphone
+
+Cardholder est open source : https://github.com/danyk20/cardholder

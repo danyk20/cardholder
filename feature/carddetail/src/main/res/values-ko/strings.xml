@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">수정</string>
+    <string name="detail_delete">삭제</string>
+    <string name="detail_more">옵션 더보기</string>
+    <string name="detail_flip">반대쪽 면 보기</string>
+    <string name="detail_show_code">코드 표시</string>
+    <string name="detail_copied">%1$s 복사됨. 1분 후 클립보드에서 삭제됩니다.</string>
+    <string name="detail_copy">%1$s 복사</string>
+    <string name="detail_show_cvv">CVV 표시</string>
+    <string name="detail_hide_cvv">CVV 숨기기</string>
+    <string name="detail_locked_details">이 카드는 잠겨 있어 세부정보가 숨겨져 있습니다</string>
+    <string name="detail_lock">카드 잠금</string>
+    <string name="detail_lock_on">이 카드를 보려면 지문, 얼굴 또는 화면 잠금이 필요합니다</string>
+    <string name="detail_lock_off">휴대전화를 사용하는 누구나 이 카드를 볼 수 있습니다</string>
+    <string name="detail_lock_unavailable">카드를 잠그려면 기기에 화면 잠금을 설정하세요</string>
+    <string name="detail_delete_title">이 카드를 삭제하시겠습니까?</string>
+    <string name="detail_delete_message">%1$s 및 관련 사진이 이 기기에서 영구적으로 삭제됩니다.</string>
+    <string name="detail_cancel">취소</string>
+    <string name="detail_close_photo">사진 닫기</string>
+    <string name="detail_ok">확인</string>
+    <string name="field_bank">은행</string>
+    <string name="field_number">카드 번호</string>
+    <string name="field_expiry">유효기간</string>
+    <string name="field_holder">카드 소유자</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">카드 브랜드</string>
+    <string name="field_country">국가</string>
+    <string name="field_document_number">신분증 번호</string>
+    <string name="field_shop">매장</string>
+    <string name="field_code">코드</string>
+    <string name="field_format">코드 유형</string>
+</resources>

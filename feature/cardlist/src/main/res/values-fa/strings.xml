@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">تنظیمات</string>
+    <string name="cardlist_add_card">افزودن کارت</string>
+    <string name="cardlist_search">جستجوی کارت‌ها</string>
+    <string name="cardlist_clear_search">پاک کردن جستجو</string>
+    <string name="cardlist_empty_title">هنوز کارتی ندارید</string>
+    <string name="cardlist_empty_message">کارت‌های بانکی، شناسایی و باشگاه مشتریان خود را با خیال راحت در تلفنتان نگه دارید. همه‌چیز رمزگذاری می‌شود و روی دستگاه شما می‌ماند.</string>
+    <string name="cardlist_no_results">هیچ کارتی با جستجوی شما مطابقت ندارد</string>
+    <string name="cardlist_show_code">نمایش کد در تمام صفحه</string>
+    <string name="cardlist_tap_to_unlock">برای باز کردن قفل ضربه بزنید</string>
+    <string name="cardlist_sort">مرتب‌سازی کارت‌ها</string>
+    <string name="cardlist_sort_name">نام (الف–ی)</string>
+    <string name="cardlist_sort_date">تاریخ افزودن (جدیدترین اول)</string>
+    <string name="cardlist_sort_custom">ترتیب دلخواه</string>
+    <string name="cardlist_reorder">تغییر ترتیب کارت‌ها</string>
+    <string name="cardlist_reorder_done">تمام</string>
+    <string name="cardlist_reorder_cancel">لغو تغییر ترتیب</string>
+    <string name="cardlist_reorder_hint">برای تغییر ترتیب، کارت‌ها را از دستگیره بکشید.</string>
+    <string name="cardlist_drag_handle">کشیدن برای جابه‌جا کردن %1$s</string>
+    <string name="cardlist_move_up">انتقال به بالا</string>
+    <string name="cardlist_move_down">انتقال به پایین</string>
+</resources>

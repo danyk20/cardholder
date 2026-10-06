@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">بستن</string>
+    <string name="barcode_details">جزئیات کارت</string>
+    <string name="barcode_description">%1$s برای %2$s</string>
+    <string name="barcode_unencodable">این کد را نمی‌توان به‌صورت %1$s نمایش داد. کارت را ویرایش کنید و کد را اصلاح کنید یا نوع کد دیگری انتخاب کنید.</string>
+    <string name="barcode_hint">صفحه را صاف و ثابت جلوی اسکنر نگه دارید.</string>
+</resources>

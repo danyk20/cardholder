@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Τραπεζική κάρτα</string>
+    <string name="card_type_id">Ταυτότητα</string>
+    <string name="card_type_loyalty">Κάρτα επιβράβευσης</string>
+    <string name="card_type_bank_description">Χρεωστική ή πιστωτική κάρτα</string>
+    <string name="card_type_id_description">Δελτίο ταυτότητας, διαβατήριο, δίπλωμα οδήγησης…</string>
+    <string name="card_type_loyalty_description">Κάρτα καταστήματος με γραμμωτό κώδικα ή κωδικό QR</string>
+    <string name="card_side_front">Μπροστά</string>
+    <string name="card_side_back">Πίσω</string>
+    <string name="card_locked">Κλειδωμένη</string>
+    <string name="card_locked_message">Αυτή η κάρτα είναι κλειδωμένη</string>
+    <string name="auth_title_show_cvv">Εμφάνιση CVV</string>
+    <string name="auth_title_export">Εξαγωγή αντιγράφου ασφαλείας</string>
+    <string name="card_not_found">Αυτή η κάρτα δεν υπάρχει πλέον</string>
+    <string name="auth_title_unlock_card">Ξεκλείδωμα: %1$s</string>
+    <string name="auth_subtitle">Επιβεβαιώστε ότι είστε εσείς με δακτυλικό αποτύπωμα, πρόσωπο ή κλείδωμα οθόνης</string>
+    <string name="auth_key_invalidated">Αυτά τα δεδομένα προστατεύονταν από ένα κλείδωμα οθόνης που έχει πλέον καταργηθεί, οπότε δεν μπορούν πια να αποκρυπτογραφηθούν.</string>
+    <string name="error_required">Υποχρεωτικό</string>
+    <string name="error_invalid_characters">Περιέχει μη επιτρεπτούς χαρακτήρες</string>
+    <string name="error_invalid_length">Λάθος μήκος</string>
+    <string name="error_invalid_checksum">Το ψηφίο ελέγχου δεν ταιριάζει – ελέγξτε για τυπογραφικά λάθη</string>
+    <string name="error_invalid_date">Μη έγκυρη ημερομηνία</string>
+    <string name="action_back">Πίσω</string>
+    <string name="action_cancel">Ακύρωση</string>
+    <string name="action_unlock">Ξεκλείδωμα</string>
+    <string name="format_qr_code">Κωδικός QR</string>
+    <string name="color_navy">Σκούρο μπλε</string>
+    <string name="color_blue">Μπλε</string>
+    <string name="color_teal">Πετρόλ</string>
+    <string name="color_green">Πράσινο</string>
+    <string name="color_lime">Λαχανί</string>
+    <string name="color_amber">Κεχριμπαρί</string>
+    <string name="color_orange">Πορτοκαλί</string>
+    <string name="color_red">Κόκκινο</string>
+    <string name="color_pink">Ροζ</string>
+    <string name="color_purple">Μωβ</string>
+    <string name="color_brown">Καφέ</string>
+    <string name="color_graphite">Γραφίτης</string>
+</resources>

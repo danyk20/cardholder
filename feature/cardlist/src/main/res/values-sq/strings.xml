@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Cilësimet</string>
+    <string name="cardlist_add_card">Shto kartë</string>
+    <string name="cardlist_search">Kërko karta</string>
+    <string name="cardlist_clear_search">Pastro kërkimin</string>
+    <string name="cardlist_empty_title">Ende nuk ka karta</string>
+    <string name="cardlist_empty_message">Mbaji kartat bankare, të identitetit dhe të besnikërisë të sigurta në telefon. Gjithçka enkriptohet dhe mbetet në pajisjen tënde.</string>
+    <string name="cardlist_no_results">Asnjë kartë nuk përputhet me kërkimin</string>
+    <string name="cardlist_show_code">Shfaq kodin në ekran të plotë</string>
+    <string name="cardlist_tap_to_unlock">Trokit për ta shkyçur</string>
+    <string name="cardlist_sort">Rendit kartat</string>
+    <string name="cardlist_sort_name">Emri (A–Zh)</string>
+    <string name="cardlist_sort_date">Data e shtimit (më të rejat në krye)</string>
+    <string name="cardlist_sort_custom">Renditje e personalizuar</string>
+    <string name="cardlist_reorder">Rirendit kartat</string>
+    <string name="cardlist_reorder_done">U krye</string>
+    <string name="cardlist_reorder_cancel">Anulo rirenditjen</string>
+    <string name="cardlist_reorder_hint">Tërhiqi kartat nga doreza për të ndryshuar renditjen e tyre.</string>
+    <string name="cardlist_drag_handle">Tërhiq për të zhvendosur %1$s</string>
+    <string name="cardlist_move_up">Lëviz lart</string>
+    <string name="cardlist_move_down">Lëviz poshtë</string>
+</resources>

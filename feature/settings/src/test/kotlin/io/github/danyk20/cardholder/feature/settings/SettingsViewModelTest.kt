@@ -5,8 +5,10 @@ import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
+import io.github.danyk20.cardholder.core.testing.repository.FakeScreenCapturePolicy
 import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 import kotlinx.coroutines.flow.collect
@@ -23,7 +25,8 @@ class SettingsViewModelTest {
 
     private val preferences = FakeUserPreferencesRepository()
     private val backups = RecordingBackupRepository()
-    private val viewModel by lazy { SettingsViewModel(preferences, backups) }
+    private val screenCapture = FakeScreenCapturePolicy()
+    private val viewModel by lazy { SettingsViewModel(preferences, backups, screenCapture) }
 
     private fun TestScope.observeState() {
         backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) { viewModel.uiState.collect() }
@@ -38,6 +41,26 @@ class SettingsViewModelTest {
 
         assertEquals(ThemeMode.DARK, viewModel.uiState.value.preferences.themeMode)
         assertEquals(false, viewModel.uiState.value.preferences.useDynamicColor)
+    }
+
+    @Test
+    fun `screenshots are not allowed by default`() = runTest {
+        observeState()
+
+        assertFalse(viewModel.uiState.value.screenshotsAllowed)
+    }
+
+    @Test
+    fun `toggles the temporary screenshot permission`() = runTest {
+        observeState()
+
+        viewModel.onScreenshotsAllowedChange(true)
+        assertTrue(screenCapture.isAllowed.value)
+        assertTrue(viewModel.uiState.value.screenshotsAllowed)
+
+        // Revoked elsewhere, e.g. when the app leaves the screen.
+        screenCapture.setAllowed(false)
+        assertFalse(viewModel.uiState.value.screenshotsAllowed)
     }
 
     @Test

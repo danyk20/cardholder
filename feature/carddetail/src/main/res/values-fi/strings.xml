@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Muokkaa</string>
+    <string name="detail_delete">Poista</string>
+    <string name="detail_more">Lisää vaihtoehtoja</string>
+    <string name="detail_flip">Näytä toinen puoli</string>
+    <string name="detail_show_code">Näytä koodi</string>
+    <string name="detail_copied">%1$s kopioitu. Leikepöytä tyhjennetään minuutin kuluttua.</string>
+    <string name="detail_copy">Kopioi: %1$s</string>
+    <string name="detail_show_cvv">Näytä CVV</string>
+    <string name="detail_hide_cvv">Piilota CVV</string>
+    <string name="detail_locked_details">Tiedot on piilotettu, koska tämä kortti on lukittu</string>
+    <string name="detail_lock">Lukitse kortti</string>
+    <string name="detail_lock_on">Kortin näkeminen edellyttää sormenjälkeä, kasvoja tai näytön lukitusta</string>
+    <string name="detail_lock_off">Kuka tahansa puhelintasi käyttävä näkee tämän kortin</string>
+    <string name="detail_lock_unavailable">Ota laitteella käyttöön näytön lukitus, jotta voit lukita kortteja</string>
+    <string name="detail_delete_title">Poistetaanko kortti?</string>
+    <string name="detail_delete_message">%1$s ja sen kuvat poistetaan pysyvästi tältä laitteelta.</string>
+    <string name="detail_cancel">Peruuta</string>
+    <string name="detail_close_photo">Sulje kuva</string>
+    <string name="detail_ok">OK</string>
+    <string name="field_bank">Pankki</string>
+    <string name="field_number">Kortin numero</string>
+    <string name="field_expiry">Voimassa</string>
+    <string name="field_holder">Kortinhaltija</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Korttiverkosto</string>
+    <string name="field_country">Maa</string>
+    <string name="field_document_number">Asiakirjan numero</string>
+    <string name="field_shop">Kauppa</string>
+    <string name="field_code">Koodi</string>
+    <string name="field_format">Koodityyppi</string>
+</resources>

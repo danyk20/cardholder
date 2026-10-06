@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Betalingskort</string>
+    <string name="card_type_id">ID-kort</string>
+    <string name="card_type_loyalty">Kundekort</string>
+    <string name="card_type_bank_description">Debet- eller kreditkort</string>
+    <string name="card_type_id_description">Identitetskort, pas, kørekort…</string>
+    <string name="card_type_loyalty_description">Butikskort med stregkode eller QR-kode</string>
+    <string name="card_side_front">Forside</string>
+    <string name="card_side_back">Bagside</string>
+    <string name="card_locked">Låst</string>
+    <string name="card_locked_message">Dette kort er låst</string>
+    <string name="auth_title_show_cvv">Vis CVV</string>
+    <string name="auth_title_export">Eksportér backup</string>
+    <string name="card_not_found">Dette kort findes ikke længere</string>
+    <string name="auth_title_unlock_card">Lås %1$s op</string>
+    <string name="auth_subtitle">Bekræft, at det er dig, med fingeraftryk, ansigt eller skærmlås</string>
+    <string name="auth_key_invalidated">Disse data var beskyttet af en skærmlås, der siden er blevet fjernet, og de kan ikke længere dekrypteres.</string>
+    <string name="error_required">Påkrævet</string>
+    <string name="error_invalid_characters">Indeholder tegn, der ikke er tilladt</string>
+    <string name="error_invalid_length">Forkert længde</string>
+    <string name="error_invalid_checksum">Kontrolcifferet passer ikke – tjek for tastefejl</string>
+    <string name="error_invalid_date">Ugyldig dato</string>
+    <string name="action_back">Tilbage</string>
+    <string name="action_cancel">Annuller</string>
+    <string name="action_unlock">Lås op</string>
+    <string name="format_qr_code">QR-kode</string>
+    <string name="color_navy">Marineblå</string>
+    <string name="color_blue">Blå</string>
+    <string name="color_teal">Blågrøn</string>
+    <string name="color_green">Grøn</string>
+    <string name="color_lime">Limegrøn</string>
+    <string name="color_amber">Ravgul</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_red">Rød</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_purple">Lilla</string>
+    <string name="color_brown">Brun</string>
+    <string name="color_graphite">Grafit</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Fechar leitor</string>
+    <string name="scanner_hint">Aponte a câmara para o código de barras ou código QR do seu cartão</string>
+    <string name="scanner_permission_rationale">O Cardholder precisa da câmara para ler o código do seu cartão. As imagens são analisadas no dispositivo e nunca são guardadas nem enviadas.</string>
+    <string name="scanner_grant_permission">Permitir câmara</string>
+    <string name="nfc_title">Ler cartão por NFC</string>
+    <string name="nfc_hold_card">Encoste o cartão à parte de trás do telemóvel e mantenha-o imóvel.</string>
+    <string name="nfc_reading">A ler o cartão…</string>
+    <string name="nfc_failed">Não foi possível ler o cartão. Mova-o lentamente pela parte de trás do telemóvel e tente novamente.</string>
+    <string name="nfc_disabled">O NFC está desativado.</string>
+    <string name="nfc_turn_on">Ativar NFC</string>
+    <string name="nfc_cvv_note">O CVV não está guardado no chip. Introduza-o manualmente.</string>
+    <string name="nfc_cancel">Cancelar</string>
+</resources>

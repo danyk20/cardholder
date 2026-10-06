@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Luk</string>
+    <string name="barcode_details">Kortoplysninger</string>
+    <string name="barcode_description">%1$s for %2$s</string>
+    <string name="barcode_unencodable">Denne kode kan ikke vises som %1$s. Rediger kortet for at rette koden, eller vælg en anden kodetype.</string>
+    <string name="barcode_hint">Hold skærmen fladt og roligt foran scanneren.</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Asetukset</string>
+    <string name="settings_appearance">Ulkoasu</string>
+    <string name="settings_theme_system">Järjestelmän oletus</string>
+    <string name="settings_theme_light">Vaalea</string>
+    <string name="settings_theme_dark">Tumma</string>
+    <string name="settings_dynamic_color">Dynaaminen väri</string>
+    <string name="settings_dynamic_color_description">Käytä taustakuvan värejä</string>
+    <string name="settings_security">Tietoturva</string>
+    <string name="settings_allow_screenshots">Salli kuvakaappaukset</string>
+    <string name="settings_allow_screenshots_description">Kunnes poistut sovelluksesta. Kuvakaappauksissa voi näkyä korttien numeroita, ja ne tallennetaan kuviisi, jotka voidaan varmuuskopioida pilveen.</string>
+    <string name="settings_backup">Varmuuskopiointi</string>
+    <string name="settings_export">Vie varmuuskopio</string>
+    <string name="settings_export_description">Tallenna kaikki kortit salasanalla suojattuun tiedostoon</string>
+    <string name="settings_import">Tuo varmuuskopio</string>
+    <string name="settings_import_description">Palauta kortit varmuuskopiotiedostosta</string>
+    <string name="settings_backup_working">Käsitellään…</string>
+    <string name="settings_password_title_export">Suojaa varmuuskopiosi</string>
+    <string name="settings_password_title_import">Anna varmuuskopion salasana</string>
+    <string name="settings_password_message_export">Varmuuskopio sisältää kaikki korttitiedot, myös CVV-koodit. Valitse vahva salasana – sitä ei voi palauttaa.</string>
+    <string name="settings_password">Salasana</string>
+    <string name="settings_password_confirm">Toista salasana</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Käytä vähintään %1$d merkki</item>
+        <item quantity="other">Käytä vähintään %1$d merkkiä</item>
+    </plurals>
+    <string name="settings_password_mismatch">Salasanat eivät täsmää</string>
+    <string name="settings_replace_existing">Korvaa jo olemassa olevat kortit</string>
+    <string name="settings_continue">Jatka</string>
+    <string name="settings_cancel">Peruuta</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d kortti viety</item>
+        <item quantity="other">%1$d korttia viety</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d kortti tuotu</item>
+        <item quantity="other">%1$d korttia tuotu</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d oli jo olemassa, ja se ohitettiin</item>
+        <item quantity="other">%1$d oli jo olemassa, ja ne ohitettiin</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Väärä salasana</string>
+    <string name="settings_result_invalid_file">Tämä ei ole Cardholder-varmuuskopio, tai tiedosto on vioittunut</string>
+    <string name="settings_result_auth_required">Vahvista henkilöllisyytesi, jotta voit viedä suojatut kortit</string>
+    <string name="settings_result_device_not_secure">Ota näytön lukitus käyttöön, jotta voit tuoda kortteja, joissa on CVV-koodeja tai lukituksia</string>
+    <string name="settings_result_failed">Jokin meni vikaan. Yritä uudelleen.</string>
+    <string name="settings_about">Tietoja</string>
+    <string name="settings_version">Versio %1$s</string>
+    <string name="settings_privacy">Korttisi on salattu, eivätkä ne poistu tältä laitteelta, ellet vie niitä. Sovellus muodostaa verkkoyhteyden vain, kun pyydät lataamaan kaupan tai pankin virallisen logon.</string>
+    <string name="settings_privacy_policy">Tietosuojakäytäntö</string>
+    <string name="settings_logo_credits">Logojen lähteet</string>
+    <string name="settings_logo_credits_description">Virallisten logojen lähteet ja lisenssit</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Card bancar</string>
+    <string name="card_type_id">Act de identitate</string>
+    <string name="card_type_loyalty">Card de fidelitate</string>
+    <string name="card_type_bank_description">Card de debit sau de credit</string>
+    <string name="card_type_id_description">Carte de identitate, pașaport, permis de conducere…</string>
+    <string name="card_type_loyalty_description">Card de magazin cu cod de bare sau cod QR</string>
+    <string name="card_side_front">Față</string>
+    <string name="card_side_back">Verso</string>
+    <string name="card_locked">Blocat</string>
+    <string name="card_locked_message">Acest card este blocat</string>
+    <string name="auth_title_show_cvv">Afișați codul CVV</string>
+    <string name="auth_title_export">Exportați backupul</string>
+    <string name="card_not_found">Acest card nu mai există</string>
+    <string name="auth_title_unlock_card">Deblocați %1$s</string>
+    <string name="auth_subtitle">Confirmați că sunteți dvs. cu amprenta, fața sau blocarea ecranului</string>
+    <string name="auth_key_invalidated">Aceste date erau protejate de o blocare a ecranului care a fost eliminată între timp și nu mai pot fi decriptate.</string>
+    <string name="error_required">Obligatoriu</string>
+    <string name="error_invalid_characters">Conține caractere nepermise</string>
+    <string name="error_invalid_length">Lungime greșită</string>
+    <string name="error_invalid_checksum">Cifra de control nu corespunde – verificați dacă există greșeli de scriere</string>
+    <string name="error_invalid_date">Dată nevalidă</string>
+    <string name="action_back">Înapoi</string>
+    <string name="action_cancel">Anulați</string>
+    <string name="action_unlock">Deblocați</string>
+    <string name="format_qr_code">Cod QR</string>
+    <string name="color_navy">Bleumarin</string>
+    <string name="color_blue">Albastru</string>
+    <string name="color_teal">Turcoaz închis</string>
+    <string name="color_green">Verde</string>
+    <string name="color_lime">Verde lime</string>
+    <string name="color_amber">Chihlimbar</string>
+    <string name="color_orange">Portocaliu</string>
+    <string name="color_red">Roșu</string>
+    <string name="color_pink">Roz</string>
+    <string name="color_purple">Mov</string>
+    <string name="color_brown">Maro</string>
+    <string name="color_graphite">Grafit</string>
+</resources>

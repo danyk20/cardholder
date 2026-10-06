@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Definições</string>
+    <string name="settings_appearance">Aspeto</string>
+    <string name="settings_theme_system">Predefinição do sistema</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_dark">Escuro</string>
+    <string name="settings_dynamic_color">Cores dinâmicas</string>
+    <string name="settings_dynamic_color_description">Utilizar as cores da sua imagem de fundo</string>
+    <string name="settings_security">Segurança</string>
+    <string name="settings_allow_screenshots">Permitir capturas de ecrã</string>
+    <string name="settings_allow_screenshots_description">Até sair da aplicação. As capturas de ecrã podem mostrar números de cartão e são guardadas nas suas fotografias, que podem ter cópia de segurança na nuvem.</string>
+    <string name="settings_backup">Cópia de segurança</string>
+    <string name="settings_export">Exportar cópia de segurança</string>
+    <string name="settings_export_description">Guardar todos os cartões num ficheiro protegido por palavra-passe</string>
+    <string name="settings_import">Importar cópia de segurança</string>
+    <string name="settings_import_description">Restaurar cartões a partir de um ficheiro de cópia de segurança</string>
+    <string name="settings_backup_working">A processar…</string>
+    <string name="settings_password_title_export">Proteja a sua cópia de segurança</string>
+    <string name="settings_password_title_import">Introduza a palavra-passe da cópia de segurança</string>
+    <string name="settings_password_message_export">A cópia de segurança contém todos os dados dos cartões, incluindo os CVV. Escolha uma palavra-passe forte – não é possível recuperá-la.</string>
+    <string name="settings_password">Palavra-passe</string>
+    <string name="settings_password_confirm">Repetir palavra-passe</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Utilize pelo menos %1$d caráter</item>
+        <item quantity="many">Utilize pelo menos %1$d carateres</item>
+        <item quantity="other">Utilize pelo menos %1$d carateres</item>
+    </plurals>
+    <string name="settings_password_mismatch">As palavras-passe não coincidem</string>
+    <string name="settings_replace_existing">Substituir cartões que já existem</string>
+    <string name="settings_continue">Continuar</string>
+    <string name="settings_cancel">Cancelar</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d cartão exportado</item>
+        <item quantity="many">%1$d cartões exportados</item>
+        <item quantity="other">%1$d cartões exportados</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d cartão importado</item>
+        <item quantity="many">%1$d cartões importados</item>
+        <item quantity="other">%1$d cartões importados</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d já existia e foi ignorado</item>
+        <item quantity="many">%1$d já existiam e foram ignorados</item>
+        <item quantity="other">%1$d já existiam e foram ignorados</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Palavra-passe incorreta</string>
+    <string name="settings_result_invalid_file">Este ficheiro não é uma cópia de segurança do Cardholder ou está danificado</string>
+    <string name="settings_result_auth_required">Confirme a sua identidade para exportar cartões protegidos</string>
+    <string name="settings_result_device_not_secure">Configure um bloqueio de ecrã para importar cartões com CVV ou bloqueio</string>
+    <string name="settings_result_failed">Ocorreu um erro. Tente novamente.</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_version">Versão %1$s</string>
+    <string name="settings_privacy">Os seus cartões são encriptados e nunca saem deste dispositivo, a menos que os exporte. A app só acede à Internet para transferir o logótipo oficial de uma loja ou banco quando o pedir.</string>
+    <string name="settings_privacy_policy">Política de privacidade</string>
+    <string name="settings_logo_credits">Créditos dos logótipos</string>
+    <string name="settings_logo_credits_description">Fontes e licenças dos logótipos oficiais</string>
+</resources>

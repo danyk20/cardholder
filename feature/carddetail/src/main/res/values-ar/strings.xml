@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">تعديل</string>
+    <string name="detail_delete">حذف</string>
+    <string name="detail_more">خيارات إضافية</string>
+    <string name="detail_flip">عرض الوجه الآخر</string>
+    <string name="detail_show_code">عرض الرمز</string>
+    <string name="detail_copied">تم نسخ %1$s. ستتم إزالته من الحافظة بعد دقيقة.</string>
+    <string name="detail_copy">نسخ %1$s</string>
+    <string name="detail_show_cvv">عرض رمز CVV</string>
+    <string name="detail_hide_cvv">إخفاء رمز CVV</string>
+    <string name="detail_locked_details">التفاصيل مخفية لأن هذه البطاقة مقفلة</string>
+    <string name="detail_lock">قفل البطاقة</string>
+    <string name="detail_lock_on">يلزم استخدام بصمة الإصبع أو الوجه أو قفل الشاشة لعرض هذه البطاقة</string>
+    <string name="detail_lock_off">يمكن لأي شخص يستخدم هاتفك رؤية هذه البطاقة</string>
+    <string name="detail_lock_unavailable">اضبط قفل شاشة على جهازك لتتمكن من قفل البطاقات</string>
+    <string name="detail_delete_title">هل تريد حذف هذه البطاقة؟</string>
+    <string name="detail_delete_message">سيتم حذف %1$s وصورها نهائيًا من هذا الجهاز.</string>
+    <string name="detail_cancel">إلغاء</string>
+    <string name="detail_close_photo">إغلاق الصورة</string>
+    <string name="detail_ok">حسنًا</string>
+
+    <string name="field_bank">البنك</string>
+    <string name="field_number">رقم البطاقة</string>
+    <string name="field_expiry">تاريخ الانتهاء</string>
+    <string name="field_holder">اسم حامل البطاقة</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">شبكة البطاقة</string>
+    <string name="field_country">البلد</string>
+    <string name="field_document_number">رقم المستند</string>
+    <string name="field_shop">المتجر</string>
+    <string name="field_code">الرمز</string>
+    <string name="field_format">نوع الرمز</string>
+</resources>

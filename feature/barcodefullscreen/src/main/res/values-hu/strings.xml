@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Bezárás</string>
+    <string name="barcode_details">Kártya adatai</string>
+    <string name="barcode_description">%2$s – %1$s</string>
+    <string name="barcode_unencodable">Ez a kód nem jeleníthető meg %1$s formátumban. Szerkessze a kártyát a kód javításához, vagy válasszon másik kódtípust.</string>
+    <string name="barcode_hint">Tartsa a képernyőt egyenesen és mozdulatlanul a leolvasó előtt.</string>
+</resources>

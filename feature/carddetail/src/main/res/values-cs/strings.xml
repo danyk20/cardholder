@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Upravit</string>
+    <string name="detail_delete">Smazat</string>
+    <string name="detail_more">Další možnosti</string>
+    <string name="detail_flip">Zobrazit druhou stranu</string>
+    <string name="detail_show_code">Zobrazit kód</string>
+    <string name="detail_copied">Zkopírováno: %1$s. Ze schránky se vymaže za minutu.</string>
+    <string name="detail_copy">Kopírovat %1$s</string>
+    <string name="detail_show_cvv">Zobrazit CVV</string>
+    <string name="detail_hide_cvv">Skrýt CVV</string>
+    <string name="detail_locked_details">Podrobnosti jsou skryté, protože tato karta je zamčená</string>
+    <string name="detail_lock">Zamknout kartu</string>
+    <string name="detail_lock_on">K zobrazení této karty je potřeba otisk prstu, obličej nebo zámek obrazovky</string>
+    <string name="detail_lock_off">Tuto kartu uvidí kdokoli, kdo používá váš telefon</string>
+    <string name="detail_lock_unavailable">Chcete-li zamykat karty, nastavte v zařízení zámek obrazovky</string>
+    <string name="detail_delete_title">Smazat tuto kartu?</string>
+    <string name="detail_delete_message">Karta %1$s a její fotky budou z tohoto zařízení trvale smazány.</string>
+    <string name="detail_cancel">Zrušit</string>
+    <string name="detail_close_photo">Zavřít fotku</string>
+    <string name="detail_ok">OK</string>
+
+    <string name="field_bank">Banka</string>
+    <string name="field_number">Číslo karty</string>
+    <string name="field_expiry">Platnost do</string>
+    <string name="field_holder">Držitel karty</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Karetní společnost</string>
+    <string name="field_country">Země</string>
+    <string name="field_document_number">Číslo dokladu</string>
+    <string name="field_shop">Obchod</string>
+    <string name="field_code">Kód</string>
+    <string name="field_format">Typ kódu</string>
+</resources>

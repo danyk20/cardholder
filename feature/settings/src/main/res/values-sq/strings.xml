@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Cilësimet</string>
+
+    <string name="settings_appearance">Pamja</string>
+    <string name="settings_theme_system">Parazgjedhja e sistemit</string>
+    <string name="settings_theme_light">E çelët</string>
+    <string name="settings_theme_dark">E errët</string>
+    <string name="settings_dynamic_color">Ngjyra dinamike</string>
+    <string name="settings_dynamic_color_description">Përdor ngjyrat e imazhit të sfondit</string>
+
+    <string name="settings_security">Siguria</string>
+    <string name="settings_allow_screenshots">Lejo pamjet e ekranit</string>
+    <string name="settings_allow_screenshots_description">Derisa të dalësh nga aplikacioni. Pamjet e ekranit mund të shfaqin numrat e kartave dhe ruhen te fotografitë e tua, të cilat mund të rezervohen në re.</string>
+    <string name="settings_backup">Kopja rezervë</string>
+    <string name="settings_export">Eksporto kopjen rezervë</string>
+    <string name="settings_export_description">Ruaj të gjitha kartat në një skedar të mbrojtur me fjalëkalim</string>
+    <string name="settings_import">Importo kopjen rezervë</string>
+    <string name="settings_import_description">Rikthe kartat nga një skedar kopjeje rezervë</string>
+    <string name="settings_backup_working">Duke punuar…</string>
+
+    <string name="settings_password_title_export">Mbro kopjen rezervë</string>
+    <string name="settings_password_title_import">Fut fjalëkalimin e kopjes rezervë</string>
+    <string name="settings_password_message_export">Kopja rezervë përmban të gjitha detajet e kartave, përfshirë kodet CVV. Zgjidh një fjalëkalim të fortë – ai nuk mund të rikuperohet.</string>
+    <string name="settings_password">Fjalëkalimi</string>
+    <string name="settings_password_confirm">Përsërit fjalëkalimin</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Përdor të paktën %1$d karakter</item>
+        <item quantity="other">Përdor të paktën %1$d karaktere</item>
+    </plurals>
+    <string name="settings_password_mismatch">Fjalëkalimet nuk përputhen</string>
+    <string name="settings_replace_existing">Zëvendëso kartat që ekzistojnë tashmë</string>
+    <string name="settings_continue">Vazhdo</string>
+    <string name="settings_cancel">Anulo</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d kartë u eksportua</item>
+        <item quantity="other">%1$d karta u eksportuan</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d kartë u importua</item>
+        <item quantity="other">%1$d karta u importuan</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d ekzistonte tashmë dhe u kapërcye</item>
+        <item quantity="other">%1$d ekzistonin tashmë dhe u kapërcyen</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Fjalëkalim i gabuar</string>
+    <string name="settings_result_invalid_file">Ky nuk është një kopje rezervë e Cardholder ose skedari është i dëmtuar</string>
+    <string name="settings_result_auth_required">Konfirmo që je ti për të eksportuar kartat e mbrojtura</string>
+    <string name="settings_result_device_not_secure">Konfiguro një kyçje ekrani për të importuar karta me CVV ose kyçje</string>
+    <string name="settings_result_failed">Diçka shkoi keq. Provo përsëri.</string>
+
+    <string name="settings_about">Rreth</string>
+    <string name="settings_version">Versioni %1$s</string>
+    <string name="settings_privacy">Kartat e tua janë të enkriptuara dhe nuk largohen kurrë nga kjo pajisje, përveçse kur i eksporton. Aplikacioni lidhet me internetin vetëm për të shkarkuar një logo zyrtare dyqani ose banke kur e kërkon ti.</string>
+    <string name="settings_privacy_policy">Politika e privatësisë</string>
+    <string name="settings_logo_credits">Burimet e logove</string>
+    <string name="settings_logo_credits_description">Burimet dhe licencat e logove zyrtare</string>
+</resources>

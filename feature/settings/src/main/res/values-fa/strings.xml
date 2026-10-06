@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">تنظیمات</string>
+    <string name="settings_appearance">ظاهر</string>
+    <string name="settings_theme_system">پیش‌فرض سیستم</string>
+    <string name="settings_theme_light">روشن</string>
+    <string name="settings_theme_dark">تیره</string>
+    <string name="settings_dynamic_color">رنگ پویا</string>
+    <string name="settings_dynamic_color_description">استفاده از رنگ‌های کاغذدیواری</string>
+    <string name="settings_security">امنیت</string>
+    <string name="settings_allow_screenshots">اجازه دادن به نماگرفت</string>
+    <string name="settings_allow_screenshots_description">تا زمانی که از برنامه خارج شوید. نماگرفت‌ها ممکن است شماره کارت‌ها را نشان دهند و در عکس‌های شما ذخیره می‌شوند که ممکن است در فضای ابری پشتیبان‌گیری شوند.</string>
+    <string name="settings_backup">پشتیبان‌گیری</string>
+    <string name="settings_export">صادر کردن نسخه پشتیبان</string>
+    <string name="settings_export_description">ذخیره همه کارت‌ها در یک فایل محافظت‌شده با گذرواژه</string>
+    <string name="settings_import">وارد کردن نسخه پشتیبان</string>
+    <string name="settings_import_description">بازیابی کارت‌ها از فایل پشتیبان</string>
+    <string name="settings_backup_working">درحال انجام…</string>
+    <string name="settings_password_title_export">از نسخه پشتیبان محافظت کنید</string>
+    <string name="settings_password_title_import">گذرواژه نسخه پشتیبان را وارد کنید</string>
+    <string name="settings_password_message_export">نسخه پشتیبان شامل همه جزئیات کارت‌ها، ازجمله CVVها، است. گذرواژه‌ای قوی انتخاب کنید – قابل بازیابی نیست.</string>
+    <string name="settings_password">گذرواژه</string>
+    <string name="settings_password_confirm">تکرار گذرواژه</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">دست‌کم از %1$d نویسه استفاده کنید</item>
+        <item quantity="other">دست‌کم از %1$d نویسه استفاده کنید</item>
+    </plurals>
+    <string name="settings_password_mismatch">گذرواژه‌ها مطابقت ندارند</string>
+    <string name="settings_replace_existing">جایگزینی کارت‌هایی که از قبل وجود دارند</string>
+    <string name="settings_continue">ادامه</string>
+    <string name="settings_cancel">لغو</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d کارت صادر شد</item>
+        <item quantity="other">%1$d کارت صادر شد</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d کارت وارد شد</item>
+        <item quantity="other">%1$d کارت وارد شد</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d کارت از قبل وجود داشت و رد شد</item>
+        <item quantity="other">%1$d کارت از قبل وجود داشتند و رد شدند</item>
+    </plurals>
+    <string name="settings_result_wrong_password">گذرواژه اشتباه است</string>
+    <string name="settings_result_invalid_file">این فایل نسخه پشتیبان Cardholder نیست یا آسیب دیده است</string>
+    <string name="settings_result_auth_required">برای صادر کردن کارت‌های محافظت‌شده، هویت خود را تأیید کنید</string>
+    <string name="settings_result_device_not_secure">برای وارد کردن کارت‌های دارای CVV یا قفل، قفل صفحه را تنظیم کنید</string>
+    <string name="settings_result_failed">مشکلی پیش آمد. لطفاً دوباره امتحان کنید.</string>
+    <string name="settings_about">درباره</string>
+    <string name="settings_version">نسخه %1$s</string>
+    <string name="settings_privacy">کارت‌های شما رمزگذاری می‌شوند و تا وقتی آن‌ها را صادر نکنید، هرگز از این دستگاه خارج نمی‌شوند. برنامه فقط زمانی به اینترنت وصل می‌شود که بخواهید لوگوی رسمی یک فروشگاه یا بانک را بارگیری کنید.</string>
+    <string name="settings_privacy_policy">خط‌مشی رازداری</string>
+    <string name="settings_logo_credits">منابع لوگوها</string>
+    <string name="settings_logo_credits_description">منابع و مجوزهای لوگوهای رسمی</string>
+</resources>

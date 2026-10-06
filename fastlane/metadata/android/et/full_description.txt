@@ -1,0 +1,39 @@
+Cardholder hoiab teie pangakaardid, ID-kaardid ja kliendikaardid telefonis ühes kohas – krüpteeritult, võrguühenduseta ning ilma reklaamide ja jälgimiseta.
+
+<b>Kliendikaardid kassas</b>
+• Iga kliendikaardi ribakood või QR-kood on kohe loendis näha
+• Puudutage seda ja kood kuvatakse täisekraanil maksimaalse heledusega, skanneri jaoks valmis
+• Skannige kood plastkaardilt kaameraga – või sisestage see käsitsi
+• Toetatud on QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec ja Data Matrix
+
+<b>Pangakaardid</b>
+• Salvestage kaardi number, kehtivusaeg, kaardi omanik ja CVV
+• Täitke andmed, hoides kontaktivaba kaarti vastu telefoni (NFC)
+• CVV on alati peidetud ja kuvatakse alles pärast sõrmejälje, näo või ekraaniluku kinnitust
+• Kaardiorganisatsioon tuvastatakse automaatselt
+
+<b>Isikudokumendid</b>
+• ID-kaardid, passid, juhiload ja muu
+• Väljaandnud riik, dokumendi number ja kehtivusaeg
+
+<b>Mõlema külje fotod</b>
+• Soovi korral skannige mis tahes kaardi esi- ja tagakülg automaatse servatuvastusega
+• Fotod on krüpteeritud ega lahku kunagi teie seadmest
+
+<b>Turvalisus ja privaatsus</b>
+• Kõik on krüpteeritud võtmetega, mida hoitakse telefoni turvalises riistvaras
+• Lukustage mis tahes kaart nii, et selle saab avada ainult sõrmejälje, näo või ekraanilukuga
+• Tundlike andmetega kuvadel on ekraanipiltide tegemine blokeeritud
+• Kopeeritud numbrid eemaldatakse lõikelaualt minuti pärast
+• Ilma konto, reklaamide ja analüütikata – teie kaardid ei lahku kunagi teie seadmest
+• Rakendus läheb võrku ainult siis, kui otsustate alla laadida poe või panga ametliku logo
+
+<b>Korraldage omal moel</b>
+• Otsige ja filtreerige kaardi tüübi järgi
+• Sortige nime, lisamise kuupäeva või oma järjestuse järgi
+• Tuntud poodide ja pankade värvid ja logod – või laadige üles oma
+
+<b>Krüpteeritud varukoopia</b>
+• Eksportige kõik kaardid ühte parooliga kaitstud faili ja taastage see uues telefonis
+
+Cardholder on avatud lähtekoodiga: https://github.com/danyk20/cardholder

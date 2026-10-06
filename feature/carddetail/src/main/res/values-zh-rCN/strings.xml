@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">编辑</string>
+    <string name="detail_delete">删除</string>
+    <string name="detail_more">更多选项</string>
+    <string name="detail_flip">显示另一面</string>
+    <string name="detail_show_code">显示代码</string>
+    <string name="detail_copied">已复制%1$s。一分钟后将从剪贴板中清除。</string>
+    <string name="detail_copy">复制%1$s</string>
+    <string name="detail_show_cvv">显示 CVV</string>
+    <string name="detail_hide_cvv">隐藏 CVV</string>
+    <string name="detail_locked_details">此卡片已锁定，详细信息已隐藏</string>
+    <string name="detail_lock">锁定卡片</string>
+    <string name="detail_lock_on">需要使用指纹、人脸或屏幕锁定才能查看此卡片</string>
+    <string name="detail_lock_off">任何使用您手机的人都能查看此卡片</string>
+    <string name="detail_lock_unavailable">请先在设备上设置屏幕锁定，才能锁定卡片</string>
+    <string name="detail_delete_title">要删除此卡片吗？</string>
+    <string name="detail_delete_message">“%1$s”及其照片将从此设备中永久删除。</string>
+    <string name="detail_cancel">取消</string>
+    <string name="detail_close_photo">关闭照片</string>
+    <string name="detail_ok">确定</string>
+    <string name="field_bank">银行</string>
+    <string name="field_number">卡号</string>
+    <string name="field_expiry">有效期</string>
+    <string name="field_holder">持卡人</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">卡组织</string>
+    <string name="field_country">国家/地区</string>
+    <string name="field_document_number">证件号码</string>
+    <string name="field_shop">商店</string>
+    <string name="field_code">代码</string>
+    <string name="field_format">代码类型</string>
+</resources>

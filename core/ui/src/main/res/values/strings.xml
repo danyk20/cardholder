@@ -32,4 +32,21 @@
     <string name="action_back">Back</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_unlock">Unlock</string>
+
+    <!-- Barcode symbology; the other format names (EAN-13, Code 128, …) are not translated. -->
+    <string name="format_qr_code">QR code</string>
+
+    <!-- Card colours -->
+    <string name="color_navy">Navy</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_teal">Teal</string>
+    <string name="color_green">Green</string>
+    <string name="color_lime">Lime</string>
+    <string name="color_amber">Amber</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_red">Red</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_purple">Purple</string>
+    <string name="color_brown">Brown</string>
+    <string name="color_graphite">Graphite</string>
 </resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">設定</string>
+    <string name="cardlist_add_card">カードを追加</string>
+    <string name="cardlist_search">カードを検索</string>
+    <string name="cardlist_clear_search">検索をクリア</string>
+    <string name="cardlist_empty_title">カードはまだありません</string>
+    <string name="cardlist_empty_message">銀行カード、身分証明書、ポイントカードをスマートフォンに安全に保管できます。すべて暗号化され、デバイス内にのみ保存されます。</string>
+    <string name="cardlist_no_results">検索に一致するカードはありません</string>
+    <string name="cardlist_show_code">コードを全画面表示</string>
+    <string name="cardlist_tap_to_unlock">タップしてロック解除</string>
+    <string name="cardlist_sort">カードを並べ替え</string>
+    <string name="cardlist_sort_name">名前（A–Z）</string>
+    <string name="cardlist_sort_date">追加日（新しい順）</string>
+    <string name="cardlist_sort_custom">カスタム順</string>
+    <string name="cardlist_reorder">カードの順序を変更</string>
+    <string name="cardlist_reorder_done">完了</string>
+    <string name="cardlist_reorder_cancel">順序の変更をキャンセル</string>
+    <string name="cardlist_reorder_hint">ハンドルをドラッグして、カードの順序を変更します。</string>
+    <string name="cardlist_drag_handle">ドラッグして %1$s を移動</string>
+    <string name="cardlist_move_up">上へ移動</string>
+    <string name="cardlist_move_down">下へ移動</string>
+</resources>

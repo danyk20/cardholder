@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">スキャナを閉じる</string>
+    <string name="scanner_hint">カードのバーコードまたは QR コードにカメラを向けてください</string>
+    <string name="scanner_permission_rationale">カードのコードをスキャンするために、Cardholder はカメラを使用します。画像はデバイス上で解析され、保存や送信されることはありません。</string>
+    <string name="scanner_grant_permission">カメラを許可</string>
+    <string name="nfc_title">NFC でカードを読み取る</string>
+    <string name="nfc_hold_card">カードをスマートフォンの背面に平らに当てて、動かさないでください。</string>
+    <string name="nfc_reading">カードを読み取っています…</string>
+    <string name="nfc_failed">カードを読み取れませんでした。スマートフォンの背面でカードをゆっくり動かして、もう一度お試しください。</string>
+    <string name="nfc_disabled">NFC がオフになっています。</string>
+    <string name="nfc_turn_on">NFC をオンにする</string>
+    <string name="nfc_cvv_note">CVV はチップに保存されていないため、ご自身で入力してください。</string>
+    <string name="nfc_cancel">キャンセル</string>
+</resources>

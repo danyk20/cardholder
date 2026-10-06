@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card types -->
+    <string name="card_type_bank">Bankkarte</string>
+    <string name="card_type_id">Ausweis</string>
+    <string name="card_type_loyalty">Kundenkarte</string>
+    <string name="card_type_bank_description">Debit- oder Kreditkarte</string>
+    <string name="card_type_id_description">Personalausweis, Reisepass, Führerschein…</string>
+    <string name="card_type_loyalty_description">Karte eines Geschäfts mit Barcode oder QR-Code</string>
+
+    <!-- Card sides -->
+    <string name="card_side_front">Vorderseite</string>
+    <string name="card_side_back">Rückseite</string>
+    <string name="card_locked">Geschützt</string>
+    <string name="card_locked_message">Diese Karte ist geschützt</string>
+    <string name="auth_title_show_cvv">CVV anzeigen</string>
+    <string name="auth_title_export">Sicherung exportieren</string>
+    <string name="card_not_found">Diese Karte existiert nicht mehr</string>
+
+    <!-- Authentication -->
+    <string name="auth_title_unlock_card">%1$s entsperren</string>
+    <string name="auth_subtitle">Identität per Fingerabdruck, Gesichtserkennung oder Displaysperre bestätigen</string>
+    <string name="auth_key_invalidated">Diese Daten waren durch eine inzwischen entfernte Displaysperre geschützt und können nicht mehr entschlüsselt werden.</string>
+
+    <!-- Validation -->
+    <string name="error_required">Pflichtfeld</string>
+    <string name="error_invalid_characters">Enthält unzulässige Zeichen</string>
+    <string name="error_invalid_length">Falsche Länge</string>
+    <string name="error_invalid_checksum">Prüfziffer stimmt nicht – bitte auf Tippfehler prüfen</string>
+    <string name="error_invalid_date">Kein gültiges Datum</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Zurück</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_unlock">Entsperren</string>
+
+    <!-- Barcode symbology -->
+    <string name="format_qr_code">QR-Code</string>
+
+    <!-- Card colours -->
+    <string name="color_navy">Marineblau</string>
+    <string name="color_blue">Blau</string>
+    <string name="color_teal">Petrol</string>
+    <string name="color_green">Grün</string>
+    <string name="color_lime">Limette</string>
+    <string name="color_amber">Bernstein</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_red">Rot</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_purple">Lila</string>
+    <string name="color_brown">Braun</string>
+    <string name="color_graphite">Graphit</string>
+</resources>

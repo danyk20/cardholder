@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card types -->
+    <string name="card_type_bank">Karta bankowa</string>
+    <string name="card_type_id">Dokument</string>
+    <string name="card_type_loyalty">Karta lojalnościowa</string>
+    <string name="card_type_bank_description">Karta debetowa lub kredytowa</string>
+    <string name="card_type_id_description">Dowód osobisty, paszport, prawo jazdy…</string>
+    <string name="card_type_loyalty_description">Karta sklepowa z kodem kreskowym lub kodem QR</string>
+
+    <!-- Card sides -->
+    <string name="card_side_front">Przód</string>
+    <string name="card_side_back">Tył</string>
+    <string name="card_locked">Zablokowana</string>
+    <string name="card_locked_message">Ta karta jest zablokowana</string>
+    <string name="auth_title_show_cvv">Pokaż CVV</string>
+    <string name="auth_title_export">Eksportuj kopię zapasową</string>
+    <string name="card_not_found">Ta karta już nie istnieje</string>
+
+    <!-- Authentication -->
+    <string name="auth_title_unlock_card">Odblokuj „%1$s”</string>
+    <string name="auth_subtitle">Potwierdź swoją tożsamość odciskiem palca, skanem twarzy lub blokadą ekranu</string>
+    <string name="auth_key_invalidated">Te dane były chronione blokadą ekranu, która została później usunięta, więc nie można ich już odszyfrować.</string>
+
+    <!-- Validation -->
+    <string name="error_required">Wymagane</string>
+    <string name="error_invalid_characters">Zawiera niedozwolone znaki</string>
+    <string name="error_invalid_length">Nieprawidłowa długość</string>
+    <string name="error_invalid_checksum">Cyfra kontrolna się nie zgadza – sprawdź, czy nie ma literówek</string>
+    <string name="error_invalid_date">Nieprawidłowa data</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Wstecz</string>
+    <string name="action_cancel">Anuluj</string>
+    <string name="action_unlock">Odblokuj</string>
+
+    <!-- Barcode symbology -->
+    <string name="format_qr_code">Kod QR</string>
+
+    <!-- Card colours -->
+    <string name="color_navy">Granatowy</string>
+    <string name="color_blue">Niebieski</string>
+    <string name="color_teal">Morski</string>
+    <string name="color_green">Zielony</string>
+    <string name="color_lime">Limonkowy</string>
+    <string name="color_amber">Bursztynowy</string>
+    <string name="color_orange">Pomarańczowy</string>
+    <string name="color_red">Czerwony</string>
+    <string name="color_pink">Różowy</string>
+    <string name="color_purple">Fioletowy</string>
+    <string name="color_brown">Brązowy</string>
+    <string name="color_graphite">Grafitowy</string>
+</resources>

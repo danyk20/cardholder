@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Închideți</string>
+    <string name="barcode_details">Detaliile cardului</string>
+    <string name="barcode_description">%1$s pentru %2$s</string>
+    <string name="barcode_unencodable">Acest cod nu poate fi afișat ca %1$s. Editați cardul pentru a corecta codul sau alegeți alt tip de cod.</string>
+    <string name="barcode_hint">Țineți ecranul drept și nemișcat în fața scanerului.</string>
+</resources>

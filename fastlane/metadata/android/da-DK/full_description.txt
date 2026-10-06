@@ -1,0 +1,39 @@
+Cardholder samler dine betalingskort, ID-kort og kundekort ét sted på din telefon – krypteret, offline og uden reklamer og sporing.
+
+<b>Kundekort ved kassen</b>
+• Hvert kundekort viser sin stregkode eller QR-kode direkte i listen
+• Tryk på den for at vise koden i fuld skærm med maksimal lysstyrke, klar til scanneren
+• Scan koden fra dit plastikkort med kameraet – eller indtast den
+• Understøtter QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec og Data Matrix
+
+<b>Betalingskort</b>
+• Gem kortnummer, udløbsdato, kortholder og CVV
+• Udfyld oplysningerne ved at holde et kontaktløst kort mod din telefon (NFC)
+• CVV-koden er altid skjult og vises kun efter fingeraftryk, ansigt eller skærmlås
+• Kortselskabet registreres automatisk
+
+<b>ID-kort</b>
+• Identitetskort, pas, kørekort og meget mere
+• Udstedelsesland, dokumentnummer og udløbsdato
+
+<b>Billeder af begge sider</b>
+• Scan eventuelt for- og bagsiden af ethvert kort med automatisk kantgenkendelse
+• Billederne er krypteret og forlader aldrig din enhed
+
+<b>Sikkerhed og privatliv</b>
+• Alt krypteres med nøgler, der opbevares i telefonens sikre hardware
+• Lås et hvilket som helst kort, så det kun kan åbnes med fingeraftryk, ansigt eller skærmlås
+• Screenshots blokeres på skærme med følsomme oplysninger
+• Kopierede numre fjernes fra udklipsholderen efter et minut
+• Ingen konto, ingen reklamer, ingen analyse – dine kort forlader aldrig din enhed
+• Appen går kun online, når du vælger at downloade et officielt butiks- eller banklogo
+
+<b>Organiseret på din måde</b>
+• Søg og filtrér efter korttype
+• Sortér efter navn, dato tilføjet eller din egen rækkefølge
+• Farver og logoer til kendte butikker og banker – eller upload dine egne
+
+<b>Krypteret backup</b>
+• Eksportér alle kort til én adgangskodebeskyttet fil, og gendan den på en ny telefon
+
+Cardholder er open source: https://github.com/danyk20/cardholder

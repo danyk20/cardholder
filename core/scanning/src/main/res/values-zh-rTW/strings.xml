@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">關閉掃描器</string>
+    <string name="scanner_hint">將相機對準卡片上的條碼或 QR 碼</string>
+    <string name="scanner_permission_rationale">Cardholder 需要使用相機掃描卡片上的代碼。圖片只會在裝置上分析，絕不會儲存或傳送到任何地方。</string>
+    <string name="scanner_grant_permission">允許使用相機</string>
+    <string name="nfc_title">透過 NFC 讀取卡片</string>
+    <string name="nfc_hold_card">將卡片平貼在手機背面，並保持不動。</string>
+    <string name="nfc_reading">正在讀取卡片…</string>
+    <string name="nfc_failed">無法讀取卡片。請在手機背面緩慢移動卡片，然後再試一次。</string>
+    <string name="nfc_disabled">NFC 已關閉。</string>
+    <string name="nfc_turn_on">開啟 NFC</string>
+    <string name="nfc_cvv_note">晶片中不會儲存 CVV，請自行輸入。</string>
+    <string name="nfc_cancel">取消</string>
+</resources>

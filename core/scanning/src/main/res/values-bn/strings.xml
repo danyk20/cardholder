@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">স্ক্যানার বন্ধ করুন</string>
+    <string name="scanner_hint">আপনার কার্ডের বারকোড বা QR কোডের দিকে ক্যামেরা ধরুন</string>
+    <string name="scanner_permission_rationale">আপনার কার্ডের কোড স্ক্যান করতে Cardholder-এর ক্যামেরা প্রয়োজন। ছবিগুলো ডিভাইসেই বিশ্লেষণ করা হয় এবং কখনও সেভ করা বা কোথাও পাঠানো হয় না।</string>
+    <string name="scanner_grant_permission">ক্যামেরার অনুমতি দিন</string>
+    <string name="nfc_title">NFC দিয়ে কার্ড পড়ুন</string>
+    <string name="nfc_hold_card">আপনার কার্ডটি ফোনের পেছনে সমানভাবে রাখুন এবং স্থির করে ধরে রাখুন।</string>
+    <string name="nfc_reading">কার্ড পড়া হচ্ছে…</string>
+    <string name="nfc_failed">কার্ডটি পড়া যায়নি। ফোনের পেছনে কার্ডটি ধীরে ধীরে সরিয়ে আবার চেষ্টা করুন।</string>
+    <string name="nfc_disabled">NFC বন্ধ আছে।</string>
+    <string name="nfc_turn_on">NFC চালু করুন</string>
+    <string name="nfc_cvv_note">CVV চিপে সেভ করা থাকে না; অনুগ্রহ করে নিজে টাইপ করুন।</string>
+    <string name="nfc_cancel">বাতিল করুন</string>
+</resources>

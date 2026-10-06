@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Подешавања</string>
+    <string name="settings_appearance">Изглед</string>
+    <string name="settings_theme_system">Подразумевано за систем</string>
+    <string name="settings_theme_light">Светла</string>
+    <string name="settings_theme_dark">Тамна</string>
+    <string name="settings_dynamic_color">Динамичне боје</string>
+    <string name="settings_dynamic_color_description">Користи боје позадине</string>
+    <string name="settings_security">Безбедност</string>
+    <string name="settings_allow_screenshots">Дозволи снимке екрана</string>
+    <string name="settings_allow_screenshots_description">Док не напустите апликацију. Снимци екрана могу да прикажу бројеве картица и чувају се у фотографијама, чија резервна копија може бити у облаку.</string>
+    <string name="settings_backup">Резервна копија</string>
+    <string name="settings_export">Извези резервну копију</string>
+    <string name="settings_export_description">Сачувај све картице у фајл заштићен лозинком</string>
+    <string name="settings_import">Увези резервну копију</string>
+    <string name="settings_import_description">Врати картице из фајла резервне копије</string>
+    <string name="settings_backup_working">Обрађује се…</string>
+    <string name="settings_password_title_export">Заштитите резервну копију</string>
+    <string name="settings_password_title_import">Унесите лозинку резервне копије</string>
+    <string name="settings_password_message_export">Резервна копија садржи све податке о картицама, укључујући CVV кодове. Изаберите јаку лозинку – не може да се поврати.</string>
+    <string name="settings_password">Лозинка</string>
+    <string name="settings_password_confirm">Поновите лозинку</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">Користите најмање %1$d знак</item>
+        <item quantity="few">Користите најмање %1$d знака</item>
+        <item quantity="other">Користите најмање %1$d знакова</item>
+    </plurals>
+    <string name="settings_password_mismatch">Лозинке се не подударају</string>
+    <string name="settings_replace_existing">Замени картице које већ постоје</string>
+    <string name="settings_continue">Настави</string>
+    <string name="settings_cancel">Откажи</string>
+    <plurals name="settings_result_exported">
+        <item quantity="one">Извезена је %1$d картица</item>
+        <item quantity="few">Извезене су %1$d картице</item>
+        <item quantity="other">Извезено је %1$d картица</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">Увезена је %1$d картица</item>
+        <item quantity="few">Увезене су %1$d картице</item>
+        <item quantity="other">Увезено је %1$d картица</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d картица је већ постојала и прескочена је</item>
+        <item quantity="few">%1$d картице су већ постојале и прескочене су</item>
+        <item quantity="other">%1$d картица је већ постојало и прескочено је</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Погрешна лозинка</string>
+    <string name="settings_result_invalid_file">Ово није резервна копија апликације Cardholder или је фајл оштећен</string>
+    <string name="settings_result_auth_required">Потврдите да сте то ви да бисте извезли заштићене картице</string>
+    <string name="settings_result_device_not_secure">Подесите закључавање екрана да бисте увезли картице са CVV кодовима или закључавањем</string>
+    <string name="settings_result_failed">Дошло је до грешке. Покушајте поново.</string>
+    <string name="settings_about">О апликацији</string>
+    <string name="settings_version">Верзија %1$s</string>
+    <string name="settings_privacy">Ваше картице су шифроване и никада не напуштају овај уређај осим ако их не извезете. Апликација приступа интернету само када затражите преузимање званичног логоа продавнице или банке.</string>
+    <string name="settings_privacy_policy">Политика приватности</string>
+    <string name="settings_logo_credits">Ауторство логоа</string>
+    <string name="settings_logo_credits_description">Извори и лиценце званичних логоа</string>
+</resources>

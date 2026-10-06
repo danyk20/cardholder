@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">সেটিংস</string>
+    <string name="cardlist_add_card">কার্ড যোগ করুন</string>
+    <string name="cardlist_search">কার্ড খুঁজুন</string>
+    <string name="cardlist_clear_search">সার্চ মুছুন</string>
+    <string name="cardlist_empty_title">এখনও কোনো কার্ড নেই</string>
+    <string name="cardlist_empty_message">আপনার ব্যাংক, আইডি ও লয়্যালটি কার্ড নিরাপদে ফোনে রাখুন। সবকিছু এনক্রিপ্ট করা থাকে এবং আপনার ডিভাইসেই থাকে।</string>
+    <string name="cardlist_no_results">আপনার সার্চের সাথে কোনো কার্ড মেলেনি</string>
+    <string name="cardlist_show_code">কোডটি ফুল স্ক্রিনে দেখুন</string>
+    <string name="cardlist_tap_to_unlock">আনলক করতে ট্যাপ করুন</string>
+    <string name="cardlist_sort">কার্ড সাজান</string>
+    <string name="cardlist_sort_name">নাম (A–Z)</string>
+    <string name="cardlist_sort_date">যোগ করার তারিখ (নতুনগুলো আগে)</string>
+    <string name="cardlist_sort_custom">নিজের মতো ক্রম</string>
+    <string name="cardlist_reorder">কার্ডের ক্রম বদলান</string>
+    <string name="cardlist_reorder_done">হয়ে গেছে</string>
+    <string name="cardlist_reorder_cancel">ক্রম বদলানো বাতিল করুন</string>
+    <string name="cardlist_reorder_hint">ক্রম বদলাতে কার্ডগুলোর হ্যান্ডেল ধরে টেনে আনুন।</string>
+    <string name="cardlist_drag_handle">%1$s সরাতে টেনে আনুন</string>
+    <string name="cardlist_move_up">উপরে সরান</string>
+    <string name="cardlist_move_down">নিচে সরান</string>
+</resources>

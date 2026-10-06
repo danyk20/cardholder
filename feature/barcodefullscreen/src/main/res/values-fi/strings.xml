@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Sulje</string>
+    <string name="barcode_details">Kortin tiedot</string>
+    <string name="barcode_description">%2$s – %1$s</string>
+    <string name="barcode_unencodable">Tätä koodia ei voi näyttää muodossa %1$s. Korjaa koodi muokkaamalla korttia tai valitse toinen koodityyppi.</string>
+    <string name="barcode_hint">Pidä näyttöä suorassa ja paikallaan lukijan edessä.</string>
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Ayarlar</string>
+
+    <string name="settings_appearance">Görünüm</string>
+    <string name="settings_theme_system">Sistem varsayılanı</string>
+    <string name="settings_theme_light">Açık</string>
+    <string name="settings_theme_dark">Koyu</string>
+    <string name="settings_dynamic_color">Dinamik renk</string>
+    <string name="settings_dynamic_color_description">Duvar kağıdınızdaki renkleri kullanın</string>
+
+    <string name="settings_security">Güvenlik</string>
+    <string name="settings_allow_screenshots">Ekran görüntülerine izin ver</string>
+    <string name="settings_allow_screenshots_description">Uygulamadan çıkana kadar. Ekran görüntüleri kart numaralarını gösterebilir ve buluta yedeklenebilecek fotoğraflarınıza kaydedilir.</string>
+    <string name="settings_backup">Yedekleme</string>
+    <string name="settings_export">Yedeği dışa aktar</string>
+    <string name="settings_export_description">Tüm kartları şifre korumalı bir dosyaya kaydedin</string>
+    <string name="settings_import">Yedeği içe aktar</string>
+    <string name="settings_import_description">Kartları bir yedek dosyasından geri yükleyin</string>
+    <string name="settings_backup_working">İşleniyor…</string>
+
+    <string name="settings_password_title_export">Yedeğinizi koruyun</string>
+    <string name="settings_password_title_import">Yedek şifresini girin</string>
+    <string name="settings_password_message_export">Yedek, CVV\'ler dahil tüm kart ayrıntılarını içerir. Güçlü bir şifre seçin – şifre kurtarılamaz.</string>
+    <string name="settings_password">Şifre</string>
+    <string name="settings_password_confirm">Şifreyi tekrarlayın</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="one">En az %1$d karakter kullanın</item>
+        <item quantity="other">En az %1$d karakter kullanın</item>
+    </plurals>
+    <string name="settings_password_mismatch">Şifreler eşleşmiyor</string>
+    <string name="settings_replace_existing">Zaten var olan kartları değiştir</string>
+    <string name="settings_continue">Devam</string>
+    <string name="settings_cancel">İptal</string>
+
+    <plurals name="settings_result_exported">
+        <item quantity="one">%1$d kart dışa aktarıldı</item>
+        <item quantity="other">%1$d kart dışa aktarıldı</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="one">%1$d kart içe aktarıldı</item>
+        <item quantity="other">%1$d kart içe aktarıldı</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="one">%1$d kart zaten vardı ve atlandı</item>
+        <item quantity="other">%1$d kart zaten vardı ve atlandı</item>
+    </plurals>
+    <string name="settings_result_wrong_password">Yanlış şifre</string>
+    <string name="settings_result_invalid_file">Bu bir Cardholder yedeği değil veya dosya hasarlı</string>
+    <string name="settings_result_auth_required">Korumalı kartları dışa aktarmak için kimliğinizi doğrulayın</string>
+    <string name="settings_result_device_not_secure">CVV veya kilit içeren kartları içe aktarmak için ekran kilidi ayarlayın</string>
+    <string name="settings_result_failed">Bir sorun oluştu. Lütfen tekrar deneyin.</string>
+
+    <string name="settings_about">Hakkında</string>
+    <string name="settings_version">Sürüm %1$s</string>
+    <string name="settings_privacy">Kartlarınız şifrelenir ve siz dışa aktarmadıkça bu cihazdan asla çıkmaz. Uygulama yalnızca siz istediğinizde resmi bir mağaza veya banka logosu indirmek için internete bağlanır.</string>
+    <string name="settings_privacy_policy">Gizlilik politikası</string>
+    <string name="settings_logo_credits">Logo kaynakları</string>
+    <string name="settings_logo_credits_description">Resmi logoların kaynakları ve lisansları</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">설정</string>
+    <string name="settings_appearance">모양</string>
+    <string name="settings_theme_system">시스템 기본값</string>
+    <string name="settings_theme_light">밝게</string>
+    <string name="settings_theme_dark">어둡게</string>
+    <string name="settings_dynamic_color">동적 색상</string>
+    <string name="settings_dynamic_color_description">배경화면의 색상 사용</string>
+    <string name="settings_security">보안</string>
+    <string name="settings_allow_screenshots">스크린샷 허용</string>
+    <string name="settings_allow_screenshots_description">앱을 나갈 때까지 적용됩니다. 스크린샷에는 카드 번호가 표시될 수 있으며 사진에 저장되고, 사진은 클라우드에 백업될 수 있습니다.</string>
+    <string name="settings_backup">백업</string>
+    <string name="settings_export">백업 내보내기</string>
+    <string name="settings_export_description">모든 카드를 비밀번호로 보호된 파일에 저장</string>
+    <string name="settings_import">백업 가져오기</string>
+    <string name="settings_import_description">백업 파일에서 카드 복원</string>
+    <string name="settings_backup_working">처리 중…</string>
+    <string name="settings_password_title_export">백업 보호</string>
+    <string name="settings_password_title_import">백업 비밀번호 입력</string>
+    <string name="settings_password_message_export">백업에는 CVV를 포함한 모든 카드 정보가 들어 있습니다. 안전한 비밀번호를 선택하세요. 비밀번호는 복구할 수 없습니다.</string>
+    <string name="settings_password">비밀번호</string>
+    <string name="settings_password_confirm">비밀번호 재입력</string>
+    <plurals name="settings_password_too_short">
+        <item quantity="other">%1$d자 이상 입력하세요</item>
+    </plurals>
+    <string name="settings_password_mismatch">비밀번호가 일치하지 않습니다</string>
+    <string name="settings_replace_existing">이미 있는 카드 덮어쓰기</string>
+    <string name="settings_continue">계속</string>
+    <string name="settings_cancel">취소</string>
+    <plurals name="settings_result_exported">
+        <item quantity="other">카드 %1$d장을 내보냈습니다</item>
+    </plurals>
+    <plurals name="settings_result_imported">
+        <item quantity="other">카드 %1$d장을 가져왔습니다</item>
+    </plurals>
+    <plurals name="settings_result_skipped">
+        <item quantity="other">%1$d장은 이미 있어서 건너뛰었습니다</item>
+    </plurals>
+    <string name="settings_result_wrong_password">비밀번호가 올바르지 않습니다</string>
+    <string name="settings_result_invalid_file">Cardholder 백업이 아니거나 파일이 손상되었습니다</string>
+    <string name="settings_result_auth_required">보호된 카드를 내보내려면 본인 인증을 하세요</string>
+    <string name="settings_result_device_not_secure">CVV 또는 잠금이 설정된 카드를 가져오려면 화면 잠금을 설정하세요</string>
+    <string name="settings_result_failed">문제가 발생했습니다. 다시 시도해 주세요.</string>
+    <string name="settings_about">정보</string>
+    <string name="settings_version">버전 %1$s</string>
+    <string name="settings_privacy">카드는 암호화되며, 직접 내보내지 않는 한 이 기기 밖으로 나가지 않습니다. 앱은 사용자가 요청할 때 매장 또는 은행의 공식 로고를 다운로드하는 경우에만 인터넷에 연결됩니다.</string>
+    <string name="settings_privacy_policy">개인정보처리방침</string>
+    <string name="settings_logo_credits">로고 출처</string>
+    <string name="settings_logo_credits_description">공식 로고의 출처 및 라이선스</string>
+</resources>

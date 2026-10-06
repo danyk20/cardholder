@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Edytuj</string>
+    <string name="detail_delete">Usuń</string>
+    <string name="detail_more">Więcej opcji</string>
+    <string name="detail_flip">Pokaż drugą stronę</string>
+    <string name="detail_show_code">Pokaż kod</string>
+    <string name="detail_copied">Skopiowano: %1$s. Za minutę dane zostaną usunięte ze schowka.</string>
+    <string name="detail_copy">Kopiuj: %1$s</string>
+    <string name="detail_show_cvv">Pokaż CVV</string>
+    <string name="detail_hide_cvv">Ukryj CVV</string>
+    <string name="detail_locked_details">Szczegóły są ukryte, ponieważ ta karta jest zablokowana</string>
+    <string name="detail_lock">Zablokuj kartę</string>
+    <string name="detail_lock_on">Do wyświetlenia tej karty potrzebny jest odcisk palca, skan twarzy lub blokada ekranu</string>
+    <string name="detail_lock_off">Każdy, kto używa Twojego telefonu, może zobaczyć tę kartę</string>
+    <string name="detail_lock_unavailable">Aby blokować karty, skonfiguruj blokadę ekranu na urządzeniu</string>
+    <string name="detail_delete_title">Usunąć tę kartę?</string>
+    <string name="detail_delete_message">Karta „%1$s” i jej zdjęcia zostaną trwale usunięte z tego urządzenia.</string>
+    <string name="detail_cancel">Anuluj</string>
+    <string name="detail_close_photo">Zamknij zdjęcie</string>
+    <string name="detail_ok">OK</string>
+
+    <string name="field_bank">Bank</string>
+    <string name="field_number">Numer karty</string>
+    <string name="field_expiry">Data ważności</string>
+    <string name="field_holder">Posiadacz karty</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Organizacja płatnicza</string>
+    <string name="field_country">Kraj</string>
+    <string name="field_document_number">Numer dokumentu</string>
+    <string name="field_shop">Sklep</string>
+    <string name="field_code">Kod</string>
+    <string name="field_format">Typ kodu</string>
+</resources>

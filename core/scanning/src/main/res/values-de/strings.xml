@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_close">Scanner schließen</string>
+    <string name="scanner_hint">Kamera auf den Barcode oder QR-Code der Karte richten</string>
+    <string name="scanner_permission_rationale">Cardholder benötigt die Kamera, um den Code auf der Karte zu scannen. Bilder werden auf dem Gerät analysiert und weder gespeichert noch gesendet.</string>
+    <string name="scanner_grant_permission">Kamera zulassen</string>
+    <string name="nfc_title">Karte per NFC lesen</string>
+    <string name="nfc_hold_card">Karte flach an die Rückseite des Smartphones halten und nicht bewegen.</string>
+    <string name="nfc_reading">Karte wird gelesen…</string>
+    <string name="nfc_failed">Karte konnte nicht gelesen werden. Langsam über die Rückseite des Smartphones bewegen und noch einmal versuchen.</string>
+    <string name="nfc_disabled">NFC ist deaktiviert.</string>
+    <string name="nfc_turn_on">NFC aktivieren</string>
+    <string name="nfc_cvv_note">Die CVV ist nicht auf dem Chip gespeichert und muss manuell eingegeben werden.</string>
+    <string name="nfc_cancel">Abbrechen</string>
+</resources>

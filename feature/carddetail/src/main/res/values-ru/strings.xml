@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Изменить</string>
+    <string name="detail_delete">Удалить</string>
+    <string name="detail_more">Другие действия</string>
+    <string name="detail_flip">Показать другую сторону</string>
+    <string name="detail_show_code">Показать код</string>
+    <string name="detail_copied">Скопировано: %1$s. Через минуту данные будут удалены из буфера обмена.</string>
+    <string name="detail_copy">Копировать: %1$s</string>
+    <string name="detail_show_cvv">Показать CVV</string>
+    <string name="detail_hide_cvv">Скрыть CVV</string>
+    <string name="detail_locked_details">Данные скрыты, так как карта заблокирована</string>
+    <string name="detail_lock">Заблокировать карту</string>
+    <string name="detail_lock_on">Для просмотра карты нужен отпечаток пальца, распознавание лица или блокировка экрана</string>
+    <string name="detail_lock_off">Эту карту может увидеть любой, кто пользуется вашим телефоном</string>
+    <string name="detail_lock_unavailable">Чтобы блокировать карты, настройте блокировку экрана на устройстве</string>
+    <string name="detail_delete_title">Удалить карту?</string>
+    <string name="detail_delete_message">Карта «%1$s» и её фотографии будут безвозвратно удалены с этого устройства.</string>
+    <string name="detail_cancel">Отмена</string>
+    <string name="detail_close_photo">Закрыть фото</string>
+    <string name="detail_ok">ОК</string>
+
+    <string name="field_bank">Банк</string>
+    <string name="field_number">Номер карты</string>
+    <string name="field_expiry">Срок действия</string>
+    <string name="field_holder">Держатель карты</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Платёжная система</string>
+    <string name="field_country">Страна</string>
+    <string name="field_document_number">Номер документа</string>
+    <string name="field_shop">Магазин</string>
+    <string name="field_code">Код</string>
+    <string name="field_format">Тип кода</string>
+</resources>

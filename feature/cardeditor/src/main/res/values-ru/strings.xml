@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Добавить карту</string>
+    <string name="editor_title_edit">Изменить карту</string>
+    <string name="editor_save">Сохранить</string>
+    <string name="editor_next">Далее</string>
+    <string name="editor_skip">Пропустить</string>
+    <string name="editor_choose_type">Что это за карта?</string>
+
+    <!-- Sides -->
+    <string name="editor_sides_title">Добавьте фото карты</string>
+    <string name="editor_sides_message">Необязательно. Фото шифруются и хранятся только на этом устройстве.</string>
+    <string name="editor_side_scan">Сканировать</string>
+    <string name="editor_side_choose">Галерея</string>
+    <string name="editor_side_remove">Удалить фото</string>
+    <string name="editor_side_missing">Нет фото</string>
+
+    <!-- Common fields -->
+    <string name="editor_field_title">Название</string>
+    <string name="editor_field_title_hint">По умолчанию: %1$s</string>
+    <string name="editor_color">Цвет</string>
+    <string name="editor_lock">Заблокировать карту</string>
+    <string name="editor_lock_description">Для просмотра любых данных карты потребуется отпечаток пальца, распознавание лица или блокировка экрана</string>
+    <string name="editor_protection_unavailable">Чтобы использовать эту функцию, настройте блокировку экрана на устройстве</string>
+    <string name="editor_open_security_settings">Настроить</string>
+    <string name="editor_photos">Фото</string>
+
+    <!-- Bank -->
+    <string name="editor_read_nfc">Считать карту по NFC</string>
+    <string name="editor_field_bank">Банк (необязательно)</string>
+    <string name="editor_choose_bank">Выберите банк</string>
+    <string name="editor_search_bank">Поиск банков</string>
+    <string name="editor_field_number">Номер карты</string>
+    <string name="editor_field_expiry">Срок действия (ММ/ГГ)</string>
+    <string name="editor_field_holder">Держатель карты</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Необязательно. Код всегда скрыт и показывается только после подтверждения личности.</string>
+    <string name="editor_cvv_stored">CVV сохранён. Оставьте поле пустым, чтобы не менять его.</string>
+    <string name="editor_cvv_remove">Удалить сохранённый CVV</string>
+    <string name="editor_card_expired">Срок действия карты истёк</string>
+
+    <!-- ID -->
+    <string name="editor_field_country">Страна выдачи</string>
+    <string name="editor_choose_country">Выберите страну</string>
+    <string name="editor_search_country">Поиск стран</string>
+    <string name="editor_field_document_number">Номер документа (необязательно)</string>
+    <string name="editor_field_id_expiry">Срок действия (необязательно)</string>
+    <string name="editor_clear_date">Очистить</string>
+
+    <!-- Loyalty -->
+    <string name="editor_field_shop">Магазин</string>
+    <string name="editor_choose_shop">Выберите магазин</string>
+    <string name="editor_search_shop">Поиск магазинов</string>
+    <string name="editor_custom_shop">Использовать «%1$s»</string>
+    <string name="editor_field_code">Номер карты / код</string>
+    <string name="editor_field_format">Тип кода</string>
+    <string name="editor_scan_barcode">Сканировать код</string>
+
+    <!-- Logo -->
+    <string name="editor_logo">Логотип</string>
+    <string name="editor_logo_none">Без логотипа</string>
+    <string name="editor_logo_official">Официальный логотип</string>
+    <string name="editor_logo_upload">Загрузить</string>
+    <string name="editor_logo_remove">Удалить логотип</string>
+    <string name="editor_logo_choice_title">Логотип %1$s</string>
+    <string name="editor_logo_choice_message">Показывать на этой карте официальный логотип %1$s? Он будет один раз загружен с Wikimedia Commons и сохранён на устройстве.</string>
+    <string name="editor_logo_use_official">Использовать официальный</string>
+    <string name="editor_logo_upload_own">Загрузить свой</string>
+    <string name="editor_logo_keep_blank">Оставить пустым</string>
+    <string name="editor_logo_license">Лицензия: %1$s</string>
+    <string name="editor_logo_attribution">Лицензия: %1$s · автор: %2$s</string>
+    <string name="editor_logo_download_failed">Не удалось загрузить логотип. Проверьте подключение к интернету и повторите попытку.</string>
+
+    <!-- States -->
+    <string name="editor_locked_title">Эта карта заблокирована</string>
+    <string name="editor_not_found">Этой карты больше нет</string>
+    <string name="editor_ok">ОК</string>
+</resources>

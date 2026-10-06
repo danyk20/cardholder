@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">کارت بانکی</string>
+    <string name="card_type_id">کارت شناسایی</string>
+    <string name="card_type_loyalty">کارت باشگاه مشتریان</string>
+    <string name="card_type_bank_description">کارت نقدی یا اعتباری</string>
+    <string name="card_type_id_description">کارت ملی، گذرنامه، گواهینامه رانندگی…</string>
+    <string name="card_type_loyalty_description">کارت فروشگاه با بارکد یا کد QR</string>
+    <string name="card_side_front">رو</string>
+    <string name="card_side_back">پشت</string>
+    <string name="card_locked">قفل‌شده</string>
+    <string name="card_locked_message">این کارت قفل است</string>
+    <string name="auth_title_show_cvv">نمایش CVV</string>
+    <string name="auth_title_export">صادر کردن نسخه پشتیبان</string>
+    <string name="card_not_found">این کارت دیگر وجود ندارد</string>
+    <string name="auth_title_unlock_card">باز کردن قفل %1$s</string>
+    <string name="auth_subtitle">هویت خود را با اثر انگشت، چهره یا قفل صفحه تأیید کنید</string>
+    <string name="auth_key_invalidated">این داده‌ها با قفل صفحه‌ای محافظت می‌شدند که بعداً حذف شده است و دیگر رمزگشایی نمی‌شوند.</string>
+    <string name="error_required">الزامی</string>
+    <string name="error_invalid_characters">شامل نویسه‌های غیرمجاز است</string>
+    <string name="error_invalid_length">طول نادرست</string>
+    <string name="error_invalid_checksum">رقم کنترلی مطابقت ندارد – لطفاً اشتباه تایپی را بررسی کنید</string>
+    <string name="error_invalid_date">تاریخ معتبر نیست</string>
+    <string name="action_back">بازگشت</string>
+    <string name="action_cancel">لغو</string>
+    <string name="action_unlock">باز کردن قفل</string>
+    <string name="format_qr_code">کد QR</string>
+    <string name="color_navy">سرمه‌ای</string>
+    <string name="color_blue">آبی</string>
+    <string name="color_teal">سبزآبی</string>
+    <string name="color_green">سبز</string>
+    <string name="color_lime">لیمویی</string>
+    <string name="color_amber">کهربایی</string>
+    <string name="color_orange">نارنجی</string>
+    <string name="color_red">قرمز</string>
+    <string name="color_pink">صورتی</string>
+    <string name="color_purple">بنفش</string>
+    <string name="color_brown">قهوه‌ای</string>
+    <string name="color_graphite">گرافیتی</string>
+</resources>

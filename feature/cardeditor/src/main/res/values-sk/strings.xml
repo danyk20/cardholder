@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Pridať kartu</string>
+    <string name="editor_title_edit">Upraviť kartu</string>
+    <string name="editor_save">Uložiť</string>
+    <string name="editor_next">Ďalej</string>
+    <string name="editor_skip">Preskočiť</string>
+    <string name="editor_choose_type">O aký typ karty ide?</string>
+
+    <!-- Sides -->
+    <string name="editor_sides_title">Pridajte fotky karty</string>
+    <string name="editor_sides_message">Voliteľné. Fotky sú zašifrované a uložené iba v tomto zariadení.</string>
+    <string name="editor_side_scan">Skenovať</string>
+    <string name="editor_side_choose">Galéria</string>
+    <string name="editor_side_remove">Odstrániť fotku</string>
+    <string name="editor_side_missing">Bez fotky</string>
+
+    <!-- Common fields -->
+    <string name="editor_field_title">Názov</string>
+    <string name="editor_field_title_hint">Predvolene: %1$s</string>
+    <string name="editor_color">Farba</string>
+    <string name="editor_lock">Zamknúť túto kartu</string>
+    <string name="editor_lock_description">Na zobrazenie akýchkoľvek údajov vyžadovať odtlačok prsta, tvár alebo zámku obrazovky</string>
+    <string name="editor_protection_unavailable">Ak to chcete použiť, nastavte si v zariadení zámku obrazovky</string>
+    <string name="editor_open_security_settings">Nastaviť</string>
+    <string name="editor_photos">Fotky</string>
+
+    <!-- Bank -->
+    <string name="editor_read_nfc">Načítať kartu cez NFC</string>
+    <string name="editor_field_bank">Banka (voliteľné)</string>
+    <string name="editor_choose_bank">Vybrať banku</string>
+    <string name="editor_search_bank">Hľadať banky</string>
+    <string name="editor_field_number">Číslo karty</string>
+    <string name="editor_field_expiry">Platnosť (MM/RR)</string>
+    <string name="editor_field_holder">Držiteľ karty</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Voliteľné. Vždy skryté, zobrazí sa až po overení vašej totožnosti.</string>
+    <string name="editor_cvv_stored">CVV je uložené. Ak ho chcete ponechať, nechajte pole prázdne.</string>
+    <string name="editor_cvv_remove">Odstrániť uložené CVV</string>
+    <string name="editor_card_expired">Platnosť tejto karty vypršala</string>
+
+    <!-- ID -->
+    <string name="editor_field_country">Krajina vydania</string>
+    <string name="editor_choose_country">Vybrať krajinu</string>
+    <string name="editor_search_country">Hľadať krajiny</string>
+    <string name="editor_field_document_number">Číslo dokladu (voliteľné)</string>
+    <string name="editor_field_id_expiry">Dátum platnosti (voliteľné)</string>
+    <string name="editor_clear_date">Vymazať</string>
+
+    <!-- Loyalty -->
+    <string name="editor_field_shop">Obchod</string>
+    <string name="editor_choose_shop">Vybrať obchod</string>
+    <string name="editor_search_shop">Hľadať obchody</string>
+    <string name="editor_custom_shop">Použiť „%1$s“</string>
+    <string name="editor_field_code">Číslo karty / kód</string>
+    <string name="editor_field_format">Typ kódu</string>
+    <string name="editor_scan_barcode">Skenovať kód</string>
+
+    <!-- Logo -->
+    <string name="editor_logo">Logo</string>
+    <string name="editor_logo_none">Bez loga</string>
+    <string name="editor_logo_official">Oficiálne logo</string>
+    <string name="editor_logo_upload">Nahrať</string>
+    <string name="editor_logo_remove">Odstrániť logo</string>
+    <string name="editor_logo_choice_title">Logo pre %1$s</string>
+    <string name="editor_logo_choice_message">Zobraziť na tejto karte oficiálne logo %1$s? Stiahne sa raz z Wikimedia Commons a uloží sa vo vašom zariadení.</string>
+    <string name="editor_logo_use_official">Použiť oficiálne logo</string>
+    <string name="editor_logo_upload_own">Nahrať vlastné</string>
+    <string name="editor_logo_keep_blank">Ponechať prázdne</string>
+    <string name="editor_logo_license">Licencia: %1$s</string>
+    <string name="editor_logo_attribution">Licencia: %1$s · autor: %2$s</string>
+    <string name="editor_logo_download_failed">Logo sa nepodarilo stiahnuť. Skontrolujte pripojenie a skúste to znova.</string>
+
+    <!-- States -->
+    <string name="editor_locked_title">Táto karta je zamknutá</string>
+    <string name="editor_not_found">Táto karta už neexistuje</string>
+    <string name="editor_ok">OK</string>
+</resources>

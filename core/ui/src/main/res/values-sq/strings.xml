@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Kartë bankare</string>
+    <string name="card_type_id">Kartë identiteti</string>
+    <string name="card_type_loyalty">Kartë besnikërie</string>
+    <string name="card_type_bank_description">Kartë debiti ose krediti</string>
+    <string name="card_type_id_description">Kartë identiteti, pasaportë, leje drejtimi…</string>
+    <string name="card_type_loyalty_description">Kartë dyqani me barkod ose kod QR</string>
+
+    <string name="card_side_front">Pjesa e përparme</string>
+    <string name="card_side_back">Pjesa e pasme</string>
+    <string name="card_locked">E kyçur</string>
+    <string name="card_locked_message">Kjo kartë është e kyçur</string>
+    <string name="auth_title_show_cvv">Shfaq CVV-në</string>
+    <string name="auth_title_export">Eksporto kopjen rezervë</string>
+    <string name="card_not_found">Kjo kartë nuk ekziston më</string>
+
+    <string name="auth_title_unlock_card">Shkyç %1$s</string>
+    <string name="auth_subtitle">Konfirmo që je ti me gjurmën e gishtit, fytyrën ose kyçjen e ekranit</string>
+    <string name="auth_key_invalidated">Këto të dhëna ishin të mbrojtura nga një kyçje ekrani që është hequr më pas dhe nuk mund të deshifrohen më.</string>
+
+    <string name="error_required">E detyrueshme</string>
+    <string name="error_invalid_characters">Përmban karaktere që nuk lejohen</string>
+    <string name="error_invalid_length">Gjatësi e gabuar</string>
+    <string name="error_invalid_checksum">Shifra e kontrollit nuk përputhet – kontrollo për gabime shkrimi</string>
+    <string name="error_invalid_date">Datë e pavlefshme</string>
+
+    <string name="action_back">Prapa</string>
+    <string name="action_cancel">Anulo</string>
+    <string name="action_unlock">Shkyç</string>
+
+    <string name="format_qr_code">Kod QR</string>
+
+    <string name="color_navy">Blu e errët</string>
+    <string name="color_blue">Blu</string>
+    <string name="color_teal">Bruz</string>
+    <string name="color_green">Jeshile</string>
+    <string name="color_lime">Jeshile e çelët</string>
+    <string name="color_amber">Qelibar</string>
+    <string name="color_orange">Portokalli</string>
+    <string name="color_red">E kuqe</string>
+    <string name="color_pink">Rozë</string>
+    <string name="color_purple">Vjollcë</string>
+    <string name="color_brown">Kafe</string>
+    <string name="color_graphite">Grafit</string>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Karte hinzufügen</string>
+    <string name="editor_title_edit">Karte bearbeiten</string>
+    <string name="editor_save">Speichern</string>
+    <string name="editor_next">Weiter</string>
+    <string name="editor_skip">Überspringen</string>
+    <string name="editor_choose_type">Um welche Art von Karte handelt es sich?</string>
+
+    <!-- Sides -->
+    <string name="editor_sides_title">Fotos der Karte hinzufügen</string>
+    <string name="editor_sides_message">Optional. Fotos werden verschlüsselt und nur auf diesem Gerät gespeichert.</string>
+    <string name="editor_side_scan">Scannen</string>
+    <string name="editor_side_choose">Galerie</string>
+    <string name="editor_side_remove">Foto entfernen</string>
+    <string name="editor_side_missing">Kein Foto</string>
+
+    <!-- Common fields -->
+    <string name="editor_field_title">Name</string>
+    <string name="editor_field_title_hint">Standard: %1$s</string>
+    <string name="editor_color">Farbe</string>
+    <string name="editor_lock">Diese Karte schützen</string>
+    <string name="editor_lock_description">Fingerabdruck, Gesichtserkennung oder Displaysperre erforderlich, um Details anzuzeigen</string>
+    <string name="editor_protection_unavailable">Dafür muss eine Displaysperre auf dem Gerät eingerichtet sein</string>
+    <string name="editor_open_security_settings">Einrichten</string>
+    <string name="editor_photos">Fotos</string>
+
+    <!-- Bank -->
+    <string name="editor_read_nfc">Karte per NFC lesen</string>
+    <string name="editor_field_bank">Bank (optional)</string>
+    <string name="editor_choose_bank">Bank auswählen</string>
+    <string name="editor_search_bank">Banken suchen</string>
+    <string name="editor_field_number">Kartennummer</string>
+    <string name="editor_field_expiry">Gültig bis (MM/JJ)</string>
+    <string name="editor_field_holder">Karteninhaber</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">Optional. Immer ausgeblendet und erst nach Bestätigung der Identität sichtbar.</string>
+    <string name="editor_cvv_stored">Eine CVV ist gespeichert. Leer lassen, um sie beizubehalten.</string>
+    <string name="editor_cvv_remove">Gespeicherte CVV entfernen</string>
+    <string name="editor_card_expired">Diese Karte ist abgelaufen</string>
+
+    <!-- ID -->
+    <string name="editor_field_country">Ausstellungsland</string>
+    <string name="editor_choose_country">Land auswählen</string>
+    <string name="editor_search_country">Länder suchen</string>
+    <string name="editor_field_document_number">Dokumentnummer (optional)</string>
+    <string name="editor_field_id_expiry">Ablaufdatum (optional)</string>
+    <string name="editor_clear_date">Entfernen</string>
+
+    <!-- Loyalty -->
+    <string name="editor_field_shop">Geschäft</string>
+    <string name="editor_choose_shop">Geschäft auswählen</string>
+    <string name="editor_search_shop">Geschäfte suchen</string>
+    <string name="editor_custom_shop">„%1$s“ verwenden</string>
+    <string name="editor_field_code">Kartennummer / Code</string>
+    <string name="editor_field_format">Codetyp</string>
+    <string name="editor_scan_barcode">Code scannen</string>
+
+    <!-- Logo -->
+    <string name="editor_logo">Logo</string>
+    <string name="editor_logo_none">Kein Logo</string>
+    <string name="editor_logo_official">Offizielles Logo</string>
+    <string name="editor_logo_upload">Hochladen</string>
+    <string name="editor_logo_remove">Logo entfernen</string>
+    <string name="editor_logo_choice_title">Logo für %1$s</string>
+    <string name="editor_logo_choice_message">Offizielles Logo von %1$s auf dieser Karte anzeigen? Es wird einmalig von Wikimedia Commons heruntergeladen und auf dem Gerät gespeichert.</string>
+    <string name="editor_logo_use_official">Offizielles Logo verwenden</string>
+    <string name="editor_logo_upload_own">Eigenes hochladen</string>
+    <string name="editor_logo_keep_blank">Leer lassen</string>
+    <string name="editor_logo_license">Lizenz: %1$s</string>
+    <string name="editor_logo_attribution">Lizenz: %1$s · von %2$s</string>
+    <string name="editor_logo_download_failed">Das Logo konnte nicht heruntergeladen werden. Verbindung prüfen und noch einmal versuchen.</string>
+
+    <!-- States -->
+    <string name="editor_locked_title">Diese Karte ist geschützt</string>
+    <string name="editor_not_found">Diese Karte existiert nicht mehr</string>
+    <string name="editor_ok">OK</string>
+</resources>

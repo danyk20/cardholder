@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Измени</string>
+    <string name="detail_delete">Избриши</string>
+    <string name="detail_more">Још опција</string>
+    <string name="detail_flip">Прикажи другу страну</string>
+    <string name="detail_show_code">Прикажи код</string>
+    <string name="detail_copied">Копирано: %1$s. Биће обрисано из привремене меморије за један минут.</string>
+    <string name="detail_copy">Копирај: %1$s</string>
+    <string name="detail_show_cvv">Прикажи CVV</string>
+    <string name="detail_hide_cvv">Сакриј CVV</string>
+    <string name="detail_locked_details">Детаљи су сакривени јер је ова картица закључана</string>
+    <string name="detail_lock">Закључај картицу</string>
+    <string name="detail_lock_on">За приказ ове картице потребан је отисак прста, лице или закључавање екрана</string>
+    <string name="detail_lock_off">Свако ко користи ваш телефон може да види ову картицу</string>
+    <string name="detail_lock_unavailable">Подесите закључавање екрана на уређају да бисте могли да закључавате картице</string>
+    <string name="detail_delete_title">Желите да избришете ову картицу?</string>
+    <string name="detail_delete_message">Картица „%1$s“ и њене слике биће трајно избрисане са овог уређаја.</string>
+    <string name="detail_cancel">Откажи</string>
+    <string name="detail_close_photo">Затвори слику</string>
+    <string name="detail_ok">Потврди</string>
+    <string name="field_bank">Банка</string>
+    <string name="field_number">Број картице</string>
+    <string name="field_expiry">Важи до</string>
+    <string name="field_holder">Власник картице</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Картичарска мрежа</string>
+    <string name="field_country">Држава</string>
+    <string name="field_document_number">Број документа</string>
+    <string name="field_shop">Продавница</string>
+    <string name="field_code">Код</string>
+    <string name="field_format">Тип кода</string>
+</resources>

@@ -18,6 +18,11 @@ android {
         buildConfig = true
     }
 
+    androidResources {
+        // Lets users pick the app language in system settings (Android 13+).
+        generateLocaleConfig = true
+    }
+
     signingConfigs {
         create("release") {
             // Provided by CI (see .github/workflows/release.yml); release builds are unsigned locally otherwise.

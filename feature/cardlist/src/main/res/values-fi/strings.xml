@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardlist_settings">Asetukset</string>
+    <string name="cardlist_add_card">Lisää kortti</string>
+    <string name="cardlist_search">Hae kortteja</string>
+    <string name="cardlist_clear_search">Tyhjennä haku</string>
+    <string name="cardlist_empty_title">Ei vielä kortteja</string>
+    <string name="cardlist_empty_message">Säilytä pankki-, henkilö- ja kanta-asiakaskorttisi turvallisesti puhelimessasi. Kaikki on salattu ja pysyy laitteellasi.</string>
+    <string name="cardlist_no_results">Haulla ei löytynyt kortteja</string>
+    <string name="cardlist_show_code">Näytä koodi koko näytöllä</string>
+    <string name="cardlist_tap_to_unlock">Avaa lukitus napauttamalla</string>
+    <string name="cardlist_sort">Lajittele kortit</string>
+    <string name="cardlist_sort_name">Nimi (A–Ö)</string>
+    <string name="cardlist_sort_date">Lisäyspäivä (uusin ensin)</string>
+    <string name="cardlist_sort_custom">Oma järjestys</string>
+    <string name="cardlist_reorder">Järjestä kortit</string>
+    <string name="cardlist_reorder_done">Valmis</string>
+    <string name="cardlist_reorder_cancel">Peruuta järjestäminen</string>
+    <string name="cardlist_reorder_hint">Muuta järjestystä vetämällä kortteja kahvasta.</string>
+    <string name="cardlist_drag_handle">Siirrä vetämällä: %1$s</string>
+    <string name="cardlist_move_up">Siirrä ylös</string>
+    <string name="cardlist_move_down">Siirrä alas</string>
+</resources>

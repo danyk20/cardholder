@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_type_bank">Bankkártya</string>
+    <string name="card_type_id">Igazolvány</string>
+    <string name="card_type_loyalty">Hűségkártya</string>
+    <string name="card_type_bank_description">Betéti vagy hitelkártya</string>
+    <string name="card_type_id_description">Személyi igazolvány, útlevél, jogosítvány…</string>
+    <string name="card_type_loyalty_description">Áruházi kártya vonalkóddal vagy QR-kóddal</string>
+    <string name="card_side_front">Előlap</string>
+    <string name="card_side_back">Hátlap</string>
+    <string name="card_locked">Zárolva</string>
+    <string name="card_locked_message">Ez a kártya zárolva van</string>
+    <string name="auth_title_show_cvv">CVV megjelenítése</string>
+    <string name="auth_title_export">Biztonsági mentés exportálása</string>
+    <string name="card_not_found">Ez a kártya már nem létezik</string>
+    <string name="auth_title_unlock_card">%1$s feloldása</string>
+    <string name="auth_subtitle">Igazolja személyazonosságát ujjlenyomattal, arccal vagy képernyőzárral</string>
+    <string name="auth_key_invalidated">Ezeket az adatokat egy azóta eltávolított képernyőzár védte, ezért már nem lehet visszafejteni őket.</string>
+    <string name="error_required">Kötelező</string>
+    <string name="error_invalid_characters">Nem engedélyezett karaktereket tartalmaz</string>
+    <string name="error_invalid_length">Hibás hossz</string>
+    <string name="error_invalid_checksum">Az ellenőrző számjegy nem egyezik – ellenőrizze, nincs-e elírás</string>
+    <string name="error_invalid_date">Érvénytelen dátum</string>
+    <string name="action_back">Vissza</string>
+    <string name="action_cancel">Mégse</string>
+    <string name="action_unlock">Feloldás</string>
+    <string name="format_qr_code">QR-kód</string>
+    <string name="color_navy">Sötétkék</string>
+    <string name="color_blue">Kék</string>
+    <string name="color_teal">Kékeszöld</string>
+    <string name="color_green">Zöld</string>
+    <string name="color_lime">Limezöld</string>
+    <string name="color_amber">Borostyán</string>
+    <string name="color_orange">Narancs</string>
+    <string name="color_red">Piros</string>
+    <string name="color_pink">Rózsaszín</string>
+    <string name="color_purple">Lila</string>
+    <string name="color_brown">Barna</string>
+    <string name="color_graphite">Grafit</string>
+</resources>

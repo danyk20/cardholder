@@ -8,11 +8,13 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
+import io.github.danyk20.cardholder.core.domain.security.ScreenCapturePolicy
 import io.github.danyk20.cardholder.core.domain.security.SecureClipboard
 import io.github.danyk20.cardholder.core.domain.security.SessionLockEvents
 import io.github.danyk20.cardholder.core.security.AndroidDeviceSecurity
 import io.github.danyk20.cardholder.core.security.DatabasePassphraseProvider
 import io.github.danyk20.cardholder.core.security.EnvelopeCipher
+import io.github.danyk20.cardholder.core.security.InMemoryScreenCapturePolicy
 import io.github.danyk20.cardholder.core.security.ProcessSessionLockEvents
 import io.github.danyk20.cardholder.core.security.ProtectionLevel
 import io.github.danyk20.cardholder.core.security.SensitiveClipboard
@@ -32,6 +34,9 @@ internal interface SecurityModule {
 
     @Binds
     fun bindsSessionLockEvents(impl: ProcessSessionLockEvents): SessionLockEvents
+
+    @Binds
+    fun bindsScreenCapturePolicy(impl: InMemoryScreenCapturePolicy): ScreenCapturePolicy
 
     companion object {
         @Provides

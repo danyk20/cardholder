@@ -1,5 +1,5 @@
 <resources>
-    <string name="cardlist_title">Cardholder</string>
+    <string name="cardlist_title" translatable="false">Cardholder</string>
     <string name="cardlist_settings">Settings</string>
     <string name="cardlist_add_card">Add card</string>
     <string name="cardlist_search">Search cards</string>

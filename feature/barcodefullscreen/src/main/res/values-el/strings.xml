@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_close">Κλείσιμο</string>
+    <string name="barcode_details">Στοιχεία κάρτας</string>
+    <string name="barcode_description">%1$s για %2$s</string>
+    <string name="barcode_unencodable">Αυτός ο κωδικός δεν μπορεί να εμφανιστεί ως %1$s. Επεξεργαστείτε την κάρτα για να διορθώσετε τον κωδικό ή επιλέξτε άλλον τύπο κωδικού.</string>
+    <string name="barcode_hint">Κρατήστε την οθόνη επίπεδη και σταθερή μπροστά στον σαρωτή.</string>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">إضافة بطاقة</string>
+    <string name="editor_title_edit">تعديل البطاقة</string>
+    <string name="editor_save">حفظ</string>
+    <string name="editor_next">التالي</string>
+    <string name="editor_skip">تخطي</string>
+    <string name="editor_choose_type">ما نوع هذه البطاقة؟</string>
+
+    <string name="editor_sides_title">أضِف صورًا لبطاقتك</string>
+    <string name="editor_sides_message">اختياري. يتم تشفير الصور وتخزينها على هذا الجهاز فقط.</string>
+    <string name="editor_side_scan">مسح ضوئي</string>
+    <string name="editor_side_choose">المعرض</string>
+    <string name="editor_side_remove">إزالة الصورة</string>
+    <string name="editor_side_missing">لا توجد صورة</string>
+
+    <string name="editor_field_title">الاسم</string>
+    <string name="editor_field_title_hint">الاسم التلقائي: %1$s</string>
+    <string name="editor_color">اللون</string>
+    <string name="editor_lock">قفل هذه البطاقة</string>
+    <string name="editor_lock_description">طلب بصمة الإصبع أو الوجه أو قفل الشاشة لعرض أي من تفاصيلها</string>
+    <string name="editor_protection_unavailable">اضبط قفل شاشة على جهازك لاستخدام هذه الميزة</string>
+    <string name="editor_open_security_settings">إعداد</string>
+    <string name="editor_photos">الصور</string>
+
+    <string name="editor_read_nfc">قراءة البطاقة باستخدام NFC</string>
+    <string name="editor_field_bank">البنك (اختياري)</string>
+    <string name="editor_choose_bank">اختيار البنك</string>
+    <string name="editor_search_bank">البحث عن بنك</string>
+    <string name="editor_field_number">رقم البطاقة</string>
+    <string name="editor_field_expiry">تاريخ الانتهاء (MM/YY)</string>
+    <string name="editor_field_holder">اسم حامل البطاقة</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">اختياري. يكون مخفيًا دائمًا ولا يُعرض إلا بعد تأكيد هويتك.</string>
+    <string name="editor_cvv_stored">تم تخزين رمز CVV. اترك الحقل فارغًا للاحتفاظ به.</string>
+    <string name="editor_cvv_remove">إزالة رمز CVV المخزَّن</string>
+    <string name="editor_card_expired">انتهت صلاحية هذه البطاقة</string>
+
+    <string name="editor_field_country">بلد الإصدار</string>
+    <string name="editor_choose_country">اختيار البلد</string>
+    <string name="editor_search_country">البحث عن بلد</string>
+    <string name="editor_field_document_number">رقم المستند (اختياري)</string>
+    <string name="editor_field_id_expiry">تاريخ الانتهاء (اختياري)</string>
+    <string name="editor_clear_date">مسح</string>
+
+    <string name="editor_field_shop">المتجر</string>
+    <string name="editor_choose_shop">اختيار المتجر</string>
+    <string name="editor_search_shop">البحث عن متجر</string>
+    <string name="editor_custom_shop">استخدام «%1$s»</string>
+    <string name="editor_field_code">رقم البطاقة / الرمز</string>
+    <string name="editor_field_format">نوع الرمز</string>
+    <string name="editor_scan_barcode">مسح الرمز ضوئيًا</string>
+
+    <string name="editor_logo">الشعار</string>
+    <string name="editor_logo_none">بلا شعار</string>
+    <string name="editor_logo_official">الشعار الرسمي</string>
+    <string name="editor_logo_upload">رفع</string>
+    <string name="editor_logo_remove">إزالة الشعار</string>
+    <string name="editor_logo_choice_title">شعار %1$s</string>
+    <string name="editor_logo_choice_message">هل تريد عرض شعار %1$s الرسمي على هذه البطاقة؟ يتم تنزيله مرة واحدة من Wikimedia Commons وتخزينه على جهازك.</string>
+    <string name="editor_logo_use_official">استخدام الشعار الرسمي</string>
+    <string name="editor_logo_upload_own">رفع شعار خاص بي</string>
+    <string name="editor_logo_keep_blank">تركه فارغًا</string>
+    <string name="editor_logo_license">الترخيص: %1$s</string>
+    <string name="editor_logo_attribution">الترخيص: %1$s · بواسطة %2$s</string>
+    <string name="editor_logo_download_failed">تعذّر تنزيل الشعار. تحقَّق من الاتصال بالإنترنت وحاوِل مرة أخرى.</string>
+
+    <string name="editor_locked_title">هذه البطاقة مقفلة</string>
+    <string name="editor_not_found">هذه البطاقة لم تعد موجودة</string>
+    <string name="editor_ok">حسنًا</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_edit">Змінити</string>
+    <string name="detail_delete">Видалити</string>
+    <string name="detail_more">Інші дії</string>
+    <string name="detail_flip">Показати інший бік</string>
+    <string name="detail_show_code">Показати код</string>
+    <string name="detail_copied">Скопійовано: %1$s. Через хвилину дані буде видалено з буфера обміну.</string>
+    <string name="detail_copy">Копіювати: %1$s</string>
+    <string name="detail_show_cvv">Показати CVV</string>
+    <string name="detail_hide_cvv">Сховати CVV</string>
+    <string name="detail_locked_details">Дані приховано, оскільки картку заблоковано</string>
+    <string name="detail_lock">Заблокувати картку</string>
+    <string name="detail_lock_on">Щоб переглянути цю картку, потрібен відбиток пальця, розпізнавання обличчя або блокування екрана</string>
+    <string name="detail_lock_off">Цю картку може побачити будь-хто, хто користується вашим телефоном</string>
+    <string name="detail_lock_unavailable">Щоб блокувати картки, налаштуйте блокування екрана на пристрої</string>
+    <string name="detail_delete_title">Видалити цю картку?</string>
+    <string name="detail_delete_message">Картку «%1$s» та її фото буде остаточно видалено з цього пристрою.</string>
+    <string name="detail_cancel">Скасувати</string>
+    <string name="detail_close_photo">Закрити фото</string>
+    <string name="detail_ok">OK</string>
+
+    <string name="field_bank">Банк</string>
+    <string name="field_number">Номер картки</string>
+    <string name="field_expiry">Термін дії</string>
+    <string name="field_holder">Власник картки</string>
+    <string name="field_cvv">CVV</string>
+    <string name="field_network">Платіжна система</string>
+    <string name="field_country">Країна</string>
+    <string name="field_document_number">Номер документа</string>
+    <string name="field_shop">Магазин</string>
+    <string name="field_code">Код</string>
+    <string name="field_format">Тип коду</string>
+</resources>

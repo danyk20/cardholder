@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_title_add">Kart ekle</string>
+    <string name="editor_title_edit">Kartı düzenle</string>
+    <string name="editor_save">Kaydet</string>
+    <string name="editor_next">İleri</string>
+    <string name="editor_skip">Atla</string>
+    <string name="editor_choose_type">Bu ne tür bir kart?</string>
+
+    <string name="editor_sides_title">Kartınızın fotoğraflarını ekleyin</string>
+    <string name="editor_sides_message">İsteğe bağlı. Fotoğraflar şifrelenir ve yalnızca bu cihazda saklanır.</string>
+    <string name="editor_side_scan">Tara</string>
+    <string name="editor_side_choose">Galeri</string>
+    <string name="editor_side_remove">Fotoğrafı kaldır</string>
+    <string name="editor_side_missing">Fotoğraf yok</string>
+
+    <string name="editor_field_title">Ad</string>
+    <string name="editor_field_title_hint">Varsayılan: %1$s</string>
+    <string name="editor_color">Renk</string>
+    <string name="editor_lock">Bu kartı kilitle</string>
+    <string name="editor_lock_description">Ayrıntılarından herhangi birini görmek için parmak izi, yüz veya ekran kilidi iste</string>
+    <string name="editor_protection_unavailable">Bunu kullanmak için cihazınızda ekran kilidi ayarlayın</string>
+    <string name="editor_open_security_settings">Ayarla</string>
+    <string name="editor_photos">Fotoğraflar</string>
+
+    <string name="editor_read_nfc">Kartı NFC ile oku</string>
+    <string name="editor_field_bank">Banka (isteğe bağlı)</string>
+    <string name="editor_choose_bank">Banka seçin</string>
+    <string name="editor_search_bank">Banka ara</string>
+    <string name="editor_field_number">Kart numarası</string>
+    <string name="editor_field_expiry">Son kullanma tarihi (AA/YY)</string>
+    <string name="editor_field_holder">Kart sahibi</string>
+    <string name="editor_field_cvv">CVV</string>
+    <string name="editor_cvv_hint">İsteğe bağlı. Her zaman gizlidir ve yalnızca kimliğinizi doğruladıktan sonra gösterilir.</string>
+    <string name="editor_cvv_stored">Kayıtlı bir CVV var. Korumak için boş bırakın.</string>
+    <string name="editor_cvv_remove">Kayıtlı CVV\'yi kaldır</string>
+    <string name="editor_card_expired">Bu kartın süresi dolmuş</string>
+
+    <string name="editor_field_country">Veren ülke</string>
+    <string name="editor_choose_country">Ülke seçin</string>
+    <string name="editor_search_country">Ülke ara</string>
+    <string name="editor_field_document_number">Belge numarası (isteğe bağlı)</string>
+    <string name="editor_field_id_expiry">Son kullanma tarihi (isteğe bağlı)</string>
+    <string name="editor_clear_date">Temizle</string>
+
+    <string name="editor_field_shop">Mağaza</string>
+    <string name="editor_choose_shop">Mağaza seçin</string>
+    <string name="editor_search_shop">Mağaza ara</string>
+    <string name="editor_custom_shop">“%1$s” kullan</string>
+    <string name="editor_field_code">Kart numarası / kod</string>
+    <string name="editor_field_format">Kod türü</string>
+    <string name="editor_scan_barcode">Kodu tara</string>
+
+    <string name="editor_logo">Logo</string>
+    <string name="editor_logo_none">Logo yok</string>
+    <string name="editor_logo_official">Resmi logo</string>
+    <string name="editor_logo_upload">Yükle</string>
+    <string name="editor_logo_remove">Logoyu kaldır</string>
+    <string name="editor_logo_choice_title">Logo: %1$s</string>
+    <string name="editor_logo_choice_message">Resmi %1$s logosu bu kartta gösterilsin mi? Logo, Wikimedia Commons\'tan bir kez indirilir ve cihazınızda saklanır.</string>
+    <string name="editor_logo_use_official">Resmi logoyu kullan</string>
+    <string name="editor_logo_upload_own">Kendi logomu yükle</string>
+    <string name="editor_logo_keep_blank">Boş bırak</string>
+    <string name="editor_logo_license">Lisans: %1$s</string>
+    <string name="editor_logo_attribution">Lisans: %1$s · Yazar: %2$s</string>
+    <string name="editor_logo_download_failed">Logo indirilemedi. Bağlantınızı kontrol edip tekrar deneyin.</string>
+
+    <string name="editor_locked_title">Bu kart kilitli</string>
+    <string name="editor_not_found">Bu kart artık mevcut değil</string>
+    <string name="editor_ok">Tamam</string>
+</resources>

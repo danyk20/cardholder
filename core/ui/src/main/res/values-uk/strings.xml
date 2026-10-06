@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card types -->
+    <string name="card_type_bank">Банківська картка</string>
+    <string name="card_type_id">Документ</string>
+    <string name="card_type_loyalty">Картка лояльності</string>
+    <string name="card_type_bank_description">Дебетова або кредитна картка</string>
+    <string name="card_type_id_description">ID-картка, паспорт, посвідчення водія…</string>
+    <string name="card_type_loyalty_description">Картка магазину зі штрихкодом або QR-кодом</string>
+
+    <!-- Card sides -->
+    <string name="card_side_front">Лицьовий бік</string>
+    <string name="card_side_back">Зворотний бік</string>
+    <string name="card_locked">Заблоковано</string>
+    <string name="card_locked_message">Цю картку заблоковано</string>
+    <string name="auth_title_show_cvv">Показати CVV</string>
+    <string name="auth_title_export">Експорт резервної копії</string>
+    <string name="card_not_found">Цієї картки більше немає</string>
+
+    <!-- Authentication -->
+    <string name="auth_title_unlock_card">Розблокувати «%1$s»</string>
+    <string name="auth_subtitle">Підтвердьте свою особу за допомогою відбитка пальця, розпізнавання обличчя або блокування екрана</string>
+    <string name="auth_key_invalidated">Ці дані були захищені блокуванням екрана, яке згодом вимкнули, тому їх більше не можна розшифрувати.</string>
+
+    <!-- Validation -->
+    <string name="error_required">Обов\'язкове поле</string>
+    <string name="error_invalid_characters">Містить недопустимі символи</string>
+    <string name="error_invalid_length">Неправильна довжина</string>
+    <string name="error_invalid_checksum">Контрольна цифра не збігається — перевірте, чи немає помилок</string>
+    <string name="error_invalid_date">Недійсна дата</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Назад</string>
+    <string name="action_cancel">Скасувати</string>
+    <string name="action_unlock">Розблокувати</string>
+
+    <!-- Barcode symbology -->
+    <string name="format_qr_code">QR-код</string>
+
+    <!-- Card colours -->
+    <string name="color_navy">Темно-синій</string>
+    <string name="color_blue">Синій</string>
+    <string name="color_teal">Бірюзовий</string>
+    <string name="color_green">Зелений</string>
+    <string name="color_lime">Лаймовий</string>
+    <string name="color_amber">Бурштиновий</string>
+    <string name="color_orange">Помаранчевий</string>
+    <string name="color_red">Червоний</string>
+    <string name="color_pink">Рожевий</string>
+    <string name="color_purple">Фіолетовий</string>
+    <string name="color_brown">Коричневий</string>
+    <string name="color_graphite">Графітовий</string>
+</resources>

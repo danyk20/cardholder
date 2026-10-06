@@ -8,6 +8,10 @@
     <string name="settings_dynamic_color">Dynamic colour</string>
     <string name="settings_dynamic_color_description">Use colours from your wallpaper</string>
 
+    <string name="settings_security">Security</string>
+    <string name="settings_allow_screenshots">Allow screenshots</string>
+    <string name="settings_allow_screenshots_description">Until you leave the app. Screenshots can show card numbers and are saved to your photos, which may be backed up to the cloud.</string>
+
     <string name="settings_backup">Backup</string>
     <string name="settings_export">Export backup</string>
     <string name="settings_export_description">Save all cards to a password-protected file</string>
@@ -49,7 +53,8 @@
 
     <string name="settings_about">About</string>
     <string name="settings_version">Version %1$s</string>
-    <string name="settings_privacy">Your cards are encrypted and never leave this device unless you export them. The app only goes online to download an official shop logo when you ask for it.</string>
-    <string name="settings_logo_credits">Shop logo credits</string>
+    <string name="settings_privacy">Your cards are encrypted and never leave this device unless you export them. The app only goes online to download an official shop or bank logo when you ask for it.</string>
+    <string name="settings_privacy_policy">Privacy policy</string>
+    <string name="settings_logo_credits">Logo credits</string>
     <string name="settings_logo_credits_description">Sources and licences of official logos</string>
 </resources>
