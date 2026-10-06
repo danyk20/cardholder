@@ -5,6 +5,12 @@ import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
+private val KTLINT_RULES = mapOf(
+    "ktlint_code_style" to "android_studio",
+    "max_line_length" to "120",
+    "ktlint_function_naming_ignore_when_annotated_with" to "Composable",
+)
+
 /** Applies Spotless (ktlint) and detekt with the shared project configuration. */
 internal fun Project.configureStaticAnalysis() {
     pluginManager.apply(libs.plugin("spotless"))
@@ -12,14 +18,16 @@ internal fun Project.configureStaticAnalysis() {
         kotlin {
             target("src/**/*.kt")
             ktlint(libs.version("ktlint"))
-                .setEditorConfigPath(rootProject.file(".editorconfig"))
+                .editorConfigOverride(KTLINT_RULES)
         }
         kotlinGradle {
             target("*.gradle.kts")
             ktlint(libs.version("ktlint"))
-                .setEditorConfigPath(rootProject.file(".editorconfig"))
+                .editorConfigOverride(KTLINT_RULES)
         }
     }
+
+    pluginManager.apply(libs.plugin("kover"))
 
     pluginManager.apply(libs.plugin("detekt"))
     extensions.configure<DetektExtension> {
