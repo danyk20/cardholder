@@ -11,9 +11,7 @@ import kotlinx.coroutines.flow.map
 /** Observes cards filtered by [CardType] and a free-text query over title, shop and network. */
 class ObserveCardsUseCase
 @Inject
-constructor(
-    private val cardRepository: CardRepository,
-) {
+constructor(private val cardRepository: CardRepository) {
     operator fun invoke(query: String = "", type: CardType? = null): Flow<List<Card>> =
         cardRepository.observeCards().map { cards ->
             val needle = query.trim()

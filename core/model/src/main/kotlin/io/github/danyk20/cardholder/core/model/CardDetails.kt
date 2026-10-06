@@ -10,28 +10,19 @@ import java.time.YearMonth
 sealed interface CardDetails {
     val type: CardType
 
-    data class Bank(
-        val number: String,
-        val expiry: YearMonth,
-        val holder: String,
-    ) : CardDetails {
+    data class Bank(val number: String, val expiry: YearMonth, val holder: String) : CardDetails {
         override val type = CardType.BANK
 
         override fun toString(): String = "Bank(number=██, expiry=██, holder=██)"
     }
 
-    data class Id(
-        val documentNumber: String?,
-        val expiry: LocalDate?,
-    ) : CardDetails {
+    data class Id(val documentNumber: String?, val expiry: LocalDate?) : CardDetails {
         override val type = CardType.ID
 
         override fun toString(): String = "Id(documentNumber=██, expiry=██)"
     }
 
-    data class Loyalty(
-        val code: String,
-    ) : CardDetails {
+    data class Loyalty(val code: String) : CardDetails {
         override val type = CardType.LOYALTY
 
         override fun toString(): String = "Loyalty(code=██)"

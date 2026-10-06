@@ -9,10 +9,7 @@ value class ImageRef(val name: String) {
 }
 
 /** Photos of both sides of a card. Capturing them is optional. */
-data class CardSides(
-    val front: ImageRef? = null,
-    val back: ImageRef? = null,
-) {
+data class CardSides(val front: ImageRef? = null, val back: ImageRef? = null) {
     val refs: List<ImageRef> get() = listOfNotNull(front, back)
 
     companion object {

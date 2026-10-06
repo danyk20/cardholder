@@ -21,21 +21,11 @@ data class CardDraft(
 
 /** Type-specific content of a [CardDraft]. */
 sealed interface CardContent {
-    data class Bank(
-        val details: CardDetails.Bank,
-        val cvv: CvvChange = CvvChange.Keep,
-    ) : CardContent
+    data class Bank(val details: CardDetails.Bank, val cvv: CvvChange = CvvChange.Keep) : CardContent
 
-    data class Id(
-        val country: CountryCode,
-        val details: CardDetails.Id,
-    ) : CardContent
+    data class Id(val country: CountryCode, val details: CardDetails.Id) : CardContent
 
-    data class Loyalty(
-        val shop: ShopRef,
-        val format: BarcodeFormat,
-        val details: CardDetails.Loyalty,
-    ) : CardContent
+    data class Loyalty(val shop: ShopRef, val format: BarcodeFormat, val details: CardDetails.Loyalty) : CardContent
 }
 
 val CardContent.details: CardDetails

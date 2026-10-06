@@ -1,10 +1,7 @@
 package io.github.danyk20.cardholder.core.model
 
 /** Payment card network, derived from the issuer identification number (IIN) prefix. */
-enum class CardNetwork(
-    val displayName: String,
-    val cvvLength: Int = 3,
-) {
+enum class CardNetwork(val displayName: String, val cvvLength: Int = 3) {
     VISA("Visa"),
     MASTERCARD("Mastercard"),
     AMERICAN_EXPRESS("American Express", cvvLength = 4),
