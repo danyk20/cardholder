@@ -4,10 +4,11 @@ import android.graphics.Bitmap
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.FilterQuality
 import androidx.compose.ui.graphics.ImageBitmap
@@ -22,8 +23,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 /**
- * Renders [content] as a barcode filling the available width. Square symbols (QR, Aztec, Data
- * Matrix) are drawn square, linear codes and PDF417 as a wide strip. Always black on white.
+ * Renders [content] as a barcode, as large as fits into the available space. Square symbols (QR,
+ * Aztec, Data Matrix) are drawn square, linear codes and PDF417 as a wide strip. Always black on
+ * white; when the height is unbounded the code fills the width.
  */
 @Composable
 fun BarcodeImage(content: String, format: BarcodeFormat, contentDescription: String, modifier: Modifier = Modifier) {
@@ -32,8 +34,9 @@ fun BarcodeImage(content: String, format: BarcodeFormat, contentDescription: Str
         format == BarcodeFormat.PDF_417 -> PDF417_ASPECT_RATIO
         else -> LINEAR_ASPECT_RATIO
     }
-    BoxWithConstraints(modifier.fillMaxWidth()) {
-        val widthPx = with(LocalDensity.current) { maxWidth.roundToPx() }
+    BoxWithConstraints(modifier, contentAlignment = Alignment.Center) {
+        val width = if (constraints.hasBoundedHeight) minOf(maxWidth, maxHeight * aspectRatio) else maxWidth
+        val widthPx = with(LocalDensity.current) { width.roundToPx() }
         val heightPx = (widthPx / aspectRatio).toInt()
         val bitmap by produceState<ImageBitmap?>(null, content, format, widthPx) {
             value = withContext(Dispatchers.Default) {
@@ -48,7 +51,7 @@ fun BarcodeImage(content: String, format: BarcodeFormat, contentDescription: Str
                 // Nearest-neighbour scaling keeps module edges sharp.
                 filterQuality = FilterQuality.None,
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .width(width)
                     .aspectRatio(aspectRatio)
                     .semantics { this.contentDescription = contentDescription },
             )

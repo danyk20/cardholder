@@ -5,3 +5,7 @@ plugins {
 android {
     namespace = "io.github.danyk20.cardholder.feature.cardlist"
 }
+
+dependencies {
+    implementation(projects.core.barcode)
+}

@@ -4,8 +4,9 @@
     <string name="cardlist_add_card">Add card</string>
     <string name="cardlist_search">Search cards</string>
     <string name="cardlist_clear_search">Clear search</string>
-    <string name="cardlist_filter_all">All</string>
     <string name="cardlist_empty_title">No cards yet</string>
     <string name="cardlist_empty_message">Keep your bank, ID and loyalty cards safely on your phone. Everything is encrypted and never leaves your device.</string>
     <string name="cardlist_no_results">No cards match your search</string>
+    <string name="cardlist_show_code">Show code full screen</string>
+    <string name="cardlist_tap_to_unlock">Tap to unlock</string>
 </resources>

@@ -29,8 +29,13 @@ class ObserveCardsUseCaseTest {
     }
 
     @Test
-    fun `filters by type`() = runTest {
-        assertEquals(listOf(TestCards.idCard.id), observeCards(type = CardType.ID).first().map { it.id })
+    fun `shows only the selected types`() = runTest {
+        assertEquals(listOf(TestCards.idCard.id), observeCards(types = setOf(CardType.ID)).first().map { it.id })
+        assertEquals(
+            listOf(TestCards.loyalty.id, TestCards.visa.id),
+            observeCards(types = setOf(CardType.BANK, CardType.LOYALTY)).first().map { it.id },
+        )
+        assertEquals(emptyList(), observeCards(types = emptySet()).first())
     }
 
     @Test

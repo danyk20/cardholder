@@ -2,52 +2,71 @@
 
 [![CI](https://github.com/danyk20/cardholder/actions/workflows/ci.yml/badge.svg)](https://github.com/danyk20/cardholder/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+![minSdk](https://img.shields.io/badge/minSdk-30-green.svg)
 
 An offline, privacy-first Android wallet for your **bank cards**, **ID cards** and **loyalty cards**.
 
-> 🚧 Work in progress – see the [roadmap](docs/ROADMAP.md).
+<p>
+  <img src="docs/screenshots/card-list.png" width="200" alt="Card list" />
+  <img src="docs/screenshots/barcode-ean13.png" width="200" alt="Loyalty card barcode" />
+  <img src="docs/screenshots/barcode-qr.png" width="200" alt="Loyalty card QR code" />
+  <img src="docs/screenshots/card-detail.png" width="200" alt="Bank card details" />
+</p>
 
 ## Features
-- Three card types with type-specific details:
-  - **Bank card** – number, expiry, card holder, CVV (always hidden behind biometric / device credential).
-  - **ID card** – issuing country.
-  - **Loyalty card** – shop (bundled list or custom) and its barcode/QR code, shown full-screen at max brightness for scanning at the till.
-- Optionally capture the **front and back** of every card with the camera (automatic edge detection).
-- Scan loyalty barcodes/QR codes with the camera.
-- **Per-card lock**: protect any card with fingerprint/face/device PIN.
-- Password-encrypted **backup export/import**.
-- No internet permission, encrypted database, no cloud backup – your data never leaves the device unless you export it.
+- **Three card types**
+  - **Bank card**: number (network detection, Luhn check), expiry, card holder and CVV. The CVV is **always hidden** and only shown after fingerprint, face or device PIN.
+  - **ID card**: issuing country (searchable, with flags), optional document number and expiry.
+  - **Loyalty card**: shop from a bundled catalogue or a custom name, plus its barcode/QR code. Tapping the card shows the code **full-screen at maximum brightness** for the till scanner. 13 symbologies are supported, including EAN, UPC, Code 128/39/93, ITF, Codabar, QR, Aztec, Data Matrix and PDF417.
+- **Optional photos of both sides**: scan with automatic edge detection (ML Kit document scanner) or pick from the gallery.
+- **Scan loyalty codes** with the camera, or let the app find the barcode in a card photo.
+- **Per-card lock**: any card can require authentication for *all* its data.
+- **Password-encrypted backup** export/import.
+- Material 3 with dynamic colour, dark theme, adaptive layout.
+
+## Privacy & security
+- **No internet permission.** No analytics, no cloud.
+- Encrypted database (SQLCipher) **plus** per-value envelope encryption with Android Keystore keys.
+- CVVs and locked cards are encrypted with a key the Keystore only releases after **strong biometric or device-credential authentication**. This is real cryptographic protection, not just a UI gate.
+- Screenshots and recents thumbnails are blocked on sensitive screens. Copied values are marked sensitive and cleared after a minute. Decrypted data is dropped when the app goes to the background.
+
+Details: [SECURITY.md](SECURITY.md) and the [architecture decision records](docs/adr).
 
 ## Tech stack
-Kotlin · Jetpack Compose · Material 3 · Hilt · Room + SQLCipher · Android Keystore · CameraX · ML Kit · ZXing · Coroutines/Flow · Gradle convention plugins · GitHub Actions
+Kotlin 2.4 · Jetpack Compose · Material 3 · Hilt · Room + SQLCipher · Android Keystore · CameraX · ML Kit · ZXing · Coil · Coroutines/Flow · kotlinx.serialization · Gradle convention plugins · Spotless/ktlint · detekt · Kover · GitHub Actions
 
 ## Building
 Requirements: JDK 17+, Android SDK with platform 37.
 ```bash
-./gradlew assembleDebug          # build
-./gradlew testDebugUnitTest      # unit tests
-./gradlew spotlessCheck detekt lintDebug   # static analysis
+./gradlew assembleDebug                      # build the debug app
+./gradlew testDebugUnitTest                  # unit & Robolectric tests
+./gradlew spotlessCheck detekt lintDebug     # static analysis
+./gradlew connectedDebugAndroidTest          # instrumented tests (device/emulator)
+./gradlew koverHtmlReport                    # coverage report
 ```
+Releases are built by GitHub Actions; see [docs/RELEASING.md](docs/RELEASING.md).
 
-## Project structure
+## Architecture
+Multi-module clean architecture with unidirectional data flow. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 ```
-app/                 Application, navigation, DI wiring
+app/                 Application, navigation, DI wiring, Coil image loader
 build-logic/         Gradle convention plugins
 core/model           Pure Kotlin domain models
 core/domain          Repository contracts, use cases, validators
-core/data            Repository implementations, backup
+core/data            Repository implementations, shop catalogue, backup
 core/database        Room + SQLCipher
-core/security        Keystore keys, envelope encryption, authentication
-core/storage         Encrypted card image storage
+core/security        Keystore keys, envelope encryption, clipboard, session lock
+core/storage         Encrypted card photo storage
 core/scanning        Document & barcode scanning (ML Kit, CameraX)
 core/barcode         Barcode/QR rendering (ZXing)
-core/designsystem    Theme and design components
-core/ui              Shared UI building blocks
+core/designsystem    Theme, card surface, icons
+core/ui              Shared UI: card face, authenticator, secure screens
+core/testing         Test fakes and fixtures
 feature/*            Card list, editor, detail, full-screen barcode, settings
 ```
 
 ## Contributing & security
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). Never put real card data in issues.
 
 ## License
-[Apache License 2.0](LICENSE)
+[Apache License 2.0](LICENSE). Shop names in the bundled catalogue are trademarks of their respective owners and are used only to identify the shop a card belongs to; no logos are included.

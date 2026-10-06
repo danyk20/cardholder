@@ -45,7 +45,6 @@ import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.ui.CardFace
-import io.github.danyk20.cardholder.core.ui.CardSummary
 import io.github.danyk20.cardholder.core.ui.icon
 import io.github.danyk20.cardholder.core.ui.label
 
@@ -61,7 +60,7 @@ fun CardListRoute(
     CardListScreen(
         uiState = uiState,
         onQueryChange = viewModel::onQueryChange,
-        onFilterChange = viewModel::onFilterChange,
+        onTypeToggled = viewModel::onTypeToggled,
         onCardClick = onCardClick,
         onCardLongClick = onCardLongClick,
         onAddCard = onAddCard,
@@ -74,7 +73,7 @@ fun CardListRoute(
 internal fun CardListScreen(
     uiState: CardListUiState,
     onQueryChange: (String) -> Unit,
-    onFilterChange: (CardType?) -> Unit,
+    onTypeToggled: (CardType) -> Unit,
     onCardClick: (Card) -> Unit,
     onCardLongClick: (Card) -> Unit,
     onAddCard: () -> Unit,
@@ -112,7 +111,7 @@ internal fun CardListScreen(
                     state = uiState,
                     contentPadding = padding,
                     onQueryChange = onQueryChange,
-                    onFilterChange = onFilterChange,
+                    onTypeToggled = onTypeToggled,
                     onCardClick = onCardClick,
                     onCardLongClick = onCardLongClick,
                 )
@@ -128,12 +127,12 @@ private fun CardGrid(
     state: CardListUiState.Success,
     contentPadding: PaddingValues,
     onQueryChange: (String) -> Unit,
-    onFilterChange: (CardType?) -> Unit,
+    onTypeToggled: (CardType) -> Unit,
     onCardClick: (Card) -> Unit,
     onCardLongClick: (Card) -> Unit,
 ) {
     LazyVerticalGrid(
-        columns = GridCells.Adaptive(minSize = 280.dp),
+        columns = GridCells.Adaptive(minSize = 300.dp),
         contentPadding = PaddingValues(
             start = 16.dp,
             end = 16.dp,
@@ -145,7 +144,7 @@ private fun CardGrid(
         modifier = Modifier.fillMaxSize(),
     ) {
         item(span = { GridItemSpan(maxLineSpan) }) {
-            SearchAndFilters(state.query, state.filter, onQueryChange, onFilterChange)
+            SearchAndFilters(state.query, state.visibleTypes, onQueryChange, onTypeToggled)
         }
         if (state.cards.isEmpty()) {
             item(span = { GridItemSpan(maxLineSpan) }) {
@@ -157,13 +156,24 @@ private fun CardGrid(
                 )
             }
         }
-        items(state.cards, key = { it.card.id.value }) { summary ->
-            CardFace(
-                summary = summary,
-                onClick = { onCardClick(summary.card) },
-                onLongClick = { onCardLongClick(summary.card) },
-                modifier = Modifier.animateItem(),
-            )
+        items(state.cards, key = { it.summary.card.id.value }) { item ->
+            val card = item.summary.card
+            if (card.type == CardType.LOYALTY) {
+                LoyaltyCardFace(
+                    summary = item.summary,
+                    code = item.code,
+                    onClick = { onCardClick(card) },
+                    onLongClick = { onCardLongClick(card) },
+                    modifier = Modifier.animateItem(),
+                )
+            } else {
+                CardFace(
+                    summary = item.summary,
+                    onClick = { onCardClick(card) },
+                    onLongClick = { onCardLongClick(card) },
+                    modifier = Modifier.animateItem(),
+                )
+            }
         }
     }
 }
@@ -171,9 +181,9 @@ private fun CardGrid(
 @Composable
 private fun SearchAndFilters(
     query: String,
-    filter: CardType?,
+    visibleTypes: Set<CardType>,
     onQueryChange: (String) -> Unit,
-    onFilterChange: (CardType?) -> Unit,
+    onTypeToggled: (CardType) -> Unit,
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         OutlinedTextField(
@@ -197,17 +207,18 @@ private fun SearchAndFilters(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier.horizontalScroll(rememberScrollState()),
         ) {
-            FilterChip(
-                selected = filter == null,
-                onClick = { onFilterChange(null) },
-                label = { Text(stringResource(R.string.cardlist_filter_all)) },
-            )
             CardType.entries.forEach { type ->
                 FilterChip(
-                    selected = filter == type,
-                    onClick = { onFilterChange(if (filter == type) null else type) },
+                    selected = type in visibleTypes,
+                    onClick = { onTypeToggled(type) },
                     label = { Text(stringResource(type.label)) },
-                    leadingIcon = { Icon(type.icon, contentDescription = null, modifier = Modifier.size(18.dp)) },
+                    leadingIcon = {
+                        Icon(
+                            if (type in visibleTypes) CardholderIcons.Check else type.icon,
+                            contentDescription = null,
+                            modifier = Modifier.size(18.dp),
+                        )
+                    },
                 )
             }
         }
@@ -249,9 +260,9 @@ private fun EmptyState(modifier: Modifier = Modifier) {
 private fun EmptyCardListPreview() {
     CardholderTheme {
         CardListScreen(
-            uiState = CardListUiState.Success(emptyList<CardSummary>(), "", null, hasAnyCards = false),
+            uiState = CardListUiState.Success(emptyList(), "", CardType.entries.toSet(), hasAnyCards = false),
             onQueryChange = {},
-            onFilterChange = {},
+            onTypeToggled = {},
             onCardClick = {},
             onCardLongClick = {},
             onAddCard = {},
