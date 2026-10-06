@@ -17,6 +17,8 @@ import io.github.danyk20.cardholder.feature.cardeditor.navigation.cardEditorScre
 import io.github.danyk20.cardholder.feature.cardeditor.navigation.navigateToCardEditor
 import io.github.danyk20.cardholder.feature.cardlist.navigation.CardListDestination
 import io.github.danyk20.cardholder.feature.cardlist.navigation.cardListScreen
+import io.github.danyk20.cardholder.feature.settings.navigation.navigateToSettings
+import io.github.danyk20.cardholder.feature.settings.navigation.settingsScreen
 
 @Composable
 fun CardholderNavHost(modifier: Modifier = Modifier) {
@@ -33,7 +35,7 @@ fun CardholderNavHost(modifier: Modifier = Modifier) {
             },
             onCardLongClick = { navController.navigateToCardDetail(it.id) },
             onAddCard = { navController.navigateToCardEditor() },
-            onOpenSettings = {},
+            onOpenSettings = navController::navigateToSettings,
         )
         cardEditorScreen(
             onClose = navController::popBackStack,
@@ -53,6 +55,7 @@ fun CardholderNavHost(modifier: Modifier = Modifier) {
             onEdit = { navController.navigateToCardEditor(it) },
             onShowBarcode = { navController.navigateToBarcode(it) },
         )
+        settingsScreen(onBack = navController::popBackStack)
         barcodeScreen(
             onClose = navController::popBackStack,
             onOpenDetails = { id ->

@@ -21,5 +21,8 @@ sealed interface BackupResult {
 
     data object KeyInvalidated : BackupResult
 
+    /** The backup contains CVVs or locked cards, which need a screen lock on this device. */
+    data object DeviceNotSecure : BackupResult
+
     data class Failed(val cause: Throwable) : BackupResult
 }
