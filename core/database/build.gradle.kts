@@ -6,7 +6,6 @@ plugins {
 
 android {
     namespace = "io.github.danyk20.cardholder.core.database"
-    defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 }
 
 dependencies {
@@ -16,4 +15,6 @@ dependencies {
 
     testImplementation(libs.robolectric)
     testImplementation(libs.androidx.test.ext.junit)
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

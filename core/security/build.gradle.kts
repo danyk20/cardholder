@@ -5,6 +5,7 @@ plugins {
 
 android {
     namespace = "io.github.danyk20.cardholder.core.security"
+    testFixtures.enable = true
 }
 
 dependencies {
