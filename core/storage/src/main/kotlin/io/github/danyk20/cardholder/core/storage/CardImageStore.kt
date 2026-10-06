@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.core.storage
 
 import android.content.Context
+import android.net.Uri
 import androidx.core.net.toUri
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
@@ -32,7 +33,11 @@ class CardImageStore(
         files = EncryptedFileStore(File(context.filesDir, DIRECTORY), cipher),
         decode = { source ->
             when (source) {
-                is ImageSource.Uri -> normalizer.fromUri(context.contentResolver, source.value.toUri())
+                is ImageSource.Uri -> {
+                    val uri = source.value.toUri()
+                    normalizer.fromUri(context.contentResolver, uri).also { deleteIfTemporary(context, uri) }
+                }
+
                 is ImageSource.Bytes -> normalizer.fromBytes(source.bytes)
             }
         },
@@ -77,5 +82,16 @@ class CardImageStore(
 
     private companion object {
         const val DIRECTORY = "card_images"
+
+        /**
+         * The document scanner leaves unencrypted JPEGs in the app's cache; remove them once the
+         * encrypted copy exists. Files outside the cache (e.g. the user's gallery) are never touched.
+         */
+        fun deleteIfTemporary(context: Context, uri: Uri) {
+            val path = uri.path ?: return
+            if (uri.scheme != "file") return
+            val file = File(path).canonicalFile
+            if (file.path.startsWith(context.cacheDir.canonicalPath + File.separator)) file.delete()
+        }
     }
 }

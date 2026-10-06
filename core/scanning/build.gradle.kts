@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.cardholder.android.library.compose)
+    alias(libs.plugins.cardholder.hilt)
 }
 
 android {
@@ -7,7 +8,7 @@ android {
 }
 
 dependencies {
-    api(projects.core.model)
+    api(projects.core.domain)
     implementation(projects.core.designsystem)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.camera.camera2)

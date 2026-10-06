@@ -13,10 +13,12 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -78,7 +80,13 @@ internal fun SidesStep(
 }
 
 @Composable
-internal fun SideSlot(side: CardSide, image: SideImage, actions: SideActions, modifier: Modifier = Modifier) {
+internal fun SideSlot(
+    side: CardSide,
+    image: SideImage,
+    actions: SideActions,
+    modifier: Modifier = Modifier,
+    compact: Boolean = false,
+) {
     val sideLabel = stringResource(
         if (side ==
             CardSide.FRONT
@@ -115,17 +123,36 @@ internal fun SideSlot(side: CardSide, image: SideImage, actions: SideActions, mo
                 }
             }
         }
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            actions.onScan?.let { onScan ->
-                Button(onClick = { onScan(side) }) {
-                    Icon(CardholderIcons.DocumentScanner, contentDescription = null, Modifier.size(18.dp))
-                    Text(stringResource(R.string.editor_side_scan), Modifier.padding(start = 8.dp))
-                }
+        if (compact) CompactSideButtons(side, actions) else SideButtons(side, actions)
+    }
+}
+
+@Composable
+private fun SideButtons(side: CardSide, actions: SideActions) {
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        actions.onScan?.let { onScan ->
+            Button(onClick = { onScan(side) }) {
+                Icon(CardholderIcons.DocumentScanner, contentDescription = null, Modifier.size(18.dp))
+                Text(stringResource(R.string.editor_side_scan), Modifier.padding(start = 8.dp))
             }
-            OutlinedButton(onClick = { actions.onChoose(side) }) {
-                Icon(CardholderIcons.Photo, contentDescription = null, Modifier.size(18.dp))
-                Text(stringResource(R.string.editor_side_choose), Modifier.padding(start = 8.dp))
+        }
+        OutlinedButton(onClick = { actions.onChoose(side) }) {
+            Icon(CardholderIcons.Photo, contentDescription = null, Modifier.size(18.dp))
+            Text(stringResource(R.string.editor_side_choose), Modifier.padding(start = 8.dp))
+        }
+    }
+}
+
+@Composable
+private fun CompactSideButtons(side: CardSide, actions: SideActions) {
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        actions.onScan?.let { onScan ->
+            FilledIconButton(onClick = { onScan(side) }) {
+                Icon(CardholderIcons.DocumentScanner, contentDescription = stringResource(R.string.editor_side_scan))
             }
+        }
+        OutlinedIconButton(onClick = { actions.onChoose(side) }) {
+            Icon(CardholderIcons.Photo, contentDescription = stringResource(R.string.editor_side_choose))
         }
     }
 }

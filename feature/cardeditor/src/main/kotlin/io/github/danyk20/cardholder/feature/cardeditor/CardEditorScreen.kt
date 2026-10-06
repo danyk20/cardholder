@@ -44,6 +44,8 @@ import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.scanning.BarcodeScanner
+import io.github.danyk20.cardholder.core.scanning.rememberCardSideScanner
 import io.github.danyk20.cardholder.core.ui.AuthenticationResult
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.SecureScreen
@@ -86,19 +88,27 @@ fun CardEditorRoute(
     }
 
     var pendingSide by rememberSaveable { mutableStateOf(CardSide.FRONT) }
+    var showBarcodeScanner by rememberSaveable { mutableStateOf(false) }
     val photoPicker = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         uri?.let { viewModel.onSideImagePicked(pendingSide, it.toString()) }
     }
-    val sideActions = remember(viewModel) {
-        SideActions(
-            onScan = null,
-            onChoose = { side ->
-                pendingSide = side
-                photoPicker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
-            },
-            onRemove = viewModel::onSideImageRemoved,
-        )
-    }
+    val pickPhoto = { photoPicker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) }
+    val sideScanner = rememberCardSideScanner(
+        onResult = { uri -> uri?.let { viewModel.onSideImagePicked(pendingSide, it) } },
+        // Without Google Play services, fall back to choosing an existing photo.
+        onUnavailable = pickPhoto,
+    )
+    val sideActions = SideActions(
+        onScan = { side ->
+            pendingSide = side
+            sideScanner.scan()
+        },
+        onChoose = { side ->
+            pendingSide = side
+            pickPhoto()
+        },
+        onRemove = viewModel::onSideImageRemoved,
+    )
     val detailsActions = remember(viewModel) {
         DetailsActions(
             onTitleChange = viewModel::onTitleChange,
@@ -124,9 +134,20 @@ fun CardEditorRoute(
                 onCustomShop = viewModel::onCustomShop,
                 onCodeChange = viewModel::onCodeChange,
                 onFormatChange = viewModel::onFormatChange,
-                onScanBarcode = null,
+                onScanBarcode = { showBarcodeScanner = true },
             ),
         )
+    }
+
+    if (showBarcodeScanner) {
+        BarcodeScanner(
+            onScanned = {
+                viewModel.onBarcodeScanned(it.code, it.format)
+                showBarcodeScanner = false
+            },
+            onDismiss = { showBarcodeScanner = false },
+        )
+        return
     }
 
     CardEditorScreen(

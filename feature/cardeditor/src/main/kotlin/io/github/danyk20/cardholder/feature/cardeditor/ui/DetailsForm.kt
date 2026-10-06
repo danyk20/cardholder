@@ -97,8 +97,8 @@ internal fun DetailsForm(
         }
         Text(stringResource(R.string.editor_photos), style = MaterialTheme.typography.titleSmall)
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            SideSlot(CardSide.FRONT, state.front, sideActions, Modifier.weight(1f))
-            SideSlot(CardSide.BACK, state.back, sideActions, Modifier.weight(1f))
+            SideSlot(CardSide.FRONT, state.front, sideActions, Modifier.weight(1f), compact = true)
+            SideSlot(CardSide.BACK, state.back, sideActions, Modifier.weight(1f), compact = true)
         }
         LockRow(
             isLocked = state.isLocked,
