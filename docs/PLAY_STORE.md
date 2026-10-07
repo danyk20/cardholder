@@ -38,7 +38,7 @@ Graphics are in [`fastlane/metadata/android/en-US/images/`](../fastlane/metadata
 | Data safety | See below |
 
 ### Data safety
-The app itself collects nothing, but the bundled Google ML Kit libraries (barcode scanner, document scanner) send diagnostics to Google ([ML Kit data disclosure](https://developers.google.com/ml-kit/android-data-disclosure)), so this must be declared.
+The app itself collects nothing, but the Google ML Kit libraries (barcode scanner, document scanner, text recognition) send diagnostics to Google ([ML Kit data disclosure](https://developers.google.com/ml-kit/android-data-disclosure)), so this must be declared.
 
 - *Does your app collect or share any of the required user data types?* **Yes**
 - *Is all of the user data collected by your app encrypted in transit?* **Yes** (ML Kit uses HTTPS)

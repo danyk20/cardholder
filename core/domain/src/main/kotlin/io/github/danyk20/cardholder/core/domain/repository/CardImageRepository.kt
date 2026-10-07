@@ -14,6 +14,12 @@ data class ScannedBarcode(val code: String, val format: BarcodeFormat) {
     override fun toString(): String = "ScannedBarcode(format=$format)"
 }
 
+/** Reads printed text on a card photo, entirely on the device. */
+interface CardTextScanner {
+    /** The recognised lines of text in the image at [uri], top to bottom; empty if none or unreadable. */
+    suspend fun readLines(uri: String): List<String>
+}
+
 /** Finds loyalty card barcodes in photos. */
 interface BarcodeImageScanner {
     /** Returns the most prominent supported barcode in the image at [uri], or `null` if there is none. */

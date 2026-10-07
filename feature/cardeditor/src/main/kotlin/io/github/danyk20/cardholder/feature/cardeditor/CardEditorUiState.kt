@@ -152,6 +152,8 @@ data class CardEditorUiState(
     val error: EditorError? = null,
     /** The user tried to leave with unsaved changes. */
     val confirmDiscard: Boolean = false,
+    /** Some empty fields were just filled in from the card photos; the user is asked to check them. */
+    val prefilledFromPhoto: Boolean = false,
     /** A new card looks like one that already exists (same shop, bank or name); asked before saving. */
     val duplicate: DuplicateWarning? = null,
     val shops: List<Shop> = emptyList(),

@@ -22,6 +22,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
@@ -205,6 +207,7 @@ fun CardEditorRoute(
         onKeepEditing = viewModel::onKeepEditing,
         onSaveDuplicate = { viewModel.onSave(duplicateConfirmed = true) },
         onDuplicateDismissed = viewModel::onDuplicateDismissed,
+        onPrefillMessageShown = viewModel::onPrefillMessageShown,
         onDiscard = {
             viewModel.onKeepEditing()
             onClose()
@@ -228,8 +231,17 @@ internal fun CardEditorScreen(
     onDiscard: () -> Unit,
     onSaveDuplicate: () -> Unit,
     onDuplicateDismissed: () -> Unit,
+    onPrefillMessageShown: () -> Unit,
 ) {
+    val snackbarHostState = remember { SnackbarHostState() }
+    val prefillMessage = stringResource(R.string.editor_prefilled_from_photo)
+    LaunchedEffect(state.prefilledFromPhoto) {
+        if (!state.prefilledFromPhoto) return@LaunchedEffect
+        onPrefillMessageShown()
+        snackbarHostState.showSnackbar(prefillMessage, withDismissAction = true)
+    }
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = {

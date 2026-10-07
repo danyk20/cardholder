@@ -39,6 +39,7 @@ kotlinxCoroutines = "1.11.0"
 kotlinxSerialization = "1.11.0"
 mlkitBarcode = "17.3.0"
 mlkitDocumentScanner = "16.0.0"
+mlkitTextRecognition = "19.0.1"
 reorderable = "3.1.0"
 sqlcipher = "4.19.1"
 tink = "1.23.0"
@@ -96,6 +97,7 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "mlkitBarcode" }
 mlkit-document-scanner = { module = "com.google.android.gms:play-services-mlkit-document-scanner", version.ref = "mlkitDocumentScanner" }
+mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "mlkitTextRecognition" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 reorderable = { module = "sh.calvin.reorderable:reorderable", version.ref = "reorderable" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }

@@ -10,7 +10,6 @@ import io.github.danyk20.cardholder.core.domain.model.CvvChange
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
-import io.github.danyk20.cardholder.core.domain.repository.BarcodeImageScanner
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
@@ -52,7 +51,7 @@ class CardEditorViewModel @Inject constructor(
     private val catalogues: EditorCatalogues,
     private val deviceSecurity: DeviceSecurity,
     private val validator: CardDraftValidator,
-    private val barcodeImageScanner: BarcodeImageScanner,
+    private val photoReader: CardPhotoReader,
     private val logoDownloader: LogoDownloader,
 ) : ViewModel() {
     private val editingId: CardId? = savedStateHandle.toRoute<CardEditorDestination>().cardId?.let(::CardId)
@@ -120,14 +119,72 @@ class CardEditorViewModel @Inject constructor(
 
     fun onSideImagePicked(side: CardSide, uri: String) {
         updateSide(side, SideImage.New(uri))
-        if (_uiState.value.type == CardType.LOYALTY && _uiState.value.loyalty.code.isEmpty()) {
-            // Loyalty cards usually carry their code on the back: offer it without typing.
-            launchSafely(onError = ::onUnexpectedError) {
-                barcodeImageScanner.scan(uri)?.let { barcode ->
-                    if (_uiState.value.loyalty.code.isEmpty()) onBarcodeScanned(barcode.code, barcode.format)
-                }
-            }
+        // Reading the photo is a convenience; if it fails the user simply types the details.
+        launchSafely { prefillFromPhotos() }
+    }
+
+    fun onPrefillMessageShown() = _uiState.update { it.copy(prefilledFromPhoto = false) }
+
+    /** Fills empty fields with what can be read from the new photos; never overwrites the user's input. */
+    private suspend fun prefillFromPhotos() {
+        val state = _uiState.value
+        val prefill = photoReader.read(
+            type = state.type,
+            front = (state.front as? SideImage.New)?.uri,
+            back = (state.back as? SideImage.New)?.uri,
+            shops = state.shops,
+            banks = state.banks,
+        )
+        _uiState.update { current ->
+            val filled = current.prefilledWith(prefill)
+            if (filled.content == current.content) current else filled.copy(prefilledFromPhoto = true)
         }
+    }
+
+    private fun CardEditorUiState.prefilledWith(prefill: PhotoPrefill): CardEditorUiState = when (type) {
+        CardType.BANK -> bankPrefilled(prefill)
+        CardType.ID -> idPrefilled(prefill)
+        CardType.LOYALTY -> loyaltyPrefilled(prefill)
+    }
+
+    private fun CardEditorUiState.bankPrefilled(prefill: PhotoPrefill) = copy(
+        bank = bank.copy(
+            number = bank.number.ifEmpty { prefill.number.orEmpty() },
+            expiry = bank.expiry.ifEmpty {
+                prefill.expiry?.let { "%02d%02d".format(it.monthValue, it.year % CENTURY) }.orEmpty()
+            },
+            holder = bank.holder.ifEmpty { prefill.holder.orEmpty() },
+            // A CVV can only be stored with a screen lock, and never replaces a stored one silently.
+            cvv = bank.cvv.ifEmpty { prefill.cvv?.takeIf { canProtect && !bank.hasStoredCvv }.orEmpty() },
+            issuer = bank.issuer ?: prefill.bank?.let { BrandRef.Known(it.id, it.name) },
+        ),
+        logoChoiceFor = logoChoiceFor ?: prefill.bank?.takeIf { bank.issuer == null }
+            ?.let { found -> found.logo?.let { LogoChoice(found.name, it) } },
+    )
+
+    private fun CardEditorUiState.idPrefilled(prefill: PhotoPrefill) = copy(
+        id = id.copy(
+            country = id.country ?: prefill.countryCode?.let { code ->
+                countries.firstOrNull { it.code.value == code }
+            },
+            documentNumber = id.documentNumber.ifEmpty { prefill.documentNumber.orEmpty() },
+            expiry = id.expiry ?: prefill.idExpiry,
+        ),
+        title = title.ifEmpty { prefill.holderName.orEmpty() },
+    )
+
+    private fun CardEditorUiState.loyaltyPrefilled(prefill: PhotoPrefill): CardEditorUiState {
+        val newShop = prefill.shop?.takeIf { loyalty.shop == null }
+        val barcode = prefill.barcode?.takeIf { loyalty.code.isEmpty() }
+        return copy(
+            loyalty = loyalty.copy(
+                shop = loyalty.shop ?: newShop?.let { BrandRef.Known(it.id, it.name) },
+                code = barcode?.code ?: loyalty.code,
+                // A scanned code knows its format; otherwise the shop's usual format is the best guess.
+                format = barcode?.format ?: newShop?.takeIf { loyalty.code.isEmpty() }?.defaultFormat ?: loyalty.format,
+            ),
+            logoChoiceFor = logoChoiceFor ?: newShop?.let { found -> found.logo?.let { LogoChoice(found.name, it) } },
+        )
     }
 
     fun onSideImageRemoved(side: CardSide) = updateSide(side, SideImage.None)
