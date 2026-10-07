@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Foto puudub</string>
     <string name="editor_field_title">Nimi</string>
     <string name="editor_field_title_hint">Vaikimisi %1$s</string>
+    <string name="editor_field_notes">Märkmed (valikuline)</string>
+    <string name="editor_notes_hint">Krüpteeritakse nagu ülejäänud kaart, nt liikmetase või telefoninumber</string>
     <string name="editor_color">Värv</string>
     <string name="editor_lock">Lukusta see kaart</string>
     <string name="editor_lock_description">Kaardi andmete nägemiseks nõutakse sõrmejälge, nägu või ekraanilukku</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">CVV on salvestatud. Selle säilitamiseks jätke väli tühjaks.</string>
     <string name="editor_cvv_remove">Eemalda salvestatud CVV</string>
     <string name="editor_card_expired">Selle kaardi kehtivus on lõppenud</string>
+    <string name="editor_number_valid">Kaardi number on korrektne</string>
+    <string name="editor_expiry_valid">Kehtivusaeg on korrektne</string>
     <string name="editor_field_country">Väljaandnud riik</string>
     <string name="editor_choose_country">Vali riik</string>
     <string name="editor_search_country">Otsi riike</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Litsents: %1$s</string>
     <string name="editor_logo_attribution">Litsents: %1$s · autor %2$s</string>
     <string name="editor_logo_download_failed">Logo allalaadimine ebaõnnestus. Kontrollige ühendust ja proovige uuesti.</string>
+    <string name="editor_prefilled_from_photo">Mõned andmed täideti foto põhjal – palun kontrollige neid</string>
+    <string name="editor_duplicate_title">Juba teie rahakotis?</string>
+    <string name="editor_duplicate_shop">Teil on juba selle poe kaart: „%1$s“. Kas salvestada ka see?</string>
+    <string name="editor_duplicate_bank">Teil on juba selle panga kaart: „%1$s“. Kas salvestada ka see?</string>
+    <string name="editor_duplicate_name">Teil on juba kaart nimega „%1$s“. Kas salvestada ka see?</string>
+    <string name="editor_duplicate_save">Salvesta ikkagi</string>
     <string name="editor_discard_title">Kas loobuda muudatustest?</string>
     <string name="editor_discard_message">Selle kaardi muudatusi ei salvestata.</string>
     <string name="editor_discard">Loobu</string>

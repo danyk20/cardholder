@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Nessuna foto</string>
     <string name="editor_field_title">Nome</string>
     <string name="editor_field_title_hint">Predefinito: %1$s</string>
+    <string name="editor_field_notes">Note (facoltative)</string>
+    <string name="editor_notes_hint">Criptate come il resto della carta, ad es. un livello di iscrizione o un numero di telefono</string>
     <string name="editor_color">Colore</string>
     <string name="editor_lock">Blocca questa carta</string>
     <string name="editor_lock_description">Richiedi impronta, volto o blocco schermo per vederne i dettagli</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">È memorizzato un CVV. Lascia vuoto per mantenerlo.</string>
     <string name="editor_cvv_remove">Rimuovi CVV memorizzato</string>
     <string name="editor_card_expired">Questa carta è scaduta</string>
+    <string name="editor_number_valid">Numero carta valido</string>
+    <string name="editor_expiry_valid">Data di scadenza valida</string>
     <string name="editor_field_country">Paese di rilascio</string>
     <string name="editor_choose_country">Scegli paese</string>
     <string name="editor_search_country">Cerca paesi</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Licenza: %1$s</string>
     <string name="editor_logo_attribution">Licenza: %1$s · di %2$s</string>
     <string name="editor_logo_download_failed">Impossibile scaricare il logo. Controlla la connessione e riprova.</string>
+    <string name="editor_prefilled_from_photo">Alcuni dati sono stati compilati dalla foto: controllali</string>
+    <string name="editor_duplicate_title">Carta già presente?</string>
+    <string name="editor_duplicate_shop">Hai già una carta di questo negozio: «%1$s». Salvare anche questa?</string>
+    <string name="editor_duplicate_bank">Hai già una carta di questa banca: «%1$s». Salvare anche questa?</string>
+    <string name="editor_duplicate_name">Hai già una carta chiamata «%1$s». Salvare anche questa?</string>
+    <string name="editor_duplicate_save">Salva comunque</string>
     <string name="editor_discard_title">Ignorare le modifiche?</string>
     <string name="editor_discard_message">Le modifiche a questa carta non verranno salvate.</string>
     <string name="editor_discard">Ignora</string>

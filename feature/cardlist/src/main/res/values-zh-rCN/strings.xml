@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">名称（A–Z）</string>
     <string name="cardlist_sort_date">添加日期（最新的在前）</string>
     <string name="cardlist_sort_custom">自定义顺序</string>
+    <string name="cardlist_sort_most_used">最常使用</string>
     <string name="cardlist_reorder">调整卡片顺序</string>
     <string name="cardlist_reorder_done">完成</string>
     <string name="cardlist_reorder_cancel">取消调整顺序</string>

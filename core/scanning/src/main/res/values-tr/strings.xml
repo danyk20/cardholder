@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Kameraya izin ver</string>
     <string name="scanner_permission_denied">Cardholder için kamera erişimi kapalı. Kod taramak için uygulama ayarlarından açın.</string>
     <string name="scanner_open_settings">Ayarları aç</string>
+    <string name="scanner_switch_camera">Kamerayı değiştir</string>
+    <string name="scanner_zoom">Yakınlaştırma %1$s</string>
     <string name="scanner_camera_unavailable">Kamera başlatılamadı. Kamerayı kullanan diğer uygulamaları kapatıp tekrar deneyin.</string>
     <string name="nfc_title">Kartı NFC ile oku</string>
     <string name="nfc_hold_card">Kartınızı telefonunuzun arka yüzüne düz bir şekilde tutun ve hareket ettirmeyin.</string>

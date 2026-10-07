@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Karten können nicht geöffnet werden</string>
     <string name="storage_error_message">Dieses Smartphone hat die Schlüssel, die die Karten schützen, nicht mehr – zum Beispiel nach einem Zurücksetzen der Sicherheitseinstellungen. Die Karten können auf diesem Gerät nicht wiederhergestellt werden. Alle Daten löschen, um neu zu beginnen, und anschließend eine Sicherung importieren, falls vorhanden.</string>
+    <string name="notification_channel_expiry">Ablauferinnerungen</string>
+    <string name="notification_expiry_title">Karte läuft bald ab</string>
+    <string name="notification_expiry_text">„%1$s“ läuft am %2$s ab.</string>
+    <string name="notification_expiry_public">Eine gespeicherte Karte läuft bald ab.</string>
+    <string name="notification_travel_title">Ausweis für Reisen erneuern</string>
+    <string name="notification_travel_text">„%1$s“ läuft am %2$s ab. Viele Länder verlangen für Reisen eine Gültigkeit von mindestens 6 Monaten, daher am besten innerhalb des nächsten Monats erneuern.</string>
+    <string name="notification_travel_public">Ein gespeichertes Dokument sollte bald erneuert werden.</string>
+    <string name="widget_title">Kundenkarten</string>
+    <string name="widget_description">Lieblings-Kundenkarten, nur einen Tipp vom Code entfernt</string>
+    <string name="widget_empty">Kundenkarte hinzufügen, um sie hier zu sehen.</string>
 </resources>

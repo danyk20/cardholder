@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">允許使用相機</string>
     <string name="scanner_permission_denied">Cardholder 的相機存取權已關閉。如要掃描代碼，請在應用程式設定中開啟。</string>
     <string name="scanner_open_settings">開啟設定</string>
+    <string name="scanner_switch_camera">切換相機</string>
+    <string name="scanner_zoom">縮放 %1$s</string>
     <string name="scanner_camera_unavailable">無法啟動相機。請關閉正在使用相機的其他應用程式，然後再試一次。</string>
     <string name="nfc_title">透過 NFC 讀取卡片</string>
     <string name="nfc_hold_card">將卡片平貼在手機背面，並保持不動。</string>

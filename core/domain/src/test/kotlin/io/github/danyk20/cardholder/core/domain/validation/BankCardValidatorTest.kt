@@ -60,4 +60,23 @@ class BankCardValidatorTest {
         assertEquals(ValidationError.INVALID_LENGTH, BankCardValidator.validateCvv("123", CardNetwork.AMERICAN_EXPRESS))
         assertEquals(ValidationError.INVALID_CHARACTERS, BankCardValidator.validateCvv("12a", CardNetwork.VISA))
     }
+
+    @Test
+    fun `number status while typing`() {
+        assertEquals(InputStatus.INCOMPLETE, BankCardValidator.numberStatus(""))
+        assertEquals(InputStatus.INCOMPLETE, BankCardValidator.numberStatus("4111 1111"))
+        assertEquals(InputStatus.VALID, BankCardValidator.numberStatus("4111 1111 1111 1111"))
+        // A typo is reported as soon as the number is complete.
+        assertEquals(InputStatus.INVALID, BankCardValidator.numberStatus("4111 1111 1111 1112"))
+        assertEquals(InputStatus.VALID, BankCardValidator.numberStatus("3782 822463 10005")) // Amex, 15 digits
+        assertEquals(InputStatus.INVALID, BankCardValidator.numberStatus("3782 822463 10006"))
+        assertEquals(InputStatus.INVALID, BankCardValidator.numberStatus("4111-11x"))
+    }
+
+    @Test
+    fun `expiry status while typing`() {
+        assertEquals(InputStatus.INCOMPLETE, BankCardValidator.expiryStatus("08"))
+        assertEquals(InputStatus.VALID, BankCardValidator.expiryStatus("0829"))
+        assertEquals(InputStatus.INVALID, BankCardValidator.expiryStatus("1329"))
+    }
 }

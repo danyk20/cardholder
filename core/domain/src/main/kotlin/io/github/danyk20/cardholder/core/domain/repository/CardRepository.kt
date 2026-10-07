@@ -1,12 +1,15 @@
 package io.github.danyk20.cardholder.core.domain.repository
 
 import io.github.danyk20.cardholder.core.domain.model.CardDraft
+import io.github.danyk20.cardholder.core.domain.model.ExpiryReminder
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
+import java.time.LocalDate
 import kotlinx.coroutines.flow.Flow
 
+@Suppress("TooManyFunctions") // The single entry point to stored cards.
 interface CardRepository {
     /** All cards in no particular order; sorting and filtering happen in `ObserveCardsUseCase`. */
     fun observeCards(): Flow<List<Card>>
@@ -29,4 +32,24 @@ interface CardRepository {
 
     /** Stores [ids] as the custom order: the first card comes first. Cards not listed keep their place after them. */
     suspend fun reorder(ids: List<CardId>)
+
+    suspend fun setFavourite(id: CardId, favourite: Boolean)
+
+    /** Counts a use of the card (its code was shown or its details opened) for the "most used" order. */
+    suspend fun recordUse(id: CardId)
+
+    /**
+     * Cards of the [reminder]'s types that expire between [today] and its number of months later and
+     * whose current expiry date hasn't had this reminder yet.
+     */
+    suspend fun cardsDueForExpiryReminder(reminder: ExpiryReminder, today: LocalDate): List<Card>
+
+    /**
+     * Stores the plain expiry date of unlocked cards saved before it was kept outside the encrypted
+     * details. Locked cards get theirs the next time they're saved.
+     */
+    suspend fun fillMissingExpiryDates()
+
+    /** Remembers that the user was reminded of [expiresOn]; a changed expiry date is reminded again. */
+    suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate, reminder: ExpiryReminder)
 }

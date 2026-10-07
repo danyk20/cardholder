@@ -3,6 +3,8 @@
     <string name="detail_edit">Змінити</string>
     <string name="detail_delete">Видалити</string>
     <string name="detail_more">Інші дії</string>
+    <string name="detail_add_favourite">Додати у вибране</string>
+    <string name="detail_remove_favourite">Видалити з вибраного</string>
     <string name="detail_flip">Показати інший бік</string>
     <string name="detail_show_code">Показати код</string>
     <string name="detail_copied">Скопійовано: %1$s. Через хвилину дані буде видалено з буфера обміну.</string>
@@ -31,4 +33,5 @@
     <string name="field_shop">Магазин</string>
     <string name="field_code">Код</string>
     <string name="field_format">Тип коду</string>
+    <string name="field_notes">Нотатки</string>
 </resources>

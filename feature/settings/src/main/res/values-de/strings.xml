@@ -8,6 +8,9 @@
     <string name="settings_theme_dark">Dunkel</string>
     <string name="settings_dynamic_color">Dynamische Farben</string>
     <string name="settings_dynamic_color_description">Farben des Hintergrundbilds verwenden</string>
+    <string name="settings_notifications">Benachrichtigungen</string>
+    <string name="settings_expiry_reminders">Ablauferinnerungen</string>
+    <string name="settings_expiry_reminders_description">Einen Monat vor Ablauf einer Bankkarte oder eines Ausweises benachrichtigen, bei Ausweisen zusätzlich 7 Monate vorher (viele Länder verlangen für Reisen 6 Monate Gültigkeit)</string>
 
     <string name="settings_security">Sicherheit</string>
     <string name="settings_allow_screenshots">Screenshots erlauben</string>

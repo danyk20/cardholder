@@ -6,6 +6,7 @@ import androidx.compose.material.icons.automirrored.rounded.Sort
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Badge
 import androidx.compose.material.icons.rounded.CameraAlt
+import androidx.compose.material.icons.rounded.Cameraswitch
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Contactless
@@ -25,6 +26,8 @@ import androidx.compose.material.icons.rounded.QrCode2
 import androidx.compose.material.icons.rounded.QrCodeScanner
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Settings
+import androidx.compose.material.icons.rounded.Star
+import androidx.compose.material.icons.rounded.StarBorder
 import androidx.compose.material.icons.rounded.Store
 import androidx.compose.material.icons.rounded.SwapVert
 import androidx.compose.material.icons.rounded.Visibility
@@ -43,6 +46,9 @@ object CardholderIcons {
     val Check: ImageVector = Icons.Rounded.Check
     val Close: ImageVector = Icons.Rounded.Close
     val Copy: ImageVector = Icons.Rounded.ContentCopy
+    val Favourite: ImageVector = Icons.Rounded.Star
+    val SwitchCamera: ImageVector = Icons.Rounded.Cameraswitch
+    val NotFavourite: ImageVector = Icons.Rounded.StarBorder
     val Delete: ImageVector = Icons.Rounded.Delete
     val DocumentScanner: ImageVector = Icons.Rounded.DocumentScanner
     val DragHandle: ImageVector = Icons.Rounded.DragHandle

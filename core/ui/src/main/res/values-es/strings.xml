@@ -43,4 +43,13 @@
     <string name="color_purple">Morado</string>
     <string name="color_brown">Marrón</string>
     <string name="color_graphite">Grafito</string>
+    <string name="color_white">Blanco</string>
+    <string name="color_silver">Plateado</string>
+    <string name="color_gray">Gris</string>
+    <string name="color_sand">Arena</string>
+    <string name="color_lemon">Limón</string>
+    <string name="color_mint">Menta</string>
+    <string name="color_sky">Azul cielo</string>
+    <string name="color_lavender">Lavanda</string>
+    <string name="color_blush">Rosa palo</string>
 </resources>

@@ -89,6 +89,7 @@ fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMod
         onThemeModeChange = viewModel::onThemeModeChange,
         onDynamicColorChange = viewModel::onDynamicColorChange,
         onScreenshotsAllowedChange = viewModel::onScreenshotsAllowedChange,
+        onExpiryRemindersChange = viewModel::onExpiryRemindersChange,
         onEraseAllData = viewModel::onEraseAllData,
         onExport = { passwordPurpose = PasswordPurpose.EXPORT },
         onImport = { openDocument.launch(arrayOf("*/*")) },
@@ -125,6 +126,7 @@ internal fun SettingsScreen(
     onThemeModeChange: (ThemeMode) -> Unit,
     onDynamicColorChange: (Boolean) -> Unit,
     onScreenshotsAllowedChange: (Boolean) -> Unit,
+    onExpiryRemindersChange: (Boolean) -> Unit,
     onEraseAllData: () -> Unit,
     onExport: () -> Unit,
     onImport: () -> Unit,
@@ -166,6 +168,19 @@ internal fun SettingsScreen(
                     value = state.preferences.useDynamicColor,
                     role = Role.Switch,
                     onValueChange = onDynamicColorChange,
+                ),
+            )
+            HorizontalDivider()
+
+            SectionHeader(stringResource(R.string.settings_notifications))
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.settings_expiry_reminders)) },
+                supportingContent = { Text(stringResource(R.string.settings_expiry_reminders_description)) },
+                trailingContent = { Switch(checked = state.preferences.expiryReminders, onCheckedChange = null) },
+                modifier = Modifier.toggleable(
+                    value = state.preferences.expiryReminders,
+                    role = Role.Switch,
+                    onValueChange = onExpiryRemindersChange,
                 ),
             )
             HorizontalDivider()

@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Nimi (A–Z)</string>
     <string name="cardlist_sort_date">Lisamise kuupäev (uuemad eespool)</string>
     <string name="cardlist_sort_custom">Kohandatud järjestus</string>
+    <string name="cardlist_sort_most_used">Enim kasutatud</string>
     <string name="cardlist_reorder">Muuda kaartide järjestust</string>
     <string name="cardlist_reorder_done">Valmis</string>
     <string name="cardlist_reorder_cancel">Tühista ümberjärjestamine</string>

@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Kartice ne mogu da se otvore</string>
     <string name="storage_error_message">Ovaj telefon više nema ključeve koji štite vaše kartice, na primer posle bezbednosnog resetovanja. Kartice ne mogu da se povrate na ovom uređaju. Izbrišite sve podatke da biste počeli iznova, a zatim uvezite rezervnu kopiju ako je imate.</string>
+    <string name="notification_channel_expiry">Podsetnici o isteku</string>
+    <string name="notification_expiry_title">Kartica uskoro ističe</string>
+    <string name="notification_expiry_text">„%1$s“ ističe %2$s.</string>
+    <string name="notification_expiry_public">Kartica u vašem novčaniku uskoro ističe.</string>
+    <string name="notification_travel_title">Obnovite lični dokument za putovanje</string>
+    <string name="notification_travel_text">„%1$s“ ističe %2$s. Mnoge zemlje za putovanje zahtevaju važenje od najmanje 6 meseci, pa ga obnovite u narednih mesec dana.</string>
+    <string name="notification_travel_public">Dokument u vašem novčaniku uskoro treba obnoviti.</string>
+    <string name="widget_title">Kartice lojalnosti</string>
+    <string name="widget_description">Omiljene kartice lojalnosti, kod na jedan dodir</string>
+    <string name="widget_empty">Dodajte karticu lojalnosti da biste je videli ovde.</string>
 </resources>

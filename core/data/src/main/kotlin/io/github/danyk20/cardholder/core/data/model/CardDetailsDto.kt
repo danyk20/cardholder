@@ -12,15 +12,17 @@ import kotlinx.serialization.json.Json
 internal sealed interface CardDetailsDto {
     @Serializable
     @SerialName("bank")
-    data class Bank(val number: String, val expiry: String, val holder: String) : CardDetailsDto
+    data class Bank(val number: String, val expiry: String, val holder: String, val notes: String = "") :
+        CardDetailsDto
 
     @Serializable
     @SerialName("id")
-    data class Id(val documentNumber: String? = null, val expiry: String? = null) : CardDetailsDto
+    data class Id(val documentNumber: String? = null, val expiry: String? = null, val notes: String = "") :
+        CardDetailsDto
 
     @Serializable
     @SerialName("loyalty")
-    data class Loyalty(val code: String) : CardDetailsDto
+    data class Loyalty(val code: String, val notes: String = "") : CardDetailsDto
 }
 
 internal val DetailsJson = Json {
@@ -29,15 +31,15 @@ internal val DetailsJson = Json {
 }
 
 internal fun CardDetails.toDto(): CardDetailsDto = when (this) {
-    is CardDetails.Bank -> CardDetailsDto.Bank(number, expiry.toString(), holder)
-    is CardDetails.Id -> CardDetailsDto.Id(documentNumber, expiry?.toString())
-    is CardDetails.Loyalty -> CardDetailsDto.Loyalty(code)
+    is CardDetails.Bank -> CardDetailsDto.Bank(number, expiry.toString(), holder, notes)
+    is CardDetails.Id -> CardDetailsDto.Id(documentNumber, expiry?.toString(), notes)
+    is CardDetails.Loyalty -> CardDetailsDto.Loyalty(code, notes)
 }
 
 internal fun CardDetailsDto.toModel(): CardDetails = when (this) {
-    is CardDetailsDto.Bank -> CardDetails.Bank(number, YearMonth.parse(expiry), holder)
-    is CardDetailsDto.Id -> CardDetails.Id(documentNumber, expiry?.let(LocalDate::parse))
-    is CardDetailsDto.Loyalty -> CardDetails.Loyalty(code)
+    is CardDetailsDto.Bank -> CardDetails.Bank(number, YearMonth.parse(expiry), holder, notes)
+    is CardDetailsDto.Id -> CardDetails.Id(documentNumber, expiry?.let(LocalDate::parse), notes)
+    is CardDetailsDto.Loyalty -> CardDetails.Loyalty(code, notes)
 }
 
 internal fun CardDetails.encode(): ByteArray =

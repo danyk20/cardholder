@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Kartlarınız açılamıyor</string>
     <string name="storage_error_message">Bu telefonda, örneğin bir güvenlik sıfırlamasından sonra, kartlarınızı koruyan anahtarlar artık bulunmuyor. Kartlar bu cihazda kurtarılamaz. Yeniden başlamak için tüm verileri silin, ardından varsa bir yedeği içe aktarın.</string>
+    <string name="notification_channel_expiry">Son kullanma tarihi hatırlatıcıları</string>
+    <string name="notification_expiry_title">Kartın süresi yakında doluyor</string>
+    <string name="notification_expiry_text">“%1$s” kartının süresi %2$s tarihinde doluyor.</string>
+    <string name="notification_expiry_public">Cüzdanınızdaki bir kartın süresi yakında doluyor.</string>
+    <string name="notification_travel_title">Seyahat için kimliğinizi yenileyin</string>
+    <string name="notification_travel_text">“%1$s” belgesinin süresi %2$s tarihinde doluyor. Birçok ülke seyahat için en az 6 aylık geçerlilik şartı arıyor, bu yüzden belgeyi önümüzdeki ay içinde yenileyin.</string>
+    <string name="notification_travel_public">Cüzdanınızdaki bir belgenin yakında yenilenmesi gerekiyor.</string>
+    <string name="widget_title">Sadakat kartları</string>
+    <string name="widget_description">Favori sadakat kartlarınız, kodları bir dokunuş uzağınızda</string>
+    <string name="widget_empty">Burada görmek için bir sadakat kartı ekleyin.</string>
 </resources>

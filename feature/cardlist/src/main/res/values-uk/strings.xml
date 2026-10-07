@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Назва (А–Я)</string>
     <string name="cardlist_sort_date">Дата додавання (спершу нові)</string>
     <string name="cardlist_sort_custom">Власний порядок</string>
+    <string name="cardlist_sort_most_used">Часто використовувані</string>
     <string name="cardlist_reorder">Змінити порядок карток</string>
     <string name="cardlist_reorder_done">Готово</string>
     <string name="cardlist_reorder_cancel">Скасувати зміну порядку</string>

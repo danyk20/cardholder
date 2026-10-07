@@ -1,16 +1,21 @@
 package io.github.danyk20.cardholder.core.model
 
-/** Payment card network, derived from the issuer identification number (IIN) prefix. */
-enum class CardNetwork(val displayName: String, val cvvLength: Int = 3) {
-    VISA("Visa"),
-    MASTERCARD("Mastercard"),
-    AMERICAN_EXPRESS("American Express", cvvLength = 4),
-    DISCOVER("Discover"),
-    DINERS_CLUB("Diners Club"),
-    JCB("JCB"),
-    UNIONPAY("UnionPay"),
-    MAESTRO("Maestro"),
-    UNKNOWN("Card"),
+/**
+ * Payment card network, derived from the issuer identification number (IIN) prefix. [lengths] are the
+ * card number lengths the network issues.
+ */
+@Suppress("MagicNumber")
+enum class CardNetwork(val displayName: String, val lengths: Set<Int>, val cvvLength: Int = 3) {
+    // 13-digit Visa numbers are no longer issued.
+    VISA("Visa", setOf(16, 19)),
+    MASTERCARD("Mastercard", setOf(16)),
+    AMERICAN_EXPRESS("American Express", setOf(15), cvvLength = 4),
+    DISCOVER("Discover", (16..19).toSet()),
+    DINERS_CLUB("Diners Club", (14..19).toSet()),
+    JCB("JCB", (16..19).toSet()),
+    UNIONPAY("UnionPay", (16..19).toSet()),
+    MAESTRO("Maestro", (12..19).toSet()),
+    UNKNOWN("Card", (12..19).toSet()),
     ;
 
     companion object {

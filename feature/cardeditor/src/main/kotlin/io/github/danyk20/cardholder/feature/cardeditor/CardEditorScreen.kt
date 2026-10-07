@@ -1,6 +1,9 @@
 package io.github.danyk20.cardholder.feature.cardeditor
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
@@ -22,6 +25,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
@@ -38,6 +43,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -89,9 +95,7 @@ fun CardEditorRoute(
             viewModel.onAuthenticationResult(purpose, result == AuthenticationResult.SUCCEEDED)
         }
     }
-    LaunchedEffect(state.savedCardId) {
-        state.savedCardId?.let { onSaved(it, !state.isEditing) }
-    }
+    LeaveWhenSaved(state, onSaved)
 
     var pendingSide by rememberSaveable { mutableStateOf(CardSide.FRONT) }
     var showBarcodeScanner by rememberSaveable { mutableStateOf(false) }
@@ -131,6 +135,7 @@ fun CardEditorRoute(
     val detailsActions = remember(viewModel) {
         DetailsActions(
             onTitleChange = viewModel::onTitleChange,
+            onNotesChange = viewModel::onNotesChange,
             onColorChange = viewModel::onColorChange,
             onLockedChange = viewModel::onLockedChange,
             onOpenSecuritySettings = {
@@ -202,6 +207,9 @@ fun CardEditorRoute(
         onUnlock = viewModel::onRetryAuthentication,
         onErrorShown = viewModel::onErrorShown,
         onKeepEditing = viewModel::onKeepEditing,
+        onSaveDuplicate = { viewModel.onSave(duplicateConfirmed = true) },
+        onDuplicateDismissed = viewModel::onDuplicateDismissed,
+        onPrefillMessageShown = viewModel::onPrefillMessageShown,
         onDiscard = {
             viewModel.onKeepEditing()
             onClose()
@@ -223,8 +231,19 @@ internal fun CardEditorScreen(
     onErrorShown: () -> Unit,
     onKeepEditing: () -> Unit,
     onDiscard: () -> Unit,
+    onSaveDuplicate: () -> Unit,
+    onDuplicateDismissed: () -> Unit,
+    onPrefillMessageShown: () -> Unit,
 ) {
+    val snackbarHostState = remember { SnackbarHostState() }
+    val prefillMessage = stringResource(R.string.editor_prefilled_from_photo)
+    LaunchedEffect(state.prefilledFromPhoto) {
+        if (!state.prefilledFromPhoto) return@LaunchedEffect
+        onPrefillMessageShown()
+        snackbarHostState.showSnackbar(prefillMessage, withDismissAction = true)
+    }
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = {
@@ -279,6 +298,31 @@ internal fun CardEditorScreen(
             }
         }
     }
+    state.duplicate?.let { duplicate ->
+        AlertDialog(
+            onDismissRequest = onDuplicateDismissed,
+            title = { Text(stringResource(R.string.editor_duplicate_title)) },
+            text = {
+                Text(
+                    stringResource(
+                        when (duplicate.reason) {
+                            DuplicateReason.SAME_SHOP -> R.string.editor_duplicate_shop
+                            DuplicateReason.SAME_BANK -> R.string.editor_duplicate_bank
+                            DuplicateReason.SAME_NAME -> R.string.editor_duplicate_name
+                        },
+                        duplicate.existingTitle,
+                    ),
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = onSaveDuplicate) { Text(stringResource(R.string.editor_duplicate_save)) }
+            },
+            dismissButton = {
+                TextButton(onClick = onDuplicateDismissed) { Text(stringResource(UiR.string.action_cancel)) }
+            },
+            properties = secureDialogProperties(),
+        )
+    }
     if (state.confirmDiscard) {
         AlertDialog(
             onDismissRequest = onKeepEditing,
@@ -325,5 +369,28 @@ private fun Message(text: String, padding: PaddingValues, action: (@Composable (
         Icon(CardholderIcons.Lock, contentDescription = null, modifier = Modifier.size(48.dp))
         Text(text, style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center)
         action?.invoke()
+    }
+}
+
+/**
+ * Leaves the editor once the card is saved. Expiry reminders need permission to notify (Android 13+),
+ * so it is asked first when the saved card has an expiry date.
+ */
+@Composable
+private fun LeaveWhenSaved(state: CardEditorUiState, onSaved: (CardId, Boolean) -> Unit) {
+    val context = LocalContext.current
+    val notificationPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
+        state.savedCardId?.let { id -> onSaved(id, !state.isEditing) }
+    }
+    LaunchedEffect(state.savedCardId) {
+        val id = state.savedCardId ?: return@LaunchedEffect
+        val mayNotify = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+            ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) ==
+            PackageManager.PERMISSION_GRANTED
+        if (state.wantsExpiryReminder && !mayNotify) {
+            notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+        } else {
+            onSaved(id, !state.isEditing)
+        }
     }
 }

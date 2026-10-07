@@ -14,6 +14,15 @@ enum class CardColor {
     PURPLE,
     BROWN,
     GRAPHITE,
+    WHITE,
+    SILVER,
+    GRAY,
+    SAND,
+    LEMON,
+    MINT,
+    SKY,
+    LAVENDER,
+    BLUSH,
     ;
 
     companion object {

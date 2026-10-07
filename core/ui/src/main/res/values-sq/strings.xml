@@ -49,4 +49,13 @@
     <string name="color_purple">Vjollcë</string>
     <string name="color_brown">Kafe</string>
     <string name="color_graphite">Grafit</string>
+    <string name="color_white">E bardhë</string>
+    <string name="color_silver">Argjendi</string>
+    <string name="color_gray">Gri</string>
+    <string name="color_sand">Ngjyrë rëre</string>
+    <string name="color_lemon">E verdhë limoni</string>
+    <string name="color_mint">Mente</string>
+    <string name="color_sky">Blu qielli</string>
+    <string name="color_lavender">Livando</string>
+    <string name="color_blush">Rozë e zbehtë</string>
 </resources>

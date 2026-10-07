@@ -60,6 +60,25 @@ class CardDaoTest {
         assertNull(dao.observe("1").first())
     }
 
+    @Test
+    fun `travel reminders are for IDs seven months ahead and fire once per expiry date`() = runTest {
+        dao.upsert(card("id", "Passport").copy(type = "ID", idCountry = "CH", expiresOn = "2027-03-01"))
+        dao.upsert(card("bank", "Visa").copy(type = "BANK", expiresOn = "2027-03-31"))
+        val today = "2026-10-07"
+        val inSevenMonths = "2027-05-07"
+        val ids = listOf("ID")
+
+        assertEquals(listOf("id"), dao.dueForTravelReminder(ids, today, inSevenMonths).map { it.id })
+        assertEquals(emptyList(), dao.dueForExpiryReminder(listOf("BANK", "ID"), today, "2026-11-07"))
+
+        dao.markTravelReminded("id", "2027-03-01")
+        assertEquals(emptyList(), dao.dueForTravelReminder(ids, today, inSevenMonths))
+
+        // A renewed document with a new expiry date is reminded of again.
+        dao.setExpiresOn("id", "2027-04-30")
+        assertEquals(listOf("id"), dao.dueForTravelReminder(ids, today, inSevenMonths).map { it.id })
+    }
+
     private fun card(id: String, title: String, sealedCvv: ByteArray? = null) = CardEntity(
         id = id,
         type = "LOYALTY",

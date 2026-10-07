@@ -45,6 +45,9 @@ class CardDetailViewModel @Inject constructor(
      */
     private var authenticatedHere = false
 
+    /** Each visit counts once towards the "most used" order. */
+    private var useRecorded = false
+
     init {
         launchSafely(onError = ::onUnexpectedError) {
             cardRepository.observeCard(cardId).distinctUntilChanged().collect { card ->
@@ -74,6 +77,10 @@ class CardDetailViewModel @Inject constructor(
     }
 
     fun onHideCvv() = _uiState.update { it.copy(cvv = null) }
+
+    fun onFavouriteChange(favourite: Boolean) {
+        launchSafely(onError = ::onUnexpectedError) { cardRepository.setFavourite(cardId, favourite) }
+    }
 
     fun onLockedChange(locked: Boolean) {
         // Removing a lock decrypts the card, so it needs the user's confirmation like viewing it.
@@ -144,6 +151,10 @@ class CardDetailViewModel @Inject constructor(
                 SecureResult.KeyInvalidated -> DetailsState.KeyInvalidated
                 is SecureResult.Failed -> DetailsState.Failed
             }
+        }
+        if (details is DetailsState.Loaded && !useRecorded) {
+            useRecorded = true
+            cardRepository.recordUse(card.id)
         }
         val promptNow = details == DetailsState.Locked && !promptedOnOpen
         if (details == DetailsState.Locked) promptedOnOpen = true

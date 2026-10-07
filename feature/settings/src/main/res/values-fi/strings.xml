@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Tumma</string>
     <string name="settings_dynamic_color">Dynaaminen väri</string>
     <string name="settings_dynamic_color_description">Käytä taustakuvan värejä</string>
+    <string name="settings_notifications">Ilmoitukset</string>
+    <string name="settings_expiry_reminders">Vanhenemismuistutukset</string>
+    <string name="settings_expiry_reminders_description">Ilmoita kuukautta ennen kuin pankkikortti tai henkilöllisyystodistus vanhenee ja 7 kuukautta ennen kuin henkilöllisyystodistus vanhenee (monet maat edellyttävät matkustettaessa 6 kuukauden voimassaoloa)</string>
     <string name="settings_security">Tietoturva</string>
     <string name="settings_allow_screenshots">Salli kuvakaappaukset</string>
     <string name="settings_allow_screenshots_description">Kunnes poistut sovelluksesta. Kuvakaappauksissa voi näkyä korttien numeroita, ja ne tallennetaan kuviisi, jotka voidaan varmuuskopioida pilveen.</string>

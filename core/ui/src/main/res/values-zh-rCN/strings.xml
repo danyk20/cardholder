@@ -43,4 +43,13 @@
     <string name="color_purple">紫色</string>
     <string name="color_brown">棕色</string>
     <string name="color_graphite">石墨色</string>
+    <string name="color_white">白色</string>
+    <string name="color_silver">银色</string>
+    <string name="color_gray">灰色</string>
+    <string name="color_sand">沙色</string>
+    <string name="color_lemon">柠檬黄</string>
+    <string name="color_mint">薄荷绿</string>
+    <string name="color_sky">天蓝色</string>
+    <string name="color_lavender">薰衣草紫</string>
+    <string name="color_blush">浅粉色</string>
 </resources>

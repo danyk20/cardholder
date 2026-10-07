@@ -3,6 +3,8 @@
     <string name="detail_edit">Redakto</string>
     <string name="detail_delete">Fshi</string>
     <string name="detail_more">Më shumë opsione</string>
+    <string name="detail_add_favourite">Shto te të preferuarat</string>
+    <string name="detail_remove_favourite">Hiq nga të preferuarat</string>
     <string name="detail_flip">Shfaq anën tjetër</string>
     <string name="detail_show_code">Shfaq kodin</string>
     <string name="detail_copied">%1$s u kopjua. Do të hiqet nga kujtesa e fragmenteve pas një minute.</string>
@@ -31,4 +33,5 @@
     <string name="field_shop">Dyqani</string>
     <string name="field_code">Kodi</string>
     <string name="field_format">Lloji i kodit</string>
+    <string name="field_notes">Shënime</string>
 </resources>

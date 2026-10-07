@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">डार्क</string>
     <string name="settings_dynamic_color">डाइनैमिक कलर</string>
     <string name="settings_dynamic_color_description">अपने वॉलपेपर के रंगों का इस्तेमाल करें</string>
+    <string name="settings_notifications">सूचनाएं</string>
+    <string name="settings_expiry_reminders">समाप्ति रिमाइंडर</string>
+    <string name="settings_expiry_reminders_description">बैंक कार्ड या आईडी की समयसीमा खत्म होने से एक महीने पहले और आईडी की समयसीमा खत्म होने से 7 महीने पहले सूचना दें (कई देशों में यात्रा के लिए 6 महीने की वैधता ज़रूरी होती है)</string>
     <string name="settings_security">सुरक्षा</string>
     <string name="settings_allow_screenshots">स्क्रीनशॉट की अनुमति दें</string>
     <string name="settings_allow_screenshots_description">जब तक आप ऐप से बाहर नहीं निकलते. स्क्रीनशॉट में कार्ड नंबर दिख सकते हैं और वे आपकी फ़ोटो में सेव होते हैं, जिनका क्लाउड पर बैकअप हो सकता है.</string>

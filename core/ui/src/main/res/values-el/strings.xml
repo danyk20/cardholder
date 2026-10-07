@@ -43,4 +43,13 @@
     <string name="color_purple">Μωβ</string>
     <string name="color_brown">Καφέ</string>
     <string name="color_graphite">Γραφίτης</string>
+    <string name="color_white">Λευκό</string>
+    <string name="color_silver">Ασημί</string>
+    <string name="color_gray">Γκρι</string>
+    <string name="color_sand">Άμμου</string>
+    <string name="color_lemon">Λεμονί</string>
+    <string name="color_mint">Μέντα</string>
+    <string name="color_sky">Γαλάζιο</string>
+    <string name="color_lavender">Λεβάντα</string>
+    <string name="color_blush">Απαλό ροζ</string>
 </resources>

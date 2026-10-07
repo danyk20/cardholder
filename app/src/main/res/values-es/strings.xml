@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">No se pueden abrir tus tarjetas</string>
     <string name="storage_error_message">Este teléfono ya no tiene las claves que protegen tus tarjetas; por ejemplo, tras un restablecimiento de seguridad. Las tarjetas no se pueden recuperar en este dispositivo. Elimina todos los datos para empezar de nuevo y, después, importa una copia de seguridad si tienes una.</string>
+    <string name="notification_channel_expiry">Recordatorios de caducidad</string>
+    <string name="notification_expiry_title">Una tarjeta caduca pronto</string>
+    <string name="notification_expiry_text">«%1$s» caduca el %2$s.</string>
+    <string name="notification_expiry_public">Una de tus tarjetas caduca pronto.</string>
+    <string name="notification_travel_title">Renueva tu documento para viajar</string>
+    <string name="notification_travel_text">«%1$s» caduca el %2$s. Muchos países exigen al menos 6 meses de validez para viajar, así que renuévalo durante el próximo mes.</string>
+    <string name="notification_travel_public">Uno de tus documentos debe renovarse pronto.</string>
+    <string name="widget_title">Tarjetas de fidelidad</string>
+    <string name="widget_description">Tus tarjetas de fidelidad favoritas, con el código a un toque</string>
+    <string name="widget_empty">Añade una tarjeta de fidelidad para verla aquí.</string>
 </resources>

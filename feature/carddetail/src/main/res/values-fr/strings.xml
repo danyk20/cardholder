@@ -3,6 +3,8 @@
     <string name="detail_edit">Modifier</string>
     <string name="detail_delete">Supprimer</string>
     <string name="detail_more">Plus d\'options</string>
+    <string name="detail_add_favourite">Ajouter aux favoris</string>
+    <string name="detail_remove_favourite">Retirer des favoris</string>
     <string name="detail_flip">Afficher l\'autre face</string>
     <string name="detail_show_code">Afficher le code</string>
     <string name="detail_copied">%1$s copié. Il sera effacé du presse-papiers dans une minute.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Magasin</string>
     <string name="field_code">Code</string>
     <string name="field_format">Type de code</string>
+    <string name="field_notes">Notes</string>
 </resources>

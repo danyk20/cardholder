@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Oscuro</string>
     <string name="settings_dynamic_color">Color dinámico</string>
     <string name="settings_dynamic_color_description">Usar los colores de tu fondo de pantalla</string>
+    <string name="settings_notifications">Notificaciones</string>
+    <string name="settings_expiry_reminders">Recordatorios de caducidad</string>
+    <string name="settings_expiry_reminders_description">Avisarme un mes antes de que caduque una tarjeta bancaria o un documento de identidad, y 7 meses antes en el caso de un documento de identidad (muchos países exigen 6 meses de validez para viajar)</string>
     <string name="settings_security">Seguridad</string>
     <string name="settings_allow_screenshots">Permitir capturas de pantalla</string>
     <string name="settings_allow_screenshots_description">Hasta que salgas de la aplicación. Las capturas pueden mostrar números de tarjeta y se guardan en tus fotos, que pueden copiarse en la nube.</string>

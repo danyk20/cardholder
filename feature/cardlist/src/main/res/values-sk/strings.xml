@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Názov (A – Z)</string>
     <string name="cardlist_sort_date">Dátum pridania (najnovšie prvé)</string>
     <string name="cardlist_sort_custom">Vlastné poradie</string>
+    <string name="cardlist_sort_most_used">Najpoužívanejšie</string>
     <string name="cardlist_reorder">Zmeniť poradie kariet</string>
     <string name="cardlist_reorder_done">Hotovo</string>
     <string name="cardlist_reorder_cancel">Zrušiť zmenu poradia</string>

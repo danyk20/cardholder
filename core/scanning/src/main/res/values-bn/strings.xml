@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">ক্যামেরার অনুমতি দিন</string>
     <string name="scanner_permission_denied">Cardholder-এর জন্য ক্যামেরার অ্যাক্সেস বন্ধ আছে। কোড স্ক্যান করতে অ্যাপের সেটিংসে গিয়ে এটি চালু করুন।</string>
     <string name="scanner_open_settings">সেটিংস খুলুন</string>
+    <string name="scanner_switch_camera">ক্যামেরা পাল্টান</string>
+    <string name="scanner_zoom">জুম %1$s</string>
     <string name="scanner_camera_unavailable">ক্যামেরা চালু করা যায়নি। ক্যামেরা ব্যবহার করছে এমন অন্য অ্যাপ বন্ধ করে আবার চেষ্টা করুন।</string>
     <string name="nfc_title">NFC দিয়ে কার্ড পড়ুন</string>
     <string name="nfc_hold_card">আপনার কার্ডটি ফোনের পেছনে সমানভাবে রাখুন এবং স্থির করে ধরে রাখুন।</string>

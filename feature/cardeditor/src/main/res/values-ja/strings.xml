@@ -14,6 +14,8 @@
     <string name="editor_side_missing">写真なし</string>
     <string name="editor_field_title">名前</string>
     <string name="editor_field_title_hint">デフォルト: %1$s</string>
+    <string name="editor_field_notes">メモ（省略可）</string>
+    <string name="editor_notes_hint">カードの他の情報と同様に暗号化されます（会員ランクや電話番号など）</string>
     <string name="editor_color">色</string>
     <string name="editor_lock">このカードをロック</string>
     <string name="editor_lock_description">詳細を表示する際に、指紋認証、顔認証、または画面ロックを必須にします</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">CVV は保存済みです。変更しない場合は空欄のままにしてください。</string>
     <string name="editor_cvv_remove">保存した CVV を削除</string>
     <string name="editor_card_expired">このカードは有効期限が切れています</string>
+    <string name="editor_number_valid">カード番号は有効です</string>
+    <string name="editor_expiry_valid">有効期限は正しく入力されています</string>
     <string name="editor_field_country">発行国</string>
     <string name="editor_choose_country">国を選択</string>
     <string name="editor_search_country">国を検索</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">ライセンス: %1$s</string>
     <string name="editor_logo_attribution">ライセンス: %1$s · 作成者: %2$s</string>
     <string name="editor_logo_download_failed">ロゴをダウンロードできませんでした。接続を確認して、もう一度お試しください。</string>
+    <string name="editor_prefilled_from_photo">一部の情報を写真から入力しました。内容を確認してください</string>
+    <string name="editor_duplicate_title">登録済みのカードですか？</string>
+    <string name="editor_duplicate_shop">この店舗のカード「%1$s」がすでにあります。このカードも保存しますか？</string>
+    <string name="editor_duplicate_bank">この銀行のカード「%1$s」がすでにあります。このカードも保存しますか？</string>
+    <string name="editor_duplicate_name">「%1$s」という名前のカードがすでにあります。このカードも保存しますか？</string>
+    <string name="editor_duplicate_save">このまま保存</string>
     <string name="editor_discard_title">変更を破棄しますか？</string>
     <string name="editor_discard_message">このカードへの変更は保存されません。</string>
     <string name="editor_discard">破棄</string>

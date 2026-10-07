@@ -8,6 +8,9 @@
     <string name="settings_theme_dark">Темна</string>
     <string name="settings_dynamic_color">Динамічні кольори</string>
     <string name="settings_dynamic_color_description">Використовувати кольори шпалер</string>
+    <string name="settings_notifications">Сповіщення</string>
+    <string name="settings_expiry_reminders">Нагадування про термін дії</string>
+    <string name="settings_expiry_reminders_description">Сповіщати за місяць до закінчення терміну дії банківської картки чи документа та за 7 місяців до закінчення терміну дії документа (для подорожей до багатьох країн потрібно щонайменше 6 місяців дії)</string>
 
     <string name="settings_security">Безпека</string>
     <string name="settings_allow_screenshots">Дозволити знімки екрана</string>

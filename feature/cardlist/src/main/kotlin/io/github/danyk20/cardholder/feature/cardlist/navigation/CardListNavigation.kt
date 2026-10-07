@@ -3,6 +3,7 @@ package io.github.danyk20.cardholder.feature.cardlist.navigation
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import io.github.danyk20.cardholder.core.model.Card
+import io.github.danyk20.cardholder.core.ui.ProvideNavAnimatedVisibilityScope
 import io.github.danyk20.cardholder.feature.cardlist.CardListRoute
 import kotlinx.serialization.Serializable
 
@@ -16,11 +17,13 @@ fun NavGraphBuilder.cardListScreen(
     onOpenSettings: () -> Unit,
 ) {
     composable<CardListDestination> {
-        CardListRoute(
-            onCardClick = onCardClick,
-            onCardLongClick = onCardLongClick,
-            onAddCard = onAddCard,
-            onOpenSettings = onOpenSettings,
-        )
+        ProvideNavAnimatedVisibilityScope(this) {
+            CardListRoute(
+                onCardClick = onCardClick,
+                onCardLongClick = onCardLongClick,
+                onAddCard = onAddCard,
+                onOpenSettings = onOpenSettings,
+            )
+        }
     }
 }

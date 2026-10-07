@@ -14,6 +14,8 @@
     <string name="editor_side_missing">কোনো ছবি নেই</string>
     <string name="editor_field_title">নাম</string>
     <string name="editor_field_title_hint">ডিফল্ট: %1$s</string>
+    <string name="editor_field_notes">নোট (ঐচ্ছিক)</string>
+    <string name="editor_notes_hint">কার্ডের বাকি তথ্যের মতোই এনক্রিপ্ট করা হয়, যেমন মেম্বারশিপ লেভেল বা ফোন নম্বর</string>
     <string name="editor_color">রঙ</string>
     <string name="editor_lock">এই কার্ডটি লক করুন</string>
     <string name="editor_lock_description">এর যেকোনো বিবরণ দেখতে ফিঙ্গারপ্রিন্ট, ফেস বা স্ক্রিন লক আবশ্যক করুন</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">একটি CVV সেভ করা আছে। সেটি রেখে দিতে ঘরটি ফাঁকা রাখুন।</string>
     <string name="editor_cvv_remove">সেভ করা CVV সরান</string>
     <string name="editor_card_expired">এই কার্ডের মেয়াদ শেষ হয়ে গেছে</string>
+    <string name="editor_number_valid">কার্ড নম্বর সঠিক</string>
+    <string name="editor_expiry_valid">মেয়াদের তারিখ সঠিক</string>
     <string name="editor_field_country">ইস্যুকারী দেশ</string>
     <string name="editor_choose_country">দেশ বেছে নিন</string>
     <string name="editor_search_country">দেশ খুঁজুন</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">লাইসেন্স: %1$s</string>
     <string name="editor_logo_attribution">লাইসেন্স: %1$s · নির্মাতা: %2$s</string>
     <string name="editor_logo_download_failed">লোগোটি ডাউনলোড করা যায়নি। আপনার ইন্টারনেট কানেকশন চেক করে আবার চেষ্টা করুন।</string>
+    <string name="editor_prefilled_from_photo">কিছু তথ্য ছবি থেকে পূরণ করা হয়েছে – অনুগ্রহ করে যাচাই করে নিন</string>
+    <string name="editor_duplicate_title">আগে থেকেই আপনার ওয়ালেটে আছে?</string>
+    <string name="editor_duplicate_shop">এই দোকানের একটি কার্ড আপনার কাছে আগে থেকেই আছে: “%1$s”। এটিও সেভ করবেন?</string>
+    <string name="editor_duplicate_bank">এই ব্যাংকের একটি কার্ড আপনার কাছে আগে থেকেই আছে: “%1$s”। এটিও সেভ করবেন?</string>
+    <string name="editor_duplicate_name">“%1$s” নামে একটি কার্ড আপনার কাছে আগে থেকেই আছে। এটিও সেভ করবেন?</string>
+    <string name="editor_duplicate_save">তবুও সেভ করুন</string>
     <string name="editor_discard_title">পরিবর্তনগুলো বাদ দেবেন?</string>
     <string name="editor_discard_message">এই কার্ডে করা আপনার পরিবর্তনগুলো সেভ হবে না।</string>
     <string name="editor_discard">বাদ দিন</string>

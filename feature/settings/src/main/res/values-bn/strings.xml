@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">ডার্ক</string>
     <string name="settings_dynamic_color">ডায়নামিক রঙ</string>
     <string name="settings_dynamic_color_description">আপনার ওয়ালপেপারের রঙ ব্যবহার করুন</string>
+    <string name="settings_notifications">বিজ্ঞপ্তি</string>
+    <string name="settings_expiry_reminders">মেয়াদ শেষের রিমাইন্ডার</string>
+    <string name="settings_expiry_reminders_description">ব্যাংক কার্ড বা আইডির মেয়াদ শেষ হওয়ার এক মাস আগে এবং আইডির মেয়াদ শেষ হওয়ার ৭ মাস আগে আমাকে জানান (অনেক দেশে ভ্রমণের জন্য ৬ মাসের মেয়াদ প্রয়োজন)</string>
     <string name="settings_security">নিরাপত্তা</string>
     <string name="settings_allow_screenshots">স্ক্রিনশটের অনুমতি দিন</string>
     <string name="settings_allow_screenshots_description">যতক্ষণ না আপনি অ্যাপ থেকে বের হন। স্ক্রিনশটে কার্ড নম্বর দেখা যেতে পারে এবং সেগুলি আপনার ছবিতে সেভ হয়, যার ক্লাউডে ব্যাকআপ হতে পারে।</string>

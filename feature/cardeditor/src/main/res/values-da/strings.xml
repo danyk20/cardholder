@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Intet billede</string>
     <string name="editor_field_title">Navn</string>
     <string name="editor_field_title_hint">Standard: %1$s</string>
+    <string name="editor_field_notes">Noter (valgfrit)</string>
+    <string name="editor_notes_hint">Krypteres ligesom resten af kortet, f.eks. et medlemsniveau eller et telefonnummer</string>
     <string name="editor_color">Farve</string>
     <string name="editor_lock">Lås dette kort</string>
     <string name="editor_lock_description">Kræv fingeraftryk, ansigt eller skærmlås for at se kortets oplysninger</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">Der er gemt en CVV. Lad feltet være tomt for at beholde den.</string>
     <string name="editor_cvv_remove">Fjern gemt CVV</string>
     <string name="editor_card_expired">Dette kort er udløbet</string>
+    <string name="editor_number_valid">Kortnummeret er gyldigt</string>
+    <string name="editor_expiry_valid">Udløbsdatoen er gyldig</string>
     <string name="editor_field_country">Udstedelsesland</string>
     <string name="editor_choose_country">Vælg land</string>
     <string name="editor_search_country">Søg efter lande</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Licens: %1$s</string>
     <string name="editor_logo_attribution">Licens: %1$s · af %2$s</string>
     <string name="editor_logo_download_failed">Logoet kunne ikke downloades. Tjek din forbindelse, og prøv igen.</string>
+    <string name="editor_prefilled_from_photo">Nogle oplysninger blev udfyldt ud fra billedet – tjek dem</string>
+    <string name="editor_duplicate_title">Allerede i din tegnebog?</string>
+    <string name="editor_duplicate_shop">Du har allerede et kort fra denne butik: »%1$s«. Vil du også gemme dette?</string>
+    <string name="editor_duplicate_bank">Du har allerede et kort fra denne bank: »%1$s«. Vil du også gemme dette?</string>
+    <string name="editor_duplicate_name">Du har allerede et kort med navnet »%1$s«. Vil du også gemme dette?</string>
+    <string name="editor_duplicate_save">Gem alligevel</string>
     <string name="editor_discard_title">Vil du kassere ændringerne?</string>
     <string name="editor_discard_message">Dine ændringer af dette kort bliver ikke gemt.</string>
     <string name="editor_discard">Kassér</string>

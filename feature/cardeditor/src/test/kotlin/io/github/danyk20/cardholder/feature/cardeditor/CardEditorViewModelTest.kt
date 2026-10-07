@@ -20,12 +20,15 @@ import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeBarcodeImageScanner
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeCardTextScanner
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
 import io.github.danyk20.cardholder.core.testing.repository.FakeLogoDownloader
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
 import io.github.danyk20.cardholder.core.testing.repository.MIGROS_LOGO_URL
 import io.github.danyk20.cardholder.core.testing.repository.UBS_LOGO_URL
+import java.time.LocalDate
 import java.time.YearMonth
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
@@ -47,6 +50,7 @@ class CardEditorViewModelTest {
     private val repository = FakeCardRepository()
     private val deviceSecurity = FakeDeviceSecurity()
     private val barcodeScanner = FakeBarcodeImageScanner()
+    private val textScanner = FakeCardTextScanner()
     private val logoDownloader = FakeLogoDownloader()
 
     private fun viewModel(cardId: String? = null) = CardEditorViewModel(
@@ -56,7 +60,8 @@ class CardEditorViewModelTest {
         catalogues = EditorCatalogues(FakeShopRepository(), FakeBankRepository(), FakeCountryRepository()),
         deviceSecurity = deviceSecurity,
         validator = CardDraftValidator(),
-        barcodeImageScanner = barcodeScanner,
+        photoReader = CardPhotoReader(textScanner, barcodeScanner),
+        preferencesRepository = FakeUserPreferencesRepository(),
         logoDownloader = logoDownloader,
     )
 
@@ -130,6 +135,88 @@ class CardEditorViewModelTest {
         assertEquals(CvvChange.Set("123"), content.cvv)
         assertIs<ImageChange.Replace>(draft.front)
         assertEquals(ImageChange.Keep, draft.back)
+    }
+
+    @Test
+    fun `warns before saving a second card from the same shop`() = runTest {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails) // custom shop "Corner Coffee"
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.LOYALTY)
+        viewModel.onSidesDone()
+        viewModel.onCustomShop("corner coffee")
+        viewModel.onCodeChange("12345678")
+
+        viewModel.onSave()
+
+        assertEquals(
+            DuplicateWarning(DuplicateReason.SAME_SHOP, TestCards.loyalty.title),
+            viewModel.uiState.value.duplicate,
+        )
+        assertNull(viewModel.uiState.value.savedCardId)
+        assertTrue(repository.savedDrafts.isEmpty())
+
+        viewModel.onSave(duplicateConfirmed = true)
+
+        assertNull(viewModel.uiState.value.duplicate)
+        assertNotNull(viewModel.uiState.value.savedCardId)
+    }
+
+    @Test
+    fun `warns about a card with the same name and not when editing`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.BANK)
+        viewModel.onSidesDone()
+        viewModel.onNumberChange("5555555555554444")
+        viewModel.onExpiryChange("0430")
+        viewModel.onHolderChange("Jane Doe")
+        viewModel.onTitleChange(" everyday visa ")
+
+        viewModel.onSave()
+        assertEquals(DuplicateReason.SAME_NAME, viewModel.uiState.value.duplicate?.reason)
+
+        val editor = viewModel(TestCards.visa.id.value)
+        editor.onSave()
+        assertNull(editor.uiState.value.duplicate)
+        assertNotNull(editor.uiState.value.savedCardId)
+    }
+
+    @Test
+    fun `fills empty bank card fields from the photos but keeps typed values`() = runTest {
+        textScanner.lines["content://front"] = listOf("VISA", "4111 1111 1111 1111", "VALID THRU 08/29", "JANE DOE")
+        textScanner.lines["content://back"] = listOf("1111 123")
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.BANK)
+        viewModel.onHolderChange("Jane M. Doe") // typed before scanning: must stay
+
+        viewModel.onSideImagePicked(CardSide.FRONT, "content://front")
+        viewModel.onSideImagePicked(CardSide.BACK, "content://back")
+
+        val state = viewModel.uiState.value
+        assertEquals("4111111111111111", state.bank.number)
+        assertEquals("0829", state.bank.expiry)
+        assertEquals("Jane M. Doe", state.bank.holder)
+        assertTrue(state.prefilledFromPhoto)
+        viewModel.onPrefillMessageShown()
+        assertFalse(viewModel.uiState.value.prefilledFromPhoto)
+    }
+
+    @Test
+    fun `fills an id card from its machine-readable zone`() = runTest {
+        textScanner.lines["content://back"] = listOf(
+            "IDD<<T220001293<<<<<<<<<<<<<<<",
+            "6408125<2010315D<<<<<<<<<<<<<4",
+            "MUSTERMANN<<ERIKA<<<<<<<<<<<<<",
+        )
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.ID)
+
+        viewModel.onSideImagePicked(CardSide.BACK, "content://back")
+
+        val state = viewModel.uiState.value
+        assertEquals("T22000129", state.id.documentNumber)
+        assertEquals(LocalDate.of(2020, 10, 31), state.id.expiry)
+        assertEquals("Erika Mustermann", state.title)
     }
 
     @Test

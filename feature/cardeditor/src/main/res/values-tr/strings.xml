@@ -16,6 +16,8 @@
 
     <string name="editor_field_title">Ad</string>
     <string name="editor_field_title_hint">Varsayılan: %1$s</string>
+    <string name="editor_field_notes">Notlar (isteğe bağlı)</string>
+    <string name="editor_notes_hint">Kartın geri kalanı gibi şifrelenir; ör. üyelik seviyesi veya telefon numarası</string>
     <string name="editor_color">Renk</string>
     <string name="editor_lock">Bu kartı kilitle</string>
     <string name="editor_lock_description">Ayrıntılarından herhangi birini görmek için parmak izi, yüz veya ekran kilidi iste</string>
@@ -35,6 +37,8 @@
     <string name="editor_cvv_stored">Kayıtlı bir CVV var. Korumak için boş bırakın.</string>
     <string name="editor_cvv_remove">Kayıtlı CVV\'yi kaldır</string>
     <string name="editor_card_expired">Bu kartın süresi dolmuş</string>
+    <string name="editor_number_valid">Kart numarası geçerli</string>
+    <string name="editor_expiry_valid">Son kullanma tarihi geçerli</string>
 
     <string name="editor_field_country">Veren ülke</string>
     <string name="editor_choose_country">Ülke seçin</string>
@@ -64,6 +68,12 @@
     <string name="editor_logo_license">Lisans: %1$s</string>
     <string name="editor_logo_attribution">Lisans: %1$s · Yazar: %2$s</string>
     <string name="editor_logo_download_failed">Logo indirilemedi. Bağlantınızı kontrol edip tekrar deneyin.</string>
+    <string name="editor_prefilled_from_photo">Bazı bilgiler fotoğraftan dolduruldu – lütfen kontrol edin</string>
+    <string name="editor_duplicate_title">Bu kart zaten kayıtlı mı?</string>
+    <string name="editor_duplicate_shop">Bu mağazaya ait bir kartınız zaten var: “%1$s”. Bunu da kaydetmek istiyor musunuz?</string>
+    <string name="editor_duplicate_bank">Bu bankaya ait bir kartınız zaten var: “%1$s”. Bunu da kaydetmek istiyor musunuz?</string>
+    <string name="editor_duplicate_name">“%1$s” adlı bir kartınız zaten var. Bunu da kaydetmek istiyor musunuz?</string>
+    <string name="editor_duplicate_save">Yine de kaydet</string>
     <string name="editor_discard_title">Değişiklikler silinsin mi?</string>
     <string name="editor_discard_message">Bu kartta yaptığınız değişiklikler kaydedilmeyecek.</string>
     <string name="editor_discard">Sil</string>

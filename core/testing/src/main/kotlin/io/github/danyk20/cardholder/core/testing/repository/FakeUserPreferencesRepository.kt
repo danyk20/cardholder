@@ -15,4 +15,8 @@ class FakeUserPreferencesRepository : UserPreferencesRepository {
     override suspend fun setDynamicColor(enabled: Boolean) = preferences.update { it.copy(useDynamicColor = enabled) }
 
     override suspend fun setCardSort(sort: CardSort) = preferences.update { it.copy(cardSort = sort) }
+
+    override suspend fun setExpiryReminders(enabled: Boolean) = preferences.update {
+        it.copy(expiryReminders = enabled)
+    }
 }

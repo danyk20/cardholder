@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">اجازه دسترسی به دوربین</string>
     <string name="scanner_permission_denied">دسترسی Cardholder به دوربین خاموش است. برای اسکن کدها، آن را در تنظیمات برنامه روشن کنید.</string>
     <string name="scanner_open_settings">باز کردن تنظیمات</string>
+    <string name="scanner_switch_camera">تعویض دوربین</string>
+    <string name="scanner_zoom">بزرگ‌نمایی %1$s</string>
     <string name="scanner_camera_unavailable">دوربین راه‌اندازی نشد. برنامه‌های دیگری را که از آن استفاده می‌کنند ببندید و دوباره امتحان کنید.</string>
     <string name="nfc_title">خواندن کارت با NFC</string>
     <string name="nfc_hold_card">کارت را صاف پشت تلفنتان نگه دارید و آن را حرکت ندهید.</string>

@@ -3,6 +3,8 @@
     <string name="detail_edit">Изменить</string>
     <string name="detail_delete">Удалить</string>
     <string name="detail_more">Другие действия</string>
+    <string name="detail_add_favourite">Добавить в избранное</string>
+    <string name="detail_remove_favourite">Удалить из избранного</string>
     <string name="detail_flip">Показать другую сторону</string>
     <string name="detail_show_code">Показать код</string>
     <string name="detail_copied">Скопировано: %1$s. Через минуту данные будут удалены из буфера обмена.</string>
@@ -31,4 +33,5 @@
     <string name="field_shop">Магазин</string>
     <string name="field_code">Код</string>
     <string name="field_format">Тип кода</string>
+    <string name="field_notes">Заметки</string>
 </resources>

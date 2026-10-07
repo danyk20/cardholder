@@ -8,6 +8,9 @@
     <string name="settings_dynamic_color">Dynamic colour</string>
     <string name="settings_dynamic_color_description">Use colours from your wallpaper</string>
 
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_expiry_reminders">Expiry reminders</string>
+    <string name="settings_expiry_reminders_description">Notify me a month before a bank card or ID expires, and 7 months before an ID expires (many countries require 6 months of validity for travel)</string>
     <string name="settings_security">Security</string>
     <string name="settings_allow_screenshots">Allow screenshots</string>
     <string name="settings_allow_screenshots_description">Until you leave the app. Screenshots can show card numbers and are saved to your photos, which may be backed up to the cloud.</string>

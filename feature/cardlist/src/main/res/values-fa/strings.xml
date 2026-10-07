@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">نام (الف–ی)</string>
     <string name="cardlist_sort_date">تاریخ افزودن (جدیدترین اول)</string>
     <string name="cardlist_sort_custom">ترتیب دلخواه</string>
+    <string name="cardlist_sort_most_used">پرکاربردترین</string>
     <string name="cardlist_reorder">تغییر ترتیب کارت‌ها</string>
     <string name="cardlist_reorder_done">تمام</string>
     <string name="cardlist_reorder_cancel">لغو تغییر ترتیب</string>

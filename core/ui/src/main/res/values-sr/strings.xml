@@ -43,4 +43,13 @@
     <string name="color_purple">Љубичаста</string>
     <string name="color_brown">Смеђа</string>
     <string name="color_graphite">Графитна</string>
+    <string name="color_white">Бела</string>
+    <string name="color_silver">Сребрна</string>
+    <string name="color_gray">Сива</string>
+    <string name="color_sand">Пешчана</string>
+    <string name="color_lemon">Лимун жута</string>
+    <string name="color_mint">Ментол</string>
+    <string name="color_sky">Небескоплава</string>
+    <string name="color_lavender">Лаванда</string>
+    <string name="color_blush">Пудер розе</string>
 </resources>

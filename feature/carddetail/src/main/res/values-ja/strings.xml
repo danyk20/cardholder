@@ -3,6 +3,8 @@
     <string name="detail_edit">編集</string>
     <string name="detail_delete">削除</string>
     <string name="detail_more">その他のオプション</string>
+    <string name="detail_add_favourite">お気に入りに追加</string>
+    <string name="detail_remove_favourite">お気に入りから削除</string>
     <string name="detail_flip">反対の面を表示</string>
     <string name="detail_show_code">コードを表示</string>
     <string name="detail_copied">%1$s をコピーしました。1 分後にクリップボードから消去されます。</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">店舗</string>
     <string name="field_code">コード</string>
     <string name="field_format">コードの種類</string>
+    <string name="field_notes">メモ</string>
 </resources>

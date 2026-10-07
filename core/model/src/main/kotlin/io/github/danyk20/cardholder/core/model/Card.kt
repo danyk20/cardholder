@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.core.model
 
 import java.time.Instant
+import java.time.LocalDate
 
 /**
  * A stored card with its **non-sensitive** information.
@@ -23,6 +24,16 @@ data class Card(
     val updatedAt: Instant,
     /** Place in the user's custom order; lower comes first. */
     val position: Int = 0,
+    /** Shown first in the list, in app shortcuts and in the widget. */
+    val isFavourite: Boolean = false,
+    /** How often the card was used (its code shown or its details opened), for the "most used" order. */
+    val useCount: Int = 0,
+    val lastUsedAt: Instant? = null,
+    /**
+     * The last day the card is valid. Kept outside the encrypted details so expiry reminders work
+     * without unlocking the card; treated like the title, which is also shown without unlocking.
+     */
+    val expiresOn: LocalDate? = null,
 ) {
     val type: CardType get() = info.type
 }

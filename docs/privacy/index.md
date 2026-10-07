@@ -5,7 +5,7 @@ permalink: /privacy/
 
 # Cardholder privacy policy
 
-_Last updated: 6 October 2026_
+_Last updated: 7 October 2026_
 
 Cardholder is an open-source app for storing bank, ID and loyalty cards on an Android phone. It is developed by Daniel Košč ("I", "me"). This policy explains what happens to your data when you use the app.
 
@@ -35,7 +35,7 @@ When you uninstall the app or clear its data, all of it is permanently deleted.
 - **NFC** – to read the card number and expiry date from a contactless bank card you hold to the phone. The data is read on the device and only used to fill in the form. The CVV and PIN cannot be read and are never requested.
 - **Internet** – only for downloading official logos (see below).
 
-Photos of card sides are taken with the Google Play services document scanner, which runs on the device and returns the image directly to the app.
+Photos of card sides are taken with the Google Play services document scanner, which runs on the device and returns the image directly to the app. To save typing, the app reads the text and barcode on those photos with Google ML Kit on the device (for example the card number, expiry date or the machine-readable lines of an ID card) and suggests them in the form; the recognised text is kept in memory only and is not sent anywhere.
 
 ## Logo downloads
 

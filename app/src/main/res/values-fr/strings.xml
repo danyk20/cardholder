@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Impossible d\'ouvrir vos cartes</string>
     <string name="storage_error_message">Ce téléphone ne dispose plus des clés qui protègent vos cartes, par exemple après une réinitialisation de la sécurité. Les cartes ne peuvent pas être récupérées sur cet appareil. Supprimez toutes les données pour recommencer, puis importez une sauvegarde si vous en avez une.</string>
+    <string name="notification_channel_expiry">Rappels d\'expiration</string>
+    <string name="notification_expiry_title">Une carte expire bientôt</string>
+    <string name="notification_expiry_text">« %1$s » expire le %2$s.</string>
+    <string name="notification_expiry_public">Une de vos cartes expire bientôt.</string>
+    <string name="notification_travel_title">Renouvelez votre pièce d\'identité pour voyager</string>
+    <string name="notification_travel_text">« %1$s » expire le %2$s. De nombreux pays exigent une validité d\'au moins 6 mois pour voyager : pensez à renouveler ce document dans le mois qui vient.</string>
+    <string name="notification_travel_public">Un de vos documents doit bientôt être renouvelé.</string>
+    <string name="widget_title">Cartes de fidélité</string>
+    <string name="widget_description">Vos cartes de fidélité favorites, leur code en un seul geste</string>
+    <string name="widget_empty">Ajoutez une carte de fidélité pour l\'afficher ici.</string>
 </resources>

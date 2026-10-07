@@ -1,13 +1,20 @@
 package io.github.danyk20.cardholder
 
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -48,19 +55,28 @@ class MainActivity : FragmentActivity() {
                 is MainActivityUiState.Ready -> state.preferences
                 is MainActivityUiState.StorageUnavailable -> state.preferences
             }
-            CardholderTheme(
-                darkTheme = when (preferences.themeMode) {
-                    ThemeMode.SYSTEM -> isSystemInDarkTheme()
-                    ThemeMode.LIGHT -> false
-                    ThemeMode.DARK -> true
-                },
-                dynamicColor = preferences.useDynamicColor,
-            ) {
-                if (uiState is MainActivityUiState.StorageUnavailable) {
-                    StorageErrorScreen(onEraseAllData = viewModel::onEraseAllData)
-                } else {
-                    CompositionLocalProvider(LocalScreenCaptureAllowed provides screenCaptureAllowed) {
-                        CardholderNavHost()
+            val darkTheme = when (preferences.themeMode) {
+                ThemeMode.SYSTEM -> isSystemInDarkTheme()
+                ThemeMode.LIGHT -> false
+                ThemeMode.DARK -> true
+            }
+            // System bar icons follow the app's theme, which can differ from the system's.
+            DisposableEffect(darkTheme) {
+                enableEdgeToEdge(
+                    statusBarStyle = SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT) { darkTheme },
+                    navigationBarStyle = SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT) { darkTheme },
+                )
+                onDispose {}
+            }
+            CardholderTheme(darkTheme = darkTheme, dynamicColor = preferences.useDynamicColor) {
+                // Screens fade over the app's background, not the window's, so dark mode doesn't flash light.
+                Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    if (uiState is MainActivityUiState.StorageUnavailable) {
+                        StorageErrorScreen(onEraseAllData = viewModel::onEraseAllData)
+                    } else {
+                        CompositionLocalProvider(LocalScreenCaptureAllowed provides screenCaptureAllowed) {
+                            CardholderNavHost()
+                        }
                     }
                 }
             }

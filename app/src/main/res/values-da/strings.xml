@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Dine kort kan ikke åbnes</string>
     <string name="storage_error_message">Denne telefon har ikke længere de nøgler, der beskytter dine kort, f.eks. efter en sikkerhedsnulstilling. Kortene kan ikke gendannes på denne enhed. Slet alle data for at starte forfra, og importér derefter en backup, hvis du har en.</string>
+    <string name="notification_channel_expiry">Påmindelser om udløb</string>
+    <string name="notification_expiry_title">Kort udløber snart</string>
+    <string name="notification_expiry_text">»%1$s« udløber den %2$s.</string>
+    <string name="notification_expiry_public">Et kort i din tegnebog udløber snart.</string>
+    <string name="notification_travel_title">Forny dit ID før du rejser</string>
+    <string name="notification_travel_text">»%1$s« udløber den %2$s. Mange lande kræver mindst 6 måneders gyldighed ved rejser, så forny det inden for den næste måned.</string>
+    <string name="notification_travel_public">Et dokument i din tegnebog skal snart fornyes.</string>
+    <string name="widget_title">Kundekort</string>
+    <string name="widget_description">Dine foretrukne kundekort, ét tryk fra koden</string>
+    <string name="widget_empty">Tilføj et kundekort for at se det her.</string>
 </resources>

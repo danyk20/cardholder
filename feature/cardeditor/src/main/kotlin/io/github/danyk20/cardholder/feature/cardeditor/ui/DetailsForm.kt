@@ -37,6 +37,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.theme.CardAccentColors
+import io.github.danyk20.cardholder.core.designsystem.theme.CardFaceColors
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
 import io.github.danyk20.cardholder.core.model.BrandRef
@@ -51,6 +52,7 @@ import io.github.danyk20.cardholder.feature.cardeditor.R
 /** Callbacks of the details form, grouped to keep composable signatures readable. */
 internal class DetailsActions(
     val onTitleChange: (String) -> Unit,
+    val onNotesChange: (String) -> Unit,
     val onColorChange: (CardColor) -> Unit,
     val onLockedChange: (Boolean) -> Unit,
     val onOpenSecuritySettings: () -> Unit,
@@ -102,6 +104,15 @@ internal fun DetailsForm(
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
         )
+        OutlinedTextField(
+            value = state.notes,
+            onValueChange = actions.onNotesChange,
+            label = { Text(stringResource(R.string.editor_field_notes)) },
+            supportingText = { Text(stringResource(R.string.editor_notes_hint)) },
+            minLines = 2,
+            maxLines = 6,
+            modifier = Modifier.fillMaxWidth(),
+        )
         if (state.loyalty.shop !is BrandRef.Known || state.type != CardType.LOYALTY) {
             ColorPicker(selected = state.color, onSelect = actions.onColorChange)
         }
@@ -128,21 +139,33 @@ private fun ColorPicker(selected: CardColor, onSelect: (CardColor) -> Unit) {
             CardColor.entries.forEach { color ->
                 val isSelected = color == selected
                 val description = stringResource(color.label)
+                val swatch = CardAccentColors.getValue(color.name)
                 Box(
                     contentAlignment = Alignment.Center,
                     modifier = Modifier
-                        .size(40.dp)
+                        .size(48.dp)
                         .clip(CircleShape)
-                        .background(CardAccentColors.getValue(color.name))
+                        .background(swatch)
                         .border(
-                            width = if (isSelected) 3.dp else 0.dp,
-                            color = if (isSelected) MaterialTheme.colorScheme.onSurface else Color.Transparent,
+                            // A thin outline keeps white and other light swatches visible on a light screen.
+                            width = if (isSelected) 3.dp else 1.dp,
+                            color = if (isSelected) {
+                                MaterialTheme.colorScheme.onSurface
+                            } else {
+                                MaterialTheme.colorScheme.outlineVariant
+                            },
                             shape = CircleShape,
                         )
                         .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(color) })
                         .semantics { contentDescription = description },
                 ) {
-                    if (isSelected) Icon(CardholderIcons.Check, contentDescription = null, tint = Color.White)
+                    if (isSelected) {
+                        Icon(
+                            CardholderIcons.Check,
+                            contentDescription = null,
+                            tint = CardFaceColors.from(swatch).content,
+                        )
+                    }
                 }
             }
         }

@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Não é possível abrir seus cartões</string>
     <string name="storage_error_message">Este celular não tem mais as chaves que protegem seus cartões, por exemplo, após uma redefinição de segurança. Os cartões não podem ser recuperados neste dispositivo. Exclua todos os dados para começar de novo e, depois, importe um backup, se tiver um.</string>
+    <string name="notification_channel_expiry">Lembretes de vencimento</string>
+    <string name="notification_expiry_title">Cartão vence em breve</string>
+    <string name="notification_expiry_text">“%1$s” vence em %2$s.</string>
+    <string name="notification_expiry_public">Um cartão da sua carteira vence em breve.</string>
+    <string name="notification_travel_title">Renove seu documento para viajar</string>
+    <string name="notification_travel_text">“%1$s” vence em %2$s. Muitos países exigem pelo menos 6 meses de validade para viajar, então renove o documento no próximo mês.</string>
+    <string name="notification_travel_public">Um documento da sua carteira precisa ser renovado em breve.</string>
+    <string name="widget_title">Cartões fidelidade</string>
+    <string name="widget_description">Seus cartões fidelidade favoritos, a um toque do código</string>
+    <string name="widget_empty">Adicione um cartão fidelidade para vê-lo aqui.</string>
 </resources>

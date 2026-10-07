@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">تعذّر فتح بطاقاتك</string>
     <string name="storage_error_message">لم يعد هذا الهاتف يحتوي على المفاتيح التي تحمي بطاقاتك، على سبيل المثال بعد إعادة ضبط الأمان. لا يمكن استرداد البطاقات على هذا الجهاز. احذف جميع البيانات للبدء من جديد، ثم استورد نسخة احتياطية إذا كانت لديك.</string>
+    <string name="notification_channel_expiry">تذكيرات انتهاء الصلاحية</string>
+    <string name="notification_expiry_title">تنتهي صلاحية بطاقة قريبًا</string>
+    <string name="notification_expiry_text">تنتهي صلاحية «%1$s» في %2$s.</string>
+    <string name="notification_expiry_public">تنتهي صلاحية إحدى البطاقات في محفظتك قريبًا.</string>
+    <string name="notification_travel_title">جدِّد وثيقة هويتك للسفر</string>
+    <string name="notification_travel_text">تنتهي صلاحية «%1$s» في %2$s. تشترط دول كثيرة أن تكون الوثيقة صالحة لمدة 6 أشهر على الأقل عند السفر، لذا جدِّدها خلال الشهر القادم.</string>
+    <string name="notification_travel_public">يجب تجديد إحدى الوثائق في محفظتك قريبًا.</string>
+    <string name="widget_title">بطاقات الولاء</string>
+    <string name="widget_description">بطاقات الولاء المفضّلة لديك، والرمز على بُعد نقرة واحدة</string>
+    <string name="widget_empty">أضِف بطاقة ولاء لتظهر هنا.</string>
 </resources>

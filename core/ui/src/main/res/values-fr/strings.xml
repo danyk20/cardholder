@@ -43,4 +43,13 @@
     <string name="color_purple">Violet</string>
     <string name="color_brown">Marron</string>
     <string name="color_graphite">Graphite</string>
+    <string name="color_white">Blanc</string>
+    <string name="color_silver">Argent</string>
+    <string name="color_gray">Gris</string>
+    <string name="color_sand">Sable</string>
+    <string name="color_lemon">Citron</string>
+    <string name="color_mint">Menthe</string>
+    <string name="color_sky">Bleu ciel</string>
+    <string name="color_lavender">Lavande</string>
+    <string name="color_blush">Rose poudré</string>
 </resources>

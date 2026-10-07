@@ -43,4 +43,13 @@
     <string name="color_purple">Lila</string>
     <string name="color_brown">Barna</string>
     <string name="color_graphite">Grafit</string>
+    <string name="color_white">Fehér</string>
+    <string name="color_silver">Ezüst</string>
+    <string name="color_gray">Szürke</string>
+    <string name="color_sand">Homok</string>
+    <string name="color_lemon">Citrom</string>
+    <string name="color_mint">Menta</string>
+    <string name="color_sky">Égszínkék</string>
+    <string name="color_lavender">Levendula</string>
+    <string name="color_blush">Púderrózsaszín</string>
 </resources>

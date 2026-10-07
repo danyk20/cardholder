@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Consenti fotocamera</string>
     <string name="scanner_permission_denied">L\'accesso alla fotocamera è disattivato per Cardholder. Attivalo nelle impostazioni dell\'app per scansionare i codici.</string>
     <string name="scanner_open_settings">Apri impostazioni</string>
+    <string name="scanner_switch_camera">Cambia fotocamera</string>
+    <string name="scanner_zoom">Zoom %1$s</string>
     <string name="scanner_camera_unavailable">Impossibile avviare la fotocamera. Chiudi le altre app che la utilizzano e riprova.</string>
     <string name="nfc_title">Leggi carta con NFC</string>
     <string name="nfc_hold_card">Appoggia la carta sul retro del telefono e tienila ferma.</string>

@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">名前（A–Z）</string>
     <string name="cardlist_sort_date">追加日（新しい順）</string>
     <string name="cardlist_sort_custom">カスタム順</string>
+    <string name="cardlist_sort_most_used">よく使う順</string>
     <string name="cardlist_reorder">カードの順序を変更</string>
     <string name="cardlist_reorder_done">完了</string>
     <string name="cardlist_reorder_cancel">順序の変更をキャンセル</string>

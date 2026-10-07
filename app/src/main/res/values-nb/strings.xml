@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Kortene dine kan ikke åpnes</string>
     <string name="storage_error_message">Denne telefonen har ikke lenger nøklene som beskytter kortene dine, for eksempel etter en sikkerhetstilbakestilling. Kortene kan ikke gjenopprettes på denne enheten. Slett alle data for å begynne på nytt, og importer deretter en sikkerhetskopi hvis du har en.</string>
+    <string name="notification_channel_expiry">Påminnelser om utløp</string>
+    <string name="notification_expiry_title">Kort utløper snart</string>
+    <string name="notification_expiry_text">«%1$s» utløper %2$s.</string>
+    <string name="notification_expiry_public">Et kort i lommeboken din utløper snart.</string>
+    <string name="notification_travel_title">Forny legitimasjonen før du reiser</string>
+    <string name="notification_travel_text">«%1$s» utløper %2$s. Mange land krever minst 6 måneders gyldighet ved reiser, så forny det innen den neste måneden.</string>
+    <string name="notification_travel_public">Et dokument i lommeboken din bør fornyes snart.</string>
+    <string name="widget_title">Kundekort</string>
+    <string name="widget_description">Favorittkundekortene dine, ett trykk unna koden</string>
+    <string name="widget_empty">Legg til et kundekort for å se det her.</string>
 </resources>

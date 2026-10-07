@@ -18,6 +18,8 @@
     <!-- Common fields -->
     <string name="editor_field_title">Название</string>
     <string name="editor_field_title_hint">По умолчанию: %1$s</string>
+    <string name="editor_field_notes">Заметки (необязательно)</string>
+    <string name="editor_notes_hint">Шифруются, как и остальные данные карты. Например, уровень участника или номер телефона</string>
     <string name="editor_color">Цвет</string>
     <string name="editor_lock">Заблокировать карту</string>
     <string name="editor_lock_description">Для просмотра любых данных карты потребуется отпечаток пальца, распознавание лица или блокировка экрана</string>
@@ -38,6 +40,8 @@
     <string name="editor_cvv_stored">CVV сохранён. Оставьте поле пустым, чтобы не менять его.</string>
     <string name="editor_cvv_remove">Удалить сохранённый CVV</string>
     <string name="editor_card_expired">Срок действия карты истёк</string>
+    <string name="editor_number_valid">Номер карты действителен</string>
+    <string name="editor_expiry_valid">Срок действия указан верно</string>
 
     <!-- ID -->
     <string name="editor_field_country">Страна выдачи</string>
@@ -70,6 +74,12 @@
     <string name="editor_logo_license">Лицензия: %1$s</string>
     <string name="editor_logo_attribution">Лицензия: %1$s · автор: %2$s</string>
     <string name="editor_logo_download_failed">Не удалось загрузить логотип. Проверьте подключение к интернету и повторите попытку.</string>
+    <string name="editor_prefilled_from_photo">Некоторые данные заполнены по фото – проверьте их</string>
+    <string name="editor_duplicate_title">Эта карта уже есть?</string>
+    <string name="editor_duplicate_shop">У вас уже есть карта этого магазина: «%1$s». Сохранить и эту?</string>
+    <string name="editor_duplicate_bank">У вас уже есть карта этого банка: «%1$s». Сохранить и эту?</string>
+    <string name="editor_duplicate_name">У вас уже есть карта с названием «%1$s». Сохранить и эту?</string>
+    <string name="editor_duplicate_save">Всё равно сохранить</string>
     <string name="editor_discard_title">Отменить изменения?</string>
     <string name="editor_discard_message">Изменения в этой карте не будут сохранены.</string>
     <string name="editor_discard">Отменить</string>

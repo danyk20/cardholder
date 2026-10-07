@@ -56,4 +56,13 @@
     <string name="color_purple">Fialová</string>
     <string name="color_brown">Hnědá</string>
     <string name="color_graphite">Grafitová</string>
+    <string name="color_white">Bílá</string>
+    <string name="color_silver">Stříbrná</string>
+    <string name="color_gray">Šedá</string>
+    <string name="color_sand">Písková</string>
+    <string name="color_lemon">Citronová</string>
+    <string name="color_mint">Mátová</string>
+    <string name="color_sky">Nebesky modrá</string>
+    <string name="color_lavender">Levandulová</string>
+    <string name="color_blush">Světle růžová</string>
 </resources>

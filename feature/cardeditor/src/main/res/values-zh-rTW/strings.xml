@@ -14,6 +14,8 @@
     <string name="editor_side_missing">沒有相片</string>
     <string name="editor_field_title">名稱</string>
     <string name="editor_field_title_hint">預設為「%1$s」</string>
+    <string name="editor_field_notes">備註（選填）</string>
+    <string name="editor_notes_hint">與卡片的其他資料一樣會經過加密，例如會員等級或電話號碼</string>
     <string name="editor_color">顏色</string>
     <string name="editor_lock">鎖定這張卡片</string>
     <string name="editor_lock_description">查看任何詳細資料前，都必須通過指紋、臉孔或螢幕鎖定驗證</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">已儲存 CVV。如要保留，請將這個欄位留空。</string>
     <string name="editor_cvv_remove">移除已儲存的 CVV</string>
     <string name="editor_card_expired">這張卡片已過期</string>
+    <string name="editor_number_valid">卡號有效</string>
+    <string name="editor_expiry_valid">有效期限正確</string>
     <string name="editor_field_country">核發國家/地區</string>
     <string name="editor_choose_country">選擇國家/地區</string>
     <string name="editor_search_country">搜尋國家/地區</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">授權：%1$s</string>
     <string name="editor_logo_attribution">授權：%1$s · 作者：%2$s</string>
     <string name="editor_logo_download_failed">無法下載標誌。請檢查網路連線，然後再試一次。</string>
+    <string name="editor_prefilled_from_photo">已根據相片填入部分資料，請檢查</string>
+    <string name="editor_duplicate_title">卡片已存在？</string>
+    <string name="editor_duplicate_shop">你已有這家商店的卡片：「%1$s」。要一併儲存這張卡片嗎？</string>
+    <string name="editor_duplicate_bank">你已有這家銀行的卡片：「%1$s」。要一併儲存這張卡片嗎？</string>
+    <string name="editor_duplicate_name">你已有名為「%1$s」的卡片。要一併儲存這張卡片嗎？</string>
+    <string name="editor_duplicate_save">仍要儲存</string>
     <string name="editor_discard_title">要捨棄變更嗎？</string>
     <string name="editor_discard_message">系統不會儲存你對這張卡片所做的變更。</string>
     <string name="editor_discard">捨棄</string>

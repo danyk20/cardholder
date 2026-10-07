@@ -2,4 +2,14 @@
     <string name="app_name" translatable="false">Cardholder</string>
     <string name="storage_error_title">Your cards can\'t be opened</string>
     <string name="storage_error_message">This phone no longer has the keys that protect your cards, for example after a security reset. The cards can\'t be recovered on this device. Delete all data to start again, then import a backup if you have one.</string>
+    <string name="notification_channel_expiry">Expiry reminders</string>
+    <string name="notification_expiry_title">Card expires soon</string>
+    <string name="notification_expiry_text">\"%1$s\" expires on %2$s.</string>
+    <string name="notification_expiry_public">A card in your wallet expires soon.</string>
+    <string name="notification_travel_title">Renew your ID for travel</string>
+    <string name="notification_travel_text">\"%1$s\" expires on %2$s. Many countries require at least 6 months of validity for travel, so renew it within the next month.</string>
+    <string name="notification_travel_public">A document in your wallet should be renewed soon.</string>
+    <string name="widget_title">Loyalty cards</string>
+    <string name="widget_description">Your favourite loyalty cards, one tap from the code</string>
+    <string name="widget_empty">Add a loyalty card to see it here.</string>
 </resources>

@@ -40,6 +40,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
@@ -53,6 +54,7 @@ import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.SecureScreen
 import io.github.danyk20.cardholder.core.ui.rememberAuthenticator
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
+import io.github.danyk20.cardholder.core.ui.sharedCardBounds
 import io.github.danyk20.cardholder.feature.carddetail.ui.CardSidesView
 import io.github.danyk20.cardholder.feature.carddetail.ui.DetailFields
 import io.github.danyk20.cardholder.feature.carddetail.ui.FieldActions
@@ -95,6 +97,7 @@ fun CardDetailRoute(
         onShowBarcode = { onShowBarcode(viewModel.cardId) },
         onDelete = viewModel::onDelete,
         onLockedChange = viewModel::onLockedChange,
+        onFavouriteChange = viewModel::onFavouriteChange,
         onUnlock = viewModel::onUnlockDetails,
         fieldActions = remember(viewModel) {
             FieldActions(
@@ -117,6 +120,7 @@ internal fun CardDetailScreen(
     onShowBarcode: () -> Unit,
     onDelete: () -> Unit,
     onLockedChange: (Boolean) -> Unit,
+    onFavouriteChange: (Boolean) -> Unit,
     onUnlock: () -> Unit,
     fieldActions: FieldActions,
     onCopiedMessageShown: () -> Unit,
@@ -135,14 +139,16 @@ internal fun CardDetailScreen(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
-                title = { Text(state.summary?.card?.title.orEmpty()) },
+                title = { Text(state.summary?.card?.title.orEmpty(), maxLines = 1, overflow = TextOverflow.Ellipsis) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(CardholderIcons.Back, contentDescription = stringResource(UiR.string.action_back))
                     }
                 },
                 actions = {
-                    if (state.summary != null) DetailMenu(onEdit = onEdit, onDelete = { confirmDelete = true })
+                    val card = state.summary?.card ?: return@TopAppBar
+                    FavouriteButton(isFavourite = card.isFavourite, onFavouriteChange = onFavouriteChange)
+                    DetailMenu(onEdit = onEdit, onDelete = { confirmDelete = true })
                 },
             )
         },
@@ -163,7 +169,11 @@ internal fun CardDetailScreen(
                 .widthIn(max = 600.dp),
         ) {
             val unlocked = state.details is DetailsState.Loaded
-            CardSidesView(summary, photosVisible = unlocked || !card.isLocked, Modifier.fillMaxWidth())
+            CardSidesView(
+                summary,
+                photosVisible = unlocked || !card.isLocked,
+                Modifier.fillMaxWidth().sharedCardBounds(card.id),
+            )
             if (card.type == CardType.LOYALTY) {
                 Button(onClick = onShowBarcode, modifier = Modifier.fillMaxWidth()) {
                     Icon(CardholderIcons.Barcode, contentDescription = null, modifier = Modifier.size(20.dp))
@@ -214,6 +224,17 @@ internal fun CardDetailScreen(
             confirmButton = {
                 TextButton(onClick = onErrorShown) { Text(stringResource(R.string.detail_ok)) }
             },
+        )
+    }
+}
+
+@Composable
+private fun FavouriteButton(isFavourite: Boolean, onFavouriteChange: (Boolean) -> Unit) {
+    val description = if (isFavourite) R.string.detail_remove_favourite else R.string.detail_add_favourite
+    IconButton(onClick = { onFavouriteChange(!isFavourite) }) {
+        Icon(
+            if (isFavourite) CardholderIcons.Favourite else CardholderIcons.NotFavourite,
+            contentDescription = stringResource(description),
         )
     }
 }

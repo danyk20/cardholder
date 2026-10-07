@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.map
 
 /**
  * Observes cards of the given [CardType]s matching a free-text query over title, shop and network,
- * ordered by [CardSort].
+ * ordered by [CardSort] with favourites first (except in the custom order).
  */
 class ObserveCardsUseCase
 @Inject
@@ -29,14 +29,20 @@ constructor(private val cardRepository: CardRepository) {
 
     private fun comparatorFor(sort: CardSort): Comparator<Card> {
         val byTitle = compareBy<Card, String>(Collator.getInstance()) { it.title }
-        return when (sort) {
+        val order = when (sort) {
             CardSort.NAME -> byTitle.thenBy { it.createdAt }
 
             CardSort.DATE_ADDED -> compareByDescending<Card> { it.createdAt }.then(byTitle)
 
             // Cards sharing a position (e.g. from before custom ordering existed) fall back to their age.
-            CardSort.CUSTOM -> compareBy<Card> { it.position }.thenBy { it.createdAt }
+            CardSort.CUSTOM -> return compareBy<Card> { it.position }.thenBy { it.createdAt }
+
+            CardSort.MOST_USED -> compareByDescending<Card> { it.useCount }
+                .thenByDescending { it.lastUsedAt }
+                .then(byTitle)
         }
+        // Favourites come first, except in the order the user arranged by hand.
+        return compareByDescending<Card> { it.isFavourite }.then(order)
     }
 
     private fun Card.matches(needle: String): Boolean {

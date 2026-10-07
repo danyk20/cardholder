@@ -43,4 +43,13 @@
     <string name="color_purple">बैंगनी</string>
     <string name="color_brown">भूरा</string>
     <string name="color_graphite">ग्रेफ़ाइट</string>
+    <string name="color_white">सफ़ेद</string>
+    <string name="color_silver">सिल्वर</string>
+    <string name="color_gray">स्लेटी</string>
+    <string name="color_sand">रेतीला</string>
+    <string name="color_lemon">नींबू पीला</string>
+    <string name="color_mint">मिंट</string>
+    <string name="color_sky">आसमानी</string>
+    <string name="color_lavender">लैवेंडर</string>
+    <string name="color_blush">हल्का गुलाबी</string>
 </resources>

@@ -43,4 +43,13 @@
     <string name="color_purple">বেগুনি</string>
     <string name="color_brown">বাদামি</string>
     <string name="color_graphite">গ্রাফাইট</string>
+    <string name="color_white">সাদা</string>
+    <string name="color_silver">রুপালি</string>
+    <string name="color_gray">ধূসর</string>
+    <string name="color_sand">বালু রঙ</string>
+    <string name="color_lemon">লেবু হলুদ</string>
+    <string name="color_mint">পুদিনা</string>
+    <string name="color_sky">আকাশি</string>
+    <string name="color_lavender">ল্যাভেন্ডার</string>
+    <string name="color_blush">হালকা গোলাপি</string>
 </resources>

@@ -49,4 +49,13 @@
     <string name="color_purple">أرجواني</string>
     <string name="color_brown">بني</string>
     <string name="color_graphite">رمادي داكن</string>
+    <string name="color_white">أبيض</string>
+    <string name="color_silver">فضي</string>
+    <string name="color_gray">رمادي</string>
+    <string name="color_sand">رملي</string>
+    <string name="color_lemon">ليموني</string>
+    <string name="color_mint">نعناعي</string>
+    <string name="color_sky">أزرق سماوي</string>
+    <string name="color_lavender">لافندر</string>
+    <string name="color_blush">وردي فاتح</string>
 </resources>

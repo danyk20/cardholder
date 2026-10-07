@@ -49,4 +49,13 @@
     <string name="color_purple">Mor</string>
     <string name="color_brown">Kahverengi</string>
     <string name="color_graphite">Grafit</string>
+    <string name="color_white">Beyaz</string>
+    <string name="color_silver">Gümüş</string>
+    <string name="color_gray">Gri</string>
+    <string name="color_sand">Kum</string>
+    <string name="color_lemon">Limon</string>
+    <string name="color_mint">Nane</string>
+    <string name="color_sky">Gök mavisi</string>
+    <string name="color_lavender">Lavanta</string>
+    <string name="color_blush">Pudra pembe</string>
 </resources>

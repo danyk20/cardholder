@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Ruhusu kamera</string>
     <string name="scanner_permission_denied">Ufikiaji wa kamera umezimwa kwa Cardholder. Uwashe katika mipangilio ya programu ili uchanganue misimbo.</string>
     <string name="scanner_open_settings">Fungua mipangilio</string>
+    <string name="scanner_switch_camera">Badilisha kamera</string>
+    <string name="scanner_zoom">Kuza %1$s</string>
     <string name="scanner_camera_unavailable">Imeshindwa kuwasha kamera. Funga programu nyingine zinazoitumia kisha ujaribu tena.</string>
     <string name="nfc_title">Soma kadi kwa NFC</string>
     <string name="nfc_hold_card">Shikilia kadi yako ikiwa bapa nyuma ya simu yako na usiisogeze.</string>

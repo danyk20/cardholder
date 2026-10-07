@@ -3,6 +3,8 @@
     <string name="detail_edit">এডিট করুন</string>
     <string name="detail_delete">মুছুন</string>
     <string name="detail_more">আরও বিকল্প</string>
+    <string name="detail_add_favourite">পছন্দসইতে যোগ করুন</string>
+    <string name="detail_remove_favourite">পছন্দসই থেকে সরান</string>
     <string name="detail_flip">অন্য দিক দেখুন</string>
     <string name="detail_show_code">কোড দেখুন</string>
     <string name="detail_copied">%1$s কপি করা হয়েছে। এক মিনিটের মধ্যে এটি ক্লিপবোর্ড থেকে মুছে ফেলা হবে।</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">দোকান</string>
     <string name="field_code">কোড</string>
     <string name="field_format">কোডের ধরন</string>
+    <string name="field_notes">নোট</string>
 </resources>

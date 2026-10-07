@@ -43,4 +43,13 @@
     <string name="color_purple">보라색</string>
     <string name="color_brown">갈색</string>
     <string name="color_graphite">그래파이트</string>
+    <string name="color_white">흰색</string>
+    <string name="color_silver">은색</string>
+    <string name="color_gray">회색</string>
+    <string name="color_sand">모래색</string>
+    <string name="color_lemon">레몬색</string>
+    <string name="color_mint">민트색</string>
+    <string name="color_sky">하늘색</string>
+    <string name="color_lavender">라벤더색</string>
+    <string name="color_blush">연분홍색</string>
 </resources>

@@ -18,6 +18,8 @@
     <!-- Common fields -->
     <string name="editor_field_title">Nazwa</string>
     <string name="editor_field_title_hint">Domyślnie: %1$s</string>
+    <string name="editor_field_notes">Notatki (opcjonalnie)</string>
+    <string name="editor_notes_hint">Szyfrowane jak reszta karty, np. poziom członkostwa lub numer telefonu</string>
     <string name="editor_color">Kolor</string>
     <string name="editor_lock">Zablokuj tę kartę</string>
     <string name="editor_lock_description">Wymagaj odcisku palca, skanu twarzy lub blokady ekranu do wyświetlenia jakichkolwiek danych karty</string>
@@ -38,6 +40,8 @@
     <string name="editor_cvv_stored">Kod CVV jest zapisany. Pozostaw puste pole, aby go zachować.</string>
     <string name="editor_cvv_remove">Usuń zapisany kod CVV</string>
     <string name="editor_card_expired">Ta karta straciła ważność</string>
+    <string name="editor_number_valid">Numer karty jest prawidłowy</string>
+    <string name="editor_expiry_valid">Data ważności jest prawidłowa</string>
 
     <!-- ID -->
     <string name="editor_field_country">Kraj wydania</string>
@@ -70,6 +74,12 @@
     <string name="editor_logo_license">Licencja: %1$s</string>
     <string name="editor_logo_attribution">Licencja: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Nie udało się pobrać logo. Sprawdź połączenie i spróbuj ponownie.</string>
+    <string name="editor_prefilled_from_photo">Niektóre dane uzupełniono na podstawie zdjęcia – sprawdź je</string>
+    <string name="editor_duplicate_title">Masz już tę kartę?</string>
+    <string name="editor_duplicate_shop">Masz już kartę z tego sklepu: „%1$s”. Zapisać też tę?</string>
+    <string name="editor_duplicate_bank">Masz już kartę z tego banku: „%1$s”. Zapisać też tę?</string>
+    <string name="editor_duplicate_name">Masz już kartę o nazwie „%1$s”. Zapisać też tę?</string>
+    <string name="editor_duplicate_save">Zapisz mimo to</string>
     <string name="editor_discard_title">Odrzucić zmiany?</string>
     <string name="editor_discard_message">Zmiany w tej karcie nie zostaną zapisane.</string>
     <string name="editor_discard">Odrzuć</string>

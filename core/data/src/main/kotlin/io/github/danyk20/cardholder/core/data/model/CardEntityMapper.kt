@@ -13,6 +13,7 @@ import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.ImageRef
 import java.time.Instant
+import java.time.LocalDate
 
 internal fun CardEntity.toCard(): Card = Card(
     id = CardId(id),
@@ -26,6 +27,10 @@ internal fun CardEntity.toCard(): Card = Card(
     createdAt = Instant.ofEpochMilli(createdAt),
     updatedAt = Instant.ofEpochMilli(updatedAt),
     position = position,
+    isFavourite = isFavourite,
+    useCount = useCount,
+    lastUsedAt = lastUsedAt?.let(Instant::ofEpochMilli),
+    expiresOn = expiresOn?.let(LocalDate::parse),
 )
 
 private fun CardEntity.toInfo(): CardInfo = when (CardType.valueOf(type)) {

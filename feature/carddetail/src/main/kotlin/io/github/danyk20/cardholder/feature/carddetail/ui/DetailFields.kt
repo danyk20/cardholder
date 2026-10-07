@@ -69,6 +69,7 @@ internal fun DetailFields(card: Card, subtitle: String, details: CardDetails, cv
                 info?.let { Field(R.string.field_format, barcodeFormatLabel(it.format), monospace = false) }
             }
         }
+        if (details.notes.isNotBlank()) Field(R.string.field_notes, details.notes, monospace = false)
     }
 }
 

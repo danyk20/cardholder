@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Povoliť fotoaparát</string>
     <string name="scanner_permission_denied">Prístup k fotoaparátu je pre Cardholder vypnutý. Ak chcete skenovať kódy, zapnite ho v nastaveniach aplikácie.</string>
     <string name="scanner_open_settings">Otvoriť nastavenia</string>
+    <string name="scanner_switch_camera">Prepnúť fotoaparát</string>
+    <string name="scanner_zoom">Priblíženie %1$s</string>
     <string name="scanner_camera_unavailable">Fotoaparát sa nepodarilo spustiť. Zatvorte ostatné aplikácie, ktoré ho používajú, a skúste to znova.</string>
     <string name="nfc_title">Načítať kartu cez NFC</string>
     <string name="nfc_hold_card">Priložte kartu naplocho k zadnej strane telefónu a nehýbte s ňou.</string>

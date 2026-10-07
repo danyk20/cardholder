@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Emri (A–Zh)</string>
     <string name="cardlist_sort_date">Data e shtimit (më të rejat në krye)</string>
     <string name="cardlist_sort_custom">Renditje e personalizuar</string>
+    <string name="cardlist_sort_most_used">Më të përdorurat</string>
     <string name="cardlist_reorder">Rirendit kartat</string>
     <string name="cardlist_reorder_done">U krye</string>
     <string name="cardlist_reorder_cancel">Anulo rirenditjen</string>

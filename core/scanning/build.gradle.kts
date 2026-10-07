@@ -18,4 +18,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.mlkit.barcode.scanning)
     implementation(libs.mlkit.document.scanner)
+    implementation(libs.mlkit.text.recognition)
 }

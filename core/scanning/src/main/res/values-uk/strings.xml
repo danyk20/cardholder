@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Дозволити доступ до камери</string>
     <string name="scanner_permission_denied">Доступ до камери для Cardholder вимкнено. Щоб сканувати коди, увімкніть його в налаштуваннях додатка.</string>
     <string name="scanner_open_settings">Відкрити налаштування</string>
+    <string name="scanner_switch_camera">Перемкнути камеру</string>
+    <string name="scanner_zoom">Масштаб %1$s</string>
     <string name="scanner_camera_unavailable">Не вдалося запустити камеру. Закрийте інші додатки, які її використовують, і повторіть спробу.</string>
     <string name="nfc_title">Зчитати картку через NFC</string>
     <string name="nfc_hold_card">Прикладіть картку до задньої панелі телефона й не рухайте її.</string>

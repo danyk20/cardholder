@@ -18,6 +18,8 @@
     <!-- Common fields -->
     <string name="editor_field_title">Název</string>
     <string name="editor_field_title_hint">Výchozí: %1$s</string>
+    <string name="editor_field_notes">Poznámky (volitelné)</string>
+    <string name="editor_notes_hint">Šifrované jako zbytek karty, např. členská úroveň nebo telefonní číslo</string>
     <string name="editor_color">Barva</string>
     <string name="editor_lock">Zamknout tuto kartu</string>
     <string name="editor_lock_description">K zobrazení jakýchkoli údajů vyžadovat otisk prstu, obličej nebo zámek obrazovky</string>
@@ -38,6 +40,8 @@
     <string name="editor_cvv_stored">CVV je uloženo. Chcete-li ho zachovat, nechte pole prázdné.</string>
     <string name="editor_cvv_remove">Odstranit uložené CVV</string>
     <string name="editor_card_expired">Platnost této karty vypršela</string>
+    <string name="editor_number_valid">Číslo karty je platné</string>
+    <string name="editor_expiry_valid">Datum platnosti je správné</string>
 
     <!-- ID -->
     <string name="editor_field_country">Země vydání</string>
@@ -70,6 +74,12 @@
     <string name="editor_logo_license">Licence: %1$s</string>
     <string name="editor_logo_attribution">Licence: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Logo se nepodařilo stáhnout. Zkontrolujte připojení a zkuste to znovu.</string>
+    <string name="editor_prefilled_from_photo">Některé údaje byly vyplněny z fotky – zkontrolujte je</string>
+    <string name="editor_duplicate_title">Tuto kartu už máte?</string>
+    <string name="editor_duplicate_shop">Z tohoto obchodu už máte kartu: „%1$s“. Uložit i tuto?</string>
+    <string name="editor_duplicate_bank">Z této banky už máte kartu: „%1$s“. Uložit i tuto?</string>
+    <string name="editor_duplicate_name">Už máte kartu s názvem „%1$s“. Uložit i tuto?</string>
+    <string name="editor_duplicate_save">Přesto uložit</string>
     <string name="editor_discard_title">Zahodit změny?</string>
     <string name="editor_discard_message">Změny této karty nebudou uloženy.</string>
     <string name="editor_discard">Zahodit</string>

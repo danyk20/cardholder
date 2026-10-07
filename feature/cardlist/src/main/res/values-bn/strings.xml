@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">নাম (A–Z)</string>
     <string name="cardlist_sort_date">যোগ করার তারিখ (নতুনগুলো আগে)</string>
     <string name="cardlist_sort_custom">নিজের মতো ক্রম</string>
+    <string name="cardlist_sort_most_used">সবচেয়ে বেশি ব্যবহৃত</string>
     <string name="cardlist_reorder">কার্ডের ক্রম বদলান</string>
     <string name="cardlist_reorder_done">হয়ে গেছে</string>
     <string name="cardlist_reorder_cancel">ক্রম বদলানো বাতিল করুন</string>

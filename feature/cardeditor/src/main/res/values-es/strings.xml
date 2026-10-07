@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Sin foto</string>
     <string name="editor_field_title">Nombre</string>
     <string name="editor_field_title_hint">Predeterminado: %1$s</string>
+    <string name="editor_field_notes">Notas (opcional)</string>
+    <string name="editor_notes_hint">Se cifran como el resto de la tarjeta; p. ej., un nivel de socio o un número de teléfono</string>
     <string name="editor_color">Color</string>
     <string name="editor_lock">Bloquear esta tarjeta</string>
     <string name="editor_lock_description">Pedir la huella digital, la cara o el bloqueo de pantalla para ver cualquiera de sus datos</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">Hay un CVV guardado. Deja el campo vacío para conservarlo.</string>
     <string name="editor_cvv_remove">Quitar CVV guardado</string>
     <string name="editor_card_expired">Esta tarjeta ha caducado</string>
+    <string name="editor_number_valid">El número de tarjeta es válido</string>
+    <string name="editor_expiry_valid">La fecha de caducidad es válida</string>
     <string name="editor_field_country">País de expedición</string>
     <string name="editor_choose_country">Elegir país</string>
     <string name="editor_search_country">Buscar países</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Licencia: %1$s</string>
     <string name="editor_logo_attribution">Licencia: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">No se ha podido descargar el logotipo. Comprueba tu conexión y vuelve a intentarlo.</string>
+    <string name="editor_prefilled_from_photo">Algunos datos se han rellenado a partir de la foto. Revísalos.</string>
+    <string name="editor_duplicate_title">¿Ya tienes esta tarjeta?</string>
+    <string name="editor_duplicate_shop">Ya tienes una tarjeta de esta tienda: «%1$s». ¿Guardar también esta?</string>
+    <string name="editor_duplicate_bank">Ya tienes una tarjeta de este banco: «%1$s». ¿Guardar también esta?</string>
+    <string name="editor_duplicate_name">Ya tienes una tarjeta llamada «%1$s». ¿Guardar también esta?</string>
+    <string name="editor_duplicate_save">Guardar igualmente</string>
     <string name="editor_discard_title">¿Descartar cambios?</string>
     <string name="editor_discard_message">Los cambios en esta tarjeta no se guardarán.</string>
     <string name="editor_discard">Descartar</string>

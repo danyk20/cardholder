@@ -3,6 +3,8 @@
     <string name="detail_edit">Editar</string>
     <string name="detail_delete">Eliminar</string>
     <string name="detail_more">Mais opções</string>
+    <string name="detail_add_favourite">Adicionar aos favoritos</string>
+    <string name="detail_remove_favourite">Remover dos favoritos</string>
     <string name="detail_flip">Mostrar o outro lado</string>
     <string name="detail_show_code">Mostrar código</string>
     <string name="detail_copied">Copiado: %1$s. A área de transferência será limpa dentro de um minuto.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Loja</string>
     <string name="field_code">Código</string>
     <string name="field_format">Tipo de código</string>
+    <string name="field_notes">Notas</string>
 </resources>

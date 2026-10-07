@@ -8,6 +8,9 @@
     <string name="settings_theme_dark">E errët</string>
     <string name="settings_dynamic_color">Ngjyra dinamike</string>
     <string name="settings_dynamic_color_description">Përdor ngjyrat e imazhit të sfondit</string>
+    <string name="settings_notifications">Njoftimet</string>
+    <string name="settings_expiry_reminders">Kujtesat e skadimit</string>
+    <string name="settings_expiry_reminders_description">Më njofto një muaj para se të skadojë një kartë bankare ose identiteti dhe 7 muaj para se të skadojë një kartë identiteti (shumë vende kërkojnë vlefshmëri prej 6 muajsh për udhëtim)</string>
 
     <string name="settings_security">Siguria</string>
     <string name="settings_allow_screenshots">Lejo pamjet e ekranit</string>

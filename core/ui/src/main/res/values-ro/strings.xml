@@ -43,4 +43,13 @@
     <string name="color_purple">Mov</string>
     <string name="color_brown">Maro</string>
     <string name="color_graphite">Grafit</string>
+    <string name="color_white">Alb</string>
+    <string name="color_silver">Argintiu</string>
+    <string name="color_gray">Gri</string>
+    <string name="color_sand">Nisipiu</string>
+    <string name="color_lemon">Lămâie</string>
+    <string name="color_mint">Mentă</string>
+    <string name="color_sky">Bleu</string>
+    <string name="color_lavender">Lavandă</string>
+    <string name="color_blush">Roz pal</string>
 </resources>

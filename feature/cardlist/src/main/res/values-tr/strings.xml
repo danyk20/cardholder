@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Ad (A–Z)</string>
     <string name="cardlist_sort_date">Eklenme tarihi (önce en yeni)</string>
     <string name="cardlist_sort_custom">Özel sıralama</string>
+    <string name="cardlist_sort_most_used">En çok kullanılan</string>
     <string name="cardlist_reorder">Kartları yeniden sırala</string>
     <string name="cardlist_reorder_done">Bitti</string>
     <string name="cardlist_reorder_cancel">Yeniden sıralamayı iptal et</string>

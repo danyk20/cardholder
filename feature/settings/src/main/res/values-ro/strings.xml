@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Întunecată</string>
     <string name="settings_dynamic_color">Culori dinamice</string>
     <string name="settings_dynamic_color_description">Folosiți culorile din imaginea de fundal</string>
+    <string name="settings_notifications">Notificări</string>
+    <string name="settings_expiry_reminders">Mementouri privind expirarea</string>
+    <string name="settings_expiry_reminders_description">Primiți o notificare cu o lună înainte de expirarea unui card bancar sau act de identitate și cu 7 luni înainte de expirarea unui act de identitate (multe țări cer o valabilitate de 6 luni pentru călătorii)</string>
     <string name="settings_security">Securitate</string>
     <string name="settings_allow_screenshots">Permiteți capturile de ecran</string>
     <string name="settings_allow_screenshots_description">Până când părăsiți aplicația. Capturile de ecran pot afișa numerele cardurilor și sunt salvate în fotografii, care pot fi copiate în cloud.</string>

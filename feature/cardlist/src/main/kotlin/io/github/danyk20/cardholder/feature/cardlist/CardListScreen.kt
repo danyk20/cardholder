@@ -13,8 +13,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.CircularProgressIndicator
@@ -50,6 +52,7 @@ import io.github.danyk20.cardholder.core.ui.CardFace
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.icon
 import io.github.danyk20.cardholder.core.ui.label
+import io.github.danyk20.cardholder.core.ui.sharedCardBounds
 
 @Composable
 fun CardListRoute(
@@ -102,6 +105,7 @@ internal fun CardListScreen(
     onOpenSettings: () -> Unit,
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val gridState = rememberLazyGridState()
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
@@ -119,10 +123,12 @@ internal fun CardListScreen(
             )
         },
         floatingActionButton = {
+            // Shrinks to an icon while scrolled, so it doesn't cover the codes on the cards.
             ExtendedFloatingActionButton(
-                onClick = onAddCard,
-                icon = { Icon(CardholderIcons.Add, contentDescription = null) },
                 text = { Text(stringResource(R.string.cardlist_add_card)) },
+                icon = { Icon(CardholderIcons.Add, contentDescription = stringResource(R.string.cardlist_add_card)) },
+                onClick = onAddCard,
+                expanded = !gridState.canScrollBackward,
             )
         },
     ) { padding ->
@@ -138,6 +144,7 @@ internal fun CardListScreen(
             is CardListUiState.Success -> if (uiState.hasAnyCards) {
                 CardGrid(
                     state = uiState,
+                    gridState = gridState,
                     contentPadding = padding,
                     onQueryChange = onQueryChange,
                     onTypeToggled = onTypeToggled,
@@ -154,6 +161,7 @@ internal fun CardListScreen(
 @Composable
 private fun CardGrid(
     state: CardListUiState.Success,
+    gridState: LazyGridState,
     contentPadding: PaddingValues,
     onQueryChange: (String) -> Unit,
     onTypeToggled: (CardType) -> Unit,
@@ -162,6 +170,7 @@ private fun CardGrid(
 ) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(minSize = 300.dp),
+        state = gridState,
         contentPadding = PaddingValues(
             start = 16.dp,
             end = 16.dp,
@@ -193,14 +202,14 @@ private fun CardGrid(
                     code = item.code,
                     onClick = { onCardClick(card) },
                     onLongClick = { onCardLongClick(card) },
-                    modifier = Modifier.animateItem(),
+                    modifier = Modifier.animateItem().sharedCardBounds(card.id),
                 )
             } else {
                 CardFace(
                     summary = item.summary,
                     onClick = { onCardClick(card) },
                     onLongClick = { onCardLongClick(card) },
-                    modifier = Modifier.animateItem(),
+                    modifier = Modifier.animateItem().sharedCardBounds(card.id),
                 )
             }
         }

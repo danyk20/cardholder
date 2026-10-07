@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Naziv (A–Ž)</string>
     <string name="cardlist_sort_date">Datum dodavanja (prvo najnovije)</string>
     <string name="cardlist_sort_custom">Prilagođeni redosled</string>
+    <string name="cardlist_sort_most_used">Najčešće korišćene</string>
     <string name="cardlist_reorder">Promeni redosled</string>
     <string name="cardlist_reorder_done">Gotovo</string>
     <string name="cardlist_reorder_cancel">Otkaži promenu redosleda</string>

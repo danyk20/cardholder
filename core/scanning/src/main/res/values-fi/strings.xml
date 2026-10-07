@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Salli kamera</string>
     <string name="scanner_permission_denied">Sovelluksen Cardholder kameran käyttöoikeus on poistettu käytöstä. Salli se sovelluksen asetuksissa, jotta voit skannata koodeja.</string>
     <string name="scanner_open_settings">Avaa asetukset</string>
+    <string name="scanner_switch_camera">Vaihda kameraa</string>
+    <string name="scanner_zoom">Zoomaus %1$s</string>
     <string name="scanner_camera_unavailable">Kameraa ei voitu käynnistää. Sulje muut sitä käyttävät sovellukset ja yritä uudelleen.</string>
     <string name="nfc_title">Lue kortti NFC:llä</string>
     <string name="nfc_hold_card">Pidä korttia tasaisesti puhelimen takaosaa vasten ja paikallaan.</string>

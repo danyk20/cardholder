@@ -18,6 +18,8 @@
     <!-- Common fields -->
     <string name="editor_field_title">Name</string>
     <string name="editor_field_title_hint">Standard: %1$s</string>
+    <string name="editor_field_notes">Notizen (optional)</string>
+    <string name="editor_notes_hint">Wie der Rest der Karte verschlüsselt, z. B. Mitgliedsstufe oder Telefonnummer</string>
     <string name="editor_color">Farbe</string>
     <string name="editor_lock">Diese Karte schützen</string>
     <string name="editor_lock_description">Fingerabdruck, Gesichtserkennung oder Displaysperre erforderlich, um Details anzuzeigen</string>
@@ -38,6 +40,8 @@
     <string name="editor_cvv_stored">Eine CVV ist gespeichert. Leer lassen, um sie beizubehalten.</string>
     <string name="editor_cvv_remove">Gespeicherte CVV entfernen</string>
     <string name="editor_card_expired">Diese Karte ist abgelaufen</string>
+    <string name="editor_number_valid">Kartennummer ist gültig</string>
+    <string name="editor_expiry_valid">Ablaufdatum ist gültig</string>
 
     <!-- ID -->
     <string name="editor_field_country">Ausstellungsland</string>
@@ -70,6 +74,12 @@
     <string name="editor_logo_license">Lizenz: %1$s</string>
     <string name="editor_logo_attribution">Lizenz: %1$s · von %2$s</string>
     <string name="editor_logo_download_failed">Das Logo konnte nicht heruntergeladen werden. Verbindung prüfen und noch einmal versuchen.</string>
+    <string name="editor_prefilled_from_photo">Einige Angaben wurden aus dem Foto übernommen – bitte prüfen</string>
+    <string name="editor_duplicate_title">Bereits gespeichert?</string>
+    <string name="editor_duplicate_shop">Für dieses Geschäft ist bereits eine Karte gespeichert: „%1$s“. Diese auch speichern?</string>
+    <string name="editor_duplicate_bank">Für diese Bank ist bereits eine Karte gespeichert: „%1$s“. Diese auch speichern?</string>
+    <string name="editor_duplicate_name">Es ist bereits eine Karte namens „%1$s“ gespeichert. Diese auch speichern?</string>
+    <string name="editor_duplicate_save">Trotzdem speichern</string>
     <string name="editor_discard_title">Änderungen verwerfen?</string>
     <string name="editor_discard_message">Die Änderungen an dieser Karte werden nicht gespeichert.</string>
     <string name="editor_discard">Verwerfen</string>

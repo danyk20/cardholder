@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">الاسم (أ–ي)</string>
     <string name="cardlist_sort_date">تاريخ الإضافة (الأحدث أولاً)</string>
     <string name="cardlist_sort_custom">ترتيب مخصّص</string>
+    <string name="cardlist_sort_most_used">الأكثر استخدامًا</string>
     <string name="cardlist_reorder">إعادة ترتيب البطاقات</string>
     <string name="cardlist_reorder_done">تم</string>
     <string name="cardlist_reorder_cancel">إلغاء إعادة الترتيب</string>

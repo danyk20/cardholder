@@ -10,9 +10,9 @@ import io.github.danyk20.cardholder.core.domain.model.CvvChange
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
-import io.github.danyk20.cardholder.core.domain.repository.BarcodeImageScanner
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
+import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardResult
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardUseCase
@@ -52,7 +52,8 @@ class CardEditorViewModel @Inject constructor(
     private val catalogues: EditorCatalogues,
     private val deviceSecurity: DeviceSecurity,
     private val validator: CardDraftValidator,
-    private val barcodeImageScanner: BarcodeImageScanner,
+    private val photoReader: CardPhotoReader,
+    private val preferencesRepository: UserPreferencesRepository,
     private val logoDownloader: LogoDownloader,
 ) : ViewModel() {
     private val editingId: CardId? = savedStateHandle.toRoute<CardEditorDestination>().cardId?.let(::CardId)
@@ -84,6 +85,11 @@ class CardEditorViewModel @Inject constructor(
             val banks = catalogues.banks.banks()
             _uiState.update { it.copy(shops = shops, banks = banks, countries = catalogues.countries.countries()) }
             if (editingId != null) load(editingId)
+        }
+        launchSafely {
+            preferencesRepository.preferences.collect { prefs ->
+                _uiState.update { it.copy(expiryRemindersEnabled = prefs.expiryReminders) }
+            }
         }
     }
 
@@ -120,14 +126,72 @@ class CardEditorViewModel @Inject constructor(
 
     fun onSideImagePicked(side: CardSide, uri: String) {
         updateSide(side, SideImage.New(uri))
-        if (_uiState.value.type == CardType.LOYALTY && _uiState.value.loyalty.code.isEmpty()) {
-            // Loyalty cards usually carry their code on the back: offer it without typing.
-            launchSafely(onError = ::onUnexpectedError) {
-                barcodeImageScanner.scan(uri)?.let { barcode ->
-                    if (_uiState.value.loyalty.code.isEmpty()) onBarcodeScanned(barcode.code, barcode.format)
-                }
-            }
+        // Reading the photo is a convenience; if it fails the user simply types the details.
+        launchSafely { prefillFromPhotos() }
+    }
+
+    fun onPrefillMessageShown() = _uiState.update { it.copy(prefilledFromPhoto = false) }
+
+    /** Fills empty fields with what can be read from the new photos; never overwrites the user's input. */
+    private suspend fun prefillFromPhotos() {
+        val state = _uiState.value
+        val prefill = photoReader.read(
+            type = state.type,
+            front = (state.front as? SideImage.New)?.uri,
+            back = (state.back as? SideImage.New)?.uri,
+            shops = state.shops,
+            banks = state.banks,
+        )
+        _uiState.update { current ->
+            val filled = current.prefilledWith(prefill)
+            if (filled.content == current.content) current else filled.copy(prefilledFromPhoto = true)
         }
+    }
+
+    private fun CardEditorUiState.prefilledWith(prefill: PhotoPrefill): CardEditorUiState = when (type) {
+        CardType.BANK -> bankPrefilled(prefill)
+        CardType.ID -> idPrefilled(prefill)
+        CardType.LOYALTY -> loyaltyPrefilled(prefill)
+    }
+
+    private fun CardEditorUiState.bankPrefilled(prefill: PhotoPrefill) = copy(
+        bank = bank.copy(
+            number = bank.number.ifEmpty { prefill.number.orEmpty() },
+            expiry = bank.expiry.ifEmpty {
+                prefill.expiry?.let { "%02d%02d".format(it.monthValue, it.year % CENTURY) }.orEmpty()
+            },
+            holder = bank.holder.ifEmpty { prefill.holder.orEmpty() },
+            // A CVV can only be stored with a screen lock, and never replaces a stored one silently.
+            cvv = bank.cvv.ifEmpty { prefill.cvv?.takeIf { canProtect && !bank.hasStoredCvv }.orEmpty() },
+            issuer = bank.issuer ?: prefill.bank?.let { BrandRef.Known(it.id, it.name) },
+        ),
+        logoChoiceFor = logoChoiceFor ?: prefill.bank?.takeIf { bank.issuer == null }
+            ?.let { found -> found.logo?.let { LogoChoice(found.name, it) } },
+    )
+
+    private fun CardEditorUiState.idPrefilled(prefill: PhotoPrefill) = copy(
+        id = id.copy(
+            country = id.country ?: prefill.countryCode?.let { code ->
+                countries.firstOrNull { it.code.value == code }
+            },
+            documentNumber = id.documentNumber.ifEmpty { prefill.documentNumber.orEmpty() },
+            expiry = id.expiry ?: prefill.idExpiry,
+        ),
+        title = title.ifEmpty { prefill.holderName.orEmpty() },
+    )
+
+    private fun CardEditorUiState.loyaltyPrefilled(prefill: PhotoPrefill): CardEditorUiState {
+        val newShop = prefill.shop?.takeIf { loyalty.shop == null }
+        val barcode = prefill.barcode?.takeIf { loyalty.code.isEmpty() }
+        return copy(
+            loyalty = loyalty.copy(
+                shop = loyalty.shop ?: newShop?.let { BrandRef.Known(it.id, it.name) },
+                code = barcode?.code ?: loyalty.code,
+                // A scanned code knows its format; otherwise the shop's usual format is the best guess.
+                format = barcode?.format ?: newShop?.takeIf { loyalty.code.isEmpty() }?.defaultFormat ?: loyalty.format,
+            ),
+            logoChoiceFor = logoChoiceFor ?: newShop?.let { found -> found.logo?.let { LogoChoice(found.name, it) } },
+        )
     }
 
     fun onSideImageRemoved(side: CardSide) = updateSide(side, SideImage.None)
@@ -135,6 +199,8 @@ class CardEditorViewModel @Inject constructor(
     fun onTitleChange(title: String) = update(CardField.TITLE) { copy(title = title) }
 
     fun onColorChange(color: CardColor) = _uiState.update { it.copy(color = color) }
+
+    fun onNotesChange(notes: String) = _uiState.update { it.copy(notes = notes.take(MAX_NOTES_LENGTH)) }
 
     fun onLockedChange(locked: Boolean) = _uiState.update { it.copy(isLocked = locked && it.canProtect) }
 
@@ -228,7 +294,8 @@ class CardEditorViewModel @Inject constructor(
     fun onBarcodeScanned(code: String, format: BarcodeFormat) =
         update(CardField.CODE) { copy(loyalty = loyalty.copy(code = code, format = format)) }
 
-    fun onSave() {
+    /** [duplicateConfirmed]: the user chose "Save anyway" after a [DuplicateWarning]. */
+    fun onSave(duplicateConfirmed: Boolean = false) {
         val state = _uiState.value
         if (state.isSaving) return
         val (draft, errors) = buildDraft(state)
@@ -236,8 +303,15 @@ class CardEditorViewModel @Inject constructor(
             _uiState.update { it.copy(errors = errors) }
             return
         }
-        _uiState.update { it.copy(isSaving = true, errors = emptyMap()) }
+        _uiState.update { it.copy(isSaving = true, errors = emptyMap(), duplicate = null) }
         launchSafely(onError = ::onUnexpectedError) {
+            if (!state.isEditing && !duplicateConfirmed) {
+                val duplicate = findDuplicate(draft)
+                if (duplicate != null) {
+                    _uiState.update { it.copy(isSaving = false, duplicate = duplicate) }
+                    return@launchSafely
+                }
+            }
             val result = saveCard(draft)
             _uiState.update {
                 when (result) {
@@ -254,6 +328,32 @@ class CardEditorViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun onDuplicateDismissed() = _uiState.update { it.copy(duplicate = null) }
+
+    /** Only the plain, non-sensitive columns are compared, so locked cards don't need unlocking. */
+    private suspend fun findDuplicate(draft: CardDraft): DuplicateWarning? {
+        val cards = cardRepository.observeCards().first()
+        val content = draft.content
+        val sameBrand = when (content) {
+            is CardContent.Loyalty -> cards.firstOrNull { card ->
+                (card.info as? CardInfo.Loyalty)?.shop?.let { it.sameBrandAs(content.shop) } == true
+            }?.let { DuplicateWarning(DuplicateReason.SAME_SHOP, it.title) }
+
+            is CardContent.Bank -> content.issuer?.let { issuer ->
+                cards.firstOrNull { card -> (card.info as? CardInfo.Bank)?.issuer?.sameBrandAs(issuer) == true }
+            }?.let { DuplicateWarning(DuplicateReason.SAME_BANK, it.title) }
+
+            is CardContent.Id -> null
+        }
+        return sameBrand ?: cards.firstOrNull { it.title.trim().equals(draft.title.trim(), ignoreCase = true) }
+            ?.let { DuplicateWarning(DuplicateReason.SAME_NAME, it.title) }
+    }
+
+    private fun BrandRef.sameBrandAs(other: BrandRef): Boolean = when {
+        this is BrandRef.Known && other is BrandRef.Known -> id == other.id
+        else -> name.isNotBlank() && name.trim().equals(other.name.trim(), ignoreCase = true)
     }
 
     fun onAuthenticationResult(purpose: AuthPurpose, succeeded: Boolean) {
@@ -307,6 +407,7 @@ class CardEditorViewModel @Inject constructor(
             loadState = LoadState.READY,
             type = card.type,
             title = card.title,
+            notes = details.notes,
             color = card.color,
             isLocked = card.isLocked,
             front = card.sides.front?.let(SideImage::Existing) ?: SideImage.None,
@@ -375,6 +476,7 @@ class CardEditorViewModel @Inject constructor(
                         BankCardValidator.validateExpiry(state.bank.expiry) ?: ValidationError.INVALID_DATE
                 },
                 holder = state.bank.holder,
+                notes = state.notes.trim(),
             ),
             cvv = when {
                 state.bank.cvv.isNotEmpty() -> CvvChange.Set(state.bank.cvv)
@@ -388,7 +490,7 @@ class CardEditorViewModel @Inject constructor(
             country = state.id.country?.code ?: PLACEHOLDER_COUNTRY.also {
                 formErrors[CardField.COUNTRY] = ValidationError.REQUIRED
             },
-            details = CardDetails.Id(state.id.documentNumber, state.id.expiry),
+            details = CardDetails.Id(state.id.documentNumber, state.id.expiry, state.notes.trim()),
         )
 
         CardType.LOYALTY -> CardContent.Loyalty(
@@ -396,7 +498,7 @@ class CardEditorViewModel @Inject constructor(
                 formErrors[CardField.SHOP] = ValidationError.REQUIRED
             },
             format = state.loyalty.format,
-            details = CardDetails.Loyalty(state.loyalty.code),
+            details = CardDetails.Loyalty(state.loyalty.code, state.notes.trim()),
         )
     }
 
@@ -422,6 +524,8 @@ class CardEditorViewModel @Inject constructor(
         _uiState.update { it.transform().copy(errors = it.errors - field) }
 
     private companion object {
+        /** Notes are for short remarks, not documents. */
+        const val MAX_NOTES_LENGTH = 1_000
         const val MAX_PAN = 19
         const val MAX_CVV = 4
         const val EXPIRY_DIGITS = 4

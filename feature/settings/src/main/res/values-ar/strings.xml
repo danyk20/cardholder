@@ -8,6 +8,9 @@
     <string name="settings_theme_dark">داكن</string>
     <string name="settings_dynamic_color">الألوان الديناميكية</string>
     <string name="settings_dynamic_color_description">استخدام ألوان من خلفية الشاشة</string>
+    <string name="settings_notifications">الإشعارات</string>
+    <string name="settings_expiry_reminders">تذكيرات انتهاء الصلاحية</string>
+    <string name="settings_expiry_reminders_description">إشعاري قبل شهر من انتهاء صلاحية بطاقة مصرفية أو بطاقة هوية، وقبل 7 أشهر من انتهاء صلاحية بطاقة الهوية (تشترط دول كثيرة صلاحية 6 أشهر للسفر)</string>
 
     <string name="settings_security">الأمان</string>
     <string name="settings_allow_screenshots">السماح بلقطات الشاشة</string>

@@ -99,10 +99,20 @@ data class LoyaltyForm(
     val format: BarcodeFormat = BarcodeFormat.QR_CODE,
 )
 
+/** Why a new card looks like an existing one, and that card's name. */
+data class DuplicateWarning(val reason: DuplicateReason, val existingTitle: String)
+
+enum class DuplicateReason {
+    SAME_SHOP,
+    SAME_BANK,
+    SAME_NAME,
+}
+
 /** The user-entered part of [CardEditorUiState]. */
 internal data class EditorContent(
     val type: CardType,
     val title: String,
+    val notes: String,
     val color: CardColor,
     val front: SideImage,
     val back: SideImage,
@@ -119,6 +129,8 @@ data class CardEditorUiState(
     val loadState: LoadState = LoadState.READY,
     val type: CardType = CardType.BANK,
     val title: String = "",
+    /** Optional free text, stored encrypted with the card's details. */
+    val notes: String = "",
     val color: CardColor = CardColor.Default,
     val front: SideImage = SideImage.None,
     val back: SideImage = SideImage.None,
@@ -140,15 +152,25 @@ data class CardEditorUiState(
     val error: EditorError? = null,
     /** The user tried to leave with unsaved changes. */
     val confirmDiscard: Boolean = false,
+    val expiryRemindersEnabled: Boolean = true,
+    /** Some empty fields were just filled in from the card photos; the user is asked to check them. */
+    val prefilledFromPhoto: Boolean = false,
+    /** A new card looks like one that already exists (same shop, bank or name); asked before saving. */
+    val duplicate: DuplicateWarning? = null,
     val shops: List<Shop> = emptyList(),
     val banks: List<Bank> = emptyList(),
     val countries: List<Country> = emptyList(),
 ) {
     val isEditing: Boolean get() = editingId != null
 
+    /** A reminder will be due for this card, so it's worth asking for permission to notify. */
+    val wantsExpiryReminder: Boolean
+        get() = expiryRemindersEnabled &&
+            ((type == CardType.BANK && bank.expiry.isNotEmpty()) || (type == CardType.ID && id.expiry != null))
+
     /** Everything the user can enter; compared to detect unsaved changes. */
     internal val content: EditorContent
-        get() = EditorContent(type, title, color, front, back, logo, bank, id, loyalty, isLocked)
+        get() = EditorContent(type, title, notes, color, front, back, logo, bank, id, loyalty, isLocked)
 
     /** The catalogue shop of a loyalty card, if one is selected. */
     val selectedShop: Shop?

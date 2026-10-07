@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">カメラを許可</string>
     <string name="scanner_permission_denied">Cardholder のカメラへのアクセスがオフになっています。コードをスキャンするには、アプリの設定でオンにしてください。</string>
     <string name="scanner_open_settings">設定を開く</string>
+    <string name="scanner_switch_camera">カメラを切り替え</string>
+    <string name="scanner_zoom">ズーム %1$s</string>
     <string name="scanner_camera_unavailable">カメラを起動できませんでした。カメラを使用している他のアプリを閉じて、もう一度お試しください。</string>
     <string name="nfc_title">NFC でカードを読み取る</string>
     <string name="nfc_hold_card">カードをスマートフォンの背面に平らに当てて、動かさないでください。</string>

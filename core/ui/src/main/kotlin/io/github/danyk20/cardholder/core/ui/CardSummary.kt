@@ -77,6 +77,8 @@ fun CardFace(
         frontImage = card.sides.front,
         logo = card.logo,
         network = (card.info as? CardInfo.Bank)?.network,
+        flag = (card.info as? CardInfo.Id)?.country?.flagEmoji,
+        isFavourite = card.isFavourite,
         modifier = modifier,
         onClick = onClick,
         onLongClick = onLongClick,

@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">無法開啟卡片</string>
     <string name="storage_error_message">這支手機已不再有保護卡片的金鑰（例如在重設安全性設定後），因此無法在這部裝置上復原卡片。請刪除所有資料以重新開始，然後匯入備份（如果有的話）。</string>
+    <string name="notification_channel_expiry">到期提醒</string>
+    <string name="notification_expiry_title">卡片即將到期</string>
+    <string name="notification_expiry_text">「%1$s」將於 %2$s 到期。</string>
+    <string name="notification_expiry_public">你的一張卡片即將到期。</string>
+    <string name="notification_travel_title">出國前請更新證件</string>
+    <string name="notification_travel_text">「%1$s」將於 %2$s 到期。許多國家/地區要求旅行時證件效期至少須剩 6 個月，請在下個月內完成更新。</string>
+    <string name="notification_travel_public">你有一份證件需要盡快更新。</string>
+    <string name="widget_title">會員卡</string>
+    <string name="widget_description">你最愛的會員卡，輕觸一下即可顯示代碼</string>
+    <string name="widget_empty">新增會員卡後，就會顯示在這裡。</string>
 </resources>

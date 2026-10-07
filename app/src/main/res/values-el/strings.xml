@@ -2,4 +2,14 @@
 <resources>
     <string name="storage_error_title">Δεν είναι δυνατό το άνοιγμα των καρτών σας</string>
     <string name="storage_error_message">Αυτό το τηλέφωνο δεν έχει πλέον τα κλειδιά που προστατεύουν τις κάρτες σας, για παράδειγμα μετά από επαναφορά ασφαλείας. Οι κάρτες δεν μπορούν να ανακτηθούν σε αυτή τη συσκευή. Διαγράψτε όλα τα δεδομένα για να ξεκινήσετε από την αρχή και, στη συνέχεια, εισαγάγετε ένα αντίγραφο ασφαλείας, αν έχετε.</string>
+    <string name="notification_channel_expiry">Υπενθυμίσεις λήξης</string>
+    <string name="notification_expiry_title">Η κάρτα λήγει σύντομα</string>
+    <string name="notification_expiry_text">Η κάρτα «%1$s» λήγει στις %2$s.</string>
+    <string name="notification_expiry_public">Μια κάρτα στο πορτοφόλι σας λήγει σύντομα.</string>
+    <string name="notification_travel_title">Ανανεώστε την ταυτότητά σας για ταξίδια</string>
+    <string name="notification_travel_text">Το έγγραφο «%1$s» λήγει στις %2$s. Πολλές χώρες απαιτούν ισχύ τουλάχιστον 6 μηνών για ταξίδια, οπότε ανανεώστε το μέσα στον επόμενο μήνα.</string>
+    <string name="notification_travel_public">Ένα έγγραφο στο πορτοφόλι σας πρέπει να ανανεωθεί σύντομα.</string>
+    <string name="widget_title">Κάρτες επιβράβευσης</string>
+    <string name="widget_description">Οι αγαπημένες σας κάρτες επιβράβευσης, ένα πάτημα από τον κωδικό</string>
+    <string name="widget_empty">Προσθέστε μια κάρτα επιβράβευσης για να εμφανίζεται εδώ.</string>
 </resources>

@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Название (А–Я)</string>
     <string name="cardlist_sort_date">Дата добавления (сначала новые)</string>
     <string name="cardlist_sort_custom">Свой порядок</string>
+    <string name="cardlist_sort_most_used">Часто используемые</string>
     <string name="cardlist_reorder">Изменить порядок карт</string>
     <string name="cardlist_reorder_done">Готово</string>
     <string name="cardlist_reorder_cancel">Отменить изменение порядка</string>

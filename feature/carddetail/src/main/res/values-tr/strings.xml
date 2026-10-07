@@ -3,6 +3,8 @@
     <string name="detail_edit">Düzenle</string>
     <string name="detail_delete">Sil</string>
     <string name="detail_more">Diğer seçenekler</string>
+    <string name="detail_add_favourite">Favorilere ekle</string>
+    <string name="detail_remove_favourite">Favorilerden kaldır</string>
     <string name="detail_flip">Diğer yüzü göster</string>
     <string name="detail_show_code">Kodu göster</string>
     <string name="detail_copied">%1$s kopyalandı. Bir dakika içinde panodan silinecek.</string>
@@ -31,4 +33,5 @@
     <string name="field_shop">Mağaza</string>
     <string name="field_code">Kod</string>
     <string name="field_format">Kod türü</string>
+    <string name="field_notes">Notlar</string>
 </resources>

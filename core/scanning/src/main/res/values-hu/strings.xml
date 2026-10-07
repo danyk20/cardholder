@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Kamera engedélyezése</string>
     <string name="scanner_permission_denied">A Cardholder kamera-hozzáférése ki van kapcsolva. Kódok beolvasásához kapcsolja be az alkalmazás beállításaiban.</string>
     <string name="scanner_open_settings">Beállítások megnyitása</string>
+    <string name="scanner_switch_camera">Kameraváltás</string>
+    <string name="scanner_zoom">Nagyítás: %1$s</string>
     <string name="scanner_camera_unavailable">Nem sikerült elindítani a kamerát. Zárja be a kamerát használó többi alkalmazást, és próbálja újra.</string>
     <string name="nfc_title">Kártya beolvasása NFC-vel</string>
     <string name="nfc_hold_card">Tartsa a kártyát laposan a telefon hátuljához, és ne mozdítsa el.</string>

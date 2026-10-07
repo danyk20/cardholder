@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Tume</string>
     <string name="settings_dynamic_color">Dünaamiline värv</string>
     <string name="settings_dynamic_color_description">Kasuta taustapildi värve</string>
+    <string name="settings_notifications">Märguanded</string>
+    <string name="settings_expiry_reminders">Aegumise meeldetuletused</string>
+    <string name="settings_expiry_reminders_description">Teavita mind kuu aega enne pangakaardi või dokumendi aegumist ja 7 kuud enne dokumendi aegumist (paljud riigid nõuavad reisimisel 6-kuulist kehtivust)</string>
     <string name="settings_security">Turvalisus</string>
     <string name="settings_allow_screenshots">Luba ekraanipildid</string>
     <string name="settings_allow_screenshots_description">Kuni rakendusest lahkute. Ekraanipiltidel võivad olla näha kaardinumbrid ja need salvestatakse fotode hulka, mida võidakse pilve varundada.</string>
