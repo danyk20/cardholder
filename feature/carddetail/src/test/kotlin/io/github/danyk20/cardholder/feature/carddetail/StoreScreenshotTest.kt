@@ -26,12 +26,26 @@ class StoreScreenshotTest {
     val composeRule = createComposeRule()
 
     @Test
-    fun bankCardDetails() {
-        val state = CardDetailUiState(
-            summary = CardSummary(DemoCards.bank, "City Savings Bank"),
+    fun bankCardDetails() = capture(
+        CardDetailUiState(
+            summary = CardSummary(DemoCards.bank.copy(isFavourite = true), "City Savings Bank"),
             details = DetailsState.Loaded(DemoCards.bankDetails),
             canProtect = true,
-        )
+        ),
+        name = "3_bank_card",
+    )
+
+    @Test
+    fun idCardDetails() = capture(
+        CardDetailUiState(
+            summary = CardSummary(DemoCards.identity, "Switzerland"),
+            details = DetailsState.Loaded(DemoCards.identityDetails),
+            canProtect = true,
+        ),
+        name = "4_id_card",
+    )
+
+    private fun capture(state: CardDetailUiState, name: String) {
         composeRule.setContent {
             CardholderTheme(darkTheme = false, dynamicColor = false) {
                 CardDetailScreen(
@@ -49,7 +63,7 @@ class StoreScreenshotTest {
                 )
             }
         }
-        composeRule.onRoot().captureRoboImage("$STORE_SCREENSHOTS/3_bank_card.png")
+        composeRule.onRoot().captureRoboImage("$STORE_SCREENSHOTS/$name.png")
     }
 }
 
