@@ -72,6 +72,13 @@
     <string name="editor_logo_attribution">Licence: %1$s · by %2$s</string>
     <string name="editor_logo_download_failed">The logo couldn\'t be downloaded. Check your connection and try again.</string>
 
+    <!-- Possible duplicate -->
+    <string name="editor_duplicate_title">Already in your wallet?</string>
+    <string name="editor_duplicate_shop">You already have a card from this shop: \"%1$s\". Save this one too?</string>
+    <string name="editor_duplicate_bank">You already have a card from this bank: \"%1$s\". Save this one too?</string>
+    <string name="editor_duplicate_name">You already have a card called \"%1$s\". Save this one too?</string>
+    <string name="editor_duplicate_save">Save anyway</string>
+
     <!-- Leaving with unsaved changes -->
     <string name="editor_discard_title">Discard changes?</string>
     <string name="editor_discard_message">Your changes to this card won\'t be saved.</string>

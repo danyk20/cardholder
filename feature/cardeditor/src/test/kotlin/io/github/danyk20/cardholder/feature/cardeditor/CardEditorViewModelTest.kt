@@ -133,6 +133,50 @@ class CardEditorViewModelTest {
     }
 
     @Test
+    fun `warns before saving a second card from the same shop`() = runTest {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails) // custom shop "Corner Coffee"
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.LOYALTY)
+        viewModel.onSidesDone()
+        viewModel.onCustomShop("corner coffee")
+        viewModel.onCodeChange("12345678")
+
+        viewModel.onSave()
+
+        assertEquals(
+            DuplicateWarning(DuplicateReason.SAME_SHOP, TestCards.loyalty.title),
+            viewModel.uiState.value.duplicate,
+        )
+        assertNull(viewModel.uiState.value.savedCardId)
+        assertTrue(repository.savedDrafts.isEmpty())
+
+        viewModel.onSave(duplicateConfirmed = true)
+
+        assertNull(viewModel.uiState.value.duplicate)
+        assertNotNull(viewModel.uiState.value.savedCardId)
+    }
+
+    @Test
+    fun `warns about a card with the same name and not when editing`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.BANK)
+        viewModel.onSidesDone()
+        viewModel.onNumberChange("5555555555554444")
+        viewModel.onExpiryChange("0430")
+        viewModel.onHolderChange("Jane Doe")
+        viewModel.onTitleChange(" everyday visa ")
+
+        viewModel.onSave()
+        assertEquals(DuplicateReason.SAME_NAME, viewModel.uiState.value.duplicate?.reason)
+
+        val editor = viewModel(TestCards.visa.id.value)
+        editor.onSave()
+        assertNull(editor.uiState.value.duplicate)
+        assertNotNull(editor.uiState.value.savedCardId)
+    }
+
+    @Test
     fun `shows all validation errors at once`() {
         val viewModel = viewModel()
         viewModel.onTypeSelected(CardType.BANK)

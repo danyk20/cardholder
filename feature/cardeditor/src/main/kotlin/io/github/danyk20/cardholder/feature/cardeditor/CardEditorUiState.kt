@@ -99,6 +99,15 @@ data class LoyaltyForm(
     val format: BarcodeFormat = BarcodeFormat.QR_CODE,
 )
 
+/** Why a new card looks like an existing one, and that card's name. */
+data class DuplicateWarning(val reason: DuplicateReason, val existingTitle: String)
+
+enum class DuplicateReason {
+    SAME_SHOP,
+    SAME_BANK,
+    SAME_NAME,
+}
+
 /** The user-entered part of [CardEditorUiState]. */
 internal data class EditorContent(
     val type: CardType,
@@ -143,6 +152,8 @@ data class CardEditorUiState(
     val error: EditorError? = null,
     /** The user tried to leave with unsaved changes. */
     val confirmDiscard: Boolean = false,
+    /** A new card looks like one that already exists (same shop, bank or name); asked before saving. */
+    val duplicate: DuplicateWarning? = null,
     val shops: List<Shop> = emptyList(),
     val banks: List<Bank> = emptyList(),
     val countries: List<Country> = emptyList(),

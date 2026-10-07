@@ -203,6 +203,8 @@ fun CardEditorRoute(
         onUnlock = viewModel::onRetryAuthentication,
         onErrorShown = viewModel::onErrorShown,
         onKeepEditing = viewModel::onKeepEditing,
+        onSaveDuplicate = { viewModel.onSave(duplicateConfirmed = true) },
+        onDuplicateDismissed = viewModel::onDuplicateDismissed,
         onDiscard = {
             viewModel.onKeepEditing()
             onClose()
@@ -224,6 +226,8 @@ internal fun CardEditorScreen(
     onErrorShown: () -> Unit,
     onKeepEditing: () -> Unit,
     onDiscard: () -> Unit,
+    onSaveDuplicate: () -> Unit,
+    onDuplicateDismissed: () -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -279,6 +283,31 @@ internal fun CardEditorScreen(
                 EditorStep.DETAILS -> DetailsForm(state, sideActions, detailsActions, padding)
             }
         }
+    }
+    state.duplicate?.let { duplicate ->
+        AlertDialog(
+            onDismissRequest = onDuplicateDismissed,
+            title = { Text(stringResource(R.string.editor_duplicate_title)) },
+            text = {
+                Text(
+                    stringResource(
+                        when (duplicate.reason) {
+                            DuplicateReason.SAME_SHOP -> R.string.editor_duplicate_shop
+                            DuplicateReason.SAME_BANK -> R.string.editor_duplicate_bank
+                            DuplicateReason.SAME_NAME -> R.string.editor_duplicate_name
+                        },
+                        duplicate.existingTitle,
+                    ),
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = onSaveDuplicate) { Text(stringResource(R.string.editor_duplicate_save)) }
+            },
+            dismissButton = {
+                TextButton(onClick = onDuplicateDismissed) { Text(stringResource(UiR.string.action_cancel)) }
+            },
+            properties = secureDialogProperties(),
+        )
     }
     if (state.confirmDiscard) {
         AlertDialog(

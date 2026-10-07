@@ -230,7 +230,8 @@ class CardEditorViewModel @Inject constructor(
     fun onBarcodeScanned(code: String, format: BarcodeFormat) =
         update(CardField.CODE) { copy(loyalty = loyalty.copy(code = code, format = format)) }
 
-    fun onSave() {
+    /** [duplicateConfirmed]: the user chose "Save anyway" after a [DuplicateWarning]. */
+    fun onSave(duplicateConfirmed: Boolean = false) {
         val state = _uiState.value
         if (state.isSaving) return
         val (draft, errors) = buildDraft(state)
@@ -238,8 +239,15 @@ class CardEditorViewModel @Inject constructor(
             _uiState.update { it.copy(errors = errors) }
             return
         }
-        _uiState.update { it.copy(isSaving = true, errors = emptyMap()) }
+        _uiState.update { it.copy(isSaving = true, errors = emptyMap(), duplicate = null) }
         launchSafely(onError = ::onUnexpectedError) {
+            if (!state.isEditing && !duplicateConfirmed) {
+                val duplicate = findDuplicate(draft)
+                if (duplicate != null) {
+                    _uiState.update { it.copy(isSaving = false, duplicate = duplicate) }
+                    return@launchSafely
+                }
+            }
             val result = saveCard(draft)
             _uiState.update {
                 when (result) {
@@ -256,6 +264,32 @@ class CardEditorViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun onDuplicateDismissed() = _uiState.update { it.copy(duplicate = null) }
+
+    /** Only the plain, non-sensitive columns are compared, so locked cards don't need unlocking. */
+    private suspend fun findDuplicate(draft: CardDraft): DuplicateWarning? {
+        val cards = cardRepository.observeCards().first()
+        val content = draft.content
+        val sameBrand = when (content) {
+            is CardContent.Loyalty -> cards.firstOrNull { card ->
+                (card.info as? CardInfo.Loyalty)?.shop?.let { it.sameBrandAs(content.shop) } == true
+            }?.let { DuplicateWarning(DuplicateReason.SAME_SHOP, it.title) }
+
+            is CardContent.Bank -> content.issuer?.let { issuer ->
+                cards.firstOrNull { card -> (card.info as? CardInfo.Bank)?.issuer?.sameBrandAs(issuer) == true }
+            }?.let { DuplicateWarning(DuplicateReason.SAME_BANK, it.title) }
+
+            is CardContent.Id -> null
+        }
+        return sameBrand ?: cards.firstOrNull { it.title.trim().equals(draft.title.trim(), ignoreCase = true) }
+            ?.let { DuplicateWarning(DuplicateReason.SAME_NAME, it.title) }
+    }
+
+    private fun BrandRef.sameBrandAs(other: BrandRef): Boolean = when {
+        this is BrandRef.Known && other is BrandRef.Known -> id == other.id
+        else -> name.isNotBlank() && name.trim().equals(other.name.trim(), ignoreCase = true)
     }
 
     fun onAuthenticationResult(purpose: AuthPurpose, succeeded: Boolean) {
