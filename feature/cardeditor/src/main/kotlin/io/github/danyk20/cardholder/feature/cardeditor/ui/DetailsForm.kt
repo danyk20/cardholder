@@ -51,6 +51,7 @@ import io.github.danyk20.cardholder.feature.cardeditor.R
 /** Callbacks of the details form, grouped to keep composable signatures readable. */
 internal class DetailsActions(
     val onTitleChange: (String) -> Unit,
+    val onNotesChange: (String) -> Unit,
     val onColorChange: (CardColor) -> Unit,
     val onLockedChange: (Boolean) -> Unit,
     val onOpenSecuritySettings: () -> Unit,
@@ -100,6 +101,15 @@ internal fun DetailsForm(
                 },
             isError = CardField.TITLE in state.errors,
             singleLine = true,
+            modifier = Modifier.fillMaxWidth(),
+        )
+        OutlinedTextField(
+            value = state.notes,
+            onValueChange = actions.onNotesChange,
+            label = { Text(stringResource(R.string.editor_field_notes)) },
+            supportingText = { Text(stringResource(R.string.editor_notes_hint)) },
+            minLines = 2,
+            maxLines = 6,
             modifier = Modifier.fillMaxWidth(),
         )
         if (state.loyalty.shop !is BrandRef.Known || state.type != CardType.LOYALTY) {

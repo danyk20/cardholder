@@ -95,6 +95,7 @@ fun CardDetailRoute(
         onShowBarcode = { onShowBarcode(viewModel.cardId) },
         onDelete = viewModel::onDelete,
         onLockedChange = viewModel::onLockedChange,
+        onFavouriteChange = viewModel::onFavouriteChange,
         onUnlock = viewModel::onUnlockDetails,
         fieldActions = remember(viewModel) {
             FieldActions(
@@ -117,6 +118,7 @@ internal fun CardDetailScreen(
     onShowBarcode: () -> Unit,
     onDelete: () -> Unit,
     onLockedChange: (Boolean) -> Unit,
+    onFavouriteChange: (Boolean) -> Unit,
     onUnlock: () -> Unit,
     fieldActions: FieldActions,
     onCopiedMessageShown: () -> Unit,
@@ -142,7 +144,9 @@ internal fun CardDetailScreen(
                     }
                 },
                 actions = {
-                    if (state.summary != null) DetailMenu(onEdit = onEdit, onDelete = { confirmDelete = true })
+                    val card = state.summary?.card ?: return@TopAppBar
+                    FavouriteButton(isFavourite = card.isFavourite, onFavouriteChange = onFavouriteChange)
+                    DetailMenu(onEdit = onEdit, onDelete = { confirmDelete = true })
                 },
             )
         },
@@ -214,6 +218,17 @@ internal fun CardDetailScreen(
             confirmButton = {
                 TextButton(onClick = onErrorShown) { Text(stringResource(R.string.detail_ok)) }
             },
+        )
+    }
+}
+
+@Composable
+private fun FavouriteButton(isFavourite: Boolean, onFavouriteChange: (Boolean) -> Unit) {
+    val description = if (isFavourite) R.string.detail_remove_favourite else R.string.detail_add_favourite
+    IconButton(onClick = { onFavouriteChange(!isFavourite) }) {
+        Icon(
+            if (isFavourite) CardholderIcons.Favourite else CardholderIcons.NotFavourite,
+            contentDescription = stringResource(description),
         )
     }
 }

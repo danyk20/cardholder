@@ -17,6 +17,8 @@
     <!-- Common fields -->
     <string name="editor_field_title">Name</string>
     <string name="editor_field_title_hint">Defaults to %1$s</string>
+    <string name="editor_field_notes">Notes (optional)</string>
+    <string name="editor_notes_hint">Encrypted like the rest of the card, e.g. a member level or a phone number</string>
     <string name="editor_color">Colour</string>
     <string name="editor_lock">Lock this card</string>
     <string name="editor_lock_description">Require fingerprint, face or screen lock to see any of its details</string>

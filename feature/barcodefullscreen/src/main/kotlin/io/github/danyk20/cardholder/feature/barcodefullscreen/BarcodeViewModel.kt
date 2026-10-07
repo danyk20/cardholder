@@ -89,6 +89,8 @@ class BarcodeViewModel @Inject constructor(
         }
         _uiState.value = when (val details = cardRepository.readDetails(cardId)) {
             is SecureResult.Success -> {
+                // Each time the code is shown at the till counts towards the "most used" order.
+                if (!wasShown) cardRepository.recordUse(cardId)
                 wasShown = true
                 BarcodeUiState.Ready(
                     title = card.title,

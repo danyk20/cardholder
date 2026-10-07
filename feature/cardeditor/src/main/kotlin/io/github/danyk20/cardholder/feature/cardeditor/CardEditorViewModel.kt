@@ -136,6 +136,8 @@ class CardEditorViewModel @Inject constructor(
 
     fun onColorChange(color: CardColor) = _uiState.update { it.copy(color = color) }
 
+    fun onNotesChange(notes: String) = _uiState.update { it.copy(notes = notes.take(MAX_NOTES_LENGTH)) }
+
     fun onLockedChange(locked: Boolean) = _uiState.update { it.copy(isLocked = locked && it.canProtect) }
 
     fun onNumberChange(number: String) =
@@ -307,6 +309,7 @@ class CardEditorViewModel @Inject constructor(
             loadState = LoadState.READY,
             type = card.type,
             title = card.title,
+            notes = details.notes,
             color = card.color,
             isLocked = card.isLocked,
             front = card.sides.front?.let(SideImage::Existing) ?: SideImage.None,
@@ -375,6 +378,7 @@ class CardEditorViewModel @Inject constructor(
                         BankCardValidator.validateExpiry(state.bank.expiry) ?: ValidationError.INVALID_DATE
                 },
                 holder = state.bank.holder,
+                notes = state.notes.trim(),
             ),
             cvv = when {
                 state.bank.cvv.isNotEmpty() -> CvvChange.Set(state.bank.cvv)
@@ -388,7 +392,7 @@ class CardEditorViewModel @Inject constructor(
             country = state.id.country?.code ?: PLACEHOLDER_COUNTRY.also {
                 formErrors[CardField.COUNTRY] = ValidationError.REQUIRED
             },
-            details = CardDetails.Id(state.id.documentNumber, state.id.expiry),
+            details = CardDetails.Id(state.id.documentNumber, state.id.expiry, state.notes.trim()),
         )
 
         CardType.LOYALTY -> CardContent.Loyalty(
@@ -396,7 +400,7 @@ class CardEditorViewModel @Inject constructor(
                 formErrors[CardField.SHOP] = ValidationError.REQUIRED
             },
             format = state.loyalty.format,
-            details = CardDetails.Loyalty(state.loyalty.code),
+            details = CardDetails.Loyalty(state.loyalty.code, state.notes.trim()),
         )
     }
 
@@ -422,6 +426,8 @@ class CardEditorViewModel @Inject constructor(
         _uiState.update { it.transform().copy(errors = it.errors - field) }
 
     private companion object {
+        /** Notes are for short remarks, not documents. */
+        const val MAX_NOTES_LENGTH = 1_000
         const val MAX_PAN = 19
         const val MAX_CVV = 4
         const val EXPIRY_DIGITS = 4

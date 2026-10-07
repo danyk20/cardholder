@@ -94,9 +94,8 @@ class MigrationTest {
         }
 
         helper.runMigrationsAndValidate(DB, 5, true).use { db ->
-            db.query(
-                "SELECT is_favourite, use_count, last_used_at, expires_on, expiry_reminded_for FROM cards WHERE id = '1'",
-            ).use { cursor ->
+            val columns = "is_favourite, use_count, last_used_at, expires_on, expiry_reminded_for"
+            db.query("SELECT $columns FROM cards WHERE id = '1'").use { cursor ->
                 assertTrue(cursor.moveToFirst())
                 assertEquals(0, cursor.getInt(0))
                 assertEquals(0, cursor.getInt(1))

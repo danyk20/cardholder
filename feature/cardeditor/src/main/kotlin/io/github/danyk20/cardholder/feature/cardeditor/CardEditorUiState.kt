@@ -103,6 +103,7 @@ data class LoyaltyForm(
 internal data class EditorContent(
     val type: CardType,
     val title: String,
+    val notes: String,
     val color: CardColor,
     val front: SideImage,
     val back: SideImage,
@@ -119,6 +120,8 @@ data class CardEditorUiState(
     val loadState: LoadState = LoadState.READY,
     val type: CardType = CardType.BANK,
     val title: String = "",
+    /** Optional free text, stored encrypted with the card's details. */
+    val notes: String = "",
     val color: CardColor = CardColor.Default,
     val front: SideImage = SideImage.None,
     val back: SideImage = SideImage.None,
@@ -148,7 +151,7 @@ data class CardEditorUiState(
 
     /** Everything the user can enter; compared to detect unsaved changes. */
     internal val content: EditorContent
-        get() = EditorContent(type, title, color, front, back, logo, bank, id, loyalty, isLocked)
+        get() = EditorContent(type, title, notes, color, front, back, logo, bank, id, loyalty, isLocked)
 
     /** The catalogue shop of a loyalty card, if one is selected. */
     val selectedShop: Shop?

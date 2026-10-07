@@ -131,6 +131,7 @@ fun CardEditorRoute(
     val detailsActions = remember(viewModel) {
         DetailsActions(
             onTitleChange = viewModel::onTitleChange,
+            onNotesChange = viewModel::onNotesChange,
             onColorChange = viewModel::onColorChange,
             onLockedChange = viewModel::onLockedChange,
             onOpenSecuritySettings = {

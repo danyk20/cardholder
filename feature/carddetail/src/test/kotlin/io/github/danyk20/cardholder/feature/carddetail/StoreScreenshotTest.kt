@@ -41,6 +41,7 @@ class StoreScreenshotTest {
                     onShowBarcode = {},
                     onDelete = {},
                     onLockedChange = {},
+                    onFavouriteChange = {},
                     onUnlock = {},
                     fieldActions = FieldActions(onCopy = { _, _ -> }, onRevealCvv = {}, onHideCvv = {}),
                     onCopiedMessageShown = {},

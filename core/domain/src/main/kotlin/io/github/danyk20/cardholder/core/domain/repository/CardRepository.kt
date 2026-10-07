@@ -8,6 +8,7 @@ import io.github.danyk20.cardholder.core.model.CardId
 import java.time.LocalDate
 import kotlinx.coroutines.flow.Flow
 
+@Suppress("TooManyFunctions") // The single entry point to stored cards.
 interface CardRepository {
     /** All cards in no particular order; sorting and filtering happen in `ObserveCardsUseCase`. */
     fun observeCards(): Flow<List<Card>>

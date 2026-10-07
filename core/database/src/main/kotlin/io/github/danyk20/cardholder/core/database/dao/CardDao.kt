@@ -8,6 +8,7 @@ import io.github.danyk20.cardholder.core.database.model.CardEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
+@Suppress("TooManyFunctions") // One function per query the app needs.
 interface CardDao {
     @Query("SELECT * FROM cards ORDER BY title COLLATE LOCALIZED ASC")
     fun observeAll(): Flow<List<CardEntity>>
