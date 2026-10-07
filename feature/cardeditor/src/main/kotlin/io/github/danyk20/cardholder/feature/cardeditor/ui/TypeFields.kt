@@ -18,6 +18,7 @@ import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -41,10 +42,12 @@ import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.domain.validation.BankCardValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardField
+import io.github.danyk20.cardholder.core.domain.validation.InputStatus
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
 import io.github.danyk20.cardholder.core.model.Bank
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.Shop
+import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.barcodeFormatLabel
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
 import io.github.danyk20.cardholder.feature.cardeditor.BankForm
@@ -106,6 +109,8 @@ internal fun BankFields(
                 Text(stringResource(R.string.editor_read_nfc), Modifier.padding(start = 8.dp))
             }
         }
+        // Checked while typing, so a typo shows up before saving.
+        val numberStatus = BankCardValidator.numberStatus(form.number)
         OutlinedTextField(
             value = form.number,
             onValueChange = actions.onNumberChange,
@@ -113,14 +118,20 @@ internal fun BankFields(
             visualTransformation = CardNumberTransformation(form.network),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             supportingText = errors.supportingText(CardField.NUMBER)
-                ?: form.number.takeIf { it.isNotEmpty() }?.let { { Text(form.network.displayName) } },
-            isError = CardField.NUMBER in errors,
+                ?: if (numberStatus == InputStatus.INVALID) {
+                    { Text(stringResource(UiR.string.error_invalid_checksum)) }
+                } else {
+                    form.number.takeIf { it.isNotEmpty() }?.let { { Text(form.network.displayName) } }
+                },
+            trailingIcon = validIcon(numberStatus, R.string.editor_number_valid),
+            isError = CardField.NUMBER in errors || numberStatus == InputStatus.INVALID,
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
         )
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             val expiry = BankCardValidator.parseExpiry(form.expiry)
             val expired = expiry != null && BankCardValidator.isExpired(expiry, YearMonth.now())
+            val expiryStatus = BankCardValidator.expiryStatus(form.expiry)
             OutlinedTextField(
                 value = form.expiry,
                 onValueChange = actions.onExpiryChange,
@@ -128,8 +139,16 @@ internal fun BankFields(
                 visualTransformation = ExpiryTransformation,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 supportingText = errors.supportingText(CardField.EXPIRY)
-                    ?: if (expired) ({ Text(stringResource(R.string.editor_card_expired)) }) else null,
-                isError = CardField.EXPIRY in errors,
+                    ?: when {
+                        expiryStatus == InputStatus.INVALID -> ({ Text(stringResource(UiR.string.error_invalid_date)) })
+                        expired -> ({ Text(stringResource(R.string.editor_card_expired)) })
+                        else -> null
+                    },
+                trailingIcon = validIcon(
+                    if (expired) InputStatus.INCOMPLETE else expiryStatus,
+                    R.string.editor_expiry_valid,
+                ),
+                isError = CardField.EXPIRY in errors || expiryStatus == InputStatus.INVALID,
                 singleLine = true,
                 modifier = Modifier.weight(1f),
             )
@@ -392,3 +411,11 @@ private fun PickerField(label: String, value: String, onClick: () -> Unit, error
         interactionSource = clickInteractionSource(onClick),
     )
 }
+
+/** A check mark once a field was verified, e.g. a card number with a valid check digit. */
+private fun validIcon(status: InputStatus, description: Int): (@Composable () -> Unit)? =
+    if (status == InputStatus.VALID) {
+        { Icon(CardholderIcons.Check, stringResource(description), tint = MaterialTheme.colorScheme.primary) }
+    } else {
+        null
+    }

@@ -55,4 +55,13 @@ val CardColor.label: Int
         CardColor.PURPLE -> R.string.color_purple
         CardColor.BROWN -> R.string.color_brown
         CardColor.GRAPHITE -> R.string.color_graphite
+        CardColor.WHITE -> R.string.color_white
+        CardColor.SILVER -> R.string.color_silver
+        CardColor.GRAY -> R.string.color_gray
+        CardColor.SAND -> R.string.color_sand
+        CardColor.LEMON -> R.string.color_lemon
+        CardColor.MINT -> R.string.color_mint
+        CardColor.SKY -> R.string.color_sky
+        CardColor.LAVENDER -> R.string.color_lavender
+        CardColor.BLUSH -> R.string.color_blush
     }

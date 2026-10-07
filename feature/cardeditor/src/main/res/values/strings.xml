@@ -39,6 +39,8 @@
     <string name="editor_cvv_stored">A CVV is stored. Leave empty to keep it.</string>
     <string name="editor_cvv_remove">Remove stored CVV</string>
     <string name="editor_card_expired">This card has expired</string>
+    <string name="editor_number_valid">Card number is valid</string>
+    <string name="editor_expiry_valid">Expiry date is valid</string>
 
     <!-- ID -->
     <string name="editor_field_country">Issuing country</string>
