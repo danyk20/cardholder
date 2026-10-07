@@ -6,4 +6,7 @@
     <string name="notification_expiry_title">Card expires soon</string>
     <string name="notification_expiry_text">\"%1$s\" expires on %2$s.</string>
     <string name="notification_expiry_public">A card in your wallet expires soon.</string>
+    <string name="widget_title">Loyalty cards</string>
+    <string name="widget_description">Your favourite loyalty cards, one tap from the code</string>
+    <string name="widget_empty">Add a loyalty card to see it here.</string>
 </resources>

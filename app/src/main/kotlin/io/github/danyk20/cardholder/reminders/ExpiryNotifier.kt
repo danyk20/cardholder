@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -26,7 +27,9 @@ class ExpiryNotifier @Inject constructor(@ApplicationContext private val context
 
     /** Returns `false` if notifications aren't allowed, so the reminder can be shown later. */
     fun notify(card: Card, expiresOn: LocalDate): Boolean {
-        val permitted = ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) ==
+        // The permission exists from Android 13; before that, notifications only depend on the user's settings.
+        val permitted = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+            ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) ==
             PackageManager.PERMISSION_GRANTED
         if (!permitted || !manager.areNotificationsEnabled()) return false
         createChannel()
