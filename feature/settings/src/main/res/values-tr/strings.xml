@@ -10,7 +10,7 @@
     <string name="settings_dynamic_color_description">Duvar kağıdınızdaki renkleri kullanın</string>
     <string name="settings_notifications">Bildirimler</string>
     <string name="settings_expiry_reminders">Son kullanma tarihi hatırlatıcıları</string>
-    <string name="settings_expiry_reminders_description">Banka kartının veya kimlik kartının süresi dolmadan bir ay önce bildir</string>
+    <string name="settings_expiry_reminders_description">Banka kartının veya kimlik kartının süresi dolmadan bir ay önce, kimlik kartının süresi dolmadan ise ayrıca 7 ay önce bildir (birçok ülke seyahat için 6 aylık geçerlilik şartı arar)</string>
 
     <string name="settings_security">Güvenlik</string>
     <string name="settings_allow_screenshots">Ekran görüntülerine izin ver</string>

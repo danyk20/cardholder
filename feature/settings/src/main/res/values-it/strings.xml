@@ -9,7 +9,7 @@
     <string name="settings_dynamic_color_description">Usa i colori dello sfondo</string>
     <string name="settings_notifications">Notifiche</string>
     <string name="settings_expiry_reminders">Promemoria scadenza</string>
-    <string name="settings_expiry_reminders_description">Avvisami un mese prima della scadenza di una carta bancaria o di un documento d\'identità</string>
+    <string name="settings_expiry_reminders_description">Avvisami un mese prima della scadenza di una carta bancaria o di un documento d\'identità e 7 mesi prima della scadenza di un documento d\'identità (molti paesi richiedono 6 mesi di validità per viaggiare)</string>
     <string name="settings_security">Sicurezza</string>
     <string name="settings_allow_screenshots">Consenti screenshot</string>
     <string name="settings_allow_screenshots_description">Finché non esci dall\'app. Gli screenshot possono mostrare i numeri delle carte e vengono salvati nelle tue foto, che potrebbero essere sottoposte a backup nel cloud.</string>

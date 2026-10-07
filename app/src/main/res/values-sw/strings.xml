@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Muda wa kadi unaisha hivi karibuni</string>
     <string name="notification_expiry_text">Muda wa “%1$s” utaisha tarehe %2$s.</string>
     <string name="notification_expiry_public">Muda wa kadi moja kwenye pochi yako unaisha hivi karibuni.</string>
+    <string name="notification_travel_title">Huisha kitambulisho chako kwa ajili ya safari</string>
+    <string name="notification_travel_text">Muda wa “%1$s” utaisha tarehe %2$s. Nchi nyingi zinahitaji uhalali wa angalau miezi 6 kwa safari, kwa hivyo kihuishe ndani ya mwezi ujao.</string>
+    <string name="notification_travel_public">Hati moja kwenye pochi yako inapaswa kuhuishwa hivi karibuni.</string>
     <string name="widget_title">Kadi za uaminifu</string>
     <string name="widget_description">Kadi zako za uaminifu unazozipenda, mguso mmoja hadi kwenye msimbo</string>
     <string name="widget_empty">Ongeza kadi ya uaminifu ili uione hapa.</string>

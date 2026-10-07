@@ -9,7 +9,7 @@
     <string name="settings_dynamic_color_description">Utilizar as cores da sua imagem de fundo</string>
     <string name="settings_notifications">Notificações</string>
     <string name="settings_expiry_reminders">Lembretes de validade</string>
-    <string name="settings_expiry_reminders_description">Avisar um mês antes de um cartão bancário ou documento expirar</string>
+    <string name="settings_expiry_reminders_description">Avisar um mês antes de um cartão bancário ou documento expirar, e 7 meses antes de um documento expirar (muitos países exigem 6 meses de validade para viajar)</string>
     <string name="settings_security">Segurança</string>
     <string name="settings_allow_screenshots">Permitir capturas de ecrã</string>
     <string name="settings_allow_screenshots_description">Até sair da aplicação. As capturas de ecrã podem mostrar números de cartão e são guardadas nas suas fotografias, que podem ter cópia de segurança na nuvem.</string>

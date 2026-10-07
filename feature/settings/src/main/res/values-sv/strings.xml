@@ -9,7 +9,7 @@
     <string name="settings_dynamic_color_description">Använd färger från bakgrundsbilden</string>
     <string name="settings_notifications">Aviseringar</string>
     <string name="settings_expiry_reminders">Påminnelser om utgångsdatum</string>
-    <string name="settings_expiry_reminders_description">Meddela mig en månad innan ett bankkort eller ID-kort går ut</string>
+    <string name="settings_expiry_reminders_description">Meddela mig en månad innan ett bankkort eller ID-kort går ut, och 7 månader innan ett ID-kort går ut (många länder kräver 6 månaders giltighet vid resor)</string>
     <string name="settings_security">Säkerhet</string>
     <string name="settings_allow_screenshots">Tillåt skärmbilder</string>
     <string name="settings_allow_screenshots_description">Tills du lämnar appen. Skärmbilder kan visa kortnummer och sparas bland dina foton, som kan säkerhetskopieras till molnet.</string>

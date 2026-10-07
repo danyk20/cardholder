@@ -3,6 +3,7 @@ package io.github.danyk20.cardholder.core.testing.repository
 import io.github.danyk20.cardholder.core.domain.model.CardContent
 import io.github.danyk20.cardholder.core.domain.model.CardDraft
 import io.github.danyk20.cardholder.core.domain.model.CvvChange
+import io.github.danyk20.cardholder.core.domain.model.ExpiryReminder
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.domain.model.details
@@ -113,8 +114,8 @@ class FakeCardRepository : CardRepository {
         store.update { it - id }
     }
 
-    /** Expiry dates the user was reminded of, by card. */
-    val remindedExpiry = mutableMapOf<CardId, LocalDate>()
+    /** Expiry dates the user was reminded of, by reminder and card. */
+    val remindedExpiry = mutableMapOf<Pair<ExpiryReminder, CardId>, LocalDate>()
 
     override suspend fun setFavourite(id: CardId, favourite: Boolean) = updateCard(id) {
         it.copy(isFavourite = favourite)
@@ -123,16 +124,18 @@ class FakeCardRepository : CardRepository {
     override suspend fun recordUse(id: CardId) =
         updateCard(id) { it.copy(useCount = it.useCount + 1, lastUsedAt = now) }
 
-    override suspend fun cardsDueForExpiryReminder(today: LocalDate, until: LocalDate): List<Card> =
+    override suspend fun cardsDueForExpiryReminder(reminder: ExpiryReminder, today: LocalDate): List<Card> =
         store.value.values.map { it.card }.filter { card ->
             val expiresOn = card.expiresOn ?: return@filter false
-            expiresOn in today..until && remindedExpiry[card.id] != expiresOn
+            card.type in reminder.types &&
+                expiresOn in today..today.plusMonths(reminder.monthsBefore) &&
+                remindedExpiry[reminder to card.id] != expiresOn
         }
 
     override suspend fun fillMissingExpiryDates() = Unit
 
-    override suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate) {
-        remindedExpiry[id] = expiresOn
+    override suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate, reminder: ExpiryReminder) {
+        remindedExpiry[reminder to id] = expiresOn
     }
 
     private fun updateCard(id: CardId, transform: (Card) -> Card) = store.update { cards ->

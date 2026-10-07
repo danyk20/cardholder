@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Carta in scadenza</string>
     <string name="notification_expiry_text">«%1$s» scade il %2$s.</string>
     <string name="notification_expiry_public">Una delle tue carte sta per scadere.</string>
+    <string name="notification_travel_title">Rinnova il documento per viaggiare</string>
+    <string name="notification_travel_text">«%1$s» scade il %2$s. Molti paesi richiedono almeno 6 mesi di validità per viaggiare, quindi rinnovalo entro il prossimo mese.</string>
+    <string name="notification_travel_public">Uno dei tuoi documenti va rinnovato a breve.</string>
     <string name="widget_title">Carte fedeltà</string>
     <string name="widget_description">Le tue carte fedeltà preferite, con il codice a portata di tocco</string>
     <string name="widget_empty">Aggiungi una carta fedeltà per vederla qui.</string>

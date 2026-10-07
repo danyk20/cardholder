@@ -14,6 +14,7 @@ import androidx.core.net.toUri
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.danyk20.cardholder.MainActivity
 import io.github.danyk20.cardholder.R
+import io.github.danyk20.cardholder.core.domain.model.ExpiryReminder
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.feature.carddetail.navigation.cardDetailDeepLink
 import java.time.LocalDate
@@ -26,7 +27,7 @@ class ExpiryNotifier @Inject constructor(@ApplicationContext private val context
     private val manager = NotificationManagerCompat.from(context)
 
     /** Returns `false` if notifications aren't allowed, so the reminder can be shown later. */
-    fun notify(card: Card, expiresOn: LocalDate): Boolean {
+    fun notify(card: Card, expiresOn: LocalDate, reminder: ExpiryReminder): Boolean {
         // The permission exists from Android 13; before that, notifications only depend on the user's settings.
         val permitted = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
             ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) ==
@@ -42,15 +43,30 @@ class ExpiryNotifier @Inject constructor(@ApplicationContext private val context
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
+        val texts = when (reminder) {
+            ExpiryReminder.FINAL -> Texts(
+                title = R.string.notification_expiry_title,
+                text = R.string.notification_expiry_text,
+                lockScreen = R.string.notification_expiry_public,
+            )
+
+            ExpiryReminder.TRAVEL -> Texts(
+                title = R.string.notification_travel_title,
+                text = R.string.notification_travel_text,
+                lockScreen = R.string.notification_travel_public,
+            )
+        }
+        val text = context.getString(texts.text, card.title, date)
         val lockScreenVersion = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle(context.getString(R.string.notification_expiry_title))
-            .setContentText(context.getString(R.string.notification_expiry_public))
+            .setContentTitle(context.getString(texts.title))
+            .setContentText(context.getString(texts.lockScreen))
             .build()
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle(context.getString(R.string.notification_expiry_title))
-            .setContentText(context.getString(R.string.notification_expiry_text, card.title, date))
+            .setContentTitle(context.getString(texts.title))
+            .setContentText(text)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(text))
             .setCategory(NotificationCompat.CATEGORY_REMINDER)
             .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
             .setPublicVersion(lockScreenVersion)
@@ -58,7 +74,7 @@ class ExpiryNotifier @Inject constructor(@ApplicationContext private val context
             .setAutoCancel(true)
             .build()
         @Suppress("MissingPermission") // Checked above.
-        manager.notify(card.id.value, NOTIFICATION_ID, notification)
+        manager.notify("${card.id.value}-${reminder.name}", NOTIFICATION_ID, notification)
         return true
     }
 
@@ -69,6 +85,8 @@ class ExpiryNotifier @Inject constructor(@ApplicationContext private val context
                 .build(),
         )
     }
+
+    private class Texts(val title: Int, val text: Int, val lockScreen: Int)
 
     private companion object {
         const val CHANNEL_ID = "expiry_reminders"

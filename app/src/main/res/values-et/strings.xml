@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Kaart aegub peagi</string>
     <string name="notification_expiry_text">„%1$s“ aegub %2$s.</string>
     <string name="notification_expiry_public">Teie rahakotis olev kaart aegub peagi.</string>
+    <string name="notification_travel_title">Uuendage reisiks oma dokumenti</string>
+    <string name="notification_travel_text">„%1$s“ aegub %2$s. Paljud riigid nõuavad reisimisel vähemalt 6-kuulist kehtivust, seega uuendage see järgmise kuu jooksul.</string>
+    <string name="notification_travel_public">Teie rahakotis olev dokument tuleks peagi uuendada.</string>
     <string name="widget_title">Kliendikaardid</string>
     <string name="widget_description">Teie lemmikkliendikaardid, koodini vaid ühe puudutusega</string>
     <string name="widget_empty">Lisage kliendikaart, et seda siin näha.</string>

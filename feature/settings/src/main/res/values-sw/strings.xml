@@ -9,7 +9,7 @@
     <string name="settings_dynamic_color_description">Tumia rangi kutoka kwenye mandhari yako</string>
     <string name="settings_notifications">Arifa</string>
     <string name="settings_expiry_reminders">Vikumbusho vya kuisha muda</string>
-    <string name="settings_expiry_reminders_description">Niarifu mwezi mmoja kabla ya muda wa kadi ya benki au kitambulisho kuisha</string>
+    <string name="settings_expiry_reminders_description">Niarifu mwezi mmoja kabla ya muda wa kadi ya benki au kitambulisho kuisha, na miezi 7 kabla ya muda wa kitambulisho kuisha (nchi nyingi zinahitaji uhalali wa miezi 6 kwa safari)</string>
     <string name="settings_security">Usalama</string>
     <string name="settings_allow_screenshots">Ruhusu picha za skrini</string>
     <string name="settings_allow_screenshots_description">Hadi utakapoondoka kwenye programu. Picha za skrini zinaweza kuonyesha nambari za kadi na huhifadhiwa kwenye picha zako, ambazo zinaweza kuhifadhiwa nakala kwenye wingu.</string>

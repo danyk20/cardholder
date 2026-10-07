@@ -9,7 +9,7 @@
     <string name="settings_dynamic_color_description">A háttérkép színeinek használata</string>
     <string name="settings_notifications">Értesítések</string>
     <string name="settings_expiry_reminders">Lejárati emlékeztetők</string>
-    <string name="settings_expiry_reminders_description">Értesítés egy hónappal a bankkártya vagy az igazolvány lejárata előtt</string>
+    <string name="settings_expiry_reminders_description">Értesítés egy hónappal a bankkártya vagy az igazolvány lejárata előtt, valamint 7 hónappal az igazolvány lejárata előtt (sok ország 6 hónapos érvényességet ír elő az utazáshoz)</string>
     <string name="settings_security">Biztonság</string>
     <string name="settings_allow_screenshots">Képernyőképek engedélyezése</string>
     <string name="settings_allow_screenshots_description">Amíg el nem hagyja az alkalmazást. A képernyőképeken kártyaszámok látszhatnak, és a fotók közé kerülnek, amelyekről a felhőbe is készülhet biztonsági mentés.</string>

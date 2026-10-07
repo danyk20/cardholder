@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.core.domain.repository
 
 import io.github.danyk20.cardholder.core.domain.model.CardDraft
+import io.github.danyk20.cardholder.core.domain.model.ExpiryReminder
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
@@ -38,10 +39,10 @@ interface CardRepository {
     suspend fun recordUse(id: CardId)
 
     /**
-     * Cards that expire between [today] and [until] (inclusive) and whose current expiry date hasn't
-     * been reminded of yet.
+     * Cards of the [reminder]'s types that expire between [today] and its number of months later and
+     * whose current expiry date hasn't had this reminder yet.
      */
-    suspend fun cardsDueForExpiryReminder(today: LocalDate, until: LocalDate): List<Card>
+    suspend fun cardsDueForExpiryReminder(reminder: ExpiryReminder, today: LocalDate): List<Card>
 
     /**
      * Stores the plain expiry date of unlocked cards saved before it was kept outside the encrypted
@@ -50,5 +51,5 @@ interface CardRepository {
     suspend fun fillMissingExpiryDates()
 
     /** Remembers that the user was reminded of [expiresOn]; a changed expiry date is reminded again. */
-    suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate)
+    suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate, reminder: ExpiryReminder)
 }

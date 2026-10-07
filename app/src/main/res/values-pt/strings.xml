@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Cartão vence em breve</string>
     <string name="notification_expiry_text">“%1$s” vence em %2$s.</string>
     <string name="notification_expiry_public">Um cartão da sua carteira vence em breve.</string>
+    <string name="notification_travel_title">Renove seu documento para viajar</string>
+    <string name="notification_travel_text">“%1$s” vence em %2$s. Muitos países exigem pelo menos 6 meses de validade para viajar, então renove o documento no próximo mês.</string>
+    <string name="notification_travel_public">Um documento da sua carteira precisa ser renovado em breve.</string>
     <string name="widget_title">Cartões fidelidade</string>
     <string name="widget_description">Seus cartões fidelidade favoritos, a um toque do código</string>
     <string name="widget_empty">Adicione um cartão fidelidade para vê-lo aqui.</string>

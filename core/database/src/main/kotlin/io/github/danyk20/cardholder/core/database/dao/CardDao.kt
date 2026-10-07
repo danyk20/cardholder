@@ -44,11 +44,23 @@ interface CardDao {
     @Query(
         """
         SELECT * FROM cards
-        WHERE expires_on IS NOT NULL AND expires_on BETWEEN :today AND :until
+        WHERE type IN (:types) AND expires_on IS NOT NULL AND expires_on BETWEEN :today AND :until
             AND (expiry_reminded_for IS NULL OR expiry_reminded_for != expires_on)
         """,
     )
-    suspend fun dueForExpiryReminder(today: String, until: String): List<CardEntity>
+    suspend fun dueForExpiryReminder(types: List<String>, today: String, until: String): List<CardEntity>
+
+    @Query(
+        """
+        SELECT * FROM cards
+        WHERE type IN (:types) AND expires_on IS NOT NULL AND expires_on BETWEEN :today AND :until
+            AND (travel_reminded_for IS NULL OR travel_reminded_for != expires_on)
+        """,
+    )
+    suspend fun dueForTravelReminder(types: List<String>, today: String, until: String): List<CardEntity>
+
+    @Query("UPDATE cards SET travel_reminded_for = :expiresOn WHERE id = :id")
+    suspend fun markTravelReminded(id: String, expiresOn: String)
 
     /** Unlocked bank and ID cards saved before expiry dates were stored in plain columns. */
     @Query("SELECT * FROM cards WHERE expires_on IS NULL AND type IN ('BANK', 'ID') AND is_locked = 0")

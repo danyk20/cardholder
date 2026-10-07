@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">卡片即將到期</string>
     <string name="notification_expiry_text">「%1$s」將於 %2$s 到期。</string>
     <string name="notification_expiry_public">你的一張卡片即將到期。</string>
+    <string name="notification_travel_title">出國前請更新證件</string>
+    <string name="notification_travel_text">「%1$s」將於 %2$s 到期。許多國家/地區要求旅行時證件效期至少須剩 6 個月，請在下個月內完成更新。</string>
+    <string name="notification_travel_public">你有一份證件需要盡快更新。</string>
     <string name="widget_title">會員卡</string>
     <string name="widget_description">你最愛的會員卡，輕觸一下即可顯示代碼</string>
     <string name="widget_empty">新增會員卡後，就會顯示在這裡。</string>

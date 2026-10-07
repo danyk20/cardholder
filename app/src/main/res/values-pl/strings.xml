@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Karta wkrótce straci ważność</string>
     <string name="notification_expiry_text">Karta „%1$s” traci ważność %2$s.</string>
     <string name="notification_expiry_public">Jedna z zapisanych kart wkrótce straci ważność.</string>
+    <string name="notification_travel_title">Odnów dokument przed podróżą</string>
+    <string name="notification_travel_text">Dokument „%1$s” traci ważność %2$s. Wiele krajów wymaga przy podróży co najmniej 6 miesięcy ważności, więc odnów go w ciągu najbliższego miesiąca.</string>
+    <string name="notification_travel_public">Jeden z zapisanych dokumentów trzeba wkrótce odnowić.</string>
     <string name="widget_title">Karty lojalnościowe</string>
     <string name="widget_description">Ulubione karty lojalnościowe – kod jednym dotknięciem</string>
     <string name="widget_empty">Dodaj kartę lojalnościową, aby zobaczyć ją tutaj.</string>

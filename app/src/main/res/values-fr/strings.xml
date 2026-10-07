@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Une carte expire bientôt</string>
     <string name="notification_expiry_text">« %1$s » expire le %2$s.</string>
     <string name="notification_expiry_public">Une de vos cartes expire bientôt.</string>
+    <string name="notification_travel_title">Renouvelez votre pièce d\'identité pour voyager</string>
+    <string name="notification_travel_text">« %1$s » expire le %2$s. De nombreux pays exigent une validité d\'au moins 6 mois pour voyager : pensez à renouveler ce document dans le mois qui vient.</string>
+    <string name="notification_travel_public">Un de vos documents doit bientôt être renouvelé.</string>
     <string name="widget_title">Cartes de fidélité</string>
     <string name="widget_description">Vos cartes de fidélité favorites, leur code en un seul geste</string>
     <string name="widget_empty">Ajoutez une carte de fidélité pour l\'afficher ici.</string>

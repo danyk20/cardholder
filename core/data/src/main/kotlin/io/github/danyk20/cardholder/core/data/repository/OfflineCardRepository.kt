@@ -10,6 +10,7 @@ import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
 import io.github.danyk20.cardholder.core.domain.model.CardContent
 import io.github.danyk20.cardholder.core.domain.model.CardDraft
 import io.github.danyk20.cardholder.core.domain.model.CvvChange
+import io.github.danyk20.cardholder.core.domain.model.ExpiryReminder
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.domain.model.details
@@ -105,9 +106,14 @@ internal class OfflineCardRepository @Inject constructor(
         dao.recordUse(id.value, clock.millis())
     }
 
-    override suspend fun cardsDueForExpiryReminder(today: LocalDate, until: LocalDate): List<Card> =
+    override suspend fun cardsDueForExpiryReminder(reminder: ExpiryReminder, today: LocalDate): List<Card> =
         withContext(ioDispatcher) {
-            dao.dueForExpiryReminder(today.toString(), until.toString()).map(CardEntity::toCard)
+            val types = reminder.types.map { it.name }
+            val until = today.plusMonths(reminder.monthsBefore).toString()
+            when (reminder) {
+                ExpiryReminder.FINAL -> dao.dueForExpiryReminder(types, today.toString(), until)
+                ExpiryReminder.TRAVEL -> dao.dueForTravelReminder(types, today.toString(), until)
+            }.map(CardEntity::toCard)
         }
 
     override suspend fun fillMissingExpiryDates() = withContext(ioDispatcher) {
@@ -120,9 +126,13 @@ internal class OfflineCardRepository @Inject constructor(
         }
     }
 
-    override suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate) = withContext(ioDispatcher) {
-        dao.markExpiryReminded(id.value, expiresOn.toString())
-    }
+    override suspend fun markExpiryReminded(id: CardId, expiresOn: LocalDate, reminder: ExpiryReminder) =
+        withContext(ioDispatcher) {
+            when (reminder) {
+                ExpiryReminder.FINAL -> dao.markExpiryReminded(id.value, expiresOn.toString())
+                ExpiryReminder.TRAVEL -> dao.markTravelReminded(id.value, expiresOn.toString())
+            }
+        }
 
     private suspend fun saveCard(draft: CardDraft): CardId = withImageTransaction {
         val existing = draft.id?.let { dao.get(it.value) }
@@ -162,6 +172,7 @@ internal class OfflineCardRepository @Inject constructor(
                 lastUsedAt = existing?.lastUsedAt,
                 expiresOn = content.details.expiresOn?.toString(),
                 expiryRemindedFor = existing?.expiryRemindedFor,
+                travelRemindedFor = existing?.travelRemindedFor,
                 sealedDetails = cipher.seal(content.details.encode(), level),
                 sealedCvv = content.sealedCvv(existing?.sealedCvv),
             ),

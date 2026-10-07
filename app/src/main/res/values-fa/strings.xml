@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">کارت به‌زودی منقضی می‌شود</string>
     <string name="notification_expiry_text">«%1$s» در %2$s منقضی می‌شود.</string>
     <string name="notification_expiry_public">یکی از کارت‌های کیف پولتان به‌زودی منقضی می‌شود.</string>
+    <string name="notification_travel_title">مدرک شناسایی‌تان را برای سفر تمدید کنید</string>
+    <string name="notification_travel_text">«%1$s» در %2$s منقضی می‌شود. بسیاری از کشورها برای سفر دست‌کم ۶ ماه اعتبار لازم دارند، پس آن را ظرف یک ماه آینده تمدید کنید.</string>
+    <string name="notification_travel_public">یکی از مدارک کیف پولتان باید به‌زودی تمدید شود.</string>
     <string name="widget_title">کارت‌های باشگاه مشتریان</string>
     <string name="widget_description">کارت‌های باشگاه مشتریان دلخواهتان، با یک ضربه تا کد</string>
     <string name="widget_empty">یک کارت باشگاه مشتریان اضافه کنید تا اینجا نمایش داده شود.</string>

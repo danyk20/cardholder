@@ -10,7 +10,7 @@
     <string name="settings_dynamic_color_description">Używaj kolorów z tapety</string>
     <string name="settings_notifications">Powiadomienia</string>
     <string name="settings_expiry_reminders">Przypomnienia o ważności</string>
-    <string name="settings_expiry_reminders_description">Powiadamiaj miesiąc przed utratą ważności karty bankowej lub dokumentu</string>
+    <string name="settings_expiry_reminders_description">Powiadamiaj miesiąc przed utratą ważności karty bankowej lub dokumentu oraz 7 miesięcy przed utratą ważności dokumentu (wiele krajów wymaga przy podróży 6 miesięcy ważności)</string>
 
     <string name="settings_security">Bezpieczeństwo</string>
     <string name="settings_allow_screenshots">Zezwól na zrzuty ekranu</string>

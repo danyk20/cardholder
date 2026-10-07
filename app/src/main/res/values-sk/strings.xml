@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Platnosť karty čoskoro skončí</string>
     <string name="notification_expiry_text">Platnosť karty „%1$s“ skončí %2$s.</string>
     <string name="notification_expiry_public">Platnosť jednej z vašich kariet čoskoro skončí.</string>
+    <string name="notification_travel_title">Obnovte si doklad pred cestou</string>
+    <string name="notification_travel_text">Platnosť dokladu „%1$s“ skončí %2$s. Mnohé krajiny pri cestovaní vyžadujú platnosť aspoň 6 mesiacov, preto si ho obnovte v priebehu nasledujúceho mesiaca.</string>
+    <string name="notification_travel_public">Jeden z vašich dokladov by ste mali čoskoro obnoviť.</string>
     <string name="widget_title">Vernostné karty</string>
     <string name="widget_description">Vaše obľúbené vernostné karty s kódom na jedno ťuknutie</string>
     <string name="widget_empty">Pridajte vernostnú kartu a zobrazí sa tu.</string>

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 5,
-    "identityHash": "346a1d09c703387850d64c0cdd717185",
+    "identityHash": "5491a39a35203b85da89fba866644c18",
     "entities": [
       {
         "tableName": "cards",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `type` TEXT NOT NULL, `title` TEXT NOT NULL, `color` TEXT NOT NULL, `is_locked` INTEGER NOT NULL, `created_at` INTEGER NOT NULL, `updated_at` INTEGER NOT NULL, `bank_network` TEXT, `bank_id` TEXT DEFAULT NULL, `bank_name` TEXT DEFAULT NULL, `id_country` TEXT, `loyalty_shop_id` TEXT, `loyalty_shop_name` TEXT, `loyalty_barcode_format` TEXT, `front_image` TEXT, `back_image` TEXT, `logo_image` TEXT DEFAULT NULL, `position` INTEGER NOT NULL DEFAULT 0, `is_favourite` INTEGER NOT NULL DEFAULT 0, `use_count` INTEGER NOT NULL DEFAULT 0, `last_used_at` INTEGER DEFAULT NULL, `expires_on` TEXT DEFAULT NULL, `expiry_reminded_for` TEXT DEFAULT NULL, `sealed_details` BLOB NOT NULL, `sealed_cvv` BLOB, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `type` TEXT NOT NULL, `title` TEXT NOT NULL, `color` TEXT NOT NULL, `is_locked` INTEGER NOT NULL, `created_at` INTEGER NOT NULL, `updated_at` INTEGER NOT NULL, `bank_network` TEXT, `bank_id` TEXT DEFAULT NULL, `bank_name` TEXT DEFAULT NULL, `id_country` TEXT, `loyalty_shop_id` TEXT, `loyalty_shop_name` TEXT, `loyalty_barcode_format` TEXT, `front_image` TEXT, `back_image` TEXT, `logo_image` TEXT DEFAULT NULL, `position` INTEGER NOT NULL DEFAULT 0, `is_favourite` INTEGER NOT NULL DEFAULT 0, `use_count` INTEGER NOT NULL DEFAULT 0, `last_used_at` INTEGER DEFAULT NULL, `expires_on` TEXT DEFAULT NULL, `expiry_reminded_for` TEXT DEFAULT NULL, `travel_reminded_for` TEXT DEFAULT NULL, `sealed_details` BLOB NOT NULL, `sealed_cvv` BLOB, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -143,6 +143,12 @@
             "defaultValue": "NULL"
           },
           {
+            "fieldPath": "travelRemindedFor",
+            "columnName": "travel_reminded_for",
+            "affinity": "TEXT",
+            "defaultValue": "NULL"
+          },
+          {
             "fieldPath": "sealedDetails",
             "columnName": "sealed_details",
             "affinity": "BLOB",
@@ -164,7 +170,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '346a1d09c703387850d64c0cdd717185')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5491a39a35203b85da89fba866644c18')"
     ]
   }
 }

@@ -9,7 +9,7 @@
     <string name="settings_dynamic_color_description">Χρήση χρωμάτων από την ταπετσαρία σας</string>
     <string name="settings_notifications">Ειδοποιήσεις</string>
     <string name="settings_expiry_reminders">Υπενθυμίσεις λήξης</string>
-    <string name="settings_expiry_reminders_description">Ειδοποίηση έναν μήνα πριν από τη λήξη τραπεζικής κάρτας ή ταυτότητας</string>
+    <string name="settings_expiry_reminders_description">Ειδοποίηση έναν μήνα πριν από τη λήξη τραπεζικής κάρτας ή ταυτότητας και 7 μήνες πριν από τη λήξη ταυτότητας (πολλές χώρες απαιτούν ισχύ 6 μηνών για ταξίδια)</string>
     <string name="settings_security">Ασφάλεια</string>
     <string name="settings_allow_screenshots">Να επιτρέπονται στιγμιότυπα οθόνης</string>
     <string name="settings_allow_screenshots_description">Μέχρι να βγείτε από την εφαρμογή. Τα στιγμιότυπα οθόνης μπορεί να δείχνουν αριθμούς καρτών και αποθηκεύονται στις φωτογραφίες σας, για τις οποίες μπορεί να δημιουργούνται αντίγραφα ασφαλείας στο cloud.</string>

@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Cardul expiră în curând</string>
     <string name="notification_expiry_text">„%1$s” expiră pe %2$s.</string>
     <string name="notification_expiry_public">Un card din portofel expiră în curând.</string>
+    <string name="notification_travel_title">Reînnoiți actul de identitate pentru călătorii</string>
+    <string name="notification_travel_text">„%1$s” expiră pe %2$s. Multe țări cer o valabilitate de cel puțin 6 luni pentru călătorii, așa că reînnoiți-l în următoarea lună.</string>
+    <string name="notification_travel_public">Un document din portofel trebuie reînnoit în curând.</string>
     <string name="widget_title">Carduri de fidelitate</string>
     <string name="widget_description">Cardurile de fidelitate preferate, la o atingere de cod</string>
     <string name="widget_empty">Adăugați un card de fidelitate pentru a-l vedea aici.</string>

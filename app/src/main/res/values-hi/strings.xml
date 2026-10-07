@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">कार्ड की समयसीमा जल्द खत्म हो रही है</string>
     <string name="notification_expiry_text">“%1$s” की समयसीमा %2$s को खत्म हो जाएगी.</string>
     <string name="notification_expiry_public">आपके वॉलेट में मौजूद एक कार्ड की समयसीमा जल्द खत्म हो रही है.</string>
+    <string name="notification_travel_title">यात्रा के लिए अपनी आईडी रिन्यू करें</string>
+    <string name="notification_travel_text">“%1$s” की समयसीमा %2$s को खत्म हो जाएगी. कई देशों में यात्रा के लिए कम से कम 6 महीने की वैधता ज़रूरी होती है, इसलिए अगले एक महीने के अंदर इसे रिन्यू करा लें.</string>
+    <string name="notification_travel_public">आपके वॉलेट में मौजूद एक दस्तावेज़ को जल्द रिन्यू कराना होगा.</string>
     <string name="widget_title">लॉयल्टी कार्ड</string>
     <string name="widget_description">आपके पसंदीदा लॉयल्टी कार्ड, कोड बस एक टैप दूर</string>
     <string name="widget_empty">लॉयल्टी कार्ड जोड़ें, ताकि वह यहां दिखे.</string>

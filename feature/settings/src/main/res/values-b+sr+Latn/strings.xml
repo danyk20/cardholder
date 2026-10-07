@@ -9,7 +9,7 @@
     <string name="settings_dynamic_color_description">Koristi boje pozadine</string>
     <string name="settings_notifications">Obaveštenja</string>
     <string name="settings_expiry_reminders">Podsetnici o isteku</string>
-    <string name="settings_expiry_reminders_description">Obavesti me mesec dana pre isteka bankovne kartice ili ličnog dokumenta</string>
+    <string name="settings_expiry_reminders_description">Obavesti me mesec dana pre isteka bankovne kartice ili ličnog dokumenta i 7 meseci pre isteka ličnog dokumenta (mnoge zemlje za putovanje zahtevaju važenje od 6 meseci)</string>
     <string name="settings_security">Bezbednost</string>
     <string name="settings_allow_screenshots">Dozvoli snimke ekrana</string>
     <string name="settings_allow_screenshots_description">Dok ne napustite aplikaciju. Snimci ekrana mogu da prikažu brojeve kartica i čuvaju se u fotografijama, čija rezervna kopija može biti u oblaku.</string>

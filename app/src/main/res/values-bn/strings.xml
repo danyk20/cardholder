@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">কার্ডের মেয়াদ শীঘ্রই শেষ হবে</string>
     <string name="notification_expiry_text">“%1$s”-এর মেয়াদ %2$s তারিখে শেষ হবে।</string>
     <string name="notification_expiry_public">আপনার ওয়ালেটের একটি কার্ডের মেয়াদ শীঘ্রই শেষ হবে।</string>
+    <string name="notification_travel_title">ভ্রমণের জন্য আপনার আইডি নবায়ন করুন</string>
+    <string name="notification_travel_text">“%1$s”-এর মেয়াদ %2$s তারিখে শেষ হবে। অনেক দেশে ভ্রমণের জন্য কমপক্ষে ৬ মাসের মেয়াদ থাকা প্রয়োজন, তাই আগামী এক মাসের মধ্যে এটি নবায়ন করুন।</string>
+    <string name="notification_travel_public">আপনার ওয়ালেটের একটি ডকুমেন্ট শীঘ্রই নবায়ন করা প্রয়োজন।</string>
     <string name="widget_title">লয়্যালটি কার্ড</string>
     <string name="widget_description">আপনার পছন্দের লয়্যালটি কার্ড, এক ট্যাপেই কোড</string>
     <string name="widget_empty">এখানে দেখতে একটি লয়্যালটি কার্ড যোগ করুন।</string>

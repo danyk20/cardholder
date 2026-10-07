@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Cartão expira em breve</string>
     <string name="notification_expiry_text">“%1$s” expira a %2$s.</string>
     <string name="notification_expiry_public">Um cartão da sua carteira expira em breve.</string>
+    <string name="notification_travel_title">Renove o documento para viajar</string>
+    <string name="notification_travel_text">“%1$s” expira a %2$s. Muitos países exigem pelo menos 6 meses de validade para viajar, por isso renove o documento no próximo mês.</string>
+    <string name="notification_travel_public">Um documento da sua carteira deve ser renovado em breve.</string>
     <string name="widget_title">Cartões de cliente</string>
     <string name="widget_description">Os seus cartões de cliente favoritos, a um toque do código</string>
     <string name="widget_empty">Adicione um cartão de cliente para o ver aqui.</string>

@@ -10,6 +10,7 @@ import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
+import io.github.danyk20.cardholder.core.domain.model.ExpiryReminder
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import java.time.Clock
@@ -20,8 +21,9 @@ import kotlin.coroutines.cancellation.CancellationException
 import kotlinx.coroutines.flow.first
 
 /**
- * Once a day, on the device: notifies about bank cards and IDs that expire within a month. Each
- * expiry date is reminded of once; if the user enters a new date, it is reminded of again.
+ * Once a day, on the device: notifies about bank cards and IDs that expire within a month, and about
+ * IDs seven months ahead (see [ExpiryReminder.TRAVEL]). Each reminder fires once per expiry date; if
+ * the user enters a new date, it fires again.
  */
 @HiltWorker
 class ExpiryReminderWorker @AssistedInject constructor(
@@ -46,10 +48,14 @@ class ExpiryReminderWorker @AssistedInject constructor(
     private suspend fun remind() {
         cardRepository.fillMissingExpiryDates()
         val today = LocalDate.now(clock.withZone(ZoneId.systemDefault()))
-        cardRepository.cardsDueForExpiryReminder(today, today.plusMonths(1)).forEach { card ->
-            val expiresOn = card.expiresOn ?: return@forEach
-            // Without permission to notify, keep it pending so it shows once notifications are allowed.
-            if (notifier.notify(card, expiresOn)) cardRepository.markExpiryReminded(card.id, expiresOn)
+        ExpiryReminder.entries.forEach { reminder ->
+            cardRepository.cardsDueForExpiryReminder(reminder, today).forEach { card ->
+                val expiresOn = card.expiresOn ?: return@forEach
+                // Without permission to notify, keep it pending so it shows once notifications are allowed.
+                if (notifier.notify(card, expiresOn, reminder)) {
+                    cardRepository.markExpiryReminded(card.id, expiresOn, reminder)
+                }
+            }
         }
     }
 

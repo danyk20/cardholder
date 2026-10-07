@@ -34,8 +34,10 @@ data class CardEntity(
     @ColumnInfo(name = "last_used_at", defaultValue = "NULL") val lastUsedAt: Long? = null,
     /** ISO date (`yyyy-MM-dd`) the card stops being valid; plain so reminders work without unlocking. */
     @ColumnInfo(name = "expires_on", defaultValue = "NULL") val expiresOn: String? = null,
-    /** The [expiresOn] value the user was last reminded of. */
+    /** The [expiresOn] value the user was last reminded of a month before. */
     @ColumnInfo(name = "expiry_reminded_for", defaultValue = "NULL") val expiryRemindedFor: String? = null,
+    /** The [expiresOn] value the user was reminded of seven months before (IDs, for travel). */
+    @ColumnInfo(name = "travel_reminded_for", defaultValue = "NULL") val travelRemindedFor: String? = null,
     /** Sealed JSON of the type-specific details. */
     @ColumnInfo(name = "sealed_details", typeAffinity = ColumnInfo.BLOB) val sealedDetails: ByteArray,
     /** Sealed CVV of a bank card, always protected by user authentication. */
@@ -68,6 +70,7 @@ data class CardEntity(
                 lastUsedAt == other.lastUsedAt &&
                 expiresOn == other.expiresOn &&
                 expiryRemindedFor == other.expiryRemindedFor &&
+                travelRemindedFor == other.travelRemindedFor &&
                 sealedDetails.contentEquals(other.sealedDetails) &&
                 sealedCvv.contentEquals(other.sealedCvv)
             )

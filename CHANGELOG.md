@@ -13,7 +13,8 @@ All notable changes to this project are documented here. The format follows
 - Live card number and expiry check with a check mark (Luhn and the network's lengths).
 - Favourites (star in the card details) and a "Most used" order; favourites come first.
 - App shortcuts and a home-screen widget for loyalty cards, one tap from the code.
-- Expiry reminders a month before a bank card or ID expires (Settings > Notifications).
+- Expiry reminders a month before a bank card or ID expires, and 7 months before an ID expires, since many
+  countries require 6 months of validity for travel (Settings > Notifications).
 - Notes on every card, encrypted with its details.
 - Warning before saving a card from the same shop or bank, or with the same name, as an existing one.
 - Lens and camera choice in the barcode scanner (zoom steps and camera switch).

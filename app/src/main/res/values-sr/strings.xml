@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Картица ускоро истиче</string>
     <string name="notification_expiry_text">„%1$s“ истиче %2$s.</string>
     <string name="notification_expiry_public">Картица у вашем новчанику ускоро истиче.</string>
+    <string name="notification_travel_title">Обновите лични документ за путовање</string>
+    <string name="notification_travel_text">„%1$s“ истиче %2$s. Многе земље за путовање захтевају важење од најмање 6 месеци, па га обновите у наредних месец дана.</string>
+    <string name="notification_travel_public">Документ у вашем новчанику ускоро треба обновити.</string>
     <string name="widget_title">Картице лојалности</string>
     <string name="widget_description">Омиљене картице лојалности, код на један додир</string>
     <string name="widget_empty">Додајте картицу лојалности да бисте је видели овде.</string>

@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Karta skadon së shpejti</string>
     <string name="notification_expiry_text">“%1$s” skadon më %2$s.</string>
     <string name="notification_expiry_public">Një kartë në portofolin tënd skadon së shpejti.</string>
+    <string name="notification_travel_title">Rinovo dokumentin për udhëtim</string>
+    <string name="notification_travel_text">“%1$s” skadon më %2$s. Shumë vende kërkojnë që dokumenti të jetë i vlefshëm të paktën 6 muaj për udhëtim, prandaj rinovoje brenda muajit të ardhshëm.</string>
+    <string name="notification_travel_public">Një dokument në portofolin tënd duhet rinovuar së shpejti.</string>
     <string name="widget_title">Kartat e besnikërisë</string>
     <string name="widget_description">Kartat e tua të preferuara të besnikërisë, kodi me një prekje</string>
     <string name="widget_empty">Shto një kartë besnikërie për ta parë këtu.</string>

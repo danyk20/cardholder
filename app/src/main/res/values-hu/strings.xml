@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Hamarosan lejár egy kártya</string>
     <string name="notification_expiry_text">„%1$s” lejárata: %2$s.</string>
     <string name="notification_expiry_public">A tárcájában lévő egyik kártya hamarosan lejár.</string>
+    <string name="notification_travel_title">Újítsa meg igazolványát utazás előtt</string>
+    <string name="notification_travel_text">„%1$s” lejárata: %2$s. Sok ország legalább 6 hónapos érvényességet ír elő az utazáshoz, ezért a következő hónapban újítsa meg.</string>
+    <string name="notification_travel_public">A tárcájában lévő egyik dokumentumot hamarosan meg kell újítani.</string>
     <string name="widget_title">Hűségkártyák</string>
     <string name="widget_description">Kedvenc hűségkártyái, egy koppintásra a kódtól</string>
     <string name="widget_empty">Adjon hozzá egy hűségkártyát, hogy itt megjelenjen.</string>

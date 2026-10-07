@@ -6,6 +6,9 @@
     <string name="notification_expiry_title">Срок действия карты скоро истекает</string>
     <string name="notification_expiry_text">Срок действия карты «%1$s» истекает %2$s.</string>
     <string name="notification_expiry_public">Срок действия одной из ваших карт скоро истекает.</string>
+    <string name="notification_travel_title">Обновите документ для поездок</string>
+    <string name="notification_travel_text">Срок действия документа «%1$s» истекает %2$s. Для поездок во многие страны документ должен быть действителен не менее 6 месяцев, поэтому обновите его в течение следующего месяца.</string>
+    <string name="notification_travel_public">Один из ваших документов скоро нужно обновить.</string>
     <string name="widget_title">Карты лояльности</string>
     <string name="widget_description">Ваши избранные карты лояльности: код в одно касание</string>
     <string name="widget_empty">Добавьте карту лояльности, чтобы она появилась здесь.</string>

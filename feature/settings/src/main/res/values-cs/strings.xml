@@ -10,7 +10,7 @@
     <string name="settings_dynamic_color_description">Použít barvy z tapety</string>
     <string name="settings_notifications">Oznámení</string>
     <string name="settings_expiry_reminders">Připomenutí konce platnosti</string>
-    <string name="settings_expiry_reminders_description">Upozornit měsíc před koncem platnosti platební karty nebo dokladu</string>
+    <string name="settings_expiry_reminders_description">Upozornit měsíc před koncem platnosti platební karty nebo dokladu a 7 měsíců před koncem platnosti dokladu (mnoho zemí při cestování vyžaduje platnost 6 měsíců)</string>
 
     <string name="settings_security">Zabezpečení</string>
     <string name="settings_allow_screenshots">Povolit snímky obrazovky</string>
