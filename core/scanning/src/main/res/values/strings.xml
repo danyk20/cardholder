@@ -5,6 +5,8 @@
     <string name="scanner_grant_permission">Allow camera</string>
     <string name="scanner_permission_denied">Camera access is turned off for Cardholder. Turn it on in the app\'s settings to scan codes.</string>
     <string name="scanner_open_settings">Open settings</string>
+    <string name="scanner_switch_camera">Switch camera</string>
+    <string name="scanner_zoom">Zoom %1$s</string>
     <string name="scanner_camera_unavailable">The camera couldn\'t be started. Close other apps that use it and try again.</string>
     <string name="nfc_title">Read card with NFC</string>
     <string name="nfc_hold_card">Hold your card flat against the back of your phone and keep it still.</string>
