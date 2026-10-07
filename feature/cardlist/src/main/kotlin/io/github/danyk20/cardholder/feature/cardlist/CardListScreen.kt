@@ -52,6 +52,7 @@ import io.github.danyk20.cardholder.core.ui.CardFace
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.icon
 import io.github.danyk20.cardholder.core.ui.label
+import io.github.danyk20.cardholder.core.ui.sharedCardBounds
 
 @Composable
 fun CardListRoute(
@@ -201,14 +202,14 @@ private fun CardGrid(
                     code = item.code,
                     onClick = { onCardClick(card) },
                     onLongClick = { onCardLongClick(card) },
-                    modifier = Modifier.animateItem(),
+                    modifier = Modifier.animateItem().sharedCardBounds(card.id),
                 )
             } else {
                 CardFace(
                     summary = item.summary,
                     onClick = { onCardClick(card) },
                     onLongClick = { onCardLongClick(card) },
-                    modifier = Modifier.animateItem(),
+                    modifier = Modifier.animateItem().sharedCardBounds(card.id),
                 )
             }
         }

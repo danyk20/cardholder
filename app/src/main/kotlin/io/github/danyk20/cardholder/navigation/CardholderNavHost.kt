@@ -3,7 +3,10 @@ package io.github.danyk20.cardholder.navigation
 import android.content.Intent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
 import androidx.core.util.Consumer
@@ -12,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.ui.LocalSharedTransitionScope
 import io.github.danyk20.cardholder.feature.barcodefullscreen.navigation.barcodeScreen
 import io.github.danyk20.cardholder.feature.barcodefullscreen.navigation.navigateToBarcode
 import io.github.danyk20.cardholder.feature.carddetail.navigation.CardDetailDestination
@@ -25,6 +29,7 @@ import io.github.danyk20.cardholder.feature.cardlist.navigation.cardListScreen
 import io.github.danyk20.cardholder.feature.settings.navigation.navigateToSettings
 import io.github.danyk20.cardholder.feature.settings.navigation.settingsScreen
 
+@OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
 fun CardholderNavHost(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
@@ -36,46 +41,51 @@ fun CardholderNavHost(modifier: Modifier = Modifier) {
         activity?.addOnNewIntentListener(listener)
         onDispose { activity?.removeOnNewIntentListener(listener) }
     }
-    NavHost(navController = navController, startDestination = CardListDestination, modifier = modifier) {
-        cardListScreen(
-            // Loyalty cards are used at the till, so a tap goes straight to the scannable code.
-            onCardClick = { card ->
-                if (card.type == CardType.LOYALTY) {
-                    navController.navigateToBarcode(card.id)
-                } else {
-                    navController.navigateToCardDetail(card.id)
-                }
-            },
-            onCardLongClick = { navController.navigateToCardDetail(it.id) },
-            onAddCard = { navController.navigateToCardEditor() },
-            onOpenSettings = navController::navigateToSettings,
-        )
-        cardEditorScreen(
-            onClose = navController::popBackStack,
-            onSaved = { id, isNew ->
-                if (isNew) {
-                    navController.navigateToCardDetail(
-                        id,
-                        navOptions { popUpTo<CardEditorDestination> { inclusive = true } },
-                    )
-                } else {
-                    navController.popBackStack()
-                }
-            },
-        )
-        cardDetailScreen(
-            onBack = navController::popBackStack,
-            onEdit = { navController.navigateToCardEditor(it) },
-            onShowBarcode = { navController.navigateToBarcode(it) },
-        )
-        settingsScreen(onBack = navController::popBackStack)
-        barcodeScreen(
-            onClose = navController::popBackStack,
-            onOpenDetails = { id ->
-                val returnedToDetail = navController.previousBackStackEntry?.destination
-                    ?.hasRoute(CardDetailDestination::class) == true && navController.popBackStack()
-                if (!returnedToDetail) navController.navigateToCardDetail(id)
-            },
-        )
+    // Cards morph from the list into their details instead of the screens just fading.
+    SharedTransitionLayout(modifier) {
+        CompositionLocalProvider(LocalSharedTransitionScope provides this) {
+            NavHost(navController = navController, startDestination = CardListDestination) {
+                cardListScreen(
+                    // Loyalty cards are used at the till, so a tap goes straight to the scannable code.
+                    onCardClick = { card ->
+                        if (card.type == CardType.LOYALTY) {
+                            navController.navigateToBarcode(card.id)
+                        } else {
+                            navController.navigateToCardDetail(card.id)
+                        }
+                    },
+                    onCardLongClick = { navController.navigateToCardDetail(it.id) },
+                    onAddCard = { navController.navigateToCardEditor() },
+                    onOpenSettings = navController::navigateToSettings,
+                )
+                cardEditorScreen(
+                    onClose = navController::popBackStack,
+                    onSaved = { id, isNew ->
+                        if (isNew) {
+                            navController.navigateToCardDetail(
+                                id,
+                                navOptions { popUpTo<CardEditorDestination> { inclusive = true } },
+                            )
+                        } else {
+                            navController.popBackStack()
+                        }
+                    },
+                )
+                cardDetailScreen(
+                    onBack = navController::popBackStack,
+                    onEdit = { navController.navigateToCardEditor(it) },
+                    onShowBarcode = { navController.navigateToBarcode(it) },
+                )
+                settingsScreen(onBack = navController::popBackStack)
+                barcodeScreen(
+                    onClose = navController::popBackStack,
+                    onOpenDetails = { id ->
+                        val returnedToDetail = navController.previousBackStackEntry?.destination
+                            ?.hasRoute(CardDetailDestination::class) == true && navController.popBackStack()
+                        if (!returnedToDetail) navController.navigateToCardDetail(id)
+                    },
+                )
+            }
+        }
     }
 }

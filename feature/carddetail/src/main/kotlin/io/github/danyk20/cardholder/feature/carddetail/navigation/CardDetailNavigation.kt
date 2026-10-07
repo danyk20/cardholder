@@ -6,6 +6,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
 import io.github.danyk20.cardholder.core.model.CardId
+import io.github.danyk20.cardholder.core.ui.ProvideNavAnimatedVisibilityScope
 import io.github.danyk20.cardholder.feature.carddetail.CardDetailRoute
 import kotlinx.serialization.Serializable
 
@@ -27,6 +28,8 @@ fun NavGraphBuilder.cardDetailScreen(onBack: () -> Unit, onEdit: (CardId) -> Uni
     composable<CardDetailDestination>(
         deepLinks = listOf(navDeepLink<CardDetailDestination>(basePath = DEEP_LINK_BASE)),
     ) {
-        CardDetailRoute(onBack = onBack, onEdit = onEdit, onShowBarcode = onShowBarcode)
+        ProvideNavAnimatedVisibilityScope(this) {
+            CardDetailRoute(onBack = onBack, onEdit = onEdit, onShowBarcode = onShowBarcode)
+        }
     }
 }

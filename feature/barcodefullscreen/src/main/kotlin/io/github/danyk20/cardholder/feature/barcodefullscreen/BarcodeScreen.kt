@@ -34,8 +34,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.github.danyk20.cardholder.core.barcode.BarcodeEncoder
 import io.github.danyk20.cardholder.core.barcode.BarcodeImage
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
+import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.ui.AuthenticationResult
+import io.github.danyk20.cardholder.core.ui.DarkSystemBarIcons
 import io.github.danyk20.cardholder.core.ui.LockedContent
 import io.github.danyk20.cardholder.core.ui.MaxBrightness
 import io.github.danyk20.cardholder.core.ui.R as UiR
@@ -73,61 +75,68 @@ internal fun BarcodeScreen(
     onUnlock: () -> Unit,
 ) {
     SecureScreen()
-    // Scanners need a bright, high-contrast code regardless of the app theme.
-    Scaffold(
-        containerColor = Color.White,
-        contentColor = Color.Black,
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        (state as? BarcodeUiState.Ready)?.title.orEmpty(),
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
+    DarkSystemBarIcons()
+    // Scanners need a bright, high-contrast code regardless of the app theme, so the screen is always
+    // light; the light colour scheme keeps its icons and messages readable on white.
+    CardholderTheme(darkTheme = false, dynamicColor = false) {
+        Scaffold(
+            containerColor = Color.White,
+            contentColor = Color.Black,
+            topBar = {
+                TopAppBar(
+                    title = {
+                        Text(
+                            (state as? BarcodeUiState.Ready)?.title.orEmpty(),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    },
+                    navigationIcon = {
+                        IconButton(onClick = onClose) {
+                            Icon(CardholderIcons.Close, contentDescription = stringResource(R.string.barcode_close))
+                        }
+                    },
+                    actions = {
+                        IconButton(onClick = onOpenDetails) {
+                            Icon(CardholderIcons.More, contentDescription = stringResource(R.string.barcode_details))
+                        }
+                    },
+                    colors = TopAppBarDefaults.topAppBarColors(
+                        containerColor = Color.White,
+                        titleContentColor = Color.Black,
+                        navigationIconContentColor = Color.Black,
+                        actionIconContentColor = Color.Black,
+                    ),
+                )
+            },
+        ) { padding ->
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.White)
+                    .padding(padding),
+            ) {
+                when (state) {
+                    BarcodeUiState.Loading -> CircularProgressIndicator()
+
+                    is BarcodeUiState.Ready -> ReadyContent(state)
+
+                    is BarcodeUiState.AuthenticationRequired ->
+                        LockedContent(stringResource(UiR.string.card_locked_message), onUnlock)
+
+                    BarcodeUiState.KeyInvalidated -> LockedContent(
+                        stringResource(UiR.string.auth_key_invalidated),
+                        null,
                     )
-                },
-                navigationIcon = {
-                    IconButton(onClick = onClose) {
-                        Icon(CardholderIcons.Close, contentDescription = stringResource(R.string.barcode_close))
-                    }
-                },
-                actions = {
-                    IconButton(onClick = onOpenDetails) {
-                        Icon(CardholderIcons.More, contentDescription = stringResource(R.string.barcode_details))
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.White,
-                    titleContentColor = Color.Black,
-                    navigationIconContentColor = Color.Black,
-                    actionIconContentColor = Color.Black,
-                ),
-            )
-        },
-    ) { padding ->
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.White)
-                .padding(padding),
-        ) {
-            when (state) {
-                BarcodeUiState.Loading -> CircularProgressIndicator()
 
-                is BarcodeUiState.Ready -> ReadyContent(state)
+                    BarcodeUiState.NotFound -> Text(stringResource(UiR.string.card_not_found))
 
-                is BarcodeUiState.AuthenticationRequired ->
-                    LockedContent(stringResource(UiR.string.card_locked_message), onUnlock)
+                    BarcodeUiState.Failed -> Text(stringResource(UiR.string.error_unexpected))
 
-                BarcodeUiState.KeyInvalidated -> LockedContent(stringResource(UiR.string.auth_key_invalidated), null)
-
-                BarcodeUiState.NotFound -> Text(stringResource(UiR.string.card_not_found))
-
-                BarcodeUiState.Failed -> Text(stringResource(UiR.string.error_unexpected))
-
-                // Closing; never show the removed card's code.
-                BarcodeUiState.Removed -> Unit
+                    // Closing; never show the removed card's code.
+                    BarcodeUiState.Removed -> Unit
+                }
             }
         }
     }

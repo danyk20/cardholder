@@ -54,6 +54,7 @@ import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.SecureScreen
 import io.github.danyk20.cardholder.core.ui.rememberAuthenticator
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
+import io.github.danyk20.cardholder.core.ui.sharedCardBounds
 import io.github.danyk20.cardholder.feature.carddetail.ui.CardSidesView
 import io.github.danyk20.cardholder.feature.carddetail.ui.DetailFields
 import io.github.danyk20.cardholder.feature.carddetail.ui.FieldActions
@@ -168,7 +169,11 @@ internal fun CardDetailScreen(
                 .widthIn(max = 600.dp),
         ) {
             val unlocked = state.details is DetailsState.Loaded
-            CardSidesView(summary, photosVisible = unlocked || !card.isLocked, Modifier.fillMaxWidth())
+            CardSidesView(
+                summary,
+                photosVisible = unlocked || !card.isLocked,
+                Modifier.fillMaxWidth().sharedCardBounds(card.id),
+            )
             if (card.type == CardType.LOYALTY) {
                 Button(onClick = onShowBarcode, modifier = Modifier.fillMaxWidth()) {
                     Icon(CardholderIcons.Barcode, contentDescription = null, modifier = Modifier.size(20.dp))

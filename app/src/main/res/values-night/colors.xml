@@ -1,0 +1,4 @@
+<resources>
+    <!-- Matches the dark colour scheme's background. -->
+    <color name="window_background">#FF111418</color>
+</resources>
