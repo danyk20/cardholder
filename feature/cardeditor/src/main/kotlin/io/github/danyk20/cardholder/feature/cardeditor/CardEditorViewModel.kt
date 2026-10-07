@@ -12,6 +12,7 @@ import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
+import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardResult
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardUseCase
@@ -52,6 +53,7 @@ class CardEditorViewModel @Inject constructor(
     private val deviceSecurity: DeviceSecurity,
     private val validator: CardDraftValidator,
     private val photoReader: CardPhotoReader,
+    private val preferencesRepository: UserPreferencesRepository,
     private val logoDownloader: LogoDownloader,
 ) : ViewModel() {
     private val editingId: CardId? = savedStateHandle.toRoute<CardEditorDestination>().cardId?.let(::CardId)
@@ -83,6 +85,11 @@ class CardEditorViewModel @Inject constructor(
             val banks = catalogues.banks.banks()
             _uiState.update { it.copy(shops = shops, banks = banks, countries = catalogues.countries.countries()) }
             if (editingId != null) load(editingId)
+        }
+        launchSafely {
+            preferencesRepository.preferences.collect { prefs ->
+                _uiState.update { it.copy(expiryRemindersEnabled = prefs.expiryReminders) }
+            }
         }
     }
 

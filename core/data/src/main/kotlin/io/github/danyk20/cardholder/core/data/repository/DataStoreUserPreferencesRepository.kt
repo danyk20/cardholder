@@ -28,6 +28,7 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
             useDynamicColor = prefs[DYNAMIC_COLOR] ?: true,
             cardSort = prefs[CARD_SORT]?.let { name -> CardSort.entries.firstOrNull { it.name == name } }
                 ?: CardSort.NAME,
+            expiryReminders = prefs[EXPIRY_REMINDERS] ?: true,
         )
     }
 
@@ -43,9 +44,14 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
         dataStore.edit { it[CARD_SORT] = sort.name }
     }
 
+    override suspend fun setExpiryReminders(enabled: Boolean) {
+        dataStore.edit { it[EXPIRY_REMINDERS] = enabled }
+    }
+
     private companion object {
         val THEME_MODE = stringPreferencesKey("theme_mode")
         val DYNAMIC_COLOR = booleanPreferencesKey("dynamic_color")
         val CARD_SORT = stringPreferencesKey("card_sort")
+        val EXPIRY_REMINDERS = booleanPreferencesKey("expiry_reminders")
     }
 }

@@ -152,6 +152,7 @@ data class CardEditorUiState(
     val error: EditorError? = null,
     /** The user tried to leave with unsaved changes. */
     val confirmDiscard: Boolean = false,
+    val expiryRemindersEnabled: Boolean = true,
     /** Some empty fields were just filled in from the card photos; the user is asked to check them. */
     val prefilledFromPhoto: Boolean = false,
     /** A new card looks like one that already exists (same shop, bank or name); asked before saving. */
@@ -161,6 +162,11 @@ data class CardEditorUiState(
     val countries: List<Country> = emptyList(),
 ) {
     val isEditing: Boolean get() = editingId != null
+
+    /** A reminder will be due for this card, so it's worth asking for permission to notify. */
+    val wantsExpiryReminder: Boolean
+        get() = expiryRemindersEnabled &&
+            ((type == CardType.BANK && bank.expiry.isNotEmpty()) || (type == CardType.ID && id.expiry != null))
 
     /** Everything the user can enter; compared to detect unsaved changes. */
     internal val content: EditorContent

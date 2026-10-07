@@ -13,4 +13,6 @@ interface UserPreferencesRepository {
     suspend fun setDynamicColor(enabled: Boolean)
 
     suspend fun setCardSort(sort: CardSort)
+
+    suspend fun setExpiryReminders(enabled: Boolean)
 }

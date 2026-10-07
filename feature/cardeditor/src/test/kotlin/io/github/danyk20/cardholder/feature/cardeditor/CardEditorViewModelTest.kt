@@ -25,6 +25,7 @@ import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepositor
 import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
 import io.github.danyk20.cardholder.core.testing.repository.FakeLogoDownloader
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
 import io.github.danyk20.cardholder.core.testing.repository.MIGROS_LOGO_URL
 import io.github.danyk20.cardholder.core.testing.repository.UBS_LOGO_URL
 import java.time.LocalDate
@@ -60,6 +61,7 @@ class CardEditorViewModelTest {
         deviceSecurity = deviceSecurity,
         validator = CardDraftValidator(),
         photoReader = CardPhotoReader(textScanner, barcodeScanner),
+        preferencesRepository = FakeUserPreferencesRepository(),
         logoDownloader = logoDownloader,
     )
 

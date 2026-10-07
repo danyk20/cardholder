@@ -1,7 +1,12 @@
 package io.github.danyk20.cardholder.navigation
 
+import android.content.Intent
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.LocalActivity
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
+import androidx.core.util.Consumer
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -23,6 +28,14 @@ import io.github.danyk20.cardholder.feature.settings.navigation.settingsScreen
 @Composable
 fun CardholderNavHost(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
+    // Shortcuts, the widget and reminders open cards through deep links; the first one arrives with the
+    // launch intent, later ones while the app is open.
+    val activity = LocalActivity.current as? ComponentActivity
+    DisposableEffect(activity, navController) {
+        val listener = Consumer<Intent> { intent -> navController.handleDeepLink(intent) }
+        activity?.addOnNewIntentListener(listener)
+        onDispose { activity?.removeOnNewIntentListener(listener) }
+    }
     NavHost(navController = navController, startDestination = CardListDestination, modifier = modifier) {
         cardListScreen(
             // Loyalty cards are used at the till, so a tap goes straight to the scannable code.

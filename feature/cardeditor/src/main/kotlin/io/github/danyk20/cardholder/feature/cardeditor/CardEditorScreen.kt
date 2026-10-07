@@ -1,6 +1,9 @@
 package io.github.danyk20.cardholder.feature.cardeditor
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
@@ -40,6 +43,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -91,9 +95,7 @@ fun CardEditorRoute(
             viewModel.onAuthenticationResult(purpose, result == AuthenticationResult.SUCCEEDED)
         }
     }
-    LaunchedEffect(state.savedCardId) {
-        state.savedCardId?.let { onSaved(it, !state.isEditing) }
-    }
+    LeaveWhenSaved(state, onSaved)
 
     var pendingSide by rememberSaveable { mutableStateOf(CardSide.FRONT) }
     var showBarcodeScanner by rememberSaveable { mutableStateOf(false) }
@@ -367,5 +369,28 @@ private fun Message(text: String, padding: PaddingValues, action: (@Composable (
         Icon(CardholderIcons.Lock, contentDescription = null, modifier = Modifier.size(48.dp))
         Text(text, style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center)
         action?.invoke()
+    }
+}
+
+/**
+ * Leaves the editor once the card is saved. Expiry reminders need permission to notify (Android 13+),
+ * so it is asked first when the saved card has an expiry date.
+ */
+@Composable
+private fun LeaveWhenSaved(state: CardEditorUiState, onSaved: (CardId, Boolean) -> Unit) {
+    val context = LocalContext.current
+    val notificationPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
+        state.savedCardId?.let { id -> onSaved(id, !state.isEditing) }
+    }
+    LaunchedEffect(state.savedCardId) {
+        val id = state.savedCardId ?: return@LaunchedEffect
+        val mayNotify = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+            ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) ==
+            PackageManager.PERMISSION_GRANTED
+        if (state.wantsExpiryReminder && !mayNotify) {
+            notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+        } else {
+            onSaved(id, !state.isEditing)
+        }
     }
 }

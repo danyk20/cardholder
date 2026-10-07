@@ -38,15 +38,15 @@ class SettingsViewModel @Inject constructor(
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), SettingsUiState())
 
     fun onThemeModeChange(mode: ThemeMode) {
-        launchSafely(onError = {
-            backup.value = BackupUiState(result = BackupResult.Failed(it))
-        }) { preferencesRepository.setThemeMode(mode) }
+        launchSafely { preferencesRepository.setThemeMode(mode) }
+    }
+
+    fun onExpiryRemindersChange(enabled: Boolean) {
+        launchSafely { preferencesRepository.setExpiryReminders(enabled) }
     }
 
     fun onDynamicColorChange(enabled: Boolean) {
-        launchSafely(onError = {
-            backup.value = BackupUiState(result = BackupResult.Failed(it))
-        }) { preferencesRepository.setDynamicColor(enabled) }
+        launchSafely { preferencesRepository.setDynamicColor(enabled) }
     }
 
     /** Permanently erases everything; the system closes the app afterwards. */

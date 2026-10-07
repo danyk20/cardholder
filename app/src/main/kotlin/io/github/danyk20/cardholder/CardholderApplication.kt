@@ -1,6 +1,8 @@
 package io.github.danyk20.cardholder
 
 import android.app.Application
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
 import coil3.ImageLoader
 import coil3.PlatformContext
 import coil3.SingletonImageLoader
@@ -10,6 +12,7 @@ import io.github.danyk20.cardholder.core.domain.di.ApplicationScope
 import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.security.ProcessSessionLockEvents
 import io.github.danyk20.cardholder.image.CardImageFetcher
+import io.github.danyk20.cardholder.reminders.ExpiryReminderWorker
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -17,7 +20,14 @@ import kotlinx.coroutines.launch
 @HiltAndroidApp
 class CardholderApplication :
     Application(),
-    SingletonImageLoader.Factory {
+    SingletonImageLoader.Factory,
+    Configuration.Provider {
+    @Inject
+    lateinit var workerFactory: HiltWorkerFactory
+
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder().setWorkerFactory(workerFactory).build()
+
     @Inject
     lateinit var sessionLockEvents: ProcessSessionLockEvents
 
@@ -31,6 +41,7 @@ class CardholderApplication :
     override fun onCreate() {
         super.onCreate()
         sessionLockEvents.register()
+        ExpiryReminderWorker.schedule(this)
         applicationScope.launch {
             // Decrypted photos must not outlive the session in memory.
             sessionLockEvents.events.collect {
