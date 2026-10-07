@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Navn (A–Å)</string>
     <string name="cardlist_sort_date">Dato lagt til (nyeste først)</string>
     <string name="cardlist_sort_custom">Egendefinert rekkefølge</string>
+    <string name="cardlist_sort_most_used">Mest brukt</string>
     <string name="cardlist_reorder">Endre rekkefølge</string>
     <string name="cardlist_reorder_done">Ferdig</string>
     <string name="cardlist_reorder_cancel">Avbryt endring av rekkefølge</string>

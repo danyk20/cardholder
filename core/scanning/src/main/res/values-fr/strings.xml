@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Autoriser l\'appareil photo</string>
     <string name="scanner_permission_denied">L\'accès à l\'appareil photo est désactivé pour Cardholder. Activez-le dans les paramètres de l\'application pour scanner des codes.</string>
     <string name="scanner_open_settings">Ouvrir les paramètres</string>
+    <string name="scanner_switch_camera">Changer de caméra</string>
+    <string name="scanner_zoom">Zoom %1$s</string>
     <string name="scanner_camera_unavailable">Impossible de démarrer l\'appareil photo. Fermez les autres applications qui l\'utilisent, puis réessayez.</string>
     <string name="nfc_title">Lire la carte par NFC</string>
     <string name="nfc_hold_card">Placez votre carte à plat contre le dos de votre téléphone et ne la bougez plus.</string>

@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Hakuna picha</string>
     <string name="editor_field_title">Jina</string>
     <string name="editor_field_title_hint">Chaguomsingi: %1$s</string>
+    <string name="editor_field_notes">Madokezo (si lazima)</string>
+    <string name="editor_notes_hint">Husimbwa kwa njia fiche kama sehemu nyingine ya kadi, k.m. kiwango cha uanachama au nambari ya simu</string>
     <string name="editor_color">Rangi</string>
     <string name="editor_lock">Funga kadi hii</string>
     <string name="editor_lock_description">Hitaji alama ya kidole, uso au mbinu ya kufunga skrini ili kuona maelezo yake yoyote</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">CVV imehifadhiwa. Acha sehemu hii tupu ili kuibakiza.</string>
     <string name="editor_cvv_remove">Ondoa CVV iliyohifadhiwa</string>
     <string name="editor_card_expired">Muda wa kadi hii umeisha</string>
+    <string name="editor_number_valid">Nambari ya kadi ni sahihi</string>
+    <string name="editor_expiry_valid">Tarehe ya kuisha ni sahihi</string>
     <string name="editor_field_country">Nchi iliyotoa</string>
     <string name="editor_choose_country">Chagua nchi</string>
     <string name="editor_search_country">Tafuta nchi</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Leseni: %1$s</string>
     <string name="editor_logo_attribution">Leseni: %1$s · na %2$s</string>
     <string name="editor_logo_download_failed">Imeshindwa kupakua nembo. Angalia muunganisho wako kisha ujaribu tena.</string>
+    <string name="editor_prefilled_from_photo">Baadhi ya maelezo yamejazwa kutoka kwenye picha – tafadhali yakague</string>
+    <string name="editor_duplicate_title">Tayari iko kwenye pochi yako?</string>
+    <string name="editor_duplicate_shop">Tayari una kadi kutoka duka hili: “%1$s”. Ungependa kuhifadhi hii pia?</string>
+    <string name="editor_duplicate_bank">Tayari una kadi kutoka benki hii: “%1$s”. Ungependa kuhifadhi hii pia?</string>
+    <string name="editor_duplicate_name">Tayari una kadi inayoitwa “%1$s”. Ungependa kuhifadhi hii pia?</string>
+    <string name="editor_duplicate_save">Hifadhi hata hivyo</string>
     <string name="editor_discard_title">Ungependa kuondoa mabadiliko?</string>
     <string name="editor_discard_message">Mabadiliko uliyofanya kwenye kadi hii hayatahifadhiwa.</string>
     <string name="editor_discard">Ondoa</string>

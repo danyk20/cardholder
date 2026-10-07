@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Korttejasi ei voi avata</string>
     <string name="storage_error_message">Tässä puhelimessa ei enää ole korttejasi suojaavia avaimia, esimerkiksi tietoturvanollauksen jälkeen. Kortteja ei voi palauttaa tällä laitteella. Aloita alusta poistamalla kaikki tiedot ja tuo sitten varmuuskopio, jos sinulla on sellainen.</string>
+    <string name="notification_channel_expiry">Vanhenemismuistutukset</string>
+    <string name="notification_expiry_title">Kortti vanhenee pian</string>
+    <string name="notification_expiry_text">”%1$s” vanhenee %2$s.</string>
+    <string name="notification_expiry_public">Lompakkosi kortti vanhenee pian.</string>
+    <string name="widget_title">Kanta-asiakaskortit</string>
+    <string name="widget_description">Suosikki-kanta-asiakaskorttisi – koodi yhdellä napautuksella</string>
+    <string name="widget_empty">Lisää kanta-asiakaskortti, niin näet sen täällä.</string>
 </resources>

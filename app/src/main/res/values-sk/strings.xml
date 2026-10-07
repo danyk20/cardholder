@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Vaše karty sa nedajú otvoriť</string>
     <string name="storage_error_message">Tento telefón už nemá kľúče, ktoré chránia vaše karty, napríklad po resetovaní zabezpečenia. Karty sa v tomto zariadení nedajú obnoviť. Ak chcete začať odznova, vymažte všetky údaje a potom importujte zálohu, ak ju máte.</string>
+    <string name="notification_channel_expiry">Pripomienky konca platnosti</string>
+    <string name="notification_expiry_title">Platnosť karty čoskoro skončí</string>
+    <string name="notification_expiry_text">Platnosť karty „%1$s“ skončí %2$s.</string>
+    <string name="notification_expiry_public">Platnosť jednej z vašich kariet čoskoro skončí.</string>
+    <string name="widget_title">Vernostné karty</string>
+    <string name="widget_description">Vaše obľúbené vernostné karty s kódom na jedno ťuknutie</string>
+    <string name="widget_empty">Pridajte vernostnú kartu a zobrazí sa tu.</string>
 </resources>

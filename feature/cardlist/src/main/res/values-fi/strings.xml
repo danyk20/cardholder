@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Nimi (A–Ö)</string>
     <string name="cardlist_sort_date">Lisäyspäivä (uusin ensin)</string>
     <string name="cardlist_sort_custom">Oma järjestys</string>
+    <string name="cardlist_sort_most_used">Eniten käytetyt</string>
     <string name="cardlist_reorder">Järjestä kortit</string>
     <string name="cardlist_reorder_done">Valmis</string>
     <string name="cardlist_reorder_cancel">Peruuta järjestäminen</string>

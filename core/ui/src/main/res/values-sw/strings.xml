@@ -43,4 +43,13 @@
     <string name="color_purple">Zambarau</string>
     <string name="color_brown">Kahawia</string>
     <string name="color_graphite">Grafiti</string>
+    <string name="color_white">Nyeupe</string>
+    <string name="color_silver">Fedha</string>
+    <string name="color_gray">Kijivu</string>
+    <string name="color_sand">Mchanga</string>
+    <string name="color_lemon">Limau</string>
+    <string name="color_mint">Mnanaa</string>
+    <string name="color_sky">Samawati ya anga</string>
+    <string name="color_lavender">Lavenda</string>
+    <string name="color_blush">Waridi hafifu</string>
 </resources>

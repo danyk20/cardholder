@@ -3,6 +3,8 @@
     <string name="detail_edit">Redigera</string>
     <string name="detail_delete">Radera</string>
     <string name="detail_more">Fler alternativ</string>
+    <string name="detail_add_favourite">Lägg till i favoriter</string>
+    <string name="detail_remove_favourite">Ta bort från favoriter</string>
     <string name="detail_flip">Visa andra sidan</string>
     <string name="detail_show_code">Visa koden</string>
     <string name="detail_copied">%1$s har kopierats. Urklippet rensas om en minut.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Butik</string>
     <string name="field_code">Kod</string>
     <string name="field_format">Kodtyp</string>
+    <string name="field_notes">Anteckningar</string>
 </resources>

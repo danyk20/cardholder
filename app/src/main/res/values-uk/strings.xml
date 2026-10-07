@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Не вдається відкрити картки</string>
     <string name="storage_error_message">На цьому телефоні більше немає ключів, які захищають ваші картки (наприклад, після скидання налаштувань безпеки). Відновити картки на цьому пристрої неможливо. Видаліть усі дані, щоб почати знову, а потім імпортуйте резервну копію, якщо вона у вас є.</string>
+    <string name="notification_channel_expiry">Нагадування про термін дії</string>
+    <string name="notification_expiry_title">Термін дії картки скоро закінчується</string>
+    <string name="notification_expiry_text">Термін дії картки «%1$s» закінчується %2$s.</string>
+    <string name="notification_expiry_public">Термін дії однієї з ваших карток скоро закінчується.</string>
+    <string name="widget_title">Картки лояльності</string>
+    <string name="widget_description">Ваші вибрані картки лояльності: код в один дотик</string>
+    <string name="widget_empty">Додайте картку лояльності, щоб побачити її тут.</string>
 </resources>

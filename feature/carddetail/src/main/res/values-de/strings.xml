@@ -3,6 +3,8 @@
     <string name="detail_edit">Bearbeiten</string>
     <string name="detail_delete">Löschen</string>
     <string name="detail_more">Weitere Optionen</string>
+    <string name="detail_add_favourite">Zu Favoriten hinzufügen</string>
+    <string name="detail_remove_favourite">Aus Favoriten entfernen</string>
     <string name="detail_flip">Andere Seite anzeigen</string>
     <string name="detail_show_code">Code anzeigen</string>
     <string name="detail_copied">%1$s kopiert. Wird in einer Minute aus der Zwischenablage gelöscht.</string>
@@ -31,4 +33,5 @@
     <string name="field_shop">Geschäft</string>
     <string name="field_code">Code</string>
     <string name="field_format">Codetyp</string>
+    <string name="field_notes">Notizen</string>
 </resources>

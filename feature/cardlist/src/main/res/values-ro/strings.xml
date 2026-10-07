@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Nume (A–Z)</string>
     <string name="cardlist_sort_date">Data adăugării (cele mai noi primele)</string>
     <string name="cardlist_sort_custom">Ordine personalizată</string>
+    <string name="cardlist_sort_most_used">Cele mai folosite</string>
     <string name="cardlist_reorder">Reordonați cardurile</string>
     <string name="cardlist_reorder_done">Gata</string>
     <string name="cardlist_reorder_cancel">Anulați reordonarea</string>

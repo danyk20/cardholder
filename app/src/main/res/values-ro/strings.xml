@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Cardurile nu pot fi deschise</string>
     <string name="storage_error_message">Acest telefon nu mai are cheile care vă protejează cardurile, de exemplu după o resetare de securitate. Cardurile nu pot fi recuperate pe acest dispozitiv. Ștergeți toate datele pentru a începe din nou, apoi importați un backup dacă aveți unul.</string>
+    <string name="notification_channel_expiry">Mementouri privind expirarea</string>
+    <string name="notification_expiry_title">Cardul expiră în curând</string>
+    <string name="notification_expiry_text">„%1$s” expiră pe %2$s.</string>
+    <string name="notification_expiry_public">Un card din portofel expiră în curând.</string>
+    <string name="widget_title">Carduri de fidelitate</string>
+    <string name="widget_description">Cardurile de fidelitate preferate, la o atingere de cod</string>
+    <string name="widget_empty">Adăugați un card de fidelitate pentru a-l vedea aici.</string>
 </resources>

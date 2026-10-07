@@ -16,6 +16,8 @@
 
     <string name="editor_field_title">Emri</string>
     <string name="editor_field_title_hint">Si parazgjedhje: %1$s</string>
+    <string name="editor_field_notes">Shënime (opsionale)</string>
+    <string name="editor_notes_hint">Enkriptohen si pjesa tjetër e kartës, p.sh. niveli i anëtarësimit ose një numër telefoni</string>
     <string name="editor_color">Ngjyra</string>
     <string name="editor_lock">Kyçe këtë kartë</string>
     <string name="editor_lock_description">Kërko gjurmën e gishtit, fytyrën ose kyçjen e ekranit për të parë çdo detaj të saj</string>
@@ -35,6 +37,8 @@
     <string name="editor_cvv_stored">Një CVV është ruajtur. Lëre bosh për ta mbajtur.</string>
     <string name="editor_cvv_remove">Hiq CVV-në e ruajtur</string>
     <string name="editor_card_expired">Kjo kartë ka skaduar</string>
+    <string name="editor_number_valid">Numri i kartës është i vlefshëm</string>
+    <string name="editor_expiry_valid">Data e skadimit është e vlefshme</string>
 
     <string name="editor_field_country">Shteti lëshues</string>
     <string name="editor_choose_country">Zgjidh shtetin</string>
@@ -64,6 +68,12 @@
     <string name="editor_logo_license">Licenca: %1$s</string>
     <string name="editor_logo_attribution">Licenca: %1$s · nga %2$s</string>
     <string name="editor_logo_download_failed">Logoja nuk mund të shkarkohej. Kontrollo lidhjen dhe provo përsëri.</string>
+    <string name="editor_prefilled_from_photo">Disa të dhëna u plotësuan nga fotografia – kontrolloji</string>
+    <string name="editor_duplicate_title">E ke tashmë këtë kartë?</string>
+    <string name="editor_duplicate_shop">Ke tashmë një kartë nga ky dyqan: “%1$s”. Ta ruaj edhe këtë?</string>
+    <string name="editor_duplicate_bank">Ke tashmë një kartë nga kjo bankë: “%1$s”. Ta ruaj edhe këtë?</string>
+    <string name="editor_duplicate_name">Ke tashmë një kartë me emrin “%1$s”. Ta ruaj edhe këtë?</string>
+    <string name="editor_duplicate_save">Ruaje gjithsesi</string>
     <string name="editor_discard_title">Të hidhen poshtë ndryshimet?</string>
     <string name="editor_discard_message">Ndryshimet në këtë kartë nuk do të ruhen.</string>
     <string name="editor_discard">Hidh poshtë</string>

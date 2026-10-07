@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">ダーク</string>
     <string name="settings_dynamic_color">ダイナミック カラー</string>
     <string name="settings_dynamic_color_description">壁紙の色を使用します</string>
+    <string name="settings_notifications">通知</string>
+    <string name="settings_expiry_reminders">有効期限のリマインダー</string>
+    <string name="settings_expiry_reminders_description">銀行カードや身分証明書の有効期限の 1 か月前に通知します</string>
     <string name="settings_security">セキュリティ</string>
     <string name="settings_allow_screenshots">スクリーンショットを許可</string>
     <string name="settings_allow_screenshots_description">アプリを離れるまで有効です。スクリーンショットにはカード番号が写る場合があり、写真に保存されます。写真はクラウドにバックアップされることがあります。</string>

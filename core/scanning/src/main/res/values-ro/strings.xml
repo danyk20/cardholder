@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Permiteți camera</string>
     <string name="scanner_permission_denied">Accesul la cameră este dezactivat pentru Cardholder. Activați-l din setările aplicației pentru a scana coduri.</string>
     <string name="scanner_open_settings">Deschideți setările</string>
+    <string name="scanner_switch_camera">Comutați camera</string>
+    <string name="scanner_zoom">Zoom %1$s</string>
     <string name="scanner_camera_unavailable">Camera nu a putut fi pornită. Închideți alte aplicații care o folosesc și încercați din nou.</string>
     <string name="nfc_title">Citiți cardul prin NFC</string>
     <string name="nfc_hold_card">Țineți cardul lipit de spatele telefonului și nu îl mișcați.</string>

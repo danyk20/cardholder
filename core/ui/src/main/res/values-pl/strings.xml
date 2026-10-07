@@ -56,4 +56,13 @@
     <string name="color_purple">Fioletowy</string>
     <string name="color_brown">Brązowy</string>
     <string name="color_graphite">Grafitowy</string>
+    <string name="color_white">Biały</string>
+    <string name="color_silver">Srebrny</string>
+    <string name="color_gray">Szary</string>
+    <string name="color_sand">Piaskowy</string>
+    <string name="color_lemon">Cytrynowy</string>
+    <string name="color_mint">Miętowy</string>
+    <string name="color_sky">Błękitny</string>
+    <string name="color_lavender">Lawendowy</string>
+    <string name="color_blush">Jasnoróżowy</string>
 </resources>

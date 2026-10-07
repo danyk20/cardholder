@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Kamera zulassen</string>
     <string name="scanner_permission_denied">Der Kamerazugriff ist für Cardholder deaktiviert. Zum Scannen von Codes in den App-Einstellungen aktivieren.</string>
     <string name="scanner_open_settings">Einstellungen öffnen</string>
+    <string name="scanner_switch_camera">Kamera wechseln</string>
+    <string name="scanner_zoom">Zoom %1$s</string>
     <string name="scanner_camera_unavailable">Die Kamera konnte nicht gestartet werden. Andere Apps, die sie verwenden, schließen und noch einmal versuchen.</string>
     <string name="nfc_title">Karte per NFC lesen</string>
     <string name="nfc_hold_card">Karte flach an die Rückseite des Smartphones halten und nicht bewegen.</string>

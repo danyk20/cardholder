@@ -56,4 +56,13 @@
     <string name="color_purple">Фіолетовий</string>
     <string name="color_brown">Коричневий</string>
     <string name="color_graphite">Графітовий</string>
+    <string name="color_white">Білий</string>
+    <string name="color_silver">Сріблястий</string>
+    <string name="color_gray">Сірий</string>
+    <string name="color_sand">Пісочний</string>
+    <string name="color_lemon">Лимонний</string>
+    <string name="color_mint">М\'ятний</string>
+    <string name="color_sky">Небесно-блакитний</string>
+    <string name="color_lavender">Лавандовий</string>
+    <string name="color_blush">Ніжно-рожевий</string>
 </resources>

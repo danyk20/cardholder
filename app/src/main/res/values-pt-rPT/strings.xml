@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Não é possível abrir os seus cartões</string>
     <string name="storage_error_message">Este telemóvel já não tem as chaves que protegem os seus cartões, por exemplo, após uma reposição de segurança. Os cartões não podem ser recuperados neste dispositivo. Elimine todos os dados para recomeçar e, depois, importe uma cópia de segurança, se tiver uma.</string>
+    <string name="notification_channel_expiry">Lembretes de validade</string>
+    <string name="notification_expiry_title">Cartão expira em breve</string>
+    <string name="notification_expiry_text">“%1$s” expira a %2$s.</string>
+    <string name="notification_expiry_public">Um cartão da sua carteira expira em breve.</string>
+    <string name="widget_title">Cartões de cliente</string>
+    <string name="widget_description">Os seus cartões de cliente favoritos, a um toque do código</string>
+    <string name="widget_empty">Adicione um cartão de cliente para o ver aqui.</string>
 </resources>

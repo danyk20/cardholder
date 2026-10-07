@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Kartat e tua nuk mund të hapen</string>
     <string name="storage_error_message">Ky telefon nuk i ka më çelësat që mbrojnë kartat e tua, për shembull pas një rivendosjeje të sigurisë. Kartat nuk mund të rikuperohen në këtë pajisje. Fshi të gjitha të dhënat për të filluar nga e para, pastaj importo një kopje rezervë nëse ke.</string>
+    <string name="notification_channel_expiry">Kujtesat e skadimit</string>
+    <string name="notification_expiry_title">Karta skadon së shpejti</string>
+    <string name="notification_expiry_text">“%1$s” skadon më %2$s.</string>
+    <string name="notification_expiry_public">Një kartë në portofolin tënd skadon së shpejti.</string>
+    <string name="widget_title">Kartat e besnikërisë</string>
+    <string name="widget_description">Kartat e tua të preferuara të besnikërisë, kodi me një prekje</string>
+    <string name="widget_empty">Shto një kartë besnikërie për ta parë këtu.</string>
 </resources>

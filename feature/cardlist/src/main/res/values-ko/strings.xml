@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">이름(A–Z)</string>
     <string name="cardlist_sort_date">추가한 날짜(최신순)</string>
     <string name="cardlist_sort_custom">사용자 지정 순서</string>
+    <string name="cardlist_sort_most_used">자주 사용한 순</string>
     <string name="cardlist_reorder">카드 순서 변경</string>
     <string name="cardlist_reorder_done">완료</string>
     <string name="cardlist_reorder_cancel">순서 변경 취소</string>

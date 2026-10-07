@@ -3,6 +3,8 @@
     <string name="detail_edit">Izmeni</string>
     <string name="detail_delete">Izbriši</string>
     <string name="detail_more">Još opcija</string>
+    <string name="detail_add_favourite">Dodaj u omiljene</string>
+    <string name="detail_remove_favourite">Ukloni iz omiljenih</string>
     <string name="detail_flip">Prikaži drugu stranu</string>
     <string name="detail_show_code">Prikaži kod</string>
     <string name="detail_copied">Kopirano: %1$s. Biće obrisano iz privremene memorije za jedan minut.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Prodavnica</string>
     <string name="field_code">Kod</string>
     <string name="field_format">Tip koda</string>
+    <string name="field_notes">Beleške</string>
 </resources>

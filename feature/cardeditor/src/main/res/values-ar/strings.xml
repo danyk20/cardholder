@@ -16,6 +16,8 @@
 
     <string name="editor_field_title">الاسم</string>
     <string name="editor_field_title_hint">الاسم التلقائي: %1$s</string>
+    <string name="editor_field_notes">ملاحظات (اختياري)</string>
+    <string name="editor_notes_hint">مشفّرة كباقي بيانات البطاقة، مثلاً مستوى العضوية أو رقم هاتف</string>
     <string name="editor_color">اللون</string>
     <string name="editor_lock">قفل هذه البطاقة</string>
     <string name="editor_lock_description">طلب بصمة الإصبع أو الوجه أو قفل الشاشة لعرض أي من تفاصيلها</string>
@@ -35,6 +37,8 @@
     <string name="editor_cvv_stored">تم تخزين رمز CVV. اترك الحقل فارغًا للاحتفاظ به.</string>
     <string name="editor_cvv_remove">إزالة رمز CVV المخزَّن</string>
     <string name="editor_card_expired">انتهت صلاحية هذه البطاقة</string>
+    <string name="editor_number_valid">رقم البطاقة صالح</string>
+    <string name="editor_expiry_valid">تاريخ الانتهاء صالح</string>
 
     <string name="editor_field_country">بلد الإصدار</string>
     <string name="editor_choose_country">اختيار البلد</string>
@@ -64,6 +68,12 @@
     <string name="editor_logo_license">الترخيص: %1$s</string>
     <string name="editor_logo_attribution">الترخيص: %1$s · بواسطة %2$s</string>
     <string name="editor_logo_download_failed">تعذّر تنزيل الشعار. تحقَّق من الاتصال بالإنترنت وحاوِل مرة أخرى.</string>
+    <string name="editor_prefilled_from_photo">تم ملء بعض التفاصيل من الصورة، يُرجى التحقّق منها</string>
+    <string name="editor_duplicate_title">هل لديك هذه البطاقة بالفعل؟</string>
+    <string name="editor_duplicate_shop">لديك بالفعل بطاقة من هذا المتجر: «%1$s». هل تريد حفظ هذه البطاقة أيضًا؟</string>
+    <string name="editor_duplicate_bank">لديك بالفعل بطاقة من هذا البنك: «%1$s». هل تريد حفظ هذه البطاقة أيضًا؟</string>
+    <string name="editor_duplicate_name">لديك بالفعل بطاقة باسم «%1$s». هل تريد حفظ هذه البطاقة أيضًا؟</string>
+    <string name="editor_duplicate_save">الحفظ على أي حال</string>
     <string name="editor_discard_title">هل تريد تجاهل التغييرات؟</string>
     <string name="editor_discard_message">لن يتم حفظ التغييرات التي أجريتها على هذه البطاقة.</string>
     <string name="editor_discard">تجاهل</string>

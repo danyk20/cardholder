@@ -3,6 +3,8 @@
     <string name="detail_edit">تعديل</string>
     <string name="detail_delete">حذف</string>
     <string name="detail_more">خيارات إضافية</string>
+    <string name="detail_add_favourite">إضافة إلى المفضّلة</string>
+    <string name="detail_remove_favourite">إزالة من المفضّلة</string>
     <string name="detail_flip">عرض الوجه الآخر</string>
     <string name="detail_show_code">عرض الرمز</string>
     <string name="detail_copied">تم نسخ %1$s. ستتم إزالته من الحافظة بعد دقيقة.</string>
@@ -31,4 +33,5 @@
     <string name="field_shop">المتجر</string>
     <string name="field_code">الرمز</string>
     <string name="field_format">نوع الرمز</string>
+    <string name="field_notes">ملاحظات</string>
 </resources>

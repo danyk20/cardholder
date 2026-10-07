@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Nie można otworzyć kart</string>
     <string name="storage_error_message">Ten telefon nie ma już kluczy chroniących karty, np. po zresetowaniu zabezpieczeń. Nie można odzyskać kart na tym urządzeniu. Usuń wszystkie dane, aby zacząć od nowa, a potem zaimportuj kopię zapasową, jeśli ją masz.</string>
+    <string name="notification_channel_expiry">Przypomnienia o ważności</string>
+    <string name="notification_expiry_title">Karta wkrótce straci ważność</string>
+    <string name="notification_expiry_text">Karta „%1$s” traci ważność %2$s.</string>
+    <string name="notification_expiry_public">Jedna z zapisanych kart wkrótce straci ważność.</string>
+    <string name="widget_title">Karty lojalnościowe</string>
+    <string name="widget_description">Ulubione karty lojalnościowe – kod jednym dotknięciem</string>
+    <string name="widget_empty">Dodaj kartę lojalnościową, aby zobaczyć ją tutaj.</string>
 </resources>

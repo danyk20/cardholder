@@ -3,6 +3,8 @@
     <string name="detail_edit">बदलाव करें</string>
     <string name="detail_delete">मिटाएं</string>
     <string name="detail_more">ज़्यादा विकल्प</string>
+    <string name="detail_add_favourite">पसंदीदा में जोड़ें</string>
+    <string name="detail_remove_favourite">पसंदीदा से हटाएं</string>
     <string name="detail_flip">दूसरी तरफ़ दिखाएं</string>
     <string name="detail_show_code">कोड दिखाएं</string>
     <string name="detail_copied">%1$s कॉपी हो गया. एक मिनट में इसे क्लिपबोर्ड से हटा दिया जाएगा.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">स्टोर</string>
     <string name="field_code">कोड</string>
     <string name="field_format">कोड टाइप</string>
+    <string name="field_notes">नोट</string>
 </resources>

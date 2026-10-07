@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Картице не могу да се отворе</string>
     <string name="storage_error_message">Овај телефон више нема кључеве који штите ваше картице, на пример после безбедносног ресетовања. Картице не могу да се поврате на овом уређају. Избришите све податке да бисте почели изнова, а затим увезите резервну копију ако је имате.</string>
+    <string name="notification_channel_expiry">Подсетници о истеку</string>
+    <string name="notification_expiry_title">Картица ускоро истиче</string>
+    <string name="notification_expiry_text">„%1$s“ истиче %2$s.</string>
+    <string name="notification_expiry_public">Картица у вашем новчанику ускоро истиче.</string>
+    <string name="widget_title">Картице лојалности</string>
+    <string name="widget_description">Омиљене картице лојалности, код на један додир</string>
+    <string name="widget_empty">Додајте картицу лојалности да бисте је видели овде.</string>
 </resources>

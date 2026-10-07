@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Назив (А–Ш)</string>
     <string name="cardlist_sort_date">Датум додавања (прво најновије)</string>
     <string name="cardlist_sort_custom">Прилагођени редослед</string>
+    <string name="cardlist_sort_most_used">Најчешће коришћене</string>
     <string name="cardlist_reorder">Промени редослед</string>
     <string name="cardlist_reorder_done">Готово</string>
     <string name="cardlist_reorder_cancel">Откажи промену редоследа</string>

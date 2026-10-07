@@ -14,6 +14,8 @@
     <string name="editor_side_missing">بدون عکس</string>
     <string name="editor_field_title">نام</string>
     <string name="editor_field_title_hint">پیش‌فرض: %1$s</string>
+    <string name="editor_field_notes">یادداشت‌ها (اختیاری)</string>
+    <string name="editor_notes_hint">مانند بقیهٔ کارت رمزگذاری می‌شود، مثلاً سطح عضویت یا شماره تلفن</string>
     <string name="editor_color">رنگ</string>
     <string name="editor_lock">قفل کردن این کارت</string>
     <string name="editor_lock_description">برای دیدن هر یک از جزئیات کارت، اثر انگشت، چهره یا قفل صفحه لازم باشد</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">یک CVV ذخیره شده است. برای حفظ آن، این قسمت را خالی بگذارید.</string>
     <string name="editor_cvv_remove">حذف CVV ذخیره‌شده</string>
     <string name="editor_card_expired">این کارت منقضی شده است</string>
+    <string name="editor_number_valid">شماره کارت معتبر است</string>
+    <string name="editor_expiry_valid">تاریخ انقضا معتبر است</string>
     <string name="editor_field_country">کشور صادرکننده</string>
     <string name="editor_choose_country">انتخاب کشور</string>
     <string name="editor_search_country">جستجوی کشورها</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">مجوز: %1$s</string>
     <string name="editor_logo_attribution">مجوز: %1$s · از %2$s</string>
     <string name="editor_logo_download_failed">لوگو بارگیری نشد. اتصال اینترنت را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="editor_prefilled_from_photo">برخی جزئیات از روی عکس پر شد – لطفاً آن‌ها را بررسی کنید</string>
+    <string name="editor_duplicate_title">از قبل در کیف پولتان است؟</string>
+    <string name="editor_duplicate_shop">از این فروشگاه قبلاً کارتی دارید: «%1$s». این یکی هم ذخیره شود؟</string>
+    <string name="editor_duplicate_bank">از این بانک قبلاً کارتی دارید: «%1$s». این یکی هم ذخیره شود؟</string>
+    <string name="editor_duplicate_name">قبلاً کارتی با نام «%1$s» دارید. این یکی هم ذخیره شود؟</string>
+    <string name="editor_duplicate_save">در هر صورت ذخیره شود</string>
     <string name="editor_discard_title">از تغییرات صرف‌نظر شود؟</string>
     <string name="editor_discard_message">تغییراتی که در این کارت داده‌اید ذخیره نمی‌شوند.</string>
     <string name="editor_discard">صرف‌نظر کردن</string>

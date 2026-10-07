@@ -3,6 +3,8 @@
     <string name="detail_edit">Rediger</string>
     <string name="detail_delete">Slet</string>
     <string name="detail_more">Flere valgmuligheder</string>
+    <string name="detail_add_favourite">Føj til favoritter</string>
+    <string name="detail_remove_favourite">Fjern fra favoritter</string>
     <string name="detail_flip">Vis den anden side</string>
     <string name="detail_show_code">Vis kode</string>
     <string name="detail_copied">%1$s er kopieret. Det fjernes fra udklipsholderen om et minut.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Butik</string>
     <string name="field_code">Kode</string>
     <string name="field_format">Kodetype</string>
+    <string name="field_notes">Noter</string>
 </resources>

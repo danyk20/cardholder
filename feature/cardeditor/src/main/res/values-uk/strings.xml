@@ -18,6 +18,8 @@
     <!-- Common fields -->
     <string name="editor_field_title">Назва</string>
     <string name="editor_field_title_hint">За замовчуванням: %1$s</string>
+    <string name="editor_field_notes">Нотатки (необов\'язково)</string>
+    <string name="editor_notes_hint">Шифруються, як і решта даних картки. Наприклад, рівень учасника чи номер телефону</string>
     <string name="editor_color">Колір</string>
     <string name="editor_lock">Заблокувати картку</string>
     <string name="editor_lock_description">Вимагати відбиток пальця, розпізнавання обличчя або блокування екрана для перегляду будь-яких даних картки</string>
@@ -38,6 +40,8 @@
     <string name="editor_cvv_stored">CVV збережено. Залиште поле порожнім, щоб не змінювати його.</string>
     <string name="editor_cvv_remove">Видалити збережений CVV</string>
     <string name="editor_card_expired">Термін дії картки минув</string>
+    <string name="editor_number_valid">Номер картки дійсний</string>
+    <string name="editor_expiry_valid">Термін дії вказано правильно</string>
 
     <!-- ID -->
     <string name="editor_field_country">Країна видачі</string>
@@ -70,6 +74,12 @@
     <string name="editor_logo_license">Ліцензія: %1$s</string>
     <string name="editor_logo_attribution">Ліцензія: %1$s · автор: %2$s</string>
     <string name="editor_logo_download_failed">Не вдалося завантажити логотип. Перевірте підключення до інтернету й повторіть спробу.</string>
+    <string name="editor_prefilled_from_photo">Деякі дані заповнено з фото – перевірте їх</string>
+    <string name="editor_duplicate_title">Ця картка вже є?</string>
+    <string name="editor_duplicate_shop">У вас уже є картка цього магазину: «%1$s». Зберегти й цю?</string>
+    <string name="editor_duplicate_bank">У вас уже є картка цього банку: «%1$s». Зберегти й цю?</string>
+    <string name="editor_duplicate_name">У вас уже є картка з назвою «%1$s». Зберегти й цю?</string>
+    <string name="editor_duplicate_save">Усе одно зберегти</string>
     <string name="editor_discard_title">Відхилити зміни?</string>
     <string name="editor_discard_message">Зміни в цій картці не буде збережено.</string>
     <string name="editor_discard">Відхилити</string>

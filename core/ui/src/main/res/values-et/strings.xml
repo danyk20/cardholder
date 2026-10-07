@@ -43,4 +43,13 @@
     <string name="color_purple">Lilla</string>
     <string name="color_brown">Pruun</string>
     <string name="color_graphite">Grafiit</string>
+    <string name="color_white">Valge</string>
+    <string name="color_silver">Hõbedane</string>
+    <string name="color_gray">Hall</string>
+    <string name="color_sand">Liivakarva</string>
+    <string name="color_lemon">Sidrunikollane</string>
+    <string name="color_mint">Mündiroheline</string>
+    <string name="color_sky">Taevasinine</string>
+    <string name="color_lavender">Lavendel</string>
+    <string name="color_blush">Õrnroosa</string>
 </resources>

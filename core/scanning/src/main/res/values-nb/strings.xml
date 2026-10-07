@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Gi kameratilgang</string>
     <string name="scanner_permission_denied">Kameratilgang er slått av for Cardholder. Slå den på i innstillingene for appen for å skanne koder.</string>
     <string name="scanner_open_settings">Åpne innstillingene</string>
+    <string name="scanner_switch_camera">Bytt kamera</string>
+    <string name="scanner_zoom">Zoom %1$s</string>
     <string name="scanner_camera_unavailable">Kunne ikke starte kameraet. Lukk andre apper som bruker det, og prøv igjen.</string>
     <string name="nfc_title">Les kortet med NFC</string>
     <string name="nfc_hold_card">Hold kortet flatt mot baksiden av telefonen, og hold det i ro.</string>

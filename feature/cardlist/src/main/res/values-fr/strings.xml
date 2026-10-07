@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Nom (A–Z)</string>
     <string name="cardlist_sort_date">Date d\'ajout (plus récentes d\'abord)</string>
     <string name="cardlist_sort_custom">Ordre personnalisé</string>
+    <string name="cardlist_sort_most_used">Les plus utilisées</string>
     <string name="cardlist_reorder">Réorganiser les cartes</string>
     <string name="cardlist_reorder_done">Terminé</string>
     <string name="cardlist_reorder_cancel">Annuler la réorganisation</string>

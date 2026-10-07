@@ -3,6 +3,8 @@
     <string name="detail_edit">Badilisha</string>
     <string name="detail_delete">Futa</string>
     <string name="detail_more">Chaguo zaidi</string>
+    <string name="detail_add_favourite">Ongeza kwenye vipendwa</string>
+    <string name="detail_remove_favourite">Ondoa kwenye vipendwa</string>
     <string name="detail_flip">Onyesha upande mwingine</string>
     <string name="detail_show_code">Onyesha msimbo</string>
     <string name="detail_copied">%1$s imenakiliwa. Itaondolewa kwenye ubao wa kunakili baada ya dakika moja.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Duka</string>
     <string name="field_code">Msimbo</string>
     <string name="field_format">Aina ya msimbo</string>
+    <string name="field_notes">Madokezo</string>
 </resources>

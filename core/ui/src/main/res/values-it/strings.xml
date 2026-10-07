@@ -43,4 +43,13 @@
     <string name="color_purple">Viola</string>
     <string name="color_brown">Marrone</string>
     <string name="color_graphite">Grafite</string>
+    <string name="color_white">Bianco</string>
+    <string name="color_silver">Argento</string>
+    <string name="color_gray">Grigio</string>
+    <string name="color_sand">Sabbia</string>
+    <string name="color_lemon">Limone</string>
+    <string name="color_mint">Menta</string>
+    <string name="color_sky">Azzurro cielo</string>
+    <string name="color_lavender">Lavanda</string>
+    <string name="color_blush">Rosa cipria</string>
 </resources>

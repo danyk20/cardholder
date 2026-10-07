@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Det går inte att öppna dina kort</string>
     <string name="storage_error_message">Telefonen har inte längre nycklarna som skyddar dina kort, till exempel efter en säkerhetsåterställning. Korten kan inte återställas på den här enheten. Radera all data för att börja om och importera sedan en säkerhetskopia om du har en.</string>
+    <string name="notification_channel_expiry">Påminnelser om utgångsdatum</string>
+    <string name="notification_expiry_title">Kort går snart ut</string>
+    <string name="notification_expiry_text">”%1$s” går ut den %2$s.</string>
+    <string name="notification_expiry_public">Ett kort i din plånbok går snart ut.</string>
+    <string name="widget_title">Kundkort</string>
+    <string name="widget_description">Dina favoritkundkort, ett tryck från koden</string>
+    <string name="widget_empty">Lägg till ett kundkort för att se det här.</string>
 </resources>

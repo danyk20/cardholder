@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Lejo kamerën</string>
     <string name="scanner_permission_denied">Qasja te kamera është e çaktivizuar për Cardholder. Aktivizoje te cilësimet e aplikacionit për të skanuar kode.</string>
     <string name="scanner_open_settings">Hap cilësimet</string>
+    <string name="scanner_switch_camera">Ndërro kamerën</string>
+    <string name="scanner_zoom">Zmadhimi %1$s</string>
     <string name="scanner_camera_unavailable">Kamera nuk mund të nisej. Mbyll aplikacionet e tjera që e përdorin dhe provo përsëri.</string>
     <string name="nfc_title">Lexo kartën me NFC</string>
     <string name="nfc_hold_card">Mbaje kartën të shtrirë në pjesën e pasme të telefonit dhe mos e lëviz.</string>

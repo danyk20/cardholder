@@ -3,6 +3,8 @@
     <string name="detail_edit">Editați</string>
     <string name="detail_delete">Ștergeți</string>
     <string name="detail_more">Mai multe opțiuni</string>
+    <string name="detail_add_favourite">Adăugați la preferate</string>
+    <string name="detail_remove_favourite">Eliminați din preferate</string>
     <string name="detail_flip">Afișați cealaltă față</string>
     <string name="detail_show_code">Afișați codul</string>
     <string name="detail_copied">Copiat: %1$s. Clipboardul va fi golit peste un minut.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Magazin</string>
     <string name="field_code">Cod</string>
     <string name="field_format">Tipul codului</string>
+    <string name="field_notes">Note</string>
 </resources>

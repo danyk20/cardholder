@@ -43,4 +43,13 @@
     <string name="color_purple">パープル</string>
     <string name="color_brown">ブラウン</string>
     <string name="color_graphite">グラファイト</string>
+    <string name="color_white">ホワイト</string>
+    <string name="color_silver">シルバー</string>
+    <string name="color_gray">グレー</string>
+    <string name="color_sand">サンド</string>
+    <string name="color_lemon">レモン</string>
+    <string name="color_mint">ミント</string>
+    <string name="color_sky">スカイブルー</string>
+    <string name="color_lavender">ラベンダー</string>
+    <string name="color_blush">ペールピンク</string>
 </resources>

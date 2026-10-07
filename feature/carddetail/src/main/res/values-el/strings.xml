@@ -3,6 +3,8 @@
     <string name="detail_edit">Επεξεργασία</string>
     <string name="detail_delete">Διαγραφή</string>
     <string name="detail_more">Περισσότερες επιλογές</string>
+    <string name="detail_add_favourite">Προσθήκη στα αγαπημένα</string>
+    <string name="detail_remove_favourite">Κατάργηση από τα αγαπημένα</string>
     <string name="detail_flip">Εμφάνιση άλλης πλευράς</string>
     <string name="detail_show_code">Εμφάνιση κωδικού</string>
     <string name="detail_copied">Αντιγράφηκε: %1$s. Θα διαγραφεί από το πρόχειρο σε ένα λεπτό.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Κατάστημα</string>
     <string name="field_code">Κωδικός</string>
     <string name="field_format">Τύπος κωδικού</string>
+    <string name="field_notes">Σημειώσεις</string>
 </resources>

@@ -3,6 +3,8 @@
     <string name="detail_edit">编辑</string>
     <string name="detail_delete">删除</string>
     <string name="detail_more">更多选项</string>
+    <string name="detail_add_favourite">添加到收藏</string>
+    <string name="detail_remove_favourite">从收藏中移除</string>
     <string name="detail_flip">显示另一面</string>
     <string name="detail_show_code">显示代码</string>
     <string name="detail_copied">已复制%1$s。一分钟后将从剪贴板中清除。</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">商店</string>
     <string name="field_code">代码</string>
     <string name="field_format">代码类型</string>
+    <string name="field_notes">备注</string>
 </resources>

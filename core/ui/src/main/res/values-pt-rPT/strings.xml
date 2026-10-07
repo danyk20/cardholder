@@ -43,4 +43,13 @@
     <string name="color_purple">Roxo</string>
     <string name="color_brown">Castanho</string>
     <string name="color_graphite">Grafite</string>
+    <string name="color_white">Branco</string>
+    <string name="color_silver">Prateado</string>
+    <string name="color_gray">Cinzento</string>
+    <string name="color_sand">Areia</string>
+    <string name="color_lemon">Limão</string>
+    <string name="color_mint">Menta</string>
+    <string name="color_sky">Azul-céu</string>
+    <string name="color_lavender">Lavanda</string>
+    <string name="color_blush">Rosa-claro</string>
 </resources>

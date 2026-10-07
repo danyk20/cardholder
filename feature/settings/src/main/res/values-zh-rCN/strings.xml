@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">深色</string>
     <string name="settings_dynamic_color">动态取色</string>
     <string name="settings_dynamic_color_description">使用壁纸中的颜色</string>
+    <string name="settings_notifications">通知</string>
+    <string name="settings_expiry_reminders">到期提醒</string>
+    <string name="settings_expiry_reminders_description">在银行卡或证件到期前一个月通知我</string>
     <string name="settings_security">安全</string>
     <string name="settings_allow_screenshots">允许截屏</string>
     <string name="settings_allow_screenshots_description">在您离开应用之前有效。截屏可能会显示卡号，并会保存到您的相册中，相册可能会备份到云端。</string>

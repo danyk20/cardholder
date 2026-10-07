@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Тамна</string>
     <string name="settings_dynamic_color">Динамичне боје</string>
     <string name="settings_dynamic_color_description">Користи боје позадине</string>
+    <string name="settings_notifications">Обавештења</string>
+    <string name="settings_expiry_reminders">Подсетници о истеку</string>
+    <string name="settings_expiry_reminders_description">Обавести ме месец дана пре истека банковне картице или личног документа</string>
     <string name="settings_security">Безбедност</string>
     <string name="settings_allow_screenshots">Дозволи снимке екрана</string>
     <string name="settings_allow_screenshots_description">Док не напустите апликацију. Снимци екрана могу да прикажу бројеве картица и чувају се у фотографијама, чија резервна копија може бити у облаку.</string>

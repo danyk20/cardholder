@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Не удаётся открыть карты</string>
     <string name="storage_error_message">На этом телефоне больше нет ключей, которые защищают ваши карты (например, после сброса настроек безопасности). Восстановить карты на этом устройстве невозможно. Удалите все данные, чтобы начать заново, а затем импортируйте резервную копию, если она у вас есть.</string>
+    <string name="notification_channel_expiry">Напоминания о сроке действия</string>
+    <string name="notification_expiry_title">Срок действия карты скоро истекает</string>
+    <string name="notification_expiry_text">Срок действия карты «%1$s» истекает %2$s.</string>
+    <string name="notification_expiry_public">Срок действия одной из ваших карт скоро истекает.</string>
+    <string name="widget_title">Карты лояльности</string>
+    <string name="widget_description">Ваши избранные карты лояльности: код в одно касание</string>
+    <string name="widget_empty">Добавьте карту лояльности, чтобы она появилась здесь.</string>
 </resources>

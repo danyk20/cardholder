@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Ei kuvaa</string>
     <string name="editor_field_title">Nimi</string>
     <string name="editor_field_title_hint">Oletus: %1$s</string>
+    <string name="editor_field_notes">Muistiinpanot (valinnainen)</string>
+    <string name="editor_notes_hint">Salataan kuten muukin kortti, esim. jäsentaso tai puhelinnumero</string>
     <string name="editor_color">Väri</string>
     <string name="editor_lock">Lukitse tämä kortti</string>
     <string name="editor_lock_description">Vaadi sormenjälki, kasvot tai näytön lukitus kortin tietojen näkemiseen</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">CVV on tallennettu. Säilytä se jättämällä kenttä tyhjäksi.</string>
     <string name="editor_cvv_remove">Poista tallennettu CVV</string>
     <string name="editor_card_expired">Tämä kortti on vanhentunut</string>
+    <string name="editor_number_valid">Kortin numero on kelvollinen</string>
+    <string name="editor_expiry_valid">Voimassaoloaika on kelvollinen</string>
     <string name="editor_field_country">Myöntäjämaa</string>
     <string name="editor_choose_country">Valitse maa</string>
     <string name="editor_search_country">Hae maita</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Lisenssi: %1$s</string>
     <string name="editor_logo_attribution">Lisenssi: %1$s · tekijä %2$s</string>
     <string name="editor_logo_download_failed">Logon lataaminen epäonnistui. Tarkista yhteys ja yritä uudelleen.</string>
+    <string name="editor_prefilled_from_photo">Osa tiedoista täytettiin kuvasta – tarkista ne</string>
+    <string name="editor_duplicate_title">Onko jo lompakossa?</string>
+    <string name="editor_duplicate_shop">Sinulla on jo kortti tästä kaupasta: ”%1$s”. Tallennetaanko tämäkin?</string>
+    <string name="editor_duplicate_bank">Sinulla on jo kortti tästä pankista: ”%1$s”. Tallennetaanko tämäkin?</string>
+    <string name="editor_duplicate_name">Sinulla on jo kortti nimeltä ”%1$s”. Tallennetaanko tämäkin?</string>
+    <string name="editor_duplicate_save">Tallenna silti</string>
     <string name="editor_discard_title">Hylätäänkö muutokset?</string>
     <string name="editor_discard_message">Tähän korttiin tehtyjä muutoksia ei tallenneta.</string>
     <string name="editor_discard">Hylkää</string>

@@ -3,6 +3,8 @@
     <string name="detail_edit">Szerkesztés</string>
     <string name="detail_delete">Törlés</string>
     <string name="detail_more">További lehetőségek</string>
+    <string name="detail_add_favourite">Hozzáadás a kedvencekhez</string>
+    <string name="detail_remove_favourite">Eltávolítás a kedvencek közül</string>
     <string name="detail_flip">Másik oldal megjelenítése</string>
     <string name="detail_show_code">Kód megjelenítése</string>
     <string name="detail_copied">Kimásolva: %1$s. Egy perc múlva törlődik a vágólapról.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Üzlet</string>
     <string name="field_code">Kód</string>
     <string name="field_format">Kódtípus</string>
+    <string name="field_notes">Jegyzetek</string>
 </resources>

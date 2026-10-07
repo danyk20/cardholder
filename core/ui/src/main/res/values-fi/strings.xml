@@ -43,4 +43,13 @@
     <string name="color_purple">Violetti</string>
     <string name="color_brown">Ruskea</string>
     <string name="color_graphite">Grafiitti</string>
+    <string name="color_white">Valkoinen</string>
+    <string name="color_silver">Hopea</string>
+    <string name="color_gray">Harmaa</string>
+    <string name="color_sand">Hiekka</string>
+    <string name="color_lemon">Sitruuna</string>
+    <string name="color_mint">Minttu</string>
+    <string name="color_sky">Taivaansininen</string>
+    <string name="color_lavender">Laventeli</string>
+    <string name="color_blush">Puuterinroosa</string>
 </resources>

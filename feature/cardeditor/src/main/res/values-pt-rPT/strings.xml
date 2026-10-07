@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Sem foto</string>
     <string name="editor_field_title">Nome</string>
     <string name="editor_field_title_hint">Predefinição: %1$s</string>
+    <string name="editor_field_notes">Notas (opcional)</string>
+    <string name="editor_notes_hint">Encriptadas tal como o resto do cartão, por exemplo, um nível de membro ou um número de telefone</string>
     <string name="editor_color">Cor</string>
     <string name="editor_lock">Bloquear este cartão</string>
     <string name="editor_lock_description">Exigir impressão digital, rosto ou bloqueio de ecrã para ver qualquer detalhe do cartão</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">Existe um CVV guardado. Deixe em branco para o manter.</string>
     <string name="editor_cvv_remove">Remover CVV guardado</string>
     <string name="editor_card_expired">Este cartão expirou</string>
+    <string name="editor_number_valid">O número do cartão é válido</string>
+    <string name="editor_expiry_valid">A data de validade é válida</string>
     <string name="editor_field_country">País emissor</string>
     <string name="editor_choose_country">Escolher país</string>
     <string name="editor_search_country">Pesquisar países</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Licença: %1$s</string>
     <string name="editor_logo_attribution">Licença: %1$s · por %2$s</string>
     <string name="editor_logo_download_failed">Não foi possível transferir o logótipo. Verifique a ligação e tente novamente.</string>
+    <string name="editor_prefilled_from_photo">Alguns dados foram preenchidos a partir da foto – verifique-os</string>
+    <string name="editor_duplicate_title">Já está na sua carteira?</string>
+    <string name="editor_duplicate_shop">Já tem um cartão desta loja: “%1$s”. Guardar também este?</string>
+    <string name="editor_duplicate_bank">Já tem um cartão deste banco: “%1$s”. Guardar também este?</string>
+    <string name="editor_duplicate_name">Já tem um cartão chamado “%1$s”. Guardar também este?</string>
+    <string name="editor_duplicate_save">Guardar mesmo assim</string>
     <string name="editor_discard_title">Rejeitar alterações?</string>
     <string name="editor_discard_message">As alterações a este cartão não serão guardadas.</string>
     <string name="editor_discard">Rejeitar</string>

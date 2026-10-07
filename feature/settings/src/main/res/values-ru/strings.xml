@@ -8,6 +8,9 @@
     <string name="settings_theme_dark">Тёмная</string>
     <string name="settings_dynamic_color">Динамические цвета</string>
     <string name="settings_dynamic_color_description">Использовать цвета обоев</string>
+    <string name="settings_notifications">Уведомления</string>
+    <string name="settings_expiry_reminders">Напоминания о сроке действия</string>
+    <string name="settings_expiry_reminders_description">Уведомлять за месяц до окончания срока действия банковской карты или документа</string>
 
     <string name="settings_security">Безопасность</string>
     <string name="settings_allow_screenshots">Разрешить скриншоты</string>

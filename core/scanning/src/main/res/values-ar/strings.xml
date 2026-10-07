@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">السماح باستخدام الكاميرا</string>
     <string name="scanner_permission_denied">الوصول إلى الكاميرا غير مفعَّل لتطبيق Cardholder. فعِّله من إعدادات التطبيق لمسح الرموز.</string>
     <string name="scanner_open_settings">فتح الإعدادات</string>
+    <string name="scanner_switch_camera">تبديل الكاميرا</string>
+    <string name="scanner_zoom">تكبير %1$s</string>
     <string name="scanner_camera_unavailable">تعذّر تشغيل الكاميرا. أغلِق التطبيقات الأخرى التي تستخدمها وحاوِل مرة أخرى.</string>
     <string name="nfc_title">قراءة البطاقة باستخدام NFC</string>
     <string name="nfc_hold_card">ضع بطاقتك بشكل مستوٍ على الجهة الخلفية من هاتفك وأبقِها ثابتة.</string>

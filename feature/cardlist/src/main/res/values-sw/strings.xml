@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Jina (A–Z)</string>
     <string name="cardlist_sort_date">Tarehe ya kuongezwa (mpya kwanza)</string>
     <string name="cardlist_sort_custom">Mpangilio maalum</string>
+    <string name="cardlist_sort_most_used">Zinazotumika zaidi</string>
     <string name="cardlist_reorder">Panga upya kadi</string>
     <string name="cardlist_reorder_done">Nimemaliza</string>
     <string name="cardlist_reorder_cancel">Ghairi kupanga upya</string>

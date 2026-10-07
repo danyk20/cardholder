@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Nema slike</string>
     <string name="editor_field_title">Naziv</string>
     <string name="editor_field_title_hint">Podrazumevano: %1$s</string>
+    <string name="editor_field_notes">Beleške (opcionalno)</string>
+    <string name="editor_notes_hint">Šifruju se kao i ostatak kartice, npr. nivo članstva ili broj telefona</string>
     <string name="editor_color">Boja</string>
     <string name="editor_lock">Zaključaj ovu karticu</string>
     <string name="editor_lock_description">Traži otisak prsta, lice ili zaključavanje ekrana za prikaz bilo kog podatka</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">CVV je sačuvan. Ostavite prazno da biste ga zadržali.</string>
     <string name="editor_cvv_remove">Ukloni sačuvani CVV</string>
     <string name="editor_card_expired">Ovoj kartici je istekao rok važenja</string>
+    <string name="editor_number_valid">Broj kartice je ispravan</string>
+    <string name="editor_expiry_valid">Datum isteka je ispravan</string>
     <string name="editor_field_country">Država izdavanja</string>
     <string name="editor_choose_country">Izaberite državu</string>
     <string name="editor_search_country">Pretražite države</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Licenca: %1$s</string>
     <string name="editor_logo_attribution">Licenca: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Preuzimanje logoa nije uspelo. Proverite vezu i pokušajte ponovo.</string>
+    <string name="editor_prefilled_from_photo">Neki podaci su popunjeni sa fotografije – proverite ih</string>
+    <string name="editor_duplicate_title">Već je u novčaniku?</string>
+    <string name="editor_duplicate_shop">Već imate karticu iz ove prodavnice: „%1$s“. Želite li da sačuvate i ovu?</string>
+    <string name="editor_duplicate_bank">Već imate karticu ove banke: „%1$s“. Želite li da sačuvate i ovu?</string>
+    <string name="editor_duplicate_name">Već imate karticu pod nazivom „%1$s“. Želite li da sačuvate i ovu?</string>
+    <string name="editor_duplicate_save">Ipak sačuvaj</string>
     <string name="editor_discard_title">Želite da odbacite izmene?</string>
     <string name="editor_discard_message">Izmene ove kartice neće biti sačuvane.</string>
     <string name="editor_discard">Odbaci</string>

@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">आपके कार्ड खोले नहीं जा सकते</string>
     <string name="storage_error_message">इस फ़ोन में अब वे कुंजियां नहीं हैं जो आपके कार्ड को सुरक्षित रखती हैं. उदाहरण के लिए, ऐसा सुरक्षा रीसेट के बाद हो सकता है. इस डिवाइस पर कार्ड वापस नहीं लाए जा सकते. फिर से शुरू करने के लिए सारा डेटा मिटाएं. इसके बाद, अगर आपके पास बैकअप है, तो उसे इंपोर्ट करें.</string>
+    <string name="notification_channel_expiry">समाप्ति रिमाइंडर</string>
+    <string name="notification_expiry_title">कार्ड की समयसीमा जल्द खत्म हो रही है</string>
+    <string name="notification_expiry_text">“%1$s” की समयसीमा %2$s को खत्म हो जाएगी.</string>
+    <string name="notification_expiry_public">आपके वॉलेट में मौजूद एक कार्ड की समयसीमा जल्द खत्म हो रही है.</string>
+    <string name="widget_title">लॉयल्टी कार्ड</string>
+    <string name="widget_description">आपके पसंदीदा लॉयल्टी कार्ड, कोड बस एक टैप दूर</string>
+    <string name="widget_empty">लॉयल्टी कार्ड जोड़ें, ताकि वह यहां दिखे.</string>
 </resources>

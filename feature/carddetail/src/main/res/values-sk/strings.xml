@@ -3,6 +3,8 @@
     <string name="detail_edit">Upraviť</string>
     <string name="detail_delete">Odstrániť</string>
     <string name="detail_more">Ďalšie možnosti</string>
+    <string name="detail_add_favourite">Pridať medzi obľúbené</string>
+    <string name="detail_remove_favourite">Odstrániť z obľúbených</string>
     <string name="detail_flip">Zobraziť druhú stranu</string>
     <string name="detail_show_code">Zobraziť kód</string>
     <string name="detail_copied">Skopírované: %1$s. Zo schránky sa vymaže o minútu.</string>
@@ -31,4 +33,5 @@
     <string name="field_shop">Obchod</string>
     <string name="field_code">Kód</string>
     <string name="field_format">Typ kódu</string>
+    <string name="field_notes">Poznámky</string>
 </resources>

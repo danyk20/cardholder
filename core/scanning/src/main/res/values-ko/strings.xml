@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">카메라 허용</string>
     <string name="scanner_permission_denied">Cardholder의 카메라 액세스가 사용 중지되어 있습니다. 코드를 스캔하려면 앱 설정에서 사용 설정하세요.</string>
     <string name="scanner_open_settings">설정 열기</string>
+    <string name="scanner_switch_camera">카메라 전환</string>
+    <string name="scanner_zoom">확대/축소 %1$s</string>
     <string name="scanner_camera_unavailable">카메라를 시작할 수 없습니다. 카메라를 사용 중인 다른 앱을 닫은 후 다시 시도하세요.</string>
     <string name="nfc_title">NFC로 카드 읽기</string>
     <string name="nfc_hold_card">카드를 휴대전화 뒷면에 평평하게 대고 움직이지 마세요.</string>

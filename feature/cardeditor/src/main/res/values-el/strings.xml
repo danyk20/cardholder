@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Χωρίς φωτογραφία</string>
     <string name="editor_field_title">Όνομα</string>
     <string name="editor_field_title_hint">Προεπιλογή: %1$s</string>
+    <string name="editor_field_notes">Σημειώσεις (προαιρετικό)</string>
+    <string name="editor_notes_hint">Κρυπτογραφούνται όπως και η υπόλοιπη κάρτα, π.χ. επίπεδο μέλους ή αριθμός τηλεφώνου</string>
     <string name="editor_color">Χρώμα</string>
     <string name="editor_lock">Κλείδωμα αυτής της κάρτας</string>
     <string name="editor_lock_description">Να απαιτείται δακτυλικό αποτύπωμα, πρόσωπο ή κλείδωμα οθόνης για την προβολή οποιουδήποτε στοιχείου της</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">Υπάρχει αποθηκευμένος κωδικός CVV. Αφήστε το πεδίο κενό για να τον διατηρήσετε.</string>
     <string name="editor_cvv_remove">Αφαίρεση αποθηκευμένου CVV</string>
     <string name="editor_card_expired">Αυτή η κάρτα έχει λήξει</string>
+    <string name="editor_number_valid">Ο αριθμός κάρτας είναι έγκυρος</string>
+    <string name="editor_expiry_valid">Η ημερομηνία λήξης είναι έγκυρη</string>
     <string name="editor_field_country">Χώρα έκδοσης</string>
     <string name="editor_choose_country">Επιλογή χώρας</string>
     <string name="editor_search_country">Αναζήτηση χωρών</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Άδεια: %1$s</string>
     <string name="editor_logo_attribution">Άδεια: %1$s · από %2$s</string>
     <string name="editor_logo_download_failed">Δεν ήταν δυνατή η λήψη του λογότυπου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.</string>
+    <string name="editor_prefilled_from_photo">Ορισμένα στοιχεία συμπληρώθηκαν από τη φωτογραφία – ελέγξτε τα</string>
+    <string name="editor_duplicate_title">Υπάρχει ήδη στο πορτοφόλι σας;</string>
+    <string name="editor_duplicate_shop">Έχετε ήδη μια κάρτα από αυτό το κατάστημα: «%1$s». Να αποθηκευτεί και αυτή;</string>
+    <string name="editor_duplicate_bank">Έχετε ήδη μια κάρτα από αυτή την τράπεζα: «%1$s». Να αποθηκευτεί και αυτή;</string>
+    <string name="editor_duplicate_name">Έχετε ήδη μια κάρτα με το όνομα «%1$s». Να αποθηκευτεί και αυτή;</string>
+    <string name="editor_duplicate_save">Αποθήκευση ούτως ή άλλως</string>
     <string name="editor_discard_title">Απόρριψη αλλαγών;</string>
     <string name="editor_discard_message">Οι αλλαγές σας σε αυτή την κάρτα δεν θα αποθηκευτούν.</string>
     <string name="editor_discard">Απόρριψη</string>

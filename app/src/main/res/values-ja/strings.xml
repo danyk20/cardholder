@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">カードを開けません</string>
     <string name="storage_error_message">このスマートフォンには、カードを保護する鍵がなくなっています（セキュリティのリセット後など）。このデバイスではカードを復元できません。すべてのデータを削除してやり直し、バックアップがある場合はインポートしてください。</string>
+    <string name="notification_channel_expiry">有効期限のリマインダー</string>
+    <string name="notification_expiry_title">カードの有効期限が近づいています</string>
+    <string name="notification_expiry_text">「%1$s」の有効期限は %2$s です。</string>
+    <string name="notification_expiry_public">まもなく有効期限が切れるカードがあります。</string>
+    <string name="widget_title">ポイントカード</string>
+    <string name="widget_description">お気に入りのポイントカードのコードをワンタップで表示</string>
+    <string name="widget_empty">ポイントカードを追加すると、ここに表示されます。</string>
 </resources>

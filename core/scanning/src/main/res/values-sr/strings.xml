@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Дозволи камеру</string>
     <string name="scanner_permission_denied">Апликацији Cardholder је искључен приступ камери. Укључите га у подешавањима апликације да бисте скенирали кодове.</string>
     <string name="scanner_open_settings">Отвори подешавања</string>
+    <string name="scanner_switch_camera">Промени камеру</string>
+    <string name="scanner_zoom">Зумирање %1$s</string>
     <string name="scanner_camera_unavailable">Покретање камере није успело. Затворите друге апликације које је користе и покушајте поново.</string>
     <string name="nfc_title">Очитај картицу преко NFC-а</string>
     <string name="nfc_hold_card">Прислоните картицу равно уз полеђину телефона и држите је мирно.</string>

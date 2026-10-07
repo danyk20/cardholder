@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">تیره</string>
     <string name="settings_dynamic_color">رنگ پویا</string>
     <string name="settings_dynamic_color_description">استفاده از رنگ‌های کاغذدیواری</string>
+    <string name="settings_notifications">اعلان‌ها</string>
+    <string name="settings_expiry_reminders">یادآوری‌های انقضا</string>
+    <string name="settings_expiry_reminders_description">یک ماه پیش از انقضای کارت بانکی یا مدرک شناسایی به من اطلاع بده</string>
     <string name="settings_security">امنیت</string>
     <string name="settings_allow_screenshots">اجازه دادن به نماگرفت</string>
     <string name="settings_allow_screenshots_description">تا زمانی که از برنامه خارج شوید. نماگرفت‌ها ممکن است شماره کارت‌ها را نشان دهند و در عکس‌های شما ذخیره می‌شوند که ممکن است در فضای ابری پشتیبان‌گیری شوند.</string>

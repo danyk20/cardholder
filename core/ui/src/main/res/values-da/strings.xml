@@ -43,4 +43,13 @@
     <string name="color_purple">Lilla</string>
     <string name="color_brown">Brun</string>
     <string name="color_graphite">Grafit</string>
+    <string name="color_white">Hvid</string>
+    <string name="color_silver">Sølv</string>
+    <string name="color_gray">Grå</string>
+    <string name="color_sand">Sand</string>
+    <string name="color_lemon">Citron</string>
+    <string name="color_mint">Mint</string>
+    <string name="color_sky">Himmelblå</string>
+    <string name="color_lavender">Lavendel</string>
+    <string name="color_blush">Pudderrosa</string>
 </resources>

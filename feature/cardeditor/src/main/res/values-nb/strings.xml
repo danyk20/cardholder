@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Ingen bilde</string>
     <string name="editor_field_title">Navn</string>
     <string name="editor_field_title_hint">Standard: %1$s</string>
+    <string name="editor_field_notes">Notater (valgfritt)</string>
+    <string name="editor_notes_hint">Krypteres som resten av kortet, f.eks. et medlemsnivå eller et telefonnummer</string>
     <string name="editor_color">Farge</string>
     <string name="editor_lock">Lås dette kortet</string>
     <string name="editor_lock_description">Krev fingeravtrykk, ansikt eller skjermlås for å se detaljene</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">En CVV er lagret. La feltet stå tomt for å beholde den.</string>
     <string name="editor_cvv_remove">Fjern lagret CVV</string>
     <string name="editor_card_expired">Dette kortet er utløpt</string>
+    <string name="editor_number_valid">Kortnummeret er gyldig</string>
+    <string name="editor_expiry_valid">Utløpsdatoen er gyldig</string>
     <string name="editor_field_country">Utstedelsesland</string>
     <string name="editor_choose_country">Velg land</string>
     <string name="editor_search_country">Søk etter land</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Lisens: %1$s</string>
     <string name="editor_logo_attribution">Lisens: %1$s · av %2$s</string>
     <string name="editor_logo_download_failed">Kunne ikke laste ned logoen. Sjekk tilkoblingen, og prøv igjen.</string>
+    <string name="editor_prefilled_from_photo">Noen opplysninger ble fylt ut fra bildet – sjekk at de stemmer</string>
+    <string name="editor_duplicate_title">Allerede i lommeboken?</string>
+    <string name="editor_duplicate_shop">Du har allerede et kort fra denne butikken: «%1$s». Vil du lagre dette også?</string>
+    <string name="editor_duplicate_bank">Du har allerede et kort fra denne banken: «%1$s». Vil du lagre dette også?</string>
+    <string name="editor_duplicate_name">Du har allerede et kort som heter «%1$s». Vil du lagre dette også?</string>
+    <string name="editor_duplicate_save">Lagre likevel</string>
     <string name="editor_discard_title">Vil du forkaste endringene?</string>
     <string name="editor_discard_message">Endringene i dette kortet blir ikke lagret.</string>
     <string name="editor_discard">Forkast</string>

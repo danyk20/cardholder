@@ -3,6 +3,8 @@
     <string name="detail_edit">Editar</string>
     <string name="detail_delete">Eliminar</string>
     <string name="detail_more">Más opciones</string>
+    <string name="detail_add_favourite">Añadir a favoritos</string>
+    <string name="detail_remove_favourite">Quitar de favoritos</string>
     <string name="detail_flip">Mostrar la otra cara</string>
     <string name="detail_show_code">Mostrar código</string>
     <string name="detail_copied">%1$s copiado. Se borrará del portapapeles en un minuto.</string>
@@ -30,4 +32,5 @@
     <string name="field_shop">Tienda</string>
     <string name="field_code">Código</string>
     <string name="field_format">Tipo de código</string>
+    <string name="field_notes">Notas</string>
 </resources>

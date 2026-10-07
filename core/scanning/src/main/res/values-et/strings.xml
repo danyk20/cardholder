@@ -6,6 +6,8 @@
     <string name="scanner_grant_permission">Luba kaamera</string>
     <string name="scanner_permission_denied">Rakenduse Cardholder juurdepääs kaamerale on välja lülitatud. Koodide skannimiseks lülitage see rakenduse seadetes sisse.</string>
     <string name="scanner_open_settings">Ava seaded</string>
+    <string name="scanner_switch_camera">Vaheta kaamerat</string>
+    <string name="scanner_zoom">Suum %1$s</string>
     <string name="scanner_camera_unavailable">Kaamerat ei õnnestunud käivitada. Sulgege muud rakendused, mis seda kasutavad, ja proovige uuesti.</string>
     <string name="nfc_title">Loe kaart NFC-ga</string>
     <string name="nfc_hold_card">Hoidke kaarti tasaselt vastu telefoni tagakülge ja ärge seda liigutage.</string>

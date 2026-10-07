@@ -7,6 +7,9 @@
     <string name="settings_theme_dark">Mørkt</string>
     <string name="settings_dynamic_color">Dynamiske farger</string>
     <string name="settings_dynamic_color_description">Bruk farger fra bakgrunnsbildet</string>
+    <string name="settings_notifications">Varsler</string>
+    <string name="settings_expiry_reminders">Påminnelser om utløp</string>
+    <string name="settings_expiry_reminders_description">Varsle meg en måned før et bankkort eller ID-kort utløper</string>
     <string name="settings_security">Sikkerhet</string>
     <string name="settings_allow_screenshots">Tillat skjermbilder</string>
     <string name="settings_allow_screenshots_description">Til du forlater appen. Skjermbilder kan vise kortnumre og lagres blant bildene dine, som kan sikkerhetskopieres til skyen.</string>

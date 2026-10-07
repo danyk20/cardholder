@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Nicio fotografie</string>
     <string name="editor_field_title">Nume</string>
     <string name="editor_field_title_hint">Implicit: %1$s</string>
+    <string name="editor_field_notes">Note (opțional)</string>
+    <string name="editor_notes_hint">Criptate ca restul cardului, de ex. un nivel de membru sau un număr de telefon</string>
     <string name="editor_color">Culoare</string>
     <string name="editor_lock">Blocați acest card</string>
     <string name="editor_lock_description">Solicitați amprenta, fața sau blocarea ecranului pentru a vedea orice detaliu al cardului</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">Un cod CVV este stocat. Lăsați câmpul gol pentru a-l păstra.</string>
     <string name="editor_cvv_remove">Eliminați codul CVV stocat</string>
     <string name="editor_card_expired">Acest card a expirat</string>
+    <string name="editor_number_valid">Numărul cardului este valid</string>
+    <string name="editor_expiry_valid">Data expirării este validă</string>
     <string name="editor_field_country">Țara emitentă</string>
     <string name="editor_choose_country">Alegeți țara</string>
     <string name="editor_search_country">Căutați țări</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Licență: %1$s</string>
     <string name="editor_logo_attribution">Licență: %1$s · autor: %2$s</string>
     <string name="editor_logo_download_failed">Sigla nu a putut fi descărcată. Verificați conexiunea și încercați din nou.</string>
+    <string name="editor_prefilled_from_photo">Unele detalii au fost completate din fotografie – verificați-le</string>
+    <string name="editor_duplicate_title">Este deja în portofel?</string>
+    <string name="editor_duplicate_shop">Aveți deja un card de la acest magazin: „%1$s”. Îl salvați și pe acesta?</string>
+    <string name="editor_duplicate_bank">Aveți deja un card de la această bancă: „%1$s”. Îl salvați și pe acesta?</string>
+    <string name="editor_duplicate_name">Aveți deja un card numit „%1$s”. Îl salvați și pe acesta?</string>
+    <string name="editor_duplicate_save">Salvați oricum</string>
     <string name="editor_discard_title">Renunțați la modificări?</string>
     <string name="editor_discard_message">Modificările aduse acestui card nu vor fi salvate.</string>
     <string name="editor_discard">Renunțați</string>

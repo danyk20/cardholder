@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">Imeshindwa kufungua kadi zako</string>
     <string name="storage_error_message">Simu hii haina tena funguo zinazolinda kadi zako, kwa mfano baada ya kuweka upya mipangilio ya usalama. Kadi haziwezi kurejeshwa kwenye kifaa hiki. Futa data yote ili uanze upya, kisha ulete nakala rudufu ikiwa unayo.</string>
+    <string name="notification_channel_expiry">Vikumbusho vya kuisha muda</string>
+    <string name="notification_expiry_title">Muda wa kadi unaisha hivi karibuni</string>
+    <string name="notification_expiry_text">Muda wa “%1$s” utaisha tarehe %2$s.</string>
+    <string name="notification_expiry_public">Muda wa kadi moja kwenye pochi yako unaisha hivi karibuni.</string>
+    <string name="widget_title">Kadi za uaminifu</string>
+    <string name="widget_description">Kadi zako za uaminifu unazozipenda, mguso mmoja hadi kwenye msimbo</string>
+    <string name="widget_empty">Ongeza kadi ya uaminifu ili uione hapa.</string>
 </resources>

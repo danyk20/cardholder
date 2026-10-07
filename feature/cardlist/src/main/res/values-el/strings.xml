@@ -13,6 +13,7 @@
     <string name="cardlist_sort_name">Όνομα (Α–Ω)</string>
     <string name="cardlist_sort_date">Ημερομηνία προσθήκης (νεότερες πρώτα)</string>
     <string name="cardlist_sort_custom">Προσαρμοσμένη σειρά</string>
+    <string name="cardlist_sort_most_used">Πιο συχνά χρησιμοποιούμενες</string>
     <string name="cardlist_reorder">Αναδιάταξη καρτών</string>
     <string name="cardlist_reorder_done">Τέλος</string>
     <string name="cardlist_reorder_cancel">Ακύρωση αναδιάταξης</string>

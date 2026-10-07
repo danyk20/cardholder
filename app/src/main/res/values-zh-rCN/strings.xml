@@ -2,4 +2,11 @@
 <resources>
     <string name="storage_error_title">无法打开卡片</string>
     <string name="storage_error_message">此手机已不再拥有保护卡片的密钥（例如在重置安全设置后），因此无法在此设备上恢复卡片。请删除所有数据以重新开始，然后导入备份（如有）。</string>
+    <string name="notification_channel_expiry">到期提醒</string>
+    <string name="notification_expiry_title">卡片即将到期</string>
+    <string name="notification_expiry_text">“%1$s”将于 %2$s 到期。</string>
+    <string name="notification_expiry_public">您的一张卡片即将到期。</string>
+    <string name="widget_title">会员卡</string>
+    <string name="widget_description">您收藏的会员卡，轻点一下即可显示代码</string>
+    <string name="widget_empty">添加会员卡后，会显示在这里。</string>
 </resources>

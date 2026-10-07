@@ -14,6 +14,8 @@
     <string name="editor_side_missing">Inget foto</string>
     <string name="editor_field_title">Namn</string>
     <string name="editor_field_title_hint">Standard: %1$s</string>
+    <string name="editor_field_notes">Anteckningar (valfritt)</string>
+    <string name="editor_notes_hint">Krypteras som resten av kortet, t.ex. medlemsnivå eller ett telefonnummer</string>
     <string name="editor_color">Färg</string>
     <string name="editor_lock">Lås kortet</string>
     <string name="editor_lock_description">Kräv fingeravtryck, ansikte eller skärmlås för att se kortets uppgifter</string>
@@ -32,6 +34,8 @@
     <string name="editor_cvv_stored">En CVV-kod är sparad. Lämna tomt för att behålla den.</string>
     <string name="editor_cvv_remove">Ta bort sparad CVV</string>
     <string name="editor_card_expired">Kortet har gått ut</string>
+    <string name="editor_number_valid">Kortnumret är giltigt</string>
+    <string name="editor_expiry_valid">Utgångsdatumet är giltigt</string>
     <string name="editor_field_country">Utfärdande land</string>
     <string name="editor_choose_country">Välj land</string>
     <string name="editor_search_country">Sök efter land</string>
@@ -58,6 +62,12 @@
     <string name="editor_logo_license">Licens: %1$s</string>
     <string name="editor_logo_attribution">Licens: %1$s · av %2$s</string>
     <string name="editor_logo_download_failed">Det gick inte att ladda ned logotypen. Kontrollera anslutningen och försök igen.</string>
+    <string name="editor_prefilled_from_photo">Vissa uppgifter fylldes i från fotot – kontrollera dem</string>
+    <string name="editor_duplicate_title">Redan i plånboken?</string>
+    <string name="editor_duplicate_shop">Du har redan ett kort från den här butiken: ”%1$s”. Vill du spara det här också?</string>
+    <string name="editor_duplicate_bank">Du har redan ett kort från den här banken: ”%1$s”. Vill du spara det här också?</string>
+    <string name="editor_duplicate_name">Du har redan ett kort som heter ”%1$s”. Vill du spara det här också?</string>
+    <string name="editor_duplicate_save">Spara ändå</string>
     <string name="editor_discard_title">Vill du ignorera ändringarna?</string>
     <string name="editor_discard_message">Ändringarna av kortet sparas inte.</string>
     <string name="editor_discard">Ignorera</string>
