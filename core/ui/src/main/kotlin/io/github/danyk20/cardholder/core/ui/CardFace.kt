@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.core.ui
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,6 +17,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -25,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import io.github.danyk20.cardholder.core.designsystem.component.CardSurface
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.theme.CardFaceColors
@@ -48,6 +52,9 @@ fun CardFace(
     frontImage: ImageRef? = null,
     logo: ImageRef? = null,
     network: CardNetwork? = null,
+    /** Flag emoji of an ID card's country, shown large on its generated face. */
+    flag: String? = null,
+    isFavourite: Boolean = false,
     onClick: (() -> Unit)? = null,
     onLongClick: (() -> Unit)? = null,
 ) {
@@ -90,7 +97,23 @@ fun CardFace(
                     )
                 }
                 Box(Modifier.weight(1f))
+                if (isFavourite) {
+                    Icon(
+                        CardholderIcons.Favourite,
+                        contentDescription = null,
+                        tint = contentColor,
+                        modifier = Modifier.padding(end = 8.dp).size(18.dp),
+                    )
+                }
                 if (isLocked) LockBadge()
+            }
+            // Generated faces get the features of the real card, so they don't look empty.
+            if (!showPhoto) {
+                when (type) {
+                    CardType.BANK -> BankCardFeatures(contentColor)
+                    CardType.ID -> flag?.let { Text(it, fontSize = FLAG_SIZE) }
+                    CardType.LOYALTY -> Unit
+                }
             }
             Row(verticalAlignment = Alignment.Bottom) {
                 Column(Modifier.weight(1f)) {
@@ -117,6 +140,29 @@ fun CardFace(
         }
     }
 }
+
+/** A chip and the contactless symbol, drawn like on a real payment card. */
+@Composable
+private fun BankCardFeatures(contentColor: Color) {
+    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        Canvas(Modifier.size(width = 40.dp, height = 30.dp)) {
+            val corner = CornerRadius(5.dp.toPx())
+            drawRoundRect(brush = Brush.linearGradient(listOf(ChipLight, ChipDark)), cornerRadius = corner)
+            val line = 1.dp.toPx()
+            val lineColor = ChipDark.copy(alpha = 0.8f)
+            // The contact pads of an EMV chip.
+            drawLine(lineColor, Offset(0f, size.height / 3), Offset(size.width, size.height / 3), line)
+            drawLine(lineColor, Offset(0f, size.height * 2 / 3), Offset(size.width, size.height * 2 / 3), line)
+            drawLine(lineColor, Offset(size.width / 2, 0f), Offset(size.width / 2, size.height / 3), line)
+            drawLine(lineColor, Offset(size.width / 2, size.height * 2 / 3), Offset(size.width / 2, size.height), line)
+        }
+        Icon(CardholderIcons.Nfc, contentDescription = null, tint = contentColor, modifier = Modifier.size(26.dp))
+    }
+}
+
+private val ChipLight = Color(0xFFF3D98B)
+private val ChipDark = Color(0xFFC9A44C)
+private val FLAG_SIZE = 44.sp
 
 @Composable
 private fun LockBadge() {

@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -78,7 +79,13 @@ internal fun BarcodeScreen(
         contentColor = Color.Black,
         topBar = {
             TopAppBar(
-                title = { Text((state as? BarcodeUiState.Ready)?.title.orEmpty()) },
+                title = {
+                    Text(
+                        (state as? BarcodeUiState.Ready)?.title.orEmpty(),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = onClose) {
                         Icon(CardholderIcons.Close, contentDescription = stringResource(R.string.barcode_close))
