@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="other">%1$d개 선택됨</item>
+    </plurals>
+    <string name="cardlist_selection_clear">선택 취소</string>
+    <string name="cardlist_selected">선택됨</string>
+    <string name="cardlist_share">공유</string>
+    <string name="cardlist_share_bank_title">민감한 카드 정보를 공유할까요?</string>
+    <string name="cardlist_share_bank_message">카드 번호, 만료일, CVV, 메모를 포함한 은행 카드 정보를 공유하려고 합니다:\n\n%1$s\n\n파일을 받은 사람(비밀번호를 설정했다면 비밀번호 포함)은 누구나 이 카드를 사용할 수 있습니다. 받는 사람을 신뢰할 때만 계속하세요.</string>
+    <string name="cardlist_share_bank_confirm">이해했습니다. 공유</string>
+    <string name="cardlist_share_password_title">비밀번호로 보호할까요?</string>
+    <string name="cardlist_share_password_message">선택 사항입니다. 비밀번호가 없으면 파일을 받은 사람은 누구나 카드를 볼 수 있습니다. 비밀번호를 설정했다면 같은 채팅이 아닌 문자나 전화 등 별도의 방법으로 받는 사람에게 전달하세요.</string>
+    <string name="cardlist_share_password">비밀번호 (선택)</string>
+    <string name="cardlist_share_password_confirm">비밀번호 다시 입력</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="other">%1$d자 이상 입력하세요</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">비밀번호가 일치하지 않습니다</string>
+    <string name="cardlist_share_continue">공유</string>
+    <string name="cardlist_share_cancel">취소</string>
+    <string name="cardlist_share_auth_title">카드 공유</string>
+    <string name="cardlist_share_chooser">다음으로 카드 공유</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="other">Cardholder의 카드 %1$d장</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nCardholder에서 열기: %2$s</string>
+    <string name="cardlist_share_failed">카드를 공유하지 못했습니다</string>
+    <string name="cardlist_share_auth_failed">잠긴 카드나 CVV를 공유하려면 인증이 필요합니다</string>
+</resources>

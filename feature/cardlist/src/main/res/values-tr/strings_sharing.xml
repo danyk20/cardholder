@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d seçildi</item>
+        <item quantity="other">%1$d seçildi</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Seçimi iptal et</string>
+    <string name="cardlist_selected">Seçildi</string>
+    <string name="cardlist_share">Paylaş</string>
+    <string name="cardlist_share_bank_title">Hassas kart bilgileri paylaşılsın mı?</string>
+    <string name="cardlist_share_bank_message">Kart numarası, son kullanma tarihi, CVV ve notlar dahil olmak üzere bir banka kartının bilgilerini paylaşmak üzeresiniz:\n\n%1$s\n\nDosyayı alan herkes (ve varsa parolası) bu kartları kullanabilir. Yalnızca alıcıya güveniyorsanız devam edin.</string>
+    <string name="cardlist_share_bank_confirm">Anladım, paylaş</string>
+    <string name="cardlist_share_password_title">Parolayla korunsun mu?</string>
+    <string name="cardlist_share_password_message">İsteğe bağlı. Parola olmadan dosyayı alan herkes kartları okuyabilir. Parola belirlerseniz, bunu alıcıya ayrı olarak (ör. SMS veya telefonla) gönderin, aynı sohbette değil.</string>
+    <string name="cardlist_share_password">Parola (isteğe bağlı)</string>
+    <string name="cardlist_share_password_confirm">Parolayı tekrarla</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">En az %1$d karakter kullanın</item>
+        <item quantity="other">En az %1$d karakter kullanın</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Parolalar eşleşmiyor</string>
+    <string name="cardlist_share_continue">Paylaş</string>
+    <string name="cardlist_share_cancel">İptal</string>
+    <string name="cardlist_share_auth_title">Kartları paylaş</string>
+    <string name="cardlist_share_chooser">Kartları şununla paylaş</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">Cardholder\'dan %1$d kart</item>
+        <item quantity="other">Cardholder\'dan %1$d kart</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nCardholder ile aç: %2$s</string>
+    <string name="cardlist_share_failed">Kartlar paylaşılamadı</string>
+    <string name="cardlist_share_auth_failed">Kilitli kartları veya CVV\'leri paylaşmak için kimlik doğrulaması gerekiyor</string>
+</resources>

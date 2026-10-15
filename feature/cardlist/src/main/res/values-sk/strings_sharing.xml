@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">Vybraná %1$d</item>
+        <item quantity="few">Vybrané %1$d</item>
+        <item quantity="many">Vybraných %1$d</item>
+        <item quantity="other">Vybraných %1$d</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Zrušiť výber</string>
+    <string name="cardlist_selected">Vybrané</string>
+    <string name="cardlist_share">Zdieľať</string>
+    <string name="cardlist_share_bank_title">Zdieľať citlivé údaje o kartách?</string>
+    <string name="cardlist_share_bank_message">Chystáte sa zdieľať údaje o bankovej karte vrátane čísla karty, dátumu expirácie, CVV a poznámok:\n\n%1$s\n\nKto koľvek získa súbor (a jeho heslo, ak ho nastavíte), môže tieto karty používať. Pokračujte, iba ak príjemcovi dôverujete.</string>
+    <string name="cardlist_share_bank_confirm">Rozumiem, zdieľať</string>
+    <string name="cardlist_share_password_title">Chrániť heslom?</string>
+    <string name="cardlist_share_password_message">Voliteľné. Bez hesla si súbor môže ktokoľvek prečítať. Ak heslo nastavíte, pošlite ho príjemcovi oddelene (napr. SMS alebo telefonicky), nie v rovnakom chate.</string>
+    <string name="cardlist_share_password">Heslo (voliteľné)</string>
+    <string name="cardlist_share_password_confirm">Zopakujte heslo</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Použite aspoň %1$d znak</item>
+        <item quantity="few">Použite aspoň %1$d znaky</item>
+        <item quantity="many">Použite aspoň %1$d znakov</item>
+        <item quantity="other">Použite aspoň %1$d znakov</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Heslá sa nezhodujú</string>
+    <string name="cardlist_share_continue">Zdieľať</string>
+    <string name="cardlist_share_cancel">Zrušiť</string>
+    <string name="cardlist_share_auth_title">Zdieľať karty</string>
+    <string name="cardlist_share_chooser">Zdieľať karty cez</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d karta z Cardholder</item>
+        <item quantity="few">%1$d karty z Cardholder</item>
+        <item quantity="many">%1$d kariet z Cardholder</item>
+        <item quantity="other">%1$d karty z Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nOtvoriť v Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Karty sa nepodarilo zdieľať</string>
+    <string name="cardlist_share_auth_failed">Na zdieľanie zamknutých kariet alebo CVV je potrebné overenie</string>
+</resources>

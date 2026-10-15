@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d valittu</item>
+        <item quantity="other">%1$d valittua</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Peruuta valinta</string>
+    <string name="cardlist_selected">Valittu</string>
+    <string name="cardlist_share">Jaa</string>
+    <string name="cardlist_share_bank_title">Jaetaanko arkaluonteisia korttitietoja?</string>
+    <string name="cardlist_share_bank_message">Olet jakamassa pankkikortin tietoja, mukaan lukien kortin numero, voimassaoloaika, CVV ja muistiinpanot:\n\n%1$s\n\nKuka tahansa, joka saa tiedoston (ja sen salasanan, jos asetit sellaisen), voi käyttää näitä kortteja. Jatka vain, jos luotat vastaanottajaan.</string>
+    <string name="cardlist_share_bank_confirm">Ymmärrän, jaa</string>
+    <string name="cardlist_share_password_title">Suojataanko salasanalla?</string>
+    <string name="cardlist_share_password_message">Valinnainen. Ilman salasanaa kuka tahansa tiedoston saaja voi lukea kortit. Jos asetat salasanan, lähetä se vastaanottajalle erikseen (esim. tekstiviestillä tai puhelimitse), älä samassa keskustelussa.</string>
+    <string name="cardlist_share_password">Salasana (valinnainen)</string>
+    <string name="cardlist_share_password_confirm">Toista salasana</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Käytä vähintään %1$d merkkiä</item>
+        <item quantity="other">Käytä vähintään %1$d merkkiä</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Salasanat eivät täsmää</string>
+    <string name="cardlist_share_continue">Jaa</string>
+    <string name="cardlist_share_cancel">Peruuta</string>
+    <string name="cardlist_share_auth_title">Jaa kortit</string>
+    <string name="cardlist_share_chooser">Jaa kortit sovelluksella</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d kortti Cardholderista</item>
+        <item quantity="other">%1$d korttia Cardholderista</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nAvaa Cardholderilla: %2$s</string>
+    <string name="cardlist_share_failed">Kortteja ei voitu jakaa</string>
+    <string name="cardlist_share_auth_failed">Lukittujen korttien tai CVV-koodien jakamiseen tarvitaan todennus</string>
+</resources>

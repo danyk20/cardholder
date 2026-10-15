@@ -2,6 +2,7 @@ package io.github.danyk20.cardholder.feature.cardlist
 
 import androidx.lifecycle.SavedStateHandle
 import app.cash.turbine.test
+import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.usecase.ObserveCardsUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.CardId
@@ -9,9 +10,11 @@ import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
+import io.github.danyk20.cardholder.core.testing.repository.FakeBackupRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeShareFileStore
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
@@ -29,12 +32,15 @@ class CardListViewModelTest {
 
     private val repository = FakeCardRepository()
     private val preferences = FakeUserPreferencesRepository()
+    private val backups = FakeBackupRepository()
     private val viewModel by lazy {
         CardListViewModel(
             observeCards = ObserveCardsUseCase(repository),
             cardRepository = repository,
             summaryFactory = CardSummaryFactory(FakeShopRepository(), FakeBankRepository(), FakeCountryRepository()),
             preferencesRepository = preferences,
+            backupRepository = backups,
+            shareFileStore = FakeShareFileStore(),
             savedStateHandle = SavedStateHandle(),
         )
     }
@@ -160,6 +166,81 @@ class CardListViewModelTest {
             listOf(TestCards.loyalty.id, TestCards.idCard.id, TestCards.visa.id),
             repository.observeCards().first().sortedBy { it.position }.map { it.id },
         )
+    }
+
+    @Test
+    fun `long press selects cards and shares only the selected ones`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+
+        viewModel.uiState.test {
+            awaitSuccess()
+            viewModel.onToggleSelection(TestCards.loyalty.id)
+            assertEquals(listOf(TestCards.loyalty.id), awaitSuccess().selected.map { it.id })
+
+            viewModel.onShare("secret123".toCharArray())
+            var state = awaitSuccess()
+            while (state.share !is ShareState.Ready) state = awaitSuccess()
+            assertEquals(1, (state.share as ShareState.Ready).cardCount)
+
+            viewModel.onShareHandled()
+            state = awaitSuccess()
+            while (state.selected.isNotEmpty() || state.share != ShareState.Idle) state = awaitSuccess()
+            assertEquals(ShareState.Idle, state.share)
+            cancelAndIgnoreRemainingEvents()
+        }
+        val export = backups.sharedExports.single()
+        assertEquals(listOf(TestCards.loyalty.id), export.ids)
+        assertEquals("secret123", export.password)
+    }
+
+    @Test
+    fun `sharing without a password exports an unencrypted file`() = runTest {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+
+        viewModel.uiState.test {
+            awaitSuccess()
+            viewModel.onToggleSelection(TestCards.loyalty.id)
+            awaitSuccess()
+            viewModel.onShare(null)
+            var state = awaitSuccess()
+            while (state.share !is ShareState.Ready) state = awaitSuccess()
+            cancelAndIgnoreRemainingEvents()
+        }
+        assertEquals(null, backups.sharedExports.single().password)
+    }
+
+    @Test
+    fun `a failed authentication is reported and keeps the selection`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        backups.exportCardsResult = BackupResult.AuthenticationRequired
+
+        viewModel.uiState.test {
+            awaitSuccess()
+            viewModel.onToggleSelection(TestCards.visa.id)
+            awaitSuccess()
+            viewModel.onShare(null)
+            var state = awaitSuccess()
+            while (state.share != ShareState.AuthenticationFailed) state = awaitSuccess()
+            viewModel.onShareHandled()
+            state = awaitSuccess()
+            assertEquals(ShareState.Idle, state.share)
+            assertEquals(listOf(TestCards.visa.id), state.selected.map { it.id })
+            cancelAndIgnoreRemainingEvents()
+        }
+    }
+
+    @Test
+    fun `cancelling the selection clears it`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+
+        viewModel.uiState.test {
+            awaitSuccess()
+            viewModel.onToggleSelection(TestCards.visa.id)
+            assertEquals(1, awaitSuccess().selected.size)
+            viewModel.onClearSelection()
+            assertEquals(0, awaitSuccess().selected.size)
+        }
     }
 
     private suspend fun app.cash.turbine.ReceiveTurbine<CardListUiState>.awaitSuccess(): CardListUiState.Success {

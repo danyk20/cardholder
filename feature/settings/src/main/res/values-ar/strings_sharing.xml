@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">استيراد البطاقات المشاركة</string>
+    <string name="shared_import_password_message">هذه البطاقات محمية بكلمة مرور. اطلبها من المرسل.</string>
+    <string name="shared_import_password">كلمة المرور</string>
+    <string name="shared_import_wrong_password">كلمة المرور غير صحيحة</string>
+    <string name="shared_import_message">اختر البطاقات التي تريد إضافتها إلى Cardholder.</string>
+    <string name="shared_import_include">استيراد</string>
+    <string name="shared_import_lock">قفل</string>
+    <string name="shared_import_duplicate">لديك هذه البطاقة بالفعل</string>
+    <string name="shared_import_add_new">إضافة كبطاقة جديدة</string>
+    <string name="shared_import_replace">استبدال</string>
+    <string name="shared_import_skip">تخطي</string>
+    <string name="shared_import_confirm">استيراد</string>
+    <string name="shared_import_continue">متابعة</string>
+    <string name="shared_import_cancel">إلغاء</string>
+    <string name="shared_import_ok">موافق</string>
+    <string name="shared_import_nothing">لم يتم استيراد أي بطاقات</string>
+</resources>

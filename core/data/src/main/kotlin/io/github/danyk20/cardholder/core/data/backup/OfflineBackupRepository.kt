@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.Log
 import androidx.core.net.toUri
 import dagger.hilt.android.qualifiers.ApplicationContext
+import io.github.danyk20.cardholder.core.data.model.CardDetailsDto
 import io.github.danyk20.cardholder.core.data.model.toDto
 import io.github.danyk20.cardholder.core.data.model.toModel
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
@@ -16,6 +17,10 @@ import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
+import io.github.danyk20.cardholder.core.domain.model.SharedCardAction
+import io.github.danyk20.cardholder.core.domain.model.SharedCardChoice
+import io.github.danyk20.cardholder.core.domain.model.SharedCardPreview
+import io.github.danyk20.cardholder.core.domain.model.SharedFilePreview
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
@@ -27,6 +32,7 @@ import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
+import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.ImageRef
 import java.io.IOException
@@ -71,21 +77,41 @@ internal class OfflineBackupRepository(
         ioDispatcher = ioDispatcher,
     )
 
-    override suspend fun export(destinationUri: String, password: CharArray): BackupResult = withContext(ioDispatcher) {
+    override suspend fun export(destinationUri: String, password: CharArray): BackupResult =
+        write(destinationUri, password) { cards -> cards }
+
+    override suspend fun exportCards(
+        ids: Collection<CardId>,
+        destinationUri: String,
+        password: CharArray?,
+    ): BackupResult {
+        val wanted = ids.toSet()
+        // Favourites are a personal choice of the sender, not part of the card.
+        return write(destinationUri, password, isShare = true) { cards -> cards.filter { it.id in wanted } }
+    }
+
+    private suspend fun write(
+        destinationUri: String,
+        password: CharArray?,
+        isShare: Boolean = false,
+        select: (List<Card>) -> List<Card>,
+    ): BackupResult = withContext(ioDispatcher) {
         runBackup {
-            val cards = cardRepository.observeCards().first()
+            val cards = select(cardRepository.observeCards().first())
             val images = mutableMapOf<String, ByteArray>()
-            val backupCards = cards.map { card -> card.toBackup(images) }
+            val backupCards = cards.map { card ->
+                card.toBackup(images).let { if (isShare) it.copy(isFavourite = false) else it }
+            }
             val archive = BackupArchive.write(BackupContent(backupCards, images), clock.millis())
-            documents.write(destinationUri, codec.encrypt(archive, password))
+            documents.write(destinationUri, password?.let { codec.encrypt(archive, it) } ?: archive)
             BackupResult.Exported(backupCards.size)
         }
     }
 
-    override suspend fun import(sourceUri: String, password: CharArray, strategy: ImportStrategy): BackupResult =
+    override suspend fun import(sourceUri: String, password: CharArray?, strategy: ImportStrategy): BackupResult =
         withContext(ioDispatcher) {
             runBackup {
-                val content = BackupArchive.read(codec.decrypt(documents.read(sourceUri), password))
+                val content = readContent(sourceUri, password)
                 val needsProtection = content.cards.any { it.isLocked || it.cvv != null }
                 if (needsProtection && !deviceSecurity.isDeviceSecure()) return@runBackup BackupResult.DeviceNotSecure
                 val existing = cardRepository.observeCards().first().map { it.id.value }.toSet()
@@ -104,6 +130,96 @@ internal class OfflineBackupRepository(
                 BackupResult.Imported(imported = imported, skipped = skipped)
             }
         }
+
+    override suspend fun preview(sourceUri: String, password: CharArray?): SharedFilePreview =
+        withContext(ioDispatcher) {
+            var preview: SharedFilePreview? = null
+            val failure = runBackup {
+                val content = readContent(sourceUri, password)
+                val existing = existingKeys()
+                preview = SharedFilePreview.Cards(
+                    content.cards.sortedBy { it.position }.map { backup ->
+                        SharedCardPreview(
+                            key = backup.id,
+                            title = backup.title,
+                            type = CardType.entries.firstOrNull { it.name == backup.type }
+                                ?: throw InvalidBackupException("Unknown card type"),
+                            wasLocked = backup.isLocked,
+                            duplicateOf = existing.byId[backup.id]
+                                ?: backup.details.identifier()?.let { existing.byIdentifier[it] },
+                        )
+                    },
+                )
+                BackupResult.Imported(0, 0)
+            }
+            preview ?: SharedFilePreview.Unreadable(failure)
+        }
+
+    override suspend fun importShared(
+        sourceUri: String,
+        password: CharArray?,
+        choices: Map<String, SharedCardChoice>,
+    ): BackupResult = withContext(ioDispatcher) {
+        runBackup {
+            val content = readContent(sourceUri, password)
+            val chosen = content.cards.mapNotNull { backup -> choices[backup.id]?.let { backup to it } }
+            val needsProtection = chosen.any { (backup, choice) ->
+                choice.action != SharedCardAction.SKIP && (choice.locked || backup.cvv != null)
+            }
+            if (needsProtection && !deviceSecurity.isDeviceSecure()) return@runBackup BackupResult.DeviceNotSecure
+            val existing = existingKeys()
+            var imported = 0
+            chosen.sortedBy { it.first.position }.forEach { (backup, choice) ->
+                val target = when (choice.action) {
+                    SharedCardAction.SKIP -> return@forEach
+
+                    SharedCardAction.ADD_NEW -> CardId.random()
+
+                    SharedCardAction.REPLACE -> existing.byId[backup.id]
+                        ?: backup.details.identifier()?.let { existing.byIdentifier[it] }
+                        ?: CardId.random()
+                }
+                cardRepository.save(
+                    backup.toDraft(content.images).copy(id = target, isLocked = choice.locked),
+                ).orThrow()
+                imported++
+            }
+            BackupResult.Imported(imported = imported, skipped = content.cards.size - imported)
+        }
+    }
+
+    /** Reads and, if needed, decrypts a backup or shared file. */
+    private fun readContent(sourceUri: String, password: CharArray?): BackupContent {
+        val data = documents.read(sourceUri)
+        val archive = when {
+            !codec.isEncrypted(data) -> data
+            password == null -> throw ProtectedDataException(BackupResult.PasswordRequired)
+            else -> codec.decrypt(data, password)
+        }
+        return BackupArchive.read(archive)
+    }
+
+    private class ExistingCards(val byId: Map<String, CardId>, val byIdentifier: Map<String, CardId>)
+
+    /**
+     * The cards on this device, by id and by number/code. Locked cards can only be matched by id: their
+     * numbers stay encrypted until the user authenticates.
+     */
+    private suspend fun existingKeys(): ExistingCards {
+        val cards = cardRepository.observeCards().first()
+        val byIdentifier = cards.filterNot { it.isLocked }.mapNotNull { card ->
+            val details = cardRepository.readDetails(card.id) as? SecureResult.Success ?: return@mapNotNull null
+            details.value.toDto().identifier()?.let { it to card.id }
+        }.toMap()
+        return ExistingCards(cards.associate { it.id.value to it.id }, byIdentifier)
+    }
+
+    /** What makes two cards the same card: type plus number/code, ignoring spaces. */
+    private fun CardDetailsDto.identifier(): String? = when (this) {
+        is CardDetailsDto.Bank -> "BANK:$number"
+        is CardDetailsDto.Id -> documentNumber?.let { "ID:$it" }
+        is CardDetailsDto.Loyalty -> "LOYALTY:$code"
+    }?.filterNot(Char::isWhitespace)?.takeIf { it.substringAfter(':').isNotEmpty() }
 
     private suspend fun Card.toBackup(images: MutableMap<String, ByteArray>): BackupCard {
         val details = cardRepository.readDetails(id).orThrow()

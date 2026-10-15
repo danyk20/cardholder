@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">Wybrano %1$d</item>
+        <item quantity="few">Wybrano %1$d</item>
+        <item quantity="many">Wybrano %1$d</item>
+        <item quantity="other">Wybrano %1$d</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Anuluj zaznaczanie</string>
+    <string name="cardlist_selected">Wybrano</string>
+    <string name="cardlist_share">Udostępnij</string>
+    <string name="cardlist_share_bank_title">Udostępnić wrażliwe dane kart?</string>
+    <string name="cardlist_share_bank_message">Zamierzasz udostępnić dane karty bankowej, w tym numer karty, datę ważności, CVV i notatki:\n\n%1$s\n\nKażdy, kto otrzyma plik (i jego hasło, jeśli je ustawisz), będzie mógł użyć tych kart. Kontynuuj tylko wtedy, gdy ufasz odbiorcy.</string>
+    <string name="cardlist_share_bank_confirm">Rozumiem, udostępnij</string>
+    <string name="cardlist_share_password_title">Zabezpieczyć hasłem?</string>
+    <string name="cardlist_share_password_message">Opcjonalne. Bez hasła każdy, kto otrzyma plik, może odczytać karty. Jeśli ustawisz hasło, przekaż je odbiorcy osobno (np. SMS-em lub telefonicznie), a nie w tym samym czacie.</string>
+    <string name="cardlist_share_password">Hasło (opcjonalne)</string>
+    <string name="cardlist_share_password_confirm">Powtórz hasło</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Użyj co najmniej %1$d znaku</item>
+        <item quantity="few">Użyj co najmniej %1$d znaków</item>
+        <item quantity="many">Użyj co najmniej %1$d znaków</item>
+        <item quantity="other">Użyj co najmniej %1$d znaków</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Hasła nie są zgodne</string>
+    <string name="cardlist_share_continue">Udostępnij</string>
+    <string name="cardlist_share_cancel">Anuluj</string>
+    <string name="cardlist_share_auth_title">Udostępnij karty</string>
+    <string name="cardlist_share_chooser">Udostępnij karty przez</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d karta z Cardholder</item>
+        <item quantity="few">%1$d karty z Cardholder</item>
+        <item quantity="many">%1$d kart z Cardholder</item>
+        <item quantity="other">%1$d kart z Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nOtwórz w Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Nie udało się udostępnić kart</string>
+    <string name="cardlist_share_auth_failed">Do udostępnienia zablokowanych kart lub kodów CVV wymagane jest uwierzytelnienie</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d vald</item>
+        <item quantity="other">%1$d valda</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Avbryt val</string>
+    <string name="cardlist_selected">Vald</string>
+    <string name="cardlist_share">Dela</string>
+    <string name="cardlist_share_bank_title">Dela känsliga kortuppgifter?</string>
+    <string name="cardlist_share_bank_message">Du är på väg att dela uppgifter om ett bankkort, inklusive kortnummer, utgångsdatum, CVV och anteckningar:\n\n%1$s\n\nAlla som får filen (och dess lösenord, om du har angett ett) kan använda korten. Fortsätt bara om du litar på mottagaren.</string>
+    <string name="cardlist_share_bank_confirm">Jag förstår, dela</string>
+    <string name="cardlist_share_password_title">Skydda med lösenord?</string>
+    <string name="cardlist_share_password_message">Valfritt. Utan lösenord kan alla som får filen läsa korten. Om du anger ett lösenord, skicka det separat till mottagaren (t.ex. via sms eller telefon), inte i samma chatt.</string>
+    <string name="cardlist_share_password">Lösenord (valfritt)</string>
+    <string name="cardlist_share_password_confirm">Upprepa lösenordet</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Använd minst %1$d tecken</item>
+        <item quantity="other">Använd minst %1$d tecken</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Lösenorden matchar inte</string>
+    <string name="cardlist_share_continue">Dela</string>
+    <string name="cardlist_share_cancel">Avbryt</string>
+    <string name="cardlist_share_auth_title">Dela kort</string>
+    <string name="cardlist_share_chooser">Dela kort med</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d kort från Cardholder</item>
+        <item quantity="other">%1$d kort från Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nÖppna med Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Korten kunde inte delas</string>
+    <string name="cardlist_share_auth_failed">Autentisering krävs för att dela låsta kort eller CVV</string>
+</resources>

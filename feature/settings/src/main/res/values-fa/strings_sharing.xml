@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">وارد کردن کارت‌های به اشتراک‌گذاشته‌شده</string>
+    <string name="shared_import_password_message">این کارت‌ها با رمز عبور محافظت شده‌اند. رمز را از فرستنده بپرسید.</string>
+    <string name="shared_import_password">رمز عبور</string>
+    <string name="shared_import_wrong_password">رمز عبور اشتباه است</string>
+    <string name="shared_import_message">انتخاب کنید کدام کارت‌ها به Cardholder اضافه شوند.</string>
+    <string name="shared_import_include">وارد کردن</string>
+    <string name="shared_import_lock">قفل</string>
+    <string name="shared_import_duplicate">این کارت را قبلاً دارید</string>
+    <string name="shared_import_add_new">افزودن به عنوان جدید</string>
+    <string name="shared_import_replace">جایگزینی</string>
+    <string name="shared_import_skip">رد شدن</string>
+    <string name="shared_import_confirm">وارد کردن</string>
+    <string name="shared_import_continue">ادامه</string>
+    <string name="shared_import_cancel">لغو</string>
+    <string name="shared_import_ok">تأیید</string>
+    <string name="shared_import_nothing">هیچ کارتی وارد نشد</string>
+</resources>

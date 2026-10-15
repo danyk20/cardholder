@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Megosztott kártyák importálása</string>
+    <string name="shared_import_password_message">Ezek a kártyák jelszóval védettek. Kérd el a küldőtől.</string>
+    <string name="shared_import_password">Jelszó</string>
+    <string name="shared_import_wrong_password">Hibás jelszó</string>
+    <string name="shared_import_message">Válaszd ki, mely kártyákat szeretnéd hozzáadni a Cardholderhez.</string>
+    <string name="shared_import_include">Importálás</string>
+    <string name="shared_import_lock">Zárolás</string>
+    <string name="shared_import_duplicate">Ez a kártya már megvan</string>
+    <string name="shared_import_add_new">Hozzáadás újként</string>
+    <string name="shared_import_replace">Csere</string>
+    <string name="shared_import_skip">Kihagyás</string>
+    <string name="shared_import_confirm">Importálás</string>
+    <string name="shared_import_continue">Folytatás</string>
+    <string name="shared_import_cancel">Mégse</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Nem importáltunk kártyát</string>
+</resources>

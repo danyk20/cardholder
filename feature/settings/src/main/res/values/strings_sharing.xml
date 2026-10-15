@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Import shared cards</string>
+    <string name="shared_import_password_message">These cards are protected with a password. Ask the sender for it.</string>
+    <string name="shared_import_password">Password</string>
+    <string name="shared_import_wrong_password">Wrong password</string>
+    <string name="shared_import_message">Choose which cards to add to Cardholder.</string>
+    <string name="shared_import_include">Import</string>
+    <string name="shared_import_lock">Lock</string>
+    <string name="shared_import_duplicate">You already have this card</string>
+    <string name="shared_import_add_new">Add as new</string>
+    <string name="shared_import_replace">Replace</string>
+    <string name="shared_import_skip">Skip</string>
+    <string name="shared_import_confirm">Import</string>
+    <string name="shared_import_continue">Continue</string>
+    <string name="shared_import_cancel">Cancel</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">No cards imported</string>
+</resources>

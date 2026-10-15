@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">শেয়ার করা কার্ড আমদানি করুন</string>
+    <string name="shared_import_password_message">এই কার্ডগুলো পাসওয়ার্ড দিয়ে সুরক্ষিত। প্রেরকের কাছে পাসওয়ার্ড চান।</string>
+    <string name="shared_import_password">পাসওয়ার্ড</string>
+    <string name="shared_import_wrong_password">ভুল পাসওয়ার্ড</string>
+    <string name="shared_import_message">Cardholder-এ যোগ করতে চান এমন কার্ড বেছে নিন।</string>
+    <string name="shared_import_include">আমদানি</string>
+    <string name="shared_import_lock">লক</string>
+    <string name="shared_import_duplicate">এই কার্ডটি আপনার কাছে আছে</string>
+    <string name="shared_import_add_new">নতুন হিসেবে যোগ করুন</string>
+    <string name="shared_import_replace">প্রতিস্থাপন</string>
+    <string name="shared_import_skip">বাদ দিন</string>
+    <string name="shared_import_confirm">আমদানি</string>
+    <string name="shared_import_continue">চালিয়ে যান</string>
+    <string name="shared_import_cancel">বাতিল</string>
+    <string name="shared_import_ok">ঠিক আছে</string>
+    <string name="shared_import_nothing">কোনো কার্ড আমদানি হয়নি</string>
+</resources>

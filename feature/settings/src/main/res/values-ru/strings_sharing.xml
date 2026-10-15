@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Импорт общих карт</string>
+    <string name="shared_import_password_message">Эти карты защищены паролем. Узнайте его у отправителя.</string>
+    <string name="shared_import_password">Пароль</string>
+    <string name="shared_import_wrong_password">Неверный пароль</string>
+    <string name="shared_import_message">Выберите, какие карты добавить в Cardholder.</string>
+    <string name="shared_import_include">Импорт</string>
+    <string name="shared_import_lock">Заблокировать</string>
+    <string name="shared_import_duplicate">Эта карта уже есть</string>
+    <string name="shared_import_add_new">Добавить как новую</string>
+    <string name="shared_import_replace">Заменить</string>
+    <string name="shared_import_skip">Пропустить</string>
+    <string name="shared_import_confirm">Импорт</string>
+    <string name="shared_import_continue">Продолжить</string>
+    <string name="shared_import_cancel">Отмена</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Карты не импортированы</string>
+</resources>

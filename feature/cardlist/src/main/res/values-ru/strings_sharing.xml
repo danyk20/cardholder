@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">Выбрана %1$d</item>
+        <item quantity="few">Выбрано %1$d</item>
+        <item quantity="many">Выбрано %1$d</item>
+        <item quantity="other">Выбрано %1$d</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Отменить выбор</string>
+    <string name="cardlist_selected">Выбрано</string>
+    <string name="cardlist_share">Поделиться</string>
+    <string name="cardlist_share_bank_title">Поделиться конфиденциальными данными карт?</string>
+    <string name="cardlist_share_bank_message">Вы собираетесь поделиться данными банковских карт, включая номер карты, срок действия, CVV и заметки:\n\n%1$s\n\nЛюбой, кто получит файл (и его пароль, если вы его задали), сможет использовать эти карты. Продолжайте, только если доверяете получателю.</string>
+    <string name="cardlist_share_bank_confirm">Понятно, поделиться</string>
+    <string name="cardlist_share_password_title">Защитить паролем?</string>
+    <string name="cardlist_share_password_message">Необязательно. Без пароля любой, кто получит файл, сможет прочитать карты. Если вы задаёте пароль, передайте его получателю отдельно (например, по SMS или по телефону), а не в том же чате.</string>
+    <string name="cardlist_share_password">Пароль (необязательно)</string>
+    <string name="cardlist_share_password_confirm">Повторите пароль</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Используйте не менее %1$d символа</item>
+        <item quantity="few">Используйте не менее %1$d символов</item>
+        <item quantity="many">Используйте не менее %1$d символов</item>
+        <item quantity="other">Используйте не менее %1$d символов</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Пароли не совпадают</string>
+    <string name="cardlist_share_continue">Поделиться</string>
+    <string name="cardlist_share_cancel">Отмена</string>
+    <string name="cardlist_share_auth_title">Поделиться картами</string>
+    <string name="cardlist_share_chooser">Поделиться картами через</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d карта из Cardholder</item>
+        <item quantity="few">%1$d карты из Cardholder</item>
+        <item quantity="many">%1$d карт из Cardholder</item>
+        <item quantity="other">%1$d карты из Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nОткройте в Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Не удалось поделиться картами</string>
+    <string name="cardlist_share_auth_failed">Для передачи заблокированных карт или CVV нужна аутентификация</string>
+</resources>

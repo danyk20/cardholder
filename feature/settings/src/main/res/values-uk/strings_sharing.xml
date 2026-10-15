@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Імпорт спільних карток</string>
+    <string name="shared_import_password_message">Ці картки захищено паролем. Запитайте його у відправника.</string>
+    <string name="shared_import_password">Пароль</string>
+    <string name="shared_import_wrong_password">Невірний пароль</string>
+    <string name="shared_import_message">Виберіть, які картки додати до Cardholder.</string>
+    <string name="shared_import_include">Імпорт</string>
+    <string name="shared_import_lock">Заблокувати</string>
+    <string name="shared_import_duplicate">Ця картка вже є</string>
+    <string name="shared_import_add_new">Додати як нову</string>
+    <string name="shared_import_replace">Замінити</string>
+    <string name="shared_import_skip">Пропустити</string>
+    <string name="shared_import_confirm">Імпорт</string>
+    <string name="shared_import_continue">Продовжити</string>
+    <string name="shared_import_cancel">Скасувати</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Жодну картку не імпортовано</string>
+</resources>

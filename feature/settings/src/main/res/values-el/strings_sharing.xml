@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Εισαγωγή κοινόχρηστων καρτών</string>
+    <string name="shared_import_password_message">Αυτές οι κάρτες προστατεύονται με κωδικό. Ζητήστε τον από τον αποστολέα.</string>
+    <string name="shared_import_password">Κωδικός</string>
+    <string name="shared_import_wrong_password">Λάθος κωδικός</string>
+    <string name="shared_import_message">Επιλέξτε ποιες κάρτες θέλετε να προσθέσετε στο Cardholder.</string>
+    <string name="shared_import_include">Εισαγωγή</string>
+    <string name="shared_import_lock">Κλείδωμα</string>
+    <string name="shared_import_duplicate">Έχετε ήδη αυτή την κάρτα</string>
+    <string name="shared_import_add_new">Προσθήκη ως νέα</string>
+    <string name="shared_import_replace">Αντικατάσταση</string>
+    <string name="shared_import_skip">Παράλειψη</string>
+    <string name="shared_import_confirm">Εισαγωγή</string>
+    <string name="shared_import_continue">Συνέχεια</string>
+    <string name="shared_import_cancel">Ακύρωση</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Δεν εισήχθησαν κάρτες</string>
+</resources>

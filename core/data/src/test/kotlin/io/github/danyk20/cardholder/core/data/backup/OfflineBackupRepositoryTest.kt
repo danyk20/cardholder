@@ -5,7 +5,11 @@ import io.github.danyk20.cardholder.core.domain.model.CardContent
 import io.github.danyk20.cardholder.core.domain.model.CvvChange
 import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
+import io.github.danyk20.cardholder.core.domain.model.SharedCardAction
+import io.github.danyk20.cardholder.core.domain.model.SharedCardChoice
+import io.github.danyk20.cardholder.core.domain.model.SharedFilePreview
 import io.github.danyk20.cardholder.core.domain.model.getOrNull
+import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.ImageRef
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardImageRepository
@@ -135,6 +139,79 @@ class OfflineBackupRepositoryTest {
             .import("backup", password, ImportStrategy.SKIP_EXISTING)
 
         assertEquals(BackupResult.DeviceNotSecure, result)
+    }
+
+    @Test
+    fun `shared cards can be sent without a password and include CVV and notes`() = runTest {
+        val source = sourceCards().apply { isAuthenticated = true }
+        val images = FakeCardImageRepository(mutableMapOf(ImageRef("visa-front") to byteArrayOf(1)))
+        assertEquals(
+            BackupResult.Exported(1),
+            repository(source, images).exportCards(listOf(TestCards.visa.id), "share", password = null),
+        )
+
+        val target = FakeCardRepository()
+        val preview = assertIs<SharedFilePreview.Cards>(repository(target).preview("share", password = null))
+        assertEquals(listOf(TestCards.visa.title), preview.cards.map { it.title })
+        assertEquals(null, preview.cards.single().duplicateOf)
+
+        val choices = mapOf(TestCards.visa.id.value to SharedCardChoice(SharedCardAction.ADD_NEW, locked = true))
+        assertEquals(BackupResult.Imported(1, 0), repository(target).importShared("share", null, choices))
+        target.isAuthenticated = true
+        val imported = target.observeCards().first().single()
+        assertTrue(imported.isLocked)
+        assertEquals(TestCards.VISA_CVV, target.readCvv(imported.id).getOrNull())
+        assertEquals(TestCards.visaDetails, target.readDetails(imported.id).getOrNull())
+    }
+
+    @Test
+    fun `an encrypted shared file asks for its password`() = runTest {
+        val source = FakeCardRepository().apply { add(TestCards.loyalty, TestCards.loyaltyDetails) }
+        repository(source).exportCards(listOf(TestCards.loyalty.id), "share", "eight888".toCharArray())
+
+        val target = repository(FakeCardRepository())
+        assertEquals(SharedFilePreview.Unreadable(BackupResult.PasswordRequired), target.preview("share", null))
+        assertEquals(
+            SharedFilePreview.Unreadable(BackupResult.WrongPassword),
+            target.preview("share", "wrong".toCharArray()),
+        )
+        assertIs<SharedFilePreview.Cards>(target.preview("share", "eight888".toCharArray()))
+    }
+
+    @Test
+    fun `duplicates are found by number and can be added, replaced or skipped`() = runTest {
+        val source = FakeCardRepository().apply { add(TestCards.loyalty, TestCards.loyaltyDetails) }
+        repository(source).exportCards(listOf(TestCards.loyalty.id), "share", null)
+        val existingId = CardId("someone-elses-id")
+        val target = FakeCardRepository().apply {
+            add(TestCards.loyalty.copy(id = existingId, title = "My copy"), TestCards.loyaltyDetails)
+        }
+        val key = TestCards.loyalty.id.value
+        val preview = assertIs<SharedFilePreview.Cards>(repository(target).preview("share", null))
+        assertEquals(existingId, preview.cards.single().duplicateOf)
+
+        repository(target).importShared("share", null, mapOf(key to SharedCardChoice(SharedCardAction.SKIP, false)))
+        assertEquals(listOf("My copy"), target.observeCards().first().map { it.title })
+
+        repository(target).importShared("share", null, mapOf(key to SharedCardChoice(SharedCardAction.REPLACE, false)))
+        assertEquals(listOf(TestCards.loyalty.title), target.observeCards().first().map { it.title })
+        assertEquals(existingId, target.observeCards().first().single().id)
+
+        repository(target).importShared("share", null, mapOf(key to SharedCardChoice(SharedCardAction.ADD_NEW, false)))
+        assertEquals(2, target.observeCards().first().size)
+    }
+
+    @Test
+    fun `shared files leave out the sender's favourites`() = runTest {
+        val source = FakeCardRepository().apply {
+            add(TestCards.loyalty, TestCards.loyaltyDetails)
+            setFavourite(TestCards.loyalty.id, true)
+        }
+        repository(source).exportCards(listOf(TestCards.loyalty.id), "share", null)
+
+        val target = FakeCardRepository()
+        repository(target).import("share", null, ImportStrategy.SKIP_EXISTING)
+        assertEquals(false, target.observeCards().first().single().isFavourite)
     }
 
     private class InMemoryDocuments : DocumentAccess {

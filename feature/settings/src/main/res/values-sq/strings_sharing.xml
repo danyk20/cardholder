@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Importo kartat e ndara</string>
+    <string name="shared_import_password_message">Këto karta mbrohen me fjalëkalim. Kërkojua dërguesit.</string>
+    <string name="shared_import_password">Fjalëkalimi</string>
+    <string name="shared_import_wrong_password">Fjalëkalim i gabuar</string>
+    <string name="shared_import_message">Zgjidh cilat karta të shtohen te Cardholder.</string>
+    <string name="shared_import_include">Importo</string>
+    <string name="shared_import_lock">Kyç</string>
+    <string name="shared_import_duplicate">E ke tashmë këtë kartë</string>
+    <string name="shared_import_add_new">Shto si të re</string>
+    <string name="shared_import_replace">Zëvendëso</string>
+    <string name="shared_import_skip">Kalo</string>
+    <string name="shared_import_confirm">Importo</string>
+    <string name="shared_import_continue">Vazhdo</string>
+    <string name="shared_import_cancel">Anulo</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Asnjë kartë nuk u importua</string>
+</resources>

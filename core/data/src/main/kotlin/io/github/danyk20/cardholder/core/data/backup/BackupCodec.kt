@@ -41,6 +41,10 @@ class BackupCodec(
         return header + ciphertext
     }
 
+    /** Whether [data] starts like an encrypted backup (as opposed to an unencrypted shared archive). */
+    fun isEncrypted(data: ByteArray): Boolean =
+        data.size >= MAGIC.size && data.copyOfRange(0, MAGIC.size).contentEquals(MAGIC)
+
     fun decrypt(data: ByteArray, password: CharArray): ByteArray {
         val header = parseHeader(data)
         return try {

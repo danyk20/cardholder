@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d selected</item>
+        <item quantity="other">%1$d selected</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Cancel selection</string>
+    <string name="cardlist_selected">Selected</string>
+    <string name="cardlist_share">Share</string>
+    <string name="cardlist_share_bank_title">Share sensitive card data?</string>
+    <string name="cardlist_share_bank_message">You are about to share bank card details, including the card number, expiry date, CVV and notes:\n\n%1$s\n\nAnyone who gets the file (and its password, if you set one) can use these cards. Only continue if you trust the recipient.</string>
+    <string name="cardlist_share_bank_confirm">I understand, share</string>
+    <string name="cardlist_share_password_title">Protect with a password?</string>
+    <string name="cardlist_share_password_message">Optional. Without a password, anyone who gets the file can read the cards. If you set one, send it to the recipient separately (e.g. by SMS or phone call), not in the same chat.</string>
+    <string name="cardlist_share_password">Password (optional)</string>
+    <string name="cardlist_share_password_confirm">Repeat password</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Use at least %1$d character</item>
+        <item quantity="other">Use at least %1$d characters</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Passwords don\'t match</string>
+    <string name="cardlist_share_continue">Share</string>
+    <string name="cardlist_share_cancel">Cancel</string>
+    <string name="cardlist_share_auth_title">Share cards</string>
+    <string name="cardlist_share_chooser">Share cards with</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d card from Cardholder</item>
+        <item quantity="other">%1$d cards from Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nOpen with Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">The cards couldn\'t be shared</string>
+    <string name="cardlist_share_auth_failed">Authentication is needed to share locked cards or CVVs</string>
+</resources>

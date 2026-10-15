@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">共有されたカードをインポート</string>
+    <string name="shared_import_password_message">これらのカードはパスワードで保護されています。送信者に確認してください。</string>
+    <string name="shared_import_password">パスワード</string>
+    <string name="shared_import_wrong_password">パスワードが間違っています</string>
+    <string name="shared_import_message">Cardholder に追加するカードを選択してください。</string>
+    <string name="shared_import_include">インポート</string>
+    <string name="shared_import_lock">ロック</string>
+    <string name="shared_import_duplicate">このカードは既に登録されています</string>
+    <string name="shared_import_add_new">新規として追加</string>
+    <string name="shared_import_replace">置き換え</string>
+    <string name="shared_import_skip">スキップ</string>
+    <string name="shared_import_confirm">インポート</string>
+    <string name="shared_import_continue">続行</string>
+    <string name="shared_import_cancel">キャンセル</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">インポートされたカードはありません</string>
+</resources>

@@ -1,6 +1,9 @@
 package io.github.danyk20.cardholder
 
+import android.content.ContentResolver
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.SystemBarStyle
@@ -14,7 +17,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.core.content.IntentCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -24,6 +30,7 @@ import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
 import io.github.danyk20.cardholder.core.domain.security.ScreenCapturePolicy
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.ui.LocalScreenCaptureAllowed
+import io.github.danyk20.cardholder.feature.settings.sharedimport.SharedImportDialog
 import io.github.danyk20.cardholder.navigation.CardholderNavHost
 import javax.inject.Inject
 import kotlinx.coroutines.launch
@@ -36,9 +43,15 @@ class MainActivity : FragmentActivity() {
     @Inject
     lateinit var screenCapturePolicy: ScreenCapturePolicy
 
+    /** A shared or backup file the app was opened with, until the user imported or dismissed it. */
+    private var sharedFileUri by mutableStateOf<String?>(null)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+        // After a configuration change the intent is delivered again, but was already handled.
+        sharedFileUri =
+            if (savedInstanceState == null) intent.sharedFileUri() else savedInstanceState.getString(KEY_SHARED_FILE)
         splashScreen.setKeepOnScreenCondition { viewModel.uiState.value is MainActivityUiState.Loading }
         enableEdgeToEdge()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -76,11 +89,22 @@ class MainActivity : FragmentActivity() {
                     } else {
                         CompositionLocalProvider(LocalScreenCaptureAllowed provides screenCaptureAllowed) {
                             CardholderNavHost()
+                            sharedFileUri?.let { uri -> SharedImportDialog(uri, onClose = { sharedFileUri = null }) }
                         }
                     }
                 }
             }
         }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        intent.sharedFileUri()?.let { sharedFileUri = it }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_SHARED_FILE, sharedFileUri)
     }
 
     override fun onPause() {
@@ -98,4 +122,19 @@ class MainActivity : FragmentActivity() {
     private fun revokeScreenCapture() {
         if (!isChangingConfigurations) screenCapturePolicy.setAllowed(false)
     }
+
+    private companion object {
+        const val KEY_SHARED_FILE = "shared_file"
+    }
+}
+
+/** The file of a "open with" or "share to" intent, if this intent carries one. */
+private fun Intent.sharedFileUri(): String? {
+    val uri = when (action) {
+        Intent.ACTION_VIEW -> data
+        Intent.ACTION_SEND -> IntentCompat.getParcelableExtra(this, Intent.EXTRA_STREAM, Uri::class.java)
+        else -> null
+    }
+    return uri?.takeIf { it.scheme == ContentResolver.SCHEME_CONTENT || it.scheme == ContentResolver.SCHEME_FILE }
+        ?.toString()
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Importer delte kort</string>
+    <string name="shared_import_password_message">Disse kortene er beskyttet med passord. Spør avsenderen om det.</string>
+    <string name="shared_import_password">Passord</string>
+    <string name="shared_import_wrong_password">Feil passord</string>
+    <string name="shared_import_message">Velg hvilke kort du vil legge til i Cardholder.</string>
+    <string name="shared_import_include">Importer</string>
+    <string name="shared_import_lock">Lås</string>
+    <string name="shared_import_duplicate">Du har allerede dette kortet</string>
+    <string name="shared_import_add_new">Legg til som nytt</string>
+    <string name="shared_import_replace">Erstatt</string>
+    <string name="shared_import_skip">Hopp over</string>
+    <string name="shared_import_confirm">Importer</string>
+    <string name="shared_import_continue">Fortsett</string>
+    <string name="shared_import_cancel">Avbryt</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Ingen kort ble importert</string>
+</resources>

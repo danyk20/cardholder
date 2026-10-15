@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Importar cartões partilhados</string>
+    <string name="shared_import_password_message">Estes cartões estão protegidos com palavra-passe. Peça-a ao remetente.</string>
+    <string name="shared_import_password">Palavra-passe</string>
+    <string name="shared_import_wrong_password">Palavra-passe incorreta</string>
+    <string name="shared_import_message">Escolha que cartões quer adicionar ao Cardholder.</string>
+    <string name="shared_import_include">Importar</string>
+    <string name="shared_import_lock">Bloquear</string>
+    <string name="shared_import_duplicate">Já tem este cartão</string>
+    <string name="shared_import_add_new">Adicionar como novo</string>
+    <string name="shared_import_replace">Substituir</string>
+    <string name="shared_import_skip">Ignorar</string>
+    <string name="shared_import_confirm">Importar</string>
+    <string name="shared_import_continue">Continuar</string>
+    <string name="shared_import_cancel">Cancelar</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Nenhum cartão importado</string>
+</resources>

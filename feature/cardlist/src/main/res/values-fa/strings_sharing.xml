@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d مورد انتخاب شده</item>
+        <item quantity="other">%1$d مورد انتخاب شده</item>
+    </plurals>
+    <string name="cardlist_selection_clear">لغو انتخاب</string>
+    <string name="cardlist_selected">انتخاب شده</string>
+    <string name="cardlist_share">اشتراک‌گذاری</string>
+    <string name="cardlist_share_bank_title">اطلاعات حساس کارت‌ها به اشتراک گذاشته شود؟</string>
+    <string name="cardlist_share_bank_message">شما در حال به اشتراک‌گذاری اطلاعات کارت بانکی هستید، از جمله شماره کارت، تاریخ انقضا، CVV و یادداشت‌ها:\n\n%1$s\n\nهر کسی که فایل (و رمز آن، در صورت تعیین) را دریافت کند می‌تواند از این کارت‌ها استفاده کند. فقط در صورتی ادامه دهید که به گیرنده اعتماد دارید.</string>
+    <string name="cardlist_share_bank_confirm">متوجه هستم، به اشتراک بگذار</string>
+    <string name="cardlist_share_password_title">با رمز عبور محافظت شود؟</string>
+    <string name="cardlist_share_password_message">اختیاری. بدون رمز عبور، هر کسی که فایل را دریافت کند می‌تواند کارت‌ها را بخواند. اگر رمز تعیین می‌کنید، آن را جداگانه برای گیرنده بفرستید (مثلاً با پیامک یا تماس تلفنی)، نه در همان گفتگو.</string>
+    <string name="cardlist_share_password">رمز عبور (اختیاری)</string>
+    <string name="cardlist_share_password_confirm">تکرار رمز عبور</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">حداقل %1$d نویسه استفاده کنید</item>
+        <item quantity="other">حداقل %1$d نویسه استفاده کنید</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">رمزهای عبور مطابقت ندارند</string>
+    <string name="cardlist_share_continue">اشتراک‌گذاری</string>
+    <string name="cardlist_share_cancel">لغو</string>
+    <string name="cardlist_share_auth_title">اشتراک‌گذاری کارت‌ها</string>
+    <string name="cardlist_share_chooser">اشتراک‌گذاری کارت‌ها با</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d کارت از Cardholder</item>
+        <item quantity="other">%1$d کارت از Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nبا Cardholder باز کنید: %2$s</string>
+    <string name="cardlist_share_failed">کارت‌ها به اشتراک گذاشته نشدند</string>
+    <string name="cardlist_share_auth_failed">برای اشتراک‌گذاری کارت‌های قفل‌شده یا CVV احراز هویت لازم است</string>
+</resources>

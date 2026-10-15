@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d sélectionnée</item>
+        <item quantity="other">%1$d sélectionnées</item>
+        <item quantity="many">%1$d sélectionnées</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Annuler la sélection</string>
+    <string name="cardlist_selected">Sélectionné</string>
+    <string name="cardlist_share">Partager</string>
+    <string name="cardlist_share_bank_title">Partager des données de carte sensibles ?</string>
+    <string name="cardlist_share_bank_message">Vous êtes sur le point de partager les détails d’une carte bancaire, y compris le numéro de carte, la date d’expiration, le CVV et les notes :\n\n%1$s\n\nToute personne qui reçoit le fichier (et son mot de passe, si vous en définissez un) peut utiliser ces cartes. Continuez uniquement si vous faites confiance au destinataire.</string>
+    <string name="cardlist_share_bank_confirm">J’ai compris, partager</string>
+    <string name="cardlist_share_password_title">Protéger par un mot de passe ?</string>
+    <string name="cardlist_share_password_message">Facultatif. Sans mot de passe, toute personne qui reçoit le fichier peut lire les cartes. Si vous en définissez un, envoyez-le au destinataire séparément (par SMS ou par téléphone), pas dans la même conversation.</string>
+    <string name="cardlist_share_password">Mot de passe (facultatif)</string>
+    <string name="cardlist_share_password_confirm">Répéter le mot de passe</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Utilisez au moins %1$d caractère</item>
+        <item quantity="other">Utilisez au moins %1$d caractères</item>
+        <item quantity="many">Utilisez au moins %1$d caractères</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Les mots de passe ne correspondent pas</string>
+    <string name="cardlist_share_continue">Partager</string>
+    <string name="cardlist_share_cancel">Annuler</string>
+    <string name="cardlist_share_auth_title">Partager les cartes</string>
+    <string name="cardlist_share_chooser">Partager les cartes avec</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d carte de Cardholder</item>
+        <item quantity="other">%1$d cartes de Cardholder</item>
+        <item quantity="many">%1$d cartes de Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nOuvrir avec Cardholder : %2$s</string>
+    <string name="cardlist_share_failed">Les cartes n’ont pas pu être partagées</string>
+    <string name="cardlist_share_auth_failed">L’authentification est requise pour partager des cartes verrouillées ou des CVV</string>
+</resources>

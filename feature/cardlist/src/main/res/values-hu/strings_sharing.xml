@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d kijelölve</item>
+        <item quantity="other">%1$d kijelölve</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Kijelölés megszüntetése</string>
+    <string name="cardlist_selected">Kijelölve</string>
+    <string name="cardlist_share">Megosztás</string>
+    <string name="cardlist_share_bank_title">Megosztod a bankkártya-adatokat?</string>
+    <string name="cardlist_share_bank_message">Banki kártyaadatokat készülsz megosztani, beleértve a kártyaszámot, a lejárati dátumot, a CVV-kódot és a jegyzeteket:\n\n%1$s\n\nBárki, aki megkapja a fájlt (és a jelszavát, ha megadtál egyet), használhatja ezeket a kártyákat. Csak akkor folytasd, ha megbízol a címzettben.</string>
+    <string name="cardlist_share_bank_confirm">Értem, megosztom</string>
+    <string name="cardlist_share_password_title">Jelszóval védjük?</string>
+    <string name="cardlist_share_password_message">Opcionális. Jelszó nélkül bárki, aki megkapja a fájlt, elolvashatja a kártyákat. Ha jelszót állítasz be, külön küldd el a címzettnek (pl. SMS-ben vagy telefonon), ne ugyanabban a csevegésben.</string>
+    <string name="cardlist_share_password">Jelszó (opcionális)</string>
+    <string name="cardlist_share_password_confirm">Jelszó megismétlése</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Legalább %1$d karaktert használj</item>
+        <item quantity="other">Legalább %1$d karaktert használj</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">A jelszavak nem egyeznek</string>
+    <string name="cardlist_share_continue">Megosztás</string>
+    <string name="cardlist_share_cancel">Mégse</string>
+    <string name="cardlist_share_auth_title">Kártyák megosztása</string>
+    <string name="cardlist_share_chooser">Kártyák megosztása ezzel:</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d kártya a Cardholderből</item>
+        <item quantity="other">%1$d kártya a Cardholderből</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nMegnyitás a Cardholderrel: %2$s</string>
+    <string name="cardlist_share_failed">A kártyák megosztása nem sikerült</string>
+    <string name="cardlist_share_auth_failed">Zárolt kártyák vagy CVV-k megosztásához hitelesítés szükséges</string>
+</resources>

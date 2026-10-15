@@ -26,6 +26,7 @@ import androidx.compose.material.icons.rounded.QrCode2
 import androidx.compose.material.icons.rounded.QrCodeScanner
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Settings
+import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material.icons.rounded.StarBorder
 import androidx.compose.material.icons.rounded.Store
@@ -66,6 +67,7 @@ object CardholderIcons {
     val Reorder: ImageVector = Icons.Rounded.SwapVert
     val Search: ImageVector = Icons.Rounded.Search
     val Settings: ImageVector = Icons.Rounded.Settings
+    val Share: ImageVector = Icons.Rounded.Share
     val Shop: ImageVector = Icons.Rounded.Store
     val Sort: ImageVector = Icons.AutoMirrored.Rounded.Sort
     val Show: ImageVector = Icons.Rounded.Visibility

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Uvezi podeljene kartice</string>
+    <string name="shared_import_password_message">Ove kartice su zaštićene lozinkom. Zatražite je od pošiljaoca.</string>
+    <string name="shared_import_password">Lozinka</string>
+    <string name="shared_import_wrong_password">Pogrešna lozinka</string>
+    <string name="shared_import_message">Izaberite koje kartice želite da dodate u Cardholder.</string>
+    <string name="shared_import_include">Uvezi</string>
+    <string name="shared_import_lock">Zaključaj</string>
+    <string name="shared_import_duplicate">Već imate ovu karticu</string>
+    <string name="shared_import_add_new">Dodaj kao novu</string>
+    <string name="shared_import_replace">Zameni</string>
+    <string name="shared_import_skip">Preskoči</string>
+    <string name="shared_import_confirm">Uvezi</string>
+    <string name="shared_import_continue">Nastavi</string>
+    <string name="shared_import_cancel">Otkaži</string>
+    <string name="shared_import_ok">U redu</string>
+    <string name="shared_import_nothing">Nijedna kartica nije uvezena</string>
+</resources>

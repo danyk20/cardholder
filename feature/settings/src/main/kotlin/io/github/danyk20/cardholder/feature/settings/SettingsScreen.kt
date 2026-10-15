@@ -300,7 +300,7 @@ private fun SectionHeader(text: String) {
 }
 
 @Composable
-private fun resultMessage(result: BackupResult): String = when (result) {
+internal fun resultMessage(result: BackupResult): String = when (result) {
     is BackupResult.Exported ->
         pluralStringResource(R.plurals.settings_result_exported, result.cardCount, result.cardCount)
 
@@ -311,7 +311,8 @@ private fun resultMessage(result: BackupResult): String = when (result) {
         }
     }.joinToString(". ")
 
-    BackupResult.WrongPassword -> stringResource(R.string.settings_result_wrong_password)
+    BackupResult.WrongPassword, BackupResult.PasswordRequired ->
+        stringResource(R.string.settings_result_wrong_password)
 
     BackupResult.InvalidFile -> stringResource(R.string.settings_result_invalid_file)
 

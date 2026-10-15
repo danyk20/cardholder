@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d επιλεγμένη</item>
+        <item quantity="other">%1$d επιλεγμένες</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Ακύρωση επιλογής</string>
+    <string name="cardlist_selected">Επιλέχθηκε</string>
+    <string name="cardlist_share">Κοινοποίηση</string>
+    <string name="cardlist_share_bank_title">Κοινοποίηση ευαίσθητων στοιχείων καρτών;</string>
+    <string name="cardlist_share_bank_message">Πρόκειται να κοινοποιήσετε στοιχεία τραπεζικής κάρτας, όπως αριθμό κάρτας, ημερομηνία λήξης, CVV και σημειώσεις:\n\n%1$s\n\nΟποιος λάβει το αρχείο (και τον κωδικό του, αν έχετε ορίσει) μπορεί να χρησιμοποιήσει αυτές τις κάρτες. Συνεχίστε μόνο αν εμπιστεύεστε τον παραλήπτη.</string>
+    <string name="cardlist_share_bank_confirm">Κατάλαβα, κοινοποίηση</string>
+    <string name="cardlist_share_password_title">Προστασία με κωδικό;</string>
+    <string name="cardlist_share_password_message">Προαιρετικό. Χωρίς κωδικό, όποιος λάβει το αρχείο μπορεί να διαβάσει τις κάρτες. Αν ορίσετε κωδικό, στείλτε τον στον παραλήπτη ξεχωριστά (π.χ. με SMS ή τηλεφωνικά), όχι στην ίδια συνομιλία.</string>
+    <string name="cardlist_share_password">Κωδικός (προαιρετικό)</string>
+    <string name="cardlist_share_password_confirm">Επαναλάβετε τον κωδικό</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Χρησιμοποιήστε τουλάχιστον %1$d χαρακτήρα</item>
+        <item quantity="other">Χρησιμοποιήστε τουλάχιστον %1$d χαρακτήρες</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Οι κωδικοί δεν ταιριάζουν</string>
+    <string name="cardlist_share_continue">Κοινοποίηση</string>
+    <string name="cardlist_share_cancel">Ακύρωση</string>
+    <string name="cardlist_share_auth_title">Κοινοποίηση καρτών</string>
+    <string name="cardlist_share_chooser">Κοινοποίηση καρτών μέσω</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d κάρτα από το Cardholder</item>
+        <item quantity="other">%1$d κάρτες από το Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nΆνοιγμα με το Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Δεν ήταν δυνατή η κοινοποίηση των καρτών</string>
+    <string name="cardlist_share_auth_failed">Απαιτείται επαλήθευση για την κοινοποίηση κλειδωμένων καρτών ή CVV</string>
+</resources>
