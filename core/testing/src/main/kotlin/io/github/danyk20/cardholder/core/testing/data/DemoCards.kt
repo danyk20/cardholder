@@ -21,7 +21,14 @@ import java.time.YearMonth
 object DemoCards {
     private val created: Instant = Instant.parse("2026-09-01T10:00:00Z")
 
-    private fun card(id: String, title: String, color: CardColor, info: CardInfo, hasCvv: Boolean = false) = Card(
+    private fun card(
+        id: String,
+        title: String,
+        color: CardColor,
+        info: CardInfo,
+        hasCvv: Boolean = false,
+        isFavourite: Boolean = false,
+    ) = Card(
         id = CardId(id),
         title = title,
         color = color,
@@ -29,6 +36,7 @@ object DemoCards {
         sides = CardSides.None,
         isLocked = false,
         hasCvv = hasCvv,
+        isFavourite = isFavourite,
         createdAt = created,
         updatedAt = created,
     )
@@ -38,6 +46,7 @@ object DemoCards {
         "Green Grocer",
         CardColor.GREEN,
         CardInfo.Loyalty(BrandRef.Custom("Green Grocer"), BarcodeFormat.EAN_13),
+        isFavourite = true,
     )
     val grocerDetails = CardDetails.Loyalty(code = "4006381333931")
 
@@ -49,23 +58,28 @@ object DemoCards {
         hasCvv = true,
     )
     val bankDetails =
-        CardDetails.Bank(number = "9000123456789010", expiry = YearMonth.of(2029, 8), holder = "ALEX MORGAN")
+        CardDetails.Bank(
+            number = "9000123456789010",
+            expiry = YearMonth.of(2029, 8),
+            holder = "ALEX MORGAN",
+            notes = "Daily spending. Limit raised for travel in summer.",
+        )
 
     val bookworm = card(
         "demo-bookworm",
         "Bookworm Club",
-        CardColor.PURPLE,
+        CardColor.LAVENDER,
         CardInfo.Loyalty(BrandRef.Custom("Bookworm Club"), BarcodeFormat.QR_CODE),
     )
     val bookwormDetails = CardDetails.Loyalty(code = "BWC-2048-7731-55")
 
-    val identity = card("demo-id", "Identity card", CardColor.RED, CardInfo.Id(CountryCode.of("CH")!!))
+    val identity = card("demo-id", "Identity card", CardColor.SKY, CardInfo.Id(CountryCode.of("CH")!!))
     val identityDetails = CardDetails.Id(documentNumber = "C4X9P2L7", expiry = LocalDate.of(2031, 5, 14))
 
     val coffee = card(
         "demo-coffee",
         "Corner Coffee",
-        CardColor.AMBER,
+        CardColor.SAND,
         CardInfo.Loyalty(BrandRef.Custom("Corner Coffee"), BarcodeFormat.CODE_128),
     )
     val coffeeDetails = CardDetails.Loyalty(code = "CC00451287")
@@ -73,8 +87,8 @@ object DemoCards {
     /** All demo cards with their details, in display order. */
     val all: List<Pair<Card, CardDetails>> = listOf(
         grocer to grocerDetails,
-        bank to bankDetails,
         bookworm to bookwormDetails,
+        bank to bankDetails,
         identity to identityDetails,
         coffee to coffeeDetails,
     )

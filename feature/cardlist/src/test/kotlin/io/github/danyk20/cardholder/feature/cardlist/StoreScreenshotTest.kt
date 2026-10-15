@@ -43,7 +43,7 @@ class StoreScreenshotTest {
     fun cardListLight() = capture(darkTheme = false, name = "1_cards")
 
     @Test
-    fun cardListDark() = capture(darkTheme = true, name = "5_cards_dark")
+    fun cardListDark() = capture(darkTheme = true, name = "6_cards_dark")
 
     private fun capture(darkTheme: Boolean, name: String) {
         composeRule.setContent {
