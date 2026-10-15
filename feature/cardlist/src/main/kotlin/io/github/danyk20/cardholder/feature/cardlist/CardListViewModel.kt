@@ -4,8 +4,11 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.getOrNull
+import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
+import io.github.danyk20.cardholder.core.domain.repository.ShareFileStore
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.usecase.ObserveCardsUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
@@ -38,6 +41,8 @@ class CardListViewModel @Inject constructor(
     private val cardRepository: CardRepository,
     private val summaryFactory: CardSummaryFactory,
     private val preferencesRepository: UserPreferencesRepository,
+    private val backupRepository: BackupRepository,
+    private val shareFileStore: ShareFileStore,
     private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
     private val query = savedStateHandle.getStateFlow(KEY_QUERY, "")
@@ -46,6 +51,11 @@ class CardListViewModel @Inject constructor(
     private val visibleTypes = savedStateHandle.getStateFlow(KEY_VISIBLE_TYPES, ArrayList(CardType.entries))
 
     private val sort = preferencesRepository.preferences.map { it.cardSort }.distinctUntilChanged()
+
+    /** Ids of the cards selected for sharing; empty when not in selection mode. */
+    private val selection = savedStateHandle.getStateFlow(KEY_SELECTION, ArrayList<String>())
+
+    private val share = MutableStateFlow<ShareState>(ShareState.Idle)
 
     /** The working order while the user rearranges cards; `null` when not reordering. */
     private val reorderDraft = MutableStateFlow<List<CardSummary>?>(null)
@@ -68,8 +78,15 @@ class CardListViewModel @Inject constructor(
             }
         }
 
-    val uiState: StateFlow<CardListUiState> = combine(cards, reorderDraft) { state, draft ->
-        state.copy(reordering = draft) as CardListUiState
+    val uiState: StateFlow<CardListUiState> = combine(cards, reorderDraft, selection, share) {
+            state,
+            draft,
+            ids,
+            share,
+        ->
+        // Only cards that are currently shown can be shared, so hidden ones never leave by surprise.
+        val selected = state.cards.map { it.summary.card }.filter { it.id.value in ids }
+        state.copy(reordering = draft, selected = selected, share = share) as CardListUiState
     }
         // E.g. the database can't be read: show an error instead of crashing.
         .catch { emit(CardListUiState.Error) }
@@ -124,6 +141,49 @@ class CardListViewModel @Inject constructor(
         return LoyaltyCode(details.code, info.format)
     }
 
+    /** Long-press: starts selection mode, or toggles the card when already selecting. */
+    fun onToggleSelection(id: CardId) {
+        val current = selection.value
+        savedStateHandle[KEY_SELECTION] = ArrayList(if (id.value in current) current - id.value else current + id.value)
+    }
+
+    fun onClearSelection() {
+        savedStateHandle[KEY_SELECTION] = ArrayList<String>()
+    }
+
+    /**
+     * Writes the selected cards to a file for sharing; [password] (wiped afterwards) encrypts it. The
+     * caller authenticated first if any card is locked or has a CVV.
+     */
+    fun onShare(password: CharArray?) {
+        val ids = (uiState.value as? CardListUiState.Success)?.selected?.map { it.id }
+        if (ids.isNullOrEmpty() || share.value == ShareState.InProgress) {
+            password?.fill(' ')
+            return
+        }
+        share.value = ShareState.InProgress
+        launchSafely(onError = { share.value = ShareState.Failed }) {
+            val uri: String
+            val result = try {
+                uri = shareFileStore.newShareFile()
+                backupRepository.exportCards(ids, uri, password)
+            } finally {
+                password?.fill(' ')
+            }
+            share.value = when (result) {
+                is BackupResult.Exported -> ShareState.Ready(uri, result.cardCount)
+                BackupResult.AuthenticationRequired, BackupResult.KeyInvalidated -> ShareState.AuthenticationFailed
+                else -> ShareState.Failed
+            }
+        }
+    }
+
+    /** The share sheet was opened (or the error shown): leave selection mode. */
+    fun onShareHandled() {
+        if (share.value is ShareState.Ready) onClearSelection()
+        share.value = ShareState.Idle
+    }
+
     fun onQueryChange(query: String) {
         savedStateHandle[KEY_QUERY] = query
     }
@@ -137,6 +197,7 @@ class CardListViewModel @Inject constructor(
     private companion object {
         const val KEY_QUERY = "query"
         const val KEY_VISIBLE_TYPES = "visible_types"
+        const val KEY_SELECTION = "selection"
         const val STOP_TIMEOUT_MILLIS = 5_000L
     }
 }
@@ -162,5 +223,21 @@ sealed interface CardListUiState {
         val sort: CardSort = CardSort.NAME,
         /** Cards in their working order while the user rearranges them; `null` otherwise. */
         val reordering: List<CardSummary>? = null,
+        /** Cards selected for sharing; selection mode is on while not empty. */
+        val selected: List<Card> = emptyList(),
+        val share: ShareState = ShareState.Idle,
     ) : CardListUiState
+}
+
+sealed interface ShareState {
+    data object Idle : ShareState
+
+    data object InProgress : ShareState
+
+    /** The file at [uri] is ready to be handed to the share sheet. */
+    data class Ready(val uri: String, val cardCount: Int) : ShareState
+
+    data object AuthenticationFailed : ShareState
+
+    data object Failed : ShareState
 }

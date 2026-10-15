@@ -54,7 +54,6 @@ fun CardholderNavHost(modifier: Modifier = Modifier) {
                             navController.navigateToCardDetail(card.id)
                         }
                     },
-                    onCardLongClick = { navController.navigateToCardDetail(it.id) },
                     onAddCard = { navController.navigateToCardEditor() },
                     onOpenSettings = navController::navigateToSettings,
                 )

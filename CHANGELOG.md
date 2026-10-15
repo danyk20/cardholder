@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Added
+- Share cards: long-press a card to select it (tap to add more), then Share. The cards (including CVVs and
+  notes) are sent as a `.cardholder` file through any app, optionally protected with a password of at least
+  8 characters. Bank cards need an explicit confirmation; locked cards and CVVs need authentication.
+- Open `.cardholder` files from messengers, mail or file managers: choose per card whether to import it,
+  whether to lock it and, for cards you already have, whether to add a copy, replace it or skip it.
+
+### Changed
+- Long-press on a card now starts selection; loyalty card details are opened from the barcode screen.
 
 ## [1.1.0] - 2026-10-07
 ### Added

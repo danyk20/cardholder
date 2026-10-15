@@ -2,10 +2,10 @@ package io.github.danyk20.cardholder.feature.settings
 
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
-import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.repository.FakeAppDataRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeBackupRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeScreenCapturePolicy
 import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
 import kotlin.test.assertEquals
@@ -25,7 +25,7 @@ class SettingsViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     private val preferences = FakeUserPreferencesRepository()
-    private val backups = RecordingBackupRepository()
+    private val backups = FakeBackupRepository()
     private val screenCapture = FakeScreenCapturePolicy()
     private val appData = FakeAppDataRepository()
     private val viewModel by lazy { SettingsViewModel(preferences, backups, screenCapture, appData) }
@@ -92,20 +92,5 @@ class SettingsViewModelTest {
         viewModel.import("content://backup", "pw".toCharArray(), replaceExisting = true)
 
         assertEquals(ImportStrategy.REPLACE_EXISTING, backups.imports.single())
-    }
-
-    private class RecordingBackupRepository : BackupRepository {
-        val exports = mutableListOf<Pair<String, String>>()
-        val imports = mutableListOf<ImportStrategy>()
-
-        override suspend fun export(destinationUri: String, password: CharArray): BackupResult {
-            exports += destinationUri to password.concatToString()
-            return BackupResult.Exported(2)
-        }
-
-        override suspend fun import(sourceUri: String, password: CharArray, strategy: ImportStrategy): BackupResult {
-            imports += strategy
-            return BackupResult.Imported(1, 0)
-        }
     }
 }

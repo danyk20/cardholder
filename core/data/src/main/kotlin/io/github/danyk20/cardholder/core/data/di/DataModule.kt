@@ -20,6 +20,7 @@ import io.github.danyk20.cardholder.core.data.repository.HttpsLogoDownloader
 import io.github.danyk20.cardholder.core.data.repository.LocaleCountryRepository
 import io.github.danyk20.cardholder.core.data.repository.OfflineCardImageRepository
 import io.github.danyk20.cardholder.core.data.repository.OfflineCardRepository
+import io.github.danyk20.cardholder.core.data.share.CacheShareFileStore
 import io.github.danyk20.cardholder.core.domain.di.ApplicationScope
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
 import io.github.danyk20.cardholder.core.domain.repository.AppDataRepository
@@ -29,6 +30,7 @@ import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
+import io.github.danyk20.cardholder.core.domain.repository.ShareFileStore
 import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import java.time.Clock
@@ -52,6 +54,9 @@ internal interface DataModule {
 
     @Binds
     fun bindsBackupRepository(impl: OfflineBackupRepository): BackupRepository
+
+    @Binds
+    fun bindsShareFileStore(impl: CacheShareFileStore): ShareFileStore
 
     @Binds
     fun bindsCardImageRepository(impl: OfflineCardImageRepository): CardImageRepository

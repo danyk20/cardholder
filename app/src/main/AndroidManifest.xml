@@ -33,6 +33,34 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!--
+                Shared cards and backups (.cardholder). Messengers and mail apps usually don't know the
+                extension and send application/octet-stream, so that type is accepted too; the file's
+                content is checked before anything is imported.
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+            <!-- File managers that pass the file name: match the extension (also with dots in the name). -->
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.cardholder" />
+                <data android:pathPattern=".*\\..*\\.cardholder" />
+                <data android:pathPattern=".*\\..*\\..*\\.cardholder" />
+            </intent-filter>
         </activity>
 
         <receiver

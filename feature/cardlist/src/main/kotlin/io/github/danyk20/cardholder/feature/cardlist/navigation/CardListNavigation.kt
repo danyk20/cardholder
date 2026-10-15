@@ -10,17 +10,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 data object CardListDestination
 
-fun NavGraphBuilder.cardListScreen(
-    onCardClick: (Card) -> Unit,
-    onCardLongClick: (Card) -> Unit,
-    onAddCard: () -> Unit,
-    onOpenSettings: () -> Unit,
-) {
+fun NavGraphBuilder.cardListScreen(onCardClick: (Card) -> Unit, onAddCard: () -> Unit, onOpenSettings: () -> Unit) {
     composable<CardListDestination> {
         ProvideNavAnimatedVisibilityScope(this) {
             CardListRoute(
                 onCardClick = onCardClick,
-                onCardLongClick = onCardLongClick,
                 onAddCard = onAddCard,
                 onOpenSettings = onOpenSettings,
             )
