@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Importa carte condivise</string>
+    <string name="shared_import_password_message">Queste carte sono protette da una password. Chiedila al mittente.</string>
+    <string name="shared_import_password">Password</string>
+    <string name="shared_import_wrong_password">Password errata</string>
+    <string name="shared_import_message">Scegli quali carte aggiungere a Cardholder.</string>
+    <string name="shared_import_include">Importa</string>
+    <string name="shared_import_lock">Blocca</string>
+    <string name="shared_import_duplicate">Hai già questa carta</string>
+    <string name="shared_import_add_new">Aggiungi come nuova</string>
+    <string name="shared_import_replace">Sostituisci</string>
+    <string name="shared_import_skip">Salta</string>
+    <string name="shared_import_confirm">Importa</string>
+    <string name="shared_import_continue">Continua</string>
+    <string name="shared_import_cancel">Annulla</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Nessuna carta importata</string>
+</resources>

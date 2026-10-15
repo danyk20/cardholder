@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Importovať zdieľané karty</string>
+    <string name="shared_import_password_message">Tieto karty sú chránené heslom. Požiadajte odosielateľa o heslo.</string>
+    <string name="shared_import_password">Heslo</string>
+    <string name="shared_import_wrong_password">Nesprávne heslo</string>
+    <string name="shared_import_message">Vyberte karty, ktoré chcete pridať do Cardholder.</string>
+    <string name="shared_import_include">Importovať</string>
+    <string name="shared_import_lock">Zamknúť</string>
+    <string name="shared_import_duplicate">Túto kartu už máte</string>
+    <string name="shared_import_add_new">Pridať ako novú</string>
+    <string name="shared_import_replace">Nahradiť</string>
+    <string name="shared_import_skip">Preskočiť</string>
+    <string name="shared_import_confirm">Importovať</string>
+    <string name="shared_import_continue">Pokračovať</string>
+    <string name="shared_import_cancel">Zrušiť</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Neboli importované žiadne karty</string>
+</resources>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- English only for now; remove tools:ignore once these are translated. -->
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+<resources>
     <string name="shared_import_title">Import shared cards</string>
     <string name="shared_import_password_message">These cards are protected with a password. Ask the sender for it.</string>
     <string name="shared_import_password">Password</string>

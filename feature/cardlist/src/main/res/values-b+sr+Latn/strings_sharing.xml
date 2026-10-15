@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">Izabrana %1$d</item>
+        <item quantity="other">Izabrano %1$d</item>
+        <item quantity="few">Izabrane %1$d</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Otkaži izbor</string>
+    <string name="cardlist_selected">Izabrano</string>
+    <string name="cardlist_share">Podeli</string>
+    <string name="cardlist_share_bank_title">Deliti osetljive podatke o karticama?</string>
+    <string name="cardlist_share_bank_message">Nameravate da podelite podatke o bankovnoj kartici, uključujući broj kartice, datum isteka, CVV i beleške:\n\n%1$s\n\nSvako ko dobije fajl (i njegovu lozinku, ako je postavite) može da koristi ove kartice. Nastavite samo ako verujete primaocu.</string>
+    <string name="cardlist_share_bank_confirm">Razumem, podeli</string>
+    <string name="cardlist_share_password_title">Zaštititi lozinkom?</string>
+    <string name="cardlist_share_password_message">Opciono. Bez lozinke, svako ko dobije fajl može da pročita kartice. Ako postavite lozinku, pošaljite je primaocu odvojeno (npr. SMS-om ili telefonom), a ne u istom ćaskanju.</string>
+    <string name="cardlist_share_password">Lozinka (opciono)</string>
+    <string name="cardlist_share_password_confirm">Ponovite lozinku</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Koristite najmanje %1$d znak</item>
+        <item quantity="few">Koristite najmanje %1$d znaka</item>
+        <item quantity="other">Koristite najmanje %1$d znakova</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Lozinke se ne podudaraju</string>
+    <string name="cardlist_share_continue">Podeli</string>
+    <string name="cardlist_share_cancel">Otkaži</string>
+    <string name="cardlist_share_auth_title">Podeli kartice</string>
+    <string name="cardlist_share_chooser">Podeli kartice preko</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d kartica iz Cardholder</item>
+        <item quantity="few">%1$d kartice iz Cardholder</item>
+        <item quantity="other">%1$d kartica iz Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nOtvorite u Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Kartice nije moguće podeliti</string>
+    <string name="cardlist_share_auth_failed">Za deljenje zaključanih kartica ili CVV-ova potrebna je autentifikacija</string>
+</resources>

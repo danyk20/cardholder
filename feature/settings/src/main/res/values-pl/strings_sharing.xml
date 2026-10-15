@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Importuj udostępnione karty</string>
+    <string name="shared_import_password_message">Te karty są chronione hasłem. Poproś nadawcę o hasło.</string>
+    <string name="shared_import_password">Hasło</string>
+    <string name="shared_import_wrong_password">Nieprawidłowe hasło</string>
+    <string name="shared_import_message">Wybierz karty, które chcesz dodać do Cardholder.</string>
+    <string name="shared_import_include">Importuj</string>
+    <string name="shared_import_lock">Zablokuj</string>
+    <string name="shared_import_duplicate">Masz już tę kartę</string>
+    <string name="shared_import_add_new">Dodaj jako nową</string>
+    <string name="shared_import_replace">Zastąp</string>
+    <string name="shared_import_skip">Pomiń</string>
+    <string name="shared_import_confirm">Importuj</string>
+    <string name="shared_import_continue">Dalej</string>
+    <string name="shared_import_cancel">Anuluj</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Nie zaimportowano żadnych kart</string>
+</resources>

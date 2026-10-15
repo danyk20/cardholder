@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="zero">%1$d محدد</item>
+        <item quantity="one">%1$d محدد</item>
+        <item quantity="two">%1$d محددان</item>
+        <item quantity="few">%1$d محددة</item>
+        <item quantity="many">%1$d محددًا</item>
+        <item quantity="other">%1$d محددة</item>
+    </plurals>
+    <string name="cardlist_selection_clear">إلغاء التحديد</string>
+    <string name="cardlist_selected">محدد</string>
+    <string name="cardlist_share">مشاركة</string>
+    <string name="cardlist_share_bank_title">مشاركة بيانات البطاقة الحساسة؟</string>
+    <string name="cardlist_share_bank_message">أنت على وشك مشاركة تفاصيل البطاقة المصرفية، بما في ذلك رقم البطاقة وتاريخ الانتهاء ورمز CVV والملاحظات:\n\n%1$s\n\nيمكن لأي شخص يحصل على الملف (وكلمة مروره، إن وُضعت) استخدام هذه البطاقات. تابع فقط إذا كنت تثق بالمستلم.</string>
+    <string name="cardlist_share_bank_confirm">فهمت، شارك</string>
+    <string name="cardlist_share_password_title">هل تريد الحماية بكلمة مرور؟</string>
+    <string name="cardlist_share_password_message">اختياري. بدون كلمة مرور، يمكن لأي شخص يحصل على الملف قراءة البطاقات. إذا وضعت كلمة مرور، فأرسلها إلى المستلم بشكل منفصل (مثلًا عبر رسالة نصية أو مكالمة هاتفية)، وليس في المحادثة نفسها.</string>
+    <string name="cardlist_share_password">كلمة المرور (اختياري)</string>
+    <string name="cardlist_share_password_confirm">أعد كتابة كلمة المرور</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="zero">استخدم %1$d حرف على الأقل</item>
+        <item quantity="one">استخدم %1$d حرفًا على الأقل</item>
+        <item quantity="two">استخدم %1$d حرفين على الأقل</item>
+        <item quantity="few">استخدم %1$d أحرف على الأقل</item>
+        <item quantity="many">استخدم %1$d حرفًا على الأقل</item>
+        <item quantity="other">استخدم %1$d حرف على الأقل</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">كلمتا المرور غير متطابقتين</string>
+    <string name="cardlist_share_continue">مشاركة</string>
+    <string name="cardlist_share_cancel">إلغاء</string>
+    <string name="cardlist_share_auth_title">مشاركة البطاقات</string>
+    <string name="cardlist_share_chooser">مشاركة البطاقات عبر</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="zero">%1$d بطاقة من Cardholder</item>
+        <item quantity="one">%1$d بطاقة من Cardholder</item>
+        <item quantity="two">%1$d بطاقتان من Cardholder</item>
+        <item quantity="few">%1$d بطاقات من Cardholder</item>
+        <item quantity="many">%1$d بطاقة من Cardholder</item>
+        <item quantity="other">%1$d بطاقة من Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nافتحها باستخدام Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">تعذرت مشاركة البطاقات</string>
+    <string name="cardlist_share_auth_failed">يلزم التحقق من هويتك لمشاركة البطاقات المقفلة أو رموز CVV</string>
+</resources>

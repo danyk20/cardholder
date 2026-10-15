@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d imechaguliwa</item>
+        <item quantity="other">%1$d zimechaguliwa</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Ghairi uteuzi</string>
+    <string name="cardlist_selected">Imechaguliwa</string>
+    <string name="cardlist_share">Shiriki</string>
+    <string name="cardlist_share_bank_title">Shiriki data nyeti za kadi?</string>
+    <string name="cardlist_share_bank_message">Unakaribia kushiriki maelezo ya kadi ya benki, ikiwa ni pamoja na namba ya kadi, tarehe ya kuisha, CVV na maelezo:\n\n%1$s\n\nYeyote atakayepokea faili (na nenosiri lake, ikiwa umeweka) anaweza kutumia kadi hizi. Endelea tu ikiwa unamwamini mpokeaji.</string>
+    <string name="cardlist_share_bank_confirm">Nimeelewa, shiriki</string>
+    <string name="cardlist_share_password_title">Linde kwa nenosiri?</string>
+    <string name="cardlist_share_password_message">Si lazima. Bila nenosiri, yeyote atakayepokea faili anaweza kusoma kadi. Ukiweka nenosiri, mtumie mpokeaji kando (kwa mfano kwa SMS au simu), si kwenye mazungumzo hayo hayo.</string>
+    <string name="cardlist_share_password">Nenosiri (si lazima)</string>
+    <string name="cardlist_share_password_confirm">Rudia nenosiri</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Tumia angalau herufi %1$d</item>
+        <item quantity="other">Tumia angalau herufi %1$d</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Manenosiri hayalingani</string>
+    <string name="cardlist_share_continue">Shiriki</string>
+    <string name="cardlist_share_cancel">Ghairi</string>
+    <string name="cardlist_share_auth_title">Shiriki kadi</string>
+    <string name="cardlist_share_chooser">Shiriki kadi na</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">Kadi %1$d kutoka Cardholder</item>
+        <item quantity="other">Kadi %1$d kutoka Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nFungua kwa Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Kadi hazikuweza kushirikiwa</string>
+    <string name="cardlist_share_auth_failed">Uthibitishaji unahitajika ili kushiriki kadi zilizofungwa au CVV</string>
+</resources>

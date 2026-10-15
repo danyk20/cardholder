@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d valitud</item>
+        <item quantity="other">%1$d valitud</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Tühista valik</string>
+    <string name="cardlist_selected">Valitud</string>
+    <string name="cardlist_share">Jaga</string>
+    <string name="cardlist_share_bank_title">Kas jagada tundlikke kaardiandmeid?</string>
+    <string name="cardlist_share_bank_message">Oled jagamas pangakaardi andmeid, sh kaardinumbrit, aegumiskuupäeva, CVV-d ja märkmeid:\n\n%1$s\n\nKes iganes faili (ja selle parooli, kui oled selle määranud) saab, saab neid kaarte kasutada. Jätka ainult siis, kui usaldad saajat.</string>
+    <string name="cardlist_share_bank_confirm">Saan aru, jaga</string>
+    <string name="cardlist_share_password_title">Kaitsta parooliga?</string>
+    <string name="cardlist_share_password_message">Valikuline. Ilma paroolita saab iga faili saaja kaarte lugeda. Kui määrad parooli, saada see saajale eraldi (nt SMS-i või telefoni teel), mitte samas vestluses.</string>
+    <string name="cardlist_share_password">Parool (valikuline)</string>
+    <string name="cardlist_share_password_confirm">Korda parooli</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Kasuta vähemalt %1$d märki</item>
+        <item quantity="other">Kasuta vähemalt %1$d märki</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Paroolid ei ühti</string>
+    <string name="cardlist_share_continue">Jaga</string>
+    <string name="cardlist_share_cancel">Tühista</string>
+    <string name="cardlist_share_auth_title">Jaga kaarte</string>
+    <string name="cardlist_share_chooser">Jaga kaarte kaudu</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d kaart Cardholderist</item>
+        <item quantity="other">%1$d kaarti Cardholderist</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nAva rakenduses Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Kaarte ei õnnestunud jagada</string>
+    <string name="cardlist_share_auth_failed">Lukustatud kaartide või CVV-de jagamiseks on vaja autentimist</string>
+</resources>

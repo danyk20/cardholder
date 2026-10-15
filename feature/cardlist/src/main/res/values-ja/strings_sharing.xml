@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="other">%1$d 件選択中</item>
+    </plurals>
+    <string name="cardlist_selection_clear">選択を解除</string>
+    <string name="cardlist_selected">選択中</string>
+    <string name="cardlist_share">共有</string>
+    <string name="cardlist_share_bank_title">機密性の高いカード情報を共有しますか？</string>
+    <string name="cardlist_share_bank_message">カード番号、有効期限、CVV、メモを含む銀行カードの情報を共有しようとしています：\n\n%1$s\n\nファイル（パスワードを設定した場合はそのパスワード）を受け取った人は、これらのカードを使用できてしまいます。受信者を信頼できる場合にのみ続けてください。</string>
+    <string name="cardlist_share_bank_confirm">理解しました、共有する</string>
+    <string name="cardlist_share_password_title">パスワードで保護しますか？</string>
+    <string name="cardlist_share_password_message">任意です。パスワードがない場合、ファイルを受け取った人は誰でもカードを閲覧できます。設定する場合は、同じチャットではなく、SMSや電話など別の方法で受信者に伝えてください。</string>
+    <string name="cardlist_share_password">パスワード（任意）</string>
+    <string name="cardlist_share_password_confirm">パスワードを再入力</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="other">%1$d 文字以上で入力してください</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">パスワードが一致しません</string>
+    <string name="cardlist_share_continue">共有</string>
+    <string name="cardlist_share_cancel">キャンセル</string>
+    <string name="cardlist_share_auth_title">カードを共有</string>
+    <string name="cardlist_share_chooser">カードの共有先</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="other">Cardholder の %1$d 件のカード</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nCardholder で開く: %2$s</string>
+    <string name="cardlist_share_failed">カードを共有できませんでした</string>
+    <string name="cardlist_share_auth_failed">ロックされたカードや CVV を共有するには認証が必要です</string>
+</resources>

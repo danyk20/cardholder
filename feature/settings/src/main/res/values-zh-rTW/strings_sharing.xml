@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">匯入分享的卡片</string>
+    <string name="shared_import_password_message">這些卡片受密碼保護，請向傳送者索取密碼。</string>
+    <string name="shared_import_password">密碼</string>
+    <string name="shared_import_wrong_password">密碼錯誤</string>
+    <string name="shared_import_message">選擇要加入 Cardholder 的卡片。</string>
+    <string name="shared_import_include">匯入</string>
+    <string name="shared_import_lock">鎖定</string>
+    <string name="shared_import_duplicate">您已有此卡片</string>
+    <string name="shared_import_add_new">加入為新卡片</string>
+    <string name="shared_import_replace">取代</string>
+    <string name="shared_import_skip">略過</string>
+    <string name="shared_import_confirm">匯入</string>
+    <string name="shared_import_continue">繼續</string>
+    <string name="shared_import_cancel">取消</string>
+    <string name="shared_import_ok">確定</string>
+    <string name="shared_import_nothing">未匯入任何卡片</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d i zgjedhur</item>
+        <item quantity="other">%1$d të zgjedhura</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Anulo zgjedhjen</string>
+    <string name="cardlist_selected">Zgjedhur</string>
+    <string name="cardlist_share">Ndaj</string>
+    <string name="cardlist_share_bank_title">Të ndahen të dhënat e ndjeshme të kartave?</string>
+    <string name="cardlist_share_bank_message">Do të ndash të dhënat e një karte bankare, përfshirë numrin e kartës, datën e skadimit, CVV-në dhe shënimet:\n\n%1$s\n\nKushdo që merr skedarin (dhe fjalëkalimin, nëse vendos një) mund t’i përdorë këto karta. Vazhdo vetëm nëse e beson marrësin.</string>
+    <string name="cardlist_share_bank_confirm">E kuptova, ndaj</string>
+    <string name="cardlist_share_password_title">Të mbrohet me fjalëkalim?</string>
+    <string name="cardlist_share_password_message">Opsionale. Pa fjalëkalim, kushdo që merr skedarin mund t’i lexojë kartat. Nëse vendos një fjalëkalim, dërgoje marrësit veçmas (p.sh. me SMS ose telefonatë), jo në të njëjtin chat.</string>
+    <string name="cardlist_share_password">Fjalëkalimi (opsional)</string>
+    <string name="cardlist_share_password_confirm">Përsërit fjalëkalimin</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Përdor të paktën %1$d karakter</item>
+        <item quantity="other">Përdor të paktën %1$d karaktere</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Fjalëkalimet nuk përputhen</string>
+    <string name="cardlist_share_continue">Ndaj</string>
+    <string name="cardlist_share_cancel">Anulo</string>
+    <string name="cardlist_share_auth_title">Ndaj kartat</string>
+    <string name="cardlist_share_chooser">Ndaj kartat me</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d kartë nga Cardholder</item>
+        <item quantity="other">%1$d karta nga Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nHape me Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Kartat nuk mund të ndaheshin</string>
+    <string name="cardlist_share_auth_failed">Nevojitet verifikimi për të ndarë karta të kyçura ose CVV</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">Вибрано %1$d</item>
+        <item quantity="few">Вибрано %1$d</item>
+        <item quantity="many">Вибрано %1$d</item>
+        <item quantity="other">Вибрано %1$d</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Скасувати вибір</string>
+    <string name="cardlist_selected">Вибрано</string>
+    <string name="cardlist_share">Поділитися</string>
+    <string name="cardlist_share_bank_title">Поділитися конфіденційними даними карток?</string>
+    <string name="cardlist_share_bank_message">Ви збираєтеся поділитися даними банківської картки, зокрема номером картки, терміном дії, CVV і нотатками:\n\n%1$s\n\nКожен, хто отримає файл (і його пароль, якщо ви його встановили), зможе використовувати ці картки. Продовжуйте, лише якщо довіряєте отримувачу.</string>
+    <string name="cardlist_share_bank_confirm">Зрозуміло, поділитися</string>
+    <string name="cardlist_share_password_title">Захистити паролем?</string>
+    <string name="cardlist_share_password_message">Необов’язково. Без пароля будь-хто, хто отримає файл, зможе прочитати картки. Якщо ви встановлюєте пароль, передайте його отримувачу окремо (наприклад, SMS або телефоном), а не в тому самому чаті.</string>
+    <string name="cardlist_share_password">Пароль (необов’язково)</string>
+    <string name="cardlist_share_password_confirm">Повторіть пароль</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Використовуйте щонайменше %1$d символ</item>
+        <item quantity="few">Використовуйте щонайменше %1$d символи</item>
+        <item quantity="many">Використовуйте щонайменше %1$d символів</item>
+        <item quantity="other">Використовуйте щонайменше %1$d символів</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Паролі не збігаються</string>
+    <string name="cardlist_share_continue">Поділитися</string>
+    <string name="cardlist_share_cancel">Скасувати</string>
+    <string name="cardlist_share_auth_title">Поділитися картками</string>
+    <string name="cardlist_share_chooser">Поділитися картками через</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d картка з Cardholder</item>
+        <item quantity="few">%1$d картки з Cardholder</item>
+        <item quantity="many">%1$d карток з Cardholder</item>
+        <item quantity="other">%1$d картки з Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nВідкрити в Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Не вдалося поділитися картками</string>
+    <string name="cardlist_share_auth_failed">Для передачі заблокованих карток або CVV потрібна автентифікація</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="other">已選取 %1$d 張</item>
+    </plurals>
+    <string name="cardlist_selection_clear">取消選取</string>
+    <string name="cardlist_selected">已選取</string>
+    <string name="cardlist_share">分享</string>
+    <string name="cardlist_share_bank_title">要分享敏感的卡片資料嗎？</string>
+    <string name="cardlist_share_bank_message">您即將分享銀行卡資訊，包括卡號、有效期限、CVV 和備註：\n\n%1$s\n\n任何取得此檔案（以及您設定的密碼，如有）的人都可以使用這些卡片。請僅在信任接收者時繼續。</string>
+    <string name="cardlist_share_bank_confirm">我了解，分享</string>
+    <string name="cardlist_share_password_title">要設定密碼保護嗎？</string>
+    <string name="cardlist_share_password_message">選填。若不設定密碼，任何取得檔案的人都能讀取卡片。若設定密碼，請透過簡訊或電話等其他方式單獨傳送給接收者，不要在同一個聊天中傳送。</string>
+    <string name="cardlist_share_password">密碼（選填）</string>
+    <string name="cardlist_share_password_confirm">再次輸入密碼</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="other">至少使用 %1$d 個字元</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">兩次輸入的密碼不一致</string>
+    <string name="cardlist_share_continue">分享</string>
+    <string name="cardlist_share_cancel">取消</string>
+    <string name="cardlist_share_auth_title">分享卡片</string>
+    <string name="cardlist_share_chooser">分享卡片至</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="other">來自 Cardholder 的 %1$d 張卡片</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\n用 Cardholder 開啟：%2$s</string>
+    <string name="cardlist_share_failed">無法分享卡片</string>
+    <string name="cardlist_share_auth_failed">分享已鎖定的卡片或 CVV 需要驗證身分</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Leta kadi zilizoshirikiwa</string>
+    <string name="shared_import_password_message">Kadi hizi zinalindwa kwa nenosiri. Omba nenosiri kutoka kwa mtumaji.</string>
+    <string name="shared_import_password">Nenosiri</string>
+    <string name="shared_import_wrong_password">Nenosiri si sahihi</string>
+    <string name="shared_import_message">Chagua kadi unazotaka kuongeza kwenye Cardholder.</string>
+    <string name="shared_import_include">Leta</string>
+    <string name="shared_import_lock">Funga</string>
+    <string name="shared_import_duplicate">Tayari una kadi hii</string>
+    <string name="shared_import_add_new">Ongeza kama mpya</string>
+    <string name="shared_import_replace">Badilisha</string>
+    <string name="shared_import_skip">Ruka</string>
+    <string name="shared_import_confirm">Leta</string>
+    <string name="shared_import_continue">Endelea</string>
+    <string name="shared_import_cancel">Ghairi</string>
+    <string name="shared_import_ok">Sawa</string>
+    <string name="shared_import_nothing">Hakuna kadi iliyoletwa</string>
+</resources>

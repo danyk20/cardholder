@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- English only for now; remove tools:ignore once these are translated. -->
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+<resources>
     <plurals name="cardlist_selected_count">
         <item quantity="one">%1$d selected</item>
         <item quantity="other">%1$d selected</item>

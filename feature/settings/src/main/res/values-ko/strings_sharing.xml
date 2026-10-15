@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">공유된 카드 가져오기</string>
+    <string name="shared_import_password_message">이 카드들은 비밀번호로 보호되어 있습니다. 보낸 사람에게 비밀번호를 물어보세요.</string>
+    <string name="shared_import_password">비밀번호</string>
+    <string name="shared_import_wrong_password">잘못된 비밀번호</string>
+    <string name="shared_import_message">Cardholder에 추가할 카드를 선택하세요.</string>
+    <string name="shared_import_include">가져오기</string>
+    <string name="shared_import_lock">잠금</string>
+    <string name="shared_import_duplicate">이미 이 카드가 있습니다</string>
+    <string name="shared_import_add_new">새 카드로 추가</string>
+    <string name="shared_import_replace">바꾸기</string>
+    <string name="shared_import_skip">건너뛰기</string>
+    <string name="shared_import_confirm">가져오기</string>
+    <string name="shared_import_continue">계속</string>
+    <string name="shared_import_cancel">취소</string>
+    <string name="shared_import_ok">확인</string>
+    <string name="shared_import_nothing">가져온 카드가 없습니다</string>
+</resources>

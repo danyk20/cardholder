@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d selectat</item>
+        <item quantity="few">%1$d selectate</item>
+        <item quantity="other">%1$d selectate</item>
+    </plurals>
+    <string name="cardlist_selection_clear">Anulează selecția</string>
+    <string name="cardlist_selected">Selectat</string>
+    <string name="cardlist_share">Trimite</string>
+    <string name="cardlist_share_bank_title">Trimiți datele sensibile ale cardurilor?</string>
+    <string name="cardlist_share_bank_message">Urmează să trimiți detaliile unui card bancar, inclusiv numărul cardului, data de expirare, CVV și notele:\n\n%1$s\n\nOricine primește fișierul (și parola, dacă setezi una) poate folosi aceste carduri. Continuă doar dacă ai încredere în destinatar.</string>
+    <string name="cardlist_share_bank_confirm">Am înțeles, trimite</string>
+    <string name="cardlist_share_password_title">Protejezi cu parolă?</string>
+    <string name="cardlist_share_password_message">Opțional. Fără parolă, oricine primește fișierul poate citi cardurile. Dacă setezi o parolă, trimite-o destinatarului separat (de exemplu prin SMS sau telefon), nu în aceeași conversație.</string>
+    <string name="cardlist_share_password">Parolă (opțional)</string>
+    <string name="cardlist_share_password_confirm">Repetă parola</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">Folosește cel puțin %1$d caracter</item>
+        <item quantity="few">Folosește cel puțin %1$d caractere</item>
+        <item quantity="other">Folosește cel puțin %1$d caractere</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">Parolele nu se potrivesc</string>
+    <string name="cardlist_share_continue">Trimite</string>
+    <string name="cardlist_share_cancel">Anulează</string>
+    <string name="cardlist_share_auth_title">Trimite carduri</string>
+    <string name="cardlist_share_chooser">Trimite carduri prin</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">%1$d card din Cardholder</item>
+        <item quantity="few">%1$d carduri din Cardholder</item>
+        <item quantity="other">%1$d carduri din Cardholder</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nDeschide cu Cardholder: %2$s</string>
+    <string name="cardlist_share_failed">Cardurile nu au putut fi trimise</string>
+    <string name="cardlist_share_auth_failed">Pentru a trimite carduri blocate sau CVV-uri este necesară autentificarea</string>
+</resources>

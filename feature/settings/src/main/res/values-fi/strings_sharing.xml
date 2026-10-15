@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Tuo jaetut kortit</string>
+    <string name="shared_import_password_message">Nämä kortit on suojattu salasanalla. Kysy se lähettäjältä.</string>
+    <string name="shared_import_password">Salasana</string>
+    <string name="shared_import_wrong_password">Väärä salasana</string>
+    <string name="shared_import_message">Valitse, mitkä kortit lisätään Cardholderiin.</string>
+    <string name="shared_import_include">Tuo</string>
+    <string name="shared_import_lock">Lukitse</string>
+    <string name="shared_import_duplicate">Sinulla on jo tämä kortti</string>
+    <string name="shared_import_add_new">Lisää uutena</string>
+    <string name="shared_import_replace">Korvaa</string>
+    <string name="shared_import_skip">Ohita</string>
+    <string name="shared_import_confirm">Tuo</string>
+    <string name="shared_import_continue">Jatka</string>
+    <string name="shared_import_cancel">Peruuta</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Kortteja ei tuotu</string>
+</resources>

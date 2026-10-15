@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Importă carduri partajate</string>
+    <string name="shared_import_password_message">Aceste carduri sunt protejate cu parolă. Cere-o expeditorului.</string>
+    <string name="shared_import_password">Parolă</string>
+    <string name="shared_import_wrong_password">Parolă greșită</string>
+    <string name="shared_import_message">Alege ce carduri vrei să adaugi în Cardholder.</string>
+    <string name="shared_import_include">Importă</string>
+    <string name="shared_import_lock">Blochează</string>
+    <string name="shared_import_duplicate">Ai deja acest card</string>
+    <string name="shared_import_add_new">Adaugă ca nou</string>
+    <string name="shared_import_replace">Înlocuiește</string>
+    <string name="shared_import_skip">Omite</string>
+    <string name="shared_import_confirm">Importă</string>
+    <string name="shared_import_continue">Continuă</string>
+    <string name="shared_import_cancel">Anulează</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Nu s-a importat niciun card</string>
+</resources>

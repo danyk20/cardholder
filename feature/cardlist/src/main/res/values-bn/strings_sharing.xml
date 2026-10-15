@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="cardlist_selected_count">
+        <item quantity="one">%1$d টি নির্বাচিত</item>
+        <item quantity="other">%1$d টি নির্বাচিত</item>
+    </plurals>
+    <string name="cardlist_selection_clear">নির্বাচন বাতিল করুন</string>
+    <string name="cardlist_selected">নির্বাচিত</string>
+    <string name="cardlist_share">শেয়ার করুন</string>
+    <string name="cardlist_share_bank_title">সংবেদনশীল কার্ডের তথ্য শেয়ার করবেন?</string>
+    <string name="cardlist_share_bank_message">আপনি ব্যাংক কার্ডের বিবরণ শেয়ার করতে যাচ্ছেন, যার মধ্যে কার্ড নম্বর, মেয়াদের তারিখ, CVV ও নোট আছে:\n\n%1$s\n\nফাইল (এবং পাসওয়ার্ড, যদি সেট করেন) যে পাবে, সে এই কার্ডগুলো ব্যবহার করতে পারবে। শুধু প্রাপককে বিশ্বাস করলেই এগিয়ে যান।</string>
+    <string name="cardlist_share_bank_confirm">বুঝেছি, শেয়ার করুন</string>
+    <string name="cardlist_share_password_title">পাসওয়ার্ড দিয়ে সুরক্ষিত করবেন?</string>
+    <string name="cardlist_share_password_message">ঐচ্ছিক। পাসওয়ার্ড ছাড়া ফাইল যে পাবে, সে কার্ড পড়তে পারবে। পাসওয়ার্ড দিলে আলাদাভাবে প্রাপককে পাঠান (যেমন এসএমএস বা ফোন কলে), একই চ্যাটে নয়।</string>
+    <string name="cardlist_share_password">পাসওয়ার্ড (ঐচ্ছিক)</string>
+    <string name="cardlist_share_password_confirm">পাসওয়ার্ড আবার লিখুন</string>
+    <plurals name="cardlist_share_password_too_short">
+        <item quantity="one">কমপক্ষে %1$d অক্ষর ব্যবহার করুন</item>
+        <item quantity="other">কমপক্ষে %1$d অক্ষর ব্যবহার করুন</item>
+    </plurals>
+    <string name="cardlist_share_password_mismatch">পাসওয়ার্ড মিলছে না</string>
+    <string name="cardlist_share_continue">শেয়ার করুন</string>
+    <string name="cardlist_share_cancel">বাতিল</string>
+    <string name="cardlist_share_auth_title">কার্ড শেয়ার করুন</string>
+    <string name="cardlist_share_chooser">এর মাধ্যমে কার্ড শেয়ার করুন</string>
+    <plurals name="cardlist_share_subject">
+        <item quantity="one">Cardholder থেকে %1$d টি কার্ড</item>
+        <item quantity="other">Cardholder থেকে %1$d টি কার্ড</item>
+    </plurals>
+    <string name="cardlist_share_text">%1$s\nCardholder দিয়ে খুলুন: %2$s</string>
+    <string name="cardlist_share_failed">কার্ড শেয়ার করা যায়নি</string>
+    <string name="cardlist_share_auth_failed">লক করা কার্ড বা CVV শেয়ার করতে প্রমাণীকরণ প্রয়োজন</string>
+</resources>

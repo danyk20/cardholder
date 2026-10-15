@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_import_title">Impordi jagatud kaardid</string>
+    <string name="shared_import_password_message">Need kaardid on parooliga kaitstud. Küsi parooli saatjalt.</string>
+    <string name="shared_import_password">Parool</string>
+    <string name="shared_import_wrong_password">Vale parool</string>
+    <string name="shared_import_message">Vali, millised kaardid lisada rakendusse Cardholder.</string>
+    <string name="shared_import_include">Impordi</string>
+    <string name="shared_import_lock">Lukusta</string>
+    <string name="shared_import_duplicate">Sul on see kaart juba olemas</string>
+    <string name="shared_import_add_new">Lisa uuena</string>
+    <string name="shared_import_replace">Asenda</string>
+    <string name="shared_import_skip">Jäta vahele</string>
+    <string name="shared_import_confirm">Impordi</string>
+    <string name="shared_import_continue">Jätka</string>
+    <string name="shared_import_cancel">Tühista</string>
+    <string name="shared_import_ok">OK</string>
+    <string name="shared_import_nothing">Ühtegi kaarti ei imporditud</string>
+</resources>
