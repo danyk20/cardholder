@@ -4,6 +4,8 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+
+## [1.2.0] - 2026-10-15
 ### Added
 - Share cards: long-press a card to select it (tap to add more), then Share. The cards (including CVVs and
   notes) are sent as a `.cardholder` file through any app, optionally protected with a password of at least
