@@ -54,7 +54,7 @@
     <string name="settings_result_failed">Midagi läks valesti. Proovige uuesti.</string>
     <string name="settings_about">Teave</string>
     <string name="settings_version">Versioon %1$s</string>
-    <string name="settings_privacy">Teie kaardid on krüpteeritud ega lahku sellest seadmest, kui te neid just ei ekspordi. Rakendus läheb võrku ainult siis, kui palute alla laadida poe või panga ametliku logo. Kaardisoovituste jaoks õpitud kohad jäävad samuti sellesse seadmesse.</string>
+    <string name="settings_privacy">Teie kaardid on krüpteeritud ega lahku sellest seadmest, kui te neid just ei ekspordi. Rakendus läheb võrku ainult siis, kui palute: kas poe või panga ametliku logo allalaadimiseks või uuenduste otsimiseks. Kaardisoovituste jaoks õpitud kohad jäävad samuti sellesse seadmesse.</string>
     <string name="settings_privacy_policy">Privaatsuseeskirjad</string>
     <string name="settings_logo_credits">Logode allikad</string>
     <string name="settings_logo_credits_description">Ametlike logode allikad ja litsentsid</string>

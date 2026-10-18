@@ -50,7 +50,7 @@
     <string name="settings_result_failed">出了点问题，请重试。</string>
     <string name="settings_about">关于</string>
     <string name="settings_version">版本 %1$s</string>
-    <string name="settings_privacy">您的卡片经过加密，除非您主动导出，否则绝不会离开此设备。只有在您要求下载商店或银行的官方徽标时，应用才会联网。为卡片推荐而记住的地点仅保存在此设备上。</string>
+    <string name="settings_privacy">您的卡片经过加密，除非您主动导出，否则绝不会离开此设备。只有在您要求时，应用才会联网：下载商店或银行的官方徽标，或检查更新。为卡片推荐而记住的地点仅保存在此设备上。</string>
     <string name="settings_privacy_policy">隐私权政策</string>
     <string name="settings_logo_credits">徽标来源</string>
     <string name="settings_logo_credits_description">官方徽标的来源和许可</string>

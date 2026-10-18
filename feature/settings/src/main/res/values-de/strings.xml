@@ -59,7 +59,7 @@
 
     <string name="settings_about">Über die App</string>
     <string name="settings_version">Version %1$s</string>
-    <string name="settings_privacy">Die Karten sind verschlüsselt und verlassen dieses Gerät nur, wenn sie exportiert werden. Die App geht nur online, um auf Wunsch ein offizielles Logo eines Geschäfts oder einer Bank herunterzuladen. Für Kartenvorschläge gelernte Orte bleiben auf diesem Gerät.</string>
+    <string name="settings_privacy">Die Karten sind verschlüsselt und verlassen dieses Gerät nur, wenn sie exportiert werden. Die App geht nur auf Wunsch online: um ein offizielles Logo eines Geschäfts oder einer Bank herunterzuladen oder nach Updates zu suchen. Für Kartenvorschläge gelernte Orte bleiben auf diesem Gerät.</string>
     <string name="settings_privacy_policy">Datenschutzerklärung</string>
     <string name="settings_logo_credits">Logo-Nachweise</string>
     <string name="settings_logo_credits_description">Quellen und Lizenzen der offiziellen Logos</string>

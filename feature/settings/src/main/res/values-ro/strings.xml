@@ -58,7 +58,7 @@
     <string name="settings_result_failed">A apărut o eroare. Încercați din nou.</string>
     <string name="settings_about">Despre</string>
     <string name="settings_version">Versiunea %1$s</string>
-    <string name="settings_privacy">Cardurile sunt criptate și nu părăsesc niciodată acest dispozitiv decât dacă le exportați. Aplicația se conectează la internet doar pentru a descărca sigla oficială a unui magazin sau a unei bănci, atunci când solicitați acest lucru. Locurile învățate pentru sugestiile de carduri rămân doar pe acest dispozitiv.</string>
+    <string name="settings_privacy">Cardurile sunt criptate și nu părăsesc niciodată acest dispozitiv decât dacă le exportați. Aplicația se conectează la internet doar atunci când solicitați acest lucru: pentru a descărca sigla oficială a unui magazin sau a unei bănci sau pentru a verifica actualizările. Locurile învățate pentru sugestiile de carduri rămân doar pe acest dispozitiv.</string>
     <string name="settings_privacy_policy">Politica de confidențialitate</string>
     <string name="settings_logo_credits">Credite pentru sigle</string>
     <string name="settings_logo_credits_description">Sursele și licențele siglelor oficiale</string>

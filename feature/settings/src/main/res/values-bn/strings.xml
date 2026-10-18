@@ -54,7 +54,7 @@
     <string name="settings_result_failed">কোনো সমস্যা হয়েছে। আবার চেষ্টা করুন।</string>
     <string name="settings_about">সম্পর্কে</string>
     <string name="settings_version">ভার্সন %1$s</string>
-    <string name="settings_privacy">আপনার কার্ডগুলো এনক্রিপ্ট করা থাকে এবং আপনি এক্সপোর্ট না করলে কখনও এই ডিভাইসের বাইরে যায় না। আপনি চাইলে শুধু কোনো দোকান বা ব্যাংকের অফিসিয়াল লোগো ডাউনলোড করার জন্য অ্যাপটি অনলাইনে যায়। কার্ডের প্রস্তাবের জন্য শেখা জায়গাগুলো এই ডিভাইসেই থাকে।</string>
+    <string name="settings_privacy">আপনার কার্ডগুলো এনক্রিপ্ট করা থাকে এবং আপনি এক্সপোর্ট না করলে কখনও এই ডিভাইসের বাইরে যায় না। আপনি চাইলে শুধু তখনই অ্যাপটি অনলাইনে যায়: কোনো দোকান বা ব্যাংকের অফিসিয়াল লোগো ডাউনলোড করতে, অথবা আপডেটের জন্য দেখতে। কার্ডের প্রস্তাবের জন্য শেখা জায়গাগুলো এই ডিভাইসেই থাকে।</string>
     <string name="settings_privacy_policy">গোপনীয়তা নীতি</string>
     <string name="settings_logo_credits">লোগো ক্রেডিট</string>
     <string name="settings_logo_credits_description">অফিসিয়াল লোগোর উৎস ও লাইসেন্স</string>

@@ -67,7 +67,7 @@
 
     <string name="settings_about">Informacje</string>
     <string name="settings_version">Wersja %1$s</string>
-    <string name="settings_privacy">Twoje karty są zaszyfrowane i nigdy nie opuszczają tego urządzenia, chyba że je wyeksportujesz. Aplikacja łączy się z internetem tylko wtedy, gdy poprosisz o pobranie oficjalnego logo sklepu lub banku. Miejsca zapamiętane na potrzeby podpowiedzi kart pozostają na tym urządzeniu.</string>
+    <string name="settings_privacy">Twoje karty są zaszyfrowane i nigdy nie opuszczają tego urządzenia, chyba że je wyeksportujesz. Aplikacja łączy się z internetem tylko wtedy, gdy o to poprosisz: aby pobrać oficjalne logo sklepu lub banku albo sprawdzić aktualizacje. Miejsca zapamiętane na potrzeby podpowiedzi kart pozostają na tym urządzeniu.</string>
     <string name="settings_privacy_policy">Polityka prywatności</string>
     <string name="settings_logo_credits">Autorzy logo</string>
     <string name="settings_logo_credits_description">Źródła i licencje oficjalnych logo</string>

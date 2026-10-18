@@ -50,7 +50,7 @@
     <string name="settings_result_failed">문제가 발생했습니다. 다시 시도해 주세요.</string>
     <string name="settings_about">정보</string>
     <string name="settings_version">버전 %1$s</string>
-    <string name="settings_privacy">카드는 암호화되며, 직접 내보내지 않는 한 이 기기 밖으로 나가지 않습니다. 앱은 사용자가 요청할 때 매장 또는 은행의 공식 로고를 다운로드하는 경우에만 인터넷에 연결됩니다. 추천을 위해 학습된 장소는 이 기기에만 보관됩니다.</string>
+    <string name="settings_privacy">카드는 암호화되며, 직접 내보내지 않는 한 이 기기 밖으로 나가지 않습니다. 앱은 매장 또는 은행의 공식 로고를 다운로드하거나 업데이트를 확인하라고 요청할 때만 인터넷에 연결됩니다. 추천을 위해 학습된 장소는 이 기기에만 보관됩니다.</string>
     <string name="settings_privacy_policy">개인정보처리방침</string>
     <string name="settings_logo_credits">로고 출처</string>
     <string name="settings_logo_credits_description">공식 로고의 출처 및 라이선스</string>

@@ -28,6 +28,8 @@ import io.github.danyk20.cardholder.feature.cardlist.navigation.CardListDestinat
 import io.github.danyk20.cardholder.feature.cardlist.navigation.cardListScreen
 import io.github.danyk20.cardholder.feature.settings.navigation.navigateToSettings
 import io.github.danyk20.cardholder.feature.settings.navigation.settingsScreen
+import io.github.danyk20.cardholder.update.UpdatePrompt
+import io.github.danyk20.cardholder.update.UpdateSection
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
@@ -41,6 +43,8 @@ fun CardholderNavHost(modifier: Modifier = Modifier) {
         activity?.addOnNewIntentListener(listener)
         onDispose { activity?.removeOnNewIntentListener(listener) }
     }
+    // The weekly update check, if the user switched it on in Settings.
+    UpdatePrompt()
     // Cards morph from the list into their details instead of the screens just fading.
     SharedTransitionLayout(modifier) {
         CompositionLocalProvider(LocalSharedTransitionScope provides this) {
@@ -75,7 +79,7 @@ fun CardholderNavHost(modifier: Modifier = Modifier) {
                     onEdit = { navController.navigateToCardEditor(it) },
                     onShowBarcode = { navController.navigateToBarcode(it) },
                 )
-                settingsScreen(onBack = navController::popBackStack)
+                settingsScreen(onBack = navController::popBackStack, aboutContent = { UpdateSection() })
                 barcodeScreen(
                     onClose = navController::popBackStack,
                     onOpenDetails = { id ->

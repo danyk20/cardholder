@@ -50,7 +50,7 @@
     <string name="settings_result_failed">問題が発生しました。もう一度お試しください。</string>
     <string name="settings_about">アプリについて</string>
     <string name="settings_version">バージョン %1$s</string>
-    <string name="settings_privacy">カードは暗号化され、エクスポートしない限りこのデバイスの外に出ることはありません。アプリがインターネットに接続するのは、お店や銀行の公式ロゴのダウンロードをリクエストしたときだけです。カードの提案のために学習した場所も、このデバイスに残ります。</string>
+    <string name="settings_privacy">カードは暗号化され、エクスポートしない限りこのデバイスの外に出ることはありません。アプリがインターネットに接続するのは、ユーザーがリクエストしたときだけです：お店や銀行の公式ロゴのダウンロード、またはアップデートの確認のためです。カードの提案のために学習した場所も、このデバイスに残ります。</string>
     <string name="settings_privacy_policy">プライバシー ポリシー</string>
     <string name="settings_logo_credits">ロゴのクレジット</string>
     <string name="settings_logo_credits_description">公式ロゴの出典とライセンス</string>

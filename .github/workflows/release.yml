@@ -58,7 +58,8 @@ jobs:
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
-        run: ./gradlew testDebugUnitTest assembleRelease bundleRelease
+        # The APK on GitHub updates itself from GitHub releases; the AAB is for Google Play, which updates it.
+        run: ./gradlew testDebugUnitTest assembleGithubRelease bundlePlayRelease
 
       # Gradle names them app-release.*; users should see what they downloaded, e.g. Cardholder-1.3.1.apk.
       - name: Name files after the app and version
@@ -66,7 +67,7 @@ jobs:
           name="Cardholder-${GITHUB_REF_NAME#v}"
           mkdir -p "$RUNNER_TEMP/dist"
           for ext in apk aab; do
-            dir=app/build/outputs/$([ "$ext" = apk ] && echo apk || echo bundle)/release
+            dir=app/build/outputs/$([ "$ext" = apk ] && echo apk/github/release || echo bundle/playRelease)
             files=("$dir"/*."$ext")
             if [ "${#files[@]}" -ne 1 ] || [ ! -f "${files[0]}" ]; then
               echo "::error::Expected exactly one .$ext in $dir"; exit 1

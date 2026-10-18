@@ -58,7 +58,7 @@
     <string name="settings_result_failed">Ocorreu um erro. Tente novamente.</string>
     <string name="settings_about">Acerca de</string>
     <string name="settings_version">Versão %1$s</string>
-    <string name="settings_privacy">Os seus cartões são encriptados e nunca saem deste dispositivo, a menos que os exporte. A app só acede à Internet para transferir o logótipo oficial de uma loja ou banco quando o pedir. Os locais aprendidos para as sugestões de cartões ficam apenas neste dispositivo.</string>
+    <string name="settings_privacy">Os seus cartões são encriptados e nunca saem deste dispositivo, a menos que os exporte. A app só acede à Internet quando o pedir: para transferir o logótipo oficial de uma loja ou banco ou para procurar atualizações. Os locais aprendidos para as sugestões de cartões ficam apenas neste dispositivo.</string>
     <string name="settings_privacy_policy">Política de privacidade</string>
     <string name="settings_logo_credits">Créditos dos logótipos</string>
     <string name="settings_logo_credits_description">Fontes e licenças dos logótipos oficiais</string>

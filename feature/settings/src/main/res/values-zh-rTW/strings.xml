@@ -50,7 +50,7 @@
     <string name="settings_result_failed">發生錯誤，請再試一次。</string>
     <string name="settings_about">關於</string>
     <string name="settings_version">版本 %1$s</string>
-    <string name="settings_privacy">你的卡片經過加密，除非你主動匯出，否則絕不會離開這部裝置。只有在你要求下載商店或銀行的官方標誌時，應用程式才會連上網路。為卡片推薦而記住的地點只會保存在這部裝置上。</string>
+    <string name="settings_privacy">你的卡片經過加密，除非你主動匯出，否則絕不會離開這部裝置。只有在你要求時，應用程式才會連上網路：下載商店或銀行的官方標誌，或檢查更新。為卡片推薦而記住的地點只會保存在這部裝置上。</string>
     <string name="settings_privacy_policy">隱私權政策</string>
     <string name="settings_logo_credits">標誌來源</string>
     <string name="settings_logo_credits_description">官方標誌的來源與授權</string>

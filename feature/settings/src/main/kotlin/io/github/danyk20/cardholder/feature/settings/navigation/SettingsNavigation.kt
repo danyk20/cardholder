@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.feature.settings.navigation
 
+import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -18,8 +19,8 @@ const val SETTINGS_DEEP_LINK = "cardholder://settings"
 
 fun NavController.navigateToSettings() = navigate(SettingsDestination)
 
-fun NavGraphBuilder.settingsScreen(onBack: () -> Unit) {
+fun NavGraphBuilder.settingsScreen(onBack: () -> Unit, aboutContent: @Composable () -> Unit = {}) {
     composable<SettingsDestination>(
         deepLinks = listOf(navDeepLink<SettingsDestination>(basePath = SETTINGS_DEEP_LINK)),
-    ) { SettingsRoute(onBack = onBack) }
+    ) { SettingsRoute(onBack = onBack, aboutContent = aboutContent) }
 }

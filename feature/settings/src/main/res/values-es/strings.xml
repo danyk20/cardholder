@@ -58,7 +58,7 @@
     <string name="settings_result_failed">Se ha producido un error. Vuelve a intentarlo.</string>
     <string name="settings_about">Información</string>
     <string name="settings_version">Versión %1$s</string>
-    <string name="settings_privacy">Tus tarjetas están cifradas y nunca salen de este dispositivo, a menos que las exportes. La aplicación solo se conecta a Internet para descargar el logotipo oficial de una tienda o un banco cuando se lo pides. Los lugares aprendidos para las sugerencias de tarjetas se quedan en este dispositivo.</string>
+    <string name="settings_privacy">Tus tarjetas están cifradas y nunca salen de este dispositivo, a menos que las exportes. La aplicación solo se conecta a Internet cuando se lo pides: para descargar el logotipo oficial de una tienda o un banco o para buscar actualizaciones. Los lugares aprendidos para las sugerencias de tarjetas se quedan en este dispositivo.</string>
     <string name="settings_privacy_policy">Política de privacidad</string>
     <string name="settings_logo_credits">Créditos de logotipos</string>
     <string name="settings_logo_credits_description">Fuentes y licencias de los logotipos oficiales</string>

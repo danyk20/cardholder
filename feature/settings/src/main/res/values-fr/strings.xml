@@ -58,7 +58,7 @@
     <string name="settings_result_failed">Un problème est survenu. Veuillez réessayer.</string>
     <string name="settings_about">À propos</string>
     <string name="settings_version">Version %1$s</string>
-    <string name="settings_privacy">Vos cartes sont chiffrées et ne quittent jamais cet appareil, sauf si vous les exportez. L\'application ne se connecte à Internet que pour télécharger le logo officiel d\'un magasin ou d\'une banque, à votre demande. Les lieux appris pour les suggestions de cartes restent aussi sur cet appareil.</string>
+    <string name="settings_privacy">Vos cartes sont chiffrées et ne quittent jamais cet appareil, sauf si vous les exportez. L\'application ne se connecte à Internet qu\'à votre demande : pour télécharger le logo officiel d\'un magasin ou d\'une banque, ou pour rechercher des mises à jour. Les lieux appris pour les suggestions de cartes restent aussi sur cet appareil.</string>
     <string name="settings_privacy_policy">Règles de confidentialité</string>
     <string name="settings_logo_credits">Crédits des logos</string>
     <string name="settings_logo_credits_description">Sources et licences des logos officiels</string>

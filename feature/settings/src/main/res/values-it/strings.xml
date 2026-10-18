@@ -58,7 +58,7 @@
     <string name="settings_result_failed">Si è verificato un problema. Riprova.</string>
     <string name="settings_about">Informazioni</string>
     <string name="settings_version">Versione %1$s</string>
-    <string name="settings_privacy">Le tue carte sono criptate e non lasciano mai questo dispositivo, a meno che tu non le esporti. L\'app si connette a Internet solo per scaricare il logo ufficiale di un negozio o di una banca quando lo richiedi. I luoghi appresi per i suggerimenti delle carte restano anche su questo dispositivo.</string>
+    <string name="settings_privacy">Le tue carte sono criptate e non lasciano mai questo dispositivo, a meno che tu non le esporti. L\'app si connette a Internet solo quando lo richiedi: per scaricare il logo ufficiale di un negozio o di una banca o per verificare gli aggiornamenti. I luoghi appresi per i suggerimenti delle carte restano anche su questo dispositivo.</string>
     <string name="settings_privacy_policy">Norme sulla privacy</string>
     <string name="settings_logo_credits">Crediti dei loghi</string>
     <string name="settings_logo_credits_description">Fonti e licenze dei loghi ufficiali</string>

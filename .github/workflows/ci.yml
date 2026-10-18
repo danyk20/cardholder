@@ -112,7 +112,8 @@ jobs:
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       # The app's lint checks all modules it depends on (checkDependencies); linting each module again would
       # analyse everything twice. core:testing isn't an app dependency, so it's linted on its own.
-      - run: ./gradlew :app:lintDebug :core:testing:lint assembleDebug
+      # :app:lintDebug covers both distribution flavors (play, github); the CI APK is the GitHub one.
+      - run: ./gradlew :app:lintDebug :core:testing:lint :app:assembleGithubDebug
       - name: Upload lint reports
         if: always()
         uses: actions/upload-artifact@v7
@@ -124,7 +125,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: app-debug
-          path: app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/github/debug/*.apk
           retention-days: 14
 
   result:

@@ -44,6 +44,7 @@ mlkitBarcode = "17.3.0"
 mlkitDocumentScanner = "16.0.0"
 mlkitTextRecognition = "19.0.1"
 playServicesLocation = "21.4.0"
+playAppUpdate = "2.1.0"
 reorderable = "3.1.0"
 sqlcipher = "4.19.1"
 zxing = "3.5.4"
@@ -105,6 +106,7 @@ mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version
 mlkit-document-scanner = { module = "com.google.android.gms:play-services-mlkit-document-scanner", version.ref = "mlkitDocumentScanner" }
 mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "mlkitTextRecognition" }
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+play-appUpdate-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "playAppUpdate" }
 reorderable = { module = "sh.calvin.reorderable:reorderable", version.ref = "reorderable" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 roborazzi = { module = "io.github.takahirom.roborazzi:roborazzi", version.ref = "roborazzi" }

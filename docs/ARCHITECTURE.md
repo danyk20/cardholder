@@ -53,6 +53,7 @@ See [SECURITY.md](../SECURITY.md) for the threat model and the ADRs:
 7. [Official shop and bank logos on request](adr/0007-shop-logos.md)
 8. [Reading bank cards over NFC](adr/0008-nfc-bank-cards.md)
 9. [Suggesting cards by where they were used](adr/0009-location-based-card-suggestions.md)
+10. [Updates from within the app](adr/0010-in-app-updates.md)
 
 ## Testing
 - JVM unit tests for models, validators, use cases, crypto envelope and barcode encoding.

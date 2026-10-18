@@ -54,7 +54,7 @@
     <string name="settings_result_failed">Hitilafu fulani imetokea. Tafadhali jaribu tena.</string>
     <string name="settings_about">Kuhusu</string>
     <string name="settings_version">Toleo la %1$s</string>
-    <string name="settings_privacy">Kadi zako husimbwa kwa njia fiche na kamwe haziondoki kwenye kifaa hiki isipokuwa ukizihamisha. Programu huunganishwa kwenye intaneti tu unapoomba kupakua nembo rasmi ya duka au benki. Maeneo yaliyojifunzwa kwa mapendekezo ya kadi yanabaki kwenye kifaa hiki.</string>
+    <string name="settings_privacy">Kadi zako husimbwa kwa njia fiche na kamwe haziondoki kwenye kifaa hiki isipokuwa ukizihamisha. Programu huunganishwa kwenye intaneti tu unapoomba: kupakua nembo rasmi ya duka au benki, au kuangalia masasisho. Maeneo yaliyojifunzwa kwa mapendekezo ya kadi yanabaki kwenye kifaa hiki.</string>
     <string name="settings_privacy_policy">Sera ya faragha</string>
     <string name="settings_logo_credits">Vyanzo vya nembo</string>
     <string name="settings_logo_credits_description">Vyanzo na leseni za nembo rasmi</string>

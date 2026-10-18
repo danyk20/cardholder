@@ -54,7 +54,7 @@
     <string name="settings_result_failed">Hiba történt. Próbálja újra.</string>
     <string name="settings_about">Névjegy</string>
     <string name="settings_version">Verzió: %1$s</string>
-    <string name="settings_privacy">Kártyái titkosítva vannak, és soha nem hagyják el ezt az eszközt, hacsak nem exportálja őket. Az alkalmazás csak akkor kapcsolódik az internethez, ha Ön egy üzlet vagy bank hivatalos logójának letöltését kéri. A kártyajavaslatokhoz megtanult helyek is ezen az eszközön maradnak.</string>
+    <string name="settings_privacy">Kártyái titkosítva vannak, és soha nem hagyják el ezt az eszközt, hacsak nem exportálja őket. Az alkalmazás csak akkor kapcsolódik az internethez, ha Ön kéri: egy üzlet vagy bank hivatalos logójának letöltéséhez vagy frissítések kereséséhez. A kártyajavaslatokhoz megtanult helyek is ezen az eszközön maradnak.</string>
     <string name="settings_privacy_policy">Adatvédelmi irányelvek</string>
     <string name="settings_logo_credits">Logók forrása</string>
     <string name="settings_logo_credits_description">A hivatalos logók forrásai és licencei</string>

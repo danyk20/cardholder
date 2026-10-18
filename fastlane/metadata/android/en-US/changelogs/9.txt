@@ -1,0 +1,1 @@
+Check for updates in Settings, with an optional weekly automatic check (off by default).
