@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "io.github.danyk20.cardholder"
-        versionCode = 8
-        versionName = "1.3.4"
+        versionCode = 9
+        versionName = "1.4.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
