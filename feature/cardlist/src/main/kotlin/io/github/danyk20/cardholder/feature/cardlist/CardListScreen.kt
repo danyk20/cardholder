@@ -3,14 +3,11 @@ package io.github.danyk20.cardholder.feature.cardlist
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -19,26 +16,18 @@ import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -46,12 +35,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
-import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -63,12 +49,9 @@ import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardType
-import io.github.danyk20.cardholder.core.ui.AuthenticationResult
 import io.github.danyk20.cardholder.core.ui.CardFace
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.icon
-import io.github.danyk20.cardholder.core.ui.label
-import io.github.danyk20.cardholder.core.ui.rememberAuthenticator
 import io.github.danyk20.cardholder.core.ui.sharedCardBounds
 
 @Composable
@@ -104,31 +87,8 @@ fun CardListRoute(
     val selecting = selected.isNotEmpty()
     if (selecting) BackHandler(onBack = viewModel::onClearSelection)
 
-    val context = LocalContext.current
-    val authenticator = rememberAuthenticator()
-    val authTitle = stringResource(R.string.cardlist_share_auth_title)
-    var shareStep by remember { mutableStateOf<ShareStep?>(null) }
-    val share = (uiState as? CardListUiState.Success)?.share ?: ShareState.Idle
     val snackbarHostState = remember { SnackbarHostState() }
-    val failedMessage = stringResource(R.string.cardlist_share_failed)
-    val authFailedMessage = stringResource(R.string.cardlist_share_auth_failed)
-    LaunchedEffect(share) {
-        when (share) {
-            is ShareState.Ready -> {
-                viewModel.onShareHandled()
-                context.launchShareSheet(share.uri, share.cardCount)
-            }
-
-            ShareState.Failed, ShareState.AuthenticationFailed -> {
-                viewModel.onShareHandled()
-                snackbarHostState.showSnackbar(
-                    if (share == ShareState.Failed) failedMessage else authFailedMessage,
-                )
-            }
-
-            ShareState.Idle, ShareState.InProgress -> Unit
-        }
-    }
+    var shareStep by remember { mutableStateOf<ShareStep?>(null) }
 
     CardListScreen(
         uiState = uiState,
@@ -141,43 +101,20 @@ fun CardListRoute(
         onAddCard = onAddCard,
         onOpenSettings = onOpenSettings,
         onClearSelection = viewModel::onClearSelection,
-        onShare = {
-            shareStep = if (selected.any { it.type == CardType.BANK }) ShareStep.BANK_WARNING else ShareStep.PASSWORD
-        },
+        onShare = { shareStep = firstShareStep(selected) },
         snackbarHostState = snackbarHostState,
     )
 
-    when (shareStep) {
-        ShareStep.BANK_WARNING -> BankCardWarningDialog(
-            bankCards = selected.filter { it.type == CardType.BANK },
-            onConfirm = { shareStep = ShareStep.PASSWORD },
-            onDismiss = { shareStep = null },
-        )
-
-        ShareStep.PASSWORD -> SharePasswordDialog(
-            onDismiss = { shareStep = null },
-            onConfirm = { password ->
-                shareStep = null
-                // CVVs and locked cards are only ever revealed after an explicit prompt.
-                if (selected.any { it.isLocked || it.hasCvv }) {
-                    authenticator.authenticate(authTitle) { result ->
-                        if (result == AuthenticationResult.SUCCEEDED) {
-                            viewModel.onShare(password)
-                        } else {
-                            password?.fill(' ')
-                        }
-                    }
-                } else {
-                    viewModel.onShare(password)
-                }
-            },
-        )
-
-        null -> Unit
-    }
+    ShareFlow(
+        selected = selected,
+        step = shareStep,
+        onStepChange = { shareStep = it },
+        share = (uiState as? CardListUiState.Success)?.share ?: ShareState.Idle,
+        snackbarHostState = snackbarHostState,
+        onShare = viewModel::onShare,
+        onShareHandled = viewModel::onShareHandled,
+    )
 }
-
-private enum class ShareStep { BANK_WARNING, PASSWORD }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -326,58 +263,6 @@ private fun CardFaceFor(item: CardListItem, onCardClick: (Card) -> Unit, onCardL
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun MainTopBar(
-    uiState: CardListUiState,
-    sortActions: SortActions,
-    onOpenSettings: () -> Unit,
-    scrollBehavior: TopAppBarScrollBehavior,
-) {
-    TopAppBar(
-        title = { Text(stringResource(R.string.cardlist_title)) },
-        actions = {
-            if (uiState is CardListUiState.Success && uiState.hasAnyCards) {
-                SortMenu(sort = uiState.sort, actions = sortActions)
-            }
-            IconButton(onClick = onOpenSettings) {
-                Icon(CardholderIcons.Settings, contentDescription = stringResource(R.string.cardlist_settings))
-            }
-        },
-        scrollBehavior = scrollBehavior,
-    )
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun SelectionTopBar(
-    count: Int,
-    sharing: Boolean,
-    onClearSelection: () -> Unit,
-    onShare: () -> Unit,
-    scrollBehavior: TopAppBarScrollBehavior,
-) {
-    TopAppBar(
-        title = { Text(pluralStringResource(R.plurals.cardlist_selected_count, count, count)) },
-        navigationIcon = {
-            IconButton(onClick = onClearSelection) {
-                Icon(CardholderIcons.Close, contentDescription = stringResource(R.string.cardlist_selection_clear))
-            }
-        },
-        actions = {
-            if (sharing) {
-                CircularProgressIndicator(Modifier.padding(12.dp).size(24.dp), strokeWidth = 2.dp)
-            } else {
-                IconButton(onClick = onShare) {
-                    Icon(CardholderIcons.Share, contentDescription = stringResource(R.string.cardlist_share))
-                }
-            }
-        },
-        colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
-        scrollBehavior = scrollBehavior,
-    )
-}
-
 @Composable
 private fun AddCardButton(onAddCard: () -> Unit, expanded: Boolean) {
     // Shrinks to an icon while scrolled, so it doesn't cover the codes on the cards.
@@ -414,53 +299,6 @@ private fun SelectableCard(selected: Boolean, modifier: Modifier = Modifier, con
                     .padding(4.dp)
                     .size(20.dp),
             )
-        }
-    }
-}
-
-@Composable
-private fun SearchAndFilters(
-    query: String,
-    visibleTypes: Set<CardType>,
-    onQueryChange: (String) -> Unit,
-    onTypeToggled: (CardType) -> Unit,
-) {
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        OutlinedTextField(
-            value = query,
-            onValueChange = onQueryChange,
-            placeholder = { Text(stringResource(R.string.cardlist_search)) },
-            leadingIcon = { Icon(CardholderIcons.Search, contentDescription = null) },
-            trailingIcon = {
-                if (query.isNotEmpty()) {
-                    IconButton(onClick = { onQueryChange("") }) {
-                        Icon(CardholderIcons.Close, contentDescription = stringResource(R.string.cardlist_clear_search))
-                    }
-                }
-            },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-            shape = MaterialTheme.shapes.extraLarge,
-            modifier = Modifier.fillMaxWidth(),
-        )
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.horizontalScroll(rememberScrollState()),
-        ) {
-            CardType.entries.forEach { type ->
-                FilterChip(
-                    selected = type in visibleTypes,
-                    onClick = { onTypeToggled(type) },
-                    label = { Text(stringResource(type.label)) },
-                    leadingIcon = {
-                        Icon(
-                            if (type in visibleTypes) CardholderIcons.Check else type.icon,
-                            contentDescription = null,
-                            modifier = Modifier.size(18.dp),
-                        )
-                    },
-                )
-            }
         }
     }
 }
