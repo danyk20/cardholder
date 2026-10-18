@@ -5,6 +5,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-10-18
+### Fixed
+- Typing quickly in the search field no longer mixes up the letters (e.g. "credit" became "reditc").
+
+### Changed
+- Release downloads are named after the app and version, e.g. `Cardholder-1.3.2.apk`.
+- Refreshed Play Store screenshots, now including an ID card.
+
 ## [1.3.1] - 2026-10-18
 ### Changed
 - Backup passwords need at least 8 characters, like passwords for shared cards (was 10).

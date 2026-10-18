@@ -1,0 +1,1 @@
+Fixed: typing quickly in the search field no longer mixes up the letters.
