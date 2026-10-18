@@ -50,7 +50,7 @@ jobs:
           java-version: 17
       - uses: gradle/actions/setup-gradle@v6
       # Neither needs compiled code, so this finishes first and gives the quickest feedback.
-      - run: ./gradlew spotlessCheck detekt --rerun-tasks
+      - run: ./gradlew spotlessCheck detekt
 
   unit-tests:
     name: Unit tests & coverage
@@ -71,7 +71,7 @@ jobs:
           path: ~/.m2/repository/org/robolectric
           key: robolectric-${{ hashFiles('gradle/libs.versions.toml', 'config/robolectric/**') }}
       # One invocation: Kover instruments the tests once instead of running them a second time for coverage.
-      - run: ./gradlew testDebugUnitTest koverXmlReport --rerun-tasks
+      - run: ./gradlew testDebugUnitTest koverXmlReport
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v7
@@ -98,7 +98,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v6
       # The app's lint checks all modules it depends on (checkDependencies); linting each module again would
       # analyse everything twice. core:testing isn't an app dependency, so it's linted on its own.
-      - run: ./gradlew :app:lintDebug :core:testing:lint assembleDebug --rerun-tasks
+      - run: ./gradlew :app:lintDebug :core:testing:lint assembleDebug
       - name: Upload lint reports
         if: always()
         uses: actions/upload-artifact@v7
