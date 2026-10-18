@@ -63,6 +63,18 @@
             </intent-filter>
         </activity>
 
+        <!--
+            The widget's "sort by location" popup. Its own empty task affinity keeps the app's task in
+            the background, so only the popup appears over the home screen.
+        -->
+        <activity
+            android:name=".quickaccess.NearbyRefreshActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Cardholder.Popup" />
+
         <receiver
             android:name=".quickaccess.CardsWidgetReceiver"
             android:exported="true"

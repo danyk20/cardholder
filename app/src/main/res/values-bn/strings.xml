@@ -12,6 +12,10 @@
     <string name="widget_title">লয়্যালটি কার্ড</string>
     <string name="widget_description">আপনার পছন্দের লয়্যালটি কার্ড, এক ট্যাপেই কোড</string>
     <string name="widget_empty">এখানে দেখতে একটি লয়্যালটি কার্ড যোগ করুন।</string>
+    <string name="widget_sort_by_location">অবস্থান অনুসারে সাজান</string>
+    <string name="widget_nearby">কাছাকাছি ব্যবহৃত</string>
+    <string name="widget_finding_nearby">কাছাকাছি কার্ড খোঁজা হচ্ছে…</string>
+    <string name="widget_nothing_nearby">এখানে এখনও কোনো কার্ড ব্যবহার করা হয়নি</string>
     <string name="notification_channel_arrival">এই জায়গার কার্ড</string>
     <string name="notification_channel_arrival_description">যে দোকানে কার্ডটি ব্যবহার করেছেন সেখানে পৌঁছালে সঠিক কার্ডটি</string>
     <string name="notification_arrival_text">কোড দেখাতে ট্যাপ করুন</string>

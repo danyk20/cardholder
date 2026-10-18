@@ -12,6 +12,10 @@
     <string name="widget_title">Sadakat kartları</string>
     <string name="widget_description">Favori sadakat kartlarınız, kodları bir dokunuş uzağınızda</string>
     <string name="widget_empty">Burada görmek için bir sadakat kartı ekleyin.</string>
+    <string name="widget_sort_by_location">Konuma göre sırala</string>
+    <string name="widget_nearby">Yakınlarda kullanıldı</string>
+    <string name="widget_finding_nearby">Yakındaki kartlar aranıyor…</string>
+    <string name="widget_nothing_nearby">Burada henüz kart kullanılmadı</string>
     <string name="notification_channel_arrival">Bu konum için kartlar</string>
     <string name="notification_channel_arrival_description">Kartı kullandığınız bir mağazaya vardığınızda doğru kart</string>
     <string name="notification_arrival_text">Kodu göstermek için dokunun</string>

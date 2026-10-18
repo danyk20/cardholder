@@ -12,6 +12,10 @@
     <string name="widget_title">Carte fedeltà</string>
     <string name="widget_description">Le tue carte fedeltà preferite, con il codice a portata di tocco</string>
     <string name="widget_empty">Aggiungi una carta fedeltà per vederla qui.</string>
+    <string name="widget_sort_by_location">Ordina per posizione</string>
+    <string name="widget_nearby">Usata nelle vicinanze</string>
+    <string name="widget_finding_nearby">Ricerca di carte nelle vicinanze…</string>
+    <string name="widget_nothing_nearby">Nessuna carta usata qui finora</string>
     <string name="notification_channel_arrival">Carte per questo posto</string>
     <string name="notification_channel_arrival_description">La carta giusta quando arrivi in un negozio dove l\'hai usata</string>
     <string name="notification_arrival_text">Tocca per mostrare il codice</string>

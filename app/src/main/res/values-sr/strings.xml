@@ -12,6 +12,10 @@
     <string name="widget_title">Картице лојалности</string>
     <string name="widget_description">Омиљене картице лојалности, код на један додир</string>
     <string name="widget_empty">Додајте картицу лојалности да бисте је видели овде.</string>
+    <string name="widget_sort_by_location">Сортирај по локацији</string>
+    <string name="widget_nearby">Коришћена у близини</string>
+    <string name="widget_finding_nearby">Тражење картица у близини…</string>
+    <string name="widget_nothing_nearby">Ниједна картица још није коришћена овде</string>
     <string name="notification_channel_arrival">Картице за ово место</string>
     <string name="notification_channel_arrival_description">Права картица када стигнете у продавницу у којој сте је користили</string>
     <string name="notification_arrival_text">Додирните да прикажете код</string>

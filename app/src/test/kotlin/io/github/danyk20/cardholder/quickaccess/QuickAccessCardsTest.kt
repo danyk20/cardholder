@@ -27,4 +27,16 @@ class QuickAccessCardsTest {
 
         assertEquals(listOf("bakery"), quickAccessCards(cards, limit = 1).map { it.id.value })
     }
+
+    @Test
+    fun `cards found nearby come first, in the order they were found`() {
+        val cards =
+            listOf(coffee.copy(isFavourite = true), bakery, books, coffee.copy(id = CardId("locked"), isLocked = true))
+        val nearby = listOf(CardId("books"), CardId("gone"), CardId("locked"), CardId("bakery"))
+
+        assertEquals(
+            listOf("books", "bakery", "loyalty-1"),
+            quickAccessCards(cards, limit = 4, nearby = nearby).map { it.id.value },
+        )
+    }
 }

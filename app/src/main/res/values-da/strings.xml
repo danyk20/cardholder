@@ -12,6 +12,10 @@
     <string name="widget_title">Kundekort</string>
     <string name="widget_description">Dine foretrukne kundekort, ét tryk fra koden</string>
     <string name="widget_empty">Tilføj et kundekort for at se det her.</string>
+    <string name="widget_sort_by_location">Sortér efter lokation</string>
+    <string name="widget_nearby">Brugt i nærheden</string>
+    <string name="widget_finding_nearby">Finder kort i nærheden…</string>
+    <string name="widget_nothing_nearby">Ingen kort brugt her endnu</string>
     <string name="notification_channel_arrival">Kort til dette sted</string>
     <string name="notification_channel_arrival_description">Det rigtige kort, når du ankommer til en butik, hvor du har brugt det</string>
     <string name="notification_arrival_text">Tryk for at vise koden</string>

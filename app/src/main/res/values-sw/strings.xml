@@ -12,6 +12,10 @@
     <string name="widget_title">Kadi za uaminifu</string>
     <string name="widget_description">Kadi zako za uaminifu unazozipenda, mguso mmoja hadi kwenye msimbo</string>
     <string name="widget_empty">Ongeza kadi ya uaminifu ili uione hapa.</string>
+    <string name="widget_sort_by_location">Panga kwa eneo</string>
+    <string name="widget_nearby">Imetumika karibu</string>
+    <string name="widget_finding_nearby">Inatafuta kadi zilizo karibu…</string>
+    <string name="widget_nothing_nearby">Hakuna kadi iliyotumika hapa bado</string>
     <string name="notification_channel_arrival">Kadi za mahali hapa</string>
     <string name="notification_channel_arrival_description">Kadi sahihi unapowasili dukani ambako uliitumia</string>
     <string name="notification_arrival_text">Gusa ili uonyeshe msimbo</string>

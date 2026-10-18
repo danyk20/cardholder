@@ -5,6 +5,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.3.3] - 2026-10-18
+### Added
+- The home-screen widget has a refresh button that sorts its cards by where you are (with card
+  suggestions switched on): cards used nearby move to the top, marked with a pin, until the next refresh.
+  While suggestions are off, the button opens Settings.
+
+### Changed
+- The widget can be made as small as 2x1 cells; it then shows the top card and the refresh button.
+
 ## [1.3.2] - 2026-10-18
 ### Fixed
 - Typing quickly in the search field no longer mixes up the letters (e.g. "credit" became "reditc").

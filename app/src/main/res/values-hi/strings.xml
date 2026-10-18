@@ -12,6 +12,10 @@
     <string name="widget_title">लॉयल्टी कार्ड</string>
     <string name="widget_description">आपके पसंदीदा लॉयल्टी कार्ड, कोड बस एक टैप दूर</string>
     <string name="widget_empty">लॉयल्टी कार्ड जोड़ें, ताकि वह यहां दिखे.</string>
+    <string name="widget_sort_by_location">स्थान के अनुसार क्रमबद्ध करें</string>
+    <string name="widget_nearby">आस-पास इस्तेमाल किया गया</string>
+    <string name="widget_finding_nearby">आस-पास के कार्ड खोजे जा रहे हैं…</string>
+    <string name="widget_nothing_nearby">यहां अभी तक कोई कार्ड इस्तेमाल नहीं हुआ</string>
     <string name="notification_channel_arrival">इस जगह के कार्ड</string>
     <string name="notification_channel_arrival_description">जब आप उस स्टोर में पहुंचें जहां आपने कार्ड इस्तेमाल किया था, तब सही कार्ड दिखे</string>
     <string name="notification_arrival_text">कोड दिखाने के लिए टैप करें</string>

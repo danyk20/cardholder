@@ -12,6 +12,10 @@
     <string name="widget_title">Картки лояльності</string>
     <string name="widget_description">Ваші вибрані картки лояльності: код в один дотик</string>
     <string name="widget_empty">Додайте картку лояльності, щоб побачити її тут.</string>
+    <string name="widget_sort_by_location">Сортувати за місцем</string>
+    <string name="widget_nearby">Використано поблизу</string>
+    <string name="widget_finding_nearby">Пошук карток поблизу…</string>
+    <string name="widget_nothing_nearby">Тут ще не використано жодної картки</string>
     <string name="notification_channel_arrival">Картки для цього місця</string>
     <string name="notification_channel_arrival_description">Потрібна картка, коли ви прибули до магазину, де її використовували</string>
     <string name="notification_arrival_text">Торкніться, щоб показати код</string>

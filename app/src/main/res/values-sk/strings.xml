@@ -12,6 +12,10 @@
     <string name="widget_title">Vernostné karty</string>
     <string name="widget_description">Vaše obľúbené vernostné karty s kódom na jedno ťuknutie</string>
     <string name="widget_empty">Pridajte vernostnú kartu a zobrazí sa tu.</string>
+    <string name="widget_sort_by_location">Zoradiť podľa polohy</string>
+    <string name="widget_nearby">Použité v okolí</string>
+    <string name="widget_finding_nearby">Hľadanie kariet v okolí…</string>
+    <string name="widget_nothing_nearby">Tu zatiaľ nebola použitá žiadna karta</string>
     <string name="notification_channel_arrival">Karty pre toto miesto</string>
     <string name="notification_channel_arrival_description">Správna karta, keď prídete do obchodu, kde ste ju použili</string>
     <string name="notification_arrival_text">Klepnutím zobrazíte kód</string>

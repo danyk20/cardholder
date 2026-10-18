@@ -1,0 +1,1 @@
+The widget can sort your cards by location: tap its refresh button and the cards used nearby move to the top. The widget can also be made as small as 2x1.

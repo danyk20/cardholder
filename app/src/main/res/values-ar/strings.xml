@@ -12,6 +12,10 @@
     <string name="widget_title">بطاقات الولاء</string>
     <string name="widget_description">بطاقات الولاء المفضّلة لديك، والرمز على بُعد نقرة واحدة</string>
     <string name="widget_empty">أضِف بطاقة ولاء لتظهر هنا.</string>
+    <string name="widget_sort_by_location">الترتيب حسب الموقع</string>
+    <string name="widget_nearby">مُستخدمة بالقرب منك</string>
+    <string name="widget_finding_nearby">جارٍ البحث عن البطاقات القريبة…</string>
+    <string name="widget_nothing_nearby">لم تُستخدم أي بطاقة هنا بعد</string>
     <string name="notification_channel_arrival">بطاقات هذا المكان</string>
     <string name="notification_channel_arrival_description">البطاقة المناسبة عندما تصل إلى متجر استخدمتها فيه</string>
     <string name="notification_arrival_text">انقر لعرض الرمز</string>

@@ -12,6 +12,10 @@
     <string name="widget_title">کارت‌های باشگاه مشتریان</string>
     <string name="widget_description">کارت‌های باشگاه مشتریان دلخواهتان، با یک ضربه تا کد</string>
     <string name="widget_empty">یک کارت باشگاه مشتریان اضافه کنید تا اینجا نمایش داده شود.</string>
+    <string name="widget_sort_by_location">مرتب‌سازی بر اساس مکان</string>
+    <string name="widget_nearby">استفاده‌شده در نزدیکی</string>
+    <string name="widget_finding_nearby">در حال یافتن کارت‌های نزدیک…</string>
+    <string name="widget_nothing_nearby">هنوز هیچ کارتی اینجا استفاده نشده</string>
     <string name="notification_channel_arrival">کارت‌های این مکان</string>
     <string name="notification_channel_arrival_description">کارت درست وقتی که به فروشگاهی می‌رسید که از آن استفاده کرده‌اید</string>
     <string name="notification_arrival_text">برای نمایش کد ضربه بزنید</string>

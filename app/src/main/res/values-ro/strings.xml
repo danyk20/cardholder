@@ -12,6 +12,10 @@
     <string name="widget_title">Carduri de fidelitate</string>
     <string name="widget_description">Cardurile de fidelitate preferate, la o atingere de cod</string>
     <string name="widget_empty">Adăugați un card de fidelitate pentru a-l vedea aici.</string>
+    <string name="widget_sort_by_location">Sortează după locație</string>
+    <string name="widget_nearby">Folosit în apropiere</string>
+    <string name="widget_finding_nearby">Se caută cardurile din apropiere…</string>
+    <string name="widget_nothing_nearby">Niciun card folosit aici încă</string>
     <string name="notification_channel_arrival">Carduri pentru acest loc</string>
     <string name="notification_channel_arrival_description">Cardul potrivit când ajungeți la un magazin unde l-ați folosit</string>
     <string name="notification_arrival_text">Atingeți pentru a afișa codul</string>
