@@ -69,7 +69,7 @@ jobs:
       # Keyed on Robolectric's version only, so unrelated dependency updates keep the cache.
       - name: Read Robolectric version
         id: robolectric
-        run: echo "version=$(grep -E '^robolectric = ' gradle/libs.versions.toml | cut -d'"' -f2)" >> "$GITHUB_OUTPUT"
+        run: echo "version=$(grep -m1 -E '^robolectric = "' gradle/libs.versions.toml | cut -d'"' -f2)" >> "$GITHUB_OUTPUT"
       - uses: actions/cache@v4
         with:
           path: ~/.m2/repository/org/robolectric
