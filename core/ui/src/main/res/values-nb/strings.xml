@@ -9,6 +9,7 @@
     <string name="card_side_front">Forside</string>
     <string name="card_side_back">Bakside</string>
     <string name="card_locked">Låst</string>
+    <string name="card_favourite">Favoritt</string>
     <string name="card_locked_message">Dette kortet er låst</string>
     <string name="auth_title_show_cvv">Vis CVV</string>
     <string name="auth_title_export">Eksporter sikkerhetskopi</string>

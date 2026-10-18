@@ -54,6 +54,7 @@ internal fun LoyaltyCardFace(
         card.title,
         stringResource(UiR.string.card_type_loyalty),
         summary.subtitle.takeIf { it != card.title },
+        stringResource(UiR.string.card_favourite).takeIf { card.isFavourite },
         stringResource(UiR.string.card_locked).takeIf { card.isLocked },
     ).joinToString()
     CardSurface(
@@ -92,6 +93,15 @@ internal fun LoyaltyCardFace(
                         .weight(1f)
                         .padding(start = 10.dp),
                 )
+                // Same mark as on the other cards' faces (see CardFace).
+                if (card.isFavourite) {
+                    Icon(
+                        CardholderIcons.Favourite,
+                        contentDescription = null,
+                        tint = colors.content,
+                        modifier = Modifier.padding(start = 8.dp).size(18.dp),
+                    )
+                }
             }
             Box(
                 contentAlignment = Alignment.Center,

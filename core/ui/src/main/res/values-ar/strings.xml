@@ -10,6 +10,7 @@
     <string name="card_side_front">الوجه الأمامي</string>
     <string name="card_side_back">الوجه الخلفي</string>
     <string name="card_locked">مقفلة</string>
+    <string name="card_favourite">مفضّلة</string>
     <string name="card_locked_message">هذه البطاقة مقفلة</string>
     <string name="auth_title_show_cvv">عرض رمز CVV</string>
     <string name="auth_title_export">تصدير نسخة احتياطية</string>

@@ -9,6 +9,7 @@
     <string name="card_side_front">Față</string>
     <string name="card_side_back">Verso</string>
     <string name="card_locked">Blocat</string>
+    <string name="card_favourite">Preferat</string>
     <string name="card_locked_message">Acest card este blocat</string>
     <string name="auth_title_show_cvv">Afișați codul CVV</string>
     <string name="auth_title_export">Exportați backupul</string>

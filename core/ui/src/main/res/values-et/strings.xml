@@ -9,6 +9,7 @@
     <string name="card_side_front">Esikülg</string>
     <string name="card_side_back">Tagakülg</string>
     <string name="card_locked">Lukustatud</string>
+    <string name="card_favourite">Lemmik</string>
     <string name="card_locked_message">See kaart on lukustatud</string>
     <string name="auth_title_show_cvv">Kuva CVV</string>
     <string name="auth_title_export">Ekspordi varukoopia</string>

@@ -9,6 +9,7 @@
     <string name="card_side_front">Предња страна</string>
     <string name="card_side_back">Задња страна</string>
     <string name="card_locked">Закључано</string>
+    <string name="card_favourite">Омиљено</string>
     <string name="card_locked_message">Ова картица је закључана</string>
     <string name="auth_title_show_cvv">Прикажи CVV</string>
     <string name="auth_title_export">Извези резервну копију</string>

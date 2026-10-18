@@ -9,6 +9,7 @@
     <string name="card_side_front">正面</string>
     <string name="card_side_back">背面</string>
     <string name="card_locked">已锁定</string>
+    <string name="card_favourite">收藏</string>
     <string name="card_locked_message">此卡片已锁定</string>
     <string name="auth_title_show_cvv">显示 CVV</string>
     <string name="auth_title_export">导出备份</string>

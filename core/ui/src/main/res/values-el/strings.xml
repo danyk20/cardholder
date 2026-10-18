@@ -9,6 +9,7 @@
     <string name="card_side_front">Μπροστά</string>
     <string name="card_side_back">Πίσω</string>
     <string name="card_locked">Κλειδωμένη</string>
+    <string name="card_favourite">Αγαπημένη</string>
     <string name="card_locked_message">Αυτή η κάρτα είναι κλειδωμένη</string>
     <string name="auth_title_show_cvv">Εμφάνιση CVV</string>
     <string name="auth_title_export">Εξαγωγή αντιγράφου ασφαλείας</string>

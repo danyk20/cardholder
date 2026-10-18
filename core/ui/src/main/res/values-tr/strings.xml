@@ -10,6 +10,7 @@
     <string name="card_side_front">Ön yüz</string>
     <string name="card_side_back">Arka yüz</string>
     <string name="card_locked">Kilitli</string>
+    <string name="card_favourite">Favori</string>
     <string name="card_locked_message">Bu kart kilitli</string>
     <string name="auth_title_show_cvv">CVV\'yi göster</string>
     <string name="auth_title_export">Yedeği dışa aktar</string>

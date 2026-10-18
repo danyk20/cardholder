@@ -9,6 +9,7 @@
     <string name="card_side_front">Recto</string>
     <string name="card_side_back">Verso</string>
     <string name="card_locked">Verrouillée</string>
+    <string name="card_favourite">Favorie</string>
     <string name="card_locked_message">Cette carte est verrouillée</string>
     <string name="auth_title_show_cvv">Afficher le CVV</string>
     <string name="auth_title_export">Exporter la sauvegarde</string>

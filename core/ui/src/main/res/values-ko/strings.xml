@@ -9,6 +9,7 @@
     <string name="card_side_front">앞면</string>
     <string name="card_side_back">뒷면</string>
     <string name="card_locked">잠김</string>
+    <string name="card_favourite">즐겨찾기</string>
     <string name="card_locked_message">이 카드는 잠겨 있습니다</string>
     <string name="auth_title_show_cvv">CVV 표시</string>
     <string name="auth_title_export">백업 내보내기</string>

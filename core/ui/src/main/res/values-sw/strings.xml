@@ -9,6 +9,7 @@
     <string name="card_side_front">Mbele</string>
     <string name="card_side_back">Nyuma</string>
     <string name="card_locked">Imefungwa</string>
+    <string name="card_favourite">Kipendwa</string>
     <string name="card_locked_message">Kadi hii imefungwa</string>
     <string name="auth_title_show_cvv">Onyesha CVV</string>
     <string name="auth_title_export">Hamisha nakala rudufu</string>

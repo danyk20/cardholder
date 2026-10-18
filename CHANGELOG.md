@@ -5,6 +5,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.3.4] - 2026-10-18
+### Fixed
+- Favourite loyalty cards show the star in the card list, like bank and ID cards; screen readers now
+  announce "Favourite" on all cards.
+
 ## [1.3.3] - 2026-10-18
 ### Added
 - The home-screen widget has a refresh button that sorts its cards by where you are (with card

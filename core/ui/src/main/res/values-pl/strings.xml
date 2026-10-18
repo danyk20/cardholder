@@ -12,6 +12,7 @@
     <string name="card_side_front">Przód</string>
     <string name="card_side_back">Tył</string>
     <string name="card_locked">Zablokowana</string>
+    <string name="card_favourite">Ulubiona</string>
     <string name="card_locked_message">Ta karta jest zablokowana</string>
     <string name="auth_title_show_cvv">Pokaż CVV</string>
     <string name="auth_title_export">Eksportuj kopię zapasową</string>

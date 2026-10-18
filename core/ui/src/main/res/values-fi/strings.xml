@@ -9,6 +9,7 @@
     <string name="card_side_front">Etupuoli</string>
     <string name="card_side_back">Takapuoli</string>
     <string name="card_locked">Lukittu</string>
+    <string name="card_favourite">Suosikki</string>
     <string name="card_locked_message">Tämä kortti on lukittu</string>
     <string name="auth_title_show_cvv">Näytä CVV</string>
     <string name="auth_title_export">Vie varmuuskopio</string>

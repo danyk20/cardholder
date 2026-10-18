@@ -9,6 +9,7 @@
     <string name="card_side_front">Előlap</string>
     <string name="card_side_back">Hátlap</string>
     <string name="card_locked">Zárolva</string>
+    <string name="card_favourite">Kedvenc</string>
     <string name="card_locked_message">Ez a kártya zárolva van</string>
     <string name="auth_title_show_cvv">CVV megjelenítése</string>
     <string name="auth_title_export">Biztonsági mentés exportálása</string>

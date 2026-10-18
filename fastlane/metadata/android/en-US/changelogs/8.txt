@@ -1,0 +1,1 @@
+Fixed: favourite loyalty cards now show their star in the card list.
