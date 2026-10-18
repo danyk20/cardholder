@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">ドラッグして %1$s を移動</string>
     <string name="cardlist_move_up">上へ移動</string>
     <string name="cardlist_move_down">下へ移動</string>
+    <string name="cardlist_nearby">近く</string>
+    <string name="cardlist_all_cards">すべてのカード</string>
+    <string name="cardlist_nearby_wifi">近くの店舗の Wi‑Fi</string>
+    <string name="cardlist_nearby_distance">約 %1$s の距離</string>
 </resources>

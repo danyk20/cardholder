@@ -33,4 +33,17 @@
     <string name="field_code">Cod</string>
     <string name="field_format">Tipul codului</string>
     <string name="field_notes">Note</string>
+    <string name="detail_suggest_by_location">Sugerați după locație</string>
+    <string name="detail_learned_places">Locuri învățate: %1$d</string>
+    <string name="detail_places_learned_at_till">Învață unde îi afișați codul și îl sugerează din nou acolo</string>
+    <string name="detail_places_learned_on_request">Atingeți „Reține acest loc” acolo unde folosiți cardul, pentru a fi sugerat din nou acolo</string>
+    <string name="detail_remember_place">Reține acest loc</string>
+    <string name="detail_forget_places">Uitați locurile</string>
+    <string name="detail_forget_places_title">Uitați locurile acestui card?</string>
+    <string name="detail_forget_places_message">Locurile în care ați folosit acest card vor fi șterse. Va fi învățat din nou data viitoare când îl folosiți.</string>
+    <string name="detail_forget">Uitați</string>
+    <string name="detail_place_remembered">Loc reținut</string>
+    <string name="detail_place_not_found">Nu s-a putut stabili unde vă aflați. Încercați din nou cu Wi‑Fi activat sau lângă o fereastră.</string>
+    <string name="detail_place_no_permission">Permiteți Cardholder să folosească locația precisă pentru a reține locuri</string>
+    <string name="detail_place_location_off">Activați Locația pentru a reține locuri</string>
 </resources>

@@ -33,4 +33,17 @@
     <string name="field_code">Koodi</string>
     <string name="field_format">Koodityyppi</string>
     <string name="field_notes">Muistiinpanot</string>
+    <string name="detail_suggest_by_location">Ehdota sijainnin perusteella</string>
+    <string name="detail_learned_places">Opittuja paikkoja: %1$d</string>
+    <string name="detail_places_learned_at_till">Oppii, missä näytät sen koodin, ja ehdottaa korttia siellä uudelleen</string>
+    <string name="detail_places_learned_on_request">Napauta ”Muista tämä paikka” siellä, missä käytät korttia, niin sitä ehdotetaan siellä uudelleen</string>
+    <string name="detail_remember_place">Muista tämä paikka</string>
+    <string name="detail_forget_places">Unohda paikat</string>
+    <string name="detail_forget_places_title">Unohdetaanko tämän kortin paikat?</string>
+    <string name="detail_forget_places_message">Paikat, joissa käytit tätä korttia, poistetaan. Ne opitaan uudelleen, kun käytät korttia seuraavan kerran.</string>
+    <string name="detail_forget">Unohda</string>
+    <string name="detail_place_remembered">Paikka muistettu</string>
+    <string name="detail_place_not_found">Sijaintiasi ei löytynyt. Yritä uudelleen, kun Wi‑Fi on päällä tai olet ikkunan lähellä.</string>
+    <string name="detail_place_no_permission">Salli Cardholderille tarkka sijainti, jotta paikat voidaan muistaa</string>
+    <string name="detail_place_location_off">Kytke sijainti päälle, jotta paikat voidaan muistaa</string>
 </resources>

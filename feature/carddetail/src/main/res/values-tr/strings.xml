@@ -34,4 +34,17 @@
     <string name="field_code">Kod</string>
     <string name="field_format">Kod türü</string>
     <string name="field_notes">Notlar</string>
+    <string name="detail_suggest_by_location">Konuma göre öner</string>
+    <string name="detail_learned_places">Öğrenilen konumlar: %1$d</string>
+    <string name="detail_places_learned_at_till">Kodunu gösterdiğiniz yerleri öğrenir ve kartı orada yeniden önerir</string>
+    <string name="detail_places_learned_on_request">Kartı kullandığınız yerde “Bu konumu hatırla” seçeneğine dokunun, kart orada yeniden önerilsin</string>
+    <string name="detail_remember_place">Bu konumu hatırla</string>
+    <string name="detail_forget_places">Konumları unut</string>
+    <string name="detail_forget_places_title">Bu kartın konumları unutulsun mu?</string>
+    <string name="detail_forget_places_message">Bu kartı kullandığınız konumlar silinir. Bir sonraki kullanımınızda yeniden öğrenilir.</string>
+    <string name="detail_forget">Unut</string>
+    <string name="detail_place_remembered">Konum hatırlandı</string>
+    <string name="detail_place_not_found">Konumunuz bulunamadı. Wi‑Fi açıkken veya bir pencerenin yanındayken tekrar deneyin.</string>
+    <string name="detail_place_no_permission">Cardholder\'ın konumları hatırlayabilmesi için kesin konuma izin verin</string>
+    <string name="detail_place_location_off">Konumları hatırlamak için Konum\'u açın</string>
 </resources>

@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">%1$s verschieben</string>
     <string name="cardlist_move_up">Nach oben</string>
     <string name="cardlist_move_down">Nach unten</string>
+    <string name="cardlist_nearby">In der Nähe</string>
+    <string name="cardlist_all_cards">Alle Karten</string>
+    <string name="cardlist_nearby_wifi">WLAN des Geschäfts in der Nähe</string>
+    <string name="cardlist_nearby_distance">Etwa %1$s entfernt</string>
 </resources>

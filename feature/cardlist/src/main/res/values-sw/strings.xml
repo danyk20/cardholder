@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Buruta ili usogeze %1$s</string>
     <string name="cardlist_move_up">Sogeza juu</string>
     <string name="cardlist_move_down">Sogeza chini</string>
+    <string name="cardlist_nearby">Karibu nawe</string>
+    <string name="cardlist_all_cards">Kadi zote</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi ya duka karibu</string>
+    <string name="cardlist_nearby_distance">Takriban %1$s mbali</string>
 </resources>

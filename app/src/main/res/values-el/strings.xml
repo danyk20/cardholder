@@ -12,4 +12,11 @@
     <string name="widget_title">Κάρτες επιβράβευσης</string>
     <string name="widget_description">Οι αγαπημένες σας κάρτες επιβράβευσης, ένα πάτημα από τον κωδικό</string>
     <string name="widget_empty">Προσθέστε μια κάρτα επιβράβευσης για να εμφανίζεται εδώ.</string>
+    <string name="notification_channel_arrival">Κάρτες για αυτό το μέρος</string>
+    <string name="notification_channel_arrival_description">Η σωστή κάρτα όταν φτάνετε σε κατάστημα όπου τη χρησιμοποιήσατε</string>
+    <string name="notification_arrival_text">Πατήστε για να εμφανιστεί ο κωδικός</string>
+    <string name="notification_arrival_open">Πατήστε για να ανοίξετε την κάρτα</string>
+    <string name="notification_arrival_locked_title">Κλειδωμένη κάρτα για αυτό το μέρος</string>
+    <string name="notification_arrival_public">Κάρτα για αυτό το μέρος</string>
+    <string name="notification_arrival_not_here">Όχι αυτό το μέρος</string>
 </resources>

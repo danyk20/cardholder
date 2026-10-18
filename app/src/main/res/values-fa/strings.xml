@@ -12,4 +12,11 @@
     <string name="widget_title">کارت‌های باشگاه مشتریان</string>
     <string name="widget_description">کارت‌های باشگاه مشتریان دلخواهتان، با یک ضربه تا کد</string>
     <string name="widget_empty">یک کارت باشگاه مشتریان اضافه کنید تا اینجا نمایش داده شود.</string>
+    <string name="notification_channel_arrival">کارت‌های این مکان</string>
+    <string name="notification_channel_arrival_description">کارت درست وقتی که به فروشگاهی می‌رسید که از آن استفاده کرده‌اید</string>
+    <string name="notification_arrival_text">برای نمایش کد ضربه بزنید</string>
+    <string name="notification_arrival_open">برای باز کردن کارت ضربه بزنید</string>
+    <string name="notification_arrival_locked_title">یک کارت قفل‌شده برای این مکان</string>
+    <string name="notification_arrival_public">یک کارت برای این مکان</string>
+    <string name="notification_arrival_not_here">این مکان نیست</string>
 </resources>

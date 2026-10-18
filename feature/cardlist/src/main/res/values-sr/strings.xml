@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Превуците да бисте преместили: %1$s</string>
     <string name="cardlist_move_up">Помери нагоре</string>
     <string name="cardlist_move_down">Помери надоле</string>
+    <string name="cardlist_nearby">У близини</string>
+    <string name="cardlist_all_cards">Све картице</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi продавнице у близини</string>
+    <string name="cardlist_nearby_distance">Отприлике %1$s далеко</string>
 </resources>

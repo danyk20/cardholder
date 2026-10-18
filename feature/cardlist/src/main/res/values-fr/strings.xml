@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Faire glisser pour déplacer %1$s</string>
     <string name="cardlist_move_up">Déplacer vers le haut</string>
     <string name="cardlist_move_down">Déplacer vers le bas</string>
+    <string name="cardlist_nearby">À proximité</string>
+    <string name="cardlist_all_cards">Toutes les cartes</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi du magasin à proximité</string>
+    <string name="cardlist_nearby_distance">À environ %1$s</string>
 </resources>

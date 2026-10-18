@@ -6,6 +6,12 @@ Cardholder regroupe vos cartes bancaires, pièces d'identité et cartes de fidé
 • Scannez le code de votre carte en plastique avec l'appareil photo – ou saisissez-le
 • Formats pris en charge : QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec et Data Matrix
 
+<b>La bonne carte dans le bon magasin</b>
+• Facultatif : l'application apprend où vous utilisez chaque carte et affiche en premier celles utilisées à proximité
+• Reconnaît même le Wi‑Fi du magasin dès votre première visite
+• Ou recevez une notification avec la bonne carte à votre arrivée – aucun service en arrière-plan, peu d'impact sur la batterie
+• Les lieux restent sur votre téléphone, chiffrés – jamais dans les sauvegardes et jamais envoyés ailleurs
+
 <b>Cartes bancaires</b>
 • Enregistrez le numéro de carte, la date d'expiration, le titulaire et le CVV
 • Remplissez les informations en approchant une carte sans contact de votre téléphone (NFC)

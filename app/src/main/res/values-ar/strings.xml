@@ -12,4 +12,11 @@
     <string name="widget_title">بطاقات الولاء</string>
     <string name="widget_description">بطاقات الولاء المفضّلة لديك، والرمز على بُعد نقرة واحدة</string>
     <string name="widget_empty">أضِف بطاقة ولاء لتظهر هنا.</string>
+    <string name="notification_channel_arrival">بطاقات هذا المكان</string>
+    <string name="notification_channel_arrival_description">البطاقة المناسبة عندما تصل إلى متجر استخدمتها فيه</string>
+    <string name="notification_arrival_text">انقر لعرض الرمز</string>
+    <string name="notification_arrival_open">انقر لفتح البطاقة</string>
+    <string name="notification_arrival_locked_title">بطاقة مقفلة لهذا المكان</string>
+    <string name="notification_arrival_public">بطاقة لهذا المكان</string>
+    <string name="notification_arrival_not_here">ليس هذا المكان</string>
 </resources>

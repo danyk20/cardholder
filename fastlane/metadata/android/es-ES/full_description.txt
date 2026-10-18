@@ -6,6 +6,12 @@ Cardholder guarda tus tarjetas bancarias, documentos de identidad y tarjetas de 
 • Escanea el código de tu tarjeta de plástico con la cámara o introdúcelo a mano
 • Compatible con QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec y Data Matrix
 
+<b>La tarjeta adecuada en la tienda adecuada</b>
+• Opcional: la aplicación aprende dónde usas cada tarjeta y muestra primero las que usaste cerca
+• Incluso reconoce el Wi‑Fi de la tienda en tu primera visita
+• O recibe una notificación con la tarjeta adecuada al llegar: sin servicio en segundo plano, fácil para la batería
+• Los lugares se quedan en tu teléfono, cifrados: nunca en copias de seguridad y nunca enviados a ningún sitio
+
 <b>Tarjetas bancarias</b>
 • Guarda el número de tarjeta, la fecha de caducidad, el titular y el CVV
 • Rellena los datos acercando una tarjeta contactless al teléfono (NFC)

@@ -6,6 +6,12 @@ Cardholder bewahrt Bankkarten, Ausweise und Kundenkarten an einem Ort auf dem Sm
 • Code der Plastikkarte mit der Kamera scannen – oder manuell eingeben
 • Unterstützt QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec und Data Matrix
 
+<b>Die richtige Karte im richtigen Geschäft</b>
+• Optional: Die App lernt, wo du jede Karte verwendest, und zeigt die in der Nähe genutzten Karten zuerst
+• Erkennt das WLAN des Geschäfts schon beim ersten Besuch
+• Oder lass dir beim Ankommen eine Benachrichtigung mit der passenden Karte senden – kein Hintergrunddienst, schont den Akku
+• Orte bleiben verschlüsselt auf deinem Telefon – nie im Backup und nie irgendwohin gesendet
+
 <b>Bankkarten</b>
 • Kartennummer, Ablaufdatum, Karteninhaber und CVV speichern
 • Details ausfüllen, indem eine kontaktlose Karte an das Smartphone gehalten wird (NFC)

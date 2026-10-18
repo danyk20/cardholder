@@ -12,4 +12,11 @@
     <string name="widget_title">लॉयल्टी कार्ड</string>
     <string name="widget_description">आपके पसंदीदा लॉयल्टी कार्ड, कोड बस एक टैप दूर</string>
     <string name="widget_empty">लॉयल्टी कार्ड जोड़ें, ताकि वह यहां दिखे.</string>
+    <string name="notification_channel_arrival">इस जगह के कार्ड</string>
+    <string name="notification_channel_arrival_description">जब आप उस स्टोर में पहुंचें जहां आपने कार्ड इस्तेमाल किया था, तब सही कार्ड दिखे</string>
+    <string name="notification_arrival_text">कोड दिखाने के लिए टैप करें</string>
+    <string name="notification_arrival_open">कार्ड खोलने के लिए टैप करें</string>
+    <string name="notification_arrival_locked_title">इस जगह का एक लॉक कार्ड</string>
+    <string name="notification_arrival_public">इस जगह का एक कार्ड</string>
+    <string name="notification_arrival_not_here">यह जगह नहीं है</string>
 </resources>

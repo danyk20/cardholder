@@ -12,4 +12,11 @@
     <string name="widget_title">会员卡</string>
     <string name="widget_description">您收藏的会员卡，轻点一下即可显示代码</string>
     <string name="widget_empty">添加会员卡后，会显示在这里。</string>
+    <string name="notification_channel_arrival">此地点的卡片</string>
+    <string name="notification_channel_arrival_description">您到达曾在该商店使用过卡片的地点时，显示对应的卡片</string>
+    <string name="notification_arrival_text">点按即可显示代码</string>
+    <string name="notification_arrival_open">点按即可打开卡片</string>
+    <string name="notification_arrival_locked_title">此地点的已锁定卡片</string>
+    <string name="notification_arrival_public">此地点的一张卡片</string>
+    <string name="notification_arrival_not_here">不是这个地点</string>
 </resources>

@@ -6,6 +6,12 @@ A Cardholder egy helyen tárolja bankkártyáit, igazolványait és hűségkárt
 • Olvassa be a műanyag kártyán lévő kódot a kamerával – vagy írja be kézzel
 • Támogatott formátumok: QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec és Data Matrix
 
+<b>A megfelelő kártya a megfelelő üzletben</b>
+• Opcionális: az alkalmazás megtanulja, hol használja az egyes kártyákat, és a közelben használtakat mutatja elöl
+• Már az első látogatáskor felismeri az üzlet Wi‑Fi-jét
+• Vagy érkezéskor értesítést kap a megfelelő kártyával – nincs háttérszolgáltatás, kíméli az akkumulátort
+• A helyek titkosítva maradnak a telefonján – soha nincsenek biztonsági mentésben, és soha nem küldjük el sehova
+
 <b>Bankkártyák</b>
 • Kártyaszám, lejárati dátum, kártyabirtokos és CVV tárolása
 • Az adatok kitöltése egy érintésmentes kártya telefonhoz tartásával (NFC)

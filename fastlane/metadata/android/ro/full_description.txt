@@ -6,6 +6,12 @@ Cardholder păstrează cardurile bancare, actele de identitate și cardurile de 
 • Scanați codul de pe cardul din plastic cu camera – sau introduceți-l manual
 • Acceptă QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec și Data Matrix
 
+<b>Cardul potrivit din magazinul potrivit</b>
+• Opțional: aplicația învață unde folosiți fiecare card și afișează primele cardurile folosite în apropiere
+• Recunoaște chiar și Wi‑Fi-ul magazinului la prima vizită
+• Sau primiți o notificare cu cardul potrivit când ajungeți – fără serviciu în fundal, ușor pentru baterie
+• Locurile rămân pe telefon, criptate – niciodată în backup-uri și niciodată trimise nicăieri
+
 <b>Carduri bancare</b>
 • Stocați numărul cardului, data expirării, titularul și codul CVV
 • Completați detaliile apropiind un card contactless de telefon (NFC)

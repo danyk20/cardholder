@@ -34,4 +34,17 @@
     <string name="field_code">Код</string>
     <string name="field_format">Тип кода</string>
     <string name="field_notes">Заметки</string>
+    <string name="detail_suggest_by_location">Предлагать по местоположению</string>
+    <string name="detail_learned_places">Запомненных мест: %1$d</string>
+    <string name="detail_places_learned_at_till">Запоминает, где вы показываете её код, и снова предлагает карту там</string>
+    <string name="detail_places_learned_on_request">Нажмите «Запомнить это место» там, где используете карту, чтобы её снова предлагали здесь</string>
+    <string name="detail_remember_place">Запомнить это место</string>
+    <string name="detail_forget_places">Забыть места</string>
+    <string name="detail_forget_places_title">Забыть места этой карты?</string>
+    <string name="detail_forget_places_message">Места, где вы использовали эту карту, будут удалены. Они снова запомнятся при следующем использовании.</string>
+    <string name="detail_forget">Забыть</string>
+    <string name="detail_place_remembered">Место запомнено</string>
+    <string name="detail_place_not_found">Не удалось определить ваше местоположение. Попробуйте ещё раз с включённым Wi‑Fi или рядом с окном.</string>
+    <string name="detail_place_no_permission">Разрешите Cardholder точное местоположение, чтобы запоминать места</string>
+    <string name="detail_place_location_off">Включите местоположение, чтобы запоминать места</string>
 </resources>

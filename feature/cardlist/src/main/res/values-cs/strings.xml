@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Přesunout %1$s</string>
     <string name="cardlist_move_up">Posunout nahoru</string>
     <string name="cardlist_move_down">Posunout dolů</string>
+    <string name="cardlist_nearby">Poblíž</string>
+    <string name="cardlist_all_cards">Všechny karty</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi obchodu poblíž</string>
+    <string name="cardlist_nearby_distance">Asi %1$s daleko</string>
 </resources>

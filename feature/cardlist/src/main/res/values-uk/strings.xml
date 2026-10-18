@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Перетягніть, щоб перемістити «%1$s»</string>
     <string name="cardlist_move_up">Перемістити вгору</string>
     <string name="cardlist_move_down">Перемістити вниз</string>
+    <string name="cardlist_nearby">Поруч</string>
+    <string name="cardlist_all_cards">Усі картки</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi магазину поруч</string>
+    <string name="cardlist_nearby_distance">Приблизно за %1$s</string>
 </resources>

@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">%1$s को खिसकाने के लिए खींचें</string>
     <string name="cardlist_move_up">ऊपर ले जाएं</string>
     <string name="cardlist_move_down">नीचे ले जाएं</string>
+    <string name="cardlist_nearby">आसपास</string>
+    <string name="cardlist_all_cards">सभी कार्ड</string>
+    <string name="cardlist_nearby_wifi">आसपास स्टोर का Wi‑Fi</string>
+    <string name="cardlist_nearby_distance">लगभग %1$s दूर</string>
 </resources>

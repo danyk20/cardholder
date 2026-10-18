@@ -6,6 +6,12 @@ Cardholder riunisce carte bancarie, documenti d'identità e carte fedeltà in un
 • Scansiona il codice della tua carta di plastica con la fotocamera oppure inseriscilo a mano
 • Supporta QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec e Data Matrix
 
+<b>La carta giusta nel negozio giusto</b>
+• Facoltativo: l'app impara dove usi ogni carta e mostra per prime quelle usate nelle vicinanze
+• Riconosce anche il Wi‑Fi del negozio già dalla prima visita
+• Oppure ricevi una notifica con la carta giusta quando arrivi – nessun servizio in background, poco consumo di batteria
+• I luoghi restano sul tuo telefono, criptati – mai nei backup e mai inviati a nessuno
+
 <b>Carte bancarie</b>
 • Memorizza numero della carta, data di scadenza, titolare e CVV
 • Compila i dati avvicinando una carta contactless al telefono (NFC)

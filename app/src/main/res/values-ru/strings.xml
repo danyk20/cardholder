@@ -12,4 +12,11 @@
     <string name="widget_title">Карты лояльности</string>
     <string name="widget_description">Ваши избранные карты лояльности: код в одно касание</string>
     <string name="widget_empty">Добавьте карту лояльности, чтобы она появилась здесь.</string>
+    <string name="notification_channel_arrival">Карты для этого места</string>
+    <string name="notification_channel_arrival_description">Нужная карта, когда вы приходите в магазин, где её использовали</string>
+    <string name="notification_arrival_text">Нажмите, чтобы показать код</string>
+    <string name="notification_arrival_open">Нажмите, чтобы открыть карту</string>
+    <string name="notification_arrival_locked_title">Заблокированная карта для этого места</string>
+    <string name="notification_arrival_public">Карта для этого места</string>
+    <string name="notification_arrival_not_here">Не это место</string>
 </resources>

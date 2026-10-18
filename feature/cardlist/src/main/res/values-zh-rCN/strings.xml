@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">拖动以移动“%1$s”</string>
     <string name="cardlist_move_up">上移</string>
     <string name="cardlist_move_down">下移</string>
+    <string name="cardlist_nearby">附近</string>
+    <string name="cardlist_all_cards">全部卡片</string>
+    <string name="cardlist_nearby_wifi">附近商店的 Wi‑Fi</string>
+    <string name="cardlist_nearby_distance">距离约 %1$s</string>
 </resources>

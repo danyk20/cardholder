@@ -12,4 +12,11 @@
     <string name="widget_title">멤버십 카드</string>
     <string name="widget_description">자주 쓰는 멤버십 카드의 코드를 탭 한 번으로 표시</string>
     <string name="widget_empty">멤버십 카드를 추가하면 여기에 표시됩니다.</string>
+    <string name="notification_channel_arrival">이 장소의 카드</string>
+    <string name="notification_channel_arrival_description">사용한 적 있는 매장에 도착하면 알맞은 카드 표시</string>
+    <string name="notification_arrival_text">탭하여 코드 표시</string>
+    <string name="notification_arrival_open">탭하여 카드 열기</string>
+    <string name="notification_arrival_locked_title">이 장소의 잠긴 카드</string>
+    <string name="notification_arrival_public">이 장소의 카드</string>
+    <string name="notification_arrival_not_here">이 장소가 아님</string>
 </resources>
