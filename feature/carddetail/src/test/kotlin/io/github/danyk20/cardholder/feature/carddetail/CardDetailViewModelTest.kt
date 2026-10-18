@@ -2,7 +2,9 @@ package io.github.danyk20.cardholder.feature.carddetail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import io.github.danyk20.cardholder.core.domain.usecase.RememberResult
 import io.github.danyk20.cardholder.core.model.Card
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
@@ -12,6 +14,7 @@ import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
 import io.github.danyk20.cardholder.core.testing.repository.FakeSecureClipboard
 import io.github.danyk20.cardholder.core.testing.repository.FakeSessionLockEvents
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
+import io.github.danyk20.cardholder.core.testing.repository.TestPlaces
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -31,6 +34,7 @@ class CardDetailViewModelTest {
     private val repository = FakeCardRepository()
     private val clipboard = FakeSecureClipboard()
     private val sessionLock = FakeSessionLockEvents()
+    private val places = TestPlaces(repository)
 
     private fun viewModel(card: Card) = CardDetailViewModel(
         savedStateHandle = SavedStateHandle(mapOf("cardId" to card.id.value)),
@@ -38,8 +42,46 @@ class CardDetailViewModelTest {
         summaryFactory = CardSummaryFactory(FakeShopRepository(), FakeBankRepository(), FakeCountryRepository()),
         deviceSecurity = FakeDeviceSecurity(),
         clipboard = clipboard,
+        cardPlaces = places.cardPlaces,
         sessionLockEvents = sessionLock,
     )
+
+    @Test
+    fun `place controls show only while suggestions are on`() = runTest {
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        val viewModel = viewModel(TestCards.visa)
+        assertNull(viewModel.uiState.value.places)
+
+        places.preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
+
+        assertEquals(PlacesUiState(placeCount = 0), viewModel.uiState.value.places)
+    }
+
+    @Test
+    fun `opening a card never learns a place, the button does`() = runTest {
+        places.preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
+        repository.add(TestCards.visa.copy(suggestByLocation = true), TestCards.visaDetails)
+        val viewModel = viewModel(TestCards.visa)
+        assertTrue(places.places.visits.isEmpty())
+
+        viewModel.onRememberPlace()
+
+        assertEquals(listOf(TestCards.visa.id), places.places.visits.map { it.first })
+        assertEquals(RememberResult.REMEMBERED, viewModel.uiState.value.places?.rememberResult)
+        viewModel.onRememberResultShown()
+        assertNull(viewModel.uiState.value.places?.rememberResult)
+    }
+
+    @Test
+    fun `switches suggestions for the card`() = runTest {
+        places.preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        val viewModel = viewModel(TestCards.visa)
+
+        viewModel.onSuggestByLocationChange(true)
+
+        assertTrue(repository.observeCard(TestCards.visa.id).first()!!.suggestByLocation)
+    }
 
     @Test
     fun `unlocked card shows details but hides the cvv`() {

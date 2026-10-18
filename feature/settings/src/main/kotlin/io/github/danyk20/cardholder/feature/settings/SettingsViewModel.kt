@@ -3,12 +3,16 @@ package io.github.danyk20.cardholder.feature.settings
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.github.danyk20.cardholder.core.domain.location.LocationAccess
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
 import io.github.danyk20.cardholder.core.domain.repository.AppDataRepository
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
+import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.security.ScreenCapturePolicy
+import io.github.danyk20.cardholder.core.domain.usecase.FindNearbyCardsUseCase
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import io.github.danyk20.cardholder.core.ui.launchSafely
@@ -26,16 +30,58 @@ class SettingsViewModel @Inject constructor(
     private val backupRepository: BackupRepository,
     private val screenCapturePolicy: ScreenCapturePolicy,
     private val appDataRepository: AppDataRepository,
+    private val placeRepository: PlaceRepository,
+    private val locationAccess: LocationAccess,
+    private val findNearbyCards: FindNearbyCardsUseCase,
 ) : ViewModel() {
     private val backup = MutableStateFlow(BackupUiState())
+    private val location = MutableStateFlow(readLocation())
 
     val uiState: StateFlow<SettingsUiState> = combine(
         preferencesRepository.preferences,
         backup,
         screenCapturePolicy.isAllowed,
-    ) { prefs, backup, screenshotsAllowed ->
-        SettingsUiState(preferences = prefs, backup = backup, screenshotsAllowed = screenshotsAllowed)
+        location,
+        placeRepository.observeTotal(),
+    ) { prefs, backup, screenshotsAllowed, location, placeCount ->
+        SettingsUiState(
+            preferences = prefs,
+            backup = backup,
+            screenshotsAllowed = screenshotsAllowed,
+            location = location.copy(placeCount = placeCount),
+        )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), SettingsUiState())
+
+    /** Picks up permissions and the Location switch changed in the system settings. */
+    fun onResume() = location.update { readLocation(message = it.message) }
+
+    /** Applies a mode whose permissions were granted. */
+    fun onPlaceSuggestionsChange(mode: PlaceSuggestions) {
+        onResume()
+        launchSafely {
+            preferencesRepository.setPlaceSuggestions(mode)
+            findNearbyCards.invalidate()
+        }
+    }
+
+    fun onForgetAllPlaces() {
+        launchSafely {
+            placeRepository.forgetAll()
+            findNearbyCards.invalidate()
+            location.update { it.copy(message = LocationMessage.PLACES_FORGOTTEN) }
+        }
+    }
+
+    fun onLocationMessage(message: LocationMessage) = location.update { it.copy(message = message) }
+
+    fun onLocationMessageShown() = location.update { it.copy(message = null) }
+
+    private fun readLocation(message: LocationMessage? = null) = LocationSettingsUiState(
+        permission = locationAccess.permission(),
+        isLocationEnabled = locationAccess.isLocationEnabled(),
+        isArrivalSupported = locationAccess.isArrivalSupported(),
+        message = message,
+    )
 
     fun onThemeModeChange(mode: ThemeMode) {
         launchSafely { preferencesRepository.setThemeMode(mode) }
@@ -94,6 +140,7 @@ data class SettingsUiState(
     val preferences: UserPreferences = UserPreferences(),
     val backup: BackupUiState = BackupUiState(),
     val screenshotsAllowed: Boolean = false,
+    val location: LocationSettingsUiState = LocationSettingsUiState(),
 )
 
 enum class BackupOperation { EXPORT, IMPORT }

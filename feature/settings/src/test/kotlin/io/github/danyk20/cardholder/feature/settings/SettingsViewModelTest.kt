@@ -1,13 +1,21 @@
 package io.github.danyk20.cardholder.feature.settings
 
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
+import io.github.danyk20.cardholder.core.domain.location.LocationPermission
+import io.github.danyk20.cardholder.core.domain.location.Place
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.ImportStrategy
+import io.github.danyk20.cardholder.core.model.CardId
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.repository.FakeAppDataRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeBackupRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeScreenCapturePolicy
 import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
+import io.github.danyk20.cardholder.core.testing.repository.TestPlaces
+import java.time.Instant
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertNull
@@ -28,10 +36,57 @@ class SettingsViewModelTest {
     private val backups = FakeBackupRepository()
     private val screenCapture = FakeScreenCapturePolicy()
     private val appData = FakeAppDataRepository()
-    private val viewModel by lazy { SettingsViewModel(preferences, backups, screenCapture, appData) }
+    private val places = TestPlaces(FakeCardRepository(), preferences)
+    private val viewModel by lazy {
+        SettingsViewModel(
+            preferencesRepository = preferences,
+            backupRepository = backups,
+            screenCapturePolicy = screenCapture,
+            appDataRepository = appData,
+            placeRepository = places.places,
+            locationAccess = places.access,
+            findNearbyCards = places.findNearbyCards,
+        )
+    }
 
     private fun TestScope.observeState() {
         backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) { viewModel.uiState.collect() }
+    }
+
+    @Test
+    fun `changes the suggestion mode`() = runTest {
+        observeState()
+
+        viewModel.onPlaceSuggestionsChange(PlaceSuggestions.ARRIVAL)
+
+        assertEquals(PlaceSuggestions.ARRIVAL, viewModel.uiState.value.preferences.placeSuggestions)
+        assertEquals(LocationPermission.PRECISE, viewModel.uiState.value.location.permission)
+    }
+
+    @Test
+    fun `forgets all places`() = runTest {
+        observeState()
+        places.places.add(
+            Place(1, CardId("card"), GeoPoint(48.0, 17.0), 10f, 1, Instant.parse("2026-10-01T10:00:00Z")),
+        )
+        assertEquals(1, viewModel.uiState.value.location.placeCount)
+
+        viewModel.onForgetAllPlaces()
+
+        assertEquals(0, viewModel.uiState.value.location.placeCount)
+        assertEquals(LocationMessage.PLACES_FORGOTTEN, viewModel.uiState.value.location.message)
+    }
+
+    @Test
+    fun `picks up permissions changed in the system settings`() = runTest {
+        observeState()
+        places.access.permission = LocationPermission.PRECISE_ALWAYS
+        places.access.arrivalSupported = false
+
+        viewModel.onResume()
+
+        assertEquals(LocationPermission.PRECISE_ALWAYS, viewModel.uiState.value.location.permission)
+        assertEquals(false, viewModel.uiState.value.location.isArrivalSupported)
     }
 
     @Test

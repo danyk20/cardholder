@@ -31,7 +31,8 @@ fun SecureScreen() {
     }
 }
 
-internal fun Context.findActivity(): Activity? {
+/** The activity hosting this context, if any. */
+fun Context.findActivity(): Activity? {
     var current: Context = this
     while (current is ContextWrapper) {
         if (current is Activity) return current

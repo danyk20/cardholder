@@ -5,6 +5,8 @@ import androidx.compose.ui.test.onRoot
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.github.takahirom.roborazzi.captureRoboImage
 import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
+import io.github.danyk20.cardholder.core.domain.location.LocationPermission
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import org.junit.Rule
 import org.junit.Test
@@ -25,7 +27,17 @@ class StoreScreenshotTest {
         composeRule.setContent {
             CardholderTheme(darkTheme = false, dynamicColor = false) {
                 SettingsScreen(
-                    state = SettingsUiState(preferences = UserPreferences(useDynamicColor = false)),
+                    state = SettingsUiState(
+                        preferences = UserPreferences(
+                            useDynamicColor = false,
+                            placeSuggestions = PlaceSuggestions.IN_APP,
+                        ),
+                        location = LocationSettingsUiState(
+                            permission = LocationPermission.PRECISE,
+                            isArrivalSupported = true,
+                            placeCount = 12,
+                        ),
+                    ),
                     onBack = {},
                     onThemeModeChange = {},
                     onDynamicColorChange = {},

@@ -9,6 +9,7 @@ import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
 import io.github.danyk20.cardholder.core.domain.security.SecureClipboard
 import io.github.danyk20.cardholder.core.domain.security.SessionLockEvents
+import io.github.danyk20.cardholder.core.domain.usecase.CardPlaces
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
@@ -29,6 +30,7 @@ class CardDetailViewModel @Inject constructor(
     private val summaryFactory: CardSummaryFactory,
     private val deviceSecurity: DeviceSecurity,
     private val clipboard: SecureClipboard,
+    private val cardPlaces: CardPlaces,
     sessionLockEvents: SessionLockEvents,
 ) : ViewModel() {
     val cardId = CardId(savedStateHandle.toRoute<CardDetailDestination>().cardId)
@@ -62,7 +64,47 @@ class CardDetailViewModel @Inject constructor(
         launchSafely(onError = ::onUnexpectedError) {
             sessionLockEvents.events.collect { onSessionLocked() }
         }
+        launchSafely(onError = ::onUnexpectedError) {
+            cardPlaces.observe(cardId).collect { places ->
+                _uiState.update {
+                    it.copy(
+                        places = if (places.isFeatureOn) {
+                            (it.places ?: PlacesUiState()).copy(placeCount = places.placeCount)
+                        } else {
+                            null
+                        },
+                    )
+                }
+            }
+        }
     }
+
+    fun onSuggestByLocationChange(enabled: Boolean) {
+        launchSafely(onError = ::onUnexpectedError) { cardPlaces.setSuggestByLocation(cardId, enabled) }
+    }
+
+    /** The user says they're using the card here; only this records a place of bank and ID cards. */
+    fun onRememberPlace() {
+        if (_uiState.value.places?.isRemembering != false) return
+        updatePlaces { it.copy(isRemembering = true) }
+        launchSafely(onError = ::onUnexpectedError) {
+            val result = try {
+                cardPlaces.rememberHere(cardId)
+            } finally {
+                updatePlaces { it.copy(isRemembering = false) }
+            }
+            updatePlaces { it.copy(rememberResult = result) }
+        }
+    }
+
+    fun onRememberResultShown() = updatePlaces { it.copy(rememberResult = null) }
+
+    fun onForgetPlaces() {
+        launchSafely(onError = ::onUnexpectedError) { cardPlaces.forget(cardId) }
+    }
+
+    private fun updatePlaces(transform: (PlacesUiState) -> PlacesUiState) =
+        _uiState.update { state -> state.copy(places = state.places?.let(transform)) }
 
     fun onResume() = _uiState.update { it.copy(canProtect = deviceSecurity.isDeviceSecure()) }
 

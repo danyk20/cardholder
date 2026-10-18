@@ -17,10 +17,13 @@ import androidx.compose.material.icons.rounded.DocumentScanner
 import androidx.compose.material.icons.rounded.DragHandle
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Flip
+import androidx.compose.material.icons.rounded.LocationOff
+import androidx.compose.material.icons.rounded.LocationOn
 import androidx.compose.material.icons.rounded.Lock
 import androidx.compose.material.icons.rounded.LockOpen
 import androidx.compose.material.icons.rounded.Loyalty
 import androidx.compose.material.icons.rounded.MoreVert
+import androidx.compose.material.icons.rounded.MyLocation
 import androidx.compose.material.icons.rounded.Photo
 import androidx.compose.material.icons.rounded.QrCode2
 import androidx.compose.material.icons.rounded.QrCodeScanner
@@ -59,6 +62,9 @@ object CardholderIcons {
     val Hide: ImageVector = Icons.Rounded.VisibilityOff
     val IdCard: ImageVector = Icons.Rounded.Badge
     val Lock: ImageVector = Icons.Rounded.Lock
+    val Place: ImageVector = Icons.Rounded.LocationOn
+    val PlaceOff: ImageVector = Icons.Rounded.LocationOff
+    val RememberPlace: ImageVector = Icons.Rounded.MyLocation
     val LoyaltyCard: ImageVector = Icons.Rounded.Loyalty
     val More: ImageVector = Icons.Rounded.MoreVert
     val Nfc: ImageVector = Icons.Rounded.Contactless

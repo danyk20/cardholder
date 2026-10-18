@@ -2,16 +2,27 @@ package io.github.danyk20.cardholder.feature.barcodefullscreen
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
+import io.github.danyk20.cardholder.core.domain.location.LocationFix
+import io.github.danyk20.cardholder.core.domain.usecase.RememberPlaceUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardInfo
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeLocationAccess
+import io.github.danyk20.cardholder.core.testing.repository.FakePlaceRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeSessionLockEvents
+import io.github.danyk20.cardholder.core.testing.repository.FakeSurroundingsProvider
+import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
+import java.time.Instant
 import kotlin.test.assertEquals
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
@@ -24,12 +35,48 @@ class BarcodeViewModelTest {
 
     private val repository = FakeCardRepository()
     private val sessionLock = FakeSessionLockEvents()
+    private val places = FakePlaceRepository(repository)
+    private val preferences = FakeUserPreferencesRepository()
+    private val sensors = FakeSurroundingsProvider().apply {
+        fix = LocationFix(GeoPoint(48.1486, 17.1077), 10f, Instant.parse("2026-10-18T12:00:00Z"))
+    }
+    private val rememberPlace = RememberPlaceUseCase(
+        cardRepository = repository,
+        placeRepository = places,
+        preferencesRepository = preferences,
+        surroundings = sensors,
+        locationAccess = FakeLocationAccess(),
+        applicationScope = CoroutineScope(UnconfinedTestDispatcher()),
+    )
 
     private fun viewModel(card: Card) = BarcodeViewModel(
         savedStateHandle = SavedStateHandle(mapOf("cardId" to card.id.value)),
         cardRepository = repository,
+        rememberPlace = rememberPlace,
         sessionLockEvents = sessionLock,
     )
+
+    @Test
+    fun `showing the code once teaches where the card is used`() = runTest {
+        preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
+        repository.add(TestCards.loyalty.copy(suggestByLocation = true), TestCards.loyaltyDetails)
+
+        val viewModel = viewModel(TestCards.loyalty)
+        repository.setFavourite(TestCards.loyalty.id, true)
+
+        assertEquals(listOf(TestCards.loyalty.id), places.visits.map { it.first })
+        assertEquals(BarcodeUiState.Ready::class, viewModel.uiState.value::class)
+    }
+
+    @Test
+    fun `a locked code teaches nothing before authentication`() = runTest {
+        preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
+        repository.add(TestCards.loyalty.copy(isLocked = true, suggestByLocation = true), TestCards.loyaltyDetails)
+
+        viewModel(TestCards.loyalty)
+
+        assertEquals(emptyList(), places.visits)
+    }
 
     @Test
     fun `shows the code of an unlocked loyalty card`() {

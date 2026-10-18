@@ -27,8 +27,13 @@ object NearbyMatcher {
         return candidates.any { candidate -> candidate.places.any { score(it, seen) >= CERTAIN_SCORE } }
     }
 
-    /** At most [MAX_SUGGESTIONS] cards that seem to be used nearby, the most likely first. */
-    fun match(candidates: List<SuggestionCandidate>, scan: List<AccessPoint>, fix: LocationFix?): List<NearbyCard> {
+    /** At most [limit] cards that seem to be used nearby, the most likely first. */
+    fun match(
+        candidates: List<SuggestionCandidate>,
+        scan: List<AccessPoint>,
+        fix: LocationFix?,
+        limit: Int = MAX_SUGGESTIONS,
+    ): List<NearbyCard> {
         val seen = scan.associateBy { it.bssid }
         val named = scan.filter {
             it.ssid != null && it.rssi >= WifiSignals.GOOD_RSSI && !WifiSignals.isHotspot(it.ssid)
@@ -41,7 +46,7 @@ object NearbyMatcher {
                     .thenBy { (_, reason) -> orderWithinTier(reason) }
                     .thenByDescending { (candidate, _) -> candidate.card.useCount },
             )
-            .take(MAX_SUGGESTIONS)
+            .take(limit)
             .map { (candidate, reason) -> NearbyCard(candidate.card.id, reason) }
     }
 

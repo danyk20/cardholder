@@ -7,6 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.security.SessionLockEvents
+import io.github.danyk20.cardholder.core.domain.usecase.RememberPlaceUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
@@ -26,6 +27,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 class BarcodeViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val cardRepository: CardRepository,
+    private val rememberPlace: RememberPlaceUseCase,
     sessionLockEvents: SessionLockEvents,
 ) : ViewModel() {
     val cardId = CardId(savedStateHandle.toRoute<BarcodeDestination>().cardId)
@@ -89,8 +91,12 @@ class BarcodeViewModel @Inject constructor(
         }
         _uiState.value = when (val details = cardRepository.readDetails(cardId)) {
             is SecureResult.Success -> {
-                // Each time the code is shown at the till counts towards the "most used" order.
-                if (!wasShown) cardRepository.recordUse(cardId)
+                // Each time the code is shown at the till counts towards the "most used" order, and
+                // teaches the app where the card is used (if the user switched that on).
+                if (!wasShown) {
+                    cardRepository.recordUse(cardId)
+                    rememberPlace.rememberInBackground(cardId)
+                }
                 wasShown = true
                 BarcodeUiState.Ready(
                     title = card.title,
