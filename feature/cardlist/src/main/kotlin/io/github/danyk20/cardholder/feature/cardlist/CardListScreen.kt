@@ -56,6 +56,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.github.danyk20.cardholder.core.designsystem.component.CardShape
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
@@ -88,6 +89,10 @@ fun CardListRoute(
             onReorderDone = viewModel::onReorderDone,
             onReorderCancel = viewModel::onReorderCancel,
         )
+    }
+    LifecycleResumeEffect(viewModel) {
+        viewModel.onVisible()
+        onPauseOrDispose { viewModel.onHidden() }
     }
     val reordering = (uiState as? CardListUiState.Success)?.reordering
     if (reordering != null) {
@@ -264,7 +269,21 @@ private fun CardGrid(
         item(span = { GridItemSpan(maxLineSpan) }) {
             SearchAndFilters(state.query, state.visibleTypes, onQueryChange, onTypeToggled)
         }
-        if (state.cards.isEmpty()) {
+        if (state.nearby.isNotEmpty()) {
+            item(key = NEARBY_HEADER, span = { GridItemSpan(maxLineSpan) }) {
+                SectionTitle(stringResource(R.string.cardlist_nearby), Modifier.animateItem())
+            }
+            items(state.nearby, key = { it.item.summary.card.id.value }) { nearby ->
+                Column(Modifier.animateItem(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    NearbyReasonLabel(nearby.reason)
+                    SelectableCard(selected = false) { CardFaceFor(nearby.item, onCardClick, onCardLongClick) }
+                }
+            }
+            item(key = ALL_CARDS_HEADER, span = { GridItemSpan(maxLineSpan) }) {
+                SectionTitle(stringResource(R.string.cardlist_all_cards), Modifier.animateItem())
+            }
+        }
+        if (state.cards.isEmpty() && state.nearby.isEmpty()) {
             item(span = { GridItemSpan(maxLineSpan) }) {
                 Text(
                     text = stringResource(R.string.cardlist_no_results),

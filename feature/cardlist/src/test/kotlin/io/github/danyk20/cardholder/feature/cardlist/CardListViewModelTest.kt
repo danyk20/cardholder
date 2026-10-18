@@ -2,12 +2,18 @@ package io.github.danyk20.cardholder.feature.cardlist
 
 import androidx.lifecycle.SavedStateHandle
 import app.cash.turbine.test
+import io.github.danyk20.cardholder.core.domain.location.AccessPoint
+import io.github.danyk20.cardholder.core.domain.location.Bssid
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
+import io.github.danyk20.cardholder.core.domain.location.NearbyReason
+import io.github.danyk20.cardholder.core.domain.location.Place
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.usecase.ObserveCardsUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeBackupRepository
@@ -17,6 +23,7 @@ import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepositor
 import io.github.danyk20.cardholder.core.testing.repository.FakeShareFileStore
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
+import io.github.danyk20.cardholder.core.testing.repository.TestPlaces
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
 import java.time.Instant
 import kotlin.test.assertEquals
@@ -33,6 +40,7 @@ class CardListViewModelTest {
     private val repository = FakeCardRepository()
     private val preferences = FakeUserPreferencesRepository()
     private val backups = FakeBackupRepository()
+    private val places = TestPlaces(repository, preferences)
     private val viewModel by lazy {
         CardListViewModel(
             observeCards = ObserveCardsUseCase(repository),
@@ -42,8 +50,57 @@ class CardListViewModelTest {
             backupRepository = backups,
             shareFileStore = FakeShareFileStore(),
             savedStateHandle = SavedStateHandle(),
+            findNearbyCards = places.findNearbyCards,
         )
     }
+
+    @Test
+    fun `suggests cards used nearby above the others, once`() = runTest {
+        preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.add(TestCards.loyalty.copy(suggestByLocation = true), TestCards.loyaltyDetails)
+        places.places.add(shopPlace())
+        places.sensors.accessPoints = listOf(AccessPoint(Bssid(1), "Shop", -55))
+
+        viewModel.onVisible()
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.nearby.isNotEmpty() }
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(listOf(TestCards.loyalty.id), state.nearby.map { it.item.summary.card.id })
+        assertEquals(NearbyReason.WifiHere(1.0), state.nearby.single().reason)
+        assertEquals(listOf(TestCards.visa.id), state.cards.map { it.summary.card.id })
+    }
+
+    @Test
+    fun `no suggestions while searching or with suggestions off`() = runTest {
+        repository.add(TestCards.loyalty.copy(suggestByLocation = true), TestCards.loyaltyDetails)
+        places.places.add(shopPlace())
+        places.sensors.accessPoints = listOf(AccessPoint(Bssid(1), "Shop", -55))
+
+        viewModel.onVisible()
+        assertEquals(emptyList(), awaitSuccessState().nearby)
+        assertEquals(0, places.sensors.wifiReads)
+
+        preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
+        viewModel.onVisible()
+        viewModel.onQueryChange("Coffee")
+        val state = awaitSuccessState()
+        assertEquals(emptyList(), state.nearby)
+        assertEquals(listOf(TestCards.loyalty.id), state.cards.map { it.summary.card.id })
+    }
+
+    private suspend fun awaitSuccessState() =
+        viewModel.uiState.first { it is CardListUiState.Success } as CardListUiState.Success
+
+    private fun shopPlace() = Place(
+        id = 1,
+        cardId = TestCards.loyalty.id,
+        centre = GeoPoint(48.1486, 17.1077),
+        accuracyMeters = 10f,
+        useCount = 3,
+        lastUsedAt = Instant.parse("2026-10-01T10:00:00Z"),
+        accessPoints = listOf(AccessPoint(Bssid(1), "Shop", -60)),
+    )
 
     @Test
     fun `shows empty state when there are no cards`() = runTest {
