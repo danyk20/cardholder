@@ -50,7 +50,7 @@ class StoreScreenshotTest {
                 )
             }
         }
-        composeRule.onRoot().captureRoboImage("$STORE_SCREENSHOTS/4_settings.png")
+        composeRule.onRoot().captureRoboImage("$STORE_SCREENSHOTS/5_settings.png")
     }
 }
 
