@@ -37,11 +37,14 @@ Product decisions:
 | Drag-to-reorder cards | Sort by name, date added or a custom order with a dedicated *Reorder cards* mode | Dragging compact rows is easier than dragging full card faces. |
 | Generated card faces in the list | Loyalty cards show their **scannable code directly on the card**; a tap opens it full-screen | Faster at the till; requested after the first review. |
 
-## Backlog (post-v1)
-- Favourites / most-used loyalty cards first.
-- OCR prefill of card number and expiry from the front photo.
-- Home-screen widget / app shortcuts for favourite loyalty cards.
+## Shipped after v1
+- 1.1.0: OCR prefill from card photos, favourites and "most used" order, app shortcuts and a home-screen
+  widget, expiry reminders, notes.
+- 1.2.0: sharing cards as encrypted `.cardholder` files.
+- 1.3.0: card suggestions by location.
+
+Also done: Roborazzi screenshot tests for the store listing and Room migration tests. See the [changelog](../CHANGELOG.md) for details.
+
+## Backlog
 - Optional app-wide lock on open.
-- Screenshot tests (Roborazzi) for key screens in light/dark.
-- Room migration tests once the schema reaches version 2.
 - ABI splits for GitHub APKs; more languages; Wear OS tile.

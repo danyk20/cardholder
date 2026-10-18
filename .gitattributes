@@ -1,0 +1,11 @@
+# Normalise line endings; Windows scripts keep CRLF.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary
+*.webp binary
+
+# Generated files: collapsed in diffs and left out of language statistics.
+core/database/schemas/** linguist-generated=true
+gradlew linguist-generated=true
+gradlew.bat linguist-generated=true

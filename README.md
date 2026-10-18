@@ -1,6 +1,7 @@
 # Cardholder
 
 [![CI](https://github.com/danyk20/cardholder/actions/workflows/ci.yml/badge.svg)](https://github.com/danyk20/cardholder/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/danyk20/cardholder)](https://github.com/danyk20/cardholder/releases/latest)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 ![minSdk](https://img.shields.io/badge/minSdk-30-green.svg)
 
@@ -35,7 +36,7 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 Details: [SECURITY.md](SECURITY.md) and the [architecture decision records](docs/adr).
 
 ## Tech stack
-Kotlin 2.4 · Jetpack Compose · Material 3 · Hilt · Room + SQLCipher · Android Keystore · CameraX · ML Kit · ZXing · Coil · Coroutines/Flow · kotlinx.serialization · Gradle convention plugins · Spotless/ktlint · detekt · Kover · GitHub Actions
+Kotlin 2.4 · Jetpack Compose · Material 3 · Hilt · Room + SQLCipher · Android Keystore · CameraX · ML Kit · ZXing · Coil · Glance · WorkManager · Play services location · Coroutines/Flow · kotlinx.serialization · Gradle convention plugins · Spotless/ktlint · detekt · Kover · Robolectric/Roborazzi · GitHub Actions
 
 ## Building
 Requirements: JDK 17+, Android SDK with platform 37.
@@ -46,7 +47,7 @@ Requirements: JDK 17+, Android SDK with platform 37.
 ./gradlew connectedDebugAndroidTest          # instrumented tests (device/emulator)
 ./gradlew koverHtmlReport                    # coverage report
 ```
-Releases are built by GitHub Actions; see [docs/RELEASING.md](docs/RELEASING.md).
+Releases are built by GitHub Actions; see [docs/RELEASING.md](docs/RELEASING.md) and the [changelog](CHANGELOG.md).
 
 ## Architecture
 Multi-module clean architecture with unidirectional data flow. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -57,11 +58,12 @@ core/model           Pure Kotlin domain models
 core/domain          Repository contracts, use cases, validators
 core/data            Repository implementations, shop catalogue, backup
 core/database        Room + SQLCipher
+core/location        Location & Wi-Fi signals, geofences for card suggestions
 core/security        Keystore keys, envelope encryption, clipboard, session lock
 core/storage         Encrypted card photo storage
 core/scanning        Document & barcode scanning (ML Kit, CameraX)
 core/barcode         Barcode/QR rendering (ZXing)
-core/designsystem    Theme, card surface, icons
+core/designsystem    Theme, card surface, icons, card network logos
 core/ui              Shared UI: card face, authenticator, secure screens
 core/testing         Test fakes and fixtures
 feature/*            Card list, editor, detail, full-screen barcode, settings

@@ -1,0 +1,1 @@
+Share cards: long-press to select them and send them as a .cardholder file, optionally with a password. Open .cardholder files from messengers, mail or file managers and choose per card how to import it.

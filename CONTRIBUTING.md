@@ -13,7 +13,8 @@ Thanks for your interest in improving Cardholder!
 ```bash
 ./gradlew spotlessApply detekt lintDebug testDebugUnitTest
 ```
-CI runs the same checks and must be green before merging.
+CI runs the same checks and must be green before merging. Changes to `.github/` are also checked with
+[actionlint](https://github.com/rhysd/actionlint).
 
 ## Conventions
 - **Branches**: `feat/…`, `fix/…`, `chore/…`, `docs/…`.
@@ -28,7 +29,7 @@ CI runs the same checks and must be green before merging.
 Please follow [SECURITY.md](SECURITY.md) – do not open public issues for vulnerabilities.
 
 ## CI speed
-CI runs three parallel jobs and normally takes 1–3 minutes, because almost every task comes from the Gradle
+CI runs its checks as parallel jobs and normally takes 1–3 minutes, because almost every task comes from the Gradle
 build cache saved by the last `main` run. Two things make it slow (5–7 minutes), by design of Gradle's caching:
 - **Updating Gradle or any build plugin** (AGP, Kotlin, Spotless, detekt, Kover, …) changes every task's cache key,
   so the first run afterwards rebuilds everything. Dependabot therefore bundles all Gradle updates into one
