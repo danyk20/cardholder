@@ -5,7 +5,7 @@ permalink: /privacy/
 
 # Cardholder privacy policy
 
-_Last updated: 18 October 2026_
+_Last updated: 18 October 2026 (update checks)_
 
 Cardholder is an open-source app for storing bank, ID and loyalty cards on an Android phone. It is developed by Daniel Košč ("I", "me"). This policy explains what happens to your data when you use the app.
 
@@ -13,7 +13,7 @@ Cardholder is an open-source app for storing bank, ID and loyalty cards on an An
 
 - Your cards stay on your device. I don't run any servers and never receive your cards, photos or backups.
 - There is no account, no advertising and no analytics or tracking by the app itself.
-- The app connects to the internet only to download an official logo from Wikimedia Commons, and only when you ask for it.
+- The app connects to the internet only to download an official logo from Wikimedia Commons and to check for updates, and only when you ask for it (or, for updates, once a week if you turn that on).
 - If you turn on card suggestions, the app remembers on your device where you used your cards. This location data is never sent to me or anyone else.
 - Google's on-device ML Kit libraries, used for scanning, send anonymous diagnostic information to Google (see below).
 
@@ -35,7 +35,8 @@ When you uninstall the app or clear its data, all of it is permanently deleted.
 
 - **Camera** – to scan barcodes and QR codes on your cards. Images are analysed on the device and are neither stored nor sent anywhere.
 - **NFC** – to read the card number and expiry date from a contactless bank card you hold to the phone. The data is read on the device and only used to fill in the form. The CVV and PIN cannot be read and are never requested.
-- **Internet** – only for downloading official logos (see below).
+- **Internet** – only for downloading official logos and checking for updates (see below).
+- **Install apps** (only the version from GitHub) – to install an update you downloaded from within the app. Android asks you to allow it the first time.
 - **Location (precise) and Wi‑Fi state** – only if you turn on card suggestions (see below).
 - **Location in the background** – only if you turn on arrival notifications (see below). Android asks you to allow it in the system settings.
 - **Notifications** – for expiry reminders and, if you turn them on, arrival notifications.
@@ -54,7 +55,14 @@ Learned places are stored only in the app's encrypted database. They are not inc
 
 ## Logo downloads
 
-When you choose to use the official logo of a shop or bank, the app downloads the image file from Wikimedia Commons (`upload.wikimedia.org`). Like any website, Wikimedia receives your IP address and the requested file name; no card data is sent. Wikimedia's handling of this request is governed by the [Wikimedia Foundation privacy policy](https://foundation.wikimedia.org/wiki/Policy:Privacy_policy). If you never choose an official logo, the app never connects to the internet.
+When you choose to use the official logo of a shop or bank, the app downloads the image file from Wikimedia Commons (`upload.wikimedia.org`). Like any website, Wikimedia receives your IP address and the requested file name; no card data is sent. Wikimedia's handling of this request is governed by the [Wikimedia Foundation privacy policy](https://foundation.wikimedia.org/wiki/Policy:Privacy_policy). If you never choose an official logo, the app never connects to the internet for logos.
+
+## Update checks
+
+In Settings you can check for a new version of the app, and you can turn on an automatic check (off by default; at most once a week, when you open the app). Where the app checks depends on where you installed it from:
+
+- **Google Play:** the app asks Google Play whether an update is available; Google Play downloads and installs it. This is covered by the [Google privacy policy](https://policies.google.com/privacy).
+- **GitHub:** the app asks GitHub for the latest release of Cardholder (`api.github.com`) and, if you choose to update, downloads the new app file from GitHub. GitHub receives your IP address and the requested address, like any website; no card data and no information about you is sent. GitHub's handling of this request is governed by the [GitHub privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement). The downloaded file is checked against the fingerprint GitHub publishes for it, and Android only installs it if it is signed with the same key as the app you have.
 
 ## Google ML Kit diagnostics
 

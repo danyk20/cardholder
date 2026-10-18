@@ -59,7 +59,7 @@
 
     <string name="settings_about">About</string>
     <string name="settings_version">Version %1$s</string>
-    <string name="settings_privacy">Your cards are encrypted and never leave this device unless you export them. The app only goes online to download an official shop or bank logo when you ask for it. Places learned for card suggestions stay on this device.</string>
+    <string name="settings_privacy">Your cards are encrypted and never leave this device unless you export them. The app only goes online when you ask it to: to download an official shop or bank logo, or to check for updates. Places learned for card suggestions stay on this device.</string>
     <string name="settings_privacy_policy">Privacy policy</string>
     <string name="settings_logo_credits">Logo credits</string>
     <string name="settings_logo_credits_description">Sources and licences of official logos</string>

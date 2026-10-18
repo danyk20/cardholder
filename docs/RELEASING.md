@@ -27,8 +27,8 @@ when a tag `v*` is pushed.
    git tag -a v1.3.0 -m "Cardholder 1.3.0"
    git push origin v1.3.0
    ```
-4. The workflow runs the unit tests, builds the signed APK and AAB (R8-minified) and publishes a GitHub
-   release with both files (`Cardholder-1.3.1.apk` and `.aab`) and that version's `CHANGELOG.md` section as release notes.
+4. The workflow runs the unit tests, builds the signed APK (`github` flavor) and AAB (`play` flavor), both
+   R8-minified, and publishes a GitHub release with both files (`Cardholder-1.3.1.apk` and `.aab`) and that version's `CHANGELOG.md` section as release notes.
 
 ## Before tagging
 - Run the instrumented tests (add the `run-instrumented` label to a PR or trigger the workflow manually).

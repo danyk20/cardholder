@@ -58,7 +58,7 @@
     <string name="settings_result_failed">Algo deu errado. Tente novamente.</string>
     <string name="settings_about">Sobre</string>
     <string name="settings_version">Versão %1$s</string>
-    <string name="settings_privacy">Seus cartões são criptografados e nunca saem deste dispositivo, a menos que você os exporte. O app só se conecta à internet para baixar o logotipo oficial de uma loja ou banco quando você pede. Os locais aprendidos para sugestões de cartões ficam somente neste dispositivo.</string>
+    <string name="settings_privacy">Seus cartões são criptografados e nunca saem deste dispositivo, a menos que você os exporte. O app só se conecta à internet quando você pede: para baixar o logotipo oficial de uma loja ou banco ou para verificar atualizações. Os locais aprendidos para sugestões de cartões ficam somente neste dispositivo.</string>
     <string name="settings_privacy_policy">Política de Privacidade</string>
     <string name="settings_logo_credits">Créditos dos logotipos</string>
     <string name="settings_logo_credits_description">Fontes e licenças dos logotipos oficiais</string>

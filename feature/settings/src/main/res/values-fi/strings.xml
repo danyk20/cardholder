@@ -54,7 +54,7 @@
     <string name="settings_result_failed">Jokin meni vikaan. Yritä uudelleen.</string>
     <string name="settings_about">Tietoja</string>
     <string name="settings_version">Versio %1$s</string>
-    <string name="settings_privacy">Korttisi on salattu, eivätkä ne poistu tältä laitteelta, ellet vie niitä. Sovellus muodostaa verkkoyhteyden vain, kun pyydät lataamaan kaupan tai pankin virallisen logon. Korttiehdotuksia varten opitut paikat pysyvät myös tällä laitteella.</string>
+    <string name="settings_privacy">Korttisi on salattu, eivätkä ne poistu tältä laitteelta, ellet vie niitä. Sovellus muodostaa verkkoyhteyden vain, kun pyydät: kaupan tai pankin virallisen logon lataamiseksi tai päivitysten tarkistamiseksi. Korttiehdotuksia varten opitut paikat pysyvät myös tällä laitteella.</string>
     <string name="settings_privacy_policy">Tietosuojakäytäntö</string>
     <string name="settings_logo_credits">Logojen lähteet</string>
     <string name="settings_logo_credits_description">Virallisten logojen lähteet ja lisenssit</string>

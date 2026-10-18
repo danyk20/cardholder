@@ -25,10 +25,11 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 - **Per-card lock**: any card can require authentication for *all* its data.
 - **Card suggestions by location** (opt-in): the app learns where you show each card (location and Wi‑Fi networks, on the device only) and puts the cards used nearby at the top of the list, or notifies you when you arrive at the shop. Battery-friendly: no background service; arrival notifications use the system's geofences.
 - **Password-encrypted backup** export/import.
+- **Updates from within the app**: *Check for updates* in Settings, optionally weekly. The Google Play version updates through Google Play; the GitHub version downloads the new release from GitHub and installs it after Android's confirmation.
 - Material 3 with dynamic colour, dark theme, adaptive layout.
 
 ## Privacy & security
-- **Offline by design.** No analytics, no cloud, no accounts. The only network request the app can make is downloading an official shop logo from Wikimedia Commons when you ask for it (HTTPS only). Places learned for card suggestions stay in the encrypted database and are never exported.
+- **Offline by design.** No analytics, no cloud, no accounts. The app only goes online when you ask it to: to download an official shop logo from Wikimedia Commons, or to check for updates (from Google Play or GitHub, depending on where you installed it; optionally once a week). HTTPS only; no card data is ever sent. Places learned for card suggestions stay in the encrypted database and are never exported.
 - Encrypted database (SQLCipher) **plus** per-value envelope encryption with Android Keystore keys.
 - CVVs and locked cards are encrypted with a key the Keystore only releases after **strong biometric or device-credential authentication**. This is real cryptographic protection, not just a UI gate.
 - Screenshots and recents thumbnails are blocked on sensitive screens (screenshots can be allowed temporarily in Settings, until you leave the app). Copied values are marked sensitive and cleared after a minute. Decrypted data is dropped when the app goes to the background.
@@ -40,8 +41,10 @@ Kotlin 2.4 · Jetpack Compose · Material 3 · Hilt · Room + SQLCipher · Andro
 
 ## Building
 Requirements: JDK 17+, Android SDK with platform 37.
+The app comes in two flavors: `github` (the APK on GitHub releases, updates itself from GitHub) and `play`
+(the bundle for Google Play, updated by Play).
 ```bash
-./gradlew assembleDebug                      # build the debug app
+./gradlew assembleGithubDebug                # build the debug app (GitHub flavor)
 ./gradlew testDebugUnitTest                  # unit & Robolectric tests
 ./gradlew spotlessCheck detekt lintDebug     # static analysis
 ./gradlew connectedDebugAndroidTest          # instrumented tests (device/emulator)

@@ -75,7 +75,7 @@
 
     <string name="settings_about">حول التطبيق</string>
     <string name="settings_version">الإصدار %1$s</string>
-    <string name="settings_privacy">يتم تشفير بطاقاتك ولا تغادر هذا الجهاز أبدًا إلا إذا صدّرتها. لا يتصل التطبيق بالإنترنت إلا لتنزيل شعار رسمي لمتجر أو بنك عندما تطلب ذلك. تبقى الأماكن المتعلَّمة لاقتراحات البطاقات على هذا الجهاز.</string>
+    <string name="settings_privacy">يتم تشفير بطاقاتك ولا تغادر هذا الجهاز أبدًا إلا إذا صدّرتها. لا يتصل التطبيق بالإنترنت إلا عندما تطلب ذلك: لتنزيل شعار رسمي لمتجر أو بنك، أو للتحقق من وجود تحديثات. تبقى الأماكن المتعلَّمة لاقتراحات البطاقات على هذا الجهاز.</string>
     <string name="settings_privacy_policy">سياسة الخصوصية</string>
     <string name="settings_logo_credits">حقوق الشعارات</string>
     <string name="settings_logo_credits_description">مصادر الشعارات الرسمية وتراخيصها</string>

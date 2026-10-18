@@ -21,7 +21,8 @@ Do not open a public issue. You can expect an initial response within 7 days.
 | Location history (card suggestions, opt-in) | Stored only in the encrypted database; at most 10 fixes per place; never in backups or shared files; forgettable per card or all at once and deleted with the card. Sensors are read only while the card list is open, when a card is used, or by system geofences. |
 | Lock-screen leaks of arrival notifications | `VISIBILITY_PRIVATE` with a generic public version; locked cards never show their title; no codes in notifications. |
 | Spoofed Wi‑Fi named like a shop | Can only cause a card to be suggested; nothing is shown or sent without the user opening it. |
-| Network exfiltration | The only network code downloads a shop logo on explicit request: HTTPS only (cleartext disabled), restricted to the Wikimedia media hosts, no redirects, image content type and 2 MB size limit. No card data is ever sent. |
+| Network exfiltration | Network code only downloads a shop logo or checks for updates, on explicit request (or a weekly update check the user switched on): HTTPS only (cleartext disabled). Logos: Wikimedia media hosts only, no redirects, image content type, 2 MB limit. Updates: GitHub's API and release hosts only (redirects only within them). No card data is ever sent. |
+| Malicious update | Google Play builds are updated by Play only. GitHub builds download the latest release's APK from GitHub over HTTPS, check its size and the SHA-256 GitHub publishes for it, and hand it to Android's package installer, which asks the user and only accepts an APK signed with the app's own key. The install permission exists only in the GitHub build. |
 
 See [docs/adr](docs/adr) for the detailed design decisions.
 

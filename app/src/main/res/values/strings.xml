@@ -23,6 +23,26 @@
     <string name="widget_nearby">Used nearby</string>
     <string name="widget_finding_nearby">Finding cards nearby…</string>
     <string name="widget_nothing_nearby">No card used here yet</string>
+    <string name="update_check">Check for updates</string>
+    <string name="update_source_github">Updates come from GitHub</string>
+    <string name="update_source_play">Updates come from Google Play</string>
+    <string name="update_last_checked">Last checked %1$s</string>
+    <string name="update_checking">Checking…</string>
+    <string name="update_up_to_date">You have the latest version (%1$s)</string>
+    <string name="update_check_failed">Couldn\'t check for updates. Check your internet connection and try again.</string>
+    <string name="update_available_title">Update</string>
+    <string name="update_available_version">Version %1$s is available</string>
+    <string name="update_available">A new version is available</string>
+    <string name="update_now">Update</string>
+    <string name="update_later">Later</string>
+    <string name="update_downloading">Downloading the update… %1$d%%</string>
+    <string name="update_installing">Finish the update in the window that opened</string>
+    <string name="update_install_failed">The update couldn\'t be installed. Please try again later.</string>
+    <string name="update_permission_title">Allow installing updates</string>
+    <string name="update_permission_message">To install updates from GitHub, Android needs your permission: allow Cardholder to install apps, then come back and tap Update.</string>
+    <string name="update_open_settings">Open settings</string>
+    <string name="update_auto">Check automatically</string>
+    <string name="update_auto_description">At most once a week, when you open the app</string>
     <!-- Only shown when the app runs in French, so these aren't translated. -->
     <string name="french_easter_egg_message" translatable="false">Oups ! Le français a été retiré du panthéon des langues du monde. Il est temps d\'en apprendre une plus utile : l\'anglais, le chinois, l\'hindi, l\'espagnol ou l\'arabe vous attendent !</string>
     <string name="french_easter_egg_promise" translatable="false">Je promets d\'apprendre une autre langue</string>

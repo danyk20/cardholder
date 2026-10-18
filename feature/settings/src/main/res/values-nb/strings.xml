@@ -54,7 +54,7 @@
     <string name="settings_result_failed">Noe gikk galt. Prøv igjen.</string>
     <string name="settings_about">Om</string>
     <string name="settings_version">Versjon %1$s</string>
-    <string name="settings_privacy">Kortene dine er kryptert og forlater aldri denne enheten med mindre du eksporterer dem. Appen kobler seg bare til Internett for å laste ned en offisiell butikk- eller banklogo når du ber om det. Steder som er lært for kortforslag, lagres bare på denne enheten.</string>
+    <string name="settings_privacy">Kortene dine er kryptert og forlater aldri denne enheten med mindre du eksporterer dem. Appen kobler seg bare til Internett når du ber om det: for å laste ned en offisiell butikk- eller banklogo eller for å se etter oppdateringer. Steder som er lært for kortforslag, lagres bare på denne enheten.</string>
     <string name="settings_privacy_policy">Personvernerklæring</string>
     <string name="settings_logo_credits">Logokreditering</string>
     <string name="settings_logo_credits_description">Kilder og lisenser for offisielle logoer</string>

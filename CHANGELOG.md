@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Added
+- *Check for updates* in Settings, and an optional automatic check (off by default, at most once a week
+  when the app opens). The Google Play version updates through Google Play; the version from GitHub
+  downloads the new release from GitHub, checks it and installs it after Android's confirmation.
 
 ## [1.3.4] - 2026-10-18
 ### Fixed

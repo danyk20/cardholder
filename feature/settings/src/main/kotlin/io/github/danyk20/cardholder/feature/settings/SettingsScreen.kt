@@ -52,8 +52,16 @@ import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.rememberAuthenticator
 import java.time.LocalDate
 
+/**
+ * [aboutContent] is shown under the version, e.g. checking for updates, which depends on where the app
+ * was installed from and is therefore provided by the app.
+ */
 @Composable
-fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewModel()) {
+fun SettingsRoute(
+    onBack: () -> Unit,
+    aboutContent: @Composable () -> Unit = {},
+    viewModel: SettingsViewModel = hiltViewModel(),
+) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     val authenticator = rememberAuthenticator()
     val exportTitle = stringResource(UiR.string.auth_title_export)
@@ -104,6 +112,7 @@ fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMod
             )
         },
         onLocationMessageShown = viewModel::onLocationMessageShown,
+        aboutContent = aboutContent,
     )
 
     LifecycleResumeEffect(viewModel) {
@@ -156,6 +165,7 @@ internal fun SettingsScreen(
     onResultShown: () -> Unit,
     locationActions: LocationSettingsActions = LocationSettingsActions(),
     onLocationMessageShown: () -> Unit = {},
+    aboutContent: @Composable () -> Unit = {},
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
     val resultMessage = state.backup.result?.let { resultMessage(it) }
@@ -271,6 +281,7 @@ internal fun SettingsScreen(
                 headlineContent = { Text(stringResource(R.string.settings_version, appVersion())) },
                 supportingContent = { Text(stringResource(R.string.settings_privacy)) },
             )
+            aboutContent()
             val uriHandler = LocalUriHandler.current
             ListItem(
                 headlineContent = { Text(stringResource(R.string.settings_privacy_policy)) },

@@ -59,7 +59,7 @@
 
     <string name="settings_about">Rreth</string>
     <string name="settings_version">Versioni %1$s</string>
-    <string name="settings_privacy">Kartat e tua janë të enkriptuara dhe nuk largohen kurrë nga kjo pajisje, përveçse kur i eksporton. Aplikacioni lidhet me internetin vetëm për të shkarkuar një logo zyrtare dyqani ose banke kur e kërkon ti. Vendet e mësuara për sugjerimet e kartave qëndrojnë në këtë pajisje.</string>
+    <string name="settings_privacy">Kartat e tua janë të enkriptuara dhe nuk largohen kurrë nga kjo pajisje, përveçse kur i eksporton. Aplikacioni lidhet me internetin vetëm kur e kërkon ti: për të shkarkuar një logo zyrtare dyqani ose banke, ose për të kontrolluar për përditësime. Vendet e mësuara për sugjerimet e kartave qëndrojnë në këtë pajisje.</string>
     <string name="settings_privacy_policy">Politika e privatësisë</string>
     <string name="settings_logo_credits">Burimet e logove</string>
     <string name="settings_logo_credits_description">Burimet dhe licencat e logove zyrtare</string>

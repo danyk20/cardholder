@@ -58,7 +58,7 @@
     <string name="settings_result_failed">Дошло је до грешке. Покушајте поново.</string>
     <string name="settings_about">О апликацији</string>
     <string name="settings_version">Верзија %1$s</string>
-    <string name="settings_privacy">Ваше картице су шифроване и никада не напуштају овај уређај осим ако их не извезете. Апликација приступа интернету само када затражите преузимање званичног логоа продавнице или банке. Места научена за предлоге картица остају на овом уређају.</string>
+    <string name="settings_privacy">Ваше картице су шифроване и никада не напуштају овај уређај осим ако их не извезете. Апликација приступа интернету само када то затражите: за преузимање званичног логоа продавнице или банке или за проверу ажурирања. Места научена за предлоге картица остају на овом уређају.</string>
     <string name="settings_privacy_policy">Политика приватности</string>
     <string name="settings_logo_credits">Ауторство логоа</string>
     <string name="settings_logo_credits_description">Извори и лиценце званичних логоа</string>

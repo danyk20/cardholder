@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- The only network access is downloading an official shop logo on request: HTTPS with system CAs only. -->
+<!-- Network access (official logos, update checks) is HTTPS with system CAs only. -->
 <network-security-config>
     <base-config cleartextTrafficPermitted="false">
         <trust-anchors>

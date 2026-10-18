@@ -67,7 +67,7 @@
 
     <string name="settings_about">Informácie</string>
     <string name="settings_version">Verzia %1$s</string>
-    <string name="settings_privacy">Vaše karty sú zašifrované a nikdy neopustia toto zariadenie, pokiaľ ich neexportujete. Aplikácia sa pripája na internet iba vtedy, keď si vyžiadate stiahnutie oficiálneho loga obchodu alebo banky. Miesta naučené pre návrhy kariet zostávajú iba v tomto zariadení.</string>
+    <string name="settings_privacy">Vaše karty sú zašifrované a nikdy neopustia toto zariadenie, pokiaľ ich neexportujete. Aplikácia sa pripája na internet iba vtedy, keď si to vyžiadate: na stiahnutie oficiálneho loga obchodu alebo banky alebo na kontrolu aktualizácií. Miesta naučené pre návrhy kariet zostávajú iba v tomto zariadení.</string>
     <string name="settings_privacy_policy">Pravidlá ochrany súkromia</string>
     <string name="settings_logo_credits">Zdroje log</string>
     <string name="settings_logo_credits_description">Zdroje a licencie oficiálnych log</string>
