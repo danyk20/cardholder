@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Kadi hizi zinalindwa kwa nenosiri. Omba nenosiri kutoka kwa mtumaji.</string>
     <string name="shared_import_password">Nenosiri</string>
     <string name="shared_import_wrong_password">Nenosiri si sahihi</string>
+    <string name="shared_import_newer_version">Kadi hizi zinatoka kwenye toleo jipya la Cardholder. Uingizaji unaweza kushindwa au kukosa baadhi ya maelezo; sasisha programu kwanza ili uwe na uhakika.</string>
     <string name="shared_import_message">Chagua kadi unazotaka kuongeza kwenye Cardholder.</string>
     <string name="shared_import_include">Leta</string>
     <string name="shared_import_lock">Funga</string>

@@ -76,6 +76,7 @@ class SharedImportViewModel @Inject constructor(private val backupRepository: Ba
                             locked = card.wasLocked,
                         )
                     },
+                    fromNewerVersion = preview.fromNewerVersion,
                 )
 
                 is SharedFilePreview.Unreadable -> when (preview.result) {
@@ -117,7 +118,8 @@ sealed interface SharedImportUiState {
 
     data class PasswordNeeded(val wrongPassword: Boolean) : SharedImportUiState
 
-    data class Choosing(val cards: List<SharedCardUi>) : SharedImportUiState
+    /** [fromNewerVersion]: the file comes from a newer app version, so the import may fail or miss details. */
+    data class Choosing(val cards: List<SharedCardUi>, val fromNewerVersion: Boolean = false) : SharedImportUiState
 
     data class Done(val result: BackupResult) : SharedImportUiState
 

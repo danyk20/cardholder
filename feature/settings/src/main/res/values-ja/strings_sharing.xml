@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">これらのカードはパスワードで保護されています。送信者に確認してください。</string>
     <string name="shared_import_password">パスワード</string>
     <string name="shared_import_wrong_password">パスワードが間違っています</string>
+    <string name="shared_import_newer_version">これらのカードは新しいバージョンの Cardholder から来ています。インポートに失敗したり、一部の情報が抜けたりする可能性があります。確実にするため、先にアプリを更新してください。</string>
     <string name="shared_import_message">Cardholder に追加するカードを選択してください。</string>
     <string name="shared_import_include">インポート</string>
     <string name="shared_import_lock">ロック</string>

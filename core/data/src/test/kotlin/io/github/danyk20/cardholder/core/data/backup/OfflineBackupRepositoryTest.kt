@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.core.data.backup
 
+import io.github.danyk20.cardholder.core.data.model.CardDetailsDto
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.CardContent
 import io.github.danyk20.cardholder.core.domain.model.CvvChange
@@ -15,9 +16,13 @@ import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardImageRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeDeviceSecurity
+import java.io.ByteArrayOutputStream
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneOffset
+import java.util.zip.ZipEntry
+import java.util.zip.ZipInputStream
+import java.util.zip.ZipOutputStream
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
 import kotlin.test.assertTrue
@@ -212,6 +217,81 @@ class OfflineBackupRepositoryTest {
         val target = FakeCardRepository()
         repository(target).import("share", null, ImportStrategy.SKIP_EXISTING)
         assertEquals(false, target.observeCards().first().single().isFavourite)
+    }
+
+    @Test
+    fun `files from a newer version are imported with a warning`() = runTest {
+        documents.files["newer"] = loyaltyArchive(formatVersion = 2)
+
+        val target = FakeCardRepository()
+        val preview = assertIs<SharedFilePreview.Cards>(repository(target).preview("newer", null))
+        assertTrue(preview.fromNewerVersion)
+        assertEquals(
+            BackupResult.Imported(imported = 1, skipped = 0, fromNewerVersion = true),
+            repository(target).import("newer", null, ImportStrategy.SKIP_EXISTING),
+        )
+        assertEquals(listOf(TestCards.loyalty.title), target.observeCards().first().map { it.title })
+    }
+
+    @Test
+    fun `a failed import of a newer file says the app needs an update`() = runTest {
+        // E.g. a newer app could store the country of an ID card elsewhere; this version needs it.
+        val idWithoutCountry = { card: BackupCard -> card.copy(type = "ID", details = CardDetailsDto.Id()) }
+        documents.files["newer"] = loyaltyArchive(formatVersion = 2, idWithoutCountry)
+        documents.files["broken"] = loyaltyArchive(BackupArchive.FORMAT_VERSION, idWithoutCountry)
+
+        assertEquals(
+            BackupResult.NewerVersion,
+            repository(FakeCardRepository()).import("newer", null, ImportStrategy.SKIP_EXISTING),
+        )
+        assertEquals(
+            BackupResult.InvalidFile,
+            repository(FakeCardRepository()).import("broken", null, ImportStrategy.SKIP_EXISTING),
+        )
+    }
+
+    @Test
+    fun `a newer encryption version says the app needs an update`() = runTest {
+        repository(FakeCardRepository().apply { add(TestCards.loyalty, TestCards.loyaltyDetails) })
+            .export("backup", password)
+        // The version byte follows the 4-byte magic.
+        documents.files.getValue("backup")[4] = 2
+
+        assertEquals(
+            BackupResult.NewerVersion,
+            repository(FakeCardRepository()).import("backup", password, ImportStrategy.SKIP_EXISTING),
+        )
+    }
+
+    /** An unencrypted file with the loyalty test card, written as if by an app using [formatVersion]. */
+    private suspend fun loyaltyArchive(formatVersion: Int, change: (BackupCard) -> BackupCard = { it }): ByteArray {
+        val source = FakeCardRepository().apply { add(TestCards.loyalty, TestCards.loyaltyDetails) }
+        repository(source).exportCards(listOf(TestCards.loyalty.id), "source", null)
+        val content = BackupArchive.read(documents.files.getValue("source"))
+        return BackupArchive.write(BackupContent(content.cards.map(change), content.images), 0)
+            .withFormatVersion(formatVersion)
+    }
+
+    /** Rewrites the format version in an archive's manifest. */
+    private fun ByteArray.withFormatVersion(version: Int): ByteArray {
+        val entries = ZipInputStream(inputStream()).use { zip ->
+            generateSequence { zip.nextEntry }.associate { it.name to zip.readBytes() }
+        }
+        return ByteArrayOutputStream().also { output ->
+            ZipOutputStream(output).use { zip ->
+                entries.forEach { (name, bytes) ->
+                    zip.putNextEntry(ZipEntry(name))
+                    val data = if (name == "cards.json") {
+                        bytes.decodeToString()
+                            .replace(Regex(""""formatVersion":\d+"""), """"formatVersion":$version""")
+                            .encodeToByteArray()
+                    } else {
+                        bytes
+                    }
+                    zip.write(data)
+                }
+            }
+        }.toByteArray()
     }
 
     private class InMemoryDocuments : DocumentAccess {

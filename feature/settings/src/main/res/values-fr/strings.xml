@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">Ce fichier n\'est pas une sauvegarde Cardholder ou il est endommagé</string>
     <string name="settings_result_auth_required">Confirmez votre identité pour exporter les cartes protégées</string>
     <string name="settings_result_device_not_secure">Configurez le verrouillage de l\'écran pour importer des cartes avec CVV ou verrouillage</string>
+    <string name="settings_result_newer_version">Ce fichier a été créé avec une version plus récente de Cardholder, certaines informations peuvent donc manquer. Mettez l\'application à jour et réimportez le fichier pour en être certain</string>
+    <string name="settings_result_newer_version_failed">Ce fichier a été créé avec une version plus récente de Cardholder et n\'a pas pu être importé. Mettez l\'application à jour et réessayez.</string>
     <string name="settings_result_failed">Un problème est survenu. Veuillez réessayer.</string>
     <string name="settings_about">À propos</string>
     <string name="settings_version">Version %1$s</string>

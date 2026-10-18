@@ -49,6 +49,8 @@
     <string name="settings_result_invalid_file">See pole Cardholderi varukoopia või on fail rikutud</string>
     <string name="settings_result_auth_required">Kaitstud kaartide eksportimiseks kinnitage oma isik</string>
     <string name="settings_result_device_not_secure">CVV-koodide või lukkudega kaartide importimiseks seadistage ekraanilukk</string>
+    <string name="settings_result_newer_version">Selle faili lõi uuem Cardholderi versioon, seega võivad mõned üksikasjad puududa. Veendumiseks uuendage rakendust ja importige fail uuesti</string>
+    <string name="settings_result_newer_version_failed">Selle faili lõi uuem Cardholderi versioon ja seda ei saanud importida. Uuendage rakendust ja proovige uuesti.</string>
     <string name="settings_result_failed">Midagi läks valesti. Proovige uuesti.</string>
     <string name="settings_about">Teave</string>
     <string name="settings_version">Versioon %1$s</string>

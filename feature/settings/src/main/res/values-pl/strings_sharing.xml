@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Te karty są chronione hasłem. Poproś nadawcę o hasło.</string>
     <string name="shared_import_password">Hasło</string>
     <string name="shared_import_wrong_password">Nieprawidłowe hasło</string>
+    <string name="shared_import_newer_version">Te karty pochodzą z nowszej wersji Cardholder. Import może się nie udać lub pominąć niektóre szczegóły; aby mieć pewność, najpierw zaktualizuj aplikację.</string>
     <string name="shared_import_message">Wybierz karty, które chcesz dodać do Cardholder.</string>
     <string name="shared_import_include">Importuj</string>
     <string name="shared_import_lock">Zablokuj</string>

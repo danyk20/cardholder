@@ -19,11 +19,9 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
+import io.github.danyk20.cardholder.core.ui.MIN_PASSWORD_LENGTH
 import io.github.danyk20.cardholder.core.ui.PasswordField
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
-
-/** Minimum length of a new backup password. */
-internal const val MIN_PASSWORD_LENGTH = 10
 
 enum class PasswordPurpose { EXPORT, IMPORT }
 

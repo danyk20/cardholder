@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Aceste carduri sunt protejate cu parolă. Cere-o expeditorului.</string>
     <string name="shared_import_password">Parolă</string>
     <string name="shared_import_wrong_password">Parolă greșită</string>
+    <string name="shared_import_newer_version">Aceste carduri provin de la o versiune mai nouă a Cardholder. Importul poate eșua sau poate omite unele detalii; actualizați mai întâi aplicația, pentru siguranță.</string>
     <string name="shared_import_message">Alege ce carduri vrei să adaugi în Cardholder.</string>
     <string name="shared_import_include">Importă</string>
     <string name="shared_import_lock">Blochează</string>

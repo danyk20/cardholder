@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Эти карты защищены паролем. Узнайте его у отправителя.</string>
     <string name="shared_import_password">Пароль</string>
     <string name="shared_import_wrong_password">Неверный пароль</string>
+    <string name="shared_import_newer_version">Эти карты взяты из более новой версии Cardholder. Импорт может не выполниться или пропустить некоторые данные; сначала обновите приложение, чтобы убедиться.</string>
     <string name="shared_import_message">Выберите, какие карты добавить в Cardholder.</string>
     <string name="shared_import_include">Импорт</string>
     <string name="shared_import_lock">Заблокировать</string>

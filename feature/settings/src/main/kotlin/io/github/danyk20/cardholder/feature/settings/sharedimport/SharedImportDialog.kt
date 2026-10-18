@@ -61,6 +61,7 @@ fun SharedImportDialog(uri: String, onClose: () -> Unit, viewModel: SharedImport
 
         is SharedImportUiState.Choosing -> ChooseCardsDialog(
             cards = current.cards,
+            fromNewerVersion = current.fromNewerVersion,
             onActionChange = viewModel::onActionChange,
             onLockedChange = viewModel::onLockedChange,
             onImport = viewModel::onImport,
@@ -143,6 +144,7 @@ private fun PasswordDialog(wrongPassword: Boolean, onConfirm: (CharArray) -> Uni
 @Composable
 private fun ChooseCardsDialog(
     cards: List<SharedCardUi>,
+    fromNewerVersion: Boolean,
     onActionChange: (String, SharedCardAction) -> Unit,
     onLockedChange: (String, Boolean) -> Unit,
     onImport: () -> Unit,
@@ -154,6 +156,14 @@ private fun ChooseCardsDialog(
         title = { Text(stringResource(R.string.shared_import_title)) },
         text = {
             LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (fromNewerVersion) {
+                    item {
+                        Text(
+                            stringResource(R.string.shared_import_newer_version),
+                            color = MaterialTheme.colorScheme.error,
+                        )
+                    }
+                }
                 item { Text(stringResource(R.string.shared_import_message)) }
                 items(cards, key = { it.preview.key }) { card ->
                     HorizontalDivider()

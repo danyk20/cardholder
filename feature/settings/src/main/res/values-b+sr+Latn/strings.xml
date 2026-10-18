@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">Ovo nije rezervna kopija aplikacije Cardholder ili je fajl oštećen</string>
     <string name="settings_result_auth_required">Potvrdite da ste to vi da biste izvezli zaštićene kartice</string>
     <string name="settings_result_device_not_secure">Podesite zaključavanje ekrana da biste uvezli kartice sa CVV kodovima ili zaključavanjem</string>
+    <string name="settings_result_newer_version">Ovaj fajl je napravila novija verzija aplikacije Cardholder, pa neki detalji mogu nedostajati. Ažurirajte aplikaciju i ponovo uvezite fajl da biste bili sigurni</string>
+    <string name="settings_result_newer_version_failed">Ovaj fajl je napravila novija verzija aplikacije Cardholder i ne može se uvesti. Ažurirajte aplikaciju i pokušajte ponovo.</string>
     <string name="settings_result_failed">Došlo je do greške. Pokušajte ponovo.</string>
     <string name="settings_about">O aplikaciji</string>
     <string name="settings_version">Verzija %1$s</string>

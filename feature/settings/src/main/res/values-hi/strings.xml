@@ -49,6 +49,8 @@
     <string name="settings_result_invalid_file">यह Cardholder का बैकअप नहीं है या फ़ाइल खराब है</string>
     <string name="settings_result_auth_required">सुरक्षित कार्ड एक्सपोर्ट करने के लिए पुष्टि करें कि यह आप ही हैं</string>
     <string name="settings_result_device_not_secure">CVV या लॉक वाले कार्ड इंपोर्ट करने के लिए स्क्रीन लॉक सेट करें</string>
+    <string name="settings_result_newer_version">यह फ़ाइल Cardholder के नए संस्करण से बनी है, इसलिए कुछ विवरण गायब हो सकते हैं। पक्का करने के लिए ऐप अपडेट करें और फ़ाइल फिर से इंपोर्ट करें</string>
+    <string name="settings_result_newer_version_failed">यह फ़ाइल Cardholder के नए संस्करण से बनी है और इसे इंपोर्ट नहीं किया जा सका। ऐप अपडेट करें और फिर से कोशिश करें।</string>
     <string name="settings_result_failed">कोई गड़बड़ी हुई. कृपया फिर से कोशिश करें.</string>
     <string name="settings_about">इसके बारे में</string>
     <string name="settings_version">वर्शन %1$s</string>

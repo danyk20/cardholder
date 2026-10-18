@@ -49,6 +49,8 @@
     <string name="settings_result_invalid_file">Αυτό δεν είναι αντίγραφο ασφαλείας του Cardholder ή το αρχείο είναι κατεστραμμένο</string>
     <string name="settings_result_auth_required">Επιβεβαιώστε ότι είστε εσείς για να εξαγάγετε προστατευμένες κάρτες</string>
     <string name="settings_result_device_not_secure">Ορίστε κλείδωμα οθόνης για να εισαγάγετε κάρτες με CVV ή κλείδωμα</string>
+    <string name="settings_result_newer_version">Αυτό το αρχείο δημιουργήθηκε με νεότερη έκδοση του Cardholder, οπότε ορισμένα στοιχεία ενδέχεται να λείπουν. Ενημερώστε την εφαρμογή και εισάγετε ξανά το αρχείο για σιγουριά</string>
+    <string name="settings_result_newer_version_failed">Αυτό το αρχείο δημιουργήθηκε με νεότερη έκδοση του Cardholder και δεν μπορούσε να εισαχθεί. Ενημερώστε την εφαρμογή και δοκιμάστε ξανά.</string>
     <string name="settings_result_failed">Παρουσιάστηκε πρόβλημα. Δοκιμάστε ξανά.</string>
     <string name="settings_about">Πληροφορίες</string>
     <string name="settings_version">Έκδοση %1$s</string>

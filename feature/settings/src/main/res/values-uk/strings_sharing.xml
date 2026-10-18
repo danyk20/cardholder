@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Ці картки захищено паролем. Запитайте його у відправника.</string>
     <string name="shared_import_password">Пароль</string>
     <string name="shared_import_wrong_password">Невірний пароль</string>
+    <string name="shared_import_newer_version">Ці картки походять з новішої версії Cardholder. Імпорт може не вдатися або пропустити деякі деталі; щоб переконатися, спершу оновіть застосунок.</string>
     <string name="shared_import_message">Виберіть, які картки додати до Cardholder.</string>
     <string name="shared_import_include">Імпорт</string>
     <string name="shared_import_lock">Заблокувати</string>

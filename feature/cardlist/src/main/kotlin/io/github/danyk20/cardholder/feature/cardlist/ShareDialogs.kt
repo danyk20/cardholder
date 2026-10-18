@@ -24,11 +24,9 @@ import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.model.Card
+import io.github.danyk20.cardholder.core.ui.MIN_PASSWORD_LENGTH
 import io.github.danyk20.cardholder.core.ui.PasswordField
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
-
-/** Minimum length of an (optional) share password. */
-internal const val MIN_SHARE_PASSWORD_LENGTH = 8
 
 private const val SHARE_MIME_TYPE = "application/octet-stream"
 private const val STORE_LINK = "https://play.google.com/store/apps/details?id=io.github.danyk20.cardholder"
@@ -64,7 +62,7 @@ internal fun SharePasswordDialog(onConfirm: (password: CharArray?) -> Unit, onDi
     // Deliberately not saveable: the password must not end up in the saved instance state.
     var password by remember { mutableStateOf("") }
     var confirmation by remember { mutableStateOf("") }
-    val tooShort = password.isNotEmpty() && password.length < MIN_SHARE_PASSWORD_LENGTH
+    val tooShort = password.isNotEmpty() && password.length < MIN_PASSWORD_LENGTH
     val mismatch = password.isNotEmpty() && confirmation != password
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -80,8 +78,8 @@ internal fun SharePasswordDialog(onConfirm: (password: CharArray?) -> Unit, onDi
                     error = if (tooShort) {
                         pluralStringResource(
                             R.plurals.cardlist_share_password_too_short,
-                            MIN_SHARE_PASSWORD_LENGTH,
-                            MIN_SHARE_PASSWORD_LENGTH,
+                            MIN_PASSWORD_LENGTH,
+                            MIN_PASSWORD_LENGTH,
                         )
                     } else {
                         null

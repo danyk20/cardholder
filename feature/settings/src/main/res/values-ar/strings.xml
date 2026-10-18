@@ -69,6 +69,8 @@
     <string name="settings_result_invalid_file">هذا الملف ليس نسخة احتياطية من Cardholder أو أنه تالف</string>
     <string name="settings_result_auth_required">أكِّد هويتك لتصدير البطاقات المحمية</string>
     <string name="settings_result_device_not_secure">اضبط قفل شاشة لاستيراد البطاقات التي تحتوي على رموز CVV أو أقفال</string>
+    <string name="settings_result_newer_version">هذا الملف أُنشئ بإصدار أحدث من Cardholder، لذا قد تكون بعض التفاصيل مفقودة. حدّث التطبيق وأعد استيراده للتأكد</string>
+    <string name="settings_result_newer_version_failed">هذا الملف أُنشئ بإصدار أحدث من Cardholder ولا يمكن استيراده. حدّث التطبيق وحاول مرة أخرى.</string>
     <string name="settings_result_failed">حدث خطأ ما. يُرجى المحاولة مرة أخرى.</string>
 
     <string name="settings_about">حول التطبيق</string>

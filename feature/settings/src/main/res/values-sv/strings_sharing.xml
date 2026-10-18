@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Dessa kort är skyddade med ett lösenord. Fråga avsändaren efter det.</string>
     <string name="shared_import_password">Lösenord</string>
     <string name="shared_import_wrong_password">Fel lösenord</string>
+    <string name="shared_import_newer_version">De här korten kommer från en nyare version av Cardholder. Importen kan misslyckas eller utelämna vissa uppgifter; uppdatera appen först för att vara säker.</string>
     <string name="shared_import_message">Välj vilka kort du vill lägga till i Cardholder.</string>
     <string name="shared_import_include">Importera</string>
     <string name="shared_import_lock">Lås</string>

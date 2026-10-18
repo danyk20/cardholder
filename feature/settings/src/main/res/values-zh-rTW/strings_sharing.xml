@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">這些卡片受密碼保護，請向傳送者索取密碼。</string>
     <string name="shared_import_password">密碼</string>
     <string name="shared_import_wrong_password">密碼錯誤</string>
+    <string name="shared_import_newer_version">這些卡片來自較新版本的 Cardholder。匯入可能失敗或遺漏部分詳細資訊；為確保完整，請先更新應用程式。</string>
     <string name="shared_import_message">選擇要加入 Cardholder 的卡片。</string>
     <string name="shared_import_include">匯入</string>
     <string name="shared_import_lock">鎖定</string>

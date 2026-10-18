@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Backup passwords need at least 8 characters, like passwords for shared cards (was 10).
+- Files made by a newer version of Cardholder are still imported, with a warning that some details may be
+  missing; if the import fails, the app says to update instead of calling the file damaged.
 
 ## [1.3.0] - 2026-10-18
 ### Added

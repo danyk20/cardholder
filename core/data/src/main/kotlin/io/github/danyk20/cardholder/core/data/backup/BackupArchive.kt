@@ -8,9 +8,22 @@ import java.util.zip.ZipInputStream
 import java.util.zip.ZipOutputStream
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.intOrNull
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 
-/** Decrypted content of a backup: card data plus the JPEG photos referenced by name. */
-internal class BackupContent(val cards: List<BackupCard>, val images: Map<String, ByteArray>)
+/**
+ * Decrypted content of a backup: card data plus the JPEG photos referenced by name. [formatVersion] is the
+ * version of the app's format that wrote it.
+ */
+internal class BackupContent(
+    val cards: List<BackupCard>,
+    val images: Map<String, ByteArray>,
+    val formatVersion: Int = BackupArchive.FORMAT_VERSION,
+) {
+    /** Written by a newer app version: unknown fields are ignored, so some details may be lost or unreadable. */
+    val isFromNewerVersion: Boolean get() = formatVersion > BackupArchive.FORMAT_VERSION
+}
 
 @Serializable
 internal data class BackupManifest(val formatVersion: Int, val exportedAt: Long, val cards: List<BackupCard>)
@@ -43,7 +56,7 @@ internal data class BackupCard(
 
 /** Zip container of a backup: `cards.json` plus `images/<name>.jpg`. */
 internal object BackupArchive {
-    private const val FORMAT_VERSION = 1
+    const val FORMAT_VERSION = 1
     private const val MANIFEST = "cards.json"
     private const val IMAGE_DIR = "images/"
     private const val MAX_ENTRY_BYTES = 32L * 1024 * 1024
@@ -75,17 +88,31 @@ internal object BackupArchive {
             generateSequence { zip.nextEntry }.forEach { entry ->
                 val data = zip.readBounded()
                 when {
-                    entry.name == MANIFEST -> manifest = runCatching {
-                        json.decodeFromString(BackupManifest.serializer(), data.decodeToString())
-                    }.getOrElse { throw InvalidBackupException("Malformed card data", it) }
+                    entry.name == MANIFEST -> manifest = decodeManifest(data.decodeToString())
 
                     entry.name.startsWith(IMAGE_DIR) && isSafeName(entry.name.removePrefix(IMAGE_DIR)) ->
                         images[entry.name.removePrefix(IMAGE_DIR)] = data
                 }
             }
         }
-        val cards = manifest?.cards ?: throw InvalidBackupException("Backup has no card data")
-        return BackupContent(cards, images)
+        val decoded = manifest ?: throw InvalidBackupException("Backup has no card data")
+        return BackupContent(decoded.cards, images, decoded.formatVersion)
+    }
+
+    /**
+     * Reads the format version on its own first, so a file from a newer app version whose cards can't be
+     * decoded is reported as such instead of as a damaged file.
+     */
+    private fun decodeManifest(text: String): BackupManifest = runCatching {
+        json.decodeFromString(BackupManifest.serializer(), text)
+    }.getOrElse { cause ->
+        val version = runCatching {
+            json.parseToJsonElement(text).jsonObject["formatVersion"]?.jsonPrimitive?.intOrNull
+        }.getOrNull()
+        if (version != null && version > FORMAT_VERSION) {
+            throw NewerBackupVersionException("Format version $version", cause)
+        }
+        throw InvalidBackupException("Malformed card data", cause)
     }
 
     private fun isSafeName(name: String) = name.isNotEmpty() && name.none { it == '/' || it == '\\' } && name != ".."

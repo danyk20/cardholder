@@ -45,6 +45,8 @@
     <string name="settings_result_invalid_file">這不是 Cardholder 備份檔案，或檔案已毀損</string>
     <string name="settings_result_auth_required">請確認是你本人，才能匯出受保護的卡片</string>
     <string name="settings_result_device_not_secure">請先設定螢幕鎖定，才能匯入含有 CVV 或已鎖定的卡片</string>
+    <string name="settings_result_newer_version">此檔案由較新版本的 Cardholder 建立，因此可能缺少部分詳細資訊。為確保完整，請更新應用程式後重新匯入</string>
+    <string name="settings_result_newer_version_failed">此檔案由較新版本的 Cardholder 建立，無法匯入。請更新應用程式後再試一次。</string>
     <string name="settings_result_failed">發生錯誤，請再試一次。</string>
     <string name="settings_about">關於</string>
     <string name="settings_version">版本 %1$s</string>

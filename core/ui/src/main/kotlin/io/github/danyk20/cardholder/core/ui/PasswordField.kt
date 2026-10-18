@@ -9,6 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 
+/** Minimum length of a new password protecting exported cards (backups and shared files). */
+const val MIN_PASSWORD_LENGTH = 8
+
 /** A single-line, masked password input that shows [error] below it. */
 @Composable
 fun PasswordField(

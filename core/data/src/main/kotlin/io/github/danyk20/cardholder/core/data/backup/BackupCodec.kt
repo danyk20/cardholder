@@ -12,6 +12,12 @@ import javax.crypto.spec.SecretKeySpec
 /** The backup file is not a Cardholder backup or is damaged. */
 class InvalidBackupException(message: String, cause: Throwable? = null) : Exception(message, cause)
 
+/**
+ * The file was made by a newer version of the app, in a format this version doesn't fully understand, and
+ * reading it failed.
+ */
+class NewerBackupVersionException(message: String, cause: Throwable? = null) : Exception(message, cause)
+
 /** The password does not decrypt the backup (or the file was modified). */
 class WrongPasswordException(cause: Throwable? = null) : Exception("Wrong password", cause)
 
@@ -32,7 +38,7 @@ class BackupCodec(
         val iv = ByteArray(IV_BYTES).also(random::nextBytes)
         val header = ByteBuffer.allocate(HEADER_BYTES)
             .put(MAGIC)
-            .put(VERSION)
+            .put(VERSION.toByte())
             .putInt(iterations)
             .put(salt)
             .put(iv)
@@ -62,7 +68,9 @@ class BackupCodec(
         val buffer = ByteBuffer.wrap(data)
         val magic = ByteArray(MAGIC.size).also(buffer::get)
         ensureValid(magic.contentEquals(MAGIC)) { "Not a Cardholder backup" }
-        val version = buffer.get()
+        val version = buffer.get().toUByte().toInt()
+        // A newer encryption scheme can't be decrypted at all: tell the user to update the app.
+        if (version > VERSION) throw NewerBackupVersionException("Encryption version $version")
         ensureValid(version == VERSION) { "Unsupported backup version $version" }
         val iterations = buffer.int
         ensureValid(iterations in MIN_ITERATIONS..MAX_ITERATIONS) { "Invalid KDF parameters" }
@@ -104,7 +112,7 @@ class BackupCodec(
         const val DEFAULT_ITERATIONS = 600_000
 
         private val MAGIC = "CHBK".encodeToByteArray()
-        private const val VERSION: Byte = 1
+        private const val VERSION = 1
         private const val SALT_BYTES = 16
         private const val IV_BYTES = 12
         private const val TAG_BYTES = 16

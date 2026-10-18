@@ -61,6 +61,8 @@
     <string name="settings_result_invalid_file">To nie jest kopia zapasowa Cardholder lub plik jest uszkodzony</string>
     <string name="settings_result_auth_required">Potwierdź swoją tożsamość, aby wyeksportować chronione karty</string>
     <string name="settings_result_device_not_secure">Skonfiguruj blokadę ekranu, aby zaimportować karty z kodami CVV lub blokadą</string>
+    <string name="settings_result_newer_version">Ten plik został utworzony w nowszej wersji Cardholder, więc niektóre szczegóły mogą brakować. Aby mieć pewność, zaktualizuj aplikację i zaimportuj plik ponownie</string>
+    <string name="settings_result_newer_version_failed">Ten plik został utworzony w nowszej wersji Cardholder i nie można go było zaimportować. Zaktualizuj aplikację i spróbuj ponownie.</string>
     <string name="settings_result_failed">Coś poszło nie tak. Spróbuj ponownie.</string>
 
     <string name="settings_about">Informacje</string>

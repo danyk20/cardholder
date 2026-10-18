@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Nämä kortit on suojattu salasanalla. Kysy se lähettäjältä.</string>
     <string name="shared_import_password">Salasana</string>
     <string name="shared_import_wrong_password">Väärä salasana</string>
+    <string name="shared_import_newer_version">Nämä kortit ovat peräisin uudemmasta Cardholderin versiosta. Tuonti voi epäonnistua tai jättää joitain tietoja pois; varmista päivittämällä sovellus ensin.</string>
     <string name="shared_import_message">Valitse, mitkä kortit lisätään Cardholderiin.</string>
     <string name="shared_import_include">Tuo</string>
     <string name="shared_import_lock">Lukitse</string>
