@@ -55,6 +55,13 @@ class CardListViewModelTest {
     }
 
     @Test
+    fun `the search text changes with every keystroke, before the list is filtered`() {
+        (1.."credit".length).forEach { viewModel.onQueryChange("credit".take(it)) }
+
+        assertEquals("credit", viewModel.searchText)
+    }
+
+    @Test
     fun `suggests cards used nearby above the others, once`() = runTest {
         preferences.setPlaceSuggestions(PlaceSuggestions.IN_APP)
         repository.add(TestCards.visa, TestCards.visaDetails)

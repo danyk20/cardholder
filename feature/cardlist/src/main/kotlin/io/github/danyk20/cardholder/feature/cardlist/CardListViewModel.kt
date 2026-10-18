@@ -1,5 +1,8 @@
 package io.github.danyk20.cardholder.feature.cardlist
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -51,6 +54,14 @@ class CardListViewModel @Inject constructor(
     private val findNearbyCards: FindNearbyCardsUseCase,
 ) : ViewModel() {
     private val query = savedStateHandle.getStateFlow(KEY_QUERY, "")
+
+    /**
+     * The search field's text, as Compose state so the field sees every keystroke at once. The list's
+     * [CardListUiState.Success.query] arrives later, after the cards were filtered and decrypted; showing
+     * that in the field reordered fast typing ("credit" became "reditc").
+     */
+    var searchText by mutableStateOf(query.value)
+        private set
 
     /** Card types currently shown; all of them by default. */
     private val visibleTypes = savedStateHandle.getStateFlow(KEY_VISIBLE_TYPES, ArrayList(CardType.entries))
@@ -214,6 +225,7 @@ class CardListViewModel @Inject constructor(
     }
 
     fun onQueryChange(query: String) {
+        searchText = query
         savedStateHandle[KEY_QUERY] = query
     }
 
