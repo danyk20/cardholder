@@ -18,4 +18,5 @@ interface UserPreferencesRepository {
     suspend fun setExpiryReminders(enabled: Boolean)
 
     suspend fun setPlaceSuggestions(mode: PlaceSuggestions)
+    suspend fun setFrenchEasterEggSeen()
 }

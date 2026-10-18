@@ -19,4 +19,7 @@
     <string name="widget_title">Loyalty cards</string>
     <string name="widget_description">Your favourite loyalty cards, one tap from the code</string>
     <string name="widget_empty">Add a loyalty card to see it here.</string>
+    <!-- Only shown when the app runs in French, so these aren't translated. -->
+    <string name="french_easter_egg_message" translatable="false">Oups ! Le français a été retiré du panthéon des langues du monde. Il est temps d\'en apprendre une plus utile : l\'anglais, le chinois, l\'hindi, l\'espagnol ou l\'arabe vous attendent !</string>
+    <string name="french_easter_egg_promise" translatable="false">Je promets d\'apprendre une autre langue</string>
 </resources>

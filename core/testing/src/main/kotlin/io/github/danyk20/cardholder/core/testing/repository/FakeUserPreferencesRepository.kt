@@ -24,4 +24,5 @@ class FakeUserPreferencesRepository : UserPreferencesRepository {
     override suspend fun setPlaceSuggestions(mode: PlaceSuggestions) = preferences.update {
         it.copy(placeSuggestions = mode)
     }
+    override suspend fun setFrenchEasterEggSeen() = preferences.update { it.copy(frenchEasterEggSeen = true) }
 }
