@@ -49,6 +49,10 @@ jobs:
           distribution: temurin
           java-version: 17
       - uses: gradle/actions/setup-gradle@v6
+        with:
+          # Lets the configuration cache be saved with the Gradle cache (~30-60 s less per job); without the
+          # secret it simply isn't saved.
+          cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       # Neither needs compiled code, so this finishes first and gives the quickest feedback.
       - run: ./gradlew spotlessCheck detekt
 
@@ -65,11 +69,19 @@ jobs:
           distribution: temurin
           java-version: 17
       - uses: gradle/actions/setup-gradle@v6
+        with:
+          # Lets the configuration cache be saved with the Gradle cache (~30-60 s less per job); without the
+          # secret it simply isn't saved.
+          cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       # Robolectric downloads its Android framework jar (~200 MB) into ~/.m2 at test time, outside Gradle's cache.
+      # Keyed on Robolectric's version only, so unrelated dependency updates keep the cache.
+      - name: Read Robolectric version
+        id: robolectric
+        run: echo "version=$(grep -m1 -E '^robolectric = "' gradle/libs.versions.toml | cut -d'"' -f2)" >> "$GITHUB_OUTPUT"
       - uses: actions/cache@v4
         with:
           path: ~/.m2/repository/org/robolectric
-          key: robolectric-${{ hashFiles('gradle/libs.versions.toml', 'config/robolectric/**') }}
+          key: robolectric-${{ steps.robolectric.outputs.version }}-${{ hashFiles('config/robolectric/**') }}
       # One invocation: Kover instruments the tests once instead of running them a second time for coverage.
       - run: ./gradlew testDebugUnitTest koverXmlReport
       - name: Upload reports
@@ -96,6 +108,10 @@ jobs:
           distribution: temurin
           java-version: 17
       - uses: gradle/actions/setup-gradle@v6
+        with:
+          # Lets the configuration cache be saved with the Gradle cache (~30-60 s less per job); without the
+          # secret it simply isn't saved.
+          cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       # The app's lint checks all modules it depends on (checkDependencies); linting each module again would
       # analyse everything twice. core:testing isn't an app dependency, so it's linted on its own.
       - run: ./gradlew :app:lintDebug :core:testing:lint assembleDebug

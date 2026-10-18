@@ -1,15 +1,19 @@
 version: 2
 updates:
+  # All Gradle updates (wrapper, plugins, libraries) come as one weekly PR. Any change to Gradle or a build
+  # plugin invalidates the whole CI build cache, so one combined PR means one full rebuild a week instead of
+  # one per update, and no PRs racing each other for a fresh cache.
   - package-ecosystem: gradle
     directory: /
     schedule:
       interval: weekly
     groups:
-      androidx:
-        patterns: ["androidx.*"]
-      kotlin:
-        patterns: ["org.jetbrains.kotlin*", "com.google.devtools.ksp*"]
+      gradle:
+        patterns: ["*"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
