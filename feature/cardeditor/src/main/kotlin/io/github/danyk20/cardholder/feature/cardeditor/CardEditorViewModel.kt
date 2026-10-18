@@ -4,11 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.navigation.toRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.danyk20.cardholder.core.domain.model.CardContent
 import io.github.danyk20.cardholder.core.domain.model.CardDraft
-import io.github.danyk20.cardholder.core.domain.model.CvvChange
-import io.github.danyk20.cardholder.core.domain.model.ImageChange
-import io.github.danyk20.cardholder.core.domain.model.ImageSource
 import io.github.danyk20.cardholder.core.domain.model.SecureResult
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
@@ -16,7 +12,6 @@ import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesReposi
 import io.github.danyk20.cardholder.core.domain.security.DeviceSecurity
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardResult
 import io.github.danyk20.cardholder.core.domain.usecase.SaveCardUseCase
-import io.github.danyk20.cardholder.core.domain.validation.BankCardValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardDraftValidator
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
@@ -25,12 +20,9 @@ import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardColor
-import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
-import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
-import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.Shop
 import io.github.danyk20.cardholder.core.ui.launchSafely
 import io.github.danyk20.cardholder.feature.cardeditor.navigation.CardEditorDestination
@@ -148,52 +140,6 @@ class CardEditorViewModel @Inject constructor(
         }
     }
 
-    private fun CardEditorUiState.prefilledWith(prefill: PhotoPrefill): CardEditorUiState = when (type) {
-        CardType.BANK -> bankPrefilled(prefill)
-        CardType.ID -> idPrefilled(prefill)
-        CardType.LOYALTY -> loyaltyPrefilled(prefill)
-    }
-
-    private fun CardEditorUiState.bankPrefilled(prefill: PhotoPrefill) = copy(
-        bank = bank.copy(
-            number = bank.number.ifEmpty { prefill.number.orEmpty() },
-            expiry = bank.expiry.ifEmpty {
-                prefill.expiry?.let { "%02d%02d".format(it.monthValue, it.year % CENTURY) }.orEmpty()
-            },
-            holder = bank.holder.ifEmpty { prefill.holder.orEmpty() },
-            // A CVV can only be stored with a screen lock, and never replaces a stored one silently.
-            cvv = bank.cvv.ifEmpty { prefill.cvv?.takeIf { canProtect && !bank.hasStoredCvv }.orEmpty() },
-            issuer = bank.issuer ?: prefill.bank?.let { BrandRef.Known(it.id, it.name) },
-        ),
-        logoChoiceFor = logoChoiceFor ?: prefill.bank?.takeIf { bank.issuer == null }
-            ?.let { found -> found.logo?.let { LogoChoice(found.name, it) } },
-    )
-
-    private fun CardEditorUiState.idPrefilled(prefill: PhotoPrefill) = copy(
-        id = id.copy(
-            country = id.country ?: prefill.countryCode?.let { code ->
-                countries.firstOrNull { it.code.value == code }
-            },
-            documentNumber = id.documentNumber.ifEmpty { prefill.documentNumber.orEmpty() },
-            expiry = id.expiry ?: prefill.idExpiry,
-        ),
-        title = title.ifEmpty { prefill.holderName.orEmpty() },
-    )
-
-    private fun CardEditorUiState.loyaltyPrefilled(prefill: PhotoPrefill): CardEditorUiState {
-        val newShop = prefill.shop?.takeIf { loyalty.shop == null }
-        val barcode = prefill.barcode?.takeIf { loyalty.code.isEmpty() }
-        return copy(
-            loyalty = loyalty.copy(
-                shop = loyalty.shop ?: newShop?.let { BrandRef.Known(it.id, it.name) },
-                code = barcode?.code ?: loyalty.code,
-                // A scanned code knows its format; otherwise the shop's usual format is the best guess.
-                format = barcode?.format ?: newShop?.takeIf { loyalty.code.isEmpty() }?.defaultFormat ?: loyalty.format,
-            ),
-            logoChoiceFor = logoChoiceFor ?: newShop?.let { found -> found.logo?.let { LogoChoice(found.name, it) } },
-        )
-    }
-
     fun onSideImageRemoved(side: CardSide) = updateSide(side, SideImage.None)
 
     fun onTitleChange(title: String) = update(CardField.TITLE) { copy(title = title) }
@@ -220,7 +166,7 @@ class CardEditorViewModel @Inject constructor(
         state.copy(
             bank = state.bank.copy(
                 number = number.filter(Char::isDigit).take(MAX_PAN),
-                expiry = expiry?.let { "%02d%02d".format(it.monthValue, it.year % CENTURY) } ?: state.bank.expiry,
+                expiry = expiry?.toExpiryDigits() ?: state.bank.expiry,
                 holder = holder ?: state.bank.holder,
             ),
             errors = state.errors - CardField.NUMBER - CardField.EXPIRY - CardField.HOLDER,
@@ -306,7 +252,7 @@ class CardEditorViewModel @Inject constructor(
         _uiState.update { it.copy(isSaving = true, errors = emptyMap(), duplicate = null) }
         launchSafely(onError = { onUnexpectedError() }) {
             if (!state.isEditing && !duplicateConfirmed) {
-                val duplicate = findDuplicate(draft)
+                val duplicate = findDuplicate(cardRepository.observeCards().first(), draft)
                 if (duplicate != null) {
                     _uiState.update { it.copy(isSaving = false, duplicate = duplicate) }
                     return@launchSafely
@@ -331,30 +277,6 @@ class CardEditorViewModel @Inject constructor(
     }
 
     fun onDuplicateDismissed() = _uiState.update { it.copy(duplicate = null) }
-
-    /** Only the plain, non-sensitive columns are compared, so locked cards don't need unlocking. */
-    private suspend fun findDuplicate(draft: CardDraft): DuplicateWarning? {
-        val cards = cardRepository.observeCards().first()
-        val content = draft.content
-        val sameBrand = when (content) {
-            is CardContent.Loyalty -> cards.firstOrNull { card ->
-                (card.info as? CardInfo.Loyalty)?.shop?.let { it.sameBrandAs(content.shop) } == true
-            }?.let { DuplicateWarning(DuplicateReason.SAME_SHOP, it.title) }
-
-            is CardContent.Bank -> content.issuer?.let { issuer ->
-                cards.firstOrNull { card -> (card.info as? CardInfo.Bank)?.issuer?.sameBrandAs(issuer) == true }
-            }?.let { DuplicateWarning(DuplicateReason.SAME_BANK, it.title) }
-
-            is CardContent.Id -> null
-        }
-        return sameBrand ?: cards.firstOrNull { it.title.trim().equals(draft.title.trim(), ignoreCase = true) }
-            ?.let { DuplicateWarning(DuplicateReason.SAME_NAME, it.title) }
-    }
-
-    private fun BrandRef.sameBrandAs(other: BrandRef): Boolean = when {
-        this is BrandRef.Known && other is BrandRef.Known -> id == other.id
-        else -> name.isNotBlank() && name.trim().equals(other.name.trim(), ignoreCase = true)
-    }
 
     fun onAuthenticationResult(purpose: AuthPurpose, succeeded: Boolean) {
         _uiState.update { it.copy(pendingAuthentication = null) }
@@ -388,7 +310,7 @@ class CardEditorViewModel @Inject constructor(
         when (val details = cardRepository.readDetails(id)) {
             is SecureResult.Success -> {
                 original = card
-                _uiState.update { it.populatedFrom(card, details.value) }
+                _uiState.update { it.populatedFrom(card, details.value, catalogues.countries::country) }
                 savedContent = _uiState.value.content
             }
 
@@ -402,117 +324,11 @@ class CardEditorViewModel @Inject constructor(
         }
     }
 
-    private fun CardEditorUiState.populatedFrom(card: Card, details: CardDetails): CardEditorUiState {
-        val base = copy(
-            loadState = LoadState.READY,
-            type = card.type,
-            title = card.title,
-            notes = details.notes,
-            color = card.color,
-            isLocked = card.isLocked,
-            front = card.sides.front?.let(SideImage::Existing) ?: SideImage.None,
-            back = card.sides.back?.let(SideImage::Existing) ?: SideImage.None,
-            logo = card.logo?.let(LogoImage::Existing) ?: LogoImage.None,
-        )
-        return when {
-            details is CardDetails.Bank -> base.copy(
-                bank = BankForm(
-                    number = details.number,
-                    expiry = "%02d%02d".format(details.expiry.monthValue, details.expiry.year % CENTURY),
-                    holder = details.holder,
-                    hasStoredCvv = card.hasCvv,
-                    issuer = (card.info as? CardInfo.Bank)?.issuer,
-                ),
-            )
-
-            details is CardDetails.Id && card.info is CardInfo.Id -> base.copy(
-                id = IdForm(
-                    country = catalogues.countries.country((card.info as CardInfo.Id).country),
-                    documentNumber = details.documentNumber.orEmpty(),
-                    expiry = details.expiry,
-                ),
-            )
-
-            details is CardDetails.Loyalty && card.info is CardInfo.Loyalty -> {
-                val info = card.info as CardInfo.Loyalty
-                base.copy(loyalty = LoyaltyForm(shop = info.shop, code = details.code, format = info.format))
-            }
-
-            else -> base
-        }
-    }
-
-    /**
-     * Builds the draft and validates it completely, so that all problems are shown at once. Values the
-     * form cannot represent yet (an unparsable expiry, no country or shop) are reported as errors and
-     * replaced by placeholders for the remaining validation.
-     */
+    /** Validates the whole form at once, so that all problems are shown together. */
     private fun buildDraft(state: CardEditorUiState): Pair<CardDraft?, Map<CardField, ValidationError>> {
-        val formErrors = mutableMapOf<CardField, ValidationError>()
-        val content = buildContent(state, formErrors)
-        val draft = CardDraft(
-            id = state.editingId,
-            title = state.title.ifBlank { state.defaultTitle },
-            color = state.color,
-            content = content,
-            front = imageChange(state.front, original?.sides?.front != null),
-            back = imageChange(state.back, original?.sides?.back != null),
-            logo = if (state.type == CardType.ID) ImageChange.Keep else logoChange(state.logo),
-            isLocked = state.isLocked,
-        )
+        val (draft, formErrors) = state.toDraft(original)
         val errors = validator.validate(draft) + formErrors
         return (if (errors.isEmpty()) draft else null) to errors
-    }
-
-    private fun buildContent(
-        state: CardEditorUiState,
-        formErrors: MutableMap<CardField, ValidationError>,
-    ): CardContent = when (state.type) {
-        CardType.BANK -> CardContent.Bank(
-            details = CardDetails.Bank(
-                number = state.bank.number,
-                expiry = BankCardValidator.parseExpiry(state.bank.expiry) ?: PLACEHOLDER_EXPIRY.also {
-                    formErrors[CardField.EXPIRY] =
-                        BankCardValidator.validateExpiry(state.bank.expiry) ?: ValidationError.INVALID_DATE
-                },
-                holder = state.bank.holder,
-                notes = state.notes.trim(),
-            ),
-            cvv = when {
-                state.bank.cvv.isNotEmpty() -> CvvChange.Set(state.bank.cvv)
-                state.bank.removeStoredCvv -> CvvChange.Remove
-                else -> CvvChange.Keep
-            },
-            issuer = state.bank.issuer,
-        )
-
-        CardType.ID -> CardContent.Id(
-            country = state.id.country?.code ?: PLACEHOLDER_COUNTRY.also {
-                formErrors[CardField.COUNTRY] = ValidationError.REQUIRED
-            },
-            details = CardDetails.Id(state.id.documentNumber, state.id.expiry, state.notes.trim()),
-        )
-
-        CardType.LOYALTY -> CardContent.Loyalty(
-            shop = state.loyalty.shop ?: BrandRef.Custom("").also {
-                formErrors[CardField.SHOP] = ValidationError.REQUIRED
-            },
-            format = state.loyalty.format,
-            details = CardDetails.Loyalty(state.loyalty.code, state.notes.trim()),
-        )
-    }
-
-    private fun imageChange(side: SideImage, hadImage: Boolean): ImageChange = when (side) {
-        is SideImage.Existing -> ImageChange.Keep
-        is SideImage.New -> ImageChange.Replace(ImageSource.Uri(side.uri))
-        SideImage.None -> if (hadImage) ImageChange.Remove else ImageChange.Keep
-    }
-
-    private fun logoChange(logo: LogoImage): ImageChange = when (logo) {
-        is LogoImage.Existing -> ImageChange.Keep
-        is LogoImage.Downloaded -> ImageChange.Replace(ImageSource.Bytes(logo.bytes))
-        is LogoImage.Picked -> ImageChange.Replace(ImageSource.Uri(logo.uri))
-        LogoImage.None -> if (original?.logo != null) ImageChange.Remove else ImageChange.Keep
     }
 
     private fun updateSide(side: CardSide, image: SideImage) = _uiState.update {
@@ -529,8 +345,5 @@ class CardEditorViewModel @Inject constructor(
         const val MAX_PAN = 19
         const val MAX_CVV = 4
         const val EXPIRY_DIGITS = 4
-        const val CENTURY = 100
-        val PLACEHOLDER_EXPIRY: YearMonth = YearMonth.of(2000, 1)
-        val PLACEHOLDER_COUNTRY = CountryCode.of("XX")!!
     }
 }
