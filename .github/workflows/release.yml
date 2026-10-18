@@ -60,14 +60,29 @@ jobs:
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: ./gradlew testDebugUnitTest assembleRelease bundleRelease
 
+      # Gradle names them app-release.*; users should see what they downloaded, e.g. Cardholder-1.3.1.apk.
+      - name: Name files after the app and version
+        run: |
+          name="Cardholder-${GITHUB_REF_NAME#v}"
+          mkdir -p "$RUNNER_TEMP/dist"
+          for ext in apk aab; do
+            dir=app/build/outputs/$([ "$ext" = apk ] && echo apk || echo bundle)/release
+            files=("$dir"/*."$ext")
+            if [ "${#files[@]}" -ne 1 ] || [ ! -f "${files[0]}" ]; then
+              echo "::error::Expected exactly one .$ext in $dir"; exit 1
+            fi
+            cp "${files[0]}" "$RUNNER_TEMP/dist/$name.$ext"
+          done
+          ls -l "$RUNNER_TEMP/dist"
+
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v3
         with:
           name: Cardholder ${{ github.ref_name }}
           body_path: ${{ runner.temp }}/release-notes.md
           files: |
-            app/build/outputs/apk/release/*.apk
-            app/build/outputs/bundle/release/*.aab
+            ${{ runner.temp }}/dist/*.apk
+            ${{ runner.temp }}/dist/*.aab
 
       - name: Remove signing keystore
         if: always()

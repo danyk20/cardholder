@@ -7,7 +7,7 @@ Step-by-step checklist for publishing Cardholder (`io.github.danyk20.cardholder`
 2. New personal accounts must run a **closed test with at least 12 testers who stay opted in for 14 consecutive days** before production access can be requested.
 
 ## 2. Upload key and signed bundle
-Follow [RELEASING.md](RELEASING.md) to create the upload keystore and the GitHub secrets, then push the tag `v1.0.0`. The *Release* workflow attaches `app-release.aab` to the GitHub release.
+Follow [RELEASING.md](RELEASING.md) to create the upload keystore and the GitHub secrets, then push the tag `v1.0.0`. The *Release* workflow attaches `Cardholder-<version>.aab` (and the APK) to the GitHub release.
 Opt in to **Play App Signing** (default): Google keeps the app signing key and the keystore only acts as the upload key.
 
 ## 3. Create the app
