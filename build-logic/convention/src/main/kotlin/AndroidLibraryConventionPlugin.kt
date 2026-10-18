@@ -23,6 +23,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 lint {
                     warningsAsErrors = true
                     abortOnError = true
+                    // Tests aren't shipped; analysing them doubles lint's work for no user-facing benefit.
+                    ignoreTestSources = true
                     disable += setOf("GradleDependency", "NewerVersionAvailable", "AndroidGradlePluginVersion")
                 }
             }
