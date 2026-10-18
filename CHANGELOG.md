@@ -4,6 +4,8 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+
+## [1.3.0] - 2026-10-18
 ### Added
 - Card suggestions by location (off by default): in Settings choose *When I open the app* or *Also notify
   when I arrive*. The app remembers where you show each loyalty card's code (location and the Wi‑Fi
