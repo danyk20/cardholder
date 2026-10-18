@@ -1,5 +1,7 @@
 name: Instrumented tests
 
+# Real-device behaviour (Android Keystore, biometric-bound keys) can't be tested on the JVM. Emulators are slow,
+# so this runs nightly, on demand, and on pull requests labelled `run-instrumented`.
 on:
   schedule:
     - cron: "0 3 * * *"
@@ -7,17 +9,23 @@ on:
   pull_request:
     types: [labeled, synchronize]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
 jobs:
   connected:
+    name: Connected tests (API ${{ matrix.api-level }})
     if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'run-instrumented')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
+        # The minimum SDK and a recent release.
         api-level: [30, 35]
     steps:
       - uses: actions/checkout@v7
@@ -28,12 +36,7 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
-      - uses: actions/setup-java@v6
-        with:
-          distribution: temurin
-          java-version: 17
-
-      - uses: gradle/actions/setup-gradle@v6
+      - uses: ./.github/actions/setup-gradle
 
       - name: Run instrumented tests
         uses: reactivecircus/android-emulator-runner@v2
@@ -50,3 +53,4 @@ jobs:
         with:
           name: instrumented-reports-${{ matrix.api-level }}
           path: "**/build/reports/androidTests/"
+          retention-days: 14

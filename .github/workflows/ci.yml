@@ -12,7 +12,7 @@ concurrency:
 permissions:
   contents: read
 
-# Three jobs run in parallel on separate runners; the last one reports under the name branch protection requires.
+# The checks run in parallel on separate runners; the last job reports under the name branch protection requires.
 jobs:
   changes:
     name: Detect changes
@@ -22,6 +22,7 @@ jobs:
       pull-requests: read
     outputs:
       code: ${{ steps.filter.outputs.code }}
+      workflows: ${{ steps.filter.outputs.workflows }}
     steps:
       - uses: actions/checkout@v7
       - uses: dorny/paths-filter@v4
@@ -35,6 +36,21 @@ jobs:
               - '!docs/**'
               - '!fastlane/**'
               - '!**/*.md'
+            workflows:
+              - '.github/workflows/**'
+              - '.github/actions/**'
+
+  workflow-lint:
+    name: Workflow lint
+    needs: changes
+    if: needs.changes.outputs.workflows == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      # Catches typos in expressions, unknown inputs and shell mistakes before they break a release.
+      - name: actionlint
+        run: docker run --rm -v "$PWD:/repo" --workdir /repo rhysd/actionlint:1.7.7 -color
 
   static-analysis:
     name: Spotless & detekt
@@ -44,14 +60,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-java@v6
+      - uses: ./.github/actions/setup-gradle
         with:
-          distribution: temurin
-          java-version: 17
-      - uses: gradle/actions/setup-gradle@v6
-        with:
-          # Lets the configuration cache be saved with the Gradle cache (~30-60 s less per job); without the
-          # secret it simply isn't saved.
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       # Neither needs compiled code, so this finishes first and gives the quickest feedback.
       - run: ./gradlew spotlessCheck detekt
@@ -64,14 +74,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-java@v6
+      - uses: ./.github/actions/setup-gradle
         with:
-          distribution: temurin
-          java-version: 17
-      - uses: gradle/actions/setup-gradle@v6
-        with:
-          # Lets the configuration cache be saved with the Gradle cache (~30-60 s less per job); without the
-          # secret it simply isn't saved.
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       # Robolectric downloads its Android framework jar (~200 MB) into ~/.m2 at test time, outside Gradle's cache.
       # Keyed on Robolectric's version only, so unrelated dependency updates keep the cache.
@@ -103,14 +107,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-java@v6
+      - uses: ./.github/actions/setup-gradle
         with:
-          distribution: temurin
-          java-version: 17
-      - uses: gradle/actions/setup-gradle@v6
-        with:
-          # Lets the configuration cache be saved with the Gradle cache (~30-60 s less per job); without the
-          # secret it simply isn't saved.
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       # The app's lint checks all modules it depends on (checkDependencies); linting each module again would
       # analyse everything twice. core:testing isn't an app dependency, so it's linted on its own.
@@ -133,10 +131,13 @@ jobs:
     # The status check that branch protection requires; it passes when every job passed or was skipped.
     name: Static analysis, tests & build
     if: always()
-    needs: [changes, static-analysis, unit-tests, lint-and-build]
+    needs: [changes, workflow-lint, static-analysis, unit-tests, lint-and-build]
     runs-on: ubuntu-latest
     steps:
       - name: Check job results
+        env:
+          FAILED: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+          RESULTS: ${{ toJSON(needs) }}
         run: |
-          echo '${{ toJSON(needs) }}'
-          if ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}; then exit 1; fi
+          echo "$RESULTS"
+          if [ "$FAILED" = "true" ]; then exit 1; fi
