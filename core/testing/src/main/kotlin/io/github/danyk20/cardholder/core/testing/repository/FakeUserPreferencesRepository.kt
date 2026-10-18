@@ -19,4 +19,6 @@ class FakeUserPreferencesRepository : UserPreferencesRepository {
     override suspend fun setExpiryReminders(enabled: Boolean) = preferences.update {
         it.copy(expiryReminders = enabled)
     }
+
+    override suspend fun setFrenchEasterEggSeen() = preferences.update { it.copy(frenchEasterEggSeen = true) }
 }

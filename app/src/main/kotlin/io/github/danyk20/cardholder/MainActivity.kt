@@ -89,6 +89,9 @@ class MainActivity : FragmentActivity() {
                     } else {
                         CompositionLocalProvider(LocalScreenCaptureAllowed provides screenCaptureAllowed) {
                             CardholderNavHost()
+                            if (!preferences.frenchEasterEggSeen) {
+                                FrenchEasterEgg(onPromise = viewModel::onFrenchEasterEggPromised)
+                            }
                             sharedFileUri?.let { uri -> SharedImportDialog(uri, onClose = { sharedFileUri = null }) }
                         }
                     }

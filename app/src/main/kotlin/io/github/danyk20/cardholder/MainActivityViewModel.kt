@@ -12,10 +12,11 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
-    userPreferencesRepository: UserPreferencesRepository,
+    private val userPreferencesRepository: UserPreferencesRepository,
     private val appDataRepository: AppDataRepository,
 ) : ViewModel() {
     /** Opened once at start; if the data can't be decrypted, the app offers to start over instead of crashing. */
@@ -33,6 +34,10 @@ class MainActivityViewModel @Inject constructor(
         }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), MainActivityUiState.Loading)
 
     fun onEraseAllData() = appDataRepository.eraseAllData()
+
+    fun onFrenchEasterEggPromised() {
+        viewModelScope.launch { userPreferencesRepository.setFrenchEasterEggSeen() }
+    }
 
     private companion object {
         const val STOP_TIMEOUT_MILLIS = 5_000L
