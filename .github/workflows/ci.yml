@@ -66,10 +66,14 @@ jobs:
           java-version: 17
       - uses: gradle/actions/setup-gradle@v6
       # Robolectric downloads its Android framework jar (~200 MB) into ~/.m2 at test time, outside Gradle's cache.
+      # Keyed on Robolectric's version only, so unrelated dependency updates keep the cache.
+      - name: Read Robolectric version
+        id: robolectric
+        run: echo "version=$(grep -E '^robolectric = ' gradle/libs.versions.toml | cut -d'"' -f2)" >> "$GITHUB_OUTPUT"
       - uses: actions/cache@v4
         with:
           path: ~/.m2/repository/org/robolectric
-          key: robolectric-${{ hashFiles('gradle/libs.versions.toml', 'config/robolectric/**') }}
+          key: robolectric-${{ steps.robolectric.outputs.version }}-${{ hashFiles('config/robolectric/**') }}
       # One invocation: Kover instruments the tests once instead of running them a second time for coverage.
       - run: ./gradlew testDebugUnitTest koverXmlReport
       - name: Upload reports
