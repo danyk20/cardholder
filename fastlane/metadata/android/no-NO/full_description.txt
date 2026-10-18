@@ -6,6 +6,12 @@ Cardholder samler bankkort, ID-kort og kundekort på ett sted på telefonen – 
 • Skann koden fra plastkortet med kameraet – eller skriv den inn
 • Støtter QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec og Data Matrix
 
+<b>Riktig kort i riktig butikk</b>
+• Valgfritt: appen lærer hvor du bruker hvert kort, og viser kortene du har brukt i nærheten først
+• Gjenkjenner til og med butikkens Wi‑Fi ved første besøk
+• Eller få et varsel med riktig kort når du kommer frem – ingen bakgrunnstjeneste, og det er snilt mot batteriet
+• Stedene lagres på telefonen din, kryptert – aldri i sikkerhetskopier og aldri sendt noe sted
+
 <b>Bankkort</b>
 • Lagre kortnummer, utløpsdato, kortinnehaver og CVV
 • Fyll inn detaljene ved å holde et kontaktløst kort mot telefonen (NFC)

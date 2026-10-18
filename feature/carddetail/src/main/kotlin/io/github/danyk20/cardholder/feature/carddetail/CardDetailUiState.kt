@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.feature.carddetail
 
+import io.github.danyk20.cardholder.core.domain.usecase.RememberResult
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.ui.CardSummary
 
@@ -29,6 +30,14 @@ enum class AuthAction {
     REMOVE_LOCK,
 }
 
+/** The card's suggestions by location; shown only while they're on in the settings. */
+data class PlacesUiState(
+    val placeCount: Int = 0,
+    val isRemembering: Boolean = false,
+    /** The outcome of "Remember this place", until its message was shown. */
+    val rememberResult: RememberResult? = null,
+)
+
 data class CardDetailUiState(
     val summary: CardSummary? = null,
     val notFound: Boolean = false,
@@ -40,6 +49,7 @@ data class CardDetailUiState(
     val copiedLabel: String? = null,
     val isDeleted: Boolean = false,
     val error: DetailError? = null,
+    val places: PlacesUiState? = null,
 ) {
     override fun toString(): String = "CardDetailUiState(details=${details::class.simpleName}, cvv=██)"
 }

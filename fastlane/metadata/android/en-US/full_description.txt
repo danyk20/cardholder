@@ -6,6 +6,12 @@ Cardholder keeps your bank cards, ID cards and loyalty cards in one place on you
 • Scan the code from your plastic card with the camera – or type it in
 • Supports QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec and Data Matrix
 
+<b>The right card at the right shop</b>
+• Optional: the app learns where you use each card and shows the cards used nearby first
+• Even notices the shop's Wi‑Fi on your first visit
+• Or get a notification with the right card when you arrive – no background service, easy on the battery
+• Places stay on your phone, encrypted – never in backups and never sent anywhere
+
 <b>Bank cards</b>
 • Store card number, expiry date, card holder and CVV
 • Fill in the details by holding a contactless card to your phone (NFC)

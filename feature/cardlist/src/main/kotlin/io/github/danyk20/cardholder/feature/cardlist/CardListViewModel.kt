@@ -4,12 +4,15 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.github.danyk20.cardholder.core.domain.location.NearbyCard
+import io.github.danyk20.cardholder.core.domain.location.NearbyReason
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
 import io.github.danyk20.cardholder.core.domain.model.getOrNull
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.ShareFileStore
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
+import io.github.danyk20.cardholder.core.domain.usecase.FindNearbyCardsUseCase
 import io.github.danyk20.cardholder.core.domain.usecase.ObserveCardsUseCase
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.Card
@@ -22,6 +25,7 @@ import io.github.danyk20.cardholder.core.ui.CardSummary
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
 import io.github.danyk20.cardholder.core.ui.launchSafely
 import javax.inject.Inject
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -44,6 +48,7 @@ class CardListViewModel @Inject constructor(
     private val backupRepository: BackupRepository,
     private val shareFileStore: ShareFileStore,
     private val savedStateHandle: SavedStateHandle,
+    private val findNearbyCards: FindNearbyCardsUseCase,
 ) : ViewModel() {
     private val query = savedStateHandle.getStateFlow(KEY_QUERY, "")
 
@@ -59,6 +64,11 @@ class CardListViewModel @Inject constructor(
 
     /** The working order while the user rearranges cards; `null` when not reordering. */
     private val reorderDraft = MutableStateFlow<List<CardSummary>?>(null)
+
+    /** Cards used where the user seems to be; looked up while the list is on screen. */
+    private val nearby = MutableStateFlow<List<NearbyCard>>(emptyList())
+    private var nearbyJob: Job? = null
+    private var isVisible = false
 
     private val cards = combine(query, visibleTypes, sort) { query, types, sort -> Triple(query, types.toSet(), sort) }
         .flatMapLatest { (query, types, sort) ->
@@ -78,19 +88,38 @@ class CardListViewModel @Inject constructor(
             }
         }
 
-    val uiState: StateFlow<CardListUiState> = combine(cards, reorderDraft, selection, share) {
+    val uiState: StateFlow<CardListUiState> = combine(cards, reorderDraft, selection, share, nearby) {
             state,
             draft,
             ids,
             share,
+            nearby,
         ->
         // Only cards that are currently shown can be shared, so hidden ones never leave by surprise.
         val selected = state.cards.map { it.summary.card }.filter { it.id.value in ids }
-        state.copy(reordering = draft, selected = selected, share = share) as CardListUiState
+        state.withNearby(if (state.query.isBlank() && ids.isEmpty()) nearby else emptyList())
+            .copy(reordering = draft, selected = selected, share = share) as CardListUiState
     }
         // E.g. the database can't be read: show an error instead of crashing.
         .catch { emit(CardListUiState.Error) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), CardListUiState.Loading)
+
+    /** The list came on screen: suggests cards used nearby, if the user switched that on. */
+    fun onVisible() {
+        isVisible = true
+        refreshNearby()
+    }
+
+    fun onHidden() {
+        isVisible = false
+    }
+
+    private fun refreshNearby() {
+        nearbyJob?.cancel()
+        nearbyJob = launchSafely(onError = { nearby.value = emptyList() }) {
+            nearby.value = findNearbyCards(visibleTypes.value.toSet())
+        }
+    }
 
     fun onSortChange(sort: CardSort) {
         launchSafely(onError = { reorderDraft.value = null }) { preferencesRepository.setCardSort(sort) }
@@ -192,6 +221,7 @@ class CardListViewModel @Inject constructor(
     fun onTypeToggled(type: CardType) {
         val current = visibleTypes.value
         savedStateHandle[KEY_VISIBLE_TYPES] = ArrayList(if (type in current) current - type else current + type)
+        if (isVisible) refreshNearby()
     }
 
     private companion object {
@@ -204,6 +234,20 @@ class CardListViewModel @Inject constructor(
 
 /** A card in the list; [code] is set for unlocked loyalty cards. */
 data class CardListItem(val summary: CardSummary, val code: LoyaltyCode? = null)
+
+/** A card suggested at the top of the list, and why. */
+data class NearbyItem(val item: CardListItem, val reason: NearbyReason)
+
+/** Moves the [nearby] cards that are shown out of the list into the suggestions, keeping their order. */
+private fun CardListUiState.Success.withNearby(nearby: List<NearbyCard>): CardListUiState.Success {
+    val shown = cards.associateBy { it.summary.card.id }
+    val suggested = nearby.mapNotNull { suggestion ->
+        shown[suggestion.cardId]?.let { NearbyItem(it, suggestion.reason) }
+    }
+    if (suggested.isEmpty()) return copy(nearby = emptyList())
+    val ids = suggested.map { it.item.summary.card.id }.toSet()
+    return copy(nearby = suggested, cards = cards.filterNot { it.summary.card.id in ids })
+}
 
 data class LoyaltyCode(val value: String, val format: BarcodeFormat) {
     override fun toString(): String = "LoyaltyCode(format=$format)"
@@ -226,6 +270,8 @@ sealed interface CardListUiState {
         /** Cards selected for sharing; selection mode is on while not empty. */
         val selected: List<Card> = emptyList(),
         val share: ShareState = ShareState.Idle,
+        /** Cards suggested because they were used nearby; not repeated in [cards]. */
+        val nearby: List<NearbyItem> = emptyList(),
     ) : CardListUiState
 }
 

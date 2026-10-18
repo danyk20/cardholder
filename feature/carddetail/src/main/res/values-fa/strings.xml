@@ -33,4 +33,17 @@
     <string name="field_code">کد</string>
     <string name="field_format">نوع کد</string>
     <string name="field_notes">یادداشت‌ها</string>
+    <string name="detail_suggest_by_location">پیشنهاد بر اساس موقعیت مکانی</string>
+    <string name="detail_learned_places">مکان‌های یادگرفته‌شده: %1$d</string>
+    <string name="detail_places_learned_at_till">جایی را که کد را نشان می‌دهید یاد می‌گیرد و همان‌جا دوباره این کارت را پیشنهاد می‌دهد</string>
+    <string name="detail_places_learned_on_request">در جایی که از کارت استفاده می‌کنید «این مکان را به خاطر بسپار» را بزنید تا همان‌جا دوباره پیشنهاد شود</string>
+    <string name="detail_remember_place">این مکان را به خاطر بسپار</string>
+    <string name="detail_forget_places">فراموش کردن مکان‌ها</string>
+    <string name="detail_forget_places_title">مکان‌های این کارت فراموش شوند؟</string>
+    <string name="detail_forget_places_message">مکان‌هایی که از این کارت استفاده کرده‌اید حذف می‌شوند. دفعهٔ بعد که از آن استفاده کنید، دوباره یاد گرفته می‌شوند.</string>
+    <string name="detail_forget">فراموش کردن</string>
+    <string name="detail_place_remembered">مکان به خاطر سپرده شد</string>
+    <string name="detail_place_not_found">مکان فعلی‌تان پیدا نشد. با روشن بودن Wi‑Fi یا نزدیک پنجره دوباره امتحان کنید.</string>
+    <string name="detail_place_no_permission">برای به خاطر سپردن مکان‌ها، مکان دقیق را برای Cardholder مجاز کنید</string>
+    <string name="detail_place_location_off">برای به خاطر سپردن مکان‌ها، موقعیت مکانی را روشن کنید</string>
 </resources>

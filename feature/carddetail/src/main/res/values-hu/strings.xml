@@ -33,4 +33,17 @@
     <string name="field_code">Kód</string>
     <string name="field_format">Kódtípus</string>
     <string name="field_notes">Jegyzetek</string>
+    <string name="detail_suggest_by_location">Javaslat helyszín alapján</string>
+    <string name="detail_learned_places">Megtanult helyek: %1$d</string>
+    <string name="detail_places_learned_at_till">Megtanulja, hol mutatja meg a kódját, és ott újra javasolja</string>
+    <string name="detail_places_learned_on_request">Koppintson a „Hely megjegyzése” gombra ott, ahol használja, hogy ott újra javasolja</string>
+    <string name="detail_remember_place">Hely megjegyzése</string>
+    <string name="detail_forget_places">Helyek elfelejtése</string>
+    <string name="detail_forget_places_title">Elfelejtsük ennek a kártyának a helyeit?</string>
+    <string name="detail_forget_places_message">A helyek, ahol ezt a kártyát használta, törlődnek. A következő használatkor újra megtanulja őket.</string>
+    <string name="detail_forget">Elfelejtés</string>
+    <string name="detail_place_remembered">Hely megjegyezve</string>
+    <string name="detail_place_not_found">Nem sikerült meghatározni, hol van. Próbálja újra, ha be van kapcsolva a Wi‑Fi, vagy ablak közelében van.</string>
+    <string name="detail_place_no_permission">A helyek megjegyzéséhez engedélyezze a Cardholder számára a pontos helyzetet</string>
+    <string name="detail_place_location_off">A helyek megjegyzéséhez kapcsolja be a helymeghatározást</string>
 </resources>

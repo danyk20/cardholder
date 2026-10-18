@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Taşımak için sürükleyin: %1$s</string>
     <string name="cardlist_move_up">Yukarı taşı</string>
     <string name="cardlist_move_down">Aşağı taşı</string>
+    <string name="cardlist_nearby">Yakınımda</string>
+    <string name="cardlist_all_cards">Tüm kartlar</string>
+    <string name="cardlist_nearby_wifi">Yakındaki mağazanın Wi‑Fi\'si</string>
+    <string name="cardlist_nearby_distance">Yaklaşık %1$s uzakta</string>
 </resources>

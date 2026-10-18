@@ -2,6 +2,7 @@ package io.github.danyk20.cardholder.core.testing.repository
 
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.model.CardSort
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,5 +21,8 @@ class FakeUserPreferencesRepository : UserPreferencesRepository {
         it.copy(expiryReminders = enabled)
     }
 
+    override suspend fun setPlaceSuggestions(mode: PlaceSuggestions) = preferences.update {
+        it.copy(placeSuggestions = mode)
+    }
     override suspend fun setFrenchEasterEggSeen() = preferences.update { it.copy(frenchEasterEggSeen = true) }
 }

@@ -48,7 +48,20 @@ The app itself collects nothing, but the Google ML Kit libraries (barcode scanne
   |---|---|---|---|---|---|
   | App info and performance → **Diagnostics** | Yes | No | No | Required | Analytics |
   | Device or other IDs → **Device or other IDs** | Yes | No | No | Required | Analytics |
-- Not collected: personal info, financial info (card details never leave the device), photos (images are processed on-device), location, contacts, app activity, web browsing.
+- Not collected: personal info, financial info (card details never leave the device), photos (images are processed on-device), location (card suggestions keep places on the device only, see below), contacts, app activity, web browsing.
+
+Card suggestions read location and Wi‑Fi but keep the learned places on the device and never transmit them, so they aren't "collected" in the Data safety sense. Check this against the current Play Console Help article on data collection before submitting.
+
+### Location permissions declaration
+Declaring `ACCESS_BACKGROUND_LOCATION` (arrival notifications) needs the *Location permissions* declaration under *App content*:
+- Core feature: "Shows the loyalty card the user used before at a shop when they arrive there (opt-in, off by default)."
+- Explain why foreground location isn't enough: the notification is shown while the app is closed.
+- Video (≤ 30 s): Settings → Card suggestions → *Also notify when I arrive* → the in-app disclosure → "Allow all the time" → arriving at a shop (or a mock location) → notification → tap shows the code.
+- The in-app disclosure (`settings_background_disclosure`) precedes the permission request, as required.
+
+If the declaration is rejected, remove the permission in `app/src/main/AndroidManifest.xml` with
+`<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" tools:node="remove" />`;
+arrival notifications then disappear from the settings and suggestions in the app keep working.
 
 Logo downloads from Wikimedia Commons don't send user data. They are user-initiated requests for public files, so they aren't declared.
 

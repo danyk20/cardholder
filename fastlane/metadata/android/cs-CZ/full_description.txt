@@ -6,6 +6,12 @@ Cardholder uchovává vaše platební karty, doklady a věrnostní karty na jedn
 • Naskenujte kód z plastové karty fotoaparátem – nebo ho zadejte ručně
 • Podporuje QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec a Data Matrix
 
+<b>Správná karta v správném obchodě</b>
+• Volitelně se aplikace naučí, kde používáte jednotlivé karty, a karty používané poblíž zobrazí nejdřív
+• Rozpozná Wi‑Fi obchodu už při první návštěvě
+• Nebo dostanete při příchodu oznámení se správnou kartou – bez služby na pozadí, šetří baterii
+• Místa zůstávají v telefonu, šifrovaná – nikdy se nezálohují a nikam se neodesílají
+
 <b>Platební karty</b>
 • Uložte číslo karty, datum platnosti, držitele karty a CVV
 • Údaje vyplníte přiložením bezkontaktní karty k telefonu (NFC)

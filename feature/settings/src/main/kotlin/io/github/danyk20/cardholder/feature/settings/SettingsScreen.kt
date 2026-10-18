@@ -40,9 +40,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.ui.AuthenticationResult
 import io.github.danyk20.cardholder.core.ui.EraseAllDataDialog
@@ -60,6 +62,7 @@ fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMod
     // Kept only in memory between the dialog, the file picker and the authentication prompt.
     var pendingPassword by remember { mutableStateOf<CharArray?>(null) }
     var pendingImportUri by remember { mutableStateOf<String?>(null) }
+    var requestedSuggestions by rememberSaveable { mutableStateOf<PlaceSuggestions?>(null) }
 
     val createDocument = rememberLauncherForActivityResult(
         ActivityResultContracts.CreateDocument(BACKUP_MIME_TYPE),
@@ -94,6 +97,26 @@ fun SettingsRoute(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMod
         onExport = { passwordPurpose = PasswordPurpose.EXPORT },
         onImport = { openDocument.launch(arrayOf("*/*")) },
         onResultShown = viewModel::onResultShown,
+        locationActions = remember(viewModel) {
+            LocationSettingsActions(
+                onModeSelect = { requestedSuggestions = it },
+                onForgetAll = viewModel::onForgetAllPlaces,
+            )
+        },
+        onLocationMessageShown = viewModel::onLocationMessageShown,
+    )
+
+    LifecycleResumeEffect(viewModel) {
+        viewModel.onResume()
+        onPauseOrDispose {}
+    }
+    PlaceSuggestionsFlow(
+        requested = requestedSuggestions,
+        placeCount = state.location.placeCount,
+        onApply = viewModel::onPlaceSuggestionsChange,
+        onForgetAll = viewModel::onForgetAllPlaces,
+        onMessage = viewModel::onLocationMessage,
+        onFinished = { requestedSuggestions = null },
     )
 
     passwordPurpose?.let { purpose ->
@@ -131,6 +154,8 @@ internal fun SettingsScreen(
     onExport: () -> Unit,
     onImport: () -> Unit,
     onResultShown: () -> Unit,
+    locationActions: LocationSettingsActions = LocationSettingsActions(),
+    onLocationMessageShown: () -> Unit = {},
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
     val resultMessage = state.backup.result?.let { resultMessage(it) }
@@ -138,6 +163,12 @@ internal fun SettingsScreen(
         resultMessage ?: return@LaunchedEffect
         snackbarHostState.showSnackbar(resultMessage)
         onResultShown()
+    }
+    val locationMessage = state.location.message?.let { stringResource(it.text) }
+    LaunchedEffect(locationMessage) {
+        locationMessage ?: return@LaunchedEffect
+        snackbarHostState.showSnackbar(locationMessage)
+        onLocationMessageShown()
     }
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -182,6 +213,14 @@ internal fun SettingsScreen(
                     role = Role.Switch,
                     onValueChange = onExpiryRemindersChange,
                 ),
+            )
+            HorizontalDivider()
+
+            SectionHeader(stringResource(R.string.settings_suggestions))
+            LocationSuggestionsSection(
+                mode = state.preferences.placeSuggestions,
+                location = state.location,
+                actions = locationActions,
             )
             HorizontalDivider()
 
@@ -324,6 +363,14 @@ internal fun resultMessage(result: BackupResult): String = when (result) {
 
     is BackupResult.Failed -> stringResource(R.string.settings_result_failed)
 }
+
+private val LocationMessage.text: Int
+    get() = when (this) {
+        LocationMessage.PRECISE_NEEDED -> R.string.settings_message_precise_needed
+        LocationMessage.NOTIFICATIONS_NEEDED -> R.string.settings_message_notifications_needed
+        LocationMessage.ALWAYS_NEEDED -> R.string.settings_message_always_needed
+        LocationMessage.PLACES_FORGOTTEN -> R.string.settings_message_places_forgotten
+    }
 
 @Composable
 private fun appVersion(): String {

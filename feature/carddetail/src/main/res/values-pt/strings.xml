@@ -33,4 +33,17 @@
     <string name="field_code">Código</string>
     <string name="field_format">Tipo de código</string>
     <string name="field_notes">Notas</string>
+    <string name="detail_suggest_by_location">Sugerir por localização</string>
+    <string name="detail_learned_places">Locais aprendidos: %1$d</string>
+    <string name="detail_places_learned_at_till">Aprende onde você mostra o código e sugere o cartão ali de novo</string>
+    <string name="detail_places_learned_on_request">Toque em “Lembrar este local” onde você usa o cartão para ele ser sugerido ali de novo</string>
+    <string name="detail_remember_place">Lembrar este local</string>
+    <string name="detail_forget_places">Esquecer locais</string>
+    <string name="detail_forget_places_title">Esquecer os locais deste cartão?</string>
+    <string name="detail_forget_places_message">Os locais em que você usou este cartão serão excluídos. Ele será aprendido de novo na próxima vez que você usá-lo.</string>
+    <string name="detail_forget">Esquecer</string>
+    <string name="detail_place_remembered">Local lembrado</string>
+    <string name="detail_place_not_found">Não foi possível encontrar sua localização. Tente de novo com o Wi‑Fi ativado ou perto de uma janela.</string>
+    <string name="detail_place_no_permission">Permita localização precisa para o Cardholder lembrar dos locais</string>
+    <string name="detail_place_location_off">Ative a Localização para lembrar dos locais</string>
 </resources>

@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Træk for at flytte %1$s</string>
     <string name="cardlist_move_up">Flyt op</string>
     <string name="cardlist_move_down">Flyt ned</string>
+    <string name="cardlist_nearby">I nærheden</string>
+    <string name="cardlist_all_cards">Alle kort</string>
+    <string name="cardlist_nearby_wifi">Butikkens Wi‑Fi i nærheden</string>
+    <string name="cardlist_nearby_distance">Ca. %1$s væk</string>
 </resources>

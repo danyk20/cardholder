@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Tërhiq për të zhvendosur %1$s</string>
     <string name="cardlist_move_up">Lëviz lart</string>
     <string name="cardlist_move_down">Lëviz poshtë</string>
+    <string name="cardlist_nearby">Afër</string>
+    <string name="cardlist_all_cards">Të gjitha kartat</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi i dyqanit afër</string>
+    <string name="cardlist_nearby_distance">Rreth %1$s larg</string>
 </resources>

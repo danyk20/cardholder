@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Prevucite da biste premestili: %1$s</string>
     <string name="cardlist_move_up">Pomeri nagore</string>
     <string name="cardlist_move_down">Pomeri nadole</string>
+    <string name="cardlist_nearby">U blizini</string>
+    <string name="cardlist_all_cards">Sve kartice</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi prodavnice u blizini</string>
+    <string name="cardlist_nearby_distance">Oko %1$s udaljeno</string>
 </resources>

@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Trascina per spostare %1$s</string>
     <string name="cardlist_move_up">Sposta su</string>
     <string name="cardlist_move_down">Sposta giù</string>
+    <string name="cardlist_nearby">Nelle vicinanze</string>
+    <string name="cardlist_all_cards">Tutte le carte</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi del negozio nelle vicinanze</string>
+    <string name="cardlist_nearby_distance">A circa %1$s</string>
 </resources>

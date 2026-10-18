@@ -38,6 +38,8 @@ data class CardEntity(
     @ColumnInfo(name = "expiry_reminded_for", defaultValue = "NULL") val expiryRemindedFor: String? = null,
     /** The [expiresOn] value the user was reminded of seven months before (IDs, for travel). */
     @ColumnInfo(name = "travel_reminded_for", defaultValue = "NULL") val travelRemindedFor: String? = null,
+    /** Whether the card learns where it's used and is suggested there again. */
+    @ColumnInfo(name = "suggest_by_location", defaultValue = "0") val suggestByLocation: Boolean = false,
     /** Sealed JSON of the type-specific details. */
     @ColumnInfo(name = "sealed_details", typeAffinity = ColumnInfo.BLOB) val sealedDetails: ByteArray,
     /** Sealed CVV of a bank card, always protected by user authentication. */
@@ -71,6 +73,7 @@ data class CardEntity(
                 expiresOn == other.expiresOn &&
                 expiryRemindedFor == other.expiryRemindedFor &&
                 travelRemindedFor == other.travelRemindedFor &&
+                suggestByLocation == other.suggestByLocation &&
                 sealedDetails.contentEquals(other.sealedDetails) &&
                 sealedCvv.contentEquals(other.sealedCvv)
             )

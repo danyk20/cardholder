@@ -10,6 +10,11 @@ data class Shop(
     val defaultFormat: BarcodeFormat,
     /** Freely licensed official logo that can be downloaded on request; `null` if none is known. */
     val logo: BrandLogo? = null,
+    /**
+     * Words that identify the shop in Wi‑Fi network names when its name alone doesn't, e.g. `dm` for
+     * "dm-drogerie markt" (words of the name are used anyway).
+     */
+    val wifiNames: Set<String> = emptySet(),
 )
 
 /** Where an official shop logo can be downloaded from and under which licence. */

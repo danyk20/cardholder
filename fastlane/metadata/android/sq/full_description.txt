@@ -6,6 +6,12 @@ Cardholder i mban kartat e tua bankare, kartat e identitetit dhe kartat e besnik
 • Skano kodin e kartës plastike me kamerë – ose shkruaje vetë
 • Mbështet QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec dhe Data Matrix
 
+<b>Karta e duhur në dyqanin e duhur</b>
+• Opsionale: aplikacioni mëson se ku e përdor secilën kartë dhe shfaq të parat kartat e përdorura afër
+• Madje e vëren Wi‑Fi-n e dyqanit që në vizitën e parë
+• Ose merr një njoftim me kartën e duhur kur arrin – pa shërbim në sfond, e lehtë për baterinë
+• Vendet qëndrojnë në telefonin tënd, të enkriptuara – kurrë në kopje rezervë dhe kurrë të dërguara askund
+
 <b>Kartat bankare</b>
 • Ruaj numrin e kartës, datën e skadimit, mbajtësin e kartës dhe CVV-në
 • Plotëso të dhënat duke e afruar një kartë pa kontakt te telefoni (NFC)

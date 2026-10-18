@@ -35,6 +35,9 @@ interface CardRepository {
 
     suspend fun setFavourite(id: CardId, favourite: Boolean)
 
+    /** Switches learning where the card is used, and suggesting it there, on or off. */
+    suspend fun setSuggestByLocation(id: CardId, enabled: Boolean)
+
     /** Counts a use of the card (its code was shown or its details opened) for the "most used" order. */
     suspend fun recordUse(id: CardId)
 

@@ -12,4 +12,11 @@
     <string name="widget_title">Hűségkártyák</string>
     <string name="widget_description">Kedvenc hűségkártyái, egy koppintásra a kódtól</string>
     <string name="widget_empty">Adjon hozzá egy hűségkártyát, hogy itt megjelenjen.</string>
+    <string name="notification_channel_arrival">Kártyák ehhez a helyhez</string>
+    <string name="notification_channel_arrival_description">A megfelelő kártya, amikor olyan üzletbe érkezik, ahol már használta</string>
+    <string name="notification_arrival_text">Koppintson a kód megjelenítéséhez</string>
+    <string name="notification_arrival_open">Koppintson a kártya megnyitásához</string>
+    <string name="notification_arrival_locked_title">Zárolt kártya ehhez a helyhez</string>
+    <string name="notification_arrival_public">Egy kártya ehhez a helyhez</string>
+    <string name="notification_arrival_not_here">Nem ez a hely</string>
 </resources>

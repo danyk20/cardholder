@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Trageți pentru a muta %1$s</string>
     <string name="cardlist_move_up">Mutați în sus</string>
     <string name="cardlist_move_down">Mutați în jos</string>
+    <string name="cardlist_nearby">În apropiere</string>
+    <string name="cardlist_all_cards">Toate cardurile</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi de magazin în apropiere</string>
+    <string name="cardlist_nearby_distance">La aproximativ %1$s distanță</string>
 </resources>

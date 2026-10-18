@@ -6,6 +6,12 @@ Cardholder przechowuje Twoje karty bankowe, dokumenty i karty lojalnościowe w j
 • Zeskanuj kod z plastikowej karty aparatem lub wpisz go ręcznie
 • Obsługiwane formaty: QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec i Data Matrix
 
+<b>Właściwa karta w odpowiednim sklepie</b>
+• Opcjonalnie: aplikacja uczy się, gdzie używasz każdej karty, i pokazuje na górze karty używane w pobliżu
+• Rozpoznaje nawet Wi‑Fi sklepu już przy pierwszej wizycie
+• Albo otrzymaj powiadomienie z właściwą kartą, gdy dotrzesz na miejsce – bez usługi działającej w tle, oszczędnie dla baterii
+• Miejsca są przechowywane na telefonie, zaszyfrowane – nigdy w kopiach zapasowych i nigdy nie wysyłane
+
 <b>Karty bankowe</b>
 • Numer karty, data ważności, posiadacz karty i kod CVV
 • Uzupełnij dane, przykładając kartę zbliżeniową do telefonu (NFC)

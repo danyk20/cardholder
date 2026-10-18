@@ -37,6 +37,9 @@ interface CardDao {
     @Query("UPDATE cards SET is_favourite = :favourite WHERE id = :id")
     suspend fun setFavourite(id: String, favourite: Boolean)
 
+    @Query("UPDATE cards SET suggest_by_location = :enabled WHERE id = :id")
+    suspend fun setSuggestByLocation(id: String, enabled: Boolean)
+
     @Query("UPDATE cards SET use_count = use_count + 1, last_used_at = :now WHERE id = :id")
     suspend fun recordUse(id: String, now: Long)
 

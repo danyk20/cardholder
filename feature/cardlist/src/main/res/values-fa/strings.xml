@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">کشیدن برای جابه‌جا کردن %1$s</string>
     <string name="cardlist_move_up">انتقال به بالا</string>
     <string name="cardlist_move_down">انتقال به پایین</string>
+    <string name="cardlist_nearby">نزدیک</string>
+    <string name="cardlist_all_cards">همه کارت‌ها</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi فروشگاه در نزدیکی</string>
+    <string name="cardlist_nearby_distance">حدود %1$s فاصله</string>
 </resources>

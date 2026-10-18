@@ -6,6 +6,8 @@ data class UserPreferences(
     val cardSort: CardSort = CardSort.NAME,
     /** Notify a month before a bank card or ID expires. */
     val expiryReminders: Boolean = true,
+    /** Whether and when cards are suggested by where they were used before. */
+    val placeSuggestions: PlaceSuggestions = PlaceSuggestions.OFF,
     /** The French-language Easter egg was shown and the user promised to learn another language. */
     val frenchEasterEggSeen: Boolean = false,
 )

@@ -6,6 +6,12 @@ Cardholder hoiab teie pangakaardid, ID-kaardid ja kliendikaardid telefonis ühes
 • Skannige kood plastkaardilt kaameraga – või sisestage see käsitsi
 • Toetatud on QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec ja Data Matrix
 
+<b>Õige kaart õiges poes</b>
+• Valikuline: rakendus õpib, kus kaarte kasutate, ja kuvab lähedal kasutatud kaardid esimesena
+• Märkab juba esimesel külastusel poe Wi‑Fi võrku
+• Või saate saabudes märguande õige kaardiga – taustateenust pole ja aku ei kulu palju
+• Kohad jäävad teie telefoni krüpteerituna – neid ei lisata kunagi varukoopiatesse ega saadeta kuhugi
+
 <b>Pangakaardid</b>
 • Salvestage kaardi number, kehtivusaeg, kaardi omanik ja CVV
 • Täitke andmed, hoides kontaktivaba kaarti vastu telefoni (NFC)

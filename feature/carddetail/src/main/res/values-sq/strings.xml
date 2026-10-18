@@ -34,4 +34,17 @@
     <string name="field_code">Kodi</string>
     <string name="field_format">Lloji i kodit</string>
     <string name="field_notes">Shënime</string>
+    <string name="detail_suggest_by_location">Sugjero sipas vendndodhjes</string>
+    <string name="detail_learned_places">Vende të mësuara: %1$d</string>
+    <string name="detail_places_learned_at_till">Mëson se ku shfaq kodin e saj dhe e sugjeron përsëri atje</string>
+    <string name="detail_places_learned_on_request">Trokit “Kujto këtë vend” aty ku e përdor, që të sugjerohet përsëri atje</string>
+    <string name="detail_remember_place">Kujto këtë vend</string>
+    <string name="detail_forget_places">Harro vendet</string>
+    <string name="detail_forget_places_title">Të harrohen vendet e kësaj karte?</string>
+    <string name="detail_forget_places_message">Vendet ku e ke përdorur këtë kartë fshihen. Ajo mësohet përsëri herën e ardhshme që e përdor.</string>
+    <string name="detail_forget">Harro</string>
+    <string name="detail_place_remembered">Vendi u kujtua</string>
+    <string name="detail_place_not_found">Nuk u gjet ku je. Provo përsëri me Wi‑Fi të ndezur ose pranë dritares.</string>
+    <string name="detail_place_no_permission">Lejo vendndodhjen e saktë për Cardholder që të kujtojë vendet</string>
+    <string name="detail_place_location_off">Ndiz Vendndodhjen që të kujtohen vendet</string>
 </resources>

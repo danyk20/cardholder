@@ -33,4 +33,17 @@
     <string name="field_code">Kode</string>
     <string name="field_format">Kodetype</string>
     <string name="field_notes">Notater</string>
+    <string name="detail_suggest_by_location">Foreslå etter sted</string>
+    <string name="detail_learned_places">Lærte steder: %1$d</string>
+    <string name="detail_places_learned_at_till">Lærer hvor du viser koden, og foreslår kortet der igjen</string>
+    <string name="detail_places_learned_on_request">Trykk «Husk dette stedet» der du bruker kortet, så foreslås det der igjen</string>
+    <string name="detail_remember_place">Husk dette stedet</string>
+    <string name="detail_forget_places">Glem steder</string>
+    <string name="detail_forget_places_title">Glemme stedene for dette kortet?</string>
+    <string name="detail_forget_places_message">Stedene der du har brukt dette kortet, slettes. Det lærer dem på nytt neste gang du bruker det.</string>
+    <string name="detail_forget">Glem</string>
+    <string name="detail_place_remembered">Stedet er husket</string>
+    <string name="detail_place_not_found">Kunne ikke finne hvor du er. Prøv igjen med Wi‑Fi på, eller nær et vindu.</string>
+    <string name="detail_place_no_permission">Tillat presis posisjon for Cardholder for å huske steder</string>
+    <string name="detail_place_location_off">Slå på posisjon for å huske steder</string>
 </resources>

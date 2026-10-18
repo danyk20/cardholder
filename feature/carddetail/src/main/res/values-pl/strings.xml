@@ -34,4 +34,17 @@
     <string name="field_code">Kod</string>
     <string name="field_format">Typ kodu</string>
     <string name="field_notes">Notatki</string>
+    <string name="detail_suggest_by_location">Sugeruj wg lokalizacji</string>
+    <string name="detail_learned_places">Zapamiętane miejsca: %1$d</string>
+    <string name="detail_places_learned_at_till">Zapamiętuje, gdzie pokazujesz jej kod, i podpowiada ją tam ponownie</string>
+    <string name="detail_places_learned_on_request">Kliknij „Zapamiętaj to miejsce” tam, gdzie używasz karty, aby była tam podpowiadana</string>
+    <string name="detail_remember_place">Zapamiętaj to miejsce</string>
+    <string name="detail_forget_places">Zapomnij miejsca</string>
+    <string name="detail_forget_places_title">Zapomnieć miejsca tej karty?</string>
+    <string name="detail_forget_places_message">Miejsca, w których używano tej karty, zostaną usunięte. Zostaną zapamiętane ponownie przy następnym użyciu.</string>
+    <string name="detail_forget">Zapomnij</string>
+    <string name="detail_place_remembered">Miejsce zapamiętane</string>
+    <string name="detail_place_not_found">Nie udało się ustalić, gdzie jesteś. Spróbuj ponownie z włączonym Wi‑Fi lub przy oknie.</string>
+    <string name="detail_place_no_permission">Zezwól Cardholder na dokładną lokalizację, aby zapamiętywać miejsca</string>
+    <string name="detail_place_location_off">Włącz lokalizację, aby zapamiętywać miejsca</string>
 </resources>

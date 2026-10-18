@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Przeciągnij, aby przenieść „%1$s”</string>
     <string name="cardlist_move_up">Przenieś w górę</string>
     <string name="cardlist_move_down">Przenieś w dół</string>
+    <string name="cardlist_nearby">W pobliżu</string>
+    <string name="cardlist_all_cards">Wszystkie karty</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi sklepu w pobliżu</string>
+    <string name="cardlist_nearby_distance">Około %1$s stąd</string>
 </resources>

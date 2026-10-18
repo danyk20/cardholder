@@ -12,4 +12,11 @@
     <string name="widget_title">Картице лојалности</string>
     <string name="widget_description">Омиљене картице лојалности, код на један додир</string>
     <string name="widget_empty">Додајте картицу лојалности да бисте је видели овде.</string>
+    <string name="notification_channel_arrival">Картице за ово место</string>
+    <string name="notification_channel_arrival_description">Права картица када стигнете у продавницу у којој сте је користили</string>
+    <string name="notification_arrival_text">Додирните да прикажете код</string>
+    <string name="notification_arrival_open">Додирните да отворите картицу</string>
+    <string name="notification_arrival_locked_title">Закључана картица за ово место</string>
+    <string name="notification_arrival_public">Картица за ово место</string>
+    <string name="notification_arrival_not_here">Није ово место</string>
 </resources>

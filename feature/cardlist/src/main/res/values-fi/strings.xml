@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Siirrä vetämällä: %1$s</string>
     <string name="cardlist_move_up">Siirrä ylös</string>
     <string name="cardlist_move_down">Siirrä alas</string>
+    <string name="cardlist_nearby">Lähellä</string>
+    <string name="cardlist_all_cards">Kaikki kortit</string>
+    <string name="cardlist_nearby_wifi">Kaupan Wi‑Fi lähellä</string>
+    <string name="cardlist_nearby_distance">Noin %1$s päässä</string>
 </resources>

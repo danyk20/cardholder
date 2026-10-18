@@ -12,4 +12,11 @@
     <string name="widget_title">Kundenkarten</string>
     <string name="widget_description">Lieblings-Kundenkarten, nur einen Tipp vom Code entfernt</string>
     <string name="widget_empty">Kundenkarte hinzufügen, um sie hier zu sehen.</string>
+    <string name="notification_channel_arrival">Karten für diesen Ort</string>
+    <string name="notification_channel_arrival_description">Die passende Karte, wenn du in einem Geschäft ankommst, in dem du sie verwendet hast</string>
+    <string name="notification_arrival_text">Tippen, um den Code anzuzeigen</string>
+    <string name="notification_arrival_open">Tippen, um die Karte zu öffnen</string>
+    <string name="notification_arrival_locked_title">Eine gesperrte Karte für diesen Ort</string>
+    <string name="notification_arrival_public">Eine Karte für diesen Ort</string>
+    <string name="notification_arrival_not_here">Nicht dieser Ort</string>
 </resources>

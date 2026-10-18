@@ -58,6 +58,9 @@ import io.github.danyk20.cardholder.core.ui.sharedCardBounds
 import io.github.danyk20.cardholder.feature.carddetail.ui.CardSidesView
 import io.github.danyk20.cardholder.feature.carddetail.ui.DetailFields
 import io.github.danyk20.cardholder.feature.carddetail.ui.FieldActions
+import io.github.danyk20.cardholder.feature.carddetail.ui.PlaceActions
+import io.github.danyk20.cardholder.feature.carddetail.ui.PlacesSection
+import io.github.danyk20.cardholder.feature.carddetail.ui.RememberResultMessage
 
 @Composable
 fun CardDetailRoute(
@@ -108,6 +111,14 @@ fun CardDetailRoute(
         },
         onCopiedMessageShown = viewModel::onCopiedMessageShown,
         onErrorShown = viewModel::onErrorShown,
+        placeActions = remember(viewModel) {
+            PlaceActions(
+                onSuggestChange = viewModel::onSuggestByLocationChange,
+                onRememberPlace = viewModel::onRememberPlace,
+                onForgetPlaces = viewModel::onForgetPlaces,
+            )
+        },
+        onRememberResultShown = viewModel::onRememberResultShown,
     )
 }
 
@@ -125,6 +136,8 @@ internal fun CardDetailScreen(
     fieldActions: FieldActions,
     onCopiedMessageShown: () -> Unit,
     onErrorShown: () -> Unit,
+    placeActions: PlaceActions = PlaceActions(),
+    onRememberResultShown: () -> Unit = {},
 ) {
     SecureScreen()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -135,6 +148,7 @@ internal fun CardDetailScreen(
         snackbarHostState.showSnackbar(copiedMessage)
         onCopiedMessageShown()
     }
+    RememberResultMessage(state.places?.rememberResult, snackbarHostState, onRememberResultShown)
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
@@ -189,6 +203,15 @@ internal fun CardDetailScreen(
             }
             HorizontalDivider()
             LockSwitch(isLocked = card.isLocked, canProtect = state.canProtect, onLockedChange = onLockedChange)
+            state.places?.let { places ->
+                HorizontalDivider()
+                PlacesSection(
+                    places = places,
+                    cardType = card.type,
+                    suggestByLocation = card.suggestByLocation,
+                    actions = placeActions,
+                )
+            }
         }
     }
     if (confirmDelete) {

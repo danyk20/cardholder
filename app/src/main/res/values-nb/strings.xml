@@ -12,4 +12,11 @@
     <string name="widget_title">Kundekort</string>
     <string name="widget_description">Favorittkundekortene dine, ett trykk unna koden</string>
     <string name="widget_empty">Legg til et kundekort for å se det her.</string>
+    <string name="notification_channel_arrival">Kort for dette stedet</string>
+    <string name="notification_channel_arrival_description">Riktig kort når du kommer til en butikk der du har brukt det</string>
+    <string name="notification_arrival_text">Trykk for å vise koden</string>
+    <string name="notification_arrival_open">Trykk for å åpne kortet</string>
+    <string name="notification_arrival_locked_title">Et låst kort for dette stedet</string>
+    <string name="notification_arrival_public">Et kort for dette stedet</string>
+    <string name="notification_arrival_not_here">Ikke dette stedet</string>
 </resources>

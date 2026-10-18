@@ -34,6 +34,8 @@ data class Card(
      * without unlocking the card; treated like the title, which is also shown without unlocking.
      */
     val expiresOn: LocalDate? = null,
+    /** Whether the card learns where it's used and is suggested there again. */
+    val suggestByLocation: Boolean = false,
 ) {
     val type: CardType get() = info.type
 }

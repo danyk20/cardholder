@@ -12,4 +12,11 @@
     <string name="widget_title">Cartes de fidélité</string>
     <string name="widget_description">Vos cartes de fidélité favorites, leur code en un seul geste</string>
     <string name="widget_empty">Ajoutez une carte de fidélité pour l\'afficher ici.</string>
+    <string name="notification_channel_arrival">Cartes pour ce lieu</string>
+    <string name="notification_channel_arrival_description">La bonne carte quand vous arrivez dans un magasin où vous l\'avez utilisée</string>
+    <string name="notification_arrival_text">Appuyez pour afficher le code</string>
+    <string name="notification_arrival_open">Appuyez pour ouvrir la carte</string>
+    <string name="notification_arrival_locked_title">Une carte verrouillée pour ce lieu</string>
+    <string name="notification_arrival_public">Une carte pour ce lieu</string>
+    <string name="notification_arrival_not_here">Pas ce lieu</string>
 </resources>

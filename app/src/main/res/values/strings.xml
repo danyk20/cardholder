@@ -9,6 +9,13 @@
     <string name="notification_travel_title">Renew your ID for travel</string>
     <string name="notification_travel_text">\"%1$s\" expires on %2$s. Many countries require at least 6 months of validity for travel, so renew it within the next month.</string>
     <string name="notification_travel_public">A document in your wallet should be renewed soon.</string>
+    <string name="notification_channel_arrival">Cards for this place</string>
+    <string name="notification_channel_arrival_description">The right card when you arrive at a shop where you used it</string>
+    <string name="notification_arrival_text">Tap to show the code</string>
+    <string name="notification_arrival_open">Tap to open the card</string>
+    <string name="notification_arrival_locked_title">A locked card for this place</string>
+    <string name="notification_arrival_public">A card for this place</string>
+    <string name="notification_arrival_not_here">Not this place</string>
     <string name="widget_title">Loyalty cards</string>
     <string name="widget_description">Your favourite loyalty cards, one tap from the code</string>
     <string name="widget_empty">Add a loyalty card to see it here.</string>

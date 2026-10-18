@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">%1$s সরাতে টেনে আনুন</string>
     <string name="cardlist_move_up">উপরে সরান</string>
     <string name="cardlist_move_down">নিচে সরান</string>
+    <string name="cardlist_nearby">কাছাকাছি</string>
+    <string name="cardlist_all_cards">সব কার্ড</string>
+    <string name="cardlist_nearby_wifi">কাছের দোকানের ওয়াই-ফাই</string>
+    <string name="cardlist_nearby_distance">প্রায় %1$s দূরে</string>
 </resources>

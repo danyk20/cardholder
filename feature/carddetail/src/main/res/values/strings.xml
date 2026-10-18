@@ -33,4 +33,17 @@
     <string name="field_code">Code</string>
     <string name="field_format">Code type</string>
     <string name="field_notes">Notes</string>
+    <string name="detail_suggest_by_location">Suggest by location</string>
+    <string name="detail_learned_places">Learned places: %1$d</string>
+    <string name="detail_places_learned_at_till">Learns where you show its code and suggests it there again</string>
+    <string name="detail_places_learned_on_request">Tap “Remember this place” where you use it to have it suggested there again</string>
+    <string name="detail_remember_place">Remember this place</string>
+    <string name="detail_forget_places">Forget places</string>
+    <string name="detail_forget_places_title">Forget this card\'s places?</string>
+    <string name="detail_forget_places_message">The places where you used this card are deleted. It\'s learned again the next time you use it.</string>
+    <string name="detail_forget">Forget</string>
+    <string name="detail_place_remembered">Place remembered</string>
+    <string name="detail_place_not_found">Couldn\'t find where you are. Try again with Wi‑Fi on or near a window.</string>
+    <string name="detail_place_no_permission">Allow precise location for Cardholder to remember places</string>
+    <string name="detail_place_location_off">Turn on Location to remember places</string>
 </resources>

@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.core.domain.repository
 
 import io.github.danyk20.cardholder.core.model.CardSort
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import kotlinx.coroutines.flow.Flow
@@ -16,5 +17,6 @@ interface UserPreferencesRepository {
 
     suspend fun setExpiryReminders(enabled: Boolean)
 
+    suspend fun setPlaceSuggestions(mode: PlaceSuggestions)
     suspend fun setFrenchEasterEggSeen()
 }

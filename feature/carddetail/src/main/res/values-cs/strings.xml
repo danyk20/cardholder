@@ -34,4 +34,17 @@
     <string name="field_code">Kód</string>
     <string name="field_format">Typ kódu</string>
     <string name="field_notes">Poznámky</string>
+    <string name="detail_suggest_by_location">Navrhovat podle polohy</string>
+    <string name="detail_learned_places">Naučená místa: %1$d</string>
+    <string name="detail_places_learned_at_till">Aplikace se naučí, kde zobrazujete kód karty, a na těchto místech ji znovu navrhne</string>
+    <string name="detail_places_learned_on_request">Na místě, kde kartu používáte, klepněte na „Zapamatovat si toto místo“, aby ji aplikace na tomto místě znovu navrhla</string>
+    <string name="detail_remember_place">Zapamatovat si toto místo</string>
+    <string name="detail_forget_places">Zapomenout místa</string>
+    <string name="detail_forget_places_title">Zapomenout místa této karty?</string>
+    <string name="detail_forget_places_message">Místa, kde jste kartu používali, budou smazána. Při dalším použití se znovu naučí.</string>
+    <string name="detail_forget">Zapomenout</string>
+    <string name="detail_place_remembered">Místo je zapamatováno</string>
+    <string name="detail_place_not_found">Nepodařilo se zjistit, kde jste. Zkuste to znovu se zapnutým Wi‑Fi nebo u okna.</string>
+    <string name="detail_place_no_permission">Pro zapamatování míst povolte Cardholderovi přesnou polohu</string>
+    <string name="detail_place_location_off">Pro zapamatování míst zapněte polohu</string>
 </resources>

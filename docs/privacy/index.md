@@ -5,7 +5,7 @@ permalink: /privacy/
 
 # Cardholder privacy policy
 
-_Last updated: 7 October 2026_
+_Last updated: 18 October 2026_
 
 Cardholder is an open-source app for storing bank, ID and loyalty cards on an Android phone. It is developed by Daniel Košč ("I", "me"). This policy explains what happens to your data when you use the app.
 
@@ -14,6 +14,7 @@ Cardholder is an open-source app for storing bank, ID and loyalty cards on an An
 - Your cards stay on your device. I don't run any servers and never receive your cards, photos or backups.
 - There is no account, no advertising and no analytics or tracking by the app itself.
 - The app connects to the internet only to download an official logo from Wikimedia Commons, and only when you ask for it.
+- If you turn on card suggestions, the app remembers on your device where you used your cards. This location data is never sent to me or anyone else.
 - Google's on-device ML Kit libraries, used for scanning, send anonymous diagnostic information to Google (see below).
 
 ## Data stored on your device
@@ -23,7 +24,8 @@ Everything you enter into Cardholder is stored only on your device:
 - card details (for example card number, expiry date, card holder, CVV, issuing country, document number, loyalty card code, shop or bank);
 - optional photos of the front and back of your cards;
 - logos you download or upload;
-- app settings (theme, sort order).
+- app settings (theme, sort order, card suggestions);
+- if you turn on card suggestions: the places where you used your cards (see below).
 
 The database and all photos are encrypted with keys held in your phone's secure hardware (Android Keystore). The CVV and the details of locked cards can only be decrypted after you confirm your identity with fingerprint, face or screen lock. The app opts out of Android cloud backup, so this data is not copied to Google Drive.
 
@@ -34,8 +36,21 @@ When you uninstall the app or clear its data, all of it is permanently deleted.
 - **Camera** – to scan barcodes and QR codes on your cards. Images are analysed on the device and are neither stored nor sent anywhere.
 - **NFC** – to read the card number and expiry date from a contactless bank card you hold to the phone. The data is read on the device and only used to fill in the form. The CVV and PIN cannot be read and are never requested.
 - **Internet** – only for downloading official logos (see below).
+- **Location (precise) and Wi‑Fi state** – only if you turn on card suggestions (see below).
+- **Location in the background** – only if you turn on arrival notifications (see below). Android asks you to allow it in the system settings.
+- **Notifications** – for expiry reminders and, if you turn them on, arrival notifications.
 
 Photos of card sides are taken with the Google Play services document scanner, which runs on the device and returns the image directly to the app. To save typing, the app reads the text and barcode on those photos with Google ML Kit on the device (for example the card number, expiry date or the machine-readable lines of an ID card) and suggests them in the form; the recognised text is kept in memory only and is not sent anywhere.
+
+## Card suggestions by location
+
+Card suggestions are off unless you turn them on in Settings. When they are on:
+
+- **When you use a card** (you show a loyalty card's code, or tap "Remember this place" on another card), the app reads your location once and the Wi‑Fi networks around you (their hardware addresses, names and signal strength). It stores them as a place of that card: at most the 10 latest locations per place.
+- **While the card list is open** (at most once a minute), the app reads the Wi‑Fi networks around you and, if that doesn't settle it, your approximate location, to show the cards you used nearby at the top.
+- **With arrival notifications**, the app gives Google Play services circles around your most used places. Play services watches them on your phone and tells the app when you stay at one, so it can show the right card. Google's handling of location in Play services is covered by the [Google privacy policy](https://policies.google.com/privacy).
+
+Learned places are stored only in the app's encrypted database. They are not included in backups or in cards you share, and they are never sent to me or anyone else. You can turn suggestions off for any card, forget a card's places in its details, or forget all places in Settings. Deleting a card deletes its places. You can withdraw the location permissions in Android's settings at any time.
 
 ## Logo downloads
 

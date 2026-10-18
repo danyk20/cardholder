@@ -6,6 +6,12 @@ Cardholder huhifadhi kadi zako za benki, vitambulisho na kadi za uaminifu mahali
 • Changanua msimbo ulio kwenye kadi yako ya plastiki kwa kamera – au uuandike
 • Inatumia QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec na Data Matrix
 
+<b>Kadi sahihi katika duka sahihi</b>
+• Hiari: programu hujifunza mahali unapotumia kila kadi na huonyesha kwanza kadi ulizotumia karibu
+• Hata hutambua Wi‑Fi ya duka tangu ziara yako ya kwanza
+• Au pata arifa yenye kadi sahihi unapofika – hakuna huduma ya chinichini, ni rafiki kwa betri
+• Maeneo yanabaki kwenye simu yako, yamesimbwa kwa njia fiche – kamwe si kwenye nakala rudufu wala kutumwa popote
+
 <b>Kadi za benki</b>
 • Hifadhi nambari ya kadi, tarehe ya kuisha, jina la mmiliki na CVV
 • Jaza maelezo kwa kushikilia kadi ya kielektroniki karibu na simu yako (NFC)

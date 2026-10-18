@@ -6,6 +6,12 @@ Cardholder säilyttää pankkikorttisi, henkilöllisyystodistuksesi ja kanta-asi
 • Skannaa koodi muovikortista kameralla – tai kirjoita se itse
 • Tuetut muodot: QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec ja Data Matrix
 
+<b>Oikea kortti oikeassa kaupassa</b>
+• Valinnainen: sovellus oppii, missä käytät kortteja, ja näyttää lähellä käytetyt kortit ensimmäisinä
+• Huomaa kaupan Wi‑Fi jo ensimmäisellä käyntikerralla
+• Tai saa saapuessasi ilmoitus oikeasta kortista – ei taustapalvelua, akku säästyy
+• Paikat pysyvät puhelimellasi salattuina – eivät koskaan varmuuskopioissa eikä niitä lähetetä minnekään
+
 <b>Pankkikortit</b>
 • Tallenna kortin numero, voimassaoloaika, kortinhaltija ja CVV
 • Täytä tiedot pitämällä lähimaksukorttia puhelinta vasten (NFC)

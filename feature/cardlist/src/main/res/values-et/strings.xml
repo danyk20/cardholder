@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Lohista, et teisaldada: %1$s</string>
     <string name="cardlist_move_up">Liiguta üles</string>
     <string name="cardlist_move_down">Liiguta alla</string>
+    <string name="cardlist_nearby">Läheduses</string>
+    <string name="cardlist_all_cards">Kõik kaardid</string>
+    <string name="cardlist_nearby_wifi">Poe Wi‑Fi läheduses</string>
+    <string name="cardlist_nearby_distance">Umbes %1$s kaugusel</string>
 </resources>

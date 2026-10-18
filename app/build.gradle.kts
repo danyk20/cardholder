@@ -56,6 +56,7 @@ dependencies {
     implementation(projects.core.data)
     implementation(projects.core.designsystem)
     implementation(projects.core.domain)
+    implementation(projects.core.location)
     implementation(projects.core.security)
     implementation(projects.core.storage)
     implementation(projects.core.ui)

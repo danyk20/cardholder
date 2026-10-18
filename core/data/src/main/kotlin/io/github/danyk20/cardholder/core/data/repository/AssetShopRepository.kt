@@ -39,6 +39,7 @@ internal class AssetShopRepository(openCatalogue: () -> InputStream, ioDispatche
         val countries: List<String> = emptyList(),
         val defaultFormat: BarcodeFormat = BarcodeFormat.QR_CODE,
         val logo: LogoDto? = null,
+        val wifiNames: Set<String> = emptySet(),
     ) {
         fun toModel() = Shop(
             id = id,
@@ -47,6 +48,7 @@ internal class AssetShopRepository(openCatalogue: () -> InputStream, ioDispatche
             countries = countries.mapNotNull(CountryCode::of).toSet(),
             defaultFormat = defaultFormat,
             logo = logo?.toModel(),
+            wifiNames = wifiNames,
         )
     }
 }

@@ -6,6 +6,12 @@ O Cardholder guarda os seus cartões bancários, documentos de identificação e
 • Leia o código do seu cartão físico com a câmara – ou introduza-o manualmente
 • Suporta QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec e Data Matrix
 
+<b>O cartão certo na loja certa</b>
+• Opcional: a aplicação aprende onde utiliza cada cartão e mostra primeiro os cartões usados por perto
+• Reconhece até o Wi‑Fi da loja na primeira visita
+• Ou receba uma notificação com o cartão certo ao chegar – sem serviço em segundo plano, poupa a bateria
+• Os locais ficam no seu telemóvel, encriptados – nunca nas cópias de segurança e nunca enviados para lado nenhum
+
 <b>Cartões bancários</b>
 • Guarde o número do cartão, a validade, o titular e o CVV
 • Preencha os dados encostando um cartão contactless ao telemóvel (NFC)

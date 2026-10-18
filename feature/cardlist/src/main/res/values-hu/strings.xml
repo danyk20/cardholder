@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">%1$s áthelyezése húzással</string>
     <string name="cardlist_move_up">Mozgatás felfelé</string>
     <string name="cardlist_move_down">Mozgatás lefelé</string>
+    <string name="cardlist_nearby">Közelben</string>
+    <string name="cardlist_all_cards">Összes kártya</string>
+    <string name="cardlist_nearby_wifi">Üzlet Wi‑Fi-je a közelben</string>
+    <string name="cardlist_nearby_distance">Kb. %1$s távolságra</string>
 </resources>

@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">اسحب لنقل %1$s</string>
     <string name="cardlist_move_up">نقل لأعلى</string>
     <string name="cardlist_move_down">نقل لأسفل</string>
+    <string name="cardlist_nearby">قريبة منك</string>
+    <string name="cardlist_all_cards">كل البطاقات</string>
+    <string name="cardlist_nearby_wifi">Wi‑Fi متجر قريب</string>
+    <string name="cardlist_nearby_distance">على بُعد نحو %1$s</string>
 </resources>

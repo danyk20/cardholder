@@ -12,4 +12,11 @@
     <string name="widget_title">ポイントカード</string>
     <string name="widget_description">お気に入りのポイントカードのコードをワンタップで表示</string>
     <string name="widget_empty">ポイントカードを追加すると、ここに表示されます。</string>
+    <string name="notification_channel_arrival">この場所のカード</string>
+    <string name="notification_channel_arrival_description">利用したことのある店舗に到着したとき、適切なカードを表示します</string>
+    <string name="notification_arrival_text">タップしてコードを表示</string>
+    <string name="notification_arrival_open">タップしてカードを開く</string>
+    <string name="notification_arrival_locked_title">この場所のロックされたカード</string>
+    <string name="notification_arrival_public">この場所のカード</string>
+    <string name="notification_arrival_not_here">この場所ではない</string>
 </resources>

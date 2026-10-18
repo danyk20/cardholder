@@ -12,4 +12,11 @@
     <string name="widget_title">Kanta-asiakaskortit</string>
     <string name="widget_description">Suosikki-kanta-asiakaskorttisi – koodi yhdellä napautuksella</string>
     <string name="widget_empty">Lisää kanta-asiakaskortti, niin näet sen täällä.</string>
+    <string name="notification_channel_arrival">Kortit tälle paikalle</string>
+    <string name="notification_channel_arrival_description">Oikea kortti, kun saavut kauppaan, jossa olet käyttänyt sitä</string>
+    <string name="notification_arrival_text">Napauta näyttääksesi koodin</string>
+    <string name="notification_arrival_open">Napauta avataksesi kortin</string>
+    <string name="notification_arrival_locked_title">Lukittu kortti tälle paikalle</string>
+    <string name="notification_arrival_public">Kortti tälle paikalle</string>
+    <string name="notification_arrival_not_here">Ei tämä paikka</string>
 </resources>

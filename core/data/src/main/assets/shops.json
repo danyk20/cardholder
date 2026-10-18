@@ -286,7 +286,10 @@
       "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Dm-drogerie_markt_logo.svg/960px-Dm-drogerie_markt_logo.svg.png",
       "license": "Public domain",
       "source": "https://commons.wikimedia.org/wiki/File:Dm-drogerie_markt_logo.svg"
-    }
+    },
+    "wifiNames": [
+      "dm"
+    ]
   },
   {
     "id": "douglas",
@@ -399,7 +402,10 @@
       "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/960px-H%26M-Logo.svg.png",
       "license": "Public domain",
       "source": "https://commons.wikimedia.org/wiki/File:H%26M-Logo.svg"
-    }
+    },
+    "wifiNames": [
+      "hm"
+    ]
   },
   {
     "id": "hornbach",

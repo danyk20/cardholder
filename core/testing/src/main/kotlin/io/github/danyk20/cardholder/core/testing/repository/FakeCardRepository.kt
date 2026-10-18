@@ -26,6 +26,7 @@ import kotlinx.coroutines.flow.update
  * In-memory [CardRepository] that simulates authentication-bound protection: CVVs and details of
  * locked cards are only readable while [isAuthenticated] is `true`.
  */
+@Suppress("TooManyFunctions") // Implements the whole CardRepository.
 class FakeCardRepository : CardRepository {
     private data class Stored(val card: Card, val details: CardDetails, val cvv: String?)
 
@@ -89,6 +90,7 @@ class FakeCardRepository : CardRepository {
             useCount = existing?.card?.useCount ?: 0,
             lastUsedAt = existing?.card?.lastUsedAt,
             expiresOn = content.details.expiresOn,
+            suggestByLocation = existing?.card?.suggestByLocation ?: (content is CardContent.Loyalty),
         )
         store.update { it + (id to Stored(card, content.details, cvv)) }
         return SecureResult.Success(id)
@@ -119,6 +121,10 @@ class FakeCardRepository : CardRepository {
 
     override suspend fun setFavourite(id: CardId, favourite: Boolean) = updateCard(id) {
         it.copy(isFavourite = favourite)
+    }
+
+    override suspend fun setSuggestByLocation(id: CardId, enabled: Boolean) = updateCard(id) {
+        it.copy(suggestByLocation = enabled)
     }
 
     override suspend fun recordUse(id: CardId) =

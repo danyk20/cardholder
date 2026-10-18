@@ -21,4 +21,8 @@
     <string name="cardlist_drag_handle">Drag to move %1$s</string>
     <string name="cardlist_move_up">Move up</string>
     <string name="cardlist_move_down">Move down</string>
+    <string name="cardlist_nearby">Nearby</string>
+    <string name="cardlist_all_cards">All cards</string>
+    <string name="cardlist_nearby_wifi">Shop Wi‑Fi nearby</string>
+    <string name="cardlist_nearby_distance">About %1$s away</string>
 </resources>

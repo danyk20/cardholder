@@ -6,6 +6,12 @@ Cardholder; banka kartlarınızı, kimlik kartlarınızı ve sadakat kartların�
 • Plastik kartınızdaki kodu kamerayla tarayın – veya elle girin
 • QR, EAN-13, EAN-8, UPC, Code 128, Code 39, Code 93, ITF, Codabar, PDF417, Aztec ve Data Matrix desteği
 
+<b>Doğru mağazada doğru kart</b>
+• İsteğe bağlı: uygulama her kartı nerede kullandığınızı öğrenir ve yakında kullanılan kartları önce gösterir
+• İlk ziyaretinizde mağazanın Wi‑Fi'sini bile fark eder
+• Ya da vardığınızda doğru kartla bir bildirim alın – arka plan hizmeti yok, pile dostu
+• Konumlar telefonunuzda şifreli olarak kalır – asla yedeklerde yer almaz ve hiçbir yere gönderilmez
+
 <b>Banka kartları</b>
 • Kart numarası, son kullanma tarihi, kart sahibi ve CVV saklayın
 • Temassız bir kartı telefonunuza yaklaştırarak bilgileri doldurun (NFC)
