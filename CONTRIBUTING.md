@@ -26,3 +26,12 @@ CI runs the same checks and must be green before merging.
 
 ## Reporting security issues
 Please follow [SECURITY.md](SECURITY.md) – do not open public issues for vulnerabilities.
+
+## CI speed
+CI runs three parallel jobs and normally takes 1–3 minutes, because almost every task comes from the Gradle
+build cache saved by the last `main` run. Two things make it slow (5–7 minutes), by design of Gradle's caching:
+- **Updating Gradle or any build plugin** (AGP, Kotlin, Spotless, detekt, Kover, …) changes every task's cache key,
+  so the first run afterwards rebuilds everything. Dependabot therefore bundles all Gradle updates into one
+  weekly PR.
+- **PRs only reuse caches that `main` has finished saving.** After merging a PR that changes the build setup, wait
+  for `main`'s CI to finish before rebasing or pushing other PRs; otherwise they rebuild everything too.
