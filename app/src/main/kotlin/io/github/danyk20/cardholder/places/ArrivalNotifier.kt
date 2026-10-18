@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.places
 
+import android.app.Notification
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -45,23 +46,18 @@ class ArrivalNotifier @Inject constructor(
         arrivals.onDeparture(placeIds).forEach { manager.cancel(tagOf(it), NOTIFICATION_ID) }
     }
 
-    private fun notificationFor(suggestion: ArrivalSuggestion): android.app.Notification {
+    private fun notificationFor(suggestion: ArrivalSuggestion): Notification {
         val card = suggestion.card
         val title = if (card.isLocked) context.getString(R.string.notification_arrival_locked_title) else card.title
+        val isLoyalty = card.type == CardType.LOYALTY
         val text = context.getString(
-            if (card.type ==
-                CardType.LOYALTY
-            ) {
-                R.string.notification_arrival_text
-            } else {
-                R.string.notification_arrival_open
-            },
+            if (isLoyalty) R.string.notification_arrival_text else R.string.notification_arrival_open,
         )
         val lockScreenVersion = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(context.getString(R.string.notification_arrival_public))
             .build()
-        val open = if (card.type == CardType.LOYALTY) {
+        val open = if (isLoyalty) {
             showCodeIntent(context, card)
         } else {
             Intent(context, MainActivity::class.java)

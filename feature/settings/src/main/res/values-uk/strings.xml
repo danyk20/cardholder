@@ -61,6 +61,8 @@
     <string name="settings_result_invalid_file">Це не резервна копія Cardholder, або файл пошкоджено</string>
     <string name="settings_result_auth_required">Підтвердьте свою особу, щоб експортувати захищені картки</string>
     <string name="settings_result_device_not_secure">Налаштуйте блокування екрана, щоб імпортувати картки з CVV або блокуванням</string>
+    <string name="settings_result_newer_version">Цей файл створено в новішій версії Cardholder, тому деякі деталі можуть бути відсутні. Щоб переконатися, оновіть застосунок і імпортуйте файл знову</string>
+    <string name="settings_result_newer_version_failed">Цей файл створено в новішій версії Cardholder, і його не вдалося імпортувати. Оновіть застосунок і повторіть спробу.</string>
     <string name="settings_result_failed">Щось пішло не так. Повторіть спробу.</string>
 
     <string name="settings_about">Про додаток</string>

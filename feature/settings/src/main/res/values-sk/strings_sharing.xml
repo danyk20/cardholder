@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Tieto karty sú chránené heslom. Požiadajte odosielateľa o heslo.</string>
     <string name="shared_import_password">Heslo</string>
     <string name="shared_import_wrong_password">Nesprávne heslo</string>
+    <string name="shared_import_newer_version">Tieto karty pochádzajú z novšej verzie aplikácie Cardholder. Import môže zlyhať alebo vynechať niektoré podrobnosti; pre istotu najprv aktualizujte aplikáciu.</string>
     <string name="shared_import_message">Vyberte karty, ktoré chcete pridať do Cardholder.</string>
     <string name="shared_import_include">Importovať</string>
     <string name="shared_import_lock">Zamknúť</string>

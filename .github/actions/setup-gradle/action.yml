@@ -1,0 +1,23 @@
+name: Set up JDK and Gradle
+description: >-
+  Installs the JDK the build uses and Gradle with its build cache. setup-gradle also validates the wrapper and
+  only saves the cache on main, so pull requests reuse what main last stored.
+
+inputs:
+  cache-encryption-key:
+    description: >-
+      Lets the configuration cache be saved with the Gradle cache (~30-60 s less per job). Without it the
+      configuration cache simply isn't saved.
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-java@v6
+      with:
+        distribution: temurin
+        java-version: 17
+    - uses: gradle/actions/setup-gradle@v6
+      with:
+        cache-encryption-key: ${{ inputs.cache-encryption-key }}

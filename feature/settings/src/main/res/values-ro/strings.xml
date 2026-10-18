@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">Acesta nu este un backup Cardholder sau fișierul este deteriorat</string>
     <string name="settings_result_auth_required">Confirmați că sunteți dvs. pentru a exporta cardurile protejate</string>
     <string name="settings_result_device_not_secure">Configurați o blocare a ecranului pentru a importa carduri cu CVV sau blocate</string>
+    <string name="settings_result_newer_version">Acest fișier a fost creat de o versiune mai nouă a Cardholder, așa că unele detalii ar putea lipsi. Actualizați aplicația și importați din nou fișierul pentru siguranță</string>
+    <string name="settings_result_newer_version_failed">Acest fișier a fost creat de o versiune mai nouă a Cardholder și nu a putut fi importat. Actualizați aplicația și încercați din nou.</string>
     <string name="settings_result_failed">A apărut o eroare. Încercați din nou.</string>
     <string name="settings_about">Despre</string>
     <string name="settings_version">Versiunea %1$s</string>

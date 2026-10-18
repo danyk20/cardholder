@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Ove kartice su zaštićene lozinkom. Zatražite je od pošiljaoca.</string>
     <string name="shared_import_password">Lozinka</string>
     <string name="shared_import_wrong_password">Pogrešna lozinka</string>
+    <string name="shared_import_newer_version">Ove kartice potiču iz novije verzije aplikacije Cardholder. Uvoz može da ne uspe ili da propusti neke detalje; prvo ažurirajte aplikaciju da biste bili sigurni.</string>
     <string name="shared_import_message">Izaberite koje kartice želite da dodate u Cardholder.</string>
     <string name="shared_import_include">Uvezi</string>
     <string name="shared_import_lock">Zaključaj</string>

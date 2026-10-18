@@ -3,12 +3,9 @@ package io.github.danyk20.cardholder.feature.settings
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.selection.toggleable
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -21,13 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import io.github.danyk20.cardholder.core.ui.MIN_PASSWORD_LENGTH
+import io.github.danyk20.cardholder.core.ui.PasswordField
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
-
-/** Minimum length of a new backup password. */
-internal const val MIN_PASSWORD_LENGTH = 10
 
 enum class PasswordPurpose { EXPORT, IMPORT }
 
@@ -112,20 +106,5 @@ internal fun PasswordDialog(
         dismissButton = {
             TextButton(onClick = onDismiss) { Text(stringResource(R.string.settings_cancel)) }
         },
-    )
-}
-
-@Composable
-private fun PasswordField(value: String, onValueChange: (String) -> Unit, label: String, error: String?) {
-    OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
-        label = { Text(label) },
-        isError = error != null,
-        supportingText = error?.let { { Text(it) } },
-        visualTransformation = PasswordVisualTransformation(),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-        singleLine = true,
-        modifier = Modifier.fillMaxWidth(),
     )
 }

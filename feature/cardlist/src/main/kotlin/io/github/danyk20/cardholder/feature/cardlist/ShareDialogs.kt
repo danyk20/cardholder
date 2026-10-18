@@ -5,14 +5,11 @@ import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -23,16 +20,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.model.Card
+import io.github.danyk20.cardholder.core.ui.MIN_PASSWORD_LENGTH
+import io.github.danyk20.cardholder.core.ui.PasswordField
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
-
-/** Minimum length of an (optional) share password. */
-internal const val MIN_SHARE_PASSWORD_LENGTH = 8
 
 private const val SHARE_MIME_TYPE = "application/octet-stream"
 private const val STORE_LINK = "https://play.google.com/store/apps/details?id=io.github.danyk20.cardholder"
@@ -68,7 +62,7 @@ internal fun SharePasswordDialog(onConfirm: (password: CharArray?) -> Unit, onDi
     // Deliberately not saveable: the password must not end up in the saved instance state.
     var password by remember { mutableStateOf("") }
     var confirmation by remember { mutableStateOf("") }
-    val tooShort = password.isNotEmpty() && password.length < MIN_SHARE_PASSWORD_LENGTH
+    val tooShort = password.isNotEmpty() && password.length < MIN_PASSWORD_LENGTH
     val mismatch = password.isNotEmpty() && confirmation != password
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -84,8 +78,8 @@ internal fun SharePasswordDialog(onConfirm: (password: CharArray?) -> Unit, onDi
                     error = if (tooShort) {
                         pluralStringResource(
                             R.plurals.cardlist_share_password_too_short,
-                            MIN_SHARE_PASSWORD_LENGTH,
-                            MIN_SHARE_PASSWORD_LENGTH,
+                            MIN_PASSWORD_LENGTH,
+                            MIN_PASSWORD_LENGTH,
                         )
                     } else {
                         null
@@ -114,21 +108,6 @@ internal fun SharePasswordDialog(onConfirm: (password: CharArray?) -> Unit, onDi
         dismissButton = {
             TextButton(onClick = onDismiss) { Text(stringResource(R.string.cardlist_share_cancel)) }
         },
-    )
-}
-
-@Composable
-private fun PasswordField(value: String, onValueChange: (String) -> Unit, label: String, error: String?) {
-    OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
-        label = { Text(label) },
-        isError = error != null,
-        supportingText = error?.let { { Text(it) } },
-        visualTransformation = PasswordVisualTransformation(),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-        singleLine = true,
-        modifier = Modifier.fillMaxWidth(),
     )
 }
 

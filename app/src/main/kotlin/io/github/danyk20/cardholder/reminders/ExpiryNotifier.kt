@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import androidx.annotation.StringRes
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -86,7 +87,7 @@ class ExpiryNotifier @Inject constructor(@ApplicationContext private val context
         )
     }
 
-    private class Texts(val title: Int, val text: Int, val lockScreen: Int)
+    private class Texts(@StringRes val title: Int, @StringRes val text: Int, @StringRes val lockScreen: Int)
 
     private companion object {
         const val CHANNEL_ID = "expiry_reminders"

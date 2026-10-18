@@ -23,7 +23,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.update
 
 @HiltViewModel
-@Suppress("TooManyFunctions")
+@Suppress("TooManyFunctions") // One handler per user action on the screen.
 class CardDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val cardRepository: CardRepository,
@@ -51,7 +51,7 @@ class CardDetailViewModel @Inject constructor(
     private var useRecorded = false
 
     init {
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             cardRepository.observeCard(cardId).distinctUntilChanged().collect { card ->
                 if (card == null) {
                     _uiState.update { it.copy(notFound = true) }
@@ -61,10 +61,10 @@ class CardDetailViewModel @Inject constructor(
                 }
             }
         }
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             sessionLockEvents.events.collect { onSessionLocked() }
         }
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             cardPlaces.observe(cardId).collect { places ->
                 _uiState.update {
                     it.copy(
@@ -80,14 +80,14 @@ class CardDetailViewModel @Inject constructor(
     }
 
     fun onSuggestByLocationChange(enabled: Boolean) {
-        launchSafely(onError = ::onUnexpectedError) { cardPlaces.setSuggestByLocation(cardId, enabled) }
+        launchSafely(onError = { onUnexpectedError() }) { cardPlaces.setSuggestByLocation(cardId, enabled) }
     }
 
     /** The user says they're using the card here; only this records a place of bank and ID cards. */
     fun onRememberPlace() {
         if (_uiState.value.places?.isRemembering != false) return
         updatePlaces { it.copy(isRemembering = true) }
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             val result = try {
                 cardPlaces.rememberHere(cardId)
             } finally {
@@ -100,7 +100,7 @@ class CardDetailViewModel @Inject constructor(
     fun onRememberResultShown() = updatePlaces { it.copy(rememberResult = null) }
 
     fun onForgetPlaces() {
-        launchSafely(onError = ::onUnexpectedError) { cardPlaces.forget(cardId) }
+        launchSafely(onError = { onUnexpectedError() }) { cardPlaces.forget(cardId) }
     }
 
     private fun updatePlaces(transform: (PlacesUiState) -> PlacesUiState) =
@@ -115,13 +115,13 @@ class CardDetailViewModel @Inject constructor(
             _uiState.update { it.copy(pendingAuthentication = AuthAction.REVEAL_CVV) }
             return
         }
-        launchSafely(onError = ::onUnexpectedError) { revealCvv(requestAuthentication = true) }
+        launchSafely(onError = { onUnexpectedError() }) { revealCvv(requestAuthentication = true) }
     }
 
     fun onHideCvv() = _uiState.update { it.copy(cvv = null) }
 
     fun onFavouriteChange(favourite: Boolean) {
-        launchSafely(onError = ::onUnexpectedError) { cardRepository.setFavourite(cardId, favourite) }
+        launchSafely(onError = { onUnexpectedError() }) { cardRepository.setFavourite(cardId, favourite) }
     }
 
     fun onLockedChange(locked: Boolean) {
@@ -130,7 +130,7 @@ class CardDetailViewModel @Inject constructor(
             _uiState.update { it.copy(pendingAuthentication = AuthAction.REMOVE_LOCK) }
             return
         }
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             when (cardRepository.setLocked(cardId, locked)) {
                 is SecureResult.Success -> Unit
 
@@ -148,7 +148,7 @@ class CardDetailViewModel @Inject constructor(
         _uiState.update { it.copy(pendingAuthentication = null) }
         if (!succeeded) return
         authenticatedHere = true
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             when (action) {
                 AuthAction.UNLOCK_DETAILS -> {
                     val card = _uiState.value.summary?.card ?: return@launchSafely
@@ -173,11 +173,10 @@ class CardDetailViewModel @Inject constructor(
 
     fun onErrorShown() = _uiState.update { it.copy(error = null) }
 
-    private fun onUnexpectedError(@Suppress("UNUSED_PARAMETER") error: Throwable) =
-        _uiState.update { it.copy(error = DetailError.UNEXPECTED) }
+    private fun onUnexpectedError() = _uiState.update { it.copy(error = DetailError.UNEXPECTED) }
 
     fun onDelete() {
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             cardRepository.delete(cardId)
             _uiState.update { it.copy(isDeleted = true) }
         }

@@ -9,8 +9,8 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply("cardholder.android.library.compose")
-            pluginManager.apply("cardholder.hilt")
+            pluginManager.apply(libs.plugin("cardholder-android-library-compose"))
+            pluginManager.apply(libs.plugin("cardholder-hilt"))
             pluginManager.apply(libs.plugin("kotlin-serialization"))
 
             dependencies {

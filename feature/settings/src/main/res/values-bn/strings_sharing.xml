@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">এই কার্ডগুলো পাসওয়ার্ড দিয়ে সুরক্ষিত। প্রেরকের কাছে পাসওয়ার্ড চান।</string>
     <string name="shared_import_password">পাসওয়ার্ড</string>
     <string name="shared_import_wrong_password">ভুল পাসওয়ার্ড</string>
+    <string name="shared_import_newer_version">এই কার্ডগুলি Cardholder-এর একটি নতুন সংস্করণ থেকে এসেছে। আমদানি ব্যর্থ হতে পারে বা কিছু বিবরণ বাদ পড়তে পারে; নিশ্চিত হতে আগে অ্যাপটি আপডেট করুন।</string>
     <string name="shared_import_message">Cardholder-এ যোগ করতে চান এমন কার্ড বেছে নিন।</string>
     <string name="shared_import_include">আমদানি</string>
     <string name="shared_import_lock">লক</string>

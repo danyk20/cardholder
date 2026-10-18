@@ -348,12 +348,15 @@ internal fun resultMessage(result: BackupResult): String = when (result) {
         if (result.skipped > 0) {
             add(pluralStringResource(R.plurals.settings_result_skipped, result.skipped, result.skipped))
         }
+        if (result.fromNewerVersion) add(stringResource(R.string.settings_result_newer_version))
     }.joinToString(". ")
 
     BackupResult.WrongPassword, BackupResult.PasswordRequired ->
         stringResource(R.string.settings_result_wrong_password)
 
     BackupResult.InvalidFile -> stringResource(R.string.settings_result_invalid_file)
+
+    BackupResult.NewerVersion -> stringResource(R.string.settings_result_newer_version_failed)
 
     BackupResult.AuthenticationRequired -> stringResource(R.string.settings_result_auth_required)
 

@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">Este arquivo não é um backup do Cardholder ou está corrompido</string>
     <string name="settings_result_auth_required">Confirme sua identidade para exportar cartões protegidos</string>
     <string name="settings_result_device_not_secure">Configure um bloqueio de tela para importar cartões com CVV ou bloqueio</string>
+    <string name="settings_result_newer_version">Este arquivo foi criado por uma versão mais recente do Cardholder, então alguns detalhes podem estar faltando. Atualize o app e importe o arquivo novamente para ter certeza</string>
+    <string name="settings_result_newer_version_failed">Este arquivo foi criado por uma versão mais recente do Cardholder e não pôde ser importado. Atualize o app e tente novamente.</string>
     <string name="settings_result_failed">Algo deu errado. Tente novamente.</string>
     <string name="settings_about">Sobre</string>
     <string name="settings_version">Versão %1$s</string>

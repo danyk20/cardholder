@@ -18,14 +18,17 @@ when a tag `v*` is pushed.
    | `SIGNING_KEY_PASSWORD` | key password |
 
 ## Cutting a release
-1. Update `versionCode`/`versionName` in `app/build.gradle.kts` and `CHANGELOG.md`.
+1. Update `versionCode`/`versionName` in `app/build.gradle.kts`, move the *Unreleased* entries in
+   `CHANGELOG.md` to a new `## [x.y.z] - date` section, and add the store text
+   `fastlane/metadata/android/<locale>/changelogs/<versionCode>.txt`.
 2. Merge to `main` with green CI.
-3. Tag and push:
+3. Tag and push (the tag must be `v` + `versionName`, or the workflow stops):
    ```bash
-   git tag -a v1.0.0 -m "Cardholder 1.0.0"
-   git push origin v1.0.0
+   git tag -a v1.3.0 -m "Cardholder 1.3.0"
+   git push origin v1.3.0
    ```
-4. The workflow builds the signed APK and AAB (R8-minified) and attaches them to a GitHub release.
+4. The workflow runs the unit tests, builds the signed APK and AAB (R8-minified) and publishes a GitHub
+   release with both files and that version's `CHANGELOG.md` section as release notes.
 
 ## Before tagging
 - Run the instrumented tests (add the `run-instrumented` label to a PR or trigger the workflow manually).

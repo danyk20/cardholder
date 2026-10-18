@@ -12,7 +12,7 @@ object BarcodeValidator {
     private val UPC_E_LENGTH = 7..8
     private val PRINTABLE_ASCII = ' '..'~'
 
-    @Suppress("CyclomaticComplexMethod")
+    @Suppress("CyclomaticComplexMethod") // One rule per symbology.
     fun validate(code: String, format: BarcodeFormat): ValidationError? {
         if (code.isEmpty()) return ValidationError.REQUIRED
         return when (format) {

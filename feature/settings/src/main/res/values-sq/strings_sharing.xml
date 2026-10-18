@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Këto karta mbrohen me fjalëkalim. Kërkojua dërguesit.</string>
     <string name="shared_import_password">Fjalëkalimi</string>
     <string name="shared_import_wrong_password">Fjalëkalim i gabuar</string>
+    <string name="shared_import_newer_version">Këto karta vijnë nga një version më i ri i Cardholder. Importimi mund të dështojë ose të linjë pa disa detaje; përditëso aplikacionin fillimisht për t\'u siguruar.</string>
     <string name="shared_import_message">Zgjidh cilat karta të shtohen te Cardholder.</string>
     <string name="shared_import_include">Importo</string>
     <string name="shared_import_lock">Kyç</string>

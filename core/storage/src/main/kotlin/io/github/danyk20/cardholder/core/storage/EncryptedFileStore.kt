@@ -15,18 +15,6 @@ class EncryptedFileStore(private val directory: File, private val cipher: Envelo
 
     fun levelOf(name: String): ProtectionLevel = cipher.levelOf(sealedBytes(name))
 
-    /** Re-encrypts an existing entry with [level]; reading a [ProtectionLevel.PROTECTED] entry needs authentication. */
-    fun reseal(name: String, level: ProtectionLevel) {
-        val sealed = sealedBytes(name)
-        if (cipher.levelOf(sealed) == level) return
-        val plaintext = cipher.open(sealed)
-        try {
-            writeAtomically(file(name), cipher.seal(plaintext, level))
-        } finally {
-            plaintext.fill(0)
-        }
-    }
-
     fun delete(name: String) {
         file(name).delete()
     }

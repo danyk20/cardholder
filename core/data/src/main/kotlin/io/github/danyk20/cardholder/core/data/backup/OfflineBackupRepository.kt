@@ -112,22 +112,26 @@ internal class OfflineBackupRepository(
         withContext(ioDispatcher) {
             runBackup {
                 val content = readContent(sourceUri, password)
-                val needsProtection = content.cards.any { it.isLocked || it.cvv != null }
-                if (needsProtection && !deviceSecurity.isDeviceSecure()) return@runBackup BackupResult.DeviceNotSecure
-                val existing = cardRepository.observeCards().first().map { it.id.value }.toSet()
-                var imported = 0
-                var skipped = 0
-                // New cards are appended to the custom order, so import them in their original order.
-                content.cards.sortedBy { it.position }.forEach { backup ->
-                    if (backup.id in existing && strategy == ImportStrategy.SKIP_EXISTING) {
-                        skipped++
-                    } else {
-                        val id = cardRepository.save(backup.toDraft(content.images)).orThrow()
-                        if (backup.isFavourite) cardRepository.setFavourite(id, true)
-                        imported++
+                content.blameNewerVersion {
+                    val needsProtection = content.cards.any { it.isLocked || it.cvv != null }
+                    if (needsProtection && !deviceSecurity.isDeviceSecure()) {
+                        return@runBackup BackupResult.DeviceNotSecure
                     }
+                    val existing = cardRepository.observeCards().first().map { it.id.value }.toSet()
+                    var imported = 0
+                    var skipped = 0
+                    // New cards are appended to the custom order, so import them in their original order.
+                    content.cards.sortedBy { it.position }.forEach { backup ->
+                        if (backup.id in existing && strategy == ImportStrategy.SKIP_EXISTING) {
+                            skipped++
+                        } else {
+                            val id = cardRepository.save(backup.toDraft(content.images)).orThrow()
+                            if (backup.isFavourite) cardRepository.setFavourite(id, true)
+                            imported++
+                        }
+                    }
+                    BackupResult.Imported(imported, skipped, fromNewerVersion = content.isFromNewerVersion)
                 }
-                BackupResult.Imported(imported = imported, skipped = skipped)
             }
         }
 
@@ -137,19 +141,22 @@ internal class OfflineBackupRepository(
             val failure = runBackup {
                 val content = readContent(sourceUri, password)
                 val existing = existingKeys()
-                preview = SharedFilePreview.Cards(
-                    content.cards.sortedBy { it.position }.map { backup ->
-                        SharedCardPreview(
-                            key = backup.id,
-                            title = backup.title,
-                            type = CardType.entries.firstOrNull { it.name == backup.type }
-                                ?: throw InvalidBackupException("Unknown card type"),
-                            wasLocked = backup.isLocked,
-                            duplicateOf = existing.byId[backup.id]
-                                ?: backup.details.identifier()?.let { existing.byIdentifier[it] },
-                        )
-                    },
-                )
+                preview = content.blameNewerVersion {
+                    SharedFilePreview.Cards(
+                        content.cards.sortedBy { it.position }.map { backup ->
+                            SharedCardPreview(
+                                key = backup.id,
+                                title = backup.title,
+                                type = CardType.entries.firstOrNull { it.name == backup.type }
+                                    ?: throw InvalidBackupException("Unknown card type"),
+                                wasLocked = backup.isLocked,
+                                duplicateOf = existing.byId[backup.id]
+                                    ?: backup.details.identifier()?.let { existing.byIdentifier[it] },
+                            )
+                        },
+                        fromNewerVersion = content.isFromNewerVersion,
+                    )
+                }
                 BackupResult.Imported(0, 0)
             }
             preview ?: SharedFilePreview.Unreadable(failure)
@@ -162,30 +169,54 @@ internal class OfflineBackupRepository(
     ): BackupResult = withContext(ioDispatcher) {
         runBackup {
             val content = readContent(sourceUri, password)
-            val chosen = content.cards.mapNotNull { backup -> choices[backup.id]?.let { backup to it } }
-            val needsProtection = chosen.any { (backup, choice) ->
-                choice.action != SharedCardAction.SKIP && (choice.locked || backup.cvv != null)
-            }
-            if (needsProtection && !deviceSecurity.isDeviceSecure()) return@runBackup BackupResult.DeviceNotSecure
-            val existing = existingKeys()
-            var imported = 0
-            chosen.sortedBy { it.first.position }.forEach { (backup, choice) ->
-                val target = when (choice.action) {
-                    SharedCardAction.SKIP -> return@forEach
-
-                    SharedCardAction.ADD_NEW -> CardId.random()
-
-                    SharedCardAction.REPLACE -> existing.byId[backup.id]
-                        ?: backup.details.identifier()?.let { existing.byIdentifier[it] }
-                        ?: CardId.random()
+            content.blameNewerVersion {
+                val chosen = content.cards.mapNotNull { backup -> choices[backup.id]?.let { backup to it } }
+                val needsProtection = chosen.any { (backup, choice) ->
+                    choice.action != SharedCardAction.SKIP && (choice.locked || backup.cvv != null)
                 }
-                cardRepository.save(
-                    backup.toDraft(content.images).copy(id = target, isLocked = choice.locked),
-                ).orThrow()
-                imported++
+                if (needsProtection && !deviceSecurity.isDeviceSecure()) {
+                    return@runBackup BackupResult.DeviceNotSecure
+                }
+                val existing = existingKeys()
+                var imported = 0
+                chosen.sortedBy { it.first.position }.forEach { (backup, choice) ->
+                    val target = when (choice.action) {
+                        SharedCardAction.SKIP -> return@forEach
+
+                        SharedCardAction.ADD_NEW -> CardId.random()
+
+                        SharedCardAction.REPLACE -> existing.byId[backup.id]
+                            ?: backup.details.identifier()?.let { existing.byIdentifier[it] }
+                            ?: CardId.random()
+                    }
+                    cardRepository.save(
+                        backup.toDraft(content.images).copy(id = target, isLocked = choice.locked),
+                    ).orThrow()
+                    imported++
+                }
+                BackupResult.Imported(
+                    imported = imported,
+                    skipped = content.cards.size - imported,
+                    fromNewerVersion = content.isFromNewerVersion,
+                )
             }
-            BackupResult.Imported(imported = imported, skipped = content.cards.size - imported)
         }
+    }
+
+    /**
+     * Runs [block] on the cards of a file. If it was made by a newer app version, any failure to make sense of
+     * them is reported as [NewerBackupVersionException], so the user is told to update instead of that the file
+     * is damaged. Authentication and device-security outcomes are reported as usual.
+     */
+    @Suppress("TooGenericExceptionCaught") // Whatever the newer format broke, the version is the likely cause.
+    private inline fun <T> BackupContent.blameNewerVersion(block: () -> T): T = try {
+        block()
+    } catch (e: CancellationException) {
+        throw e
+    } catch (e: ProtectedDataException) {
+        throw e
+    } catch (e: Exception) {
+        if (isFromNewerVersion) throw NewerBackupVersionException("Format version $formatVersion", e) else throw e
     }
 
     /** Reads and, if needed, decrypts a backup or shared file. */
@@ -303,6 +334,8 @@ internal class OfflineBackupRepository(
         BackupResult.WrongPassword
     } catch (_: InvalidBackupException) {
         BackupResult.InvalidFile
+    } catch (_: NewerBackupVersionException) {
+        BackupResult.NewerVersion
     } catch (e: CancellationException) {
         throw e
     } catch (e: Exception) {

@@ -37,7 +37,7 @@ class ArrivalActionReceiver : BroadcastReceiver() {
             try {
                 entryPoint.arrivals().notThisPlace(placeId)
             } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
-                Log.w("Arrivals", "Couldn't forget the place", e)
+                Log.w(TAG, "Couldn't forget the place", e)
             } finally {
                 pending.finish()
             }
@@ -45,6 +45,7 @@ class ArrivalActionReceiver : BroadcastReceiver() {
     }
 
     companion object {
+        private const val TAG = "Arrivals"
         private const val EXTRA_PLACE_ID = "place_id"
         private const val EXTRA_CARD_ID = "card_id"
 

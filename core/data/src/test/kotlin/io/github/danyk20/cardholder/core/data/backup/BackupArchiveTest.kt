@@ -3,10 +3,12 @@ package io.github.danyk20.cardholder.core.data.backup
 import io.github.danyk20.cardholder.core.data.model.CardDetailsDto
 import java.io.ByteArrayOutputStream
 import java.util.zip.ZipEntry
+import java.util.zip.ZipInputStream
 import java.util.zip.ZipOutputStream
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 import org.junit.Test
 
@@ -40,7 +42,7 @@ class BackupArchiveTest {
         val bytes = BackupArchive.write(BackupContent(listOf(card), emptyMap()), 99)
         val withEvilEntry = ByteArrayOutputStream().also { output ->
             ZipOutputStream(output).use { zip ->
-                java.util.zip.ZipInputStream(bytes.inputStream()).use { source ->
+                ZipInputStream(bytes.inputStream()).use { source ->
                     generateSequence { source.nextEntry }.forEach { entry ->
                         zip.putNextEntry(ZipEntry(entry.name))
                         zip.write(source.readBytes())
@@ -60,4 +62,48 @@ class BackupArchiveTest {
 
         assertFailsWith<InvalidBackupException> { BackupArchive.read(empty.toByteArray()) }
     }
+
+    @Test
+    fun `a file from a newer version is read and flagged`() {
+        val newer =
+            archiveWithManifest(manifestJson().withFormatVersion(2).replace("\"title\"", "\"futureField\":1,\"title\""))
+
+        val content = BackupArchive.read(newer)
+
+        assertEquals(listOf(card), content.cards)
+        assertTrue(content.isFromNewerVersion)
+        assertFalse(BackupArchive.read(archiveWithManifest(manifestJson())).isFromNewerVersion)
+    }
+
+    @Test
+    fun `unreadable cards from a newer version are reported as such`() {
+        val unknownDetails = manifestJson().replace(
+            Regex(""""details":\{"type":"[^"]*""""),
+            """"details":{"type":"future"""",
+        )
+
+        assertFailsWith<NewerBackupVersionException> {
+            BackupArchive.read(archiveWithManifest(unknownDetails.withFormatVersion(2)))
+        }
+        assertFailsWith<InvalidBackupException> { BackupArchive.read(archiveWithManifest(unknownDetails)) }
+    }
+
+    /** The `cards.json` this version writes for [card]. */
+    private fun manifestJson(): String {
+        val bytes = BackupArchive.write(BackupContent(listOf(card), emptyMap()), 99)
+        return ZipInputStream(bytes.inputStream()).use { zip ->
+            generateSequence { zip.nextEntry }.first { it.name == "cards.json" }
+            zip.readBytes().decodeToString()
+        }
+    }
+
+    private fun String.withFormatVersion(version: Int) =
+        replace(Regex(""""formatVersion":\d+"""), """"formatVersion":$version""")
+
+    private fun archiveWithManifest(json: String): ByteArray = ByteArrayOutputStream().also { output ->
+        ZipOutputStream(output).use { zip ->
+            zip.putNextEntry(ZipEntry("cards.json"))
+            zip.write(json.encodeToByteArray())
+        }
+    }.toByteArray()
 }

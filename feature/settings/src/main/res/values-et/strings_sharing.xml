@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Need kaardid on parooliga kaitstud. Küsi parooli saatjalt.</string>
     <string name="shared_import_password">Parool</string>
     <string name="shared_import_wrong_password">Vale parool</string>
+    <string name="shared_import_newer_version">Need kaardid pärinevad uuemast Cardholderi versioonist. Import võib ebaõnnestuda või jätta mõned üksikasjad vahele; veendumiseks uuendage kõigepealt rakendust.</string>
     <string name="shared_import_message">Vali, millised kaardid lisada rakendusse Cardholder.</string>
     <string name="shared_import_include">Impordi</string>
     <string name="shared_import_lock">Lukusta</string>

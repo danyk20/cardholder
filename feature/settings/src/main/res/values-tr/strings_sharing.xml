@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Bu kartlar parolayla korunuyor. Parolayı göndericiden isteyin.</string>
     <string name="shared_import_password">Parola</string>
     <string name="shared_import_wrong_password">Yanlış parola</string>
+    <string name="shared_import_newer_version">Bu kartlar Cardholder\'ın daha yeni bir sürümünden geliyor. İçe aktarma başarısız olabilir veya bazı ayrıntıları atlayabilir; emin olmak için önce uygulamayı güncelleyin.</string>
     <string name="shared_import_message">Cardholder\'a eklemek istediğiniz kartları seçin.</string>
     <string name="shared_import_include">İçe aktar</string>
     <string name="shared_import_lock">Kilitle</string>

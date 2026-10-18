@@ -49,6 +49,8 @@
     <string name="settings_result_invalid_file">Tämä ei ole Cardholder-varmuuskopio, tai tiedosto on vioittunut</string>
     <string name="settings_result_auth_required">Vahvista henkilöllisyytesi, jotta voit viedä suojatut kortit</string>
     <string name="settings_result_device_not_secure">Ota näytön lukitus käyttöön, jotta voit tuoda kortteja, joissa on CVV-koodeja tai lukituksia</string>
+    <string name="settings_result_newer_version">Tämän tiedoston on luonut uudempi Cardholderin versio, joten joitain tietoja voi puuttua. Varmista päivittämällä sovellus ja tuomalla tiedosto uudelleen</string>
+    <string name="settings_result_newer_version_failed">Tämän tiedoston on luonut uudempi Cardholderin versio, eikä sitä voitu tuoda. Päivitä sovellus ja yritä uudelleen.</string>
     <string name="settings_result_failed">Jokin meni vikaan. Yritä uudelleen.</string>
     <string name="settings_about">Tietoja</string>
     <string name="settings_version">Versio %1$s</string>

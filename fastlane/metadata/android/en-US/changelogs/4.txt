@@ -1,0 +1,1 @@
+Card suggestions by location (off by default): the cards you use nearby come first, and you can be notified when you arrive at the shop. Everything is learned and kept on your device only.

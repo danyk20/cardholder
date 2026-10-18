@@ -49,6 +49,8 @@
     <string name="settings_result_invalid_file">Hii si nakala rudufu ya Cardholder au faili imeharibika</string>
     <string name="settings_result_auth_required">Thibitisha kuwa ni wewe ili uhamishe kadi zinazolindwa</string>
     <string name="settings_result_device_not_secure">Weka mbinu ya kufunga skrini ili uingize kadi zenye CVV au zilizofungwa</string>
+    <string name="settings_result_newer_version">Faili hii ilitengenezwa kwa toleo jipya la Cardholder, kwa hiyo baadhi ya maelezo yanaweza kukosekana. Ili uwe na uhakika, sasisha programu kisha uingize faili tena</string>
+    <string name="settings_result_newer_version_failed">Faili hii ilitengenezwa kwa toleo jipya la Cardholder na haikuweza kuingizwa. Sasisha programu kisha ujaribu tena.</string>
     <string name="settings_result_failed">Hitilafu fulani imetokea. Tafadhali jaribu tena.</string>
     <string name="settings_about">Kuhusu</string>
     <string name="settings_version">Toleo la %1$s</string>

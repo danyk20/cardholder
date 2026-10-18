@@ -45,7 +45,7 @@ data class CardEntity(
     /** Sealed CVV of a bank card, always protected by user authentication. */
     @ColumnInfo(name = "sealed_cvv", typeAffinity = ColumnInfo.BLOB) val sealedCvv: ByteArray?,
 ) {
-    @Suppress("CyclomaticComplexMethod")
+    @Suppress("CyclomaticComplexMethod") // Field-by-field, as ByteArray needs contentEquals.
     override fun equals(other: Any?): Boolean = this === other ||
         (
             other is CardEntity &&

@@ -49,6 +49,8 @@
     <string name="settings_result_invalid_file">این فایل نسخه پشتیبان Cardholder نیست یا آسیب دیده است</string>
     <string name="settings_result_auth_required">برای صادر کردن کارت‌های محافظت‌شده، هویت خود را تأیید کنید</string>
     <string name="settings_result_device_not_secure">برای وارد کردن کارت‌های دارای CVV یا قفل، قفل صفحه را تنظیم کنید</string>
+    <string name="settings_result_newer_version">این فایل با نسخه جدیدتری از Cardholder ساخته شده، بنابراین ممکن است برخی جزئیات وجود نداشته باشد. برای اطمینان، برنامه را به‌روز کنید و فایل را دوباره وارد کنید</string>
+    <string name="settings_result_newer_version_failed">این فایل با نسخه جدیدتری از Cardholder ساخته شده و نتوانست وارد شود. برنامه را به‌روز کنید و دوباره امتحان کنید.</string>
     <string name="settings_result_failed">مشکلی پیش آمد. لطفاً دوباره امتحان کنید.</string>
     <string name="settings_about">درباره</string>
     <string name="settings_version">نسخه %1$s</string>

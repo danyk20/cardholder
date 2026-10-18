@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">Bu bir Cardholder yedeği değil veya dosya hasarlı</string>
     <string name="settings_result_auth_required">Korumalı kartları dışa aktarmak için kimliğinizi doğrulayın</string>
     <string name="settings_result_device_not_secure">CVV veya kilit içeren kartları içe aktarmak için ekran kilidi ayarlayın</string>
+    <string name="settings_result_newer_version">Bu dosya Cardholder\'ın daha yeni bir sürümüyle oluşturulmuş, bu yüzden bazı ayrıntılar eksik olabilir. Emin olmak için uygulamayı güncelleyin ve dosyayı yeniden içe aktarın</string>
+    <string name="settings_result_newer_version_failed">Bu dosya Cardholder\'ın daha yeni bir sürümüyle oluşturulmuş ve içe aktarılamadı. Uygulamayı güncelleyip tekrar deneyin.</string>
     <string name="settings_result_failed">Bir sorun oluştu. Lütfen tekrar deneyin.</string>
 
     <string name="settings_about">Hakkında</string>

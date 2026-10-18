@@ -61,6 +61,8 @@
     <string name="settings_result_invalid_file">Toto nie je záloha aplikácie Cardholder alebo je súbor poškodený</string>
     <string name="settings_result_auth_required">Ak chcete exportovať chránené karty, potvrďte svoju totožnosť</string>
     <string name="settings_result_device_not_secure">Ak chcete importovať karty s CVV alebo zámkou, nastavte si zámku obrazovky</string>
+    <string name="settings_result_newer_version">Tento súbor vytvorila novšia verzia aplikácie Cardholder, takže niektoré podrobnosti môžu chýbať. Aplikáciu aktualizujte a súbor znova importujte, aby ste si boli istí</string>
+    <string name="settings_result_newer_version_failed">Tento súbor vytvorila novšia verzia aplikácie Cardholder a nepodarilo sa ho importovať. Aktualizujte aplikáciu a skúste to znova.</string>
     <string name="settings_result_failed">Niečo sa pokazilo. Skúste to znova.</string>
 
     <string name="settings_about">Informácie</string>

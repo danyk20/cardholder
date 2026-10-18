@@ -4,7 +4,7 @@ package io.github.danyk20.cardholder.core.model
  * Payment card network, derived from the issuer identification number (IIN) prefix. [lengths] are the
  * card number lengths the network issues.
  */
-@Suppress("MagicNumber")
+@Suppress("MagicNumber") // Number lengths are defined by each network.
 enum class CardNetwork(val displayName: String, val lengths: Set<Int>, val cvvLength: Int = 3) {
     // 13-digit Visa numbers are no longer issued.
     VISA("Visa", setOf(16, 19)),
@@ -20,7 +20,7 @@ enum class CardNetwork(val displayName: String, val lengths: Set<Int>, val cvvLe
 
     companion object {
         /** Detects the network from the leading digits of [number]; non-digits are ignored. */
-        @Suppress("CyclomaticComplexMethod", "MagicNumber")
+        @Suppress("CyclomaticComplexMethod", "MagicNumber") // One branch per published IIN range.
         fun detect(number: String): CardNetwork {
             val digits = number.filter(Char::isDigit)
 

@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">Ky nuk është një kopje rezervë e Cardholder ose skedari është i dëmtuar</string>
     <string name="settings_result_auth_required">Konfirmo që je ti për të eksportuar kartat e mbrojtura</string>
     <string name="settings_result_device_not_secure">Konfiguro një kyçje ekrani për të importuar karta me CVV ose kyçje</string>
+    <string name="settings_result_newer_version">Ky skedar u krijua nga një version më i ri i Cardholder, ndaj disa detaje mund të mungojnë. Përditëso aplikacionin dhe importoje përsëri skedarin për t\'u siguruar</string>
+    <string name="settings_result_newer_version_failed">Ky skedar u krijua nga një version më i ri i Cardholder dhe nuk mund të importohej. Përditëso aplikacionin dhe provo përsëri.</string>
     <string name="settings_result_failed">Diçka shkoi keq. Provo përsëri.</string>
 
     <string name="settings_about">Rreth</string>

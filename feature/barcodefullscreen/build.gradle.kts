@@ -8,7 +8,8 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.barcode)
+
     testImplementation(libs.roborazzi)
     testImplementation(libs.roborazzi.compose)
-    implementation(projects.core.barcode)
 }

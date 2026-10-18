@@ -1,5 +1,6 @@
 import com.android.build.api.dsl.LibraryExtension
 import io.github.danyk20.cardholder.buildlogic.configureKotlinAndroid
+import io.github.danyk20.cardholder.buildlogic.configureLintDefaults
 import io.github.danyk20.cardholder.buildlogic.configureStaticAnalysis
 import io.github.danyk20.cardholder.buildlogic.libs
 import io.github.danyk20.cardholder.buildlogic.plugin
@@ -20,13 +21,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 sourceSets.getByName("test").resources.directories.add(
                     rootProject.layout.projectDirectory.dir("config/robolectric").asFile.path,
                 )
-                lint {
-                    warningsAsErrors = true
-                    abortOnError = true
-                    // Tests aren't shipped; analysing them doubles lint's work for no user-facing benefit.
-                    ignoreTestSources = true
-                    disable += setOf("GradleDependency", "NewerVersionAvailable", "AndroidGradlePluginVersion")
-                }
+                lint.configureLintDefaults()
             }
             configureStaticAnalysis()
         }

@@ -5,6 +5,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-10-18
+### Changed
+- Backup passwords need at least 8 characters, like passwords for shared cards (was 10).
+- Files made by a newer version of Cardholder are still imported, with a warning that some details may be
+  missing; if the import fails, the app says to update instead of calling the file damaged.
+
 ## [1.3.0] - 2026-10-18
 ### Added
 - Card suggestions by location (off by default): in Settings choose *When I open the app* or *Also notify

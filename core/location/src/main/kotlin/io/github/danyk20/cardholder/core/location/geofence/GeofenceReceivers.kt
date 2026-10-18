@@ -16,6 +16,8 @@ import io.github.danyk20.cardholder.core.domain.usecase.SyncGeofencesUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+private const val TAG = "Geofences"
+
 @EntryPoint
 @InstallIn(SingletonComponent::class)
 internal interface GeofenceEntryPoint {
@@ -36,7 +38,7 @@ private fun BroadcastReceiver.handle(context: Context, block: suspend GeofenceEn
             entryPoint.block()
         } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
             // E.g. the cards can't be read; the next arrival tries again.
-            Log.w("Geofences", "Couldn't handle a geofence event", e)
+            Log.w(TAG, "Couldn't handle a geofence event", e)
         } finally {
             pending.finish()
         }

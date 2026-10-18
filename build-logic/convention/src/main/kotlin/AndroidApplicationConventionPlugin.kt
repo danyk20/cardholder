@@ -1,5 +1,6 @@
 import com.android.build.api.dsl.ApplicationExtension
 import io.github.danyk20.cardholder.buildlogic.configureKotlinAndroid
+import io.github.danyk20.cardholder.buildlogic.configureLintDefaults
 import io.github.danyk20.cardholder.buildlogic.configureStaticAnalysis
 import io.github.danyk20.cardholder.buildlogic.libs
 import io.github.danyk20.cardholder.buildlogic.plugin
@@ -17,12 +18,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 defaultConfig.targetSdk = libs.version("targetSdk").toInt()
                 testOptions.animationsDisabled = true
                 lint {
-                    warningsAsErrors = true
-                    abortOnError = true
-                    // Tests aren't shipped; analysing them doubles lint's work for no user-facing benefit.
-                    ignoreTestSources = true
+                    configureLintDefaults()
+                    // The app's lint run also covers every module it depends on.
                     checkDependencies = true
-                    disable += setOf("GradleDependency", "NewerVersionAvailable", "AndroidGradlePluginVersion", "OldTargetApi")
+                    disable += "OldTargetApi"
                 }
             }
             configureStaticAnalysis()

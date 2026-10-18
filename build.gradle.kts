@@ -15,14 +15,19 @@ plugins {
 }
 
 dependencies {
-    // Aggregated coverage report: ./gradlew koverHtmlReport
+    // Aggregated coverage report of every module with tests: ./gradlew koverHtmlReport
     listOf(
+        projects.app,
+        projects.core.barcode,
         projects.core.data,
         projects.core.database,
         projects.core.domain,
+        projects.core.location,
         projects.core.model,
+        projects.core.scanning,
         projects.core.security,
         projects.core.storage,
+        projects.core.ui,
         projects.feature.barcodefullscreen,
         projects.feature.carddetail,
         projects.feature.cardeditor,

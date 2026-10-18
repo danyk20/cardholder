@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">ये कार्ड पासवर्ड से सुरक्षित हैं। भेजने वाले से पासवर्ड मांगें।</string>
     <string name="shared_import_password">पासवर्ड</string>
     <string name="shared_import_wrong_password">गलत पासवर्ड</string>
+    <string name="shared_import_newer_version">ये कार्ड Cardholder के नए संस्करण से हैं। इंपोर्ट विफल हो सकता है या कुछ विवरण छूट सकते हैं; पक्का करने के लिए पहले ऐप अपडेट करें।</string>
     <string name="shared_import_message">चुनें कि कौन से कार्ड Cardholder में जोड़ने हैं।</string>
     <string name="shared_import_include">आयात करें</string>
     <string name="shared_import_lock">लॉक करें</string>

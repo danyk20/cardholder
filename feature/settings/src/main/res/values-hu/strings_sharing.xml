@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Ezek a kártyák jelszóval védettek. Kérd el a küldőtől.</string>
     <string name="shared_import_password">Jelszó</string>
     <string name="shared_import_wrong_password">Hibás jelszó</string>
+    <string name="shared_import_newer_version">Ezek a kártyák a Cardholder egy újabb verziójából származnak. Az importálás sikertelen lehet, vagy kihagyhat néhány részletet; a biztonság kedvéért frissítse előbb az alkalmazást.</string>
     <string name="shared_import_message">Válaszd ki, mely kártyákat szeretnéd hozzáadni a Cardholderhez.</string>
     <string name="shared_import_include">Importálás</string>
     <string name="shared_import_lock">Zárolás</string>

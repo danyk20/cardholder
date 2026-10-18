@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">This is not a Cardholder backup or the file is damaged</string>
     <string name="settings_result_auth_required">Confirm it\'s you to export protected cards</string>
     <string name="settings_result_device_not_secure">Set up a screen lock to import cards with CVVs or locks</string>
+    <string name="settings_result_newer_version">This file was made by a newer version of Cardholder, so some details may be missing. Update the app and import it again to be sure</string>
+    <string name="settings_result_newer_version_failed">This file was made by a newer version of Cardholder and couldn\'t be imported. Update the app and try again.</string>
     <string name="settings_result_failed">Something went wrong. Please try again.</string>
 
     <string name="settings_about">About</string>

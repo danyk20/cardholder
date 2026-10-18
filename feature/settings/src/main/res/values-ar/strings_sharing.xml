@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">هذه البطاقات محمية بكلمة مرور. اطلبها من المرسل.</string>
     <string name="shared_import_password">كلمة المرور</string>
     <string name="shared_import_wrong_password">كلمة المرور غير صحيحة</string>
+    <string name="shared_import_newer_version">هذه البطاقات تأتي من إصدار أحدث من Cardholder. قد يفشل الاستيراد أو تفتقد بعض التفاصيل؛ حدّث التطبيق أولاً للتأكد.</string>
     <string name="shared_import_message">اختر البطاقات التي تريد إضافتها إلى Cardholder.</string>
     <string name="shared_import_include">استيراد</string>
     <string name="shared_import_lock">قفل</string>

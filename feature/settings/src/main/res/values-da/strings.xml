@@ -49,6 +49,8 @@
     <string name="settings_result_invalid_file">Dette er ikke en backup fra Cardholder, eller filen er beskadiget</string>
     <string name="settings_result_auth_required">Bekræft, at det er dig, for at eksportere beskyttede kort</string>
     <string name="settings_result_device_not_secure">Konfigurer en skærmlås for at importere kort med CVV-koder eller låse</string>
+    <string name="settings_result_newer_version">Denne fil er lavet af en nyere version af Cardholder, så nogle detaljer mangler muligvis. Opdater appen og importer filen igen for at være sikker</string>
+    <string name="settings_result_newer_version_failed">Denne fil er lavet af en nyere version af Cardholder og kunne ikke importeres. Opdater appen, og prøv igen.</string>
     <string name="settings_result_failed">Noget gik galt. Prøv igen.</string>
     <string name="settings_about">Om</string>
     <string name="settings_version">Version %1$s</string>

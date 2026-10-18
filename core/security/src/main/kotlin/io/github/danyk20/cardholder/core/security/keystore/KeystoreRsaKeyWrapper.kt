@@ -9,6 +9,7 @@ import io.github.danyk20.cardholder.core.security.DeviceNotSecureException
 import io.github.danyk20.cardholder.core.security.KeyInvalidatedException
 import io.github.danyk20.cardholder.core.security.KeyWrapper
 import java.security.GeneralSecurityException
+import java.security.InvalidAlgorithmParameterException
 import java.security.KeyFactory
 import java.security.KeyPairGenerator
 import java.security.PrivateKey
@@ -93,7 +94,7 @@ internal class KeystoreRsaKeyWrapper(private val alias: String) : KeyWrapper {
         }.generateKeyPair().public
     } catch (e: IllegalStateException) {
         throw DeviceNotSecureException(e)
-    } catch (e: java.security.InvalidAlgorithmParameterException) {
+    } catch (e: InvalidAlgorithmParameterException) {
         throw DeviceNotSecureException(e)
     }
 

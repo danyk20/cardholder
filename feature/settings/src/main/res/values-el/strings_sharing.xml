@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Αυτές οι κάρτες προστατεύονται με κωδικό. Ζητήστε τον από τον αποστολέα.</string>
     <string name="shared_import_password">Κωδικός</string>
     <string name="shared_import_wrong_password">Λάθος κωδικός</string>
+    <string name="shared_import_newer_version">Αυτές οι κάρτες προέρχονται από νεότερη έκδοση του Cardholder. Η εισαγωγή ενδέχεται να αποτύχει ή να παραλείψει ορισμένα στοιχεία· ενημερώστε πρώτα την εφαρμογή για σιγουριά.</string>
     <string name="shared_import_message">Επιλέξτε ποιες κάρτες θέλετε να προσθέσετε στο Cardholder.</string>
     <string name="shared_import_include">Εισαγωγή</string>
     <string name="shared_import_lock">Κλείδωμα</string>

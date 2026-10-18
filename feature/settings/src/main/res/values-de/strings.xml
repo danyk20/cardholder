@@ -53,6 +53,8 @@
     <string name="settings_result_invalid_file">Dies ist keine Cardholder-Sicherung oder die Datei ist beschädigt</string>
     <string name="settings_result_auth_required">Identität bestätigen, um geschützte Karten zu exportieren</string>
     <string name="settings_result_device_not_secure">Displaysperre einrichten, um Karten mit CVV oder Schutz zu importieren</string>
+    <string name="settings_result_newer_version">Diese Datei wurde mit einer neueren Version von Cardholder erstellt, daher fehlen möglicherweise Details. Aktualisiere die App und importiere die Datei erneut, um sicherzugehen</string>
+    <string name="settings_result_newer_version_failed">Diese Datei wurde mit einer neueren Version von Cardholder erstellt und konnte nicht importiert werden. Aktualisiere die App und versuche es erneut.</string>
     <string name="settings_result_failed">Etwas ist schiefgelaufen. Bitte noch einmal versuchen.</string>
 
     <string name="settings_about">Über die App</string>

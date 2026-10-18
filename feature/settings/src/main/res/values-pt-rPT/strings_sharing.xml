@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">Estes cartões estão protegidos com palavra-passe. Peça-a ao remetente.</string>
     <string name="shared_import_password">Palavra-passe</string>
     <string name="shared_import_wrong_password">Palavra-passe incorreta</string>
+    <string name="shared_import_newer_version">Estes cartões vêm de uma versão mais recente do Cardholder. A importação pode falhar ou omitir alguns detalhes; atualize primeiro a aplicação para ter a certeza.</string>
     <string name="shared_import_message">Escolha que cartões quer adicionar ao Cardholder.</string>
     <string name="shared_import_include">Importar</string>
     <string name="shared_import_lock">Bloquear</string>

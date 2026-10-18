@@ -4,6 +4,7 @@
     <string name="shared_import_password_message">این کارت‌ها با رمز عبور محافظت شده‌اند. رمز را از فرستنده بپرسید.</string>
     <string name="shared_import_password">رمز عبور</string>
     <string name="shared_import_wrong_password">رمز عبور اشتباه است</string>
+    <string name="shared_import_newer_version">این کارت‌ها از نسخه جدیدتری از Cardholder آمده‌اند. وارد کردن ممکن است ناموفق باشد یا برخی جزئیات را از دست بدهد؛ برای اطمینان ابتدا برنامه را به‌روز کنید.</string>
     <string name="shared_import_message">انتخاب کنید کدام کارت‌ها به Cardholder اضافه شوند.</string>
     <string name="shared_import_include">وارد کردن</string>
     <string name="shared_import_lock">قفل</string>

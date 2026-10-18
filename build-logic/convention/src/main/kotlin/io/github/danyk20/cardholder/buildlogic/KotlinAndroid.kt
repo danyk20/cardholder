@@ -1,6 +1,7 @@
 package io.github.danyk20.cardholder.buildlogic
 
 import com.android.build.api.dsl.CommonExtension
+import com.android.build.api.dsl.Lint
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
@@ -28,12 +29,6 @@ internal fun Project.configureKotlinAndroid(commonExtension: CommonExtension) {
     }
     configureKotlin<KotlinAndroidProjectExtension>()
     configureTests()
-    dependencies {
-        add("testImplementation", libs.library("junit"))
-        add("testImplementation", libs.library("kotlin-test"))
-        add("testImplementation", libs.library("kotlinx-coroutines-test"))
-        add("testImplementation", libs.library("turbine"))
-    }
 }
 
 /** Configuration for pure Kotlin/JVM modules. */
@@ -44,12 +39,6 @@ internal fun Project.configureKotlinJvm() {
     }
     configureKotlin<KotlinJvmProjectExtension>()
     configureTests()
-    dependencies {
-        add("testImplementation", libs.library("junit"))
-        add("testImplementation", libs.library("kotlin-test"))
-        add("testImplementation", libs.library("kotlinx-coroutines-test"))
-        add("testImplementation", libs.library("turbine"))
-    }
 }
 
 private inline fun <reified T> Project.configureKotlin()
@@ -70,4 +59,20 @@ private fun Project.configureTests() {
         // Not every module has tests (yet); an empty test task must not fail the build.
         failOnNoDiscoveredTests = false
     }
+    dependencies {
+        add("testImplementation", libs.library("junit"))
+        add("testImplementation", libs.library("kotlin-test"))
+        add("testImplementation", libs.library("kotlinx-coroutines-test"))
+        add("testImplementation", libs.library("turbine"))
+    }
+}
+
+/** Lint settings shared by the app and library modules. */
+internal fun Lint.configureLintDefaults() {
+    warningsAsErrors = true
+    abortOnError = true
+    // Tests aren't shipped; analysing them doubles lint's work for no user-facing benefit.
+    ignoreTestSources = true
+    // Dependency updates are Dependabot's job, not a reason to fail the build.
+    disable += setOf("GradleDependency", "NewerVersionAvailable", "AndroidGradlePluginVersion")
 }

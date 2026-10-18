@@ -1,0 +1,1 @@
+Backup passwords now need at least 8 characters, like shared cards. Files from a newer version of Cardholder are imported with a warning instead of being reported as damaged. Under-the-hood cleanup.

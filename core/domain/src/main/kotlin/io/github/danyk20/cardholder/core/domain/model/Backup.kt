@@ -14,7 +14,11 @@ enum class ImportStrategy {
 sealed interface BackupResult {
     data class Exported(val cardCount: Int) : BackupResult
 
-    data class Imported(val imported: Int, val skipped: Int) : BackupResult
+    /**
+     * [fromNewerVersion]: the file was made by a newer app version, so details this version doesn't know
+     * about weren't imported.
+     */
+    data class Imported(val imported: Int, val skipped: Int, val fromNewerVersion: Boolean = false) : BackupResult
 
     data object WrongPassword : BackupResult
 
@@ -22,6 +26,9 @@ sealed interface BackupResult {
     data object PasswordRequired : BackupResult
 
     data object InvalidFile : BackupResult
+
+    /** The file was made by a newer app version and couldn't be read; updating the app should help. */
+    data object NewerVersion : BackupResult
 
     data object AuthenticationRequired : BackupResult
 
@@ -58,7 +65,8 @@ enum class SharedCardAction {
 data class SharedCardChoice(val action: SharedCardAction, val locked: Boolean)
 
 sealed interface SharedFilePreview {
-    data class Cards(val cards: List<SharedCardPreview>) : SharedFilePreview
+    /** [fromNewerVersion]: made by a newer app version, so importing may fail or miss some details. */
+    data class Cards(val cards: List<SharedCardPreview>, val fromNewerVersion: Boolean = false) : SharedFilePreview
 
     /** The file can't be read; [result] says why (wrong password, invalid file, ...). */
     data class Unreadable(val result: BackupResult) : SharedFilePreview

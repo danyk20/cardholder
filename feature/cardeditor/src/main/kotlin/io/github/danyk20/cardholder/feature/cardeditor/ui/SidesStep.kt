@@ -24,6 +24,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -158,7 +159,7 @@ private fun CompactSideButtons(side: CardSide, actions: SideActions) {
 }
 
 private val PlaceholderColors = CardFaceColors(
-    start = androidx.compose.ui.graphics.Color.Transparent,
-    end = androidx.compose.ui.graphics.Color.Transparent,
-    content = androidx.compose.ui.graphics.Color.Unspecified,
+    start = Color.Transparent,
+    end = Color.Transparent,
+    content = Color.Unspecified,
 )

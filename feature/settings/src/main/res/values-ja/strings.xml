@@ -45,6 +45,8 @@
     <string name="settings_result_invalid_file">Cardholder のバックアップではないか、ファイルが破損しています</string>
     <string name="settings_result_auth_required">保護されたカードをエクスポートするには、本人確認を行ってください</string>
     <string name="settings_result_device_not_secure">CVV またはロックを含むカードをインポートするには、画面ロックを設定してください</string>
+    <string name="settings_result_newer_version">このファイルは新しいバージョンの Cardholder で作成されたため、一部の情報が欠けている可能性があります。確実にするため、アプリを更新してから再度インポートしてください</string>
+    <string name="settings_result_newer_version_failed">このファイルは新しいバージョンの Cardholder で作成されたため、インポートできませんでした。アプリを更新してもう一度お試しください。</string>
     <string name="settings_result_failed">問題が発生しました。もう一度お試しください。</string>
     <string name="settings_about">アプリについて</string>
     <string name="settings_version">バージョン %1$s</string>
