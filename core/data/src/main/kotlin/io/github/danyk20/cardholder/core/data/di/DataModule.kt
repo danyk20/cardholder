@@ -20,6 +20,7 @@ import io.github.danyk20.cardholder.core.data.repository.HttpsLogoDownloader
 import io.github.danyk20.cardholder.core.data.repository.LocaleCountryRepository
 import io.github.danyk20.cardholder.core.data.repository.OfflineCardImageRepository
 import io.github.danyk20.cardholder.core.data.repository.OfflineCardRepository
+import io.github.danyk20.cardholder.core.data.repository.OfflinePlaceRepository
 import io.github.danyk20.cardholder.core.data.share.CacheShareFileStore
 import io.github.danyk20.cardholder.core.domain.di.ApplicationScope
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
@@ -30,6 +31,7 @@ import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
+import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
 import io.github.danyk20.cardholder.core.domain.repository.ShareFileStore
 import io.github.danyk20.cardholder.core.domain.repository.ShopRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
@@ -42,9 +44,13 @@ import kotlinx.coroutines.SupervisorJob
 
 @Module
 @InstallIn(SingletonComponent::class)
+@Suppress("TooManyFunctions") // One binding per repository.
 internal interface DataModule {
     @Binds
     fun bindsCardRepository(impl: OfflineCardRepository): CardRepository
+
+    @Binds
+    fun bindsPlaceRepository(impl: OfflinePlaceRepository): PlaceRepository
 
     @Binds
     fun bindsAppDataRepository(impl: AndroidAppDataRepository): AppDataRepository

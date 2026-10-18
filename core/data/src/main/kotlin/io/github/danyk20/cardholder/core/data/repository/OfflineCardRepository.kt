@@ -20,6 +20,7 @@ import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardNetwork
+import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.ImageRef
 import io.github.danyk20.cardholder.core.security.EnvelopeCipher
 import io.github.danyk20.cardholder.core.security.ProtectionLevel
@@ -102,6 +103,10 @@ internal class OfflineCardRepository @Inject constructor(
         dao.setFavourite(id.value, favourite)
     }
 
+    override suspend fun setSuggestByLocation(id: CardId, enabled: Boolean) = withContext(ioDispatcher) {
+        dao.setSuggestByLocation(id.value, enabled)
+    }
+
     override suspend fun recordUse(id: CardId) = withContext(ioDispatcher) {
         dao.recordUse(id.value, clock.millis())
     }
@@ -173,6 +178,8 @@ internal class OfflineCardRepository @Inject constructor(
                 expiresOn = content.details.expiresOn?.toString(),
                 expiryRemindedFor = existing?.expiryRemindedFor,
                 travelRemindedFor = existing?.travelRemindedFor,
+                // Loyalty cards are shown at shop tills, so they're suggested by location unless switched off.
+                suggestByLocation = existing?.suggestByLocation ?: (info.type == CardType.LOYALTY),
                 sealedDetails = cipher.seal(content.details.encode(), level),
                 sealedCvv = content.sealedCvv(existing?.sealedCvv),
             ),

@@ -21,6 +21,9 @@ data class VisitPlan(
 
 /** Decides which place a use of a card belongs to. */
 object PlaceClustering {
+    /** A place keeps only its latest fixes, so its centre follows a shop that moved. */
+    const val MAX_FIXES = 10
+
     /** A fix within this distance of one of the card's places belongs to it. */
     const val JOIN_METERS = 150.0
 

@@ -107,6 +107,34 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun `migrating 5 to 6 switches suggestions by location on for loyalty cards`() {
+        helper.createDatabase(DB, 5).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO cards (id, type, title, color, is_locked, created_at, updated_at, bank_network,
+                    loyalty_shop_name, loyalty_barcode_format, sealed_details)
+                VALUES ('bank', 'BANK', 'Visa', 'NAVY', 0, 1, 2, 'VISA', NULL, NULL, X'010203'),
+                    ('loyalty', 'LOYALTY', 'Coffee', 'BROWN', 0, 1, 2, NULL, 'Corner', 'QR_CODE', X'010203')
+                """.trimIndent(),
+            )
+        }
+
+        helper.runMigrationsAndValidate(DB, 6, true).use { db ->
+            db.query("SELECT id, suggest_by_location FROM cards ORDER BY id").use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals("bank" to 0, cursor.getString(0) to cursor.getInt(1))
+                assertTrue(cursor.moveToNext())
+                assertEquals("loyalty" to 1, cursor.getString(0) to cursor.getInt(1))
+            }
+            db.query("SELECT COUNT(*) FROM places").use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals(0, cursor.getInt(0))
+            }
+            db.query("PRAGMA foreign_key_check").use { cursor -> assertEquals(0, cursor.count) }
+        }
+    }
+
     private companion object {
         const val DB = "migration-test.db"
     }

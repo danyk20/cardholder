@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.github.danyk20.cardholder.core.database.CardholderDatabase
 import io.github.danyk20.cardholder.core.database.dao.CardDao
+import io.github.danyk20.cardholder.core.database.dao.PlaceDao
 import io.github.danyk20.cardholder.core.security.DatabasePassphraseProvider
 import javax.inject.Singleton
 import net.zetetic.database.sqlcipher.SupportOpenHelperFactory
@@ -32,4 +33,7 @@ internal object DatabaseModule {
 
     @Provides
     fun providesCardDao(database: CardholderDatabase): CardDao = database.cardDao()
+
+    @Provides
+    fun providesPlaceDao(database: CardholderDatabase): PlaceDao = database.placeDao()
 }

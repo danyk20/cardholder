@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.stringPreferencesKey
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.model.CardSort
+import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.model.ThemeMode
 import io.github.danyk20.cardholder.core.model.UserPreferences
 import java.io.IOException
@@ -29,6 +30,9 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
             cardSort = prefs[CARD_SORT]?.let { name -> CardSort.entries.firstOrNull { it.name == name } }
                 ?: CardSort.NAME,
             expiryReminders = prefs[EXPIRY_REMINDERS] ?: true,
+            placeSuggestions = prefs[PLACE_SUGGESTIONS]
+                ?.let { name -> PlaceSuggestions.entries.firstOrNull { it.name == name } }
+                ?: PlaceSuggestions.OFF,
         )
     }
 
@@ -48,10 +52,15 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
         dataStore.edit { it[EXPIRY_REMINDERS] = enabled }
     }
 
+    override suspend fun setPlaceSuggestions(mode: PlaceSuggestions) {
+        dataStore.edit { it[PLACE_SUGGESTIONS] = mode.name }
+    }
+
     private companion object {
         val THEME_MODE = stringPreferencesKey("theme_mode")
         val DYNAMIC_COLOR = booleanPreferencesKey("dynamic_color")
         val CARD_SORT = stringPreferencesKey("card_sort")
         val EXPIRY_REMINDERS = booleanPreferencesKey("expiry_reminders")
+        val PLACE_SUGGESTIONS = stringPreferencesKey("place_suggestions")
     }
 }

@@ -31,6 +31,7 @@ internal fun CardEntity.toCard(): Card = Card(
     useCount = useCount,
     lastUsedAt = lastUsedAt?.let(Instant::ofEpochMilli),
     expiresOn = expiresOn?.let(LocalDate::parse),
+    suggestByLocation = suggestByLocation,
 )
 
 private fun CardEntity.toInfo(): CardInfo = when (CardType.valueOf(type)) {

@@ -80,6 +80,35 @@ class OfflineCardRepositoryTest {
     fun tearDown() = database.close()
 
     @Test
+    fun `new loyalty cards are suggested by location, other cards not`() = runTest {
+        val bank = repository.save(bankDraft).getOrNull()!!
+        val loyalty = repository.save(
+            CardDraft(
+                title = "Coffee",
+                color = CardColor.BROWN,
+                content = CardContent.Loyalty(
+                    (TestCards.loyalty.info as CardInfo.Loyalty).shop,
+                    (TestCards.loyalty.info as CardInfo.Loyalty).format,
+                    TestCards.loyaltyDetails,
+                ),
+            ),
+        ).getOrNull()!!
+
+        assertFalse(repository.observeCard(bank).first()!!.suggestByLocation)
+        assertTrue(repository.observeCard(loyalty).first()!!.suggestByLocation)
+    }
+
+    @Test
+    fun `saving a card keeps its suggestion switch`() = runTest {
+        val id = repository.save(bankDraft).getOrNull()!!
+        repository.setSuggestByLocation(id, true)
+
+        repository.save(bankDraft.copy(id = id, title = "Renamed"))
+
+        assertTrue(repository.observeCard(id).first()!!.suggestByLocation)
+    }
+
+    @Test
     fun `saves a bank card and exposes only non-sensitive info`() = runTest {
         val id = repository.save(bankDraft).getOrNull()!!
 
