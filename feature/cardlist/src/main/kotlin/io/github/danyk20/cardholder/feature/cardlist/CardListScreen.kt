@@ -92,6 +92,7 @@ fun CardListRoute(
 
     CardListScreen(
         uiState = uiState,
+        query = viewModel.searchText,
         sortActions = sortActions,
         onQueryChange = viewModel::onQueryChange,
         onTypeToggled = viewModel::onTypeToggled,
@@ -121,6 +122,8 @@ fun CardListRoute(
 internal fun CardListScreen(
     uiState: CardListUiState,
     sortActions: SortActions,
+    /** The search field's text; it runs ahead of [uiState], which is updated asynchronously. */
+    query: String = (uiState as? CardListUiState.Success)?.query.orEmpty(),
     onQueryChange: (String) -> Unit,
     onTypeToggled: (CardType) -> Unit,
     onCardClick: (Card) -> Unit,
@@ -166,6 +169,7 @@ internal fun CardListScreen(
             is CardListUiState.Success -> if (uiState.hasAnyCards) {
                 CardGrid(
                     state = uiState,
+                    query = query,
                     gridState = gridState,
                     contentPadding = padding,
                     onQueryChange = onQueryChange,
@@ -183,6 +187,7 @@ internal fun CardListScreen(
 @Composable
 private fun CardGrid(
     state: CardListUiState.Success,
+    query: String,
     gridState: LazyGridState,
     contentPadding: PaddingValues,
     onQueryChange: (String) -> Unit,
@@ -204,7 +209,7 @@ private fun CardGrid(
         modifier = Modifier.fillMaxSize(),
     ) {
         item(span = { GridItemSpan(maxLineSpan) }) {
-            SearchAndFilters(state.query, state.visibleTypes, onQueryChange, onTypeToggled)
+            SearchAndFilters(query, state.visibleTypes, onQueryChange, onTypeToggled)
         }
         if (state.nearby.isNotEmpty()) {
             item(key = NEARBY_HEADER, span = { GridItemSpan(maxLineSpan) }) {
