@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   connected:
-    name: Connected tests (API ${{ matrix.api-level }})
+    name: Connected tests
     if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'run-instrumented')
     runs-on: ubuntu-latest
     timeout-minutes: 60

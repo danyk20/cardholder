@@ -36,9 +36,9 @@ jobs:
               - '!docs/**'
               - '!fastlane/**'
               - '!**/*.md'
+            # One pattern: with "every", a file would have to match all patterns of a filter.
             workflows:
-              - '.github/workflows/**'
-              - '.github/actions/**'
+              - '.github/{workflows,actions}/**'
 
   workflow-lint:
     name: Workflow lint
