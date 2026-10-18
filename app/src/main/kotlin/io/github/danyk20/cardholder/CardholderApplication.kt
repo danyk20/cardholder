@@ -101,6 +101,7 @@ class CardholderApplication :
             } catch (e: CancellationException) {
                 throw e
             } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
+                // E.g. Play services are unavailable; geofences are registered again on the next change.
                 Log.w(TAG, "Couldn't update geofences", e)
             }
         }

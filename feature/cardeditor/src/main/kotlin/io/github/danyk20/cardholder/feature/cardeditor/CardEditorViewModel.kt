@@ -44,7 +44,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 
 @HiltViewModel
-@Suppress("TooManyFunctions")
+@Suppress("TooManyFunctions") // One handler per user action on the screen.
 class CardEditorViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val cardRepository: CardRepository,
@@ -80,7 +80,7 @@ class CardEditorViewModel @Inject constructor(
     private var authenticatedHere = false
 
     init {
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             val shops = catalogues.shops.shops()
             val banks = catalogues.banks.banks()
             _uiState.update { it.copy(shops = shops, banks = banks, countries = catalogues.countries.countries()) }
@@ -263,7 +263,7 @@ class CardEditorViewModel @Inject constructor(
     fun onUseOfficialLogo() {
         val logo = (_uiState.value.logoChoiceFor ?: _uiState.value.officialLogo)?.logo ?: return
         _uiState.update { it.copy(logoChoiceFor = null, isDownloadingLogo = true, logoDownloadFailed = false) }
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             val bytes = logoDownloader.download(logo.url)
             _uiState.update {
                 if (bytes != null) {
@@ -304,7 +304,7 @@ class CardEditorViewModel @Inject constructor(
             return
         }
         _uiState.update { it.copy(isSaving = true, errors = emptyMap(), duplicate = null) }
-        launchSafely(onError = ::onUnexpectedError) {
+        launchSafely(onError = { onUnexpectedError() }) {
             if (!state.isEditing && !duplicateConfirmed) {
                 val duplicate = findDuplicate(draft)
                 if (duplicate != null) {
@@ -361,7 +361,7 @@ class CardEditorViewModel @Inject constructor(
         if (!succeeded) return
         authenticatedHere = true
         when (purpose) {
-            AuthPurpose.LOAD -> editingId?.let { launchSafely(onError = ::onUnexpectedError) { load(it) } }
+            AuthPurpose.LOAD -> editingId?.let { launchSafely(onError = { onUnexpectedError() }) { load(it) } }
             AuthPurpose.SAVE -> onSave()
         }
     }
@@ -370,7 +370,7 @@ class CardEditorViewModel @Inject constructor(
 
     fun onErrorShown() = _uiState.update { it.copy(error = null) }
 
-    private fun onUnexpectedError(@Suppress("UNUSED_PARAMETER") error: Throwable) =
+    private fun onUnexpectedError() =
         _uiState.update { it.copy(isSaving = false, isDownloadingLogo = false, error = EditorError.UNEXPECTED) }
 
     private suspend fun load(id: CardId) {

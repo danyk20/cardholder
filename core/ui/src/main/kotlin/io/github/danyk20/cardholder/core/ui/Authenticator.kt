@@ -1,5 +1,7 @@
 package io.github.danyk20.cardholder.core.ui
 
+import android.content.Context
+import android.content.ContextWrapper
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
@@ -65,9 +67,9 @@ fun rememberAuthenticator(): Authenticator {
     }
 }
 
-private fun android.content.Context.findFragmentActivity(): FragmentActivity {
-    var current: android.content.Context = this
-    while (current is android.content.ContextWrapper) {
+private fun Context.findFragmentActivity(): FragmentActivity {
+    var current: Context = this
+    while (current is ContextWrapper) {
         if (current is FragmentActivity) return current
         current = current.baseContext
     }

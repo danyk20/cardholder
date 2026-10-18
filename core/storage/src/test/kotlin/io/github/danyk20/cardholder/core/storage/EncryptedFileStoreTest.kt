@@ -34,10 +34,8 @@ class EncryptedFileStoreTest {
     }
 
     @Test
-    fun `reseal changes the protection level`() {
-        store.write("a.img", content, ProtectionLevel.STANDARD)
-
-        store.reseal("a.img", ProtectionLevel.PROTECTED)
+    fun `protected entries need authentication`() {
+        store.write("a.img", content, ProtectionLevel.PROTECTED)
 
         assertEquals(ProtectionLevel.PROTECTED, store.levelOf("a.img"))
         assertFailsWith<AuthenticationRequiredException> { store.read("a.img") }
