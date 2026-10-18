@@ -12,6 +12,10 @@
     <string name="widget_title">Karty lojalnościowe</string>
     <string name="widget_description">Ulubione karty lojalnościowe – kod jednym dotknięciem</string>
     <string name="widget_empty">Dodaj kartę lojalnościową, aby zobaczyć ją tutaj.</string>
+    <string name="widget_sort_by_location">Sortuj według lokalizacji</string>
+    <string name="widget_nearby">Używana w pobliżu</string>
+    <string name="widget_finding_nearby">Szukanie kart w pobliżu…</string>
+    <string name="widget_nothing_nearby">Nie użyto tutaj jeszcze żadnej karty</string>
     <string name="notification_channel_arrival">Karty dla tego miejsca</string>
     <string name="notification_channel_arrival_description">Właściwa karta, gdy dotrzesz do sklepu, w którym jej używasz</string>
     <string name="notification_arrival_text">Kliknij, aby pokazać kod</string>

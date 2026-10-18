@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- targetCell* is used from Android 12; Android 11 falls back to minWidth/minHeight. -->
+<!--
+    targetCell* is the default size from Android 12; Android 11 falls back to minWidth/minHeight.
+    minResize* allows shrinking down to 2x1 cells (one card and the "sort by location" button).
+-->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UnusedAttribute"
@@ -7,6 +10,8 @@
     android:initialLayout="@layout/glance_default_loading_layout"
     android:minWidth="180dp"
     android:minHeight="110dp"
+    android:minResizeWidth="110dp"
+    android:minResizeHeight="40dp"
     android:resizeMode="horizontal|vertical"
     android:targetCellWidth="3"
     android:targetCellHeight="2"

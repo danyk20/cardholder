@@ -12,6 +12,10 @@
     <string name="widget_title">Kartat e besnikërisë</string>
     <string name="widget_description">Kartat e tua të preferuara të besnikërisë, kodi me një prekje</string>
     <string name="widget_empty">Shto një kartë besnikërie për ta parë këtu.</string>
+    <string name="widget_sort_by_location">Rendit sipas vendndodhjes</string>
+    <string name="widget_nearby">Përdoret afër</string>
+    <string name="widget_finding_nearby">Po kërkohen kartat afër…</string>
+    <string name="widget_nothing_nearby">Asnjë kartë nuk është përdorur këtu ende</string>
     <string name="notification_channel_arrival">Kartat për këtë vend</string>
     <string name="notification_channel_arrival_description">Karta e duhur kur arrin në një dyqan ku e ke përdorur</string>
     <string name="notification_arrival_text">Trokit për të shfaqur kodin</string>

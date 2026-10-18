@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Added
+- The home-screen widget has a refresh button that sorts its cards by where you are (with card
+  suggestions switched on): cards used nearby move to the top, marked with a pin, until the next refresh.
+  While suggestions are off, the button opens Settings.
+
+### Changed
+- The widget can be made as small as 2x1 cells; it then shows the top card and the refresh button.
 
 ## [1.3.2] - 2026-10-18
 ### Fixed

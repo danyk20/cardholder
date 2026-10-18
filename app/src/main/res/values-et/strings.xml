@@ -12,6 +12,10 @@
     <string name="widget_title">Kliendikaardid</string>
     <string name="widget_description">Teie lemmikkliendikaardid, koodini vaid ühe puudutusega</string>
     <string name="widget_empty">Lisage kliendikaart, et seda siin näha.</string>
+    <string name="widget_sort_by_location">Sordi asukoha järgi</string>
+    <string name="widget_nearby">Kasutatud läheduses</string>
+    <string name="widget_finding_nearby">Lähedal olevate kaartide otsimine…</string>
+    <string name="widget_nothing_nearby">Siin pole veel ühtegi kaarti kasutatud</string>
     <string name="notification_channel_arrival">Selle koha kaardid</string>
     <string name="notification_channel_arrival_description">Õige kaart, kui saabute poodi, kus seda kasutasite</string>
     <string name="notification_arrival_text">Koodi kuvamiseks puudutage</string>

@@ -12,6 +12,10 @@
     <string name="widget_title">ポイントカード</string>
     <string name="widget_description">お気に入りのポイントカードのコードをワンタップで表示</string>
     <string name="widget_empty">ポイントカードを追加すると、ここに表示されます。</string>
+    <string name="widget_sort_by_location">位置情報で並べ替え</string>
+    <string name="widget_nearby">近くで使用</string>
+    <string name="widget_finding_nearby">近くのカードを検索中…</string>
+    <string name="widget_nothing_nearby">ここではまだカードが使われていません</string>
     <string name="notification_channel_arrival">この場所のカード</string>
     <string name="notification_channel_arrival_description">利用したことのある店舗に到着したとき、適切なカードを表示します</string>
     <string name="notification_arrival_text">タップしてコードを表示</string>

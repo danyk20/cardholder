@@ -12,6 +12,10 @@
     <string name="widget_title">Tarjetas de fidelidad</string>
     <string name="widget_description">Tus tarjetas de fidelidad favoritas, con el código a un toque</string>
     <string name="widget_empty">Añade una tarjeta de fidelidad para verla aquí.</string>
+    <string name="widget_sort_by_location">Ordenar por ubicación</string>
+    <string name="widget_nearby">Usada cerca</string>
+    <string name="widget_finding_nearby">Buscando tarjetas cercanas…</string>
+    <string name="widget_nothing_nearby">Aún no se ha usado ninguna tarjeta aquí</string>
     <string name="notification_channel_arrival">Tarjetas para este lugar</string>
     <string name="notification_channel_arrival_description">La tarjeta adecuada cuando llegas a una tienda donde la usaste</string>
     <string name="notification_arrival_text">Toca para mostrar el código</string>
