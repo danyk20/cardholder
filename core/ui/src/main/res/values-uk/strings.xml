@@ -12,6 +12,7 @@
     <string name="card_side_front">Лицьовий бік</string>
     <string name="card_side_back">Зворотний бік</string>
     <string name="card_locked">Заблоковано</string>
+    <string name="card_favourite">Вибране</string>
     <string name="card_locked_message">Цю картку заблоковано</string>
     <string name="auth_title_show_cvv">Показати CVV</string>
     <string name="auth_title_export">Експорт резервної копії</string>

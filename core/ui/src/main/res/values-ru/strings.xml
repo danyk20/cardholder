@@ -12,6 +12,7 @@
     <string name="card_side_front">Лицевая сторона</string>
     <string name="card_side_back">Оборотная сторона</string>
     <string name="card_locked">Заблокирована</string>
+    <string name="card_favourite">Избранное</string>
     <string name="card_locked_message">Эта карта заблокирована</string>
     <string name="auth_title_show_cvv">Показать CVV</string>
     <string name="auth_title_export">Экспорт резервной копии</string>

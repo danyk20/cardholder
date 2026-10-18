@@ -12,6 +12,7 @@
     <string name="card_side_front">Vorderseite</string>
     <string name="card_side_back">Rückseite</string>
     <string name="card_locked">Geschützt</string>
+    <string name="card_favourite">Favorit</string>
     <string name="card_locked_message">Diese Karte ist geschützt</string>
     <string name="auth_title_show_cvv">CVV anzeigen</string>
     <string name="auth_title_export">Sicherung exportieren</string>

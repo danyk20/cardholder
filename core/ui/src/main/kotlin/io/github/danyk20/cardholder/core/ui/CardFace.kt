@@ -60,12 +60,18 @@ fun CardFace(
 ) {
     val typeLabel = stringResource(type.label)
     val lockedLabel = stringResource(R.string.card_locked)
+    val favouriteLabel = stringResource(R.string.card_favourite)
     val showPhoto = frontImage != null && !isLocked
     CardSurface(
         colors = colors,
         modifier = modifier.semantics(mergeDescendants = true) {
-            contentDescription = listOfNotNull(title, typeLabel, subtitle, lockedLabel.takeIf { isLocked })
-                .joinToString()
+            contentDescription = listOfNotNull(
+                title,
+                typeLabel,
+                subtitle,
+                favouriteLabel.takeIf { isFavourite },
+                lockedLabel.takeIf { isLocked },
+            ).joinToString()
         },
         onClick = onClick,
         onLongClick = onLongClick,

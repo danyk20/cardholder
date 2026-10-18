@@ -9,6 +9,7 @@
     <string name="card_side_front">رو</string>
     <string name="card_side_back">پشت</string>
     <string name="card_locked">قفل‌شده</string>
+    <string name="card_favourite">مورد علاقه</string>
     <string name="card_locked_message">این کارت قفل است</string>
     <string name="auth_title_show_cvv">نمایش CVV</string>
     <string name="auth_title_export">صادر کردن نسخه پشتیبان</string>

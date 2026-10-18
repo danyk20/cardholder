@@ -9,6 +9,7 @@
     <string name="card_side_front">সামনের দিক</string>
     <string name="card_side_back">পেছনের দিক</string>
     <string name="card_locked">লক করা আছে</string>
+    <string name="card_favourite">পছন্দসই</string>
     <string name="card_locked_message">এই কার্ডটি লক করা আছে</string>
     <string name="auth_title_show_cvv">CVV দেখুন</string>
     <string name="auth_title_export">ব্যাকআপ এক্সপোর্ট করুন</string>

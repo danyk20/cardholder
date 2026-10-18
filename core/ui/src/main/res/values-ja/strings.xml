@@ -9,6 +9,7 @@
     <string name="card_side_front">表面</string>
     <string name="card_side_back">裏面</string>
     <string name="card_locked">ロック中</string>
+    <string name="card_favourite">お気に入り</string>
     <string name="card_locked_message">このカードはロックされています</string>
     <string name="auth_title_show_cvv">CVV を表示</string>
     <string name="auth_title_export">バックアップをエクスポート</string>

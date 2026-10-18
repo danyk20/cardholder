@@ -12,6 +12,7 @@
     <string name="card_side_front">Přední strana</string>
     <string name="card_side_back">Zadní strana</string>
     <string name="card_locked">Zamčená</string>
+    <string name="card_favourite">Oblíbená</string>
     <string name="card_locked_message">Tato karta je zamčená</string>
     <string name="auth_title_show_cvv">Zobrazit CVV</string>
     <string name="auth_title_export">Exportovat zálohu</string>

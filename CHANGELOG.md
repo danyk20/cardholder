@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Favourite loyalty cards show the star in the card list, like bank and ID cards; screen readers now
+  announce "Favourite" on all cards.
 
 ## [1.3.3] - 2026-10-18
 ### Added

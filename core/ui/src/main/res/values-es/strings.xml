@@ -9,6 +9,7 @@
     <string name="card_side_front">Anverso</string>
     <string name="card_side_back">Reverso</string>
     <string name="card_locked">Bloqueada</string>
+    <string name="card_favourite">Favorita</string>
     <string name="card_locked_message">Esta tarjeta está bloqueada</string>
     <string name="auth_title_show_cvv">Mostrar CVV</string>
     <string name="auth_title_export">Exportar copia de seguridad</string>

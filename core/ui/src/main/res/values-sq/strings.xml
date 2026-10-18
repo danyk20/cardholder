@@ -10,6 +10,7 @@
     <string name="card_side_front">Pjesa e përparme</string>
     <string name="card_side_back">Pjesa e pasme</string>
     <string name="card_locked">E kyçur</string>
+    <string name="card_favourite">E preferuar</string>
     <string name="card_locked_message">Kjo kartë është e kyçur</string>
     <string name="auth_title_show_cvv">Shfaq CVV-në</string>
     <string name="auth_title_export">Eksporto kopjen rezervë</string>
