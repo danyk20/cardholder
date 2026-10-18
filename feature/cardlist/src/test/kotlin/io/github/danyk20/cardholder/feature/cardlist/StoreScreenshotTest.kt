@@ -5,6 +5,7 @@ import androidx.compose.ui.test.onRoot
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.github.takahirom.roborazzi.captureRoboImage
 import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
+import io.github.danyk20.cardholder.core.domain.location.NearbyReason
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardInfo
@@ -30,10 +31,14 @@ class StoreScreenshotTest {
     @get:Rule
     val composeRule = createComposeRule()
 
+    /** The coffee card is suggested on top, as it would be inside the shop. */
+    private val nearby = DemoCards.all
+        .map { (card, details) -> CardListItem(CardSummary(card, card.subtitle()), details.code(card)) }
+        .partition { it.summary.card == DemoCards.coffee }
+
     private val state = CardListUiState.Success(
-        cards = DemoCards.all.map { (card, details) ->
-            CardListItem(CardSummary(card, card.subtitle()), details.code(card))
-        },
+        cards = nearby.second,
+        nearby = nearby.first.map { NearbyItem(it, NearbyReason.WifiHere(1.0)) },
         query = "",
         visibleTypes = CardType.entries.toSet(),
         hasAnyCards = true,
@@ -43,7 +48,7 @@ class StoreScreenshotTest {
     fun cardListLight() = capture(darkTheme = false, name = "1_cards")
 
     @Test
-    fun cardListDark() = capture(darkTheme = true, name = "5_cards_dark")
+    fun cardListDark() = capture(darkTheme = true, name = "6_cards_dark")
 
     private fun capture(darkTheme: Boolean, name: String) {
         composeRule.setContent {

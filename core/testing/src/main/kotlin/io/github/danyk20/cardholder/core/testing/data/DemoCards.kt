@@ -21,7 +21,14 @@ import java.time.YearMonth
 object DemoCards {
     private val created: Instant = Instant.parse("2026-09-01T10:00:00Z")
 
-    private fun card(id: String, title: String, color: CardColor, info: CardInfo, hasCvv: Boolean = false) = Card(
+    private fun card(
+        id: String,
+        title: String,
+        color: CardColor,
+        info: CardInfo,
+        hasCvv: Boolean = false,
+        isFavourite: Boolean = false,
+    ) = Card(
         id = CardId(id),
         title = title,
         color = color,
@@ -29,6 +36,7 @@ object DemoCards {
         sides = CardSides.None,
         isLocked = false,
         hasCvv = hasCvv,
+        isFavourite = isFavourite,
         createdAt = created,
         updatedAt = created,
     )
@@ -47,9 +55,14 @@ object DemoCards {
         CardColor.NAVY,
         CardInfo.Bank(CardNetwork.UNKNOWN, BrandRef.Custom("City Savings Bank")),
         hasCvv = true,
+        isFavourite = true,
     )
-    val bankDetails =
-        CardDetails.Bank(number = "9000123456789010", expiry = YearMonth.of(2029, 8), holder = "ALEX MORGAN")
+    val bankDetails = CardDetails.Bank(
+        number = "9000123456789010",
+        expiry = YearMonth.of(2029, 8),
+        holder = "ALEX MORGAN",
+        notes = "Everyday spending and travel.",
+    )
 
     val bookworm = card(
         "demo-bookworm",
@@ -70,10 +83,10 @@ object DemoCards {
     )
     val coffeeDetails = CardDetails.Loyalty(code = "CC00451287")
 
-    /** All demo cards with their details, in display order. */
+    /** All demo cards with their details, in display order (favourites first, as in the app). */
     val all: List<Pair<Card, CardDetails>> = listOf(
-        grocer to grocerDetails,
         bank to bankDetails,
+        grocer to grocerDetails,
         bookworm to bookwormDetails,
         identity to identityDetails,
         coffee to coffeeDetails,
