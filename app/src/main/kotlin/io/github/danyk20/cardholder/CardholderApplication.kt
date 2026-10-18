@@ -14,6 +14,7 @@ import dagger.hilt.android.HiltAndroidApp
 import io.github.danyk20.cardholder.core.domain.di.ApplicationScope
 import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
+import io.github.danyk20.cardholder.core.domain.usecase.SyncGeofencesUseCase
 import io.github.danyk20.cardholder.core.security.ProcessSessionLockEvents
 import io.github.danyk20.cardholder.image.CardImageFetcher
 import io.github.danyk20.cardholder.quickaccess.CardShortcuts
@@ -23,6 +24,7 @@ import javax.inject.Inject
 import kotlin.coroutines.cancellation.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
@@ -54,11 +56,15 @@ class CardholderApplication :
     @Inject
     lateinit var cardShortcuts: CardShortcuts
 
+    @Inject
+    lateinit var syncGeofences: Lazy<SyncGeofencesUseCase>
+
     override fun onCreate() {
         super.onCreate()
         sessionLockEvents.register()
         ExpiryReminderWorker.schedule(this)
         keepQuickAccessUpToDate()
+        keepGeofencesUpToDate()
         applicationScope.launch {
             // Decrypted photos must not outlive the session in memory.
             sessionLockEvents.events.collect {
@@ -80,6 +86,22 @@ class CardholderApplication :
             } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
                 // The cards can't be read (see the recovery screen); shortcuts just stay as they are.
                 Log.w(TAG, "Couldn't update shortcuts and widget", e)
+            }
+        }
+    }
+
+    /**
+     * Arrival notifications watch the learned places. Geofences are lost when the app is force-stopped,
+     * so they're registered again on every start, and whenever places or the mode change.
+     */
+    private fun keepGeofencesUpToDate() {
+        applicationScope.launch(Dispatchers.IO) {
+            try {
+                syncGeofences.get().keepUpToDate().collect()
+            } catch (e: CancellationException) {
+                throw e
+            } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
+                Log.w(TAG, "Couldn't update geofences", e)
             }
         }
     }

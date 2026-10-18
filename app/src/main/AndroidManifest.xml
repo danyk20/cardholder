@@ -75,6 +75,11 @@
                 android:resource="@xml/cards_widget_info" />
         </receiver>
 
+        <!-- "Not this place" on arrival notifications. -->
+        <receiver
+            android:name=".places.ArrivalActionReceiver"
+            android:exported="false" />
+
         <!-- WorkManager is configured by the Application (Hilt worker factory), not by App Startup. -->
         <provider
             android:name="androidx.startup.InitializationProvider"
