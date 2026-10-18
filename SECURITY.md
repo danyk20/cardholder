@@ -18,6 +18,9 @@ Do not open a public issue. You can expect an initial response within 7 days.
 | Cloud/ADB backups leaking data | Android backup and device transfer are disabled; the only export path is a password-encrypted backup file (AES-256-GCM, PBKDF2-HMAC-SHA256). |
 | Card data read over NFC | Read-only EMV commands, reader mode only while the read dialog is open, data kept in memory and put straight into the (FLAG_SECURE) form. |
 | Clipboard sniffing | Copied values are marked sensitive and cleared automatically. |
+| Location history (card suggestions, opt-in) | Stored only in the encrypted database; at most 10 fixes per place; never in backups or shared files; forgettable per card or all at once and deleted with the card. Sensors are read only while the card list is open, when a card is used, or by system geofences. |
+| Lock-screen leaks of arrival notifications | `VISIBILITY_PRIVATE` with a generic public version; locked cards never show their title; no codes in notifications. |
+| Spoofed Wi‑Fi named like a shop | Can only cause a card to be suggested; nothing is shown or sent without the user opening it. |
 | Network exfiltration | The only network code downloads a shop logo on explicit request: HTTPS only (cleartext disabled), restricted to the Wikimedia media hosts, no redirects, image content type and 2 MB size limit. No card data is ever sent. |
 
 See [docs/adr](docs/adr) for the detailed design decisions.

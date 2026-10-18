@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Added
+- Card suggestions by location (off by default): in Settings choose *When I open the app* or *Also notify
+  when I arrive*. The app remembers where you show each loyalty card's code (location and the Wi‑Fi
+  networks around, on the device only; at most 10 locations per place) and puts the cards used nearby at
+  the top of the list. A Wi‑Fi network named after the shop, e.g. "Kaufland-Free", suggests its card even
+  on the first visit. Arrival notifications use the system's geofences and show the card when you stay at
+  the shop. Every card has its own switch; bank and ID cards learn places with "Remember this place".
 
 ## [1.2.0] - 2026-10-15
 ### Added

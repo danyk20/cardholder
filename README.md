@@ -22,11 +22,12 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 - **Optional photos of both sides**: scan with automatic edge detection (ML Kit document scanner) or pick from the gallery.
 - **Scan loyalty codes** with the camera, or let the app find the barcode in a card photo.
 - **Per-card lock**: any card can require authentication for *all* its data.
+- **Card suggestions by location** (opt-in): the app learns where you show each card (location and Wi‑Fi networks, on the device only) and puts the cards used nearby at the top of the list, or notifies you when you arrive at the shop. Battery-friendly: no background service; arrival notifications use the system's geofences.
 - **Password-encrypted backup** export/import.
 - Material 3 with dynamic colour, dark theme, adaptive layout.
 
 ## Privacy & security
-- **Offline by design.** No analytics, no cloud, no accounts. The only network request the app can make is downloading an official shop logo from Wikimedia Commons when you ask for it (HTTPS only).
+- **Offline by design.** No analytics, no cloud, no accounts. The only network request the app can make is downloading an official shop logo from Wikimedia Commons when you ask for it (HTTPS only). Places learned for card suggestions stay in the encrypted database and are never exported.
 - Encrypted database (SQLCipher) **plus** per-value envelope encryption with Android Keystore keys.
 - CVVs and locked cards are encrypted with a key the Keystore only releases after **strong biometric or device-credential authentication**. This is real cryptographic protection, not just a UI gate.
 - Screenshots and recents thumbnails are blocked on sensitive screens (screenshots can be allowed temporarily in Settings, until you leave the app). Copied values are marked sensitive and cleared after a minute. Decrypted data is dropped when the app goes to the background.

@@ -19,6 +19,8 @@ graph TD
     data --> database[core:database]
     data --> storage[core:storage]
     data --> security[core:security]
+    app --> location[core:location]
+    location --> domain
     storage --> security
     database --> security
     security --> domain
@@ -50,6 +52,7 @@ See [SECURITY.md](../SECURITY.md) for the threat model and the ADRs:
 6. [Scanning with ML Kit](adr/0006-scanning-with-ml-kit.md)
 7. [Official shop and bank logos on request](adr/0007-shop-logos.md)
 8. [Reading bank cards over NFC](adr/0008-nfc-bank-cards.md)
+9. [Suggesting cards by where they were used](adr/0009-location-based-card-suggestions.md)
 
 ## Testing
 - JVM unit tests for models, validators, use cases, crypto envelope and barcode encoding.
