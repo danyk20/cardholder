@@ -15,4 +15,6 @@ interface UserPreferencesRepository {
     suspend fun setCardSort(sort: CardSort)
 
     suspend fun setExpiryReminders(enabled: Boolean)
+
+    suspend fun setFrenchEasterEggSeen()
 }

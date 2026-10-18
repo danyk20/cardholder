@@ -29,6 +29,7 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
             cardSort = prefs[CARD_SORT]?.let { name -> CardSort.entries.firstOrNull { it.name == name } }
                 ?: CardSort.NAME,
             expiryReminders = prefs[EXPIRY_REMINDERS] ?: true,
+            frenchEasterEggSeen = prefs[FRENCH_EASTER_EGG_SEEN] ?: false,
         )
     }
 
@@ -48,10 +49,15 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
         dataStore.edit { it[EXPIRY_REMINDERS] = enabled }
     }
 
+    override suspend fun setFrenchEasterEggSeen() {
+        dataStore.edit { it[FRENCH_EASTER_EGG_SEEN] = true }
+    }
+
     private companion object {
         val THEME_MODE = stringPreferencesKey("theme_mode")
         val DYNAMIC_COLOR = booleanPreferencesKey("dynamic_color")
         val CARD_SORT = stringPreferencesKey("card_sort")
         val EXPIRY_REMINDERS = booleanPreferencesKey("expiry_reminders")
+        val FRENCH_EASTER_EGG_SEEN = booleanPreferencesKey("french_easter_egg_seen")
     }
 }
