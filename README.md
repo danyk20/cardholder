@@ -7,11 +7,13 @@
 
 An offline, privacy-first Android wallet for your **bank cards**, **ID cards** and **loyalty cards**.
 
+<!-- The Play Store screenshots, rendered from the app's UI by the StoreScreenshotTest tests (./gradlew recordRoborazziDebug). -->
 <p>
-  <img src="docs/screenshots/card-list.png" width="200" alt="Card list" />
-  <img src="docs/screenshots/barcode-ean13.png" width="200" alt="Loyalty card barcode" />
-  <img src="docs/screenshots/barcode-qr.png" width="200" alt="Loyalty card QR code" />
-  <img src="docs/screenshots/card-detail.png" width="200" alt="Bank card details" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1_cards.png" width="160" alt="Card list with a card suggested nearby" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2_full_screen_code.png" width="160" alt="Loyalty card code full screen" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3_bank_card.png" width="160" alt="Bank card details" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4_id_card.png" width="160" alt="ID card details" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6_cards_dark.png" width="160" alt="Card list in dark theme" />
 </p>
 
 ## Features
