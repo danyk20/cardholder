@@ -9,6 +9,7 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.model.CardValidity
+import io.github.danyk20.cardholder.core.ui.flagAndName
 import io.github.danyk20.cardholder.feature.cardeditor.R
 import io.github.danyk20.cardholder.feature.cardeditor.countryOptions
 import java.text.Collator
@@ -47,7 +48,7 @@ private fun validitySummary(validity: CardValidity, countries: List<Country>): S
             .filter { it.code in validity.countries }
             .sortedWith(compareBy<Country, String>(Collator.getInstance()) { it.name })
         if (names.size == 1) {
-            "${names.single().code.flagEmoji}  ${names.single().name}"
+            names.single().flagAndName()
         } else {
             pluralStringResource(
                 R.plurals.editor_validity_many,

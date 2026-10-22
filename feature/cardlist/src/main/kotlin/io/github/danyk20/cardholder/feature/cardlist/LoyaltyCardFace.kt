@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -32,8 +33,10 @@ import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.ui.CardSummary
 import io.github.danyk20.cardholder.core.ui.LogoBadge
 import io.github.danyk20.cardholder.core.ui.R as UiR
+import io.github.danyk20.cardholder.core.ui.ValidityBadge
 import io.github.danyk20.cardholder.core.ui.barcodeFormatLabel
 import io.github.danyk20.cardholder.core.ui.icon
+import io.github.danyk20.cardholder.core.ui.validityDescription
 
 /**
  * Face of a loyalty card in the list: shop name on the card's colour and the scannable code on a
@@ -54,6 +57,7 @@ internal fun LoyaltyCardFace(
         card.title,
         stringResource(UiR.string.card_type_loyalty),
         summary.subtitle.takeIf { it != card.title },
+        validityDescription(summary.validCountries),
         stringResource(UiR.string.card_favourite).takeIf { card.isFavourite },
         stringResource(UiR.string.card_locked).takeIf { card.isLocked },
     ).joinToString()
@@ -93,6 +97,7 @@ internal fun LoyaltyCardFace(
                         .weight(1f)
                         .padding(start = 10.dp),
                 )
+                ValidityBadge(summary.validCountries, Modifier.padding(start = 8.dp).widthIn(max = BADGE_MAX_WIDTH))
                 // Same mark as on the other cards' faces (see CardFace).
                 if (card.isFavourite) {
                     Icon(
@@ -116,6 +121,9 @@ internal fun LoyaltyCardFace(
         }
     }
 }
+
+/** Keeps the badge from taking the room of the title. */
+private val BADGE_MAX_WIDTH = 150.dp
 
 @Composable
 private fun CodePanel(code: LoyaltyCode) {

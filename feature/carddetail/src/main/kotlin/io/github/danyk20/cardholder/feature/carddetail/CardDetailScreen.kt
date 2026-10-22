@@ -196,9 +196,20 @@ internal fun CardDetailScreen(
             }
             when (val details = state.details) {
                 DetailsState.Loading -> CircularProgressIndicator(Modifier.align(Alignment.CenterHorizontally))
-                is DetailsState.Loaded -> DetailFields(card, summary.subtitle, details.details, state.cvv, fieldActions)
+
+                is DetailsState.Loaded -> DetailFields(
+                    card,
+                    summary.subtitle,
+                    details.details,
+                    state.cvv,
+                    summary.validCountries,
+                    fieldActions,
+                )
+
                 DetailsState.Locked -> LockedContent(stringResource(R.string.detail_locked_details), onUnlock)
+
                 DetailsState.KeyInvalidated -> LockedContent(stringResource(UiR.string.auth_key_invalidated), null)
+
                 DetailsState.Failed -> LockedContent(stringResource(UiR.string.error_unexpected), null)
             }
             HorizontalDivider()
