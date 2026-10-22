@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">すべてのカード</string>
     <string name="cardlist_nearby_wifi">近くの店舗の Wi‑Fi</string>
     <string name="cardlist_nearby_distance">約 %1$s の距離</string>
-    <string name="cardlist_country_unknown">国が不明</string>
     <string name="cardlist_country_filter_description">%1$s で有効なカードのみ表示中</string>
-    <string name="cardlist_country_change">国を変更</string>
-    <string name="cardlist_country_title">国</string>
+    <string name="cardlist_country_filter_title">国で絞り込み</string>
+    <string name="cardlist_country_filter_switch">%1$s で有効なカードのみ</string>
+    <string name="cardlist_country_filter_switch_unknown">現在の国で有効なカードのみ</string>
+    <string name="cardlist_country_filter_unknown">国が不明のため、すべてのカードを表示</string>
+    <string name="cardlist_country_filter_all">すべてのカードを表示中</string>
     <string name="cardlist_country_search">国を検索</string>
     <string name="cardlist_country_automatic">自動: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">自動: 不明</string>

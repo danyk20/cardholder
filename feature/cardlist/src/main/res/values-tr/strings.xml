@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">Tüm kartlar</string>
     <string name="cardlist_nearby_wifi">Yakındaki mağazanın Wi‑Fi\'si</string>
     <string name="cardlist_nearby_distance">Yaklaşık %1$s uzakta</string>
-    <string name="cardlist_country_unknown">Ülke bilinmiyor</string>
     <string name="cardlist_country_filter_description">Yalnızca %1$s için geçerli kartlar gösteriliyor</string>
-    <string name="cardlist_country_change">Ülkeyi değiştir</string>
-    <string name="cardlist_country_title">Ülke</string>
+    <string name="cardlist_country_filter_title">Ülkeye göre filtrele</string>
+    <string name="cardlist_country_filter_switch">Yalnızca %1$s için geçerli kartlar</string>
+    <string name="cardlist_country_filter_switch_unknown">Yalnızca mevcut ülke için geçerli kartlar</string>
+    <string name="cardlist_country_filter_unknown">Ülke bilinmiyor — tüm kartlar gösteriliyor</string>
+    <string name="cardlist_country_filter_all">Tüm kartlar gösteriliyor</string>
     <string name="cardlist_country_search">Ülke ara</string>
     <string name="cardlist_country_automatic">Otomatik: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">Otomatik: bilinmiyor</string>

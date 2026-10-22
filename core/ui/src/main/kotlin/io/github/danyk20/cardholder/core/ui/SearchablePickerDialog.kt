@@ -46,17 +46,11 @@ fun <T> SearchablePickerDialog(
     onDismiss: () -> Unit,
     leading: @Composable ((T) -> Unit)? = null,
     trailing: @Composable ((T) -> Unit)? = null,
-    /** Shown above the items, e.g. an option that is not one of them. */
+    /** Shown above the search field, e.g. an option that is not one of the items. */
     header: @Composable (() -> Unit)? = null,
     customOptionLabel: ((query: String) -> String)? = null,
     onCustomOption: ((query: String) -> Unit)? = null,
 ) {
-    var query by rememberSaveable { mutableStateOf("") }
-    val focusRequester = remember { FocusRequester() }
-    val filtered = remember(items, query) {
-        val needle = query.trim()
-        if (needle.isEmpty()) items else items.filter { label(it).contains(needle, ignoreCase = true) }
-    }
     Dialog(onDismissRequest = onDismiss, properties = secureDialogProperties(usePlatformDefaultWidth = false)) {
         Scaffold(
             topBar = {
@@ -70,43 +64,83 @@ fun <T> SearchablePickerDialog(
                 )
             },
         ) { padding ->
-            Column(
-                Modifier
+            SearchablePickerContent(
+                searchHint = searchHint,
+                items = items,
+                key = key,
+                label = label,
+                onSelect = onSelect,
+                modifier = Modifier
                     .fillMaxSize()
                     .padding(padding)
                     .imePadding(),
-            ) {
-                PickerSearchField(
-                    query = query,
-                    hint = searchHint,
-                    onQueryChange = { query = it },
-                    modifier = Modifier.focusRequester(focusRequester),
-                )
-                LazyColumn(Modifier.fillMaxSize()) {
-                    header?.let { content -> item(key = "header") { content() } }
-                    if (onCustomOption != null && customOptionLabel != null && query.isNotBlank()) {
-                        item(key = "custom") {
-                            ListItem(
-                                headlineContent = { Text(customOptionLabel(query.trim())) },
-                                leadingContent = { Icon(CardholderIcons.Edit, contentDescription = null) },
-                                modifier = Modifier.clickable { onCustomOption(query.trim()) },
-                            )
-                            HorizontalDivider()
-                        }
-                    }
-                    items(filtered, key = key) { item ->
-                        ListItem(
-                            headlineContent = { Text(label(item)) },
-                            leadingContent = leading?.let { { it(item) } },
-                            trailingContent = trailing?.let { { it(item) } },
-                            modifier = Modifier.clickable { onSelect(item) },
-                        )
-                    }
+                leading = leading,
+                trailing = trailing,
+                header = header,
+                customOptionLabel = customOptionLabel,
+                onCustomOption = onCustomOption,
+            )
+        }
+    }
+}
+
+/**
+ * The search field and the filtered list of [SearchablePickerDialog], without the dialog, so it can be shown
+ * elsewhere, such as in a bottom sheet. Fills the space given by [modifier]; [header] stays above the search field.
+ */
+@Composable
+fun <T> SearchablePickerContent(
+    searchHint: String,
+    items: List<T>,
+    key: (T) -> String,
+    label: (T) -> String,
+    onSelect: (T) -> Unit,
+    modifier: Modifier = Modifier,
+    leading: @Composable ((T) -> Unit)? = null,
+    trailing: @Composable ((T) -> Unit)? = null,
+    /** Shown above the search field, e.g. an option that is not one of the items. */
+    header: @Composable (() -> Unit)? = null,
+    customOptionLabel: ((query: String) -> String)? = null,
+    onCustomOption: ((query: String) -> Unit)? = null,
+    /** Whether the search field takes focus when shown, which also opens the keyboard. */
+    autoFocus: Boolean = true,
+) {
+    var query by rememberSaveable { mutableStateOf("") }
+    val focusRequester = remember { FocusRequester() }
+    val filtered = remember(items, query) {
+        val needle = query.trim()
+        if (needle.isEmpty()) items else items.filter { label(it).contains(needle, ignoreCase = true) }
+    }
+    Column(modifier) {
+        header?.invoke()
+        PickerSearchField(
+            query = query,
+            hint = searchHint,
+            onQueryChange = { query = it },
+            modifier = Modifier.focusRequester(focusRequester),
+        )
+        LazyColumn(Modifier.weight(1f)) {
+            if (onCustomOption != null && customOptionLabel != null && query.isNotBlank()) {
+                item(key = "custom") {
+                    ListItem(
+                        headlineContent = { Text(customOptionLabel(query.trim())) },
+                        leadingContent = { Icon(CardholderIcons.Edit, contentDescription = null) },
+                        modifier = Modifier.clickable { onCustomOption(query.trim()) },
+                    )
+                    HorizontalDivider()
                 }
+            }
+            items(filtered, key = key) { item ->
+                ListItem(
+                    headlineContent = { Text(label(item)) },
+                    leadingContent = leading?.let { { it(item) } },
+                    trailingContent = trailing?.let { { it(item) } },
+                    modifier = Modifier.clickable { onSelect(item) },
+                )
             }
         }
     }
-    LaunchedEffect(Unit) { focusRequester.requestFocus() }
+    if (autoFocus) LaunchedEffect(Unit) { focusRequester.requestFocus() }
 }
 
 /** The search field at the top of a picker list. */

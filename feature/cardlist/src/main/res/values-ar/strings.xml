@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">كل البطاقات</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi متجر قريب</string>
     <string name="cardlist_nearby_distance">على بُعد نحو %1$s</string>
-    <string name="cardlist_country_unknown">الدولة غير معروفة</string>
     <string name="cardlist_country_filter_description">عرض البطاقات الصالحة في %1$s فقط</string>
-    <string name="cardlist_country_change">تغيير الدولة</string>
-    <string name="cardlist_country_title">الدولة</string>
+    <string name="cardlist_country_filter_title">تصفية حسب الدولة</string>
+    <string name="cardlist_country_filter_switch">البطاقات الصالحة في %1$s فقط</string>
+    <string name="cardlist_country_filter_switch_unknown">البطاقات الصالحة في الدولة الحالية فقط</string>
+    <string name="cardlist_country_filter_unknown">الدولة غير معروفة — يتم عرض كل البطاقات</string>
+    <string name="cardlist_country_filter_all">عرض كل البطاقات</string>
     <string name="cardlist_country_search">البحث عن الدول</string>
     <string name="cardlist_country_automatic">تلقائي: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">تلقائي: غير معروف</string>

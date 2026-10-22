@@ -165,7 +165,7 @@ internal fun CardListScreen(
                     scrollBehavior = scrollBehavior,
                 )
             } else {
-                MainTopBar(uiState, sortActions, onOpenSettings, scrollBehavior)
+                MainTopBar(uiState, sortActions, countryActions, onOpenSettings, scrollBehavior)
             }
         },
         floatingActionButton = {
@@ -231,9 +231,6 @@ private fun CardGrid(
                 visibleTypes = state.visibleTypes,
                 onQueryChange = onQueryChange,
                 onTypeToggled = onTypeToggled,
-                country = state.country,
-                countries = state.countries,
-                countryActions = countryActions,
             )
         }
         if (state.nearby.isNotEmpty()) {

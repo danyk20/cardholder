@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">Todos os cartões</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi da loja por perto</string>
     <string name="cardlist_nearby_distance">A cerca de %1$s</string>
-    <string name="cardlist_country_unknown">País desconhecido</string>
     <string name="cardlist_country_filter_description">A mostrar apenas cartões válidos para o país: %1$s</string>
-    <string name="cardlist_country_change">Alterar país</string>
-    <string name="cardlist_country_title">País</string>
+    <string name="cardlist_country_filter_title">Filtrar por país</string>
+    <string name="cardlist_country_filter_switch">Apenas cartões válidos em %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Apenas cartões válidos no país atual</string>
+    <string name="cardlist_country_filter_unknown">País desconhecido: são mostrados todos os cartões</string>
+    <string name="cardlist_country_filter_all">A mostrar todos os cartões</string>
     <string name="cardlist_country_search">Pesquisar países</string>
     <string name="cardlist_country_automatic">Automático: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">Automático: desconhecido</string>

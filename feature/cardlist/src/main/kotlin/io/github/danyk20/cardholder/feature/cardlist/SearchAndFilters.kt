@@ -20,21 +20,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
-import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.ui.icon
 import io.github.danyk20.cardholder.core.ui.label
 
-/** The search field, one filter chip per card type and, when cards are restricted, the country row above the list. */
+/** The search field and one filter chip per card type above the list. */
 @Composable
 internal fun SearchAndFilters(
     query: String,
     visibleTypes: Set<CardType>,
     onQueryChange: (String) -> Unit,
     onTypeToggled: (CardType) -> Unit,
-    country: CountryChip?,
-    countries: List<Country>,
-    countryActions: CountryActions,
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         OutlinedTextField(
@@ -73,6 +69,5 @@ internal fun SearchAndFilters(
                 )
             }
         }
-        country?.let { CountryChipRow(it, countries, countryActions) }
     }
 }

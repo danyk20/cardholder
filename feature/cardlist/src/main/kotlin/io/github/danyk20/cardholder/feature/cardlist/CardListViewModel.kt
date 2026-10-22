@@ -90,7 +90,7 @@ class CardListViewModel @Inject constructor(
     private var nearbyJob: Job? = null
     private var isVisible = false
 
-    /** The countries the picker offers. */
+    /** The countries the country filter offers. */
     private val catalogue: List<Country> = countryRepository.countries()
 
     private val countryFilter = combine(
@@ -103,7 +103,7 @@ class CardListViewModel @Inject constructor(
         Listing(query, types.toSet(), sort, filter)
     }
 
-    /** All cards whatever the filters, for the country row and the empty state. */
+    /** All cards whatever the filters, for the country filter and the empty state. */
     private val allCards = observeCards().map { it.cards }
 
     private val cards = listing.flatMapLatest { listing ->
@@ -123,7 +123,7 @@ class CardListViewModel @Inject constructor(
                 visibleTypes = listing.types,
                 hasAnyCards = all.isNotEmpty(),
                 sort = listing.sort,
-                // The country row only appears once a card is restricted to some countries.
+                // The country filter is offered once a card is restricted to some countries.
                 country = listing.filter.takeIf { all.any { it.validity is CardValidity.Countries } }
                     ?.let { CountryChip(it.state, it.enabled) },
                 countries = catalogue,
@@ -263,14 +263,20 @@ class CardListViewModel @Inject constructor(
         launchSafely { preferencesRepository.setCountryFilterEnabled(enabled) }
     }
 
-    /** Uses [code] as the current country, instead of the detected one, until detection changes. */
+    /** Uses [code] as the current country, instead of the detected one, until detection changes; filters by it too. */
     fun onCountryPicked(code: CountryCode) {
-        launchSafely { currentCountry.setOverride(code) }
+        launchSafely {
+            preferencesRepository.setCountryFilterEnabled(true)
+            currentCountry.setOverride(code)
+        }
     }
 
-    /** Goes back to the detected country. */
+    /** Goes back to the detected country, and filters by it. */
     fun onAutomaticCountry() {
-        launchSafely { currentCountry.clearOverride() }
+        launchSafely {
+            preferencesRepository.setCountryFilterEnabled(true)
+            currentCountry.clearOverride()
+        }
     }
 
     fun onQueryChange(query: String) {
@@ -299,7 +305,7 @@ private data class Listing(val query: String, val types: Set<CardType>, val sort
 
 private data class Shown(val items: List<CardListItem>, val hiddenElsewhere: Int)
 
-/** The country row above the list: what is in use, and whether the cards are filtered by it. */
+/** The country filter in the title bar: what is in use, and whether the cards are filtered by it. */
 data class CountryChip(val state: CountryState, val filterEnabled: Boolean)
 
 /** A card in the list; [code] is set for unlocked loyalty cards. */
@@ -342,7 +348,7 @@ sealed interface CardListUiState {
         val share: ShareState = ShareState.Idle,
         /** Cards suggested because they were used nearby; not repeated in [cards]. */
         val nearby: List<NearbyItem> = emptyList(),
-        /** The country row, shown once a card is valid in some countries only; `null` hides it. */
+        /** The country filter, offered once a card is valid in some countries only; `null` hides it. */
         val country: CountryChip? = null,
         /** The countries the country picker offers. */
         val countries: List<Country> = emptyList(),

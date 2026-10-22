@@ -54,7 +54,7 @@ class StoreScreenshotTest {
         query = "",
         visibleTypes = CardType.entries.toSet(),
         hasAnyCards = true,
-        // The country row shows the country in use and the filter switched on, as in the app.
+        // The filter icon in the top bar shows the country in use, with the filter switched on, as in the app.
         country = CountryChip(
             state = CountryState(
                 effective = CurrentCountry(SWITZERLAND, CountrySource.NETWORK),

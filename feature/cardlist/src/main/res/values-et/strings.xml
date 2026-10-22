@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">Kõik kaardid</string>
     <string name="cardlist_nearby_wifi">Poe Wi‑Fi läheduses</string>
     <string name="cardlist_nearby_distance">Umbes %1$s kaugusel</string>
-    <string name="cardlist_country_unknown">Riik teadmata</string>
     <string name="cardlist_country_filter_description">Näidatakse ainult kaarte, mis kehtivad riigis %1$s</string>
-    <string name="cardlist_country_change">Muuda riiki</string>
-    <string name="cardlist_country_title">Riik</string>
+    <string name="cardlist_country_filter_title">Filtreeri riigi järgi</string>
+    <string name="cardlist_country_filter_switch">Ainult kaardid, mis kehtivad riigis %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Ainult kaardid, mis kehtivad praeguses riigis</string>
+    <string name="cardlist_country_filter_unknown">Riik teadmata – näidatakse kõiki kaarte</string>
+    <string name="cardlist_country_filter_all">Näidatakse kõiki kaarte</string>
     <string name="cardlist_country_search">Otsi riike</string>
     <string name="cardlist_country_automatic">Automaatne: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">Automaatne: teadmata</string>

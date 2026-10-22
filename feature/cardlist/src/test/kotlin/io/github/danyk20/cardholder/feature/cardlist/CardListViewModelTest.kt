@@ -419,6 +419,36 @@ class CardListViewModelTest {
     }
 
     @Test
+    fun `picking a country turns the country filter on`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.loyalty.copy(validity = restrictedTo("AT")), TestCards.loyaltyDetails)
+        viewModel.onCountryFilterChange(false)
+        viewModel.uiState.first { it is CardListUiState.Success && it.country?.filterEnabled == false }
+
+        viewModel.onCountryPicked(code("AT"))
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.country?.filterEnabled == true }
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(code("AT"), state.country?.state?.effective?.code)
+        assertEquals(true, preferences.preferences.first().countryFilterEnabled)
+    }
+
+    @Test
+    fun `automatic turns the country filter on`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.loyalty.copy(validity = restrictedTo("AT")), TestCards.loyaltyDetails)
+        viewModel.onCountryFilterChange(false)
+        viewModel.uiState.first { it is CardListUiState.Success && it.country?.filterEnabled == false }
+
+        viewModel.onAutomaticCountry()
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.country?.filterEnabled == true }
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(code("CH"), state.country?.state?.effective?.code)
+        assertEquals(true, preferences.preferences.first().countryFilterEnabled)
+    }
+
+    @Test
     fun `a new detection changes the cards shown`() = runTest {
         currentCountry.detect(code("CH"))
         repository.add(TestCards.idCard.copy(validity = restrictedTo("DE")), TestCards.idCardDetails)

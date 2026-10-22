@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">Toate cardurile</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi de magazin în apropiere</string>
     <string name="cardlist_nearby_distance">La aproximativ %1$s distanță</string>
-    <string name="cardlist_country_unknown">Țară necunoscută</string>
     <string name="cardlist_country_filter_description">Se afișează doar cardurile valabile în: %1$s</string>
-    <string name="cardlist_country_change">Schimbă țara</string>
-    <string name="cardlist_country_title">Țara</string>
+    <string name="cardlist_country_filter_title">Filtrează după țară</string>
+    <string name="cardlist_country_filter_switch">Doar cardurile valabile în: %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Doar cardurile valabile în țara curentă</string>
+    <string name="cardlist_country_filter_unknown">Țară necunoscută – se afișează toate cardurile</string>
+    <string name="cardlist_country_filter_all">Se afișează toate cardurile</string>
     <string name="cardlist_country_search">Caută țări</string>
     <string name="cardlist_country_automatic">Automat: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">Automat: necunoscută</string>

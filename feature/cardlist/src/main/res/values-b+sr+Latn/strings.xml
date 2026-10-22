@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">Sve kartice</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi prodavnice u blizini</string>
     <string name="cardlist_nearby_distance">Oko %1$s udaljeno</string>
-    <string name="cardlist_country_unknown">Zemlja nije poznata</string>
     <string name="cardlist_country_filter_description">Prikazuju se samo kartice koje važe za zemlju: %1$s</string>
-    <string name="cardlist_country_change">Promeni zemlju</string>
-    <string name="cardlist_country_title">Zemlja</string>
+    <string name="cardlist_country_filter_title">Filtriraj po zemlji</string>
+    <string name="cardlist_country_filter_switch">Samo kartice koje važe u: %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Samo kartice koje važe u trenutnoj zemlji</string>
+    <string name="cardlist_country_filter_unknown">Zemlja nije poznata — prikazuju se sve kartice</string>
+    <string name="cardlist_country_filter_all">Prikazuju se sve kartice</string>
     <string name="cardlist_country_search">Pretraži zemlje</string>
     <string name="cardlist_country_automatic">Automatski: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">Automatski: nepoznato</string>

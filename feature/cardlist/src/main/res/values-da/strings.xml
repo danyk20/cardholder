@@ -25,10 +25,12 @@
     <string name="cardlist_all_cards">Alle kort</string>
     <string name="cardlist_nearby_wifi">Butikkens Wi‑Fi i nærheden</string>
     <string name="cardlist_nearby_distance">Ca. %1$s væk</string>
-    <string name="cardlist_country_unknown">Land ukendt</string>
     <string name="cardlist_country_filter_description">Viser kun kort, der er gyldige i: %1$s</string>
-    <string name="cardlist_country_change">Skift land</string>
-    <string name="cardlist_country_title">Land</string>
+    <string name="cardlist_country_filter_title">Filtrer efter land</string>
+    <string name="cardlist_country_filter_switch">Kun kort, der er gyldige i: %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Kun kort, der er gyldige i det aktuelle land</string>
+    <string name="cardlist_country_filter_unknown">Land ukendt — alle kort vises</string>
+    <string name="cardlist_country_filter_all">Viser alle kort</string>
     <string name="cardlist_country_search">Søg efter lande</string>
     <string name="cardlist_country_automatic">Automatisk: %1$s (%2$s)</string>
     <string name="cardlist_country_automatic_unknown">Automatisk: ukendt</string>
