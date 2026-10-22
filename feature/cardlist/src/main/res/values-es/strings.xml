@@ -25,4 +25,20 @@
     <string name="cardlist_all_cards">Todas las tarjetas</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi de tienda cercana</string>
     <string name="cardlist_nearby_distance">A unos %1$s</string>
+    <string name="cardlist_country_unknown">País desconocido</string>
+    <string name="cardlist_country_filter_description">Solo se muestran las tarjetas válidas para el país: %1$s</string>
+    <string name="cardlist_country_change">Cambiar país</string>
+    <string name="cardlist_country_title">País</string>
+    <string name="cardlist_country_search">Buscar países</string>
+    <string name="cardlist_country_automatic">Automático: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automático: desconocido</string>
+    <string name="cardlist_source_network">red móvil</string>
+    <string name="cardlist_source_location">ubicación</string>
+    <string name="cardlist_source_last_known">última conocida</string>
+    <string name="cardlist_show_all">Mostrar todas</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d tarjeta para otros países está oculta</item>
+        <item quantity="many">%1$d tarjetas para otros países están ocultas</item>
+        <item quantity="other">%1$d tarjetas para otros países están ocultas</item>
+    </plurals>
 </resources>

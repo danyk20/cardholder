@@ -25,4 +25,19 @@
     <string name="cardlist_all_cards">Të gjitha kartat</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi i dyqanit afër</string>
     <string name="cardlist_nearby_distance">Rreth %1$s larg</string>
+    <string name="cardlist_country_unknown">Vendi i panjohur</string>
+    <string name="cardlist_country_filter_description">Shfaqen vetëm kartat e vlefshme në: %1$s</string>
+    <string name="cardlist_country_change">Ndrysho vendin</string>
+    <string name="cardlist_country_title">Vendi</string>
+    <string name="cardlist_country_search">Kërko vendet</string>
+    <string name="cardlist_country_automatic">Automatike: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automatike: e panjohur</string>
+    <string name="cardlist_source_network">rrjeti celular</string>
+    <string name="cardlist_source_location">vendndodhja</string>
+    <string name="cardlist_source_last_known">e fundit e njohur</string>
+    <string name="cardlist_show_all">Shfaq të gjitha</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d kartë për vende të tjera është e fshehur</item>
+        <item quantity="other">%1$d karta për vende të tjera janë të fshehura</item>
+    </plurals>
 </resources>

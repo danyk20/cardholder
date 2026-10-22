@@ -75,4 +75,17 @@
     <string name="editor_locked_title">Acest card este blocat</string>
     <string name="editor_not_found">Acest card nu mai există</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">Valabil în</string>
+    <string name="editor_validity_all">Toate țările</string>
+    <string name="editor_validity_selected">Țări selectate</string>
+    <string name="editor_validity_done">Gata</string>
+    <string name="editor_region_eu">UE</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">Zona euro</string>
+    <string name="editor_region_eea">SEE</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d țară: %2$s</item>
+        <item quantity="few">🌐 %1$d țări: %2$s</item>
+        <item quantity="other">🌐 %1$d de țări: %2$s</item>
+    </plurals>
 </resources>

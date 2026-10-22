@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">無法判斷你的位置。請在開啟 Wi‑Fi 或靠近窗戶時再試一次。</string>
     <string name="detail_place_no_permission">請允許 Cardholder 取得精確位置，才能記住地點</string>
     <string name="detail_place_location_off">請開啟位置資訊，才能記住地點</string>
+    <string name="field_valid_in">適用國家/地區</string>
 </resources>

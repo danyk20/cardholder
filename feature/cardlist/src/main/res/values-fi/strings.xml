@@ -25,4 +25,19 @@
     <string name="cardlist_all_cards">Kaikki kortit</string>
     <string name="cardlist_nearby_wifi">Kaupan Wi‑Fi lähellä</string>
     <string name="cardlist_nearby_distance">Noin %1$s päässä</string>
+    <string name="cardlist_country_unknown">Maa tuntematon</string>
+    <string name="cardlist_country_filter_description">Näytetään vain kortit, jotka ovat voimassa maassa %1$s</string>
+    <string name="cardlist_country_change">Vaihda maata</string>
+    <string name="cardlist_country_title">Maa</string>
+    <string name="cardlist_country_search">Hae maita</string>
+    <string name="cardlist_country_automatic">Automaattinen: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automaattinen: tuntematon</string>
+    <string name="cardlist_source_network">matkapuhelinverkko</string>
+    <string name="cardlist_source_location">sijainti</string>
+    <string name="cardlist_source_last_known">viimeksi tunnettu</string>
+    <string name="cardlist_show_all">Näytä kaikki</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d kortti muille maille on piilotettu</item>
+        <item quantity="other">%1$d korttia muille maille on piilotettu</item>
+    </plurals>
 </resources>

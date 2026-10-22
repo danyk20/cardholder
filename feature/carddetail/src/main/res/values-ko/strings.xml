@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">현재 위치를 찾을 수 없습니다. Wi‑Fi를 켜거나 창가 근처에서 다시 시도하세요.</string>
     <string name="detail_place_no_permission">Cardholder가 장소를 기억하려면 정밀 위치를 허용하세요</string>
     <string name="detail_place_location_off">장소를 기억하려면 위치를 켜세요</string>
+    <string name="field_valid_in">사용 가능 국가</string>
 </resources>

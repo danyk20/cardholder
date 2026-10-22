@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">Усі картки</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi магазину поруч</string>
     <string name="cardlist_nearby_distance">Приблизно за %1$s</string>
+    <string name="cardlist_country_unknown">Країну не визначено</string>
+    <string name="cardlist_country_filter_description">Показано лише картки, дійсні в країні: %1$s</string>
+    <string name="cardlist_country_change">Змінити країну</string>
+    <string name="cardlist_country_title">Країна</string>
+    <string name="cardlist_country_search">Пошук країн</string>
+    <string name="cardlist_country_automatic">Автоматично: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Автоматично: не визначено</string>
+    <string name="cardlist_source_network">мобільна мережа</string>
+    <string name="cardlist_source_location">геолокація</string>
+    <string name="cardlist_source_last_known">остання відома</string>
+    <string name="cardlist_show_all">Показати всі</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d картка для інших країн прихована</item>
+        <item quantity="few">%1$d картки для інших країн приховані</item>
+        <item quantity="many">%1$d карток для інших країн приховано</item>
+        <item quantity="other">%1$d карток для інших країн приховано</item>
+    </plurals>
 </resources>

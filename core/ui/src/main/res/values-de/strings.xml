@@ -66,4 +66,9 @@
     <string name="color_sky">Himmelblau</string>
     <string name="color_lavender">Lavendel</string>
     <string name="color_blush">Zartrosa</string>
+    <string name="card_valid_only_in">Nur gültig für das Land: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Gültig in %1$d Land: %2$s</item>
+        <item quantity="other">Gültig in %1$d Ländern: %2$s</item>
+    </plurals>
 </resources>

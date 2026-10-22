@@ -53,4 +53,9 @@
     <string name="color_sky">آبی آسمانی</string>
     <string name="color_lavender">اسطوخودوسی</string>
     <string name="color_blush">صورتی روشن</string>
+    <string name="card_valid_only_in">فقط معتبر در کشور: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">معتبر در %1$d کشور: %2$s</item>
+        <item quantity="other">معتبر در %1$d کشور: %2$s</item>
+    </plurals>
 </resources>

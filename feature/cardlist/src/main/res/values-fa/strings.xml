@@ -25,4 +25,19 @@
     <string name="cardlist_all_cards">همه کارت‌ها</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi فروشگاه در نزدیکی</string>
     <string name="cardlist_nearby_distance">حدود %1$s فاصله</string>
+    <string name="cardlist_country_unknown">کشور نامشخص</string>
+    <string name="cardlist_country_filter_description">فقط کارت‌های معتبر در کشور %1$s نمایش داده می‌شوند</string>
+    <string name="cardlist_country_change">تغییر کشور</string>
+    <string name="cardlist_country_title">کشور</string>
+    <string name="cardlist_country_search">جستجوی کشورها</string>
+    <string name="cardlist_country_automatic">خودکار: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">خودکار: نامشخص</string>
+    <string name="cardlist_source_network">شبکه تلفن همراه</string>
+    <string name="cardlist_source_location">مکان</string>
+    <string name="cardlist_source_last_known">آخرین مکان شناخته‌شده</string>
+    <string name="cardlist_show_all">نمایش همه</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d کارت برای کشورهای دیگر پنهان است</item>
+        <item quantity="other">%1$d کارت برای کشورهای دیگر پنهان است</item>
+    </plurals>
 </resources>

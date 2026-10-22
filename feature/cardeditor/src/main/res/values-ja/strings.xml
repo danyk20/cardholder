@@ -75,4 +75,15 @@
     <string name="editor_locked_title">このカードはロックされています</string>
     <string name="editor_not_found">このカードは存在しません</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">有効な国</string>
+    <string name="editor_validity_all">すべての国</string>
+    <string name="editor_validity_selected">選択した国</string>
+    <string name="editor_validity_done">完了</string>
+    <string name="editor_region_eu">EU</string>
+    <string name="editor_region_schengen">シェンゲン圏</string>
+    <string name="editor_region_eurozone">ユーロ圏</string>
+    <string name="editor_region_eea">EEA</string>
+    <plurals name="editor_validity_many">
+        <item quantity="other">🌐 %1$d か国: %2$s</item>
+    </plurals>
 </resources>

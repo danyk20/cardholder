@@ -82,4 +82,16 @@
     <string name="editor_locked_title">Kjo kartë është e kyçur</string>
     <string name="editor_not_found">Kjo kartë nuk ekziston më</string>
     <string name="editor_ok">Në rregull</string>
+    <string name="editor_field_validity">E vlefshme në</string>
+    <string name="editor_validity_all">Të gjitha vendet</string>
+    <string name="editor_validity_selected">Vendet e zgjedhura</string>
+    <string name="editor_validity_done">U krye</string>
+    <string name="editor_region_eu">BE</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">Eurozona</string>
+    <string name="editor_region_eea">EEA</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d vend: %2$s</item>
+        <item quantity="other">🌐 %1$d vende: %2$s</item>
+    </plurals>
 </resources>

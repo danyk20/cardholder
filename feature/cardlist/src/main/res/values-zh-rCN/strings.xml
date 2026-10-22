@@ -25,4 +25,18 @@
     <string name="cardlist_all_cards">全部卡片</string>
     <string name="cardlist_nearby_wifi">附近商店的 Wi‑Fi</string>
     <string name="cardlist_nearby_distance">距离约 %1$s</string>
+    <string name="cardlist_country_unknown">未知国家/地区</string>
+    <string name="cardlist_country_filter_description">仅显示在%1$s有效的卡片</string>
+    <string name="cardlist_country_change">更改国家/地区</string>
+    <string name="cardlist_country_title">国家/地区</string>
+    <string name="cardlist_country_search">搜索国家/地区</string>
+    <string name="cardlist_country_automatic">自动：%1$s（%2$s）</string>
+    <string name="cardlist_country_automatic_unknown">自动：未知</string>
+    <string name="cardlist_source_network">移动网络</string>
+    <string name="cardlist_source_location">位置</string>
+    <string name="cardlist_source_last_known">上次已知</string>
+    <string name="cardlist_show_all">显示全部</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="other">已隐藏 %1$d 张其他国家/地区的卡片</item>
+    </plurals>
 </resources>

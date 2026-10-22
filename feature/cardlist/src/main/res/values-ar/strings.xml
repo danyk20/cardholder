@@ -25,4 +25,23 @@
     <string name="cardlist_all_cards">كل البطاقات</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi متجر قريب</string>
     <string name="cardlist_nearby_distance">على بُعد نحو %1$s</string>
+    <string name="cardlist_country_unknown">الدولة غير معروفة</string>
+    <string name="cardlist_country_filter_description">عرض البطاقات الصالحة في %1$s فقط</string>
+    <string name="cardlist_country_change">تغيير الدولة</string>
+    <string name="cardlist_country_title">الدولة</string>
+    <string name="cardlist_country_search">البحث عن الدول</string>
+    <string name="cardlist_country_automatic">تلقائي: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">تلقائي: غير معروف</string>
+    <string name="cardlist_source_network">شبكة الهاتف المحمول</string>
+    <string name="cardlist_source_location">الموقع</string>
+    <string name="cardlist_source_last_known">آخر موقع معروف</string>
+    <string name="cardlist_show_all">عرض الكل</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="zero">%1$d بطاقة لدول أخرى مخفية</item>
+        <item quantity="one">%1$d بطاقة لدول أخرى مخفية</item>
+        <item quantity="two">%1$d بطاقتان لدول أخرى مخفيتان</item>
+        <item quantity="few">%1$d بطاقات لدول أخرى مخفية</item>
+        <item quantity="many">%1$d بطاقة لدول أخرى مخفية</item>
+        <item quantity="other">%1$d بطاقة لدول أخرى مخفية</item>
+    </plurals>
 </resources>

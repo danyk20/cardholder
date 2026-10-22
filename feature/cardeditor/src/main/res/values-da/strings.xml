@@ -75,4 +75,16 @@
     <string name="editor_locked_title">Dette kort er låst</string>
     <string name="editor_not_found">Dette kort findes ikke længere</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">Gyldig i</string>
+    <string name="editor_validity_all">Alle lande</string>
+    <string name="editor_validity_selected">Valgte lande</string>
+    <string name="editor_validity_done">Færdig</string>
+    <string name="editor_region_eu">EU</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">euroområdet</string>
+    <string name="editor_region_eea">EØS</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d land: %2$s</item>
+        <item quantity="other">🌐 %1$d lande: %2$s</item>
+    </plurals>
 </resources>

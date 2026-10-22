@@ -47,4 +47,5 @@
     <string name="detail_place_not_found">Не вдалося визначити ваше місцезнаходження. Спробуйте ще раз із увімкненим Wi‑Fi або біля вікна.</string>
     <string name="detail_place_no_permission">Дозвольте точне місцезнаходження для Cardholder, щоб запам’ятовувати місця</string>
     <string name="detail_place_location_off">Увімкніть місцезнаходження, щоб запам’ятовувати місця</string>
+    <string name="field_valid_in">Дійсна в</string>
 </resources>

@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">आप कहां हैं, यह पता नहीं चला. Wi‑Fi चालू करके या खिड़की के पास जाकर फिर से कोशिश करें.</string>
     <string name="detail_place_no_permission">जगहें याद रखने के लिए Cardholder को सटीक लोकेशन की अनुमति दें</string>
     <string name="detail_place_location_off">जगहें याद रखने के लिए लोकेशन चालू करें</string>
+    <string name="field_valid_in">इन देशों में मान्य</string>
 </resources>

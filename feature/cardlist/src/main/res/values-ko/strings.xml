@@ -25,4 +25,18 @@
     <string name="cardlist_all_cards">모든 카드</string>
     <string name="cardlist_nearby_wifi">근처 매장 Wi‑Fi</string>
     <string name="cardlist_nearby_distance">약 %1$s 거리</string>
+    <string name="cardlist_country_unknown">국가를 알 수 없음</string>
+    <string name="cardlist_country_filter_description">%1$s에서 사용 가능한 카드만 표시 중</string>
+    <string name="cardlist_country_change">국가 변경</string>
+    <string name="cardlist_country_title">국가</string>
+    <string name="cardlist_country_search">국가 검색</string>
+    <string name="cardlist_country_automatic">자동: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">자동: 알 수 없음</string>
+    <string name="cardlist_source_network">모바일 네트워크</string>
+    <string name="cardlist_source_location">위치</string>
+    <string name="cardlist_source_last_known">마지막으로 확인된 위치</string>
+    <string name="cardlist_show_all">모두 표시</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="other">다른 국가용 카드 %1$d개가 숨겨져 있음</item>
+    </plurals>
 </resources>

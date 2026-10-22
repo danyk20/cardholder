@@ -53,4 +53,9 @@
     <string name="color_sky">আকাশি</string>
     <string name="color_lavender">ল্যাভেন্ডার</string>
     <string name="color_blush">হালকা গোলাপি</string>
+    <string name="card_valid_only_in">শুধুমাত্র %1$s-এ বৈধ</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">%1$d টি দেশে বৈধ: %2$s</item>
+        <item quantity="other">%1$d টি দেশে বৈধ: %2$s</item>
+    </plurals>
 </resources>

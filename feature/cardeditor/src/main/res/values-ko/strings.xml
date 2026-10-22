@@ -75,4 +75,15 @@
     <string name="editor_locked_title">이 카드는 잠겨 있습니다</string>
     <string name="editor_not_found">이 카드는 더 이상 존재하지 않습니다</string>
     <string name="editor_ok">확인</string>
+    <string name="editor_field_validity">사용 가능 국가</string>
+    <string name="editor_validity_all">모든 국가</string>
+    <string name="editor_validity_selected">선택한 국가</string>
+    <string name="editor_validity_done">완료</string>
+    <string name="editor_region_eu">EU</string>
+    <string name="editor_region_schengen">솅겐</string>
+    <string name="editor_region_eurozone">유로존</string>
+    <string name="editor_region_eea">EEA</string>
+    <plurals name="editor_validity_many">
+        <item quantity="other">🌐 %1$d개 국가: %2$s</item>
+    </plurals>
 </resources>

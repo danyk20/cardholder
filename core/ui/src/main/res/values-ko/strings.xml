@@ -53,4 +53,8 @@
     <string name="color_sky">하늘색</string>
     <string name="color_lavender">라벤더색</string>
     <string name="color_blush">연분홍색</string>
+    <string name="card_valid_only_in">%1$s에서만 사용 가능</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="other">%1$d개 국가에서 사용 가능: %2$s</item>
+    </plurals>
 </resources>

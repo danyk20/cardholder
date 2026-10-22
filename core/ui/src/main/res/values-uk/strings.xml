@@ -66,4 +66,11 @@
     <string name="color_sky">Небесно-блакитний</string>
     <string name="color_lavender">Лавандовий</string>
     <string name="color_blush">Ніжно-рожевий</string>
+    <string name="card_valid_only_in">Дійсна лише в країні: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Дійсна в %1$d країні: %2$s</item>
+        <item quantity="few">Дійсна в %1$d країнах: %2$s</item>
+        <item quantity="many">Дійсна в %1$d країнах: %2$s</item>
+        <item quantity="other">Дійсна в %1$d країнах: %2$s</item>
+    </plurals>
 </resources>

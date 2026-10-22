@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">আপনার অবস্থান খুঁজে পাওয়া যায়নি। ওয়াই-ফাই চালু রেখে বা জানালার কাছে গিয়ে আবার চেষ্টা করুন।</string>
     <string name="detail_place_no_permission">জায়গা মনে রাখতে Cardholder-কে সুনির্দিষ্ট অবস্থানের অনুমতি দিন</string>
     <string name="detail_place_location_off">জায়গা মনে রাখতে অবস্থান চালু করুন</string>
+    <string name="field_valid_in">যেখানে বৈধ</string>
 </resources>

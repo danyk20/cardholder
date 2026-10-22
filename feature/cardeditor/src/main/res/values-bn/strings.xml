@@ -75,4 +75,16 @@
     <string name="editor_locked_title">এই কার্ডটি লক করা আছে</string>
     <string name="editor_not_found">এই কার্ডটি আর নেই</string>
     <string name="editor_ok">ঠিক আছে</string>
+    <string name="editor_field_validity">যেখানে বৈধ</string>
+    <string name="editor_validity_all">সব দেশ</string>
+    <string name="editor_validity_selected">নির্বাচিত দেশ</string>
+    <string name="editor_validity_done">সম্পন্ন</string>
+    <string name="editor_region_eu">ইইউ</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">ইউরোজোন</string>
+    <string name="editor_region_eea">EEA</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d টি দেশ: %2$s</item>
+        <item quantity="other">🌐 %1$d টি দেশ: %2$s</item>
+    </plurals>
 </resources>

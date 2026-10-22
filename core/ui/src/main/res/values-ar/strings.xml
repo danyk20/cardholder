@@ -59,4 +59,13 @@
     <string name="color_sky">أزرق سماوي</string>
     <string name="color_lavender">لافندر</string>
     <string name="color_blush">وردي فاتح</string>
+    <string name="card_valid_only_in">صالحة فقط في: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="zero">صالحة في %1$d دولة: %2$s</item>
+        <item quantity="one">صالحة في %1$d دولة: %2$s</item>
+        <item quantity="two">صالحة في %1$d دولتين: %2$s</item>
+        <item quantity="few">صالحة في %1$d دول: %2$s</item>
+        <item quantity="many">صالحة في %1$d دولة: %2$s</item>
+        <item quantity="other">صالحة في %1$d دولة: %2$s</item>
+    </plurals>
 </resources>

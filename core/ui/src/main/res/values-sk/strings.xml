@@ -66,4 +66,11 @@
     <string name="color_sky">Nebeská modrá</string>
     <string name="color_lavender">Levanduľová</string>
     <string name="color_blush">Svetloružová</string>
+    <string name="card_valid_only_in">Platí len pre krajinu: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Platí pre %1$d krajinu: %2$s</item>
+        <item quantity="few">Platí pre %1$d krajiny: %2$s</item>
+        <item quantity="many">Platí pre %1$d krajín: %2$s</item>
+        <item quantity="other">Platí pre %1$d krajín: %2$s</item>
+    </plurals>
 </resources>

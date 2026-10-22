@@ -25,4 +25,19 @@
     <string name="cardlist_all_cards">Összes kártya</string>
     <string name="cardlist_nearby_wifi">Üzlet Wi‑Fi-je a közelben</string>
     <string name="cardlist_nearby_distance">Kb. %1$s távolságra</string>
+    <string name="cardlist_country_unknown">Ismeretlen ország</string>
+    <string name="cardlist_country_filter_description">Csak a(z) %1$s országban érvényes kártyák jelennek meg</string>
+    <string name="cardlist_country_change">Ország módosítása</string>
+    <string name="cardlist_country_title">Ország</string>
+    <string name="cardlist_country_search">Országok keresése</string>
+    <string name="cardlist_country_automatic">Automatikus: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automatikus: ismeretlen</string>
+    <string name="cardlist_source_network">mobilhálózat</string>
+    <string name="cardlist_source_location">helymeghatározás</string>
+    <string name="cardlist_source_last_known">utoljára ismert</string>
+    <string name="cardlist_show_all">Összes megjelenítése</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d másik országhoz tartozó kártya el van rejtve</item>
+        <item quantity="other">%1$d másik országhoz tartozó kártya el van rejtve</item>
+    </plurals>
 </resources>

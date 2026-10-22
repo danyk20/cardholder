@@ -53,4 +53,10 @@
     <string name="color_sky">Azzurro cielo</string>
     <string name="color_lavender">Lavanda</string>
     <string name="color_blush">Rosa cipria</string>
+    <string name="card_valid_only_in">Valida solo per il paese: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Valida in %1$d paese: %2$s</item>
+        <item quantity="many">Valida in %1$d paesi: %2$s</item>
+        <item quantity="other">Valida in %1$d paesi: %2$s</item>
+    </plurals>
 </resources>

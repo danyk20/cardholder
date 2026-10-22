@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">Kunde inte hitta var du är. Försök igen med Wi‑Fi på eller nära ett fönster.</string>
     <string name="detail_place_no_permission">Tillåt exakt plats för Cardholder för att kunna komma ihåg platser</string>
     <string name="detail_place_location_off">Slå på platsinformation för att kunna komma ihåg platser</string>
+    <string name="field_valid_in">Giltig i</string>
 </resources>

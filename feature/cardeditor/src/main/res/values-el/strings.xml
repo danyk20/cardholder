@@ -75,4 +75,16 @@
     <string name="editor_locked_title">Αυτή η κάρτα είναι κλειδωμένη</string>
     <string name="editor_not_found">Αυτή η κάρτα δεν υπάρχει πλέον</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">Ισχύει σε</string>
+    <string name="editor_validity_all">Όλες οι χώρες</string>
+    <string name="editor_validity_selected">Επιλεγμένες χώρες</string>
+    <string name="editor_validity_done">Τέλος</string>
+    <string name="editor_region_eu">ΕΕ</string>
+    <string name="editor_region_schengen">Σένγκεν</string>
+    <string name="editor_region_eurozone">Ευρωζώνη</string>
+    <string name="editor_region_eea">ΕΟΧ</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d χώρα: %2$s</item>
+        <item quantity="other">🌐 %1$d χώρες: %2$s</item>
+    </plurals>
 </resources>

@@ -75,4 +75,16 @@
     <string name="editor_locked_title">Kadi hii imefungwa</string>
     <string name="editor_not_found">Kadi hii haipo tena</string>
     <string name="editor_ok">Sawa</string>
+    <string name="editor_field_validity">Halali katika</string>
+    <string name="editor_validity_all">Nchi zote</string>
+    <string name="editor_validity_selected">Nchi zilizochaguliwa</string>
+    <string name="editor_validity_done">Imekamilika</string>
+    <string name="editor_region_eu">EU</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">Eneo la euro</string>
+    <string name="editor_region_eea">EEA</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 nchi %1$d: %2$s</item>
+        <item quantity="other">🌐 nchi %1$d: %2$s</item>
+    </plurals>
 </resources>

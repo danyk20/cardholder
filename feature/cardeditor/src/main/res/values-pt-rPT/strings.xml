@@ -75,4 +75,17 @@
     <string name="editor_locked_title">Este cartão está bloqueado</string>
     <string name="editor_not_found">Este cartão já não existe</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">Válido em</string>
+    <string name="editor_validity_all">Todos os países</string>
+    <string name="editor_validity_selected">Países selecionados</string>
+    <string name="editor_validity_done">Concluído</string>
+    <string name="editor_region_eu">UE</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">Zona euro</string>
+    <string name="editor_region_eea">EEE</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d país: %2$s</item>
+        <item quantity="many">🌐 %1$d países: %2$s</item>
+        <item quantity="other">🌐 %1$d países: %2$s</item>
+    </plurals>
 </resources>

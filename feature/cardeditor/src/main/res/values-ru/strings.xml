@@ -89,4 +89,18 @@
     <string name="editor_locked_title">Эта карта заблокирована</string>
     <string name="editor_not_found">Этой карты больше нет</string>
     <string name="editor_ok">ОК</string>
+    <string name="editor_field_validity">Действует в</string>
+    <string name="editor_validity_all">Все страны</string>
+    <string name="editor_validity_selected">Выбранные страны</string>
+    <string name="editor_validity_done">Готово</string>
+    <string name="editor_region_eu">ЕС</string>
+    <string name="editor_region_schengen">Шенген</string>
+    <string name="editor_region_eurozone">Еврозона</string>
+    <string name="editor_region_eea">ЕЭЗ</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d страна: %2$s</item>
+        <item quantity="few">🌐 %1$d страны: %2$s</item>
+        <item quantity="many">🌐 %1$d стран: %2$s</item>
+        <item quantity="other">🌐 %1$d стран: %2$s</item>
+    </plurals>
 </resources>

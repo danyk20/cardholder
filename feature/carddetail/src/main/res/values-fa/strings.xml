@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">مکان فعلی‌تان پیدا نشد. با روشن بودن Wi‑Fi یا نزدیک پنجره دوباره امتحان کنید.</string>
     <string name="detail_place_no_permission">برای به خاطر سپردن مکان‌ها، مکان دقیق را برای Cardholder مجاز کنید</string>
     <string name="detail_place_location_off">برای به خاطر سپردن مکان‌ها، موقعیت مکانی را روشن کنید</string>
+    <string name="field_valid_in">معتبر در</string>
 </resources>

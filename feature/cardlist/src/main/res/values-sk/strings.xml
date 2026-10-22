@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">Všetky karty</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi obchodu v okolí</string>
     <string name="cardlist_nearby_distance">Vzdialené asi %1$s</string>
+    <string name="cardlist_country_unknown">Krajina nie je známa</string>
+    <string name="cardlist_country_filter_description">Zobrazujú sa len karty platné pre krajinu: %1$s</string>
+    <string name="cardlist_country_change">Zmeniť krajinu</string>
+    <string name="cardlist_country_title">Krajina</string>
+    <string name="cardlist_country_search">Hľadať krajiny</string>
+    <string name="cardlist_country_automatic">Automaticky: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automaticky: neznáma</string>
+    <string name="cardlist_source_network">mobilná sieť</string>
+    <string name="cardlist_source_location">poloha</string>
+    <string name="cardlist_source_last_known">naposledy známa</string>
+    <string name="cardlist_show_all">Zobraziť všetky</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d karta pre iné krajiny je skrytá</item>
+        <item quantity="few">%1$d karty pre iné krajiny sú skryté</item>
+        <item quantity="many">%1$d kariet pre iné krajiny je skrytých</item>
+        <item quantity="other">%1$d kariet pre iné krajiny je skrytých</item>
+    </plurals>
 </resources>
