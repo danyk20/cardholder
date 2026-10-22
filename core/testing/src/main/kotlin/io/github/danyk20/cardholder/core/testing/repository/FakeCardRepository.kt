@@ -91,6 +91,7 @@ class FakeCardRepository : CardRepository {
             lastUsedAt = existing?.card?.lastUsedAt,
             expiresOn = content.details.expiresOn,
             suggestByLocation = existing?.card?.suggestByLocation ?: (content is CardContent.Loyalty),
+            validity = draft.validity,
         )
         store.update { it + (id to Stored(card, content.details, cvv)) }
         return SecureResult.Success(id)

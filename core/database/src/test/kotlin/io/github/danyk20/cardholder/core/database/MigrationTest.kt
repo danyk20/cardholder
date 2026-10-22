@@ -135,6 +135,27 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun `migrating 6 to 7 makes existing cards valid everywhere`() {
+        helper.createDatabase(DB, 6).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO cards (id, type, title, color, is_locked, created_at, updated_at, bank_network,
+                    loyalty_shop_name, loyalty_barcode_format, sealed_details)
+                VALUES ('1', 'LOYALTY', 'Coffee', 'BROWN', 0, 1, 2, NULL, 'Corner', 'QR_CODE', X'010203')
+                """.trimIndent(),
+            )
+        }
+
+        helper.runMigrationsAndValidate(DB, 7, true).use { db ->
+            db.query("SELECT title, valid_countries FROM cards WHERE id = '1'").use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals("Coffee", cursor.getString(0))
+                assertEquals("", cursor.getString(1))
+            }
+        }
+    }
+
     private companion object {
         const val DB = "migration-test.db"
     }

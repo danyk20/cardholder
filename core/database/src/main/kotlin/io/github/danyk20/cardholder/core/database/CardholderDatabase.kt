@@ -21,7 +21,7 @@ import io.github.danyk20.cardholder.core.database.model.TravellingAccessPointEnt
         PlaceAccessPointEntity::class,
         TravellingAccessPointEntity::class,
     ],
-    version = 6,
+    version = 7,
     exportSchema = true,
     autoMigrations = [
         // 1 -> 2: card logos
@@ -34,6 +34,8 @@ import io.github.danyk20.cardholder.core.database.model.TravellingAccessPointEnt
         AutoMigration(from = 4, to = 5),
         // 5 -> 6: places where cards are used, for suggestions by location
         AutoMigration(from = 5, to = 6, spec = CardholderDatabase.SuggestLoyaltyCardsByLocation::class),
+        // 6 -> 7: countries a card is valid in; existing cards are valid everywhere
+        AutoMigration(from = 6, to = 7),
     ],
 )
 abstract class CardholderDatabase : RoomDatabase() {

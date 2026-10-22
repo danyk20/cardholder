@@ -3,6 +3,7 @@ package io.github.danyk20.cardholder.core.data.repository
 import io.github.danyk20.cardholder.core.data.model.decodeCardDetails
 import io.github.danyk20.cardholder.core.data.model.encode
 import io.github.danyk20.cardholder.core.data.model.toCard
+import io.github.danyk20.cardholder.core.data.model.toColumn
 import io.github.danyk20.cardholder.core.data.model.toColumns
 import io.github.danyk20.cardholder.core.database.dao.CardDao
 import io.github.danyk20.cardholder.core.database.model.CardEntity
@@ -180,6 +181,8 @@ internal class OfflineCardRepository @Inject constructor(
                 travelRemindedFor = existing?.travelRemindedFor,
                 // Loyalty cards are shown at shop tills, so they're suggested by location unless switched off.
                 suggestByLocation = existing?.suggestByLocation ?: (info.type == CardType.LOYALTY),
+                // Validity comes from the draft, which always holds the complete choice.
+                validCountries = draft.validity.toColumn(),
                 sealedDetails = cipher.seal(content.details.encode(), level),
                 sealedCvv = content.sealedCvv(existing?.sealedCvv),
             ),
