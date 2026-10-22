@@ -20,7 +20,6 @@
     <plurals name="places_learned_from">
         <item quantity="one">Научено из %d GPS очитавање</item>
         <item quantity="few">Научено из %d GPS очитавања</item>
-        <item quantity="many">Научено из %d GPS очитавања</item>
         <item quantity="other">Научено из %d GPS очитавања</item>
     </plurals>
     <string name="places_accuracy">±%1$d m</string>
@@ -28,7 +27,6 @@
     <plurals name="places_used">
         <item quantity="one">Коришћено %1$d пут, последњи пут %2$s</item>
         <item quantity="few">Коришћено %1$d пута, последњи пут %2$s</item>
-        <item quantity="many">Коришћено %1$d пута, последњи пут %2$s</item>
         <item quantity="other">Коришћено %1$d пута, последњи пут %2$s</item>
     </plurals>
     <string name="places_wifi">Wi‑Fi: %1$s</string>
@@ -37,7 +35,6 @@
     <plurals name="places_map_description">
         <item quantity="one">Мапа са %d местом</item>
         <item quantity="few">Мапа са %d места</item>
-        <item quantity="many">Мапа са %d места</item>
         <item quantity="other">Мапа са %d места</item>
     </plurals>
     <string name="places_map_offline">Мапа не може да се учита ван мреже. Ваша места су и даље наведена испод.</string>
