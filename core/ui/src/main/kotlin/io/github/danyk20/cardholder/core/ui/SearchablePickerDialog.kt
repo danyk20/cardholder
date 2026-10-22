@@ -45,6 +45,9 @@ fun <T> SearchablePickerDialog(
     onSelect: (T) -> Unit,
     onDismiss: () -> Unit,
     leading: @Composable ((T) -> Unit)? = null,
+    trailing: @Composable ((T) -> Unit)? = null,
+    /** Shown above the items, e.g. an option that is not one of them. */
+    header: @Composable (() -> Unit)? = null,
     customOptionLabel: ((query: String) -> String)? = null,
     onCustomOption: ((query: String) -> Unit)? = null,
 ) {
@@ -80,6 +83,7 @@ fun <T> SearchablePickerDialog(
                     modifier = Modifier.focusRequester(focusRequester),
                 )
                 LazyColumn(Modifier.fillMaxSize()) {
+                    header?.let { content -> item(key = "header") { content() } }
                     if (onCustomOption != null && customOptionLabel != null && query.isNotBlank()) {
                         item(key = "custom") {
                             ListItem(
@@ -94,6 +98,7 @@ fun <T> SearchablePickerDialog(
                         ListItem(
                             headlineContent = { Text(label(item)) },
                             leadingContent = leading?.let { { it(item) } },
+                            trailingContent = trailing?.let { { it(item) } },
                             modifier = Modifier.clickable { onSelect(item) },
                         )
                     }

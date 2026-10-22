@@ -13,6 +13,8 @@ import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
+import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.PlaceSuggestions
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
@@ -20,6 +22,7 @@ import io.github.danyk20.cardholder.core.testing.repository.FakeBackupRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeCountryRepository
+import io.github.danyk20.cardholder.core.testing.repository.FakeCurrentCountryRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeShareFileStore
 import io.github.danyk20.cardholder.core.testing.repository.FakeShopRepository
 import io.github.danyk20.cardholder.core.testing.repository.FakeUserPreferencesRepository
@@ -41,6 +44,7 @@ class CardListViewModelTest {
     private val preferences = FakeUserPreferencesRepository()
     private val backups = FakeBackupRepository()
     private val places = TestPlaces(repository, preferences)
+    private val currentCountry = FakeCurrentCountryRepository()
     private val viewModel by lazy {
         CardListViewModel(
             observeCards = ObserveCardsUseCase(repository),
@@ -51,6 +55,8 @@ class CardListViewModelTest {
             shareFileStore = FakeShareFileStore(),
             savedStateHandle = SavedStateHandle(),
             findNearbyCards = places.findNearbyCards,
+            currentCountry = currentCountry,
+            countryRepository = FakeCountryRepository(),
         )
     }
 
@@ -312,4 +318,121 @@ class CardListViewModelTest {
         while (item !is CardListUiState.Success) item = awaitItem()
         return item
     }
+
+    @Test
+    fun `the country filter hides cards valid only elsewhere and counts them`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.add(TestCards.loyalty.copy(validity = restrictedTo("CH")), TestCards.loyaltyDetails)
+        repository.add(TestCards.idCard.copy(validity = restrictedTo("DE")), TestCards.idCardDetails)
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.cards.isNotEmpty() }
+
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(listOf(TestCards.loyalty.id, TestCards.visa.id), state.cards.map { it.summary.card.id })
+        assertEquals(1, state.hiddenElsewhere)
+        assertEquals(true, state.country?.filterEnabled)
+        assertEquals(code("CH"), state.country?.state?.effective?.code)
+    }
+
+    @Test
+    fun `turning the country filter off shows every card and is remembered`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.loyalty.copy(validity = restrictedTo("DE")), TestCards.loyaltyDetails)
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        viewModel.uiState.first { it is CardListUiState.Success && it.hiddenElsewhere > 0 }
+
+        viewModel.onCountryFilterChange(false)
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.hiddenElsewhere == 0 }
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(2, state.cards.size)
+        assertEquals(false, state.country?.filterEnabled)
+        assertEquals(false, preferences.preferences.first().countryFilterEnabled)
+    }
+
+    @Test
+    fun `an unknown country shows every card`() = runTest {
+        repository.add(TestCards.loyalty.copy(validity = restrictedTo("CH")), TestCards.loyaltyDetails)
+        repository.add(TestCards.visa, TestCards.visaDetails)
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.cards.isNotEmpty() }
+
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(2, state.cards.size)
+        assertEquals(0, state.hiddenElsewhere)
+        assertEquals(null, state.country?.state?.effective)
+    }
+
+    @Test
+    fun `a search looks through every card whatever the country`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.idCard.copy(validity = restrictedTo("DE")), TestCards.idCardDetails)
+        repository.add(TestCards.visa, TestCards.visaDetails)
+
+        viewModel.onQueryChange("swiss")
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.query == "swiss" }
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(listOf(TestCards.idCard.id), state.cards.map { it.summary.card.id })
+        assertEquals(0, state.hiddenElsewhere)
+    }
+
+    @Test
+    fun `the country row is hidden while no card is restricted to countries`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.cards.isNotEmpty() }
+
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(null, state.country)
+        assertEquals(2, state.cards.size)
+    }
+
+    @Test
+    fun `opening the list asks for the current country`() = runTest {
+        viewModel.onVisible()
+
+        assertEquals(1, currentCountry.refreshes)
+    }
+
+    @Test
+    fun `a country picked by hand is used until automatic is chosen again`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.loyalty.copy(validity = restrictedTo("AT")), TestCards.loyaltyDetails)
+        repository.add(TestCards.visa, TestCards.visaDetails)
+
+        viewModel.onCountryPicked(code("AT"))
+        val picked = viewModel.uiState.first { it is CardListUiState.Success && it.country?.state?.isManual == true }
+        assertIs<CardListUiState.Success>(picked)
+        assertEquals(listOf(TestCards.loyalty.id, TestCards.visa.id), picked.cards.map { it.summary.card.id })
+        assertEquals(true, picked.country?.state?.isManual)
+
+        viewModel.onAutomaticCountry()
+        val automatic = viewModel.uiState.first {
+            it is CardListUiState.Success && it.country?.state?.isManual == false
+        }
+        assertIs<CardListUiState.Success>(automatic)
+        assertEquals(listOf(TestCards.visa.id), automatic.cards.map { it.summary.card.id })
+    }
+
+    @Test
+    fun `a new detection changes the cards shown`() = runTest {
+        currentCountry.detect(code("CH"))
+        repository.add(TestCards.idCard.copy(validity = restrictedTo("DE")), TestCards.idCardDetails)
+        repository.add(TestCards.visa, TestCards.visaDetails)
+        viewModel.uiState.first { it is CardListUiState.Success && it.hiddenElsewhere == 1 }
+
+        currentCountry.detect(code("DE"))
+
+        val state = viewModel.uiState.first { it is CardListUiState.Success && it.hiddenElsewhere == 0 }
+        assertIs<CardListUiState.Success>(state)
+        assertEquals(setOf(TestCards.idCard.id, TestCards.visa.id), state.cards.map { it.summary.card.id }.toSet())
+    }
+
+    private fun code(value: String) = requireNotNull(CountryCode.of(value))
+
+    private fun restrictedTo(vararg values: String) = CardValidity.of(values.map(::code))
 }

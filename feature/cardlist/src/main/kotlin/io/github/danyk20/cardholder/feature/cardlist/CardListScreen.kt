@@ -6,8 +6,11 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -26,6 +29,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -35,6 +39,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
@@ -61,6 +66,14 @@ fun CardListRoute(
     onOpenSettings: () -> Unit,
     viewModel: CardListViewModel = hiltViewModel(),
 ) {
+    val countryActions = remember(viewModel) {
+        CountryActions(
+            onFilterChange = viewModel::onCountryFilterChange,
+            onPick = viewModel::onCountryPicked,
+            onAutomatic = viewModel::onAutomaticCountry,
+            onShowAll = { viewModel.onCountryFilterChange(false) },
+        )
+    }
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val sortActions = remember(viewModel) {
         SortActions(
@@ -101,6 +114,7 @@ fun CardListRoute(
         onCardLongClick = { card -> viewModel.onToggleSelection(card.id) },
         onAddCard = onAddCard,
         onOpenSettings = onOpenSettings,
+        countryActions = countryActions,
         onClearSelection = viewModel::onClearSelection,
         onShare = { shareStep = firstShareStep(selected) },
         snackbarHostState = snackbarHostState,
@@ -130,6 +144,7 @@ internal fun CardListScreen(
     onCardLongClick: (Card) -> Unit,
     onAddCard: () -> Unit,
     onOpenSettings: () -> Unit,
+    countryActions: CountryActions = CountryActions({}, {}, {}, {}),
     onClearSelection: () -> Unit = {},
     onShare: () -> Unit = {},
     snackbarHostState: SnackbarHostState = remember { SnackbarHostState() },
@@ -174,6 +189,7 @@ internal fun CardListScreen(
                     contentPadding = padding,
                     onQueryChange = onQueryChange,
                     onTypeToggled = onTypeToggled,
+                    countryActions = countryActions,
                     onCardClick = onCardClick,
                     onCardLongClick = onCardLongClick,
                 )
@@ -192,6 +208,7 @@ private fun CardGrid(
     contentPadding: PaddingValues,
     onQueryChange: (String) -> Unit,
     onTypeToggled: (CardType) -> Unit,
+    countryActions: CountryActions,
     onCardClick: (Card) -> Unit,
     onCardLongClick: (Card) -> Unit,
 ) {
@@ -209,7 +226,15 @@ private fun CardGrid(
         modifier = Modifier.fillMaxSize(),
     ) {
         item(span = { GridItemSpan(maxLineSpan) }) {
-            SearchAndFilters(query, state.visibleTypes, onQueryChange, onTypeToggled)
+            SearchAndFilters(
+                query = query,
+                visibleTypes = state.visibleTypes,
+                onQueryChange = onQueryChange,
+                onTypeToggled = onTypeToggled,
+                country = state.country,
+                countries = state.countries,
+                countryActions = countryActions,
+            )
         }
         if (state.nearby.isNotEmpty()) {
             item(key = NEARBY_HEADER, span = { GridItemSpan(maxLineSpan) }) {
@@ -225,7 +250,8 @@ private fun CardGrid(
                 SectionTitle(stringResource(R.string.cardlist_all_cards), Modifier.animateItem())
             }
         }
-        if (state.cards.isEmpty() && state.nearby.isEmpty()) {
+        // With every card hidden by the country, the footer below takes the place of this message.
+        if (state.cards.isEmpty() && state.nearby.isEmpty() && state.hiddenElsewhere == 0) {
             item(span = { GridItemSpan(maxLineSpan) }) {
                 Text(
                     text = stringResource(R.string.cardlist_no_results),
@@ -243,6 +269,33 @@ private fun CardGrid(
             ) {
                 CardFaceFor(item, onCardClick, onCardLongClick)
             }
+        }
+        if (state.hiddenElsewhere > 0) {
+            item(span = { GridItemSpan(maxLineSpan) }) {
+                HiddenCardsFooter(state.hiddenElsewhere, countryActions.onShowAll)
+            }
+        }
+    }
+}
+
+/** Says how many cards the country filter hides, and offers to show them all. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun HiddenCardsFooter(count: Int, onShowAll: () -> Unit) {
+    FlowRow(
+        horizontalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+    ) {
+        Text(
+            text = pluralStringResource(R.plurals.cardlist_hidden_cards, count, count),
+            style = MaterialTheme.typography.bodyMedium,
+            textAlign = TextAlign.Center,
+        )
+        TextButton(onClick = onShowAll) {
+            Text(stringResource(R.string.cardlist_show_all))
         }
     }
 }

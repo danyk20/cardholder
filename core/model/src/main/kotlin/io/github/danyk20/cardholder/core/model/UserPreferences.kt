@@ -10,4 +10,6 @@ data class UserPreferences(
     val placeSuggestions: PlaceSuggestions = PlaceSuggestions.OFF,
     /** The French-language Easter egg was shown and the user promised to learn another language. */
     val frenchEasterEggSeen: Boolean = false,
+    /** Show only the cards valid in the current country. Searching always looks through all cards. */
+    val countryFilterEnabled: Boolean = true,
 )

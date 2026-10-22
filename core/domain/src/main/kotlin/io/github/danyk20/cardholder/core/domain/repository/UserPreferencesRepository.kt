@@ -19,4 +19,6 @@ interface UserPreferencesRepository {
 
     suspend fun setPlaceSuggestions(mode: PlaceSuggestions)
     suspend fun setFrenchEasterEggSeen()
+
+    suspend fun setCountryFilterEnabled(enabled: Boolean)
 }
