@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.view.WindowManager
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ModalBottomSheetProperties
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -48,5 +50,12 @@ fun Context.findActivity(): Activity? {
 @Composable
 fun secureDialogProperties(usePlatformDefaultWidth: Boolean = true): DialogProperties = DialogProperties(
     usePlatformDefaultWidth = usePlatformDefaultWidth,
+    securePolicy = if (LocalScreenCaptureAllowed.current) SecureFlagPolicy.SecureOff else SecureFlagPolicy.SecureOn,
+)
+
+/** The same for bottom sheets, which are windows of their own too. */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun secureSheetProperties(): ModalBottomSheetProperties = ModalBottomSheetProperties(
     securePolicy = if (LocalScreenCaptureAllowed.current) SecureFlagPolicy.SecureOff else SecureFlagPolicy.SecureOn,
 )

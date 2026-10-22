@@ -47,4 +47,5 @@
     <string name="detail_place_not_found">Nuk u gjet ku je. Provo përsëri me Wi‑Fi të ndezur ose pranë dritares.</string>
     <string name="detail_place_no_permission">Lejo vendndodhjen e saktë për Cardholder që të kujtojë vendet</string>
     <string name="detail_place_location_off">Ndiz Vendndodhjen që të kujtohen vendet</string>
+    <string name="field_valid_in">E vlefshme në</string>
 </resources>

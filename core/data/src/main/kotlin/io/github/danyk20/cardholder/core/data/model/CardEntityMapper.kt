@@ -10,6 +10,7 @@ import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.model.CardSides
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.ImageRef
 import java.time.Instant
@@ -32,6 +33,7 @@ internal fun CardEntity.toCard(): Card = Card(
     lastUsedAt = lastUsedAt?.let(Instant::ofEpochMilli),
     expiresOn = expiresOn?.let(LocalDate::parse),
     suggestByLocation = suggestByLocation,
+    validity = decodeValidity(validCountries),
 )
 
 private fun CardEntity.toInfo(): CardInfo = when (CardType.valueOf(type)) {
@@ -80,6 +82,25 @@ internal fun CardInfo.toColumns(): InfoColumns = when (this) {
         loyaltyBarcodeFormat = format.name,
     )
 }
+
+/** The sorted ISO codes of [validity], as stored and shared; empty when valid everywhere. */
+internal fun CardValidity.countryCodes(): List<String> = when (this) {
+    CardValidity.Everywhere -> emptyList()
+    is CardValidity.Countries -> countries.map { it.value }.sorted()
+}
+
+/** The column value of [validity]: sorted codes separated by commas, empty when valid everywhere. */
+internal fun CardValidity.toColumn(): String = countryCodes().joinToString(",")
+
+/** Decodes the column value; invalid codes are dropped, and if none remain the card is valid everywhere. */
+internal fun decodeValidity(column: String): CardValidity =
+    CardValidity.of(column.split(',').mapNotNull(::canonicalCountry))
+
+/**
+ * Parses a stored or imported country code. Only the canonical form (two upper-case letters) counts,
+ * so anything else is treated as invalid rather than silently repaired.
+ */
+internal fun canonicalCountry(raw: String): CountryCode? = CountryCode.of(raw)?.takeIf { it.value == raw }
 
 private inline fun <reified T : Enum<T>> enumValueOrNull(name: String?): T? =
     enumValues<T>().firstOrNull { it.name == name }

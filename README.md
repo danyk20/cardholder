@@ -26,6 +26,7 @@ An offline, privacy-first Android wallet for your **bank cards**, **ID cards** a
 - **Scan loyalty codes** with the camera, or let the app find the barcode in a card photo.
 - **Per-card lock**: any card can require authentication for *all* its data.
 - **Card suggestions by location** (opt-in): the app learns where you show each card (location and Wi‑Fi networks, on the device only) and puts the cards used nearby at the top of the list, or notifies you when you arrive at the shop. Battery-friendly: no background service; arrival notifications use the system's geofences.
+- **Where a card is valid**: a card can be valid in all countries or only in chosen ones (with EU, Schengen, Eurozone and EEA shortcuts). The card list and the widget show the cards valid in the country you are in, found on the device from the mobile network (or, if already allowed, your approximate location with offline borders). The filter can be switched off, and the country picked by hand.
 - **Password-encrypted backup** export/import.
 - **Updates from within the app**: *Check for updates* in Settings, optionally weekly. The Google Play version updates through Google Play; the GitHub version downloads the new release from GitHub and installs it after Android's confirmation.
 - Material 3 with dynamic colour, dark theme, adaptive layout.
@@ -79,3 +80,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). Never put
 
 ## License
 [Apache License 2.0](LICENSE). Shop names and logos are trademarks of their respective owners and are used only to identify the shop a card belongs to. The repository contains no logo files, only links to freely licensed logos on Wikimedia Commons; see [docs/LOGOS.md](docs/LOGOS.md) for sources and licences.
+
+Country borders in `core/location/src/main/assets` are derived from [Natural Earth](https://www.naturalearthdata.com/) admin-0 countries (public domain). See `tools/country-borders/README.md`.

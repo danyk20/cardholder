@@ -14,4 +14,10 @@ dependencies {
     implementation(libs.androidx.biometric)
     implementation(libs.coil.compose)
     implementation(libs.javax.inject)
+
+    testImplementation(projects.core.testing)
+    testImplementation(libs.androidx.test.ext.junit)
+    testImplementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    testImplementation(libs.robolectric)
 }

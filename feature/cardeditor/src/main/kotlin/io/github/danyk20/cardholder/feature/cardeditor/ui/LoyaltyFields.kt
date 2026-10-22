@@ -28,6 +28,7 @@ import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
 import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.Shop
+import io.github.danyk20.cardholder.core.ui.SearchablePickerDialog
 import io.github.danyk20.cardholder.core.ui.barcodeFormatLabel
 import io.github.danyk20.cardholder.feature.cardeditor.LoyaltyForm
 import io.github.danyk20.cardholder.feature.cardeditor.R

@@ -53,4 +53,9 @@
     <string name="color_sky">Samawati ya anga</string>
     <string name="color_lavender">Lavenda</string>
     <string name="color_blush">Waridi hafifu</string>
+    <string name="card_valid_only_in">Halali nchini %1$s pekee</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Halali katika nchi %1$d: %2$s</item>
+        <item quantity="other">Halali katika nchi %1$d: %2$s</item>
+    </plurals>
 </resources>

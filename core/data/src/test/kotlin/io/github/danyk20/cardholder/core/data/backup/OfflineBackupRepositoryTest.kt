@@ -11,6 +11,8 @@ import io.github.danyk20.cardholder.core.domain.model.SharedCardChoice
 import io.github.danyk20.cardholder.core.domain.model.SharedFilePreview
 import io.github.danyk20.cardholder.core.domain.model.getOrNull
 import io.github.danyk20.cardholder.core.model.CardId
+import io.github.danyk20.cardholder.core.model.CardValidity
+import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.ImageRef
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeCardImageRepository
@@ -24,6 +26,7 @@ import java.util.zip.ZipEntry
 import java.util.zip.ZipInputStream
 import java.util.zip.ZipOutputStream
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertIs
 import kotlin.test.assertTrue
 import kotlinx.coroutines.Dispatchers
@@ -207,6 +210,81 @@ class OfflineBackupRepositoryTest {
     }
 
     @Test
+    fun `validity survives a backup and is restored on import`() = runTest {
+        val validity = CardValidity.Countries(setOf(CountryCode.of("CH")!!, CountryCode.of("DE")!!))
+        val source = FakeCardRepository().apply {
+            add(TestCards.loyalty.copy(validity = validity), TestCards.loyaltyDetails)
+            add(TestCards.visa, TestCards.visaDetails)
+            isAuthenticated = true
+        }
+        assertEquals(BackupResult.Exported(2), repository(source).export("backup", password))
+
+        val target = FakeCardRepository().apply { isAuthenticated = true }
+        assertEquals(
+            BackupResult.Imported(imported = 2, skipped = 0),
+            repository(target).import("backup", password, ImportStrategy.SKIP_EXISTING),
+        )
+        val imported = target.observeCards().first().associateBy { it.id }
+        assertEquals(validity, imported.getValue(TestCards.loyalty.id).validity)
+        assertEquals(CardValidity.Everywhere, imported.getValue(TestCards.visa.id).validity)
+    }
+
+    @Test
+    fun `a file without validity imports the cards as valid everywhere`() = runTest {
+        val oldFile = loyaltyArchive(formatVersion = 1) { it.copy(validCountries = emptyList()) }
+        assertFalse("validCountries" in manifestText(oldFile))
+        documents.files["old"] = oldFile
+
+        val target = FakeCardRepository()
+        repository(target).import("old", null, ImportStrategy.SKIP_EXISTING)
+
+        assertEquals(CardValidity.Everywhere, target.observeCards().first().single().validity)
+    }
+
+    @Test
+    fun `invalid and lower case country codes in a file are dropped`() = runTest {
+        documents.files["mixed"] = loyaltyArchive(formatVersion = 1) {
+            it.copy(validCountries = listOf("CH", "CHE", "de", "1A", ""))
+        }
+
+        val target = FakeCardRepository()
+        repository(target).import("mixed", null, ImportStrategy.SKIP_EXISTING)
+
+        assertEquals(
+            CardValidity.Countries(setOf(CountryCode.of("CH")!!)),
+            target.observeCards().first().single().validity,
+        )
+    }
+
+    @Test
+    fun `a file with only invalid country codes is valid everywhere`() = runTest {
+        documents.files["broken"] = loyaltyArchive(formatVersion = 1) { it.copy(validCountries = listOf("CHE", "1A")) }
+
+        val target = FakeCardRepository()
+        repository(target).import("broken", null, ImportStrategy.SKIP_EXISTING)
+
+        assertEquals(CardValidity.Everywhere, target.observeCards().first().single().validity)
+    }
+
+    @Test
+    fun `shared files keep the validity of the cards`() = runTest {
+        val validity = CardValidity.Countries(setOf(CountryCode.of("AT")!!))
+        val source = FakeCardRepository().apply {
+            add(TestCards.loyalty.copy(validity = validity), TestCards.loyaltyDetails)
+        }
+        repository(source).exportCards(listOf(TestCards.loyalty.id), "share", null)
+
+        val target = FakeCardRepository()
+        repository(target).importShared(
+            "share",
+            null,
+            mapOf(TestCards.loyalty.id.value to SharedCardChoice(SharedCardAction.ADD_NEW, locked = false)),
+        )
+
+        assertEquals(validity, target.observeCards().first().single().validity)
+    }
+
+    @Test
     fun `shared files leave out the sender's favourites`() = runTest {
         val source = FakeCardRepository().apply {
             add(TestCards.loyalty, TestCards.loyaltyDetails)
@@ -270,6 +348,12 @@ class OfflineBackupRepositoryTest {
         val content = BackupArchive.read(documents.files.getValue("source"))
         return BackupArchive.write(BackupContent(content.cards.map(change), content.images), 0)
             .withFormatVersion(formatVersion)
+    }
+
+    /** The text of an archive's manifest, `cards.json`. */
+    private fun manifestText(archive: ByteArray): String = ZipInputStream(archive.inputStream()).use { zip ->
+        generateSequence { zip.nextEntry }.first { it.name == "cards.json" }
+        zip.readBytes().decodeToString()
     }
 
     /** Rewrites the format version in an archive's manifest. */

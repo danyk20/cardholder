@@ -41,6 +41,17 @@ Rules:
   read separately through `CardRepository.readDetails`, which returns a `SecureResult`
   (`Success`, `AuthenticationRequired`, `KeyInvalidated`).
 - CVVs are read through `CardRepository.readCvv` and always require authentication.
+- `Card.validity` (`CardValidity`): the countries a card is valid in, stored as sorted codes in the `valid_countries`
+  column. Non-sensitive, like the title.
+
+## Current country
+- `ResolveCurrentCountryUseCase` (core:domain) tries the mobile network, then the approximate location mapped by
+  `CountryBorders`, then the last detected country. It is the only place with the rules; the Android sources
+  (`TelephonyNetworkCountrySource`, `AndroidApproximateLocationSource`, `OfflineCountryBorders` in core:location)
+  only supply its inputs.
+- `CurrentCountryRepository` (core:domain) is implemented in core:data with its own DataStore, `country_state`.
+  The list and the widget observe it; the list refreshes it when it becomes visible.
+- Design and trade-offs: [ADR 0011](adr/0011-card-geo-validity.md).
 
 ## Security
 See [SECURITY.md](../SECURITY.md) for the threat model and the ADRs:

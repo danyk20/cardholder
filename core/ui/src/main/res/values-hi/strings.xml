@@ -53,4 +53,9 @@
     <string name="color_sky">आसमानी</string>
     <string name="color_lavender">लैवेंडर</string>
     <string name="color_blush">हल्का गुलाबी</string>
+    <string name="card_valid_only_in">केवल %1$s में मान्य</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">%1$d देश में मान्य: %2$s</item>
+        <item quantity="other">%1$d देशों में मान्य: %2$s</item>
+    </plurals>
 </resources>

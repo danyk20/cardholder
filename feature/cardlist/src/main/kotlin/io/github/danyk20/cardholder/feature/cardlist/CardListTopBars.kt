@@ -18,12 +18,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 
-/** The card list's title bar: sorting and settings. */
+/** The card list's title bar: the country filter, sorting and settings. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun MainTopBar(
     uiState: CardListUiState,
     sortActions: SortActions,
+    countryActions: CountryActions,
     onOpenSettings: () -> Unit,
     scrollBehavior: TopAppBarScrollBehavior,
 ) {
@@ -31,6 +32,7 @@ internal fun MainTopBar(
         title = { Text(stringResource(R.string.cardlist_title)) },
         actions = {
             if (uiState is CardListUiState.Success && uiState.hasAnyCards) {
+                uiState.country?.let { CountryFilterButton(it, uiState.countries, countryActions) }
                 SortMenu(sort = uiState.sort, actions = sortActions)
             }
             IconButton(onClick = onOpenSettings) {

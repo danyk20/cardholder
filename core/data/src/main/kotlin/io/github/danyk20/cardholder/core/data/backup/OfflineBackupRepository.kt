@@ -6,6 +6,8 @@ import android.util.Log
 import androidx.core.net.toUri
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.danyk20.cardholder.core.data.model.CardDetailsDto
+import io.github.danyk20.cardholder.core.data.model.canonicalCountry
+import io.github.danyk20.cardholder.core.data.model.countryCodes
 import io.github.danyk20.cardholder.core.data.model.toDto
 import io.github.danyk20.cardholder.core.data.model.toModel
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
@@ -33,6 +35,7 @@ import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.model.ImageRef
 import java.io.IOException
@@ -281,6 +284,7 @@ internal class OfflineBackupRepository(
             backImage = sides.back?.export(),
             logoImage = logo?.export(),
             position = position,
+            validCountries = validity.countryCodes(),
         )
     }
 
@@ -315,6 +319,8 @@ internal class OfflineBackupRepository(
             back = imageChange(backImage),
             logo = imageChange(logoImage),
             isLocked = isLocked,
+            // Invalid codes are dropped, so a bad code never makes the whole card fail to import.
+            validity = CardValidity.of(validCountries.mapNotNull(::canonicalCountry)),
         )
     }
 

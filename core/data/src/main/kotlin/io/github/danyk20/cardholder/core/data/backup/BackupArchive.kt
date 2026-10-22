@@ -50,6 +50,8 @@ internal data class BackupCard(
     val logoImage: String? = null,
     val position: Int = 0,
     val isFavourite: Boolean = false,
+    /** Sorted ISO codes of the countries the card is valid in; empty (or absent in old files) means everywhere. */
+    val validCountries: List<String> = emptyList(),
 ) {
     override fun toString(): String = "BackupCard(id=$id, type=$type)"
 }

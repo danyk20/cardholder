@@ -75,4 +75,17 @@
     <string name="editor_locked_title">Ова картица је закључана</string>
     <string name="editor_not_found">Ова картица више не постоји</string>
     <string name="editor_ok">Потврди</string>
+    <string name="editor_field_validity">Важи у</string>
+    <string name="editor_validity_all">Све земље</string>
+    <string name="editor_validity_selected">Одабране земље</string>
+    <string name="editor_validity_done">Готово</string>
+    <string name="editor_region_eu">ЕУ</string>
+    <string name="editor_region_schengen">Шенген</string>
+    <string name="editor_region_eurozone">Еврозона</string>
+    <string name="editor_region_eea">ЕЕП</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d земља: %2$s</item>
+        <item quantity="few">🌐 %1$d земље: %2$s</item>
+        <item quantity="other">🌐 %1$d земаља: %2$s</item>
+    </plurals>
 </resources>

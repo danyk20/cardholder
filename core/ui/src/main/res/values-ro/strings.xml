@@ -53,4 +53,10 @@
     <string name="color_sky">Bleu</string>
     <string name="color_lavender">Lavandă</string>
     <string name="color_blush">Roz pal</string>
+    <string name="card_valid_only_in">Valabil doar în: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Valabil în %1$d țară: %2$s</item>
+        <item quantity="few">Valabil în %1$d țări: %2$s</item>
+        <item quantity="other">Valabil în %1$d de țări: %2$s</item>
+    </plurals>
 </resources>

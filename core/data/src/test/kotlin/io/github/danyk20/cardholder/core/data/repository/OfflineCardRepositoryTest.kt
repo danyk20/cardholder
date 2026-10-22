@@ -15,6 +15,7 @@ import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardNetwork
+import io.github.danyk20.cardholder.core.model.CardValidity
 import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.security.FakeKeyWrapper
 import io.github.danyk20.cardholder.core.security.ProtectionLevel
@@ -106,6 +107,24 @@ class OfflineCardRepositoryTest {
         repository.save(bankDraft.copy(id = id, title = "Renamed"))
 
         assertTrue(repository.observeCard(id).first()!!.suggestByLocation)
+    }
+
+    @Test
+    fun `saving stores the validity of the draft`() = runTest {
+        val validity = CardValidity.Countries(setOf(CountryCode.of("CH")!!, CountryCode.of("AT")!!))
+        val id = repository.save(bankDraft.copy(validity = validity)).getOrNull()!!
+
+        assertEquals(validity, repository.observeCard(id).first()!!.validity)
+    }
+
+    @Test
+    fun `saving a draft replaces the validity of the stored card`() = runTest {
+        val id = repository.save(bankDraft.copy(validity = CardValidity.Countries(setOf(CountryCode.of("FR")!!))))
+            .getOrNull()!!
+
+        repository.save(bankDraft.copy(id = id, title = "Renamed"))
+
+        assertEquals(CardValidity.Everywhere, repository.observeCard(id).first()!!.validity)
     }
 
     @Test

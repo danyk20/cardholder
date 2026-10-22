@@ -34,6 +34,7 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
                 ?.let { name -> PlaceSuggestions.entries.firstOrNull { it.name == name } }
                 ?: PlaceSuggestions.OFF,
             frenchEasterEggSeen = prefs[FRENCH_EASTER_EGG_SEEN] ?: false,
+            countryFilterEnabled = prefs[COUNTRY_FILTER] ?: true,
         )
     }
 
@@ -61,6 +62,10 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
         dataStore.edit { it[FRENCH_EASTER_EGG_SEEN] = true }
     }
 
+    override suspend fun setCountryFilterEnabled(enabled: Boolean) {
+        dataStore.edit { it[COUNTRY_FILTER] = enabled }
+    }
+
     private companion object {
         val THEME_MODE = stringPreferencesKey("theme_mode")
         val DYNAMIC_COLOR = booleanPreferencesKey("dynamic_color")
@@ -68,5 +73,6 @@ internal class DataStoreUserPreferencesRepository @Inject constructor(private va
         val EXPIRY_REMINDERS = booleanPreferencesKey("expiry_reminders")
         val PLACE_SUGGESTIONS = stringPreferencesKey("place_suggestions")
         val FRENCH_EASTER_EGG_SEEN = booleanPreferencesKey("french_easter_egg_seen")
+        val COUNTRY_FILTER = booleanPreferencesKey("country_filter")
     }
 }

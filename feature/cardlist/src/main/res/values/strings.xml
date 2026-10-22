@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">All cards</string>
     <string name="cardlist_nearby_wifi">Shop Wi‑Fi nearby</string>
     <string name="cardlist_nearby_distance">About %1$s away</string>
+    <string name="cardlist_country_filter_description">Showing only cards valid in %1$s</string>
+    <string name="cardlist_country_filter_title">Filter by country</string>
+    <string name="cardlist_country_filter_switch">Only cards valid in %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Only cards valid in the current country</string>
+    <string name="cardlist_country_filter_unknown">Country unknown — all cards are shown</string>
+    <string name="cardlist_country_filter_all">Showing all cards</string>
+    <string name="cardlist_country_search">Search countries</string>
+    <string name="cardlist_country_automatic">Automatic: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automatic: unknown</string>
+    <string name="cardlist_source_network">mobile network</string>
+    <string name="cardlist_source_location">location</string>
+    <string name="cardlist_source_last_known">last known</string>
+    <string name="cardlist_show_all">Show all</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d card for other countries is hidden</item>
+        <item quantity="other">%1$d cards for other countries are hidden</item>
+    </plurals>
 </resources>

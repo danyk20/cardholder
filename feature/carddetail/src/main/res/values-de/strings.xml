@@ -47,4 +47,5 @@
     <string name="detail_place_not_found">Dein Standort konnte nicht ermittelt werden. Versuche es erneut mit eingeschaltetem WLAN oder in der Nähe eines Fensters.</string>
     <string name="detail_place_no_permission">Erlaube für Cardholder den genauen Standort, damit Orte gemerkt werden können</string>
     <string name="detail_place_location_off">Schalte den Standort ein, damit Orte gemerkt werden können</string>
+    <string name="field_valid_in">Gültig in</string>
 </resources>

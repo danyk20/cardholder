@@ -75,4 +75,17 @@
     <string name="editor_locked_title">Cette carte est verrouillée</string>
     <string name="editor_not_found">Cette carte n\'existe plus</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">Valable dans</string>
+    <string name="editor_validity_all">Tous les pays</string>
+    <string name="editor_validity_selected">Pays sélectionnés</string>
+    <string name="editor_validity_done">Terminé</string>
+    <string name="editor_region_eu">UE</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">Zone euro</string>
+    <string name="editor_region_eea">EEE</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d pays : %2$s</item>
+        <item quantity="many">🌐 %1$d pays : %2$s</item>
+        <item quantity="other">🌐 %1$d pays : %2$s</item>
+    </plurals>
 </resources>

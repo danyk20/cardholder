@@ -53,4 +53,8 @@
     <string name="color_sky">天蓝色</string>
     <string name="color_lavender">薰衣草紫</string>
     <string name="color_blush">浅粉色</string>
+    <string name="card_valid_only_in">仅在%1$s有效</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="other">在 %1$d 个国家/地区有效：%2$s</item>
+    </plurals>
 </resources>

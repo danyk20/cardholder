@@ -7,12 +7,16 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.github.danyk20.cardholder.core.domain.country.CountryState
 import io.github.danyk20.cardholder.core.domain.location.NearbyCard
 import io.github.danyk20.cardholder.core.domain.location.NearbyReason
 import io.github.danyk20.cardholder.core.domain.model.BackupResult
+import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.domain.model.getOrNull
 import io.github.danyk20.cardholder.core.domain.repository.BackupRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
+import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
+import io.github.danyk20.cardholder.core.domain.repository.CurrentCountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.ShareFileStore
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.usecase.FindNearbyCardsUseCase
@@ -24,6 +28,8 @@ import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardSort
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
+import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.ui.CardSummary
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
 import io.github.danyk20.cardholder.core.ui.launchSafely
@@ -43,6 +49,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 
 @HiltViewModel
+@Suppress("LongParameterList", "TooManyFunctions") // One collaborator per parameter; one handler per action.
 class CardListViewModel @Inject constructor(
     private val observeCards: ObserveCardsUseCase,
     private val cardRepository: CardRepository,
@@ -52,6 +59,8 @@ class CardListViewModel @Inject constructor(
     private val shareFileStore: ShareFileStore,
     private val savedStateHandle: SavedStateHandle,
     private val findNearbyCards: FindNearbyCardsUseCase,
+    private val currentCountry: CurrentCountryRepository,
+    private val countryRepository: CountryRepository,
 ) : ViewModel() {
     private val query = savedStateHandle.getStateFlow(KEY_QUERY, "")
 
@@ -81,23 +90,47 @@ class CardListViewModel @Inject constructor(
     private var nearbyJob: Job? = null
     private var isVisible = false
 
-    private val cards = combine(query, visibleTypes, sort) { query, types, sort -> Triple(query, types.toSet(), sort) }
-        .flatMapLatest { (query, types, sort) ->
-            combine(
-                observeCards(query, types, sort).mapLatest { cards ->
-                    summaryFactory.summarize(cards).map { CardListItem(it, loyaltyCode(it.card)) }
-                },
-                observeCards().map { it.isNotEmpty() },
-            ) { cards, hasAnyCards ->
-                CardListUiState.Success(
-                    cards = cards,
-                    query = query,
-                    visibleTypes = types,
-                    hasAnyCards = hasAnyCards,
-                    sort = sort,
+    /** The countries the country filter offers. */
+    private val catalogue: List<Country> = countryRepository.countries()
+
+    private val countryFilter = combine(
+        preferencesRepository.preferences.map { it.countryFilterEnabled }.distinctUntilChanged(),
+        currentCountry.state.distinctUntilChanged(),
+    ) { enabled, state -> CountryFilter(enabled, state) }
+
+    /** Everything that decides which cards are listed. */
+    private val listing = combine(query, visibleTypes, sort, countryFilter) { query, types, sort, filter ->
+        Listing(query, types.toSet(), sort, filter)
+    }
+
+    /** All cards whatever the filters, for the country filter and the empty state. */
+    private val allCards = observeCards().map { it.cards }
+
+    private val cards = listing.flatMapLatest { listing ->
+        val country = listing.filter.state.effective?.code?.takeIf { listing.filter.enabled }
+        combine(
+            observeCards(listing.query, listing.types, listing.sort, country).mapLatest { result ->
+                Shown(
+                    items = summaryFactory.summarize(result.cards).map { CardListItem(it, loyaltyCode(it.card)) },
+                    hiddenElsewhere = result.hiddenElsewhere,
                 )
-            }
+            },
+            allCards,
+        ) { shown, all ->
+            CardListUiState.Success(
+                cards = shown.items,
+                query = listing.query,
+                visibleTypes = listing.types,
+                hasAnyCards = all.isNotEmpty(),
+                sort = listing.sort,
+                // The country filter is offered once a card is restricted to some countries.
+                country = listing.filter.takeIf { all.any { it.validity is CardValidity.Countries } }
+                    ?.let { CountryChip(it.state, it.enabled) },
+                countries = catalogue,
+                hiddenElsewhere = shown.hiddenElsewhere,
+            )
         }
+    }
 
     val uiState: StateFlow<CardListUiState> = combine(cards, reorderDraft, selection, share, nearby) {
             state,
@@ -119,6 +152,7 @@ class CardListViewModel @Inject constructor(
     fun onVisible() {
         isVisible = true
         refreshNearby()
+        launchSafely { currentCountry.refresh() }
     }
 
     fun onHidden() {
@@ -140,7 +174,7 @@ class CardListViewModel @Inject constructor(
     fun onStartReorder() {
         launchSafely(onError = { reorderDraft.value = null }) {
             preferencesRepository.setCardSort(CardSort.CUSTOM)
-            reorderDraft.value = summaryFactory.summarize(observeCards(sort = CardSort.CUSTOM).first())
+            reorderDraft.value = summaryFactory.summarize(observeCards(sort = CardSort.CUSTOM).first().cards)
         }
     }
 
@@ -224,6 +258,27 @@ class CardListViewModel @Inject constructor(
         share.value = ShareState.Idle
     }
 
+    /** Turns the country filter on or off. The choice is remembered, and "show all" turns it off too. */
+    fun onCountryFilterChange(enabled: Boolean) {
+        launchSafely { preferencesRepository.setCountryFilterEnabled(enabled) }
+    }
+
+    /** Uses [code] as the current country, instead of the detected one, until detection changes; filters by it too. */
+    fun onCountryPicked(code: CountryCode) {
+        launchSafely {
+            preferencesRepository.setCountryFilterEnabled(true)
+            currentCountry.setOverride(code)
+        }
+    }
+
+    /** Goes back to the detected country, and filters by it. */
+    fun onAutomaticCountry() {
+        launchSafely {
+            preferencesRepository.setCountryFilterEnabled(true)
+            currentCountry.clearOverride()
+        }
+    }
+
     fun onQueryChange(query: String) {
         searchText = query
         savedStateHandle[KEY_QUERY] = query
@@ -243,6 +298,15 @@ class CardListViewModel @Inject constructor(
         const val STOP_TIMEOUT_MILLIS = 5_000L
     }
 }
+
+private data class CountryFilter(val enabled: Boolean, val state: CountryState)
+
+private data class Listing(val query: String, val types: Set<CardType>, val sort: CardSort, val filter: CountryFilter)
+
+private data class Shown(val items: List<CardListItem>, val hiddenElsewhere: Int)
+
+/** The country filter in the title bar: what is in use, and whether the cards are filtered by it. */
+data class CountryChip(val state: CountryState, val filterEnabled: Boolean)
 
 /** A card in the list; [code] is set for unlocked loyalty cards. */
 data class CardListItem(val summary: CardSummary, val code: LoyaltyCode? = null)
@@ -284,6 +348,12 @@ sealed interface CardListUiState {
         val share: ShareState = ShareState.Idle,
         /** Cards suggested because they were used nearby; not repeated in [cards]. */
         val nearby: List<NearbyItem> = emptyList(),
+        /** The country filter, offered once a card is valid in some countries only; `null` hides it. */
+        val country: CountryChip? = null,
+        /** The countries the country picker offers. */
+        val countries: List<Country> = emptyList(),
+        /** Cards of the chosen types hidden because they are not valid in the current country. */
+        val hiddenElsewhere: Int = 0,
     ) : CardListUiState
 }
 

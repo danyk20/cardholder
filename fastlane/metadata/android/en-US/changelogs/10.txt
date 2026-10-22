@@ -1,0 +1,1 @@
+Cards can be limited to the countries where they work; the list shows only the cards valid where you are (filter button next to sorting), with flags on single-country cards.

@@ -25,4 +25,23 @@
     <string name="cardlist_all_cards">Wszystkie karty</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi sklepu w pobliżu</string>
     <string name="cardlist_nearby_distance">Około %1$s stąd</string>
+    <string name="cardlist_country_filter_description">Pokazywane są tylko karty ważne w kraju: %1$s</string>
+    <string name="cardlist_country_filter_title">Filtruj według kraju</string>
+    <string name="cardlist_country_filter_switch">Tylko karty ważne w kraju: %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Tylko karty ważne w bieżącym kraju</string>
+    <string name="cardlist_country_filter_unknown">Nieznany kraj – pokazywane są wszystkie karty</string>
+    <string name="cardlist_country_filter_all">Pokazywane są wszystkie karty</string>
+    <string name="cardlist_country_search">Szukaj krajów</string>
+    <string name="cardlist_country_automatic">Automatycznie: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automatycznie: nieznany</string>
+    <string name="cardlist_source_network">sieć komórkowa</string>
+    <string name="cardlist_source_location">lokalizacja</string>
+    <string name="cardlist_source_last_known">ostatnio znana</string>
+    <string name="cardlist_show_all">Pokaż wszystkie</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d karta dla innych krajów jest ukryta</item>
+        <item quantity="few">%1$d karty dla innych krajów są ukryte</item>
+        <item quantity="many">%1$d kart dla innych krajów jest ukrytych</item>
+        <item quantity="other">%1$d kart dla innych krajów jest ukrytych</item>
+    </plurals>
 </resources>

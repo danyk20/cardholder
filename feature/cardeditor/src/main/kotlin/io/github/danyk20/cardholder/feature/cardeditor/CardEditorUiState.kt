@@ -12,6 +12,7 @@ import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
 import io.github.danyk20.cardholder.core.model.ImageRef
 import io.github.danyk20.cardholder.core.model.Shop
 import java.time.LocalDate
@@ -121,6 +122,7 @@ internal data class EditorContent(
     val id: IdForm,
     val loyalty: LoyaltyForm,
     val isLocked: Boolean,
+    val validity: CardValidity,
 )
 
 data class CardEditorUiState(
@@ -143,6 +145,8 @@ data class CardEditorUiState(
     val id: IdForm = IdForm(),
     val loyalty: LoyaltyForm = LoyaltyForm(),
     val isLocked: Boolean = false,
+    /** The countries the card is valid in. */
+    val validity: CardValidity = CardValidity.Everywhere,
     /** A screen lock exists, so CVVs can be stored and cards locked. */
     val canProtect: Boolean = false,
     val errors: Map<CardField, ValidationError> = emptyMap(),
@@ -170,7 +174,7 @@ data class CardEditorUiState(
 
     /** Everything the user can enter; compared to detect unsaved changes. */
     internal val content: EditorContent
-        get() = EditorContent(type, title, notes, color, front, back, logo, bank, id, loyalty, isLocked)
+        get() = EditorContent(type, title, notes, color, front, back, logo, bank, id, loyalty, isLocked, validity)
 
     /** The catalogue shop of a loyalty card, if one is selected. */
     val selectedShop: Shop?

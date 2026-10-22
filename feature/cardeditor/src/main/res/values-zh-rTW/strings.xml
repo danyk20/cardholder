@@ -75,4 +75,15 @@
     <string name="editor_locked_title">這張卡片已鎖定</string>
     <string name="editor_not_found">這張卡片已不存在</string>
     <string name="editor_ok">確定</string>
+    <string name="editor_field_validity">適用國家/地區</string>
+    <string name="editor_validity_all">所有國家/地區</string>
+    <string name="editor_validity_selected">選取的國家/地區</string>
+    <string name="editor_validity_done">完成</string>
+    <string name="editor_region_eu">歐盟</string>
+    <string name="editor_region_schengen">申根區</string>
+    <string name="editor_region_eurozone">歐元區</string>
+    <string name="editor_region_eea">歐洲經濟區</string>
+    <plurals name="editor_validity_many">
+        <item quantity="other">🌐 %1$d 個國家/地區：%2$s</item>
+    </plurals>
 </resources>

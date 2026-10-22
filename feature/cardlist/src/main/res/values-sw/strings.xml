@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">Kadi zote</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi ya duka karibu</string>
     <string name="cardlist_nearby_distance">Takriban %1$s mbali</string>
+    <string name="cardlist_country_filter_description">Kadi halali nchini %1$s pekee ndizo zinazoonyeshwa</string>
+    <string name="cardlist_country_filter_title">Chuja kwa nchi</string>
+    <string name="cardlist_country_filter_switch">Kadi halali nchini %1$s pekee</string>
+    <string name="cardlist_country_filter_switch_unknown">Kadi halali katika nchi ya sasa pekee</string>
+    <string name="cardlist_country_filter_unknown">Nchi haijulikani – kadi zote zinaonyeshwa</string>
+    <string name="cardlist_country_filter_all">Kadi zote zinaonyeshwa</string>
+    <string name="cardlist_country_search">Tafuta nchi</string>
+    <string name="cardlist_country_automatic">Otomatiki: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Otomatiki: haijulikani</string>
+    <string name="cardlist_source_network">mtandao wa simu</string>
+    <string name="cardlist_source_location">eneo</string>
+    <string name="cardlist_source_last_known">ya mwisho kujulikana</string>
+    <string name="cardlist_show_all">Onyesha zote</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">Kadi %1$d za nchi nyingine zimefichwa</item>
+        <item quantity="other">Kadi %1$d za nchi nyingine zimefichwa</item>
+    </plurals>
 </resources>

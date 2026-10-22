@@ -89,4 +89,18 @@
     <string name="editor_locked_title">Цю картку заблоковано</string>
     <string name="editor_not_found">Цієї картки більше немає</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">Дійсна в</string>
+    <string name="editor_validity_all">Усі країни</string>
+    <string name="editor_validity_selected">Вибрані країни</string>
+    <string name="editor_validity_done">Готово</string>
+    <string name="editor_region_eu">ЄС</string>
+    <string name="editor_region_schengen">Шенген</string>
+    <string name="editor_region_eurozone">Єврозона</string>
+    <string name="editor_region_eea">ЄЕЗ</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d країна: %2$s</item>
+        <item quantity="few">🌐 %1$d країни: %2$s</item>
+        <item quantity="many">🌐 %1$d країн: %2$s</item>
+        <item quantity="other">🌐 %1$d країни: %2$s</item>
+    </plurals>
 </resources>

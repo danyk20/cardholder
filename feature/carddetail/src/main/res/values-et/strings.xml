@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">Ei leidnud, kus olete. Proovige uuesti, kui Wi‑Fi on sisse lülitatud või olete akna lähedal.</string>
     <string name="detail_place_no_permission">Lubage Cardholderile täpne asukoht, et kohti meelde jätta</string>
     <string name="detail_place_location_off">Kohtade meeldejätmiseks lülitage sisse asukoha teenus</string>
+    <string name="field_valid_in">Kehtib riigis</string>
 </resources>

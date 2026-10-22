@@ -53,4 +53,9 @@
     <string name="color_sky">Taivaansininen</string>
     <string name="color_lavender">Laventeli</string>
     <string name="color_blush">Puuterinroosa</string>
+    <string name="card_valid_only_in">Voimassa vain maassa: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Voimassa %1$d maassa: %2$s</item>
+        <item quantity="other">Voimassa %1$d maassa: %2$s</item>
+    </plurals>
 </resources>

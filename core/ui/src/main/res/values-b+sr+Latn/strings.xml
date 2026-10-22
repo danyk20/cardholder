@@ -53,4 +53,10 @@
     <string name="color_sky">Nebeskoplava</string>
     <string name="color_lavender">Lavanda</string>
     <string name="color_blush">Puder roze</string>
+    <string name="card_valid_only_in">Važi samo za zemlju: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Važi za %1$d zemlju: %2$s</item>
+        <item quantity="few">Važi za %1$d zemlje: %2$s</item>
+        <item quantity="other">Važi za %1$d zemalja: %2$s</item>
+    </plurals>
 </resources>

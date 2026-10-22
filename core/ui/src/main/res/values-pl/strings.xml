@@ -66,4 +66,11 @@
     <string name="color_sky">Błękitny</string>
     <string name="color_lavender">Lawendowy</string>
     <string name="color_blush">Jasnoróżowy</string>
+    <string name="card_valid_only_in">Ważna tylko w kraju: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Ważna w %1$d kraju: %2$s</item>
+        <item quantity="few">Ważna w %1$d krajach: %2$s</item>
+        <item quantity="many">Ważna w %1$d krajach: %2$s</item>
+        <item quantity="other">Ważna w %1$d krajach: %2$s</item>
+    </plurals>
 </resources>

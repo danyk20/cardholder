@@ -53,4 +53,9 @@
     <string name="color_sky">Taevasinine</string>
     <string name="color_lavender">Lavendel</string>
     <string name="color_blush">Õrnroosa</string>
+    <string name="card_valid_only_in">Kehtib ainult riigis %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Kehtib %1$d riigis: %2$s</item>
+        <item quantity="other">Kehtib %1$d riigis: %2$s</item>
+    </plurals>
 </resources>

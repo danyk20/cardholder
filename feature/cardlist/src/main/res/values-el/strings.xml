@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">Όλες οι κάρτες</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi καταστήματος εδώ κοντά</string>
     <string name="cardlist_nearby_distance">Περίπου %1$s μακριά</string>
+    <string name="cardlist_country_filter_description">Εμφανίζονται μόνο κάρτες που ισχύουν για τη χώρα: %1$s</string>
+    <string name="cardlist_country_filter_title">Φιλτράρισμα ανά χώρα</string>
+    <string name="cardlist_country_filter_switch">Μόνο κάρτες που ισχύουν στη χώρα %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Μόνο κάρτες που ισχύουν στην τρέχουσα χώρα</string>
+    <string name="cardlist_country_filter_unknown">Άγνωστη χώρα — εμφανίζονται όλες οι κάρτες</string>
+    <string name="cardlist_country_filter_all">Εμφανίζονται όλες οι κάρτες</string>
+    <string name="cardlist_country_search">Αναζήτηση χωρών</string>
+    <string name="cardlist_country_automatic">Αυτόματα: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Αυτόματα: άγνωστη</string>
+    <string name="cardlist_source_network">κινητό δίκτυο</string>
+    <string name="cardlist_source_location">τοποθεσία</string>
+    <string name="cardlist_source_last_known">τελευταία γνωστή</string>
+    <string name="cardlist_show_all">Εμφάνιση όλων</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d κάρτα για άλλες χώρες είναι κρυφή</item>
+        <item quantity="other">%1$d κάρτες για άλλες χώρες είναι κρυφές</item>
+    </plurals>
 </resources>

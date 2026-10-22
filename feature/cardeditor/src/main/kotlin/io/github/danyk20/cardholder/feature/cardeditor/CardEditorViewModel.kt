@@ -23,6 +23,7 @@ import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
 import io.github.danyk20.cardholder.core.model.Shop
 import io.github.danyk20.cardholder.core.ui.launchSafely
 import io.github.danyk20.cardholder.feature.cardeditor.navigation.CardEditorDestination
@@ -147,6 +148,8 @@ class CardEditorViewModel @Inject constructor(
     fun onColorChange(color: CardColor) = _uiState.update { it.copy(color = color) }
 
     fun onNotesChange(notes: String) = _uiState.update { it.copy(notes = notes.take(MAX_NOTES_LENGTH)) }
+
+    fun onValidityChange(validity: CardValidity) = _uiState.update { it.copy(validity = validity) }
 
     fun onLockedChange(locked: Boolean) = _uiState.update { it.copy(isLocked = locked && it.canProtect) }
 

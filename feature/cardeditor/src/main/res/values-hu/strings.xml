@@ -75,4 +75,16 @@
     <string name="editor_locked_title">Ez a kártya zárolva van</string>
     <string name="editor_not_found">Ez a kártya már nem létezik</string>
     <string name="editor_ok">OK</string>
+    <string name="editor_field_validity">Érvényes</string>
+    <string name="editor_validity_all">Minden ország</string>
+    <string name="editor_validity_selected">Kiválasztott országok</string>
+    <string name="editor_validity_done">Kész</string>
+    <string name="editor_region_eu">EU</string>
+    <string name="editor_region_schengen">Schengen</string>
+    <string name="editor_region_eurozone">Euróövezet</string>
+    <string name="editor_region_eea">EGT</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d ország: %2$s</item>
+        <item quantity="other">🌐 %1$d ország: %2$s</item>
+    </plurals>
 </resources>

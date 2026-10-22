@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">Alle kort</string>
     <string name="cardlist_nearby_wifi">Butikkens Wi‑Fi i nærheten</string>
     <string name="cardlist_nearby_distance">Ca. %1$s unna</string>
+    <string name="cardlist_country_filter_description">Viser bare kort som er gyldige i: %1$s</string>
+    <string name="cardlist_country_filter_title">Filtrer etter land</string>
+    <string name="cardlist_country_filter_switch">Bare kort som er gyldige i: %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Bare kort som er gyldige i gjeldende land</string>
+    <string name="cardlist_country_filter_unknown">Land ukjent – alle kort vises</string>
+    <string name="cardlist_country_filter_all">Viser alle kort</string>
+    <string name="cardlist_country_search">Søk etter land</string>
+    <string name="cardlist_country_automatic">Automatisk: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automatisk: ukjent</string>
+    <string name="cardlist_source_network">mobilnettverk</string>
+    <string name="cardlist_source_location">posisjon</string>
+    <string name="cardlist_source_last_known">sist kjent</string>
+    <string name="cardlist_show_all">Vis alle</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d kort for andre land er skjult</item>
+        <item quantity="other">%1$d kort for andre land er skjult</item>
+    </plurals>
 </resources>

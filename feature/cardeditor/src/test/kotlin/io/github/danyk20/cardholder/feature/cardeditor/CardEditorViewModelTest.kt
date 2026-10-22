@@ -15,6 +15,8 @@ import io.github.danyk20.cardholder.core.model.BarcodeFormat
 import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
+import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.testing.MainDispatcherRule
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import io.github.danyk20.cardholder.core.testing.repository.FakeBankRepository
@@ -422,5 +424,43 @@ class CardEditorViewModelTest {
 
         val content = assertIs<CardContent.Bank>(repository.savedDrafts.single().content)
         assertEquals(CvvChange.Keep, content.cvv)
+    }
+
+    @Test
+    fun `changing where the card is valid counts as an unsaved change`() = runTest {
+        repository.add(TestCards.loyalty, TestCards.loyaltyDetails)
+        val viewModel = viewModel(TestCards.loyalty.id.value)
+
+        viewModel.onValidityChange(CardValidity.Countries(setOf(CountryCode.of("CH")!!)))
+
+        assertTrue(viewModel.onBack())
+        assertTrue(viewModel.uiState.value.confirmDiscard)
+    }
+
+    @Test
+    fun `saving passes the chosen validity to the repository`() = runTest {
+        val viewModel = viewModel()
+        viewModel.onTypeSelected(CardType.BANK)
+        viewModel.onSidesDone()
+        viewModel.onNumberChange("4111 1111 1111 1111")
+        viewModel.onExpiryChange("04/30")
+        viewModel.onHolderChange("Jane Doe")
+        val validity = CardValidity.Countries(setOf(CountryCode.of("CH")!!, CountryCode.of("DE")!!))
+        viewModel.onValidityChange(validity)
+
+        viewModel.onSave()
+
+        assertNotNull(viewModel.uiState.value.savedCardId)
+        assertEquals(validity, repository.savedDrafts.single().validity)
+    }
+
+    @Test
+    fun `editing a card without changing its validity is not a change`() = runTest {
+        val validity = CardValidity.Countries(setOf(CountryCode.of("AT")!!))
+        repository.add(TestCards.loyalty.copy(validity = validity), TestCards.loyaltyDetails)
+        val viewModel = viewModel(TestCards.loyalty.id.value)
+
+        assertEquals(validity, viewModel.uiState.value.validity)
+        assertFalse(viewModel.onBack())
     }
 }

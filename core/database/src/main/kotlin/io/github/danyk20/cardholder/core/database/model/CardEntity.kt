@@ -40,6 +40,8 @@ data class CardEntity(
     @ColumnInfo(name = "travel_reminded_for", defaultValue = "NULL") val travelRemindedFor: String? = null,
     /** Whether the card learns where it's used and is suggested there again. */
     @ColumnInfo(name = "suggest_by_location", defaultValue = "0") val suggestByLocation: Boolean = false,
+    /** Sorted ISO codes separated by commas, e.g. `AT,CH`. Empty means valid everywhere. */
+    @ColumnInfo(name = "valid_countries", defaultValue = "") val validCountries: String = "",
     /** Sealed JSON of the type-specific details. */
     @ColumnInfo(name = "sealed_details", typeAffinity = ColumnInfo.BLOB) val sealedDetails: ByteArray,
     /** Sealed CVV of a bank card, always protected by user authentication. */
@@ -74,6 +76,7 @@ data class CardEntity(
                 expiryRemindedFor == other.expiryRemindedFor &&
                 travelRemindedFor == other.travelRemindedFor &&
                 suggestByLocation == other.suggestByLocation &&
+                validCountries == other.validCountries &&
                 sealedDetails.contentEquals(other.sealedDetails) &&
                 sealedCvv.contentEquals(other.sealedCvv)
             )

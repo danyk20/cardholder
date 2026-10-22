@@ -5,6 +5,7 @@ import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardId
+import io.github.danyk20.cardholder.core.model.CardValidity
 import io.github.danyk20.cardholder.core.model.CountryCode
 
 /** Everything needed to create a new card or update an existing one. */
@@ -18,6 +19,8 @@ data class CardDraft(
     val back: ImageChange = ImageChange.Keep,
     val logo: ImageChange = ImageChange.Keep,
     val isLocked: Boolean = false,
+    /** The countries the card is valid in, chosen in the editor. */
+    val validity: CardValidity = CardValidity.Everywhere,
 )
 
 /** Type-specific content of a [CardDraft]. */

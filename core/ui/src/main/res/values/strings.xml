@@ -69,4 +69,9 @@
     <string name="color_sky">Sky blue</string>
     <string name="color_lavender">Lavender</string>
     <string name="color_blush">Blush pink</string>
+    <string name="card_valid_only_in">Valid only in %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Valid in %1$d country: %2$s</item>
+        <item quantity="other">Valid in %1$d countries: %2$s</item>
+    </plurals>
 </resources>

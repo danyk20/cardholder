@@ -53,4 +53,9 @@
     <string name="color_sky">Himmelsblå</string>
     <string name="color_lavender">Lavendel</string>
     <string name="color_blush">Puderrosa</string>
+    <string name="card_valid_only_in">Giltigt endast i: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Giltigt i %1$d land: %2$s</item>
+        <item quantity="other">Giltigt i %1$d länder: %2$s</item>
+    </plurals>
 </resources>

@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -33,6 +34,7 @@ import io.github.danyk20.cardholder.core.designsystem.component.CardSurface
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.theme.CardFaceColors
 import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
+import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.model.CardType
 import io.github.danyk20.cardholder.core.model.ImageRef
@@ -55,6 +57,8 @@ fun CardFace(
     /** Flag emoji of an ID card's country, shown large on its generated face. */
     flag: String? = null,
     isFavourite: Boolean = false,
+    /** Countries the card is valid in; a badge names them, or shows a globe for several. */
+    validCountries: List<Country> = emptyList(),
     onClick: (() -> Unit)? = null,
     onLongClick: (() -> Unit)? = null,
 ) {
@@ -62,6 +66,7 @@ fun CardFace(
     val lockedLabel = stringResource(R.string.card_locked)
     val favouriteLabel = stringResource(R.string.card_favourite)
     val showPhoto = frontImage != null && !isLocked
+    val validityLabel = validityDescription(validCountries)
     CardSurface(
         colors = colors,
         modifier = modifier.semantics(mergeDescendants = true) {
@@ -69,6 +74,7 @@ fun CardFace(
                 title,
                 typeLabel,
                 subtitle,
+                validityLabel,
                 favouriteLabel.takeIf { isFavourite },
                 lockedLabel.takeIf { isLocked },
             ).joinToString()
@@ -103,6 +109,7 @@ fun CardFace(
                     )
                 }
                 Box(Modifier.weight(1f))
+                ValidityBadge(validCountries, Modifier.padding(end = 8.dp).widthIn(max = BADGE_MAX_WIDTH))
                 if (isFavourite) {
                     Icon(
                         CardholderIcons.Favourite,
@@ -169,6 +176,7 @@ private fun BankCardFeatures(contentColor: Color) {
 private val ChipLight = Color(0xFFF3D98B)
 private val ChipDark = Color(0xFFC9A44C)
 private val FLAG_SIZE = 44.sp
+private val BADGE_MAX_WIDTH = 150.dp
 
 @Composable
 private fun LockBadge() {

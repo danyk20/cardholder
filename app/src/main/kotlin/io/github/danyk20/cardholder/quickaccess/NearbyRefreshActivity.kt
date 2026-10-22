@@ -31,6 +31,7 @@ import io.github.danyk20.cardholder.R
 import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
 import io.github.danyk20.cardholder.core.domain.location.LocationAccess
 import io.github.danyk20.cardholder.core.domain.location.isUsable
+import io.github.danyk20.cardholder.core.domain.repository.CurrentCountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.usecase.FindNearbyCardsUseCase
 import io.github.danyk20.cardholder.core.model.CardType
@@ -62,6 +63,9 @@ class NearbyRefreshActivity : ComponentActivity() {
     @Inject
     lateinit var nearbyOrder: WidgetNearbyOrder
 
+    @Inject
+    lateinit var currentCountry: CurrentCountryRepository
+
     private var foundNothing by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,6 +81,8 @@ class NearbyRefreshActivity : ComponentActivity() {
     }
 
     private suspend fun refresh() {
+        // The widget shows the cards valid in the current country, so that is detected again as well.
+        currentCountry.refresh()
         val enabled = preferences.preferences.first().placeSuggestions != PlaceSuggestions.OFF
         if (!enabled || !locationAccess.isUsable) {
             openSettings()

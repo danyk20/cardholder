@@ -53,4 +53,9 @@
     <string name="color_sky">Himmelblå</string>
     <string name="color_lavender">Lavendel</string>
     <string name="color_blush">Pudderrosa</string>
+    <string name="card_valid_only_in">Gyldig kun i: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Gyldig i %1$d land: %2$s</item>
+        <item quantity="other">Gyldig i %1$d lande: %2$s</item>
+    </plurals>
 </resources>

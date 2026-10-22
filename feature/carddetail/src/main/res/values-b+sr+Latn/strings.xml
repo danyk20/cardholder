@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">Nismo mogli da utvrdimo gde se nalazite. Pokušajte ponovo sa uključenim Wi‑Fi‑jem ili u blizini prozora.</string>
     <string name="detail_place_no_permission">Dozvolite tačnu lokaciju za Cardholder da bi zapamtio mesta</string>
     <string name="detail_place_location_off">Uključite lokaciju da bi zapamtio mesta</string>
+    <string name="field_valid_in">Važi u</string>
 </resources>

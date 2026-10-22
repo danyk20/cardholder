@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">সব কার্ড</string>
     <string name="cardlist_nearby_wifi">কাছের দোকানের ওয়াই-ফাই</string>
     <string name="cardlist_nearby_distance">প্রায় %1$s দূরে</string>
+    <string name="cardlist_country_filter_description">শুধু %1$s-এ বৈধ কার্ড দেখানো হচ্ছে</string>
+    <string name="cardlist_country_filter_title">দেশ অনুযায়ী ফিল্টার করুন</string>
+    <string name="cardlist_country_filter_switch">শুধু %1$s-এ বৈধ কার্ড</string>
+    <string name="cardlist_country_filter_switch_unknown">শুধু বর্তমান দেশে বৈধ কার্ড</string>
+    <string name="cardlist_country_filter_unknown">দেশ অজানা — সব কার্ড দেখানো হচ্ছে</string>
+    <string name="cardlist_country_filter_all">সব কার্ড দেখানো হচ্ছে</string>
+    <string name="cardlist_country_search">দেশ খুঁজুন</string>
+    <string name="cardlist_country_automatic">স্বয়ংক্রিয়: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">স্বয়ংক্রিয়: অজানা</string>
+    <string name="cardlist_source_network">মোবাইল নেটওয়ার্ক</string>
+    <string name="cardlist_source_location">অবস্থান</string>
+    <string name="cardlist_source_last_known">সর্বশেষ জানা</string>
+    <string name="cardlist_show_all">সব দেখান</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">অন্য দেশের %1$d টি কার্ড লুকানো আছে</item>
+        <item quantity="other">অন্য দেশের %1$d টি কার্ড লুকানো আছে</item>
+    </plurals>
 </resources>

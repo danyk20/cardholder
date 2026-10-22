@@ -41,6 +41,8 @@ import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
 import io.github.danyk20.cardholder.R
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
+import io.github.danyk20.cardholder.core.domain.repository.CurrentCountryRepository
+import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.ui.CardSummary
 import io.github.danyk20.cardholder.core.ui.CardSummaryFactory
@@ -67,7 +69,17 @@ class CardsWidget : GlanceAppWidget() {
     private suspend fun loadCards(context: Context): WidgetCards = try {
         val entryPoint = EntryPointAccessors.fromApplication(context, WidgetEntryPoint::class.java)
         val nearby = entryPoint.nearbyOrder().cardIds()
-        val cards = quickAccessCards(entryPoint.cardRepository().observeCards().first(), MAX_CARDS, nearby)
+        val country = if (entryPoint.preferences().preferences.first().countryFilterEnabled) {
+            entryPoint.currentCountry().state.first().effective?.code
+        } else {
+            null
+        }
+        val cards = quickAccessCards(
+            entryPoint.cardRepository().observeCards().first(),
+            MAX_CARDS,
+            nearby,
+            country,
+        )
         WidgetCards(entryPoint.summaryFactory().summarize(cards), nearby.toSet())
     } catch (e: CancellationException) {
         throw e
@@ -83,6 +95,10 @@ class CardsWidget : GlanceAppWidget() {
         fun summaryFactory(): CardSummaryFactory
 
         fun nearbyOrder(): WidgetNearbyOrder
+
+        fun preferences(): UserPreferencesRepository
+
+        fun currentCountry(): CurrentCountryRepository
     }
 
     private companion object {

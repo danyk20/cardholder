@@ -25,4 +25,8 @@ class FakeUserPreferencesRepository : UserPreferencesRepository {
         it.copy(placeSuggestions = mode)
     }
     override suspend fun setFrenchEasterEggSeen() = preferences.update { it.copy(frenchEasterEggSeen = true) }
+
+    override suspend fun setCountryFilterEnabled(enabled: Boolean) = preferences.update {
+        it.copy(countryFilterEnabled = enabled)
+    }
 }

@@ -53,4 +53,8 @@
     <string name="color_sky">スカイブルー</string>
     <string name="color_lavender">ラベンダー</string>
     <string name="color_blush">ペールピンク</string>
+    <string name="card_valid_only_in">%1$s でのみ有効</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="other">%1$d か国で有効: %2$s</item>
+    </plurals>
 </resources>

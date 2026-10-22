@@ -7,17 +7,23 @@ import io.github.danyk20.cardholder.MainActivity
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.feature.barcodefullscreen.navigation.barcodeDeepLink
 
 /**
  * The loyalty cards offered outside the app (shortcuts, widget): the cards found [nearby] first, in that
  * order, then favourites, the most used, and by name. Locked cards are left out, since the user chose to
- * keep them private.
+ * keep them private. With a [country], cards valid only elsewhere are left out too; `null` keeps every card.
  */
-internal fun quickAccessCards(cards: List<Card>, limit: Int, nearby: List<CardId> = emptyList()): List<Card> {
+internal fun quickAccessCards(
+    cards: List<Card>,
+    limit: Int,
+    nearby: List<CardId> = emptyList(),
+    country: CountryCode? = null,
+): List<Card> {
     val nearbyRank = nearby.withIndex().associate { (index, id) -> id to index }
     return cards
-        .filter { it.type == CardType.LOYALTY && !it.isLocked }
+        .filter { it.type == CardType.LOYALTY && !it.isLocked && it.validity.isValidIn(country) }
         .sortedWith(
             compareBy<Card> { nearbyRank[it.id] ?: Int.MAX_VALUE }
                 .thenByDescending { it.isFavourite }

@@ -25,4 +25,23 @@
     <string name="cardlist_all_cards">Все карты</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi магазина рядом</string>
     <string name="cardlist_nearby_distance">Примерно в %1$s</string>
+    <string name="cardlist_country_filter_description">Показаны только карты, действующие в стране: %1$s</string>
+    <string name="cardlist_country_filter_title">Фильтр по стране</string>
+    <string name="cardlist_country_filter_switch">Только карты, действующие в стране: %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Только карты, действующие в текущей стране</string>
+    <string name="cardlist_country_filter_unknown">Страна не определена — показаны все карты</string>
+    <string name="cardlist_country_filter_all">Показаны все карты</string>
+    <string name="cardlist_country_search">Поиск стран</string>
+    <string name="cardlist_country_automatic">Автоматически: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Автоматически: не определена</string>
+    <string name="cardlist_source_network">мобильная сеть</string>
+    <string name="cardlist_source_location">геолокация</string>
+    <string name="cardlist_source_last_known">последнее известное</string>
+    <string name="cardlist_show_all">Показать все</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d карта для других стран скрыта</item>
+        <item quantity="few">%1$d карты для других стран скрыты</item>
+        <item quantity="many">%1$d карт для других стран скрыто</item>
+        <item quantity="other">%1$d карт для других стран скрыто</item>
+    </plurals>
 </resources>

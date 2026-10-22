@@ -75,4 +75,16 @@
     <string name="editor_locked_title">این کارت قفل است</string>
     <string name="editor_not_found">این کارت دیگر وجود ندارد</string>
     <string name="editor_ok">تأیید</string>
+    <string name="editor_field_validity">معتبر در</string>
+    <string name="editor_validity_all">همه کشورها</string>
+    <string name="editor_validity_selected">کشورهای انتخاب‌شده</string>
+    <string name="editor_validity_done">انجام شد</string>
+    <string name="editor_region_eu">اتحادیه اروپا</string>
+    <string name="editor_region_schengen">شنگن</string>
+    <string name="editor_region_eurozone">منطقه یورو</string>
+    <string name="editor_region_eea">EEA</string>
+    <plurals name="editor_validity_many">
+        <item quantity="one">🌐 %1$d کشور: %2$s</item>
+        <item quantity="other">🌐 %1$d کشور: %2$s</item>
+    </plurals>
 </resources>

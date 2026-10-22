@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">No se pudo encontrar dónde estás. Inténtalo de nuevo con el Wi‑Fi activado o cerca de una ventana.</string>
     <string name="detail_place_no_permission">Permite la ubicación precisa para que Cardholder recuerde lugares</string>
     <string name="detail_place_location_off">Activa la ubicación para recordar lugares</string>
+    <string name="field_valid_in">Válida en</string>
 </resources>

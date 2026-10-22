@@ -16,6 +16,7 @@ import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.DocumentScanner
 import androidx.compose.material.icons.rounded.DragHandle
 import androidx.compose.material.icons.rounded.Edit
+import androidx.compose.material.icons.rounded.FilterList
 import androidx.compose.material.icons.rounded.Flip
 import androidx.compose.material.icons.rounded.LocationOff
 import androidx.compose.material.icons.rounded.LocationOn
@@ -58,6 +59,7 @@ object CardholderIcons {
     val DragHandle: ImageVector = Icons.Rounded.DragHandle
     val Edit: ImageVector = Icons.Rounded.Edit
     val Empty: ImageVector = Icons.Rounded.Wallet
+    val Filter: ImageVector = Icons.Rounded.FilterList
     val Flip: ImageVector = Icons.Rounded.Flip
     val Hide: ImageVector = Icons.Rounded.VisibilityOff
     val IdCard: ImageVector = Icons.Rounded.Badge

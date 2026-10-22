@@ -42,6 +42,7 @@ internal fun CardEditorUiState.populatedFrom(
         front = card.sides.front?.let(SideImage::Existing) ?: SideImage.None,
         back = card.sides.back?.let(SideImage::Existing) ?: SideImage.None,
         logo = card.logo?.let(LogoImage::Existing) ?: LogoImage.None,
+        validity = card.validity,
     )
     return when {
         details is CardDetails.Bank -> base.copy(
@@ -88,6 +89,7 @@ internal fun CardEditorUiState.toDraft(original: Card?): Pair<CardDraft, Map<Car
         back = imageChange(back, original?.sides?.back != null),
         logo = if (type == CardType.ID) ImageChange.Keep else logoChange(logo, hadLogo = original?.logo != null),
         isLocked = isLocked,
+        validity = validity,
     )
     return draft to formErrors
 }

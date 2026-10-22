@@ -53,4 +53,9 @@
     <string name="color_sky">Γαλάζιο</string>
     <string name="color_lavender">Λεβάντα</string>
     <string name="color_blush">Απαλό ροζ</string>
+    <string name="card_valid_only_in">Ισχύει μόνο για τη χώρα: %1$s</string>
+    <plurals name="card_valid_in_countries">
+        <item quantity="one">Ισχύει σε %1$d χώρα: %2$s</item>
+        <item quantity="other">Ισχύει σε %1$d χώρες: %2$s</item>
+    </plurals>
 </resources>

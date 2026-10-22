@@ -46,4 +46,5 @@
     <string name="detail_place_not_found">現在地を特定できませんでした。Wi‑Fi をオンにするか、窓際で再度お試しください。</string>
     <string name="detail_place_no_permission">場所を記憶するには、Cardholder に正確な位置情報の許可を与えてください</string>
     <string name="detail_place_location_off">場所を記憶するには、位置情報をオンにしてください</string>
+    <string name="field_valid_in">有効な国</string>
 </resources>

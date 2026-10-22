@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">Kõik kaardid</string>
     <string name="cardlist_nearby_wifi">Poe Wi‑Fi läheduses</string>
     <string name="cardlist_nearby_distance">Umbes %1$s kaugusel</string>
+    <string name="cardlist_country_filter_description">Näidatakse ainult kaarte, mis kehtivad riigis %1$s</string>
+    <string name="cardlist_country_filter_title">Filtreeri riigi järgi</string>
+    <string name="cardlist_country_filter_switch">Ainult kaardid, mis kehtivad riigis %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Ainult kaardid, mis kehtivad praeguses riigis</string>
+    <string name="cardlist_country_filter_unknown">Riik teadmata – näidatakse kõiki kaarte</string>
+    <string name="cardlist_country_filter_all">Näidatakse kõiki kaarte</string>
+    <string name="cardlist_country_search">Otsi riike</string>
+    <string name="cardlist_country_automatic">Automaatne: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automaatne: teadmata</string>
+    <string name="cardlist_source_network">mobiilivõrk</string>
+    <string name="cardlist_source_location">asukoht</string>
+    <string name="cardlist_source_last_known">viimati teadaolev</string>
+    <string name="cardlist_show_all">Näita kõiki</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d kaart teistele riikidele on peidetud</item>
+        <item quantity="other">%1$d kaarti teistele riikidele on peidetud</item>
+    </plurals>
 </resources>

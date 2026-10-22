@@ -25,4 +25,22 @@
     <string name="cardlist_all_cards">Toate cardurile</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi de magazin în apropiere</string>
     <string name="cardlist_nearby_distance">La aproximativ %1$s distanță</string>
+    <string name="cardlist_country_filter_description">Se afișează doar cardurile valabile în: %1$s</string>
+    <string name="cardlist_country_filter_title">Filtrează după țară</string>
+    <string name="cardlist_country_filter_switch">Doar cardurile valabile în: %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Doar cardurile valabile în țara curentă</string>
+    <string name="cardlist_country_filter_unknown">Țară necunoscută – se afișează toate cardurile</string>
+    <string name="cardlist_country_filter_all">Se afișează toate cardurile</string>
+    <string name="cardlist_country_search">Caută țări</string>
+    <string name="cardlist_country_automatic">Automat: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automat: necunoscută</string>
+    <string name="cardlist_source_network">rețea mobilă</string>
+    <string name="cardlist_source_location">locație</string>
+    <string name="cardlist_source_last_known">ultima cunoscută</string>
+    <string name="cardlist_show_all">Afișează toate</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d card pentru alte țări este ascuns</item>
+        <item quantity="few">%1$d carduri pentru alte țări sunt ascunse</item>
+        <item quantity="other">%1$d de carduri pentru alte țări sunt ascunse</item>
+    </plurals>
 </resources>

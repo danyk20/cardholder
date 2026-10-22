@@ -82,4 +82,20 @@
     <string name="editor_locked_title">هذه البطاقة مقفلة</string>
     <string name="editor_not_found">هذه البطاقة لم تعد موجودة</string>
     <string name="editor_ok">حسنًا</string>
+    <string name="editor_field_validity">صالحة في</string>
+    <string name="editor_validity_all">كل الدول</string>
+    <string name="editor_validity_selected">الدول المحددة</string>
+    <string name="editor_validity_done">تم</string>
+    <string name="editor_region_eu">الاتحاد الأوروبي</string>
+    <string name="editor_region_schengen">شنغن</string>
+    <string name="editor_region_eurozone">منطقة اليورو</string>
+    <string name="editor_region_eea">EEA</string>
+    <plurals name="editor_validity_many">
+        <item quantity="zero">🌐 %1$d دولة: %2$s</item>
+        <item quantity="one">🌐 %1$d دولة: %2$s</item>
+        <item quantity="two">🌐 %1$d دولتان: %2$s</item>
+        <item quantity="few">🌐 %1$d دول: %2$s</item>
+        <item quantity="many">🌐 %1$d دولة: %2$s</item>
+        <item quantity="other">🌐 %1$d دولة: %2$s</item>
+    </plurals>
 </resources>

@@ -51,6 +51,15 @@ class CardDaoTest {
     }
 
     @Test
+    fun `valid countries are stored and read back as given`() = runTest {
+        dao.upsert(card("1", "Card").copy(validCountries = "AT,CH,DE"))
+        dao.upsert(card("2", "Everywhere"))
+
+        assertEquals("AT,CH,DE", dao.get("1")!!.validCountries)
+        assertEquals("", dao.get("2")!!.validCountries)
+    }
+
+    @Test
     fun `delete removes a card`() = runTest {
         dao.upsert(card("1", "Card"))
 

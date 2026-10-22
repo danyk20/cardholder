@@ -12,9 +12,11 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.github.danyk20.cardholder.core.data.backup.OfflineBackupRepository
+import io.github.danyk20.cardholder.core.data.di.CountryStateStore
 import io.github.danyk20.cardholder.core.data.repository.AndroidAppDataRepository
 import io.github.danyk20.cardholder.core.data.repository.AssetBankRepository
 import io.github.danyk20.cardholder.core.data.repository.AssetShopRepository
+import io.github.danyk20.cardholder.core.data.repository.DataStoreCurrentCountryRepository
 import io.github.danyk20.cardholder.core.data.repository.DataStoreUserPreferencesRepository
 import io.github.danyk20.cardholder.core.data.repository.HttpsLogoDownloader
 import io.github.danyk20.cardholder.core.data.repository.LocaleCountryRepository
@@ -30,6 +32,7 @@ import io.github.danyk20.cardholder.core.domain.repository.BankRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.CountryRepository
+import io.github.danyk20.cardholder.core.domain.repository.CurrentCountryRepository
 import io.github.danyk20.cardholder.core.domain.repository.LogoDownloader
 import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
 import io.github.danyk20.cardholder.core.domain.repository.ShareFileStore
@@ -79,6 +82,9 @@ internal interface DataModule {
     @Binds
     fun bindsUserPreferencesRepository(impl: DataStoreUserPreferencesRepository): UserPreferencesRepository
 
+    @Binds
+    fun bindsCurrentCountryRepository(impl: DataStoreCurrentCountryRepository): CurrentCountryRepository
+
     companion object {
         @Provides
         fun providesClock(): Clock = Clock.systemUTC()
@@ -96,5 +102,11 @@ internal interface DataModule {
         @Singleton
         fun providesPreferencesDataStore(@ApplicationContext context: Context): DataStore<Preferences> =
             PreferenceDataStoreFactory.create { context.preferencesDataStoreFile("user_preferences") }
+
+        @Provides
+        @Singleton
+        @CountryStateStore
+        fun providesCountryStateDataStore(@ApplicationContext context: Context): DataStore<Preferences> =
+            PreferenceDataStoreFactory.create { context.preferencesDataStoreFile("country_state") }
     }
 }

@@ -12,11 +12,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
+import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.model.Card
 import io.github.danyk20.cardholder.core.model.CardDetails
 import io.github.danyk20.cardholder.core.model.CardInfo
 import io.github.danyk20.cardholder.core.model.CardNetwork
 import io.github.danyk20.cardholder.core.ui.barcodeFormatLabel
+import io.github.danyk20.cardholder.core.ui.flagAndName
 import io.github.danyk20.cardholder.core.ui.formatCardNumber
 import io.github.danyk20.cardholder.core.ui.formatExpiry
 import io.github.danyk20.cardholder.feature.carddetail.R
@@ -31,7 +33,14 @@ internal class FieldActions(
 )
 
 @Composable
-internal fun DetailFields(card: Card, subtitle: String, details: CardDetails, cvv: String?, actions: FieldActions) {
+internal fun DetailFields(
+    card: Card,
+    subtitle: String,
+    details: CardDetails,
+    cvv: String?,
+    validCountries: List<Country>,
+    actions: FieldActions,
+) {
     Column {
         when (details) {
             is CardDetails.Bank -> {
@@ -68,6 +77,10 @@ internal fun DetailFields(card: Card, subtitle: String, details: CardDetails, cv
                 CopyableField(R.string.field_code, details.code, actions)
                 info?.let { Field(R.string.field_format, barcodeFormatLabel(it.format), monospace = false) }
             }
+        }
+        // Only restricted cards list their countries; "valid everywhere" needs no row.
+        if (validCountries.isNotEmpty()) {
+            Field(R.string.field_valid_in, validCountries.joinToString("\n") { it.flagAndName() }, monospace = false)
         }
         if (details.notes.isNotBlank()) Field(R.string.field_notes, details.notes, monospace = false)
     }

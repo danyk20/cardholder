@@ -42,4 +42,7 @@ enum class FixPrecision {
 
     /** Wi‑Fi and mobile network positioning; uses much less power. */
     BALANCED,
+
+    /** Mobile network positioning only, the cheapest and the coarsest; never GPS. */
+    LOW,
 }

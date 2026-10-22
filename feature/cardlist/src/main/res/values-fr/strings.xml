@@ -25,4 +25,22 @@
     <string name="cardlist_all_cards">Toutes les cartes</string>
     <string name="cardlist_nearby_wifi">Wi‑Fi du magasin à proximité</string>
     <string name="cardlist_nearby_distance">À environ %1$s</string>
+    <string name="cardlist_country_filter_description">Seules les cartes valables pour le pays %1$s sont affichées</string>
+    <string name="cardlist_country_filter_title">Filtrer par pays</string>
+    <string name="cardlist_country_filter_switch">Seulement les cartes valables pour %1$s</string>
+    <string name="cardlist_country_filter_switch_unknown">Seulement les cartes valables pour le pays actuel</string>
+    <string name="cardlist_country_filter_unknown">Pays inconnu : toutes les cartes sont affichées</string>
+    <string name="cardlist_country_filter_all">Toutes les cartes sont affichées</string>
+    <string name="cardlist_country_search">Rechercher un pays</string>
+    <string name="cardlist_country_automatic">Automatique : %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">Automatique : inconnu</string>
+    <string name="cardlist_source_network">réseau mobile</string>
+    <string name="cardlist_source_location">position</string>
+    <string name="cardlist_source_last_known">dernière position connue</string>
+    <string name="cardlist_show_all">Tout afficher</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">%1$d carte pour d\'autres pays est masquée</item>
+        <item quantity="many">%1$d cartes pour d\'autres pays sont masquées</item>
+        <item quantity="other">%1$d cartes pour d\'autres pays sont masquées</item>
+    </plurals>
 </resources>

@@ -25,4 +25,21 @@
     <string name="cardlist_all_cards">सभी कार्ड</string>
     <string name="cardlist_nearby_wifi">आसपास स्टोर का Wi‑Fi</string>
     <string name="cardlist_nearby_distance">लगभग %1$s दूर</string>
+    <string name="cardlist_country_filter_description">केवल %1$s में मान्य कार्ड दिखाए जा रहे हैं</string>
+    <string name="cardlist_country_filter_title">देश के अनुसार फ़िल्टर करें</string>
+    <string name="cardlist_country_filter_switch">केवल %1$s में मान्य कार्ड</string>
+    <string name="cardlist_country_filter_switch_unknown">केवल वर्तमान देश में मान्य कार्ड</string>
+    <string name="cardlist_country_filter_unknown">देश अज्ञात — सभी कार्ड दिखाए जा रहे हैं</string>
+    <string name="cardlist_country_filter_all">सभी कार्ड दिखाए जा रहे हैं</string>
+    <string name="cardlist_country_search">देश खोजें</string>
+    <string name="cardlist_country_automatic">स्वचालित: %1$s (%2$s)</string>
+    <string name="cardlist_country_automatic_unknown">स्वचालित: अज्ञात</string>
+    <string name="cardlist_source_network">मोबाइल नेटवर्क</string>
+    <string name="cardlist_source_location">स्थान</string>
+    <string name="cardlist_source_last_known">अंतिम ज्ञात</string>
+    <string name="cardlist_show_all">सभी दिखाएं</string>
+    <plurals name="cardlist_hidden_cards">
+        <item quantity="one">अन्य देशों के %1$d कार्ड छिपे हैं</item>
+        <item quantity="other">अन्य देशों के %1$d कार्ड छिपे हैं</item>
+    </plurals>
 </resources>
