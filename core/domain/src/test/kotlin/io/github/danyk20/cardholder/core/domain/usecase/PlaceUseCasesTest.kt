@@ -27,6 +27,11 @@ import java.time.Instant
 import java.time.ZoneId
 import java.time.ZoneOffset
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNotNull
+import kotlin.test.assertNull
+import kotlin.test.assertTrue
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
@@ -50,6 +55,7 @@ class PlaceUseCasesTest {
     private val remember = RememberPlaceUseCase(cards, places, preferences, sensors, access, scope)
     private val nearby =
         FindNearbyCardsUseCase(cards, places, FakeShopRepository(), preferences, sensors, access, clock)
+    private val cardPlaces = CardPlaces(cards, places, preferences, remember, nearby)
 
     private val kaufland = TestCards.loyalty.copy(
         id = CardId("kaufland"),
@@ -159,8 +165,125 @@ class PlaceUseCasesTest {
         assertEquals(3, sensors.wifiReads)
     }
 
+    @Test
+    fun `moving a place pins it at the point and forgets the old nearby result`() = runTest {
+        places.add(place(kaufland.id, Shop, listOf(AccessPoint(Bssid(1), "Shop", -60))))
+        nearby(setOf(CardType.LOYALTY))
+        assertEquals(1, sensors.wifiReads)
+        val target = Shop.copy(latitude = Shop.latitude + 0.0007)
+
+        assertTrue(cardPlaces.move(placeId = placeId(), point = target))
+
+        val moved = places.places.value.single()
+        assertSamePoint(target, moved.centre)
+        assertTrue(moved.isPinned)
+        assertEquals(listOf(Bssid(1)), moved.accessPoints.map { it.bssid })
+        nearby(setOf(CardType.LOYALTY))
+        assertEquals(2, sensors.wifiReads)
+    }
+
+    @Test
+    fun `moving a place normalises the longitude of the point`() = runTest {
+        places.add(place(kaufland.id, Shop))
+
+        cardPlaces.move(placeId = placeId(), point = GeoPoint(Shop.latitude, Shop.longitude + 360.0))
+
+        assertSamePoint(Shop, places.places.value.single().centre)
+    }
+
+    @Test
+    fun `moving a place to a point that is not on the map changes nothing`() = runTest {
+        places.add(place(kaufland.id, Shop))
+        nearby(setOf(CardType.LOYALTY))
+
+        listOf(
+            GeoPoint(Double.NaN, 17.0),
+            GeoPoint(48.0, Double.NaN),
+            GeoPoint(86.0, 17.0),
+            GeoPoint(-86.0, 17.0),
+        ).forEach { point -> assertFalse(cardPlaces.move(placeId = placeId(), point = point)) }
+
+        assertSamePoint(Shop, places.places.value.single().centre)
+        assertFalse(places.places.value.single().isPinned)
+        nearby(setOf(CardType.LOYALTY))
+        assertEquals(1, sensors.wifiReads)
+    }
+
+    @Test
+    fun `moving a place that no longer exists is reported and changes nothing`() = runTest {
+        places.add(place(kaufland.id, Shop))
+
+        assertFalse(cardPlaces.move(placeId = 99L, point = Shop.copy(latitude = Shop.latitude + 0.001)))
+
+        assertSamePoint(Shop, places.places.value.single().centre)
+    }
+
+    @Test
+    fun `adding a place pins it on the card at the point`() = runTest {
+        places.add(place(kaufland.id, Shop))
+        nearby(setOf(CardType.LOYALTY))
+        val target = Shop.copy(latitude = Shop.latitude + 0.002)
+
+        val id = assertNotNull(cardPlaces.add(kaufland.id, target))
+
+        val added = places.places.value.single { it.id == id }
+        assertEquals(kaufland.id, added.cardId)
+        assertSamePoint(target, added.centre)
+        assertTrue(added.isPinned)
+        nearby(setOf(CardType.LOYALTY))
+        assertEquals(2, sensors.wifiReads)
+    }
+
+    @Test
+    fun `adding a place rejects a point that is not on the map`() = runTest {
+        assertNull(cardPlaces.add(kaufland.id, GeoPoint(Double.NaN, Double.NaN)))
+        assertNull(cardPlaces.add(kaufland.id, GeoPoint(-85.5, 17.0)))
+
+        assertEquals(emptyList(), places.places.value)
+    }
+
+    @Test
+    fun `adding a place normalises the longitude`() = runTest {
+        val id = assertNotNull(cardPlaces.add(kaufland.id, GeoPoint(Shop.latitude, 181.0)))
+
+        assertEquals(-179.0, places.places.value.single { it.id == id }.centre?.longitude ?: error("no centre"), 1e-9)
+    }
+
+    @Test
+    fun `deleting a place forgets only that place and the nearby result`() = runTest {
+        places.add(place(kaufland.id, Shop))
+        places.add(place(TestCards.visa.id, Shop.north(5_000.0)))
+        nearby(setOf(CardType.LOYALTY))
+
+        cardPlaces.delete(placeId = places.places.value.first { it.cardId == kaufland.id }.id)
+
+        assertEquals(listOf(TestCards.visa.id), places.places.value.map { it.cardId })
+        nearby(setOf(CardType.LOYALTY))
+        assertEquals(2, sensors.wifiReads)
+    }
+
+    @Test
+    fun `observes the places of a card, the most used first`() = runTest {
+        places.add(place(kaufland.id, Shop).copy(id = 1, useCount = 1))
+        places.add(place(kaufland.id, Shop.north(500.0)).copy(id = 2, useCount = 4))
+        places.add(place(TestCards.visa.id, Shop).copy(id = 3, useCount = 9))
+
+        assertEquals(listOf(2L, 1L), cardPlaces.observePlaces(kaufland.id).first().map { it.id })
+    }
+
     private fun place(cardId: CardId, centre: GeoPoint, accessPoints: List<AccessPoint> = emptyList()) =
         Place(cardId.hashCode().toLong(), cardId, centre, 10f, 1, now, accessPoints = accessPoints)
+
+    private fun placeId() = places.places.value.single().id
+
+    private fun GeoPoint.north(meters: Double) = copy(latitude = latitude + meters / 111_195.0)
+
+    /** Longitudes pass through wrapping, so they're compared with a tolerance of about a micrometre. */
+    private fun assertSamePoint(expected: GeoPoint, actual: GeoPoint?) {
+        assertNotNull(actual)
+        assertEquals(expected.latitude, actual.latitude, 1e-9)
+        assertEquals(expected.longitude, actual.longitude, 1e-9)
+    }
 
     private companion object {
         val Shop = GeoPoint(48.1486, 17.1077)

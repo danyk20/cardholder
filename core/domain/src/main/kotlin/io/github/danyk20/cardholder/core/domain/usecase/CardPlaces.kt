@@ -1,5 +1,8 @@
 package io.github.danyk20.cardholder.core.domain.usecase
 
+import io.github.danyk20.cardholder.core.domain.location.GeoMath
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
+import io.github.danyk20.cardholder.core.domain.location.Place
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
@@ -40,6 +43,39 @@ class CardPlaces @Inject constructor(
 
     suspend fun forget(cardId: CardId) {
         placeRepository.forgetCard(cardId)
+        findNearbyCards.invalidate()
+    }
+
+    /** The places of [cardId] with their fixes and access points, the most used first. */
+    fun observePlaces(cardId: CardId): Flow<List<Place>> = placeRepository.observePlaces(cardId)
+
+    /**
+     * Moves a place to [point] and pins it, see [PlaceRepository.movePlace].
+     *
+     * @return `false` if [point] isn't a place on the map, or the place no longer exists; nothing changed.
+     */
+    suspend fun move(placeId: Long, point: GeoPoint): Boolean {
+        val valid = GeoMath.normalised(point) ?: return false
+        val moved = placeRepository.movePlace(placeId, valid)
+        findNearbyCards.invalidate()
+        return moved
+    }
+
+    /**
+     * Adds a pinned place for [cardId] at [point].
+     *
+     * @return the new place's id, or `null` if [point] isn't a place on the map; nothing changed.
+     */
+    suspend fun add(cardId: CardId, point: GeoPoint): Long? {
+        val valid = GeoMath.normalised(point) ?: return null
+        val id = placeRepository.addPlace(cardId, valid)
+        findNearbyCards.invalidate()
+        return id
+    }
+
+    /** Forgets one place, e.g. one the user doesn't want suggested. */
+    suspend fun delete(placeId: Long) {
+        placeRepository.forget(placeId)
         findNearbyCards.invalidate()
     }
 }

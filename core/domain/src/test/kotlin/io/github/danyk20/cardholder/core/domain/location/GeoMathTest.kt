@@ -50,4 +50,39 @@ class GeoMathTest {
 
         assertEquals(180.0, kotlin.math.abs(centre.point.longitude), 0.0001)
     }
+
+    @Test
+    fun `a valid point is kept as it is`() {
+        val normalised = assertNotNull(GeoMath.normalised(Shop))
+        assertEquals(Shop.latitude, normalised.latitude, 0.0)
+        assertEquals(Shop.longitude, normalised.longitude, 1e-9)
+        assertEquals(-180.0, assertNotNull(GeoMath.normalised(GeoPoint(85.0, -180.0))).longitude, 1e-9)
+    }
+
+    @Test
+    fun `brings the longitude into -180 to 180`() {
+        assertEquals(-170.0, assertNotNull(GeoMath.normalised(GeoPoint(10.0, 190.0))).longitude, 1e-9)
+        assertEquals(170.0, assertNotNull(GeoMath.normalised(GeoPoint(10.0, -190.0))).longitude, 1e-9)
+        assertEquals(-180.0, assertNotNull(GeoMath.normalised(GeoPoint(10.0, 540.0))).longitude, 1e-9)
+    }
+
+    @Test
+    fun `keeps the latitude when normalising the longitude`() {
+        assertEquals(-33.5, assertNotNull(GeoMath.normalised(GeoPoint(-33.5, 400.0))).latitude, 0.0)
+    }
+
+    @Test
+    fun `rejects latitudes beyond the web mercator limit`() {
+        assertNull(GeoMath.normalised(GeoPoint(85.0001, 0.0)))
+        assertNull(GeoMath.normalised(GeoPoint(-86.0, 0.0)))
+        assertNull(GeoMath.normalised(GeoPoint(90.0, 0.0)))
+    }
+
+    @Test
+    fun `rejects coordinates that are not numbers`() {
+        assertNull(GeoMath.normalised(GeoPoint(Double.NaN, 17.0)))
+        assertNull(GeoMath.normalised(GeoPoint(48.0, Double.NaN)))
+        assertNull(GeoMath.normalised(GeoPoint(Double.POSITIVE_INFINITY, 17.0)))
+        assertNull(GeoMath.normalised(GeoPoint(48.0, Double.NEGATIVE_INFINITY)))
+    }
 }
