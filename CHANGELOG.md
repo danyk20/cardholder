@@ -4,12 +4,18 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+
+## [1.6.0] - 2026-10-22
 ### Added
 - A card's places are shown on a map and in a list, on a new Places screen opened from the card's
   "Suggest by location" section. A place can be moved by tapping the correct spot (it is then pinned, so later
   visits don't move it again, and its Wi‑Fi networks are kept), deleted, or added by tapping the map.
   The map uses OpenStreetMap tiles, downloaded only while the screen is open, and is cached on the device.
 - "Forget all places" moved into the Places screen's menu.
+
+### Fixed
+- A place learned from an inaccurate GPS reading can now be checked on the map and moved or deleted on its own,
+  instead of forgetting all places of the card.
 
 ## [1.5.0] - 2026-10-22
 ### Added

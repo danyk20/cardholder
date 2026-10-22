@@ -1,0 +1,1 @@
+New Places screen: see where each card is suggested on a map, and move, delete or add places. Fixes places learned from inaccurate GPS.
