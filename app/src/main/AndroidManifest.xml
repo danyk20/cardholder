@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Used only to download an official shop logo when the user explicitly asks for it. -->
+    <!-- Official logos, update checks and OpenStreetMap map tiles, all over HTTPS only. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <!-- Expiry reminders (Android 13+ asks the user). -->
