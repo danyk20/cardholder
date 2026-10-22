@@ -1,6 +1,8 @@
 package io.github.danyk20.cardholder.core.testing.repository
 
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
+import io.github.danyk20.cardholder.core.domain.location.PlaceClustering
 import io.github.danyk20.cardholder.core.domain.location.Surroundings
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
@@ -17,6 +19,7 @@ import kotlinx.coroutines.flow.update
  * In-memory [PlaceRepository]. Visits are only recorded, not clustered; tests add the places they
  * need with [add]. Cards with suggestions switched off are left out like in the real repository.
  */
+@Suppress("TooManyFunctions") // Mirrors the PlaceRepository interface.
 class FakePlaceRepository(private val cards: CardRepository) : PlaceRepository {
     val places = MutableStateFlow<List<Place>>(emptyList())
 
@@ -42,6 +45,11 @@ class FakePlaceRepository(private val cards: CardRepository) : PlaceRepository {
 
     override suspend fun places(ids: Collection<Long>): List<Place> = places.value.filter { it.id in ids }
 
+    override fun observePlaces(cardId: CardId): Flow<List<Place>> = places.map { all ->
+        all.filter { it.cardId == cardId }
+            .sortedWith(compareByDescending<Place> { it.useCount }.thenByDescending { it.lastUsedAt })
+    }
+
     override fun observeCount(cardId: CardId): Flow<Int> = places.map { all -> all.count { it.cardId == cardId } }
 
     override fun observeTotal(): Flow<Int> = places.map { it.size }
@@ -57,6 +65,43 @@ class FakePlaceRepository(private val cards: CardRepository) : PlaceRepository {
 
     override suspend fun lastNotifiedAt(cardId: CardId?): Instant? =
         places.value.filter { cardId == null || it.cardId == cardId }.mapNotNull { it.lastNotifiedAt }.maxOrNull()
+
+    override suspend fun movePlace(placeId: Long, point: GeoPoint): Boolean {
+        if (places.value.none { it.id == placeId }) return false
+        places.update { all ->
+            all.map {
+                if (it.id == placeId) {
+                    it.copy(
+                        centre = point,
+                        accuracyMeters = PlaceClustering.PINNED_ACCURACY_METERS,
+                        isPinned = true,
+                        fixCount = 1,
+                    )
+                } else {
+                    it
+                }
+            }
+        }
+        return true
+    }
+
+    override suspend fun addPlace(cardId: CardId, point: GeoPoint): Long {
+        val id = (places.value.maxOfOrNull { it.id } ?: 0L) + 1
+        add(
+            Place(
+                id = id,
+                cardId = cardId,
+                centre = point,
+                accuracyMeters = PlaceClustering.PINNED_ACCURACY_METERS,
+                useCount = 1,
+                lastUsedAt = now,
+                isPinned = true,
+                createdAt = now,
+                fixCount = 1,
+            ),
+        )
+        return id
+    }
 
     override suspend fun forget(placeId: Long) = places.update { all -> all.filterNot { it.id == placeId } }
 

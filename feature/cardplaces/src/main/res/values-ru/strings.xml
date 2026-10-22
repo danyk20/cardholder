@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Места · %1$s</string>
+    <string name="places_more_options">Дополнительно</string>
+    <string name="places_forget_all">Забыть все места</string>
+    <string name="places_forget_all_title">Забыть все места?</string>
+    <string name="places_forget_all_message">Cardholder забудет все места этой карты. Он сможет снова запомнить их, когда вы будете использовать карту.</string>
+    <string name="places_delete_title">Удалить это место?</string>
+    <string name="places_delete_message">Cardholder может снова запомнить его, когда вы будете использовать здесь карту.</string>
+    <string name="places_delete">Удалить</string>
+    <string name="places_forget">Забыть</string>
+    <string name="places_move">Переместить</string>
+    <string name="places_set_on_map">Указать на карте</string>
+    <string name="places_add">Добавить место</string>
+    <string name="places_save">Сохранить</string>
+    <string name="places_move_hint">Нажмите на нужное место на карте.</string>
+    <string name="places_add_hint">Нажмите на карте в том месте, где находится это место.</string>
+    <string name="places_suggestions_off_hint">Включите подсказки для этой карты, чтобы использовать это место.</string>
+    <string name="places_set_by_you">Указано вами</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Запомнено по %d показанию GPS</item>
+        <item quantity="few">Запомнено по %d показаниям GPS</item>
+        <item quantity="many">Запомнено по %d показаниям GPS</item>
+        <item quantity="other">Запомнено по %d показаниям GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d м</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Использовано %1$d раз, последний раз %2$s</item>
+        <item quantity="few">Использовано %1$d раза, последний раз %2$s</item>
+        <item quantity="many">Использовано %1$d раз, последний раз %2$s</item>
+        <item quantity="other">Использовано %1$d раза, последний раз %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Только Wi‑Fi, без положения на карте</string>
+    <string name="places_empty">Мест пока нет. Место запоминается, когда вы используете эту карту, или вы можете добавить его на карте.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Карта с %d местом</item>
+        <item quantity="few">Карта с %d местами</item>
+        <item quantity="many">Карта с %d местами</item>
+        <item quantity="other">Карта с %d местами</item>
+    </plurals>
+    <string name="places_map_offline">Карта не загружается без сети. Ваши места по-прежнему показаны ниже.</string>
+    <string name="places_map_privacy">Карта © OpenStreetMap. Изображения карты загружаются с OpenStreetMap; серверы видят только просматриваемую область и никогда не видят ваше местоположение.</string>
+    <string name="places_centre_on_me">Центрировать на мне</string>
+    <string name="places_moved">Место перемещено</string>
+    <string name="places_added">Место добавлено</string>
+    <string name="places_deleted">Место удалено</string>
+    <string name="places_forgotten">Все места забыты</string>
+    <string name="places_not_saved">Не удалось сохранить место.</string>
+</resources>

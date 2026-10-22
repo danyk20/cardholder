@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Konumlar · %1$s</string>
+    <string name="places_more_options">Diğer seçenekler</string>
+    <string name="places_forget_all">Tüm konumları unut</string>
+    <string name="places_forget_all_title">Tüm konumlar unutulsun mu?</string>
+    <string name="places_forget_all_message">Cardholder bu kartın tüm konumlarını unutur. Kartı kullandığınızda bunları yeniden öğrenebilir.</string>
+    <string name="places_delete_title">Bu konum silinsin mi?</string>
+    <string name="places_delete_message">Cardholder, kartı burada kullandığınızda bu konumu yeniden öğrenebilir.</string>
+    <string name="places_delete">Sil</string>
+    <string name="places_forget">Unut</string>
+    <string name="places_move">Taşı</string>
+    <string name="places_set_on_map">Haritada ayarla</string>
+    <string name="places_add">Konum ekle</string>
+    <string name="places_save">Kaydet</string>
+    <string name="places_move_hint">Haritada doğru noktaya dokunun.</string>
+    <string name="places_add_hint">Konumun bulunduğu noktaya haritada dokunun.</string>
+    <string name="places_suggestions_off_hint">Bu konumu kullanmak için bu kart için önerileri açın.</string>
+    <string name="places_set_by_you">Sizin tarafınızdan ayarlandı</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">%d GPS okumasından öğrenildi</item>
+        <item quantity="other">%d GPS okumasından öğrenildi</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">%1$d kez kullanıldı, son %2$s</item>
+        <item quantity="other">%1$d kez kullanıldı, son %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Yalnızca Wi‑Fi, harita konumu yok</string>
+    <string name="places_empty">Henüz konum yok. Bu kartı kullandığınızda bir konum öğrenilir; ayrıca haritada bir tane ekleyebilirsiniz.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">%d konumlu harita</item>
+        <item quantity="other">%d konumlu harita</item>
+    </plurals>
+    <string name="places_map_offline">Harita çevrimdışıyken yüklenemez. Konumlarınız yine aşağıda listelenir.</string>
+    <string name="places_map_privacy">Harita © OpenStreetMap. Harita görüntüleri OpenStreetMap\'ten indirilir; sunucular yalnızca görüntülediğiniz alanı görür, konumunuzu asla görmez.</string>
+    <string name="places_centre_on_me">Beni ortala</string>
+    <string name="places_moved">Konum taşındı</string>
+    <string name="places_added">Konum eklendi</string>
+    <string name="places_deleted">Konum silindi</string>
+    <string name="places_forgotten">Tüm konumlar unutuldu</string>
+    <string name="places_not_saved">Konum kaydedilemedi.</string>
+</resources>

@@ -9,6 +9,7 @@ import io.github.danyk20.cardholder.core.database.model.PlaceWithAccessPoints
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
 import io.github.danyk20.cardholder.core.domain.location.Bssid
 import io.github.danyk20.cardholder.core.domain.location.GeoMath
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
 import io.github.danyk20.cardholder.core.domain.location.PlaceClustering
 import io.github.danyk20.cardholder.core.domain.location.Surroundings
@@ -47,6 +48,9 @@ internal class OfflinePlaceRepository @Inject constructor(
         if (ids.isEmpty()) emptyList() else dao.places(ids).map(PlaceWithAccessPoints::toPlace)
     }
 
+    override fun observePlaces(cardId: CardId): Flow<List<Place>> =
+        dao.observePlacesOf(cardId.value).map { places -> places.map { it.toPlace() } }
+
     override fun observeCount(cardId: CardId): Flow<Int> = dao.observeCount(cardId.value)
 
     override fun observeTotal(): Flow<Int> = dao.observeTotal()
@@ -79,6 +83,30 @@ internal class OfflinePlaceRepository @Inject constructor(
     override suspend fun lastNotifiedAt(cardId: CardId?): Instant? = withContext(ioDispatcher) {
         val millis = if (cardId == null) dao.lastNotifiedAt() else dao.lastNotifiedAt(cardId.value)
         millis?.let(Instant::ofEpochMilli)
+    }
+
+    override suspend fun movePlace(placeId: Long, point: GeoPoint): Boolean = withContext(ioDispatcher) {
+        writeMutex.withLock {
+            dao.movePlace(
+                id = placeId,
+                latitude = point.latitude,
+                longitude = point.longitude,
+                accuracy = PlaceClustering.PINNED_ACCURACY_METERS,
+                at = clock.millis(),
+            )
+        }
+    }
+
+    override suspend fun addPlace(cardId: CardId, point: GeoPoint): Long = withContext(ioDispatcher) {
+        writeMutex.withLock {
+            dao.addPinnedPlace(
+                cardId = cardId.value,
+                latitude = point.latitude,
+                longitude = point.longitude,
+                accuracy = PlaceClustering.PINNED_ACCURACY_METERS,
+                at = clock.millis(),
+            )
+        }
     }
 
     override suspend fun forget(placeId: Long) = withContext(ioDispatcher) { dao.delete(placeId) }

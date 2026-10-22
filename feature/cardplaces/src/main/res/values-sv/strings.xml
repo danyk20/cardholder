@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Platser · %1$s</string>
+    <string name="places_more_options">Fler alternativ</string>
+    <string name="places_forget_all">Glöm alla platser</string>
+    <string name="places_forget_all_title">Glömma alla platser?</string>
+    <string name="places_forget_all_message">Cardholder glömmer alla platser för det här kortet. Den kan lära sig dem igen när du använder kortet.</string>
+    <string name="places_delete_title">Ta bort den här platsen?</string>
+    <string name="places_delete_message">Cardholder kan lära sig den igen när du använder kortet här.</string>
+    <string name="places_delete">Ta bort</string>
+    <string name="places_forget">Glöm</string>
+    <string name="places_move">Flytta</string>
+    <string name="places_set_on_map">Ange på kartan</string>
+    <string name="places_add">Lägg till plats</string>
+    <string name="places_save">Spara</string>
+    <string name="places_move_hint">Tryck på rätt plats på kartan.</string>
+    <string name="places_add_hint">Tryck på kartan där platsen finns.</string>
+    <string name="places_suggestions_off_hint">Slå på förslag för det här kortet för att använda den här platsen.</string>
+    <string name="places_set_by_you">Angiven av dig</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Lärd från %d GPS-avläsning</item>
+        <item quantity="other">Lärd från %d GPS-avläsningar</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Använd %1$d gång, senast %2$s</item>
+        <item quantity="other">Använd %1$d gånger, senast %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Endast Wi‑Fi, ingen position på kartan</string>
+    <string name="places_empty">Inga platser än. En plats lärs in när du använder kortet, eller så kan du lägga till en på kartan.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Karta med %d plats</item>
+        <item quantity="other">Karta med %d platser</item>
+    </plurals>
+    <string name="places_map_offline">Kartan kan inte laddas offline. Dina platser visas fortfarande nedan.</string>
+    <string name="places_map_privacy">Karta © OpenStreetMap. Kartbilder hämtas från OpenStreetMap; de ser bara området du tittar på, aldrig din position.</string>
+    <string name="places_centre_on_me">Centrera på mig</string>
+    <string name="places_moved">Plats flyttad</string>
+    <string name="places_added">Plats tillagd</string>
+    <string name="places_deleted">Plats borttagen</string>
+    <string name="places_forgotten">Alla platser glömda</string>
+    <string name="places_not_saved">Platsen kunde inte sparas.</string>
+</resources>

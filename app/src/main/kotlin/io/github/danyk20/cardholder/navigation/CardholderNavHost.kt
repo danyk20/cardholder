@@ -26,6 +26,8 @@ import io.github.danyk20.cardholder.feature.cardeditor.navigation.cardEditorScre
 import io.github.danyk20.cardholder.feature.cardeditor.navigation.navigateToCardEditor
 import io.github.danyk20.cardholder.feature.cardlist.navigation.CardListDestination
 import io.github.danyk20.cardholder.feature.cardlist.navigation.cardListScreen
+import io.github.danyk20.cardholder.feature.cardplaces.navigation.cardPlacesScreen
+import io.github.danyk20.cardholder.feature.cardplaces.navigation.navigateToCardPlaces
 import io.github.danyk20.cardholder.feature.settings.navigation.navigateToSettings
 import io.github.danyk20.cardholder.feature.settings.navigation.settingsScreen
 import io.github.danyk20.cardholder.update.UpdatePrompt
@@ -78,7 +80,9 @@ fun CardholderNavHost(modifier: Modifier = Modifier) {
                     onBack = navController::popBackStack,
                     onEdit = { navController.navigateToCardEditor(it) },
                     onShowBarcode = { navController.navigateToBarcode(it) },
+                    onOpenPlaces = { navController.navigateToCardPlaces(it) },
                 )
+                cardPlacesScreen(onBack = navController::popBackStack)
                 settingsScreen(onBack = navController::popBackStack, aboutContent = { UpdateSection() })
                 barcodeScreen(
                     onClose = navController::popBackStack,

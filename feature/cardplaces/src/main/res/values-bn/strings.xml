@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">জায়গা · %1$s</string>
+    <string name="places_more_options">আরও বিকল্প</string>
+    <string name="places_forget_all">সব জায়গা ভুলে যান</string>
+    <string name="places_forget_all_title">সব জায়গা ভুলে যাবেন?</string>
+    <string name="places_forget_all_message">Cardholder এই কার্ডের সব জায়গা ভুলে যাবে। কার্ড ব্যবহার করলে আবার সেগুলো শিখে নিতে পারে।</string>
+    <string name="places_delete_title">এই জায়গাটি মুছবেন?</string>
+    <string name="places_delete_message">এখানে কার্ড ব্যবহার করলে Cardholder আবার এটি শিখে নিতে পারে।</string>
+    <string name="places_delete">মুছুন</string>
+    <string name="places_forget">ভুলে যান</string>
+    <string name="places_move">সরান</string>
+    <string name="places_set_on_map">মানচিত্রে ঠিক করুন</string>
+    <string name="places_add">জায়গা যোগ করুন</string>
+    <string name="places_save">সংরক্ষণ করুন</string>
+    <string name="places_move_hint">মানচিত্রে সঠিক স্থানে ট্যাপ করুন।</string>
+    <string name="places_add_hint">মানচিত্রে যেখানে জায়গাটি আছে সেখানে ট্যাপ করুন।</string>
+    <string name="places_suggestions_off_hint">এই জায়গা ব্যবহার করতে এই কার্ডের জন্য পরামর্শ চালু করুন।</string>
+    <string name="places_set_by_you">আপনার দ্বারা ঠিক করা</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">%d টি GPS রিডিং থেকে শেখা</item>
+        <item quantity="other">%d টি GPS রিডিং থেকে শেখা</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d মি</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">%1$d বার ব্যবহৃত, সর্বশেষ %2$s</item>
+        <item quantity="other">%1$d বার ব্যবহৃত, সর্বশেষ %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">শুধু Wi‑Fi, মানচিত্রে অবস্থান নেই</string>
+    <string name="places_empty">এখনও কোনো জায়গা নেই। এই কার্ড ব্যবহার করলে একটি জায়গা শেখা হবে, অথবা আপনি মানচিত্রে একটি যোগ করতে পারেন।</string>
+    <plurals name="places_map_description">
+        <item quantity="one">%d টি জায়গা সহ মানচিত্র</item>
+        <item quantity="other">%d টি জায়গা সহ মানচিত্র</item>
+    </plurals>
+    <string name="places_map_offline">মানচিত্র অফলাইনে লোড হবে না। আপনার জায়গাগুলো নিচে এখনও তালিকাভুক্ত আছে।</string>
+    <string name="places_map_privacy">মানচিত্র © OpenStreetMap। মানচিত্রের ছবি OpenStreetMap থেকে ডাউনলোড হয়; সার্ভার শুধু আপনার দেখা এলাকা দেখে, আপনার অবস্থান কখনও নয়।</string>
+    <string name="places_centre_on_me">আমার অবস্থানে কেন্দ্র করুন</string>
+    <string name="places_moved">জায়গা সরানো হয়েছে</string>
+    <string name="places_added">জায়গা যোগ করা হয়েছে</string>
+    <string name="places_deleted">জায়গা মুছে ফেলা হয়েছে</string>
+    <string name="places_forgotten">সব জায়গা ভোলা হয়েছে</string>
+    <string name="places_not_saved">জায়গাটি সংরক্ষণ করা যায়নি।</string>
+</resources>

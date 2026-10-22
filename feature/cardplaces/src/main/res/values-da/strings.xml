@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Steder · %1$s</string>
+    <string name="places_more_options">Flere muligheder</string>
+    <string name="places_forget_all">Glem alle steder</string>
+    <string name="places_forget_all_title">Glemme alle steder?</string>
+    <string name="places_forget_all_message">Cardholder glemmer alle stederne for dette kort. Det kan lære dem igen, når du bruger kortet.</string>
+    <string name="places_delete_title">Slette dette sted?</string>
+    <string name="places_delete_message">Cardholder kan lære det igen, når du bruger kortet her.</string>
+    <string name="places_delete">Slet</string>
+    <string name="places_forget">Glem</string>
+    <string name="places_move">Flyt</string>
+    <string name="places_set_on_map">Angiv på kortet</string>
+    <string name="places_add">Tilføj sted</string>
+    <string name="places_save">Gem</string>
+    <string name="places_move_hint">Tryk på det rigtige sted på kortet.</string>
+    <string name="places_add_hint">Tryk på kortet der, hvor stedet er.</string>
+    <string name="places_suggestions_off_hint">Slå forslag til for dette kort for at bruge dette sted.</string>
+    <string name="places_set_by_you">Angivet af dig</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Lært fra %d GPS-aflæsning</item>
+        <item quantity="other">Lært fra %d GPS-aflæsninger</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Brugt %1$d gang, senest %2$s</item>
+        <item quantity="other">Brugt %1$d gange, senest %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Kun Wi‑Fi, ingen placering på kortet</string>
+    <string name="places_empty">Ingen steder endnu. Et sted læres, når du bruger kortet, eller du kan tilføje et på kortet.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Kort med %d sted</item>
+        <item quantity="other">Kort med %d steder</item>
+    </plurals>
+    <string name="places_map_offline">Kortet kan ikke indlæses offline. Dine steder vises stadig nedenfor.</string>
+    <string name="places_map_privacy">Kort © OpenStreetMap. Kortbilleder hentes fra OpenStreetMap; de ser kun det område, du kigger på, aldrig din position.</string>
+    <string name="places_centre_on_me">Centrer på mig</string>
+    <string name="places_moved">Sted flyttet</string>
+    <string name="places_added">Sted tilføjet</string>
+    <string name="places_deleted">Sted slettet</string>
+    <string name="places_forgotten">Alle steder glemt</string>
+    <string name="places_not_saved">Stedet kunne ikke gemmes.</string>
+</resources>

@@ -86,4 +86,21 @@ class PlaceClusteringTest {
 
     private fun plan(surroundings: Surroundings, places: () -> List<Place> = { emptyList() }) =
         PlaceClustering.plan(places(), emptyList(), surroundings, emptySet(), Now)
+
+    @Test
+    fun `a pinned place is joined like any other place`() {
+        val pinned = place(1).copy(isPinned = true, accuracyMeters = PlaceClustering.PINNED_ACCURACY_METERS)
+
+        val plan = plan(Surroundings(emptyList(), fix(Shop.north(120.0)))) { listOf(pinned) }
+
+        assertEquals(1L, plan?.placeId)
+        assertEquals(false, plan?.sameVisit)
+    }
+
+    @Test
+    fun `a pinned place 400 m away from a fix is not joined`() {
+        val pinned = place(1).copy(isPinned = true, accuracyMeters = PlaceClustering.PINNED_ACCURACY_METERS)
+
+        assertNull(plan(Surroundings(emptyList(), fix(Shop.north(400.0)))) { listOf(pinned) }?.placeId)
+    }
 }

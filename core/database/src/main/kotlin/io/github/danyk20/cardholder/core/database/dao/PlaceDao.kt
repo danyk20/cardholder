@@ -41,6 +41,11 @@ interface PlaceDao {
     @Query("SELECT * FROM places WHERE card_id = :cardId")
     suspend fun placesOf(cardId: String): List<PlaceWithAccessPoints>
 
+    /** The places of one card, the most used first, for the card's Places screen. */
+    @Transaction
+    @Query("SELECT * FROM places WHERE card_id = :cardId ORDER BY use_count DESC, last_used_at DESC")
+    fun observePlacesOf(cardId: String): Flow<List<PlaceWithAccessPoints>>
+
     @Transaction
     @Query("SELECT * FROM places WHERE id IN (:ids)")
     suspend fun places(ids: Collection<Long>): List<PlaceWithAccessPoints>
@@ -102,6 +107,9 @@ interface PlaceDao {
      * [VisitWrite.keepFixes], merges the access points keeping the [VisitWrite.keepAccessPoints] seen
      * most, and updates the place's centre computed by [centreOf] from its remaining fixes.
      *
+     * A pinned place (set by the user) only counts the visit and merges the access points: its fixes
+     * and centre stay where the user put it.
+     *
      * @return the place's id.
      */
     @Transaction
@@ -110,14 +118,82 @@ interface PlaceDao {
             insertTravelling(visit.travelling.map { TravellingAccessPointEntity(it, visit.now) })
             deleteAccessPoints(visit.travelling)
         }
+        val pinned = visit.placeId?.let { isPinned(it) } == true
         val placeId = visit.placeId?.also { markUsed(it, visit.now, visits = if (visit.sameVisit) 0 else 1) }
             ?: insertPlace(PlaceEntity(cardId = visit.cardId, createdAt = visit.now, lastUsedAt = visit.now))
-        addFix(placeId, visit)
+        if (!pinned) {
+            addFix(placeId, visit)
+        }
         mergeAccessPoints(placeId, visit)
-        val centre = centreOf(fixes(placeId))
-        setCentre(placeId, centre?.latitude, centre?.longitude, centre?.accuracyMeters)
+        if (!pinned) {
+            val centre = centreOf(fixes(placeId))
+            setCentre(placeId, centre?.latitude, centre?.longitude, centre?.accuracyMeters)
+        }
         return placeId
     }
+
+    /**
+     * Moves a place to the user's pin: its learned fixes are replaced by one fix at the pin, and it's
+     * marked pinned so later visits don't move it again. Its access points are kept, since they were
+     * seen at the real place; only the GPS position was wrong.
+     *
+     * @return `false` if there is no such place.
+     */
+    @Transaction
+    suspend fun movePlace(id: Long, latitude: Double, longitude: Double, accuracy: Float, at: Long): Boolean {
+        if (!exists(id)) return false
+        deleteFixes(id)
+        insertFix(
+            PlaceFixEntity(
+                placeId = id,
+                latitude = latitude,
+                longitude = longitude,
+                accuracyMeters = accuracy,
+                recordedAt = at,
+            ),
+        )
+        setCentre(id, latitude, longitude, accuracy)
+        markPinned(id)
+        return true
+    }
+
+    /** Adds a place the user placed on the map, with the one fix at the pin and counted as used once. */
+    @Transaction
+    suspend fun addPinnedPlace(cardId: String, latitude: Double, longitude: Double, accuracy: Float, at: Long): Long {
+        val id = insertPlace(
+            PlaceEntity(
+                cardId = cardId,
+                latitude = latitude,
+                longitude = longitude,
+                accuracyMeters = accuracy,
+                createdAt = at,
+                lastUsedAt = at,
+                pinned = true,
+            ),
+        )
+        insertFix(
+            PlaceFixEntity(
+                placeId = id,
+                latitude = latitude,
+                longitude = longitude,
+                accuracyMeters = accuracy,
+                recordedAt = at,
+            ),
+        )
+        return id
+    }
+
+    @Query("SELECT EXISTS(SELECT 1 FROM places WHERE id = :id)")
+    suspend fun exists(id: Long): Boolean
+
+    @Query("SELECT pinned FROM places WHERE id = :id")
+    suspend fun isPinned(id: Long): Boolean
+
+    @Query("UPDATE places SET pinned = 1 WHERE id = :id")
+    suspend fun markPinned(id: Long)
+
+    @Query("DELETE FROM place_fixes WHERE place_id = :placeId")
+    suspend fun deleteFixes(placeId: Long)
 
     @Insert
     suspend fun insertPlace(place: PlaceEntity): Long

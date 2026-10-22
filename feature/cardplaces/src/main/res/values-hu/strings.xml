@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Helyek · %1$s</string>
+    <string name="places_more_options">További lehetőségek</string>
+    <string name="places_forget_all">Összes hely elfelejtése</string>
+    <string name="places_forget_all_title">Elfelejtsük az összes helyet?</string>
+    <string name="places_forget_all_message">A Cardholder elfelejti ennek a kártyának az összes helyét. A kártya használatakor újra megtanulhatja őket.</string>
+    <string name="places_delete_title">Törli ezt a helyet?</string>
+    <string name="places_delete_message">A Cardholder újra megtanulhatja, ha itt használja a kártyát.</string>
+    <string name="places_delete">Törlés</string>
+    <string name="places_forget">Elfelejtés</string>
+    <string name="places_move">Áthelyezés</string>
+    <string name="places_set_on_map">Beállítás a térképen</string>
+    <string name="places_add">Hely hozzáadása</string>
+    <string name="places_save">Mentés</string>
+    <string name="places_move_hint">Koppintson a térkép megfelelő pontjára.</string>
+    <string name="places_add_hint">Koppintson a térképen arra a pontra, ahol a hely van.</string>
+    <string name="places_suggestions_off_hint">A hely használatához kapcsolja be a javaslatokat ennél a kártyánál.</string>
+    <string name="places_set_by_you">Ön állította be</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">%d GPS-leolvasásból tanult</item>
+        <item quantity="other">%d GPS-leolvasásból tanult</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">%1$d alkalommal használva, utoljára %2$s</item>
+        <item quantity="other">%1$d alkalommal használva, utoljára %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Csak Wi‑Fi, nincs térképi pozíció</string>
+    <string name="places_empty">Még nincsenek helyek. A hely a kártya használatakor tanulódik meg, vagy a térképen is hozzáadhat egyet.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Térkép %d hellyel</item>
+        <item quantity="other">Térkép %d hellyel</item>
+    </plurals>
+    <string name="places_map_offline">A térkép offline nem tölthető be. A helyei alább továbbra is láthatók.</string>
+    <string name="places_map_privacy">Térkép © OpenStreetMap. A térképképeket az OpenStreetMapről töltjük le; a szerverek csak a megtekintett területet látják, a helyzetét soha.</string>
+    <string name="places_centre_on_me">Középre helyezés rám</string>
+    <string name="places_moved">Hely áthelyezve</string>
+    <string name="places_added">Hely hozzáadva</string>
+    <string name="places_deleted">Hely törölve</string>
+    <string name="places_forgotten">Minden hely elfelejtve</string>
+    <string name="places_not_saved">A helyet nem sikerült menteni.</string>
+</resources>

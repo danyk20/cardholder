@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Μέρη · %1$s</string>
+    <string name="places_more_options">Περισσότερες επιλογές</string>
+    <string name="places_forget_all">Διαγραφή όλων των μερών</string>
+    <string name="places_forget_all_title">Διαγραφή όλων των μερών;</string>
+    <string name="places_forget_all_message">Το Cardholder διαγράφει όλα τα μέρη αυτής της κάρτας. Μπορεί να τα μάθει ξανά όταν χρησιμοποιείτε την κάρτα.</string>
+    <string name="places_delete_title">Διαγραφή αυτού του μέρους;</string>
+    <string name="places_delete_message">Το Cardholder μπορεί να το μάθει ξανά όταν χρησιμοποιείτε εδώ την κάρτα.</string>
+    <string name="places_delete">Διαγραφή</string>
+    <string name="places_forget">Διαγραφή</string>
+    <string name="places_move">Μετακίνηση</string>
+    <string name="places_set_on_map">Ορισμός στον χάρτη</string>
+    <string name="places_add">Προσθήκη μέρους</string>
+    <string name="places_save">Αποθήκευση</string>
+    <string name="places_move_hint">Πατήστε τη σωστή θέση στον χάρτη.</string>
+    <string name="places_add_hint">Πατήστε στον χάρτη τη θέση όπου βρίσκεται το μέρος.</string>
+    <string name="places_suggestions_off_hint">Ενεργοποιήστε τις προτάσεις για αυτή την κάρτα για να χρησιμοποιήσετε αυτό το μέρος.</string>
+    <string name="places_set_by_you">Ορίστηκε από εσάς</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Μάθηση από %d ανάγνωση GPS</item>
+        <item quantity="other">Μάθηση από %d αναγνώσεις GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d μ</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Χρησιμοποιήθηκε %1$d φορά, τελευταία %2$s</item>
+        <item quantity="other">Χρησιμοποιήθηκε %1$d φορές, τελευταία %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Μόνο Wi‑Fi, χωρίς θέση στον χάρτη</string>
+    <string name="places_empty">Δεν υπάρχουν ακόμη μέρη. Ένα μέρος μαθαίνεται όταν χρησιμοποιείτε αυτήν την κάρτα, ή μπορείτε να προσθέσετε ένα στον χάρτη.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Χάρτης με %d μέρος</item>
+        <item quantity="other">Χάρτης με %d μέρη</item>
+    </plurals>
+    <string name="places_map_offline">Ο χάρτης δεν μπορεί να φορτωθεί χωρίς σύνδεση. Τα μέρη σας εξακολουθούν να εμφανίζονται παρακάτω.</string>
+    <string name="places_map_privacy">Χάρτης © OpenStreetMap. Οι εικόνες του χάρτη λαμβάνονται από το OpenStreetMap· οι διακομιστές βλέπουν μόνο την περιοχή που προβάλλετε, ποτέ τη θέση σας.</string>
+    <string name="places_centre_on_me">Κέντρο στη θέση μου</string>
+    <string name="places_moved">Το μέρος μετακινήθηκε</string>
+    <string name="places_added">Το μέρος προστέθηκε</string>
+    <string name="places_deleted">Το μέρος διαγράφηκε</string>
+    <string name="places_forgotten">Όλα τα μέρη διαγράφηκαν</string>
+    <string name="places_not_saved">Το μέρος δεν μπόρεσε να αποθηκευτεί.</string>
+</resources>

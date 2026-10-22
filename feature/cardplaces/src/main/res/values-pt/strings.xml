@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Locais · %1$s</string>
+    <string name="places_more_options">Mais opções</string>
+    <string name="places_forget_all">Esquecer todos os locais</string>
+    <string name="places_forget_all_title">Esquecer todos os locais?</string>
+    <string name="places_forget_all_message">O Cardholder esquece todos os locais deste cartão. Ele pode aprendê-los de novo quando você usar o cartão.</string>
+    <string name="places_delete_title">Excluir este local?</string>
+    <string name="places_delete_message">O Cardholder pode aprendê-lo de novo quando você usar o cartão aqui.</string>
+    <string name="places_delete">Excluir</string>
+    <string name="places_forget">Esquecer</string>
+    <string name="places_move">Mover</string>
+    <string name="places_set_on_map">Definir no mapa</string>
+    <string name="places_add">Adicionar local</string>
+    <string name="places_save">Salvar</string>
+    <string name="places_move_hint">Toque no local correto do mapa.</string>
+    <string name="places_add_hint">Toque no ponto do mapa onde fica o local.</string>
+    <string name="places_suggestions_off_hint">Ative as sugestões deste cartão para usar este local.</string>
+    <string name="places_set_by_you">Definido por você</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Aprendido de %d leitura de GPS</item>
+        <item quantity="many">Aprendido de %d leituras de GPS</item>
+        <item quantity="other">Aprendido de %d leituras de GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Usado %1$d vez, última %2$s</item>
+        <item quantity="many">Usado %1$d vezes, última %2$s</item>
+        <item quantity="other">Usado %1$d vezes, última %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Somente Wi‑Fi, sem posição no mapa</string>
+    <string name="places_empty">Nenhum local ainda. Um local é aprendido quando você usa este cartão, ou você pode adicionar um no mapa.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Mapa com %d local</item>
+        <item quantity="many">Mapa com %d locais</item>
+        <item quantity="other">Mapa com %d locais</item>
+    </plurals>
+    <string name="places_map_offline">O mapa não pode carregar offline. Seus locais continuam listados abaixo.</string>
+    <string name="places_map_privacy">Mapa © OpenStreetMap. As imagens do mapa são baixadas do OpenStreetMap; os servidores veem apenas a área que você visualiza, nunca sua posição.</string>
+    <string name="places_centre_on_me">Centralizar em mim</string>
+    <string name="places_moved">Local movido</string>
+    <string name="places_added">Local adicionado</string>
+    <string name="places_deleted">Local excluído</string>
+    <string name="places_forgotten">Todos os locais esquecidos</string>
+    <string name="places_not_saved">Não foi possível salvar o local.</string>
+</resources>

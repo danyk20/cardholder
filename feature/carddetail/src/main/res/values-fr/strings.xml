@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">Apprend où vous affichez son code et la suggère à nouveau à cet endroit</string>
     <string name="detail_places_learned_on_request">Appuyez sur « Mémoriser ce lieu » là où vous l\'utilisez pour qu\'elle y soit à nouveau suggérée</string>
     <string name="detail_remember_place">Mémoriser ce lieu</string>
-    <string name="detail_forget_places">Oublier les lieux</string>
-    <string name="detail_forget_places_title">Oublier les lieux de cette carte ?</string>
-    <string name="detail_forget_places_message">Les lieux où vous avez utilisé cette carte sont supprimés. Ils seront appris à nouveau la prochaine fois que vous l\'utiliserez.</string>
-    <string name="detail_forget">Oublier</string>
     <string name="detail_place_remembered">Lieu mémorisé</string>
     <string name="detail_place_not_found">Impossible de vous localiser. Réessayez avec le Wi‑Fi activé ou près d\'une fenêtre.</string>
     <string name="detail_place_no_permission">Autorisez la position précise pour que Cardholder mémorise les lieux</string>
     <string name="detail_place_location_off">Activez la localisation pour que Cardholder mémorise les lieux</string>
     <string name="field_valid_in">Valable dans</string>
+    <string name="detail_places_row">Lieux (%1$d)</string>
 </resources>

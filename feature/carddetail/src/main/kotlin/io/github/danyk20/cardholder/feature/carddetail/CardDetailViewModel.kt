@@ -99,10 +99,6 @@ class CardDetailViewModel @Inject constructor(
 
     fun onRememberResultShown() = updatePlaces { it.copy(rememberResult = null) }
 
-    fun onForgetPlaces() {
-        launchSafely(onError = { onUnexpectedError() }) { cardPlaces.forget(cardId) }
-    }
-
     private fun updatePlaces(transform: (PlacesUiState) -> PlacesUiState) =
         _uiState.update { state -> state.copy(places = state.places?.let(transform)) }
 

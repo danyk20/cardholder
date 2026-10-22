@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">الأماكن · %1$s</string>
+    <string name="places_more_options">خيارات أخرى</string>
+    <string name="places_forget_all">نسيان كل الأماكن</string>
+    <string name="places_forget_all_title">نسيان كل الأماكن؟</string>
+    <string name="places_forget_all_message">يُنسي Cardholder كل مكان لهذه البطاقة. وقد يتعلّمها من جديد عند استخدامك البطاقة.</string>
+    <string name="places_delete_title">حذف هذا المكان؟</string>
+    <string name="places_delete_message">قد يتعلّم Cardholder هذا المكان من جديد عند استخدامك البطاقة هنا.</string>
+    <string name="places_delete">حذف</string>
+    <string name="places_forget">نسيان</string>
+    <string name="places_move">نقل</string>
+    <string name="places_set_on_map">تحديد على الخريطة</string>
+    <string name="places_add">إضافة مكان</string>
+    <string name="places_save">حفظ</string>
+    <string name="places_move_hint">اضغط على الموضع الصحيح على الخريطة.</string>
+    <string name="places_add_hint">اضغط على الموضع على الخريطة حيث يقع المكان.</string>
+    <string name="places_suggestions_off_hint">فعّل الاقتراحات لهذه البطاقة لاستخدام هذا المكان.</string>
+    <string name="places_set_by_you">حدّدته بنفسك</string>
+    <plurals name="places_learned_from">
+        <item quantity="zero">تعلّم من %d قراءة GPS</item>
+        <item quantity="one">تعلّم من %d قراءة GPS</item>
+        <item quantity="two">تعلّم من %d قراءتين GPS</item>
+        <item quantity="few">تعلّم من %d قراءات GPS</item>
+        <item quantity="many">تعلّم من %d قراءة GPS</item>
+        <item quantity="other">تعلّم من %d قراءة GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d م</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="zero">استُخدم %1$d مرة، آخر مرة %2$s</item>
+        <item quantity="one">استُخدم %1$d مرة، آخر مرة %2$s</item>
+        <item quantity="two">استُخدم %1$d مرتين، آخر مرة %2$s</item>
+        <item quantity="few">استُخدم %1$d مرات، آخر مرة %2$s</item>
+        <item quantity="many">استُخدم %1$d مرة، آخر مرة %2$s</item>
+        <item quantity="other">استُخدم %1$d مرة، آخر مرة %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Wi‑Fi فقط، بدون موضع على الخريطة</string>
+    <string name="places_empty">لا توجد أماكن بعد. يُتعلَّم المكان عند استخدامك هذه البطاقة، أو يمكنك إضافة مكان على الخريطة.</string>
+    <plurals name="places_map_description">
+        <item quantity="zero">خريطة تحتوي على %d مكان</item>
+        <item quantity="one">خريطة تحتوي على %d مكان</item>
+        <item quantity="two">خريطة تحتوي على %d مكانين</item>
+        <item quantity="few">خريطة تحتوي على %d أماكن</item>
+        <item quantity="many">خريطة تحتوي على %d مكانًا</item>
+        <item quantity="other">خريطة تحتوي على %d مكان</item>
+    </plurals>
+    <string name="places_map_offline">لا يمكن تحميل الخريطة دون اتصال. أماكنك ما زالت معروضة أدناه.</string>
+    <string name="places_map_privacy">الخريطة © OpenStreetMap. تُنزَّل صور الخريطة من OpenStreetMap، ولا يرون إلا المنطقة التي تعرضها، ولا يرون موضعك أبدًا.</string>
+    <string name="places_centre_on_me">توسيط الخريطة على موقعي</string>
+    <string name="places_moved">تم نقل المكان</string>
+    <string name="places_added">تمت إضافة المكان</string>
+    <string name="places_deleted">تم حذف المكان</string>
+    <string name="places_forgotten">تم نسيان كل الأماكن</string>
+    <string name="places_not_saved">تعذّر حفظ المكان.</string>
+</resources>

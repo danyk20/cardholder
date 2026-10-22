@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "io.github.danyk20.cardholder"
-        versionCode = 10
-        versionName = "1.5.0"
+        versionCode = 11
+        versionName = "1.6.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -83,6 +83,7 @@ dependencies {
     implementation(projects.feature.carddetail)
     implementation(projects.feature.cardeditor)
     implementation(projects.feature.cardlist)
+    implementation(projects.feature.cardplaces)
     implementation(projects.feature.settings)
 
     implementation(libs.androidx.activity.compose)

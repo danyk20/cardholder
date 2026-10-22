@@ -122,6 +122,103 @@ class OfflinePlaceRepositoryTest {
         assertTrue(repository.suggestionPlaces().isEmpty())
     }
 
+    @Test
+    fun `moving a place pins it at the point and keeps its Wi-Fi`() = runTest {
+        repository.recordVisit(Kaufland, Surroundings(listOf(ap(1)), fix(Shop)))
+        val place = repository.suggestionPlaces().single()
+        val target = Shop.north(80.0)
+
+        assertTrue(repository.movePlace(place.id, target))
+
+        val moved = repository.suggestionPlaces().single()
+        assertTrue(moved.isPinned)
+        assertEquals(25f, moved.accuracyMeters)
+        assertEquals(1, moved.fixCount)
+        assertEquals(0.0, GeoMath.distanceMeters(target, assertNotNull(moved.centre)), 0.01)
+        assertEquals(listOf(Bssid(1)), moved.accessPoints.map { it.bssid })
+        assertEquals(place.useCount, moved.useCount)
+    }
+
+    @Test
+    fun `later visits to a pinned place count and add Wi-Fi but never move it`() = runTest {
+        repository.recordVisit(Kaufland, Surroundings(listOf(ap(1)), fix(Shop)))
+        val id = repository.suggestionPlaces().single().id
+        val pin = Shop.north(80.0)
+        repository.movePlace(id, pin)
+
+        // The Wi-Fi of the place is seen, the GPS is 60 m off: the same place, its position stays.
+        now = now.plusSeconds(86_400)
+        repository.recordVisit(Kaufland, Surroundings(listOf(ap(1), ap(2)), fix(Shop.north(60.0))))
+        // No Wi-Fi in common, but 120 m from the pin: it joins the pinned place.
+        now = now.plusSeconds(86_400)
+        repository.recordVisit(Kaufland, Surroundings(listOf(ap(3)), fix(pin.north(120.0))))
+        // No Wi-Fi in common and 400 m from the pin: that's another place.
+        now = now.plusSeconds(86_400)
+        repository.recordVisit(Kaufland, Surroundings(listOf(ap(4)), fix(pin.north(400.0))))
+
+        val places = repository.suggestionPlaces().associateBy { it.id }
+        assertEquals(2, places.size)
+        val pinned = assertNotNull(places[id])
+        assertEquals(3, pinned.useCount)
+        assertTrue(pinned.isPinned)
+        assertEquals(0.0, GeoMath.distanceMeters(pin, assertNotNull(pinned.centre)), 0.01)
+        assertEquals(setOf(Bssid(1), Bssid(2), Bssid(3)), pinned.accessPoints.map { it.bssid }.toSet())
+        val other = assertNotNull(places.values.singleOrNull { it.id != id })
+        assertEquals(1, other.useCount)
+        assertFalse(other.isPinned)
+        assertEquals(1, other.fixCount)
+    }
+
+    @Test
+    fun `a place added on the map is pinned and counted for its card`() = runTest {
+        val id = repository.addPlace(Kaufland, Shop)
+
+        val added = repository.observePlaces(Kaufland).first().single()
+        assertEquals(id, added.id)
+        assertEquals(Kaufland, added.cardId)
+        assertTrue(added.isPinned)
+        assertEquals(1, added.useCount)
+        assertEquals(now, added.createdAt)
+        assertEquals(now, added.lastUsedAt)
+        assertEquals(25f, added.accuracyMeters)
+        assertEquals(1, added.fixCount)
+        assertEquals(0.0, GeoMath.distanceMeters(Shop, assertNotNull(added.centre)), 0.01)
+        assertEquals(0, repository.observeCount(Lidl).first())
+    }
+
+    @Test
+    fun `a visit near an added place joins it without moving it`() = runTest {
+        val id = repository.addPlace(Kaufland, Shop)
+        now = now.plusSeconds(86_400)
+
+        repository.recordVisit(Kaufland, Surroundings(emptyList(), fix(Shop.north(100.0))))
+
+        val place = repository.observePlaces(Kaufland).first().single()
+        assertEquals(id, place.id)
+        assertEquals(2, place.useCount)
+        assertEquals(0.0, GeoMath.distanceMeters(Shop, assertNotNull(place.centre)), 0.01)
+    }
+
+    @Test
+    fun `observed places are the card's own, the most used first`() = runTest {
+        repository.recordVisit(Kaufland, Surroundings(emptyList(), fix(Shop)))
+        repository.recordVisit(Kaufland, Surroundings(emptyList(), fix(Shop.north(3_000.0))))
+        now = now.plusSeconds(86_400)
+        repository.recordVisit(Kaufland, Surroundings(emptyList(), fix(Shop.north(3_000.0))))
+        repository.recordVisit(Lidl, Surroundings(emptyList(), fix(Shop)))
+
+        val observed = repository.observePlaces(Kaufland).first()
+
+        assertEquals(listOf(2, 1), observed.map { it.useCount })
+        assertTrue(observed.all { it.cardId == Kaufland })
+    }
+
+    @Test
+    fun `moving a place that was forgotten reports it and changes nothing`() = runTest {
+        assertFalse(repository.movePlace(999L, Shop))
+        assertEquals(0, repository.observeTotal().first())
+    }
+
     private fun fix(point: GeoPoint) = LocationFix(point, 10f, now)
 
     private fun ap(bssid: Long) = AccessPoint(Bssid(bssid), "net-$bssid", -60)

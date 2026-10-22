@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Vendet · %1$s</string>
+    <string name="places_more_options">Më shumë opsione</string>
+    <string name="places_forget_all">Harro të gjitha vendet</string>
+    <string name="places_forget_all_title">Të harrohen të gjitha vendet?</string>
+    <string name="places_forget_all_message">Cardholder harron çdo vend të kësaj karte. Mund t’i mësojë përsëri kur e përdorni kartën.</string>
+    <string name="places_delete_title">Të fshihet ky vend?</string>
+    <string name="places_delete_message">Cardholder mund ta mësojë përsëri kur e përdorni kartën këtu.</string>
+    <string name="places_delete">Fshi</string>
+    <string name="places_forget">Harro</string>
+    <string name="places_move">Zhvendos</string>
+    <string name="places_set_on_map">Vendose në hartë</string>
+    <string name="places_add">Shto vend</string>
+    <string name="places_save">Ruaj</string>
+    <string name="places_move_hint">Prek vendin e saktë në hartë.</string>
+    <string name="places_add_hint">Prek në hartë vendin ku ndodhet ky vend.</string>
+    <string name="places_suggestions_off_hint">Aktivizo sugjerimet për këtë kartë për ta përdorur këtë vend.</string>
+    <string name="places_set_by_you">Vendosur nga ti</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Mësuar nga %d lexim GPS</item>
+        <item quantity="other">Mësuar nga %d lexime GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">E përdorur %1$d herë, e fundit %2$s</item>
+        <item quantity="other">E përdorur %1$d herë, e fundit %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Vetëm Wi‑Fi, pa pozicion në hartë</string>
+    <string name="places_empty">Ende nuk ka vende. Një vend mësohet kur e përdor këtë kartë, ose mund të shtosh një në hartë.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Hartë me %d vend</item>
+        <item quantity="other">Hartë me %d vende</item>
+    </plurals>
+    <string name="places_map_offline">Harta nuk mund të ngarkohet offline. Vendet e tua mbeten të listuara më poshtë.</string>
+    <string name="places_map_privacy">Harta © OpenStreetMap. Imazhet e hartës shkarkohen nga OpenStreetMap; serverët shohin vetëm zonën që shikon, kurrë pozicionin tënd.</string>
+    <string name="places_centre_on_me">Qendëro tek unë</string>
+    <string name="places_moved">Vendi u zhvendos</string>
+    <string name="places_added">Vendi u shtua</string>
+    <string name="places_deleted">Vendi u fshi</string>
+    <string name="places_forgotten">Të gjitha vendet u harruan</string>
+    <string name="places_not_saved">Vendi nuk mund të ruhej.</string>
+</resources>

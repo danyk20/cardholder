@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.core.domain.location
 
+import kotlin.math.abs
 import kotlin.math.asin
 import kotlin.math.cos
 import kotlin.math.max
@@ -19,6 +20,19 @@ object GeoMath {
     private const val MIN_FIXES_FOR_OUTLIERS = 3
     private const val OUTLIER_METERS = 150.0
     private const val OUTLIER_ACCURACIES = 3
+
+    /** Latitudes beyond this are cut off by Web Mercator maps, so no place can be there. */
+    const val MAX_LATITUDE = 85.0
+
+    /**
+     * [point] with its longitude brought into -180..180 degrees, or `null` if it isn't a place on
+     * the map: a non-finite coordinate, or a latitude beyond [MAX_LATITUDE].
+     */
+    fun normalised(point: GeoPoint): GeoPoint? {
+        if (!point.latitude.isFinite() || !point.longitude.isFinite()) return null
+        if (abs(point.latitude) > MAX_LATITUDE) return null
+        return GeoPoint(point.latitude, wrap(point.longitude))
+    }
 
     /** Great-circle distance between [a] and [b] in metres. */
     fun distanceMeters(a: GeoPoint, b: GeoPoint): Double {

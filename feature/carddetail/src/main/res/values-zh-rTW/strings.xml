@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">會記住你在哪裡出示卡片代碼，並在相同地點再次推薦該卡片</string>
     <string name="detail_places_learned_on_request">在使用卡片的地點輕觸「記住這個地點」，之後就會在該地點再次推薦</string>
     <string name="detail_remember_place">記住這個地點</string>
-    <string name="detail_forget_places">忘記地點</string>
-    <string name="detail_forget_places_title">要忘記這張卡片的地點嗎？</string>
-    <string name="detail_forget_places_message">你使用這張卡片的地點將會刪除。下次使用時會重新記錄。</string>
-    <string name="detail_forget">忘記</string>
     <string name="detail_place_remembered">已記住地點</string>
     <string name="detail_place_not_found">無法判斷你的位置。請在開啟 Wi‑Fi 或靠近窗戶時再試一次。</string>
     <string name="detail_place_no_permission">請允許 Cardholder 取得精確位置，才能記住地點</string>
     <string name="detail_place_location_off">請開啟位置資訊，才能記住地點</string>
     <string name="field_valid_in">適用國家/地區</string>
+    <string name="detail_places_row">地點 (%1$d)</string>
 </resources>

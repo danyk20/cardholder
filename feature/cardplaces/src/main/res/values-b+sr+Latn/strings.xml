@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Mesta · %1$s</string>
+    <string name="places_more_options">Više opcija</string>
+    <string name="places_forget_all">Zaboravi sva mesta</string>
+    <string name="places_forget_all_title">Zaboraviti sva mesta?</string>
+    <string name="places_forget_all_message">Cardholder zaboravlja sva mesta ove kartice. Ponovo će ih naučiti kada koristite karticu.</string>
+    <string name="places_delete_title">Obrisati ovo mesto?</string>
+    <string name="places_delete_message">Cardholder ga može ponovo naučiti kada ovde koristite karticu.</string>
+    <string name="places_delete">Obriši</string>
+    <string name="places_forget">Zaboravi</string>
+    <string name="places_move">Pomeri</string>
+    <string name="places_set_on_map">Postavi na mapi</string>
+    <string name="places_add">Dodaj mesto</string>
+    <string name="places_save">Sačuvaj</string>
+    <string name="places_move_hint">Dodirnite pravo mesto na mapi.</string>
+    <string name="places_add_hint">Dodirnite mesto na mapi gde se nalazi mesto.</string>
+    <string name="places_suggestions_off_hint">Uključite predloge za ovu karticu da biste koristili ovo mesto.</string>
+    <string name="places_set_by_you">Postavili ste vi</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Naučeno iz %d GPS očitavanja</item>
+        <item quantity="few">Naučeno iz %d GPS očitavanja</item>
+        <item quantity="other">Naučeno iz %d GPS očitavanja</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Korišćeno %1$d put, poslednji put %2$s</item>
+        <item quantity="few">Korišćeno %1$d puta, poslednji put %2$s</item>
+        <item quantity="other">Korišćeno %1$d puta, poslednji put %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Samo Wi‑Fi, bez položaja na mapi</string>
+    <string name="places_empty">Još nema mesta. Mesto se nauči kada koristite ovu karticu, ili ga možete dodati na mapi.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Mapa sa %d mestom</item>
+        <item quantity="few">Mapa sa %d mesta</item>
+        <item quantity="other">Mapa sa %d mesta</item>
+    </plurals>
+    <string name="places_map_offline">Mapa ne može da se učita van mreže. Vaša mesta su i dalje navedena ispod.</string>
+    <string name="places_map_privacy">Mapa © OpenStreetMap. Slike mape se preuzimaju sa OpenStreetMap-a; oni vide samo područje koje gledate, nikada vaš položaj.</string>
+    <string name="places_centre_on_me">Centriraj na mene</string>
+    <string name="places_moved">Mesto je pomereno</string>
+    <string name="places_added">Mesto je dodato</string>
+    <string name="places_deleted">Mesto je obrisano</string>
+    <string name="places_forgotten">Sva mesta su zaboravljena</string>
+    <string name="places_not_saved">Mesto nije moglo da se sačuva.</string>
+</resources>

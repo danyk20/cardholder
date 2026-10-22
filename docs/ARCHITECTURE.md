@@ -9,7 +9,7 @@ use cases and repository contracts, and a data layer that owns persistence and c
 ```mermaid
 graph TD
     app --> feature
-    feature["feature:* (cardlist, cardeditor, carddetail, barcodefullscreen, settings)"] --> ui[core:ui]
+    feature["feature:* (cardlist, cardeditor, carddetail, cardplaces, barcodefullscreen, settings)"] --> ui[core:ui]
     feature --> domain[core:domain]
     ui --> designsystem[core:designsystem]
     ui --> domain
@@ -26,6 +26,7 @@ graph TD
     security --> domain
     feature -.-> scanning[core:scanning]
     feature -.-> barcode[core:barcode]
+    feature -.-> map[core:map]
 ```
 
 Rules:

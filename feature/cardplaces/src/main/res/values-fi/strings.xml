@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Paikat · %1$s</string>
+    <string name="places_more_options">Lisää vaihtoehtoja</string>
+    <string name="places_forget_all">Unohda kaikki paikat</string>
+    <string name="places_forget_all_title">Unohdetaanko kaikki paikat?</string>
+    <string name="places_forget_all_message">Cardholder unohtaa tämän kortin kaikki paikat. Se voi oppia ne uudelleen, kun käytät korttia.</string>
+    <string name="places_delete_title">Poistetaanko tämä paikka?</string>
+    <string name="places_delete_message">Cardholder voi oppia tämän paikan uudelleen, kun käytät korttia täällä.</string>
+    <string name="places_delete">Poista</string>
+    <string name="places_forget">Unohda</string>
+    <string name="places_move">Siirrä</string>
+    <string name="places_set_on_map">Aseta kartalle</string>
+    <string name="places_add">Lisää paikka</string>
+    <string name="places_save">Tallenna</string>
+    <string name="places_move_hint">Napauta karttaa oikeasta kohdasta.</string>
+    <string name="places_add_hint">Napauta karttaa siinä kohdassa, jossa paikka on.</string>
+    <string name="places_suggestions_off_hint">Käytä tätä paikkaa kytkemällä tämän kortin ehdotukset päälle.</string>
+    <string name="places_set_by_you">Sinun asettamasi</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Opittu %d GPS-mittauksesta</item>
+        <item quantity="other">Opittu %d GPS-mittauksesta</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Käytetty %1$d kerran, viimeksi %2$s</item>
+        <item quantity="other">Käytetty %1$d kertaa, viimeksi %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Vain Wi‑Fi, ei sijaintia kartalla</string>
+    <string name="places_empty">Ei vielä paikkoja. Paikka opitaan, kun käytät tätä korttia, tai voit lisätä sen kartalle.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Kartta, jolla %d paikka</item>
+        <item quantity="other">Kartta, jolla %d paikkaa</item>
+    </plurals>
+    <string name="places_map_offline">Karttaa ei voi ladata offline-tilassa. Paikkasi näkyvät yhä alla.</string>
+    <string name="places_map_privacy">Kartta © OpenStreetMap. Karttakuvat ladataan OpenStreetMapista; palvelimet näkevät vain katseltavan alueen, eivät koskaan sijaintiasi.</string>
+    <string name="places_centre_on_me">Keskitä minuun</string>
+    <string name="places_moved">Paikka siirretty</string>
+    <string name="places_added">Paikka lisätty</string>
+    <string name="places_deleted">Paikka poistettu</string>
+    <string name="places_forgotten">Kaikki paikat unohdettu</string>
+    <string name="places_not_saved">Paikkaa ei voitu tallentaa.</string>
+</resources>

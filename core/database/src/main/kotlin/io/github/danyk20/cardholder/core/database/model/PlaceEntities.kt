@@ -31,6 +31,8 @@ data class PlaceEntity(
     @ColumnInfo(name = "last_used_at") val lastUsedAt: Long,
     @ColumnInfo(name = "use_count") val useCount: Int = 1,
     @ColumnInfo(name = "last_notified_at") val lastNotifiedAt: Long? = null,
+    /** Set by the user on the map: later visits count and add Wi‑Fi, but never move the place. */
+    @ColumnInfo(name = "pinned", defaultValue = "0") val pinned: Boolean = false,
 )
 
 /** One location fix taken while a card was used at a place; a place keeps only its latest ones. */
@@ -90,6 +92,8 @@ data class TravellingAccessPointEntity(
 data class PlaceWithAccessPoints(
     @Embedded val place: PlaceEntity,
     @Relation(parentColumn = "id", entityColumn = "place_id") val accessPoints: List<PlaceAccessPointEntity>,
+    /** The fixes the centre is computed from, at most [PlaceDao] keeps ten of them. */
+    @Relation(parentColumn = "id", entityColumn = "place_id") val fixes: List<PlaceFixEntity> = emptyList(),
 )
 
 /** The accuracy-weighted centre of a place's fixes. */

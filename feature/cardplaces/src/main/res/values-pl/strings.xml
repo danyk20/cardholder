@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Miejsca · %1$s</string>
+    <string name="places_more_options">Więcej opcji</string>
+    <string name="places_forget_all">Zapomnij wszystkie miejsca</string>
+    <string name="places_forget_all_title">Zapomnieć wszystkie miejsca?</string>
+    <string name="places_forget_all_message">Cardholder zapomina wszystkie miejsca tej karty. Może je zapamiętać ponownie, gdy użyjesz karty.</string>
+    <string name="places_delete_title">Usunąć to miejsce?</string>
+    <string name="places_delete_message">Cardholder może zapamiętać je ponownie, gdy użyjesz tu karty.</string>
+    <string name="places_delete">Usuń</string>
+    <string name="places_forget">Zapomnij</string>
+    <string name="places_move">Przenieś</string>
+    <string name="places_set_on_map">Ustaw na mapie</string>
+    <string name="places_add">Dodaj miejsce</string>
+    <string name="places_save">Zapisz</string>
+    <string name="places_move_hint">Dotknij właściwego miejsca na mapie.</string>
+    <string name="places_add_hint">Dotknij na mapie miejsca, w którym znajduje się to miejsce.</string>
+    <string name="places_suggestions_off_hint">Włącz sugestie dla tej karty, aby używać tego miejsca.</string>
+    <string name="places_set_by_you">Ustawione przez Ciebie</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Zapamiętano z %d odczytu GPS</item>
+        <item quantity="few">Zapamiętano z %d odczytów GPS</item>
+        <item quantity="many">Zapamiętano z %d odczytów GPS</item>
+        <item quantity="other">Zapamiętano z %d odczytów GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Użyto %1$d raz, ostatnio %2$s</item>
+        <item quantity="few">Użyto %1$d razy, ostatnio %2$s</item>
+        <item quantity="many">Użyto %1$d razy, ostatnio %2$s</item>
+        <item quantity="other">Użyto %1$d razy, ostatnio %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Tylko Wi‑Fi, bez pozycji na mapie</string>
+    <string name="places_empty">Brak miejsc. Miejsce zostanie zapamiętane, gdy użyjesz tej karty, albo możesz dodać je na mapie.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Mapa z %d miejscem</item>
+        <item quantity="few">Mapa z %d miejscami</item>
+        <item quantity="many">Mapa z %d miejscami</item>
+        <item quantity="other">Mapa z %d miejscami</item>
+    </plurals>
+    <string name="places_map_offline">Mapy nie można wczytać bez połączenia. Twoje miejsca nadal są wymienione poniżej.</string>
+    <string name="places_map_privacy">Mapa © OpenStreetMap. Obrazy mapy są pobierane z OpenStreetMap; serwery widzą tylko obszar, który przeglądasz, nigdy Twoją pozycję.</string>
+    <string name="places_centre_on_me">Wyśrodkuj na mnie</string>
+    <string name="places_moved">Miejsce przeniesiono</string>
+    <string name="places_added">Dodano miejsce</string>
+    <string name="places_deleted">Usunięto miejsce</string>
+    <string name="places_forgotten">Zapomniano wszystkie miejsca</string>
+    <string name="places_not_saved">Nie udało się zapisać miejsca.</string>
+</resources>

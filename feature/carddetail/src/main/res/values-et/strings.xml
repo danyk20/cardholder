@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">Õpib, kus koodi kuvate, ja pakub kaarti seal uuesti</string>
     <string name="detail_places_learned_on_request">Puudutage kohas, kus seda kasutate, nuppu „Mäleta seda kohta“, et kaarti pakutaks seal uuesti</string>
     <string name="detail_remember_place">Mäleta seda kohta</string>
-    <string name="detail_forget_places">Unusta kohad</string>
-    <string name="detail_forget_places_title">Kas unustada selle kaardi kohad?</string>
-    <string name="detail_forget_places_message">Kohad, kus seda kaarti kasutasite, kustutatakse. Need õpitakse uuesti järgmisel kasutamisel.</string>
-    <string name="detail_forget">Unusta</string>
     <string name="detail_place_remembered">Koht on meeles</string>
     <string name="detail_place_not_found">Ei leidnud, kus olete. Proovige uuesti, kui Wi‑Fi on sisse lülitatud või olete akna lähedal.</string>
     <string name="detail_place_no_permission">Lubage Cardholderile täpne asukoht, et kohti meelde jätta</string>
     <string name="detail_place_location_off">Kohtade meeldejätmiseks lülitage sisse asukoha teenus</string>
     <string name="field_valid_in">Kehtib riigis</string>
+    <string name="detail_places_row">Kohad (%1$d)</string>
 </resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">場所 · %1$s</string>
+    <string name="places_more_options">その他のオプション</string>
+    <string name="places_forget_all">すべての場所を忘れる</string>
+    <string name="places_forget_all_title">すべての場所を忘れますか？</string>
+    <string name="places_forget_all_message">Cardholder はこのカードのすべての場所を忘れます。カードを使うと、再び学習されることがあります。</string>
+    <string name="places_delete_title">この場所を削除しますか？</string>
+    <string name="places_delete_message">ここでカードを使うと、Cardholder がこの場所を再び学習することがあります。</string>
+    <string name="places_delete">削除</string>
+    <string name="places_forget">忘れる</string>
+    <string name="places_move">移動</string>
+    <string name="places_set_on_map">地図で設定</string>
+    <string name="places_add">場所を追加</string>
+    <string name="places_save">保存</string>
+    <string name="places_move_hint">地図上の正しい位置をタップしてください。</string>
+    <string name="places_add_hint">地図上で場所の位置をタップしてください。</string>
+    <string name="places_suggestions_off_hint">この場所を使うには、このカードの提案をオンにしてください。</string>
+    <string name="places_set_by_you">あなたが設定</string>
+    <plurals name="places_learned_from">
+        <item quantity="other">%d 件の GPS 読み取りから学習</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="other">%1$d 回使用、最終使用 %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Wi‑Fi のみ、地図上の位置なし</string>
+    <string name="places_empty">まだ場所はありません。このカードを使うと場所が学習されます。地図で追加することもできます。</string>
+    <plurals name="places_map_description">
+        <item quantity="other">%d 件の場所がある地図</item>
+    </plurals>
+    <string name="places_map_offline">地図はオフラインでは読み込めません。場所は下に引き続き表示されます。</string>
+    <string name="places_map_privacy">地図 © OpenStreetMap。地図の画像は OpenStreetMap からダウンロードされます。サーバーが見るのは表示中の範囲のみで、あなたの位置は見えません。</string>
+    <string name="places_centre_on_me">現在地を中心に表示</string>
+    <string name="places_moved">場所を移動しました</string>
+    <string name="places_added">場所を追加しました</string>
+    <string name="places_deleted">場所を削除しました</string>
+    <string name="places_forgotten">すべての場所を忘れました</string>
+    <string name="places_not_saved">場所を保存できませんでした。</string>
+</resources>

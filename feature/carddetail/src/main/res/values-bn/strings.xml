@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">যেখানে আপনি এর কোড দেখান সেখানে এটি শেখে এবং সেখানে আবার প্রস্তাব করে</string>
     <string name="detail_places_learned_on_request">যেখানে ব্যবহার করেন সেখানে “এই জায়গা মনে রাখুন” ট্যাপ করুন, যাতে সেখানে আবার প্রস্তাব করা হয়</string>
     <string name="detail_remember_place">এই জায়গা মনে রাখুন</string>
-    <string name="detail_forget_places">জায়গাগুলো ভুলে যান</string>
-    <string name="detail_forget_places_title">এই কার্ডের জায়গাগুলো ভুলে যাবেন?</string>
-    <string name="detail_forget_places_message">যে জায়গাগুলোয় আপনি এই কার্ড ব্যবহার করেছেন সেগুলো মুছে যাবে। পরের বার ব্যবহার করলে আবার শেখা হবে।</string>
-    <string name="detail_forget">ভুলে যান</string>
     <string name="detail_place_remembered">জায়গা মনে রাখা হয়েছে</string>
     <string name="detail_place_not_found">আপনার অবস্থান খুঁজে পাওয়া যায়নি। ওয়াই-ফাই চালু রেখে বা জানালার কাছে গিয়ে আবার চেষ্টা করুন।</string>
     <string name="detail_place_no_permission">জায়গা মনে রাখতে Cardholder-কে সুনির্দিষ্ট অবস্থানের অনুমতি দিন</string>
     <string name="detail_place_location_off">জায়গা মনে রাখতে অবস্থান চালু করুন</string>
     <string name="field_valid_in">যেখানে বৈধ</string>
+    <string name="detail_places_row">জায়গা (%1$d)</string>
 </resources>

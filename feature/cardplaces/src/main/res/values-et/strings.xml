@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Kohad · %1$s</string>
+    <string name="places_more_options">Rohkem valikuid</string>
+    <string name="places_forget_all">Unusta kõik kohad</string>
+    <string name="places_forget_all_title">Kas unustada kõik kohad?</string>
+    <string name="places_forget_all_message">Cardholder unustab selle kaardi kõik kohad. Kaarti kasutades võib ta need uuesti õppida.</string>
+    <string name="places_delete_title">Kas kustutada see koht?</string>
+    <string name="places_delete_message">Cardholder võib selle koha uuesti õppida, kui kasutate siin kaarti.</string>
+    <string name="places_delete">Kustuta</string>
+    <string name="places_forget">Unusta</string>
+    <string name="places_move">Teisalda</string>
+    <string name="places_set_on_map">Määra kaardil</string>
+    <string name="places_add">Lisa koht</string>
+    <string name="places_save">Salvesta</string>
+    <string name="places_move_hint">Puudutage kaardil õiget kohta.</string>
+    <string name="places_add_hint">Puudutage kaardil kohta, kus koht asub.</string>
+    <string name="places_suggestions_off_hint">Selle koha kasutamiseks lülitage selle kaardi soovitused sisse.</string>
+    <string name="places_set_by_you">Määrasite teie</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Õpitud %d GPS-näidu põhjal</item>
+        <item quantity="other">Õpitud %d GPS-näidu põhjal</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Kasutatud %1$d korra, viimati %2$s</item>
+        <item quantity="other">Kasutatud %1$d korda, viimati %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Ainult Wi‑Fi, asukohta kaardil pole</string>
+    <string name="places_empty">Kohti pole veel. Koht õpitakse, kui kasutate seda kaarti, või saate kohta lisada kaardil.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Kaart, millel on %d koht</item>
+        <item quantity="other">Kaart, millel on %d kohta</item>
+    </plurals>
+    <string name="places_map_offline">Kaarti ei saa võrguühenduseta laadida. Teie kohad on endiselt allpool loetletud.</string>
+    <string name="places_map_privacy">Kaart © OpenStreetMap. Kaardipildid laaditakse OpenStreetMapist; serverid näevad ainult vaadatavat ala, mitte kunagi teie asukohta.</string>
+    <string name="places_centre_on_me">Keskenda minule</string>
+    <string name="places_moved">Koht teisaldatud</string>
+    <string name="places_added">Koht lisatud</string>
+    <string name="places_deleted">Koht kustutatud</string>
+    <string name="places_forgotten">Kõik kohad unustatud</string>
+    <string name="places_not_saved">Kohta ei õnnestunud salvestada.</string>
+</resources>

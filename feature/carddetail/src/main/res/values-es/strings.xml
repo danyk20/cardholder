@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">Aprende dónde muestras su código y la vuelve a sugerir allí</string>
     <string name="detail_places_learned_on_request">Toca «Recordar este lugar» donde la uses para que se vuelva a sugerir allí</string>
     <string name="detail_remember_place">Recordar este lugar</string>
-    <string name="detail_forget_places">Olvidar lugares</string>
-    <string name="detail_forget_places_title">¿Olvidar los lugares de esta tarjeta?</string>
-    <string name="detail_forget_places_message">Se eliminan los lugares donde usaste esta tarjeta. Se volverán a aprender la próxima vez que la uses.</string>
-    <string name="detail_forget">Olvidar</string>
     <string name="detail_place_remembered">Lugar recordado</string>
     <string name="detail_place_not_found">No se pudo encontrar dónde estás. Inténtalo de nuevo con el Wi‑Fi activado o cerca de una ventana.</string>
     <string name="detail_place_no_permission">Permite la ubicación precisa para que Cardholder recuerde lugares</string>
     <string name="detail_place_location_off">Activa la ubicación para recordar lugares</string>
     <string name="field_valid_in">Válida en</string>
+    <string name="detail_places_row">Lugares (%1$d)</string>
 </resources>

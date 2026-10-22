@@ -52,6 +52,8 @@ The app itself collects nothing, but the Google ML Kit libraries (barcode scanne
 
 Card suggestions read location and Wi‑Fi but keep the learned places on the device and never transmit them, so they aren't "collected" in the Data safety sense. The card filter's country is found on the device (the mobile network, or approximate location if already allowed, mapped offline) and is never transmitted, so it isn't collected either. Check this against the current Play Console Help article on data collection before submitting.
 
+The Places map downloads OpenStreetMap tiles only while a card's Places screen is open. The requests carry the area being viewed and the IP address, never the device's location, so location data still isn't collected.
+
 ### Location permissions declaration
 Declaring `ACCESS_BACKGROUND_LOCATION` (arrival notifications) needs the *Location permissions* declaration under *App content*:
 - Core feature: "Shows the loyalty card the user used before at a shop when they arrive there (opt-in, off by default)."

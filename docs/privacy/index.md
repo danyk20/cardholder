@@ -5,7 +5,7 @@ permalink: /privacy/
 
 # Cardholder privacy policy
 
-_Last updated: 18 October 2026 (update checks)_
+_Last updated: 22 October 2026 (map of places)_
 
 Cardholder is an open-source app for storing bank, ID and loyalty cards on an Android phone. It is developed by Daniel Košč ("I", "me"). This policy explains what happens to your data when you use the app.
 
@@ -13,7 +13,7 @@ Cardholder is an open-source app for storing bank, ID and loyalty cards on an An
 
 - Your cards stay on your device. I don't run any servers and never receive your cards, photos or backups.
 - There is no account, no advertising and no analytics or tracking by the app itself.
-- The app connects to the internet only to download an official logo from Wikimedia Commons and to check for updates, and only when you ask for it (or, for updates, once a week if you turn that on).
+- The app connects to the internet only to download an official logo from Wikimedia Commons, to show the map of your places from OpenStreetMap, and to check for updates. It does so only when you ask (or, for updates, once a week if you turn that on, and for the map only while you have its screen open).
 - If you turn on card suggestions, the app remembers on your device where you used your cards. This location data is never sent to me or anyone else.
 - Google's on-device ML Kit libraries, used for scanning, send anonymous diagnostic information to Google (see below).
 
@@ -37,7 +37,7 @@ When you uninstall the app or clear its data, all of it is permanently deleted.
 
 - **Camera** – to scan barcodes and QR codes on your cards. Images are analysed on the device and are neither stored nor sent anywhere.
 - **NFC** – to read the card number and expiry date from a contactless bank card you hold to the phone. The data is read on the device and only used to fill in the form. The CVV and PIN cannot be read and are never requested.
-- **Internet** – only for downloading official logos and checking for updates (see below).
+- **Internet** – only for downloading official logos, for the map of your places while its screen is open, and for checking for updates (see below).
 - **Install apps** (only the version from GitHub) – to install an update you downloaded from within the app. Android asks you to allow it the first time.
 - **Location (precise) and Wi‑Fi state** – only if you turn on card suggestions (see below).
 - **Location (approximate)** – only if you have already allowed it for Cardholder. It is used to find the country you are in, if the phone's mobile network can't tell (see below). The app never asks for it for this purpose.
@@ -55,6 +55,10 @@ Card suggestions are off unless you turn them on in Settings. When they are on:
 - **With arrival notifications**, the app gives Google Play services circles around your most used places. Play services watches them on your phone and tells the app when you stay at one, so it can show the right card. Google's handling of location in Play services is covered by the [Google privacy policy](https://policies.google.com/privacy).
 
 Learned places are stored only in the app's encrypted database. They are not included in backups or in cards you share, and they are never sent to me or anyone else. You can turn suggestions off for any card, forget a card's places in its details, or forget all places in Settings. Deleting a card deletes its places. You can withdraw the location permissions in Android's settings at any time.
+
+## Map of places
+
+On a card's Places screen the map is drawn with tiles from [OpenStreetMap](https://www.openstreetmap.org). The tiles are downloaded only while that screen is open, and only for the area you are looking at. Each download reveals your IP address and that area to the OpenStreetMap servers. The app sends no location, Wi‑Fi or card data with the request, and the map never receives your position. Tiles you have viewed are kept in the app's cache on the device, up to about 50 MB, and refreshed after seven days; Android may clear that cache at any time. Places you move or add stay on the device like all learned places.
 
 ## The country you are in
 
