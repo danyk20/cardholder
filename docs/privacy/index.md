@@ -24,7 +24,9 @@ Everything you enter into Cardholder is stored only on your device:
 - card details (for example card number, expiry date, card holder, CVV, issuing country, document number, loyalty card code, shop or bank);
 - optional photos of the front and back of your cards;
 - logos you download or upload;
-- app settings (theme, sort order, card suggestions);
+- app settings (theme, sort order, card suggestions, the country filter);
+- the countries each card is valid in, if you chose any;
+- the country the phone is in, as detected for the card list (see below), and any country you picked by hand;
 - if you turn on card suggestions: the places where you used your cards (see below).
 
 The database and all photos are encrypted with keys held in your phone's secure hardware (Android Keystore). The CVV and the details of locked cards can only be decrypted after you confirm your identity with fingerprint, face or screen lock. The app opts out of Android cloud backup, so this data is not copied to Google Drive.
@@ -38,6 +40,7 @@ When you uninstall the app or clear its data, all of it is permanently deleted.
 - **Internet** – only for downloading official logos and checking for updates (see below).
 - **Install apps** (only the version from GitHub) – to install an update you downloaded from within the app. Android asks you to allow it the first time.
 - **Location (precise) and Wi‑Fi state** – only if you turn on card suggestions (see below).
+- **Location (approximate)** – only if you have already allowed it for Cardholder. It is used to find the country you are in, if the phone's mobile network can't tell (see below). The app never asks for it for this purpose.
 - **Location in the background** – only if you turn on arrival notifications (see below). Android asks you to allow it in the system settings.
 - **Notifications** – for expiry reminders and, if you turn them on, arrival notifications.
 
@@ -52,6 +55,15 @@ Card suggestions are off unless you turn them on in Settings. When they are on:
 - **With arrival notifications**, the app gives Google Play services circles around your most used places. Play services watches them on your phone and tells the app when you stay at one, so it can show the right card. Google's handling of location in Play services is covered by the [Google privacy policy](https://policies.google.com/privacy).
 
 Learned places are stored only in the app's encrypted database. They are not included in backups or in cards you share, and they are never sent to me or anyone else. You can turn suggestions off for any card, forget a card's places in its details, or forget all places in Settings. Deleting a card deletes its places. You can withdraw the location permissions in Android's settings at any time.
+
+## The country you are in
+
+The card list can show only the cards valid in the country you are in. To find that country, the app reads:
+
+- the country of your mobile network, which the phone already knows; this needs no permission;
+- if you have already allowed approximate location for Cardholder and the network can't tell the country, your last known approximate location. The app compares it with country outlines stored in the app itself, so the lookup works offline. Only the country code is kept.
+
+The country is stored on your device only and is never part of a backup or a shared file. Nothing is sent anywhere. You can switch the filter off, or choose the country yourself, in the card list.
 
 ## Logo downloads
 

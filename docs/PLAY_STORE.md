@@ -50,7 +50,7 @@ The app itself collects nothing, but the Google ML Kit libraries (barcode scanne
   | Device or other IDs → **Device or other IDs** | Yes | No | No | Required | Analytics |
 - Not collected: personal info, financial info (card details never leave the device), photos (images are processed on-device), location (card suggestions keep places on the device only, see below), contacts, app activity, web browsing.
 
-Card suggestions read location and Wi‑Fi but keep the learned places on the device and never transmit them, so they aren't "collected" in the Data safety sense. Check this against the current Play Console Help article on data collection before submitting.
+Card suggestions read location and Wi‑Fi but keep the learned places on the device and never transmit them, so they aren't "collected" in the Data safety sense. The card filter's country is found on the device (the mobile network, or approximate location if already allowed, mapped offline) and is never transmitted, so it isn't collected either. Check this against the current Play Console Help article on data collection before submitting.
 
 ### Location permissions declaration
 Declaring `ACCESS_BACKGROUND_LOCATION` (arrival notifications) needs the *Location permissions* declaration under *App content*:

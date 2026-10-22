@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Added
+- Each card can say where it is valid: in all countries (the default), or in chosen countries, with EU,
+  Schengen, Eurozone and EEA shortcuts. Backups and shares keep this; older files import as valid everywhere.
+- The card list shows only the cards valid in the country you are in, with a footer that counts and shows
+  the hidden ones. The country is found from the mobile network (no permission), or from your approximate
+  location if you already allowed it, mapped to offline country borders. You can switch the filter off or
+  pick the country yourself. Search still looks through all cards.
+- The home-screen widget shows the cards valid in the current country.
+- Cards valid in only one country show its flag and name; cards valid in several show a globe.
 
 ## [1.4.0] - 2026-10-18
 ### Added
