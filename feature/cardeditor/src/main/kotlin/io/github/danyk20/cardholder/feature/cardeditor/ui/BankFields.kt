@@ -32,6 +32,7 @@ import io.github.danyk20.cardholder.core.domain.validation.InputStatus
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
 import io.github.danyk20.cardholder.core.model.Bank
 import io.github.danyk20.cardholder.core.ui.R as UiR
+import io.github.danyk20.cardholder.core.ui.SearchablePickerDialog
 import io.github.danyk20.cardholder.feature.cardeditor.BankForm
 import io.github.danyk20.cardholder.feature.cardeditor.R
 import java.time.YearMonth

@@ -5,6 +5,8 @@ import io.github.danyk20.cardholder.core.domain.model.ImageChange
 import io.github.danyk20.cardholder.core.domain.validation.CardField
 import io.github.danyk20.cardholder.core.domain.validation.ValidationError
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
+import io.github.danyk20.cardholder.core.model.CountryCode
 import io.github.danyk20.cardholder.core.testing.data.TestCards
 import java.time.YearMonth
 import kotlin.test.assertEquals
@@ -39,5 +41,24 @@ class CardEditorMappingTest {
 
         assertEquals(ValidationError.REQUIRED, idErrors[CardField.COUNTRY])
         assertTrue(CardField.EXPIRY in bankErrors)
+    }
+
+    @Test
+    fun `a loaded card keeps its validity when saved again`() {
+        val validity = CardValidity.Countries(setOf(CountryCode.of("CH")!!, CountryCode.of("AT")!!))
+        val card = TestCards.loyalty.copy(validity = validity)
+
+        val state = CardEditorUiState().populatedFrom(card, TestCards.loyaltyDetails) { null }
+        val (draft, _) = state.toDraft(original = card)
+
+        assertEquals(validity, state.validity)
+        assertEquals(validity, draft.validity)
+    }
+
+    @Test
+    fun `a new card is valid everywhere unless countries are chosen`() {
+        val (draft, _) = CardEditorUiState(type = CardType.LOYALTY).toDraft(original = null)
+
+        assertEquals(CardValidity.Everywhere, draft.validity)
     }
 }

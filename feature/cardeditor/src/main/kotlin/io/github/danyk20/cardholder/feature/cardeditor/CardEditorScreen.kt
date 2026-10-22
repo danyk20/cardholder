@@ -136,6 +136,7 @@ fun CardEditorRoute(
         DetailsActions(
             onTitleChange = viewModel::onTitleChange,
             onNotesChange = viewModel::onNotesChange,
+            onValidityChange = viewModel::onValidityChange,
             onColorChange = viewModel::onColorChange,
             onLockedChange = viewModel::onLockedChange,
             onOpenSecuritySettings = {

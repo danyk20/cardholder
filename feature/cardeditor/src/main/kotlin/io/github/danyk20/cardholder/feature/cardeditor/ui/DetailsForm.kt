@@ -43,6 +43,7 @@ import io.github.danyk20.cardholder.core.model.BrandRef
 import io.github.danyk20.cardholder.core.model.CardColor
 import io.github.danyk20.cardholder.core.model.CardSide
 import io.github.danyk20.cardholder.core.model.CardType
+import io.github.danyk20.cardholder.core.model.CardValidity
 import io.github.danyk20.cardholder.core.ui.label
 import io.github.danyk20.cardholder.core.ui.message
 import io.github.danyk20.cardholder.feature.cardeditor.CardEditorUiState
@@ -52,6 +53,7 @@ import io.github.danyk20.cardholder.feature.cardeditor.R
 internal class DetailsActions(
     val onTitleChange: (String) -> Unit,
     val onNotesChange: (String) -> Unit,
+    val onValidityChange: (CardValidity) -> Unit,
     val onColorChange: (CardColor) -> Unit,
     val onLockedChange: (Boolean) -> Unit,
     val onOpenSecuritySettings: () -> Unit,
@@ -112,6 +114,7 @@ internal fun DetailsForm(
             maxLines = 6,
             modifier = Modifier.fillMaxWidth(),
         )
+        ValidityField(state.validity, state.countries, actions.onValidityChange)
         if (state.loyalty.shop !is BrandRef.Known || state.type != CardType.LOYALTY) {
             ColorPicker(selected = state.color, onSelect = actions.onColorChange)
         }

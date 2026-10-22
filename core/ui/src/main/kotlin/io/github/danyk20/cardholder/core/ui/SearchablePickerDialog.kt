@@ -1,4 +1,4 @@
-package io.github.danyk20.cardholder.feature.cardeditor.ui
+package io.github.danyk20.cardholder.core.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -32,13 +32,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons
 import io.github.danyk20.cardholder.core.designsystem.icon.CardholderIcons.Search
-import io.github.danyk20.cardholder.core.ui.R as UiR
-import io.github.danyk20.cardholder.core.ui.secureDialogProperties
 
 /** Full-screen list with a search field, used to pick a shop or a country. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun <T> SearchablePickerDialog(
+fun <T> SearchablePickerDialog(
     title: String,
     searchHint: String,
     items: List<T>,
@@ -63,7 +61,7 @@ internal fun <T> SearchablePickerDialog(
                     title = { Text(title) },
                     navigationIcon = {
                         IconButton(onClick = onDismiss) {
-                            Icon(CardholderIcons.Close, contentDescription = stringResource(UiR.string.action_cancel))
+                            Icon(CardholderIcons.Close, contentDescription = stringResource(R.string.action_cancel))
                         }
                     },
                 )
@@ -75,16 +73,11 @@ internal fun <T> SearchablePickerDialog(
                     .padding(padding)
                     .imePadding(),
             ) {
-                OutlinedTextField(
-                    value = query,
-                    onValueChange = { query = it },
-                    placeholder = { Text(searchHint) },
-                    leadingIcon = { Icon(Search, contentDescription = null) },
-                    singleLine = true,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 8.dp)
-                        .focusRequester(focusRequester),
+                PickerSearchField(
+                    query = query,
+                    hint = searchHint,
+                    onQueryChange = { query = it },
+                    modifier = Modifier.focusRequester(focusRequester),
                 )
                 LazyColumn(Modifier.fillMaxSize()) {
                     if (onCustomOption != null && customOptionLabel != null && query.isNotBlank()) {
@@ -109,4 +102,19 @@ internal fun <T> SearchablePickerDialog(
         }
     }
     LaunchedEffect(Unit) { focusRequester.requestFocus() }
+}
+
+/** The search field at the top of a picker list. */
+@Composable
+fun PickerSearchField(query: String, hint: String, onQueryChange: (String) -> Unit, modifier: Modifier = Modifier) {
+    OutlinedTextField(
+        value = query,
+        onValueChange = onQueryChange,
+        placeholder = { Text(hint) },
+        leadingIcon = { Icon(Search, contentDescription = null) },
+        singleLine = true,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+    )
 }
