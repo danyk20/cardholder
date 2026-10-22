@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Miesta · %1$s</string>
+    <string name="places_more_options">Ďalšie možnosti</string>
+    <string name="places_forget_all">Zabudnúť všetky miesta</string>
+    <string name="places_forget_all_title">Zabudnúť všetky miesta?</string>
+    <string name="places_forget_all_message">Cardholder zabudne všetky miesta tejto karty. Pri použití karty sa ich môže znova naučiť.</string>
+    <string name="places_delete_title">Odstrániť toto miesto?</string>
+    <string name="places_delete_message">Cardholder sa ho môže znova naučiť, keď tu kartu použijete.</string>
+    <string name="places_delete">Odstrániť</string>
+    <string name="places_forget">Zabudnúť</string>
+    <string name="places_move">Presunúť</string>
+    <string name="places_set_on_map">Nastaviť na mape</string>
+    <string name="places_add">Pridať miesto</string>
+    <string name="places_save">Uložiť</string>
+    <string name="places_move_hint">Klepnite na správne miesto na mape.</string>
+    <string name="places_add_hint">Klepnite na mape na miesto, kde sa nachádza.</string>
+    <string name="places_suggestions_off_hint">Ak chcete použiť toto miesto, zapnite pre túto kartu návrhy.</string>
+    <string name="places_set_by_you">Nastavené vami</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Naučené z %d merania GPS</item>
+        <item quantity="few">Naučené z %d meraní GPS</item>
+        <item quantity="many">Naučené z %d meraní GPS</item>
+        <item quantity="other">Naučené z %d meraní GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Použité %1$d krát, naposledy %2$s</item>
+        <item quantity="few">Použité %1$d krát, naposledy %2$s</item>
+        <item quantity="many">Použité %1$d krát, naposledy %2$s</item>
+        <item quantity="other">Použité %1$d krát, naposledy %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Iba Wi‑Fi, bez polohy na mape</string>
+    <string name="places_empty">Zatiaľ žiadne miesta. Miesto sa naučí, keď použijete túto kartu, alebo ho môžete pridať na mape.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Mapa s %d miestom</item>
+        <item quantity="few">Mapa s %d miestami</item>
+        <item quantity="many">Mapa s %d miestami</item>
+        <item quantity="other">Mapa s %d miestami</item>
+    </plurals>
+    <string name="places_map_offline">Mapu nie je možné načítať offline. Vaše miesta sú stále uvedené nižšie.</string>
+    <string name="places_map_privacy">Mapa © OpenStreetMap. Obrázky mapy sa sťahujú z OpenStreetMap; servery vidia len oblasť, ktorú si prezeráte, nikdy vašu polohu.</string>
+    <string name="places_centre_on_me">Vycentrovať na mňa</string>
+    <string name="places_moved">Miesto presunuté</string>
+    <string name="places_added">Miesto pridané</string>
+    <string name="places_deleted">Miesto odstránené</string>
+    <string name="places_forgotten">Všetky miesta zabudnuté</string>
+    <string name="places_not_saved">Miesto sa nepodarilo uložiť.</string>
+</resources>

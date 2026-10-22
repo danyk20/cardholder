@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">مکان‌ها · %1$s</string>
+    <string name="places_more_options">گزینه‌های بیشتر</string>
+    <string name="places_forget_all">فراموش کردن همه مکان‌ها</string>
+    <string name="places_forget_all_title">همه مکان‌های این کارت فراموش شوند؟</string>
+    <string name="places_forget_all_message">Cardholder همه مکان‌های این کارت را فراموش می‌کند. ممکن است هنگام استفاده از کارت دوباره آن‌ها را یاد بگیرد.</string>
+    <string name="places_delete_title">این مکان حذف شود؟</string>
+    <string name="places_delete_message">Cardholder ممکن است وقتی اینجا از کارت استفاده می‌کنید دوباره این مکان را یاد بگیرد.</string>
+    <string name="places_delete">حذف</string>
+    <string name="places_forget">فراموش کردن</string>
+    <string name="places_move">جابه‌جایی</string>
+    <string name="places_set_on_map">تنظیم روی نقشه</string>
+    <string name="places_add">افزودن مکان</string>
+    <string name="places_save">ذخیره</string>
+    <string name="places_move_hint">روی نقطهٔ درست نقشه ضربه بزنید.</string>
+    <string name="places_add_hint">روی نقطهٔ نقشه که مکان در آن است ضربه بزنید.</string>
+    <string name="places_suggestions_off_hint">برای استفاده از این مکان، پیشنهادها را برای این کارت روشن کنید.</string>
+    <string name="places_set_by_you">توسط شما تنظیم شده</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">از %d خوانش GPS یاد گرفته شد</item>
+        <item quantity="other">از %d خوانش GPS یاد گرفته شد</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d متر</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">%1$d بار استفاده شده، آخرین بار %2$s</item>
+        <item quantity="other">%1$d بار استفاده شده، آخرین بار %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">فقط Wi‑Fi، بدون موقعیت روی نقشه</string>
+    <string name="places_empty">هنوز مکانی نیست. هنگام استفاده از این کارت مکانی یاد گرفته می‌شود، یا می‌توانید روی نقشه یکی اضافه کنید.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">نقشه با %d مکان</item>
+        <item quantity="other">نقشه با %d مکان</item>
+    </plurals>
+    <string name="places_map_offline">نقشه بدون اینترنت بارگذاری نمی‌شود. مکان‌های شما همچنان در زیر فهرست شده‌اند.</string>
+    <string name="places_map_privacy">نقشه © OpenStreetMap. تصاویر نقشه از OpenStreetMap دانلود می‌شوند؛ سرورها فقط ناحیه‌ای را که مشاهده می‌کنید می‌بینند، نه هرگز موقعیت شما را.</string>
+    <string name="places_centre_on_me">متمرکز کردن روی من</string>
+    <string name="places_moved">مکان جابه‌جا شد</string>
+    <string name="places_added">مکان افزوده شد</string>
+    <string name="places_deleted">مکان حذف شد</string>
+    <string name="places_forgotten">همه مکان‌ها فراموش شدند</string>
+    <string name="places_not_saved">مکان ذخیره نشد.</string>
+</resources>

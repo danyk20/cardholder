@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">Учи где приказујете њен код и поново је предлаже тамо</string>
     <string name="detail_places_learned_on_request">Додирните „Запамти ово место“ где је користите да би поново била предложена тамо</string>
     <string name="detail_remember_place">Запамти ово место</string>
-    <string name="detail_forget_places">Заборави места</string>
-    <string name="detail_forget_places_title">Заборавити места ове картице?</string>
-    <string name="detail_forget_places_message">Места на којима сте користили ову картицу биће обрисана. Поново ће се научити при следећем коришћењу.</string>
-    <string name="detail_forget">Заборави</string>
     <string name="detail_place_remembered">Место је запамћено</string>
     <string name="detail_place_not_found">Не можемо да одредимо где се налазите. Пробајте поново са укљученим Wi‑Fi или у близини прозора.</string>
     <string name="detail_place_no_permission">Дозволите прецизну локацију за Cardholder да би запамтио места</string>
     <string name="detail_place_location_off">Укључите локацију да би се места запамтила</string>
     <string name="field_valid_in">Важи у</string>
+    <string name="detail_places_row">Места (%1$d)</string>
 </resources>

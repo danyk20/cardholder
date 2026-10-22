@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Orte · %1$s</string>
+    <string name="places_more_options">Weitere Optionen</string>
+    <string name="places_forget_all">Alle Orte vergessen</string>
+    <string name="places_forget_all_title">Alle Orte vergessen?</string>
+    <string name="places_forget_all_message">Cardholder vergisst alle Orte dieser Karte. Sie können wieder gelernt werden, wenn du die Karte verwendest.</string>
+    <string name="places_delete_title">Diesen Ort löschen?</string>
+    <string name="places_delete_message">Cardholder kann ihn wieder lernen, wenn du die Karte hier verwendest.</string>
+    <string name="places_delete">Löschen</string>
+    <string name="places_forget">Vergessen</string>
+    <string name="places_move">Verschieben</string>
+    <string name="places_set_on_map">Auf Karte festlegen</string>
+    <string name="places_add">Ort hinzufügen</string>
+    <string name="places_save">Speichern</string>
+    <string name="places_move_hint">Tippe auf die richtige Stelle in der Karte.</string>
+    <string name="places_add_hint">Tippe auf die Stelle in der Karte, an der sich der Ort befindet.</string>
+    <string name="places_suggestions_off_hint">Schalte Vorschläge für diese Karte ein, um diesen Ort zu verwenden.</string>
+    <string name="places_set_by_you">Von dir festgelegt</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Aus %d GPS-Messung gelernt</item>
+        <item quantity="other">Aus %d GPS-Messungen gelernt</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">%1$d-mal verwendet, zuletzt %2$s</item>
+        <item quantity="other">%1$d-mal verwendet, zuletzt %2$s</item>
+    </plurals>
+    <string name="places_wifi">WLAN: %1$s</string>
+    <string name="places_wifi_only">Nur WLAN, keine Position auf der Karte</string>
+    <string name="places_empty">Noch keine Orte. Ein Ort wird gelernt, wenn du diese Karte verwendest, oder du fügst einen auf der Karte hinzu.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Karte mit %d Ort</item>
+        <item quantity="other">Karte mit %d Orten</item>
+    </plurals>
+    <string name="places_map_offline">Die Karte lässt sich offline nicht laden. Deine Orte werden weiter unten angezeigt.</string>
+    <string name="places_map_privacy">Karte © OpenStreetMap. Kartenbilder werden von OpenStreetMap heruntergeladen; die Server sehen nur den Bereich, den du ansiehst, nie deine Position.</string>
+    <string name="places_centre_on_me">Auf mich zentrieren</string>
+    <string name="places_moved">Ort verschoben</string>
+    <string name="places_added">Ort hinzugefügt</string>
+    <string name="places_deleted">Ort gelöscht</string>
+    <string name="places_forgotten">Alle Orte vergessen</string>
+    <string name="places_not_saved">Der Ort konnte nicht gespeichert werden.</string>
+</resources>

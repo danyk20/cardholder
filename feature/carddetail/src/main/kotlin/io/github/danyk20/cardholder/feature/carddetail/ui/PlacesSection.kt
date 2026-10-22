@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.feature.carddetail.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -7,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.selection.toggleable
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -38,7 +41,7 @@ import io.github.danyk20.cardholder.feature.carddetail.R
 class PlaceActions(
     val onSuggestChange: (Boolean) -> Unit = {},
     val onRememberPlace: () -> Unit = {},
-    val onForgetPlaces: () -> Unit = {},
+    val onOpenPlaces: () -> Unit = {},
 )
 
 /**
@@ -53,7 +56,6 @@ internal fun PlacesSection(
     actions: PlaceActions,
     modifier: Modifier = Modifier,
 ) {
-    var confirmForget by rememberSaveable { mutableStateOf(false) }
     Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -92,27 +94,27 @@ internal fun PlacesSection(
                     Text(stringResource(R.string.detail_remember_place), Modifier.padding(start = 8.dp))
                 }
             }
-            if (places.placeCount > 0) {
-                TextButton(onClick = { confirmForget = true }) { Text(stringResource(R.string.detail_forget_places)) }
-            }
         }
+        PlacesRow(count = places.placeCount, onClick = actions.onOpenPlaces)
     }
-    if (confirmForget) {
-        AlertDialog(
-            onDismissRequest = { confirmForget = false },
-            title = { Text(stringResource(R.string.detail_forget_places_title)) },
-            text = { Text(stringResource(R.string.detail_forget_places_message)) },
-            confirmButton = {
-                TextButton(onClick = {
-                    confirmForget = false
-                    actions.onForgetPlaces()
-                }) { Text(stringResource(R.string.detail_forget)) }
-            },
-            dismissButton = {
-                TextButton(onClick = { confirmForget = false }) { Text(stringResource(R.string.detail_cancel)) }
-            },
-            properties = secureDialogProperties(),
+}
+
+/** The way into the card's places, on the places screen: how many there are, and a chevron. */
+@Composable
+internal fun PlacesRow(count: Int, onClick: () -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(role = Role.Button, onClick = onClick)
+            .padding(vertical = 12.dp),
+    ) {
+        Text(
+            text = stringResource(R.string.detail_places_row, count),
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.weight(1f),
         )
+        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null)
     }
 }
 

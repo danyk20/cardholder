@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Locuri · %1$s</string>
+    <string name="places_more_options">Mai multe opțiuni</string>
+    <string name="places_forget_all">Uitați toate locurile</string>
+    <string name="places_forget_all_title">Uitați toate locurile?</string>
+    <string name="places_forget_all_message">Cardholder uită toate locurile acestui card. Le poate învăța din nou când folosiți cardul.</string>
+    <string name="places_delete_title">Ștergeți acest loc?</string>
+    <string name="places_delete_message">Cardholder îl poate învăța din nou când folosiți cardul aici.</string>
+    <string name="places_delete">Ștergeți</string>
+    <string name="places_forget">Uitați</string>
+    <string name="places_move">Mutați</string>
+    <string name="places_set_on_map">Setați pe hartă</string>
+    <string name="places_add">Adăugați un loc</string>
+    <string name="places_save">Salvați</string>
+    <string name="places_move_hint">Atingeți locul corect de pe hartă.</string>
+    <string name="places_add_hint">Atingeți locul de pe hartă unde se află locul.</string>
+    <string name="places_suggestions_off_hint">Activați sugestiile pentru acest card ca să folosiți acest loc.</string>
+    <string name="places_set_by_you">Setat de dvs.</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Învățat din %d citire GPS</item>
+        <item quantity="few">Învățat din %d citiri GPS</item>
+        <item quantity="other">Învățat din %d de citiri GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Folosit de %1$d dată, ultima oară %2$s</item>
+        <item quantity="few">Folosit de %1$d ori, ultima oară %2$s</item>
+        <item quantity="other">Folosit de %1$d de ori, ultima oară %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Doar Wi‑Fi, fără poziție pe hartă</string>
+    <string name="places_empty">Încă nu există locuri. Un loc este învățat când folosiți cardul, sau îl puteți adăuga pe hartă.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Hartă cu %d loc</item>
+        <item quantity="few">Hartă cu %d locuri</item>
+        <item quantity="other">Hartă cu %d de locuri</item>
+    </plurals>
+    <string name="places_map_offline">Harta nu se poate încărca offline. Locurile dvs. rămân afișate mai jos.</string>
+    <string name="places_map_privacy">Harta © OpenStreetMap. Imaginile hărții sunt descărcate de la OpenStreetMap; serverele văd doar zona pe care o vizualizați, niciodată poziția dvs.</string>
+    <string name="places_centre_on_me">Centrați pe mine</string>
+    <string name="places_moved">Loc mutat</string>
+    <string name="places_added">Loc adăugat</string>
+    <string name="places_deleted">Loc șters</string>
+    <string name="places_forgotten">Toate locurile au fost uitate</string>
+    <string name="places_not_saved">Locul nu a putut fi salvat.</string>
+</resources>

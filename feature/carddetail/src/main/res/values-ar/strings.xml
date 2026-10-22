@@ -39,13 +39,10 @@
     <string name="detail_places_learned_at_till">يتعلّم أين تعرض رمزها ويقترحها هناك مجددًا</string>
     <string name="detail_places_learned_on_request">انقر على «تذكّر هذا المكان» حيث تستخدم البطاقة لتُقترح هناك مجددًا</string>
     <string name="detail_remember_place">تذكّر هذا المكان</string>
-    <string name="detail_forget_places">نسيان الأماكن</string>
-    <string name="detail_forget_places_title">هل تريد نسيان أماكن هذه البطاقة؟</string>
-    <string name="detail_forget_places_message">تُحذف الأماكن التي استخدمت فيها هذه البطاقة. ستُتعلَّم مجددًا في المرة القادمة التي تستخدمها فيها.</string>
-    <string name="detail_forget">نسيان</string>
     <string name="detail_place_remembered">تم تذكّر المكان</string>
     <string name="detail_place_not_found">تعذّر تحديد موقعك. حاول مجددًا مع تشغيل Wi‑Fi أو بالقرب من نافذة.</string>
     <string name="detail_place_no_permission">امنح Cardholder إذنًا بالموقع الدقيق لتذكّر الأماكن</string>
     <string name="detail_place_location_off">فعّل الموقع لتذكّر الأماكن</string>
     <string name="field_valid_in">صالحة في</string>
+    <string name="detail_places_row">الأماكن (%1$d)</string>
 </resources>

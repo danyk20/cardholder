@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">地点 · %1$s</string>
+    <string name="places_more_options">更多选项</string>
+    <string name="places_forget_all">忘记所有地点</string>
+    <string name="places_forget_all_title">忘记所有地点？</string>
+    <string name="places_forget_all_message">Cardholder 将忘记此卡片的所有地点。使用该卡片时，它可能会重新学习这些地点。</string>
+    <string name="places_delete_title">删除此地点？</string>
+    <string name="places_delete_message">在此处使用该卡片时，Cardholder 可能会重新学习此地点。</string>
+    <string name="places_delete">删除</string>
+    <string name="places_forget">忘记</string>
+    <string name="places_move">移动</string>
+    <string name="places_set_on_map">在地图上设置</string>
+    <string name="places_add">添加地点</string>
+    <string name="places_save">保存</string>
+    <string name="places_move_hint">请点击地图上的正确位置。</string>
+    <string name="places_add_hint">请点击地图上该地点所在的位置。</string>
+    <string name="places_suggestions_off_hint">为此卡片开启建议，即可使用此地点。</string>
+    <string name="places_set_by_you">由你设置</string>
+    <plurals name="places_learned_from">
+        <item quantity="other">从 %d 次 GPS 读数中学习</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d 米</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="other">已使用 %1$d 次，最近一次 %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi：%1$s</string>
+    <string name="places_wifi_only">仅 Wi‑Fi，无地图位置</string>
+    <string name="places_empty">暂无地点。使用此卡片时会学习地点，你也可以在地图上添加。</string>
+    <plurals name="places_map_description">
+        <item quantity="other">地图上有 %d 个地点</item>
+    </plurals>
+    <string name="places_map_offline">地图无法离线加载。你的地点仍列在下方。</string>
+    <string name="places_map_privacy">地图 © OpenStreetMap。地图图片从 OpenStreetMap 下载；服务器只能看到你正在查看的区域，绝不会看到你的位置。</string>
+    <string name="places_centre_on_me">以我为中心</string>
+    <string name="places_moved">地点已移动</string>
+    <string name="places_added">地点已添加</string>
+    <string name="places_deleted">地点已删除</string>
+    <string name="places_forgotten">已忘记所有地点</string>
+    <string name="places_not_saved">无法保存该地点。</string>
+</resources>

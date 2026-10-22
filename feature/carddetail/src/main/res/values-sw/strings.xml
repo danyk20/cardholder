@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">Hujifunza mahali unapoonyesha msimbo wake na kuipendekeza hapo tena</string>
     <string name="detail_places_learned_on_request">Gusa “Kumbuka mahali hapa” unapoitumia ili ipendekezwe hapo tena</string>
     <string name="detail_remember_place">Kumbuka mahali hapa</string>
-    <string name="detail_forget_places">Sahau maeneo</string>
-    <string name="detail_forget_places_title">Kusahau maeneo ya kadi hii?</string>
-    <string name="detail_forget_places_message">Maeneo ambayo umetumia kadi hii yatafutwa. Yatajifunzwa tena mara nyingine utakapoitumia.</string>
-    <string name="detail_forget">Sahau</string>
     <string name="detail_place_remembered">Mahali pamekumbukwa</string>
     <string name="detail_place_not_found">Imeshindwa kupata ulipo. Jaribu tena ukiwa na Wi‑Fi imewashwa au karibu na dirisha.</string>
     <string name="detail_place_no_permission">Ruhusu eneo sahihi kwa Cardholder ili likumbuke maeneo</string>
     <string name="detail_place_location_off">Washa Eneo ili likumbuke maeneo</string>
     <string name="field_valid_in">Halali katika</string>
+    <string name="detail_places_row">Maeneo (%1$d)</string>
 </resources>

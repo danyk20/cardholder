@@ -67,6 +67,7 @@ fun CardDetailRoute(
     onBack: () -> Unit,
     onEdit: (CardId) -> Unit,
     onShowBarcode: (CardId) -> Unit,
+    onOpenPlaces: (CardId) -> Unit,
     viewModel: CardDetailViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
@@ -111,11 +112,11 @@ fun CardDetailRoute(
         },
         onCopiedMessageShown = viewModel::onCopiedMessageShown,
         onErrorShown = viewModel::onErrorShown,
-        placeActions = remember(viewModel) {
+        placeActions = remember(viewModel, onOpenPlaces) {
             PlaceActions(
                 onSuggestChange = viewModel::onSuggestByLocationChange,
                 onRememberPlace = viewModel::onRememberPlace,
-                onForgetPlaces = viewModel::onForgetPlaces,
+                onOpenPlaces = { onOpenPlaces(viewModel.cardId) },
             )
         },
         onRememberResultShown = viewModel::onRememberResultShown,

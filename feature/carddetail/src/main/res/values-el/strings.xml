@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">Μαθαίνει πού εμφανίζετε τον κωδικό της και την προτείνει ξανά εκεί</string>
     <string name="detail_places_learned_on_request">Πατήστε «Απομνημόνευση αυτού του μέρους» εκεί όπου τη χρησιμοποιείτε, για να προτείνεται ξανά εκεί</string>
     <string name="detail_remember_place">Απομνημόνευση αυτού του μέρους</string>
-    <string name="detail_forget_places">Διαγραφή μερών</string>
-    <string name="detail_forget_places_title">Διαγραφή μερών αυτής της κάρτας;</string>
-    <string name="detail_forget_places_message">Τα μέρη όπου χρησιμοποιήσατε αυτή την κάρτα διαγράφονται. Θα μαθευτούν ξανά την επόμενη φορά που θα τη χρησιμοποιήσετε.</string>
-    <string name="detail_forget">Διαγραφή</string>
     <string name="detail_place_remembered">Το μέρος αποθηκεύτηκε</string>
     <string name="detail_place_not_found">Δεν βρέθηκε η τοποθεσία σας. Δοκιμάστε ξανά με ενεργό το Wi‑Fi ή κοντά σε παράθυρο.</string>
     <string name="detail_place_no_permission">Επιτρέψτε την ακριβή τοποθεσία για το Cardholder, για να αποθηκεύει μέρη</string>
     <string name="detail_place_location_off">Ενεργοποιήστε την Τοποθεσία για να αποθηκεύονται μέρη</string>
     <string name="field_valid_in">Ισχύει σε</string>
+    <string name="detail_places_row">Μέρη (%1$d)</string>
 </resources>

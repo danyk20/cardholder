@@ -24,12 +24,22 @@ fun cardDetailDeepLink(cardId: CardId): String = "$DEEP_LINK_BASE/${cardId.value
 fun NavController.navigateToCardDetail(cardId: CardId, navOptions: NavOptions? = null) =
     navigate(CardDetailDestination(cardId.value), navOptions)
 
-fun NavGraphBuilder.cardDetailScreen(onBack: () -> Unit, onEdit: (CardId) -> Unit, onShowBarcode: (CardId) -> Unit) {
+fun NavGraphBuilder.cardDetailScreen(
+    onBack: () -> Unit,
+    onEdit: (CardId) -> Unit,
+    onShowBarcode: (CardId) -> Unit,
+    onOpenPlaces: (CardId) -> Unit,
+) {
     composable<CardDetailDestination>(
         deepLinks = listOf(navDeepLink<CardDetailDestination>(basePath = DEEP_LINK_BASE)),
     ) {
         ProvideNavAnimatedVisibilityScope(this) {
-            CardDetailRoute(onBack = onBack, onEdit = onEdit, onShowBarcode = onShowBarcode)
+            CardDetailRoute(
+                onBack = onBack,
+                onEdit = onEdit,
+                onShowBarcode = onShowBarcode,
+                onOpenPlaces = onOpenPlaces,
+            )
         }
     }
 }

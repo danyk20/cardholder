@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">코드를 보여준 장소를 학습하여 그곳에서 다시 추천합니다</string>
     <string name="detail_places_learned_on_request">카드를 사용하는 곳에서 ‘이 장소 기억하기’를 탭하면 그곳에서 다시 추천됩니다</string>
     <string name="detail_remember_place">이 장소 기억하기</string>
-    <string name="detail_forget_places">장소 잊기</string>
-    <string name="detail_forget_places_title">이 카드의 장소를 잊을까요?</string>
-    <string name="detail_forget_places_message">이 카드를 사용한 장소가 삭제됩니다. 다음에 사용할 때 다시 학습됩니다.</string>
-    <string name="detail_forget">잊기</string>
     <string name="detail_place_remembered">장소를 기억했습니다</string>
     <string name="detail_place_not_found">현재 위치를 찾을 수 없습니다. Wi‑Fi를 켜거나 창가 근처에서 다시 시도하세요.</string>
     <string name="detail_place_no_permission">Cardholder가 장소를 기억하려면 정밀 위치를 허용하세요</string>
     <string name="detail_place_location_off">장소를 기억하려면 위치를 켜세요</string>
     <string name="field_valid_in">사용 가능 국가</string>
+    <string name="detail_places_row">장소 (%1$d)</string>
 </resources>

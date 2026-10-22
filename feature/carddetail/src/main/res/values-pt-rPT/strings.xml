@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">Aprende onde mostra o código e volta a sugeri-lo aí</string>
     <string name="detail_places_learned_on_request">Toque em “Memorizar este local” onde utiliza o cartão para ser sugerido aí de novo</string>
     <string name="detail_remember_place">Memorizar este local</string>
-    <string name="detail_forget_places">Esquecer locais</string>
-    <string name="detail_forget_places_title">Esquecer os locais deste cartão?</string>
-    <string name="detail_forget_places_message">Os locais onde utilizou este cartão são eliminados. Será aprendido de novo da próxima vez que o utilizar.</string>
-    <string name="detail_forget">Esquecer</string>
     <string name="detail_place_remembered">Local memorizado</string>
     <string name="detail_place_not_found">Não foi possível encontrar a sua localização. Tente novamente com o Wi‑Fi ativado ou perto de uma janela.</string>
     <string name="detail_place_no_permission">Permita a localização exata para o Cardholder memorizar locais</string>
     <string name="detail_place_location_off">Ative a Localização para memorizar locais</string>
     <string name="field_valid_in">Válido em</string>
+    <string name="detail_places_row">Locais (%1$d)</string>
 </resources>

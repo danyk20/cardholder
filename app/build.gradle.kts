@@ -83,6 +83,7 @@ dependencies {
     implementation(projects.feature.carddetail)
     implementation(projects.feature.cardeditor)
     implementation(projects.feature.cardlist)
+    implementation(projects.feature.cardplaces)
     implementation(projects.feature.settings)
 
     implementation(libs.androidx.activity.compose)

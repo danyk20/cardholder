@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Места · %1$s</string>
+    <string name="places_more_options">Више опција</string>
+    <string name="places_forget_all">Заборави сва места</string>
+    <string name="places_forget_all_title">Заборавити сва места?</string>
+    <string name="places_forget_all_message">Cardholder заборавља сва места ове картице. Поново ће их научити када користите картицу.</string>
+    <string name="places_delete_title">Обрисати ово место?</string>
+    <string name="places_delete_message">Cardholder га може поново научити када овде користите картицу.</string>
+    <string name="places_delete">Обриши</string>
+    <string name="places_forget">Заборави</string>
+    <string name="places_move">Помери</string>
+    <string name="places_set_on_map">Постави на мапу</string>
+    <string name="places_add">Додај место</string>
+    <string name="places_save">Сачувај</string>
+    <string name="places_move_hint">Додирните прави положај на мапи.</string>
+    <string name="places_add_hint">Додирните место на мапи где се налази место.</string>
+    <string name="places_suggestions_off_hint">Укључите предлоге за ову картицу да бисте користили ово место.</string>
+    <string name="places_set_by_you">Поставили сте ви</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Научено из %d GPS очитавање</item>
+        <item quantity="few">Научено из %d GPS очитавања</item>
+        <item quantity="many">Научено из %d GPS очитавања</item>
+        <item quantity="other">Научено из %d GPS очитавања</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Коришћено %1$d пут, последњи пут %2$s</item>
+        <item quantity="few">Коришћено %1$d пута, последњи пут %2$s</item>
+        <item quantity="many">Коришћено %1$d пута, последњи пут %2$s</item>
+        <item quantity="other">Коришћено %1$d пута, последњи пут %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Само Wi‑Fi, без положаја на мапи</string>
+    <string name="places_empty">Још нема места. Место се научи када користите ову картицу, или га можете додати на мапи.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Мапа са %d местом</item>
+        <item quantity="few">Мапа са %d места</item>
+        <item quantity="many">Мапа са %d места</item>
+        <item quantity="other">Мапа са %d места</item>
+    </plurals>
+    <string name="places_map_offline">Мапа не може да се учита ван мреже. Ваша места су и даље наведена испод.</string>
+    <string name="places_map_privacy">Мапа © OpenStreetMap. Слике мапе се преузимају са OpenStreetMap-а; они виде само подручје које гледате, никада ваш положај.</string>
+    <string name="places_centre_on_me">Центрирај на мене</string>
+    <string name="places_moved">Место је померено</string>
+    <string name="places_added">Место је додато</string>
+    <string name="places_deleted">Место је обрисано</string>
+    <string name="places_forgotten">Сва места су заборављена</string>
+    <string name="places_not_saved">Место није могло да се сачува.</string>
+</resources>

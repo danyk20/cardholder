@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="places_title">Maeneo · %1$s</string>
+    <string name="places_more_options">Chaguo zaidi</string>
+    <string name="places_forget_all">Sahau maeneo yote</string>
+    <string name="places_forget_all_title">Sahau maeneo yote?</string>
+    <string name="places_forget_all_message">Cardholder itasahau maeneo yote ya kadi hii. Inaweza kujifunza tena utakapotumia kadi.</string>
+    <string name="places_delete_title">Futa mahali hapa?</string>
+    <string name="places_delete_message">Cardholder inaweza kujifunza tena utakapotumia kadi hapa.</string>
+    <string name="places_delete">Futa</string>
+    <string name="places_forget">Sahau</string>
+    <string name="places_move">Hamisha</string>
+    <string name="places_set_on_map">Weka kwenye ramani</string>
+    <string name="places_add">Ongeza mahali</string>
+    <string name="places_save">Hifadhi</string>
+    <string name="places_move_hint">Gusa mahali sahihi kwenye ramani.</string>
+    <string name="places_add_hint">Gusa kwenye ramani mahali mahali hapo palipo.</string>
+    <string name="places_suggestions_off_hint">Washa mapendekezo kwa kadi hii ili utumie mahali hapa.</string>
+    <string name="places_set_by_you">Umeweka wewe</string>
+    <plurals name="places_learned_from">
+        <item quantity="one">Imejifunza kutoka kwa usomaji %d wa GPS</item>
+        <item quantity="other">Imejifunza kutoka kwa usomaji %d wa GPS</item>
+    </plurals>
+    <string name="places_accuracy">±%1$d m</string>
+    <string name="places_learned_with_accuracy">%1$s · %2$s</string>
+    <plurals name="places_used">
+        <item quantity="one">Imetumika mara %1$d, mara ya mwisho %2$s</item>
+        <item quantity="other">Imetumika mara %1$d, mara ya mwisho %2$s</item>
+    </plurals>
+    <string name="places_wifi">Wi‑Fi: %1$s</string>
+    <string name="places_wifi_only">Wi‑Fi pekee, hakuna nafasi kwenye ramani</string>
+    <string name="places_empty">Hakuna maeneo bado. Mahali hujifunza unapotumia kadi hii, au unaweza kuongeza moja kwenye ramani.</string>
+    <plurals name="places_map_description">
+        <item quantity="one">Ramani yenye mahali %d</item>
+        <item quantity="other">Ramani yenye maeneo %d</item>
+    </plurals>
+    <string name="places_map_offline">Ramani haiwezi kupakia nje ya mtandao. Maeneo yako bado yameorodheshwa hapa chini.</string>
+    <string name="places_map_privacy">Ramani © OpenStreetMap. Picha za ramani hupakuliwa kutoka OpenStreetMap; seva huona eneo unaloangalia pekee, si nafasi yako kamwe.</string>
+    <string name="places_centre_on_me">Weka katikati kwangu</string>
+    <string name="places_moved">Mahali kumehamishwa</string>
+    <string name="places_added">Mahali kumeongezwa</string>
+    <string name="places_deleted">Mahali kumefutwa</string>
+    <string name="places_forgotten">Maeneo yote yamesahauliwa</string>
+    <string name="places_not_saved">Mahali hapakuweza kuhifadhiwa.</string>
+</resources>

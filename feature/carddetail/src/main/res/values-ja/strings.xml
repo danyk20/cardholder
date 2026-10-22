@@ -38,13 +38,10 @@
     <string name="detail_places_learned_at_till">コードを表示した場所を学習し、同じ場所で再び提案します</string>
     <string name="detail_places_learned_on_request">利用する場所で「この場所を記憶」をタップすると、同じ場所で再び提案されます</string>
     <string name="detail_remember_place">この場所を記憶</string>
-    <string name="detail_forget_places">場所を忘れる</string>
-    <string name="detail_forget_places_title">このカードの場所を忘れますか？</string>
-    <string name="detail_forget_places_message">このカードを使った場所は削除されます。次回使用したときに改めて学習されます。</string>
-    <string name="detail_forget">忘れる</string>
     <string name="detail_place_remembered">場所を記憶しました</string>
     <string name="detail_place_not_found">現在地を特定できませんでした。Wi‑Fi をオンにするか、窓際で再度お試しください。</string>
     <string name="detail_place_no_permission">場所を記憶するには、Cardholder に正確な位置情報の許可を与えてください</string>
     <string name="detail_place_location_off">場所を記憶するには、位置情報をオンにしてください</string>
     <string name="field_valid_in">有効な国</string>
+    <string name="detail_places_row">場所 (%1$d)</string>
 </resources>

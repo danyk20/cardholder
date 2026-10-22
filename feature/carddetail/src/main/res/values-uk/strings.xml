@@ -39,13 +39,10 @@
     <string name="detail_places_learned_at_till">Запам’ятовує, де ви показуєте її код, і пропонує її там знову</string>
     <string name="detail_places_learned_on_request">Торкніться «Запам’ятати це місце» там, де користуєтеся карткою, щоб її знову пропонували саме тут</string>
     <string name="detail_remember_place">Запам’ятати це місце</string>
-    <string name="detail_forget_places">Забути місця</string>
-    <string name="detail_forget_places_title">Забути місця цієї картки?</string>
-    <string name="detail_forget_places_message">Місця, де ви використовували цю картку, буде видалено. Вони знову запам’ятаються наступного разу, коли ви її використаєте.</string>
-    <string name="detail_forget">Забути</string>
     <string name="detail_place_remembered">Місце запам’ятано</string>
     <string name="detail_place_not_found">Не вдалося визначити ваше місцезнаходження. Спробуйте ще раз із увімкненим Wi‑Fi або біля вікна.</string>
     <string name="detail_place_no_permission">Дозвольте точне місцезнаходження для Cardholder, щоб запам’ятовувати місця</string>
     <string name="detail_place_location_off">Увімкніть місцезнаходження, щоб запам’ятовувати місця</string>
     <string name="field_valid_in">Дійсна в</string>
+    <string name="detail_places_row">Місця (%1$d)</string>
 </resources>
