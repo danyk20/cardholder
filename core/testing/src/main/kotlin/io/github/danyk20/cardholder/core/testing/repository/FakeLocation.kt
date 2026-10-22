@@ -1,13 +1,18 @@
 package io.github.danyk20.cardholder.core.testing.repository
 
+import io.github.danyk20.cardholder.core.domain.country.ApproximateLocationSource
+import io.github.danyk20.cardholder.core.domain.country.CountryBorders
+import io.github.danyk20.cardholder.core.domain.country.NetworkCountrySource
 import io.github.danyk20.cardholder.core.domain.location.AccessPoint
 import io.github.danyk20.cardholder.core.domain.location.FixRequest
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.GeofenceRegistrar
 import io.github.danyk20.cardholder.core.domain.location.LocationAccess
 import io.github.danyk20.cardholder.core.domain.location.LocationFix
 import io.github.danyk20.cardholder.core.domain.location.LocationPermission
 import io.github.danyk20.cardholder.core.domain.location.PlaceGeofence
 import io.github.danyk20.cardholder.core.domain.location.SurroundingsProvider
+import io.github.danyk20.cardholder.core.model.CountryCode
 import java.time.Duration
 
 /** [SurroundingsProvider] returning what tests set, counting how often each sensor was read. */
@@ -63,5 +68,40 @@ class FakeGeofenceRegistrar : GeofenceRegistrar {
 
     override suspend fun clear() {
         registered = null
+    }
+}
+
+/** [NetworkCountrySource] returning what tests set, counting the reads. */
+class FakeNetworkCountrySource(var country: CountryCode? = null) : NetworkCountrySource {
+    var reads = 0
+        private set
+
+    override fun networkCountry(): CountryCode? {
+        reads++
+        return country
+    }
+}
+
+/** [ApproximateLocationSource] returning what tests set, recording the requested ages. */
+class FakeApproximateLocationSource(var point: GeoPoint? = null) : ApproximateLocationSource {
+    var reads = 0
+        private set
+    val requestedMaxAges = mutableListOf<Duration>()
+
+    override suspend fun approximateLocation(maxAge: Duration): GeoPoint? {
+        reads++
+        requestedMaxAges += maxAge
+        return point
+    }
+}
+
+/** [CountryBorders] answering with [answer], counting the lookups. */
+class FakeCountryBorders(var answer: (GeoPoint) -> CountryCode? = { null }) : CountryBorders {
+    var lookups = 0
+        private set
+
+    override suspend fun countryAt(point: GeoPoint): CountryCode? {
+        lookups++
+        return answer(point)
     }
 }

@@ -59,7 +59,7 @@ internal class AndroidSurroundingsProvider @Inject constructor(
 
     override suspend fun locationFix(request: FixRequest): LocationFix? {
         val locations = locations?.takeIf { access.isUsable } ?: return null
-        return locations.lastKnown(request) ?: locations.current(request)
+        return locations.lastKnownFix(request) ?: locations.currentFix(request, executor)
     }
 
     private fun WifiManager.recentResults(maxAge: Duration): List<AccessPoint> {
@@ -98,65 +98,6 @@ internal class AndroidSurroundingsProvider @Inject constructor(
             receiver?.let(context::unregisterReceiver)
         }
     }
-
-    private fun LocationManager.lastKnown(request: FixRequest): LocationFix? {
-        val nowNanos = SystemClock.elapsedRealtimeNanos()
-        return providers()
-            .mapNotNull(::getLastKnownLocation)
-            .filter { nowNanos - it.elapsedRealtimeNanos <= request.maxAge.toNanos() }
-            .filter { it.hasAccuracy() && it.accuracy <= request.goodEnoughMeters }
-            .minByOrNull { it.accuracy }
-            ?.toFix()
-    }
-
-    private suspend fun LocationManager.current(request: FixRequest): LocationFix? {
-        val provider = providers().firstOrNull() ?: return null
-        val signal = CancellationSignal()
-        return try {
-            withTimeoutOrNull(request.timeout.toMillis()) {
-                suspendCancellableCoroutine { continuation ->
-                    val deliver = { location: Location? ->
-                        if (continuation.isActive) continuation.resume(location?.toFix())
-                    }
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                        getCurrentLocation(provider, request.toLocationRequest(), signal, executor, deliver)
-                    } else {
-                        LocationManagerCompat.getCurrentLocation(
-                            this@current,
-                            provider,
-                            signal,
-                            executor,
-                            Consumer<Location?>(deliver),
-                        )
-                    }
-                }
-            }
-        } finally {
-            signal.cancel()
-        }
-    }
-
-    /** Enabled providers, the best first: fused (Wi‑Fi, mobile network and GPS combined), network, GPS. */
-    private fun LocationManager.providers(): List<String> = buildList {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && hasProvider(LocationManager.FUSED_PROVIDER)) {
-            add(LocationManager.FUSED_PROVIDER)
-        }
-        add(LocationManager.NETWORK_PROVIDER)
-        add(LocationManager.GPS_PROVIDER)
-    }.filter { runCatching { isProviderEnabled(it) }.getOrDefault(false) }
-
-    @RequiresApi(Build.VERSION_CODES.S)
-    private fun FixRequest.toLocationRequest(): LocationRequest = LocationRequest.Builder(0)
-        .setQuality(
-            when (precision) {
-                FixPrecision.HIGH -> LocationRequest.QUALITY_HIGH_ACCURACY
-                FixPrecision.BALANCED -> LocationRequest.QUALITY_BALANCED_POWER_ACCURACY
-            },
-        )
-        .setDurationMillis(timeout.toMillis())
-        .build()
-
-    private fun Location.toFix() = LocationFix(GeoPoint(latitude, longitude), accuracy, Instant.ofEpochMilli(time))
 
     private fun ScanResult.ssid(): String? {
         val name = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && wifiSsid != null) {
