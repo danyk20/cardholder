@@ -30,6 +30,12 @@ object PlaceClustering {
     /** Less accurate fixes aren't stored; the Wi‑Fi seen still is. */
     const val MAX_STORED_ACCURACY_METERS = 100f
 
+    /**
+     * The accuracy of a place the user put on the map: a pin is precise, but the user may have been
+     * off by a few metres. It gives the place the smallest geofence.
+     */
+    const val PINNED_ACCURACY_METERS = 25f
+
     /** An access point stored at places this far apart can't be fixed in one place. */
     const val TRAVELLING_METERS = 1_000.0
 

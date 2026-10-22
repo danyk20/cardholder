@@ -6,6 +6,10 @@ import java.time.Instant
 /**
  * Somewhere a card was used: the centre of its last location fixes (if any were accurate enough)
  * and the Wi‑Fi access points seen there.
+ *
+ * @property isPinned the user set the place's position on the map; later visits don't move it.
+ * @property fixCount how many location fixes the centre is computed from, when they were loaded
+ *   with the place.
  */
 data class Place(
     val id: Long,
@@ -16,6 +20,9 @@ data class Place(
     val lastUsedAt: Instant,
     val lastNotifiedAt: Instant? = null,
     val accessPoints: List<AccessPoint> = emptyList(),
+    val isPinned: Boolean = false,
+    val createdAt: Instant = lastUsedAt,
+    val fixCount: Int = 0,
 )
 
 /** A card suggested because the user seems to be near where it's used. */

@@ -156,6 +156,35 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun `migrating 7 to 8 keeps existing places learned, not pinned`() {
+        helper.createDatabase(DB, 7).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO cards (id, type, title, color, is_locked, created_at, updated_at, bank_network,
+                    loyalty_shop_name, loyalty_barcode_format, sealed_details, valid_countries)
+                VALUES ('1', 'LOYALTY', 'Coffee', 'BROWN', 0, 1, 2, NULL, 'Corner', 'QR_CODE', X'010203', '')
+                """.trimIndent(),
+            )
+            db.execSQL(
+                """
+                INSERT INTO places (card_id, latitude, longitude, accuracy_m, created_at, last_used_at, use_count)
+                VALUES ('1', 48.1486, 17.1077, 12.0, 1, 2, 3)
+                """.trimIndent(),
+            )
+        }
+
+        helper.runMigrationsAndValidate(DB, 8, true).use { db ->
+            db.query("SELECT latitude, use_count, pinned FROM places").use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals(48.1486, cursor.getDouble(0), 0.0)
+                assertEquals(3, cursor.getInt(1))
+                assertEquals(0, cursor.getInt(2))
+            }
+            db.query("PRAGMA foreign_key_check").use { cursor -> assertEquals(0, cursor.count) }
+        }
+    }
+
     private companion object {
         const val DB = "migration-test.db"
     }

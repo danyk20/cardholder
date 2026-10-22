@@ -1,5 +1,6 @@
 package io.github.danyk20.cardholder.core.domain.repository
 
+import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
 import io.github.danyk20.cardholder.core.domain.location.Surroundings
 import io.github.danyk20.cardholder.core.model.CardId
@@ -17,6 +18,9 @@ interface PlaceRepository {
 
     suspend fun places(ids: Collection<Long>): List<Place>
 
+    /** The places of [cardId], the most used first, with their fixes and access points. */
+    fun observePlaces(cardId: CardId): Flow<List<Place>>
+
     fun observeCount(cardId: CardId): Flow<Int>
 
     fun observeTotal(): Flow<Int>
@@ -28,6 +32,17 @@ interface PlaceRepository {
 
     /** When the user was last notified about a place of [cardId], or of any card if `null`. */
     suspend fun lastNotifiedAt(cardId: CardId? = null): Instant?
+
+    /**
+     * Moves the place to [point] and pins it: its learned fixes are replaced by [point], and later
+     * visits don't move it. Its Wi‑Fi access points are kept.
+     *
+     * @return `false` if the place no longer exists.
+     */
+    suspend fun movePlace(placeId: Long, point: GeoPoint): Boolean
+
+    /** Adds a pinned place for [cardId] at [point] and returns its id. */
+    suspend fun addPlace(cardId: CardId, point: GeoPoint): Long
 
     suspend fun forget(placeId: Long)
 

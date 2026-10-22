@@ -18,9 +18,13 @@ import io.github.danyk20.cardholder.core.domain.location.VisitPlan
 import io.github.danyk20.cardholder.core.model.CardId
 import java.time.Instant
 
-internal fun PlaceWithAccessPoints.toPlace(): Place = place.toPlace(accessPoints.map { it.toAccessPoint() })
+internal fun PlaceWithAccessPoints.toPlace(): Place = place.toPlace(
+    accessPoints = accessPoints.map { it.toAccessPoint() },
+    fixCount = fixes.size,
+)
 
-internal fun PlaceEntity.toPlace(accessPoints: List<AccessPoint> = emptyList()): Place = Place(
+/** A place without its loaded [accessPoints] and [fixCount], e.g. for geofences that need neither. */
+internal fun PlaceEntity.toPlace(accessPoints: List<AccessPoint> = emptyList(), fixCount: Int = 0): Place = Place(
     id = id,
     cardId = CardId(cardId),
     centre = latitude?.let { lat -> longitude?.let { lon -> GeoPoint(lat, lon) } },
@@ -29,6 +33,9 @@ internal fun PlaceEntity.toPlace(accessPoints: List<AccessPoint> = emptyList()):
     lastUsedAt = Instant.ofEpochMilli(lastUsedAt),
     lastNotifiedAt = lastNotifiedAt?.let(Instant::ofEpochMilli),
     accessPoints = accessPoints,
+    isPinned = pinned,
+    createdAt = Instant.ofEpochMilli(createdAt),
+    fixCount = fixCount,
 )
 
 private fun PlaceAccessPointEntity.toAccessPoint() = AccessPoint(Bssid(bssid), ssid, rssi)
