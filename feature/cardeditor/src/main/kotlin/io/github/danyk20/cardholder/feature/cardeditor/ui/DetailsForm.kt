@@ -50,6 +50,7 @@ import io.github.danyk20.cardholder.feature.cardeditor.CardEditorUiState
 import io.github.danyk20.cardholder.feature.cardeditor.R
 
 /** Callbacks of the details form, grouped to keep composable signatures readable. */
+@Suppress("LongParameterList") // Grouping the callbacks by field is the point of this class.
 internal class DetailsActions(
     val onTitleChange: (String) -> Unit,
     val onNotesChange: (String) -> Unit,

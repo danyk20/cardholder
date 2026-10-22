@@ -76,7 +76,7 @@ internal class ByteReader(private val bytes: ByteArray) {
 
     fun byte(): Int {
         require(position < bytes.size) { "Unexpected end of data" }
-        return bytes[position++].toInt() and 0xFF
+        return bytes[position++].toInt() and BYTE_MASK
     }
 
     fun bytes(count: Int): ByteArray {
@@ -90,9 +90,9 @@ internal class ByteReader(private val bytes: ByteArray) {
         while (true) {
             val value = byte()
             require(shift < MAX_VARINT_BITS) { "Varint too long" }
-            result = result or ((value and 0x7F).toLong() shl shift)
-            if (value and 0x80 == 0) return result
-            shift += 7
+            result = result or ((value and PAYLOAD_MASK).toLong() shl shift)
+            if (value and CONTINUATION == 0) return result
+            shift += PAYLOAD_BITS
         }
     }
 
@@ -102,6 +102,10 @@ internal class ByteReader(private val bytes: ByteArray) {
     }
 
     private companion object {
+        const val BYTE_MASK = 0xFF
+        const val PAYLOAD_MASK = 0x7F
+        const val CONTINUATION = 0x80
+        const val PAYLOAD_BITS = 7
         const val MAX_VARINT_BITS = 64
     }
 }

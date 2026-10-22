@@ -44,8 +44,10 @@ class ResolveCurrentCountryUseCase @Inject constructor(
     }
 
     /** The country read now, from the network or else from location; `null` if neither gives one. */
-    private suspend fun freshDetection(): CurrentCountry? {
-        network.networkCountry()?.let { return CurrentCountry(it, CountrySource.NETWORK) }
+    private suspend fun freshDetection(): CurrentCountry? =
+        network.networkCountry()?.let { CurrentCountry(it, CountrySource.NETWORK) } ?: locationDetection()
+
+    private suspend fun locationDetection(): CurrentCountry? {
         if (!mayLookUpLocation()) return null
         val point = location.approximateLocation(LOCATION_MAX_AGE) ?: return null
         return borders.countryAt(point)?.let { CurrentCountry(it, CountrySource.LOCATION) }

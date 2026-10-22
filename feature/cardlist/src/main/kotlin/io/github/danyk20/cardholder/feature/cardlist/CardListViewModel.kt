@@ -49,6 +49,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 
 @HiltViewModel
+@Suppress("LongParameterList", "TooManyFunctions") // One collaborator per parameter; one handler per action.
 class CardListViewModel @Inject constructor(
     private val observeCards: ObserveCardsUseCase,
     private val cardRepository: CardRepository,

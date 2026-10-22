@@ -5,6 +5,9 @@ import androidx.compose.ui.test.onRoot
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.github.takahirom.roborazzi.captureRoboImage
 import io.github.danyk20.cardholder.core.designsystem.theme.CardholderTheme
+import io.github.danyk20.cardholder.core.domain.country.CountrySource
+import io.github.danyk20.cardholder.core.domain.country.CountryState
+import io.github.danyk20.cardholder.core.domain.country.CurrentCountry
 import io.github.danyk20.cardholder.core.domain.location.NearbyReason
 import io.github.danyk20.cardholder.core.domain.model.Country
 import io.github.danyk20.cardholder.core.model.Card
@@ -51,6 +54,19 @@ class StoreScreenshotTest {
         query = "",
         visibleTypes = CardType.entries.toSet(),
         hasAnyCards = true,
+        // The country row shows the country in use and the filter switched on, as in the app.
+        country = CountryChip(
+            state = CountryState(
+                effective = CurrentCountry(SWITZERLAND, CountrySource.NETWORK),
+                detected = CurrentCountry(SWITZERLAND, CountrySource.NETWORK),
+            ),
+            filterEnabled = true,
+        ),
+        countries = listOf(
+            Country(SWITZERLAND, "Switzerland"),
+            Country(GERMANY, "Germany"),
+            Country(AUSTRIA, "Austria"),
+        ),
     )
 
     @Test

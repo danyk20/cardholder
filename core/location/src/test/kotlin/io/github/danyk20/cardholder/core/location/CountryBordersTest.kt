@@ -96,32 +96,36 @@ private fun encode(countries: List<TestCountry>): ByteArray {
     out.write("CHCB".toByteArray(Charsets.US_ASCII))
     out.write(1)
     out.varint(countries.size.toLong())
-    for (country in countries) {
-        out.write(country.code.toByteArray(Charsets.US_ASCII))
-        val points = country.polygons.flatMap { it.rings.flatten() }
-        out.zigzag(Math.round(points.minOf { it.first } * SCALE))
-        out.zigzag(Math.round(points.minOf { it.second } * SCALE))
-        out.zigzag(Math.round(points.maxOf { it.first } * SCALE))
-        out.zigzag(Math.round(points.maxOf { it.second } * SCALE))
-        out.varint(country.polygons.size.toLong())
-        for (polygon in country.polygons) {
-            out.varint(polygon.rings.size.toLong())
-            for (ring in polygon.rings) {
-                out.varint(ring.size.toLong())
-                var previousLat = 0L
-                var previousLon = 0L
-                for ((lat, lon) in ring) {
-                    val latUnits = Math.round(lat * SCALE)
-                    val lonUnits = Math.round(lon * SCALE)
-                    out.zigzag(latUnits - previousLat)
-                    out.zigzag(lonUnits - previousLon)
-                    previousLat = latUnits
-                    previousLon = lonUnits
-                }
-            }
-        }
-    }
+    countries.forEach { out.writeCountry(it) }
     return out.toByteArray()
+}
+
+private fun ByteArrayOutputStream.writeCountry(country: TestCountry) {
+    write(country.code.toByteArray(Charsets.US_ASCII))
+    val points = country.polygons.flatMap { it.rings.flatten() }
+    zigzag(Math.round(points.minOf { it.first } * SCALE))
+    zigzag(Math.round(points.minOf { it.second } * SCALE))
+    zigzag(Math.round(points.maxOf { it.first } * SCALE))
+    zigzag(Math.round(points.maxOf { it.second } * SCALE))
+    varint(country.polygons.size.toLong())
+    country.polygons.forEach { polygon ->
+        varint(polygon.rings.size.toLong())
+        polygon.rings.forEach { writeRing(it) }
+    }
+}
+
+private fun ByteArrayOutputStream.writeRing(ring: List<Pair<Double, Double>>) {
+    varint(ring.size.toLong())
+    var previousLat = 0L
+    var previousLon = 0L
+    for ((lat, lon) in ring) {
+        val latUnits = Math.round(lat * SCALE)
+        val lonUnits = Math.round(lon * SCALE)
+        zigzag(latUnits - previousLat)
+        zigzag(lonUnits - previousLon)
+        previousLat = latUnits
+        previousLon = lonUnits
+    }
 }
 
 private fun ByteArrayOutputStream.varint(value: Long) {

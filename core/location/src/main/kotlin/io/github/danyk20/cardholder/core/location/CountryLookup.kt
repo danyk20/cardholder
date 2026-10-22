@@ -31,14 +31,10 @@ internal class CountryLookup(private val countries: List<CountryBorder>) {
             val near = point.latitude in country.minLat - latMargin..country.maxLat + latMargin &&
                 point.longitude in country.minLon - lonMargin..country.maxLon + lonMargin
             if (!near) continue
-            for (polygon in country.polygons) {
-                for (ring in polygon.rings) {
-                    val km = ring.nearestEdgeKm(point)
-                    if (km < bestKm) {
-                        bestKm = km
-                        best = country.code
-                    }
-                }
+            val km = country.nearestEdgeKm(point)
+            if (km < bestKm) {
+                bestKm = km
+                best = country.code
             }
         }
         return best
@@ -46,14 +42,26 @@ internal class CountryLookup(private val countries: List<CountryBorder>) {
 
     private companion object {
         const val COAST_TOLERANCE_KM = 25.0
-        const val KM_PER_DEGREE_LAT = 110.574
-        const val KM_PER_DEGREE_LON_AT_EQUATOR = 111.320
-        const val MIN_COS = 0.01
-
-        fun kmPerDegreeLon(latitude: Double): Double =
-            KM_PER_DEGREE_LON_AT_EQUATOR * max(cos(Math.toRadians(latitude)), MIN_COS)
     }
 }
+
+/** Distance in km from [point] to the nearest edge of any ring of the country. */
+private fun CountryBorder.nearestEdgeKm(point: GeoPoint): Double {
+    var best = Double.MAX_VALUE
+    for (polygon in polygons) {
+        for (ring in polygon.rings) {
+            best = min(best, ring.nearestEdgeKm(point))
+        }
+    }
+    return best
+}
+
+private const val KM_PER_DEGREE_LAT = 110.574
+private const val KM_PER_DEGREE_LON_AT_EQUATOR = 111.320
+private const val MIN_COS = 0.01
+
+private fun kmPerDegreeLon(latitude: Double): Double =
+    KM_PER_DEGREE_LON_AT_EQUATOR * max(cos(Math.toRadians(latitude)), MIN_COS)
 
 /** Even-odd test over all rings of the polygon: a point in a hole is outside. */
 private fun BorderPolygon.contains(point: GeoPoint): Boolean {
@@ -76,8 +84,8 @@ private fun BorderPolygon.contains(point: GeoPoint): Boolean {
 
 /** Distance in km from [point] to the nearest edge of the ring, in a local flat map around the point. */
 private fun BorderRing.nearestEdgeKm(point: GeoPoint): Double {
-    val kmLon = 111.320 * max(cos(Math.toRadians(point.latitude)), 0.01)
-    val kmLat = 110.574
+    val kmLon = kmPerDegreeLon(point.latitude)
+    val kmLat = KM_PER_DEGREE_LAT
     var best = Double.MAX_VALUE
     for (i in 0 until size) {
         val j = (i + 1) % size
