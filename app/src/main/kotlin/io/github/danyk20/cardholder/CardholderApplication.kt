@@ -14,6 +14,8 @@ import dagger.hilt.android.HiltAndroidApp
 import io.github.danyk20.cardholder.core.domain.di.ApplicationScope
 import io.github.danyk20.cardholder.core.domain.repository.CardImageRepository
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
+import io.github.danyk20.cardholder.core.domain.repository.CurrentCountryRepository
+import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
 import io.github.danyk20.cardholder.core.domain.usecase.SyncGeofencesUseCase
 import io.github.danyk20.cardholder.core.security.ProcessSessionLockEvents
 import io.github.danyk20.cardholder.image.CardImageFetcher
@@ -25,7 +27,9 @@ import kotlin.coroutines.cancellation.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 @HiltAndroidApp
@@ -59,11 +63,18 @@ class CardholderApplication :
     @Inject
     lateinit var syncGeofences: Lazy<SyncGeofencesUseCase>
 
+    @Inject
+    lateinit var currentCountry: Lazy<CurrentCountryRepository>
+
+    @Inject
+    lateinit var userPreferences: Lazy<UserPreferencesRepository>
+
     override fun onCreate() {
         super.onCreate()
         sessionLockEvents.register()
         ExpiryReminderWorker.schedule(this)
         keepQuickAccessUpToDate()
+        keepWidgetCountryUpToDate()
         keepGeofencesUpToDate()
         applicationScope.launch {
             // Decrypted photos must not outlive the session in memory.
@@ -86,6 +97,24 @@ class CardholderApplication :
             } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
                 // The cards can't be read (see the recovery screen); shortcuts just stay as they are.
                 Log.w(TAG, "Couldn't update shortcuts and widget", e)
+            }
+        }
+    }
+
+    /**
+     * The widget shows the cards valid in the current country, so it is redrawn when the country is detected
+     * again or the filter is switched. App shortcuts don't depend on the country.
+     */
+    private fun keepWidgetCountryUpToDate() {
+        applicationScope.launch(Dispatchers.IO) {
+            try {
+                val filterOn = userPreferences.get().preferences.map { it.countryFilterEnabled }.distinctUntilChanged()
+                combine(currentCountry.get().state.distinctUntilChanged(), filterOn) { _, _ -> Unit }
+                    .collect { CardsWidget().updateAll(this@CardholderApplication) }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
+                Log.w(TAG, "Couldn't update the widget's countries", e)
             }
         }
     }
