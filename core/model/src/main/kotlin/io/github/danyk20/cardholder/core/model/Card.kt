@@ -36,6 +36,8 @@ data class Card(
     val expiresOn: LocalDate? = null,
     /** Whether the card learns where it's used and is suggested there again. */
     val suggestByLocation: Boolean = false,
+    /** The countries the card is valid in. Shown without unlocking, like the title. */
+    val validity: CardValidity = CardValidity.Everywhere,
 ) {
     val type: CardType get() = info.type
 }
