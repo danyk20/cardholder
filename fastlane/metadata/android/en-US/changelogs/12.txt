@@ -1,0 +1,1 @@
+Edit a place's Wi‑Fi: remove networks that don't belong to it, so they no longer suggest the card or notify you. Removed networks can be restored.
