@@ -5,6 +5,19 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-10-30
+### Added
+- A place's Wi‑Fi networks can be edited: select a place on the Places screen and tap "Edit Wi‑Fi" to see its
+  networks, with their signal and when they were seen, and remove the ones that don't belong to it. A removed
+  network is not learned at that place again; removing it can be undone, and removed networks can be restored.
+
+### Fixed
+- Networks seen nearby while using a card (a neighbour's, one in range of the shop) no longer keep suggesting the
+  card, or notifying on arrival, once they are removed from the place.
+
+### Changed
+- Updated DataStore, kotlinx-serialization, ML Kit text recognition, the Android Gradle Plugin and Gradle.
+
 ## [1.6.0] - 2026-10-22
 ### Added
 - A card's places are shown on a map and in a list, on a new Places screen opened from the card's
