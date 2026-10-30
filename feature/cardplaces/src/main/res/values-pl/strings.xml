@@ -48,4 +48,32 @@
     <string name="places_deleted">Usunięto miejsce</string>
     <string name="places_forgotten">Zapomniano wszystkie miejsca</string>
     <string name="places_not_saved">Nie udało się zapisać miejsca.</string>
+    <string name="places_edit_wifi">Edytuj Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi w miejscu %1$d</string>
+    <string name="places_wifi_explainer">Sieci wykryte, gdy używasz tu karty. Usuń te, które nie należą do tego miejsca, np. sąsiada, aby nie podpowiadały już karty.</string>
+    <string name="places_wifi_none">W tym miejscu nie zostały żadne sieci Wi‑Fi.</string>
+    <string name="places_wifi_nothing_left">To miejsce nie ma pozycji na mapie ani sieci Wi‑Fi, więc nie może podpowiedzieć karty. Ustaw je na mapie lub usuń.</string>
+    <string name="places_wifi_hidden">Sieć ukryta (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d punkt dostępu</item>
+        <item quantity="few">%d punkty dostępu</item>
+        <item quantity="many">%d punktów dostępu</item>
+        <item quantity="other">%d punktu dostępu</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Wykryto %1$d raz, ostatnio %2$s</item>
+        <item quantity="few">Wykryto %1$d razy, ostatnio %2$s</item>
+        <item quantity="many">Wykryto %1$d razy, ostatnio %2$s</item>
+        <item quantity="other">Wykryto %1$d razy, ostatnio %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Silny sygnał</string>
+    <string name="places_wifi_signal_good">Dobry sygnał</string>
+    <string name="places_wifi_signal_weak">Słaby sygnał</string>
+    <string name="places_wifi_remove">Usuń %1$s</string>
+    <string name="places_wifi_removed_message">Usunięto: %1$s</string>
+    <string name="places_wifi_undo">Cofnij</string>
+    <string name="places_wifi_removed_header">Usunięte sieci (%1$d)</string>
+    <string name="places_wifi_removed_hint">Usunięte sieci nie są ponownie zapamiętywane w tym miejscu i nie podpowiadają karty.</string>
+    <string name="places_wifi_restore">Przywróć</string>
+    <string name="places_wifi_done">Gotowe</string>
 </resources>

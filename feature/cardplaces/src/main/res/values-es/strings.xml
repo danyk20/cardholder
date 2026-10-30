@@ -45,4 +45,30 @@
     <string name="places_deleted">Lugar eliminado</string>
     <string name="places_forgotten">Todos los lugares olvidados</string>
     <string name="places_not_saved">No se pudo guardar el lugar.</string>
+    <string name="places_edit_wifi">Editar Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi en el lugar %1$d</string>
+    <string name="places_wifi_explainer">Redes detectadas cuando usaste la tarjeta aquí. Elimina las que no pertenezcan a este lugar, como la de un vecino, para que dejen de sugerir la tarjeta.</string>
+    <string name="places_wifi_none">No quedan redes Wi‑Fi en este lugar.</string>
+    <string name="places_wifi_nothing_left">Este lugar no tiene posición en el mapa ni Wi‑Fi, así que no puede sugerir la tarjeta. Fíjalo en el mapa o elimínalo.</string>
+    <string name="places_wifi_hidden">Red oculta (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d punto de acceso</item>
+        <item quantity="many">%d de puntos de acceso</item>
+        <item quantity="other">%d puntos de acceso</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Detectada %1$d vez, la última %2$s</item>
+        <item quantity="many">Detectada %1$d de veces, la última %2$s</item>
+        <item quantity="other">Detectada %1$d veces, la última %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Señal fuerte</string>
+    <string name="places_wifi_signal_good">Señal buena</string>
+    <string name="places_wifi_signal_weak">Señal débil</string>
+    <string name="places_wifi_remove">Eliminar %1$s</string>
+    <string name="places_wifi_removed_message">Se eliminó %1$s</string>
+    <string name="places_wifi_undo">Deshacer</string>
+    <string name="places_wifi_removed_header">Redes eliminadas (%1$d)</string>
+    <string name="places_wifi_removed_hint">Las redes eliminadas no se vuelven a aprender en este lugar y no sugieren la tarjeta.</string>
+    <string name="places_wifi_restore">Restaurar</string>
+    <string name="places_wifi_done">Listo</string>
 </resources>

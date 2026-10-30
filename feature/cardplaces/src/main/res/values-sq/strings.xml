@@ -42,4 +42,28 @@
     <string name="places_deleted">Vendi u fshi</string>
     <string name="places_forgotten">Të gjitha vendet u harruan</string>
     <string name="places_not_saved">Vendi nuk mund të ruhej.</string>
+    <string name="places_edit_wifi">Redakto Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi te vendi %1$d</string>
+    <string name="places_wifi_explainer">Rrjetet e vërejtura kur e përdorët kartën këtu. Hiqini ato që nuk i përkasin këtij vendi, si p.sh. të një fqinji, që të mos e sugjerojnë më kartën.</string>
+    <string name="places_wifi_none">Në këtë vend nuk kanë mbetur rrjete Wi‑Fi.</string>
+    <string name="places_wifi_nothing_left">Ky vend nuk ka pozicion në hartë dhe nuk ka mbetur Wi‑Fi, ndaj nuk mund ta sugjerojë kartën. Vendoseni në hartë ose fshijeni.</string>
+    <string name="places_wifi_hidden">Rrjet i fshehur (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d pikë qasjeje</item>
+        <item quantity="other">%d pika qasjeje</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Vërejtur %1$d herë, së fundi %2$s</item>
+        <item quantity="other">Vërejtur %1$d herë, së fundi %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Sinjal i fortë</string>
+    <string name="places_wifi_signal_good">Sinjal i mirë</string>
+    <string name="places_wifi_signal_weak">Sinjal i dobët</string>
+    <string name="places_wifi_remove">Hiq %1$s</string>
+    <string name="places_wifi_removed_message">%1$s u hoq</string>
+    <string name="places_wifi_undo">Zhbëj</string>
+    <string name="places_wifi_removed_header">Rrjetet e hequra (%1$d)</string>
+    <string name="places_wifi_removed_hint">Rrjetet e hequra nuk mësohen më në këtë vend dhe nuk e sugjerojnë kartën.</string>
+    <string name="places_wifi_restore">Rikthe</string>
+    <string name="places_wifi_done">U krye</string>
 </resources>

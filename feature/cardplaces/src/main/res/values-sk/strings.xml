@@ -48,4 +48,32 @@
     <string name="places_deleted">Miesto odstránené</string>
     <string name="places_forgotten">Všetky miesta zabudnuté</string>
     <string name="places_not_saved">Miesto sa nepodarilo uložiť.</string>
+    <string name="places_edit_wifi">Upraviť Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi na mieste %1$d</string>
+    <string name="places_wifi_explainer">Siete zaznamenané, keď ste tu kartu použili. Odstráňte tie, ktoré k tomuto miestu nepatria, napríklad susedovu, aby už nenavrhovali kartu.</string>
+    <string name="places_wifi_none">Na tomto mieste nezostali žiadne siete Wi‑Fi.</string>
+    <string name="places_wifi_nothing_left">Toto miesto nemá polohu na mape ani žiadnu Wi‑Fi, preto nemôže navrhnúť kartu. Nastavte ho na mape alebo ho odstráňte.</string>
+    <string name="places_wifi_hidden">Skrytá sieť (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d prístupový bod</item>
+        <item quantity="few">%d prístupové body</item>
+        <item quantity="many">%d prístupového bodu</item>
+        <item quantity="other">%d prístupových bodov</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Zaznamenané %1$d krát, naposledy %2$s</item>
+        <item quantity="few">Zaznamenané %1$d krát, naposledy %2$s</item>
+        <item quantity="many">Zaznamenané %1$d krát, naposledy %2$s</item>
+        <item quantity="other">Zaznamenané %1$d krát, naposledy %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Silný signál</string>
+    <string name="places_wifi_signal_good">Dobrý signál</string>
+    <string name="places_wifi_signal_weak">Slabý signál</string>
+    <string name="places_wifi_remove">Odobrať %1$s</string>
+    <string name="places_wifi_removed_message">Odobraté: %1$s</string>
+    <string name="places_wifi_undo">Späť</string>
+    <string name="places_wifi_removed_header">Odobraté siete (%1$d)</string>
+    <string name="places_wifi_removed_hint">Odobraté siete sa na tomto mieste už nenaučia a nenavrhujú kartu.</string>
+    <string name="places_wifi_restore">Obnoviť</string>
+    <string name="places_wifi_done">Hotovo</string>
 </resources>

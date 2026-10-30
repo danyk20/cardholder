@@ -29,6 +29,13 @@ place they have never been to by tapping the map.
 - Moving keeps the place's **Wi‑Fi access points**. They were seen at the real place, and only the GPS position was
   wrong.
 - Adding a place creates a pinned place with one fix at the tapped spot.
+- A place's **Wi‑Fi networks can be removed** (added 2026-10-30): networks learned by mistake, e.g. a neighbour's or
+  one in range of the shop, otherwise suggest the card wherever they're seen again. The editor lists the networks
+  by name; removing one removes all its access points. A removed access point stays stored, marked **blocked**,
+  so it no longer counts for the place, isn't learned there again (under any address with the same name), isn't
+  learned for a new place of the same card either, and can be restored with what was learned about it. A blocked
+  access point is per place: other places and cards may still learn it. Blocked ones don't count toward the 20
+  access points a place keeps.
 
 ## Alternatives
 - **osmdroid**: the first choice, but its GitHub repository has been archived since 2024, with no fixes since

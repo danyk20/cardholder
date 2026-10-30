@@ -45,4 +45,30 @@
     <string name="places_deleted">Mesto je obrisano</string>
     <string name="places_forgotten">Sva mesta su zaboravljena</string>
     <string name="places_not_saved">Mesto nije moglo da se sačuva.</string>
+    <string name="places_edit_wifi">Izmeni Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi na mestu %1$d</string>
+    <string name="places_wifi_explainer">Mreže viđene kada ste ovde koristili karticu. Uklonite one koje ne pripadaju ovom mestu, poput komšijskih, da više ne predlažu karticu.</string>
+    <string name="places_wifi_none">Na ovom mestu nema preostalih Wi‑Fi mreža.</string>
+    <string name="places_wifi_nothing_left">Ovo mesto nema položaj na mapi ni preostale Wi‑Fi mreže, pa ne može da predloži karticu. Postavite ga na mapi ili ga obrišite.</string>
+    <string name="places_wifi_hidden">Skrivena mreža (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d pristupna tačka</item>
+        <item quantity="few">%d pristupne tačke</item>
+        <item quantity="other">%d pristupnih tačaka</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Viđeno %1$d put, poslednji put %2$s</item>
+        <item quantity="few">Viđeno %1$d puta, poslednji put %2$s</item>
+        <item quantity="other">Viđeno %1$d puta, poslednji put %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Jak signal</string>
+    <string name="places_wifi_signal_good">Dobar signal</string>
+    <string name="places_wifi_signal_weak">Slab signal</string>
+    <string name="places_wifi_remove">Ukloni %1$s</string>
+    <string name="places_wifi_removed_message">Uklonjeno: %1$s</string>
+    <string name="places_wifi_undo">Opozovi</string>
+    <string name="places_wifi_removed_header">Uklonjene mreže (%1$d)</string>
+    <string name="places_wifi_removed_hint">Uklonjene mreže se na ovom mestu više ne uče i ne predlažu karticu.</string>
+    <string name="places_wifi_restore">Vrati</string>
+    <string name="places_wifi_done">Gotovo</string>
 </resources>

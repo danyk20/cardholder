@@ -54,4 +54,36 @@
     <string name="places_deleted">تم حذف المكان</string>
     <string name="places_forgotten">تم نسيان كل الأماكن</string>
     <string name="places_not_saved">تعذّر حفظ المكان.</string>
+    <string name="places_edit_wifi">تعديل Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi في المكان %1$d</string>
+    <string name="places_wifi_explainer">الشبكات التي رُصدت عند استخدامك البطاقة هنا. أزل الشبكات التي لا تخص هذا المكان، مثل شبكة الجار، حتى لا تقترح البطاقة بعد الآن.</string>
+    <string name="places_wifi_none">لم تتبقَّ شبكات Wi‑Fi في هذا المكان.</string>
+    <string name="places_wifi_nothing_left">ليس لهذا المكان موضع على الخريطة ولا شبكات Wi‑Fi متبقية، لذا لا يمكنه اقتراح البطاقة. حدّده على الخريطة أو احذفه.</string>
+    <string name="places_wifi_hidden">شبكة مخفية (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="zero">%d نقطة وصول</item>
+        <item quantity="one">%d نقطة وصول</item>
+        <item quantity="two">%d نقطتا وصول</item>
+        <item quantity="few">%d نقاط وصول</item>
+        <item quantity="many">%d نقطة وصول</item>
+        <item quantity="other">%d نقطة وصول</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="zero">رُصدت %1$d مرة، آخر مرة %2$s</item>
+        <item quantity="one">رُصدت %1$d مرة، آخر مرة %2$s</item>
+        <item quantity="two">رُصدت %1$d مرتين، آخر مرة %2$s</item>
+        <item quantity="few">رُصدت %1$d مرات، آخر مرة %2$s</item>
+        <item quantity="many">رُصدت %1$d مرة، آخر مرة %2$s</item>
+        <item quantity="other">رُصدت %1$d مرة، آخر مرة %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">إشارة قوية</string>
+    <string name="places_wifi_signal_good">إشارة جيدة</string>
+    <string name="places_wifi_signal_weak">إشارة ضعيفة</string>
+    <string name="places_wifi_remove">إزالة %1$s</string>
+    <string name="places_wifi_removed_message">تمت إزالة %1$s</string>
+    <string name="places_wifi_undo">تراجع</string>
+    <string name="places_wifi_removed_header">الشبكات المُزالة (%1$d)</string>
+    <string name="places_wifi_removed_hint">لن يتعلّم Cardholder الشبكات المُزالة في هذا المكان مرة أخرى ولن تقترح البطاقة.</string>
+    <string name="places_wifi_restore">استعادة</string>
+    <string name="places_wifi_done">تم</string>
 </resources>

@@ -185,6 +185,41 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun `migrating 8 to 9 keeps existing access points, none removed`() {
+        helper.createDatabase(DB, 8).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO cards (id, type, title, color, is_locked, created_at, updated_at, bank_network,
+                    loyalty_shop_name, loyalty_barcode_format, sealed_details, valid_countries)
+                VALUES ('1', 'LOYALTY', 'Coffee', 'BROWN', 0, 1, 2, NULL, 'Corner', 'QR_CODE', X'010203', '')
+                """.trimIndent(),
+            )
+            db.execSQL(
+                """
+                INSERT INTO places (id, card_id, latitude, longitude, accuracy_m, created_at, last_used_at, use_count)
+                VALUES (1, '1', 48.1486, 17.1077, 12.0, 1, 2, 3)
+                """.trimIndent(),
+            )
+            db.execSQL(
+                """
+                INSERT INTO place_access_points (place_id, bssid, ssid, rssi, seen_count, last_seen_at)
+                VALUES (1, 42, 'Corner Guest', -60, 2, 2)
+                """.trimIndent(),
+            )
+        }
+
+        helper.runMigrationsAndValidate(DB, 9, true).use { db ->
+            db.query("SELECT bssid, seen_count, blocked FROM place_access_points").use { cursor ->
+                assertTrue(cursor.moveToFirst())
+                assertEquals(42L, cursor.getLong(0))
+                assertEquals(2, cursor.getInt(1))
+                assertEquals(0, cursor.getInt(2))
+            }
+            db.query("PRAGMA foreign_key_check").use { cursor -> assertEquals(0, cursor.count) }
+        }
+    }
+
     private companion object {
         const val DB = "migration-test.db"
     }

@@ -45,4 +45,30 @@
     <string name="places_deleted">Место је обрисано</string>
     <string name="places_forgotten">Сва места су заборављена</string>
     <string name="places_not_saved">Место није могло да се сачува.</string>
+    <string name="places_edit_wifi">Измени Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi на месту %1$d</string>
+    <string name="places_wifi_explainer">Мреже виђене када сте овде користили картицу. Уклоните оне које не припадају овом месту, попут комшијских, да више не предлажу картицу.</string>
+    <string name="places_wifi_none">На овом месту нема преосталих Wi‑Fi мрежа.</string>
+    <string name="places_wifi_nothing_left">Ово место нема положај на мапи ни преостале Wi‑Fi мреже, па не може да предложи картицу. Поставите га на мапи или га обришите.</string>
+    <string name="places_wifi_hidden">Скривена мрежа (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d приступна тачка</item>
+        <item quantity="few">%d приступне тачке</item>
+        <item quantity="other">%d приступних тачака</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Виђено %1$d пут, последњи пут %2$s</item>
+        <item quantity="few">Виђено %1$d пута, последњи пут %2$s</item>
+        <item quantity="other">Виђено %1$d пута, последњи пут %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Јак сигнал</string>
+    <string name="places_wifi_signal_good">Добар сигнал</string>
+    <string name="places_wifi_signal_weak">Слаб сигнал</string>
+    <string name="places_wifi_remove">Уклони %1$s</string>
+    <string name="places_wifi_removed_message">Уклоњено: %1$s</string>
+    <string name="places_wifi_undo">Опозови</string>
+    <string name="places_wifi_removed_header">Уклоњене мреже (%1$d)</string>
+    <string name="places_wifi_removed_hint">Уклоњене мреже се на овом месту више не уче и не предлажу картицу.</string>
+    <string name="places_wifi_restore">Врати</string>
+    <string name="places_wifi_done">Готово</string>
 </resources>

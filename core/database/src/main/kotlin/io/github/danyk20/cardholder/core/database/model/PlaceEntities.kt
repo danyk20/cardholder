@@ -57,7 +57,10 @@ data class PlaceFixEntity(
     @ColumnInfo(name = "recorded_at") val recordedAt: Long,
 )
 
-/** A Wi‑Fi access point seen at a place; [bssid] is its 48-bit hardware address. */
+/**
+ * A Wi‑Fi access point seen at a place; [bssid] is its 48-bit hardware address. One the user removed is
+ * kept [blocked], so the place doesn't learn it again and the user can restore it.
+ */
 @Entity(
     tableName = "place_access_points",
     primaryKeys = ["place_id", "bssid"],
@@ -80,6 +83,8 @@ data class PlaceAccessPointEntity(
     /** On how many visits it was seen; the most seen ones are kept. */
     @ColumnInfo(name = "seen_count") val seenCount: Int,
     @ColumnInfo(name = "last_seen_at") val lastSeenAt: Long,
+    /** Removed by the user: never a sign of the place, and not counted among the ones it keeps. */
+    @ColumnInfo(name = "blocked", defaultValue = "0") val blocked: Boolean = false,
 )
 
 /** An access point seen at places far apart (on a bus or train, a phone hotspot); never used again. */

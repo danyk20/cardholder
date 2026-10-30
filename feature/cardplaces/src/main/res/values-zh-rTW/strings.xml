@@ -39,4 +39,26 @@
     <string name="places_deleted">地點已刪除</string>
     <string name="places_forgotten">已忘記所有地點</string>
     <string name="places_not_saved">無法儲存這個地點。</string>
+    <string name="places_edit_wifi">編輯 Wi‑Fi</string>
+    <string name="places_wifi_title">地點 %1$d 的 Wi‑Fi</string>
+    <string name="places_wifi_explainer">在這裡使用卡片時偵測到的網路。請移除不屬於這個地點的網路（例如鄰居家的），這樣它們就不會再觸發卡片建議。</string>
+    <string name="places_wifi_none">這個地點已沒有剩餘的 Wi‑Fi 網路。</string>
+    <string name="places_wifi_nothing_left">這個地點沒有地圖位置，也沒有剩餘的 Wi‑Fi，因此無法建議卡片。請在地圖上設定，或將其刪除。</string>
+    <string name="places_wifi_hidden">隱藏網路 (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="other">%d 個存取點</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="other">已偵測到 %1$d 次，最近一次 %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">訊號強</string>
+    <string name="places_wifi_signal_good">訊號良好</string>
+    <string name="places_wifi_signal_weak">訊號弱</string>
+    <string name="places_wifi_remove">移除 %1$s</string>
+    <string name="places_wifi_removed_message">已移除 %1$s</string>
+    <string name="places_wifi_undo">復原</string>
+    <string name="places_wifi_removed_header">已移除的網路 (%1$d)</string>
+    <string name="places_wifi_removed_hint">已移除的網路不會再在這個地點被學習，也不會建議卡片。</string>
+    <string name="places_wifi_restore">還原</string>
+    <string name="places_wifi_done">完成</string>
 </resources>

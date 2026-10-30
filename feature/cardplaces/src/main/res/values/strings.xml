@@ -42,4 +42,28 @@
     <string name="places_deleted">Place deleted</string>
     <string name="places_forgotten">All places forgotten</string>
     <string name="places_not_saved">The place couldn\'t be saved.</string>
+    <string name="places_edit_wifi">Edit Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi at place %1$d</string>
+    <string name="places_wifi_explainer">Networks seen when you used the card here. Remove ones that don\'t belong to this place, like a neighbour\'s, so they no longer suggest the card.</string>
+    <string name="places_wifi_none">No Wi‑Fi networks left at this place.</string>
+    <string name="places_wifi_nothing_left">This place has no map position and no Wi‑Fi left, so it can\'t suggest the card. Set it on the map or delete it.</string>
+    <string name="places_wifi_hidden">Hidden network (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d access point</item>
+        <item quantity="other">%d access points</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Seen %1$d time, last %2$s</item>
+        <item quantity="other">Seen %1$d times, last %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Strong signal</string>
+    <string name="places_wifi_signal_good">Good signal</string>
+    <string name="places_wifi_signal_weak">Weak signal</string>
+    <string name="places_wifi_remove">Remove %1$s</string>
+    <string name="places_wifi_removed_message">%1$s removed</string>
+    <string name="places_wifi_undo">Undo</string>
+    <string name="places_wifi_removed_header">Removed networks (%1$d)</string>
+    <string name="places_wifi_removed_hint">Removed networks aren\'t learned at this place again and don\'t suggest the card.</string>
+    <string name="places_wifi_restore">Restore</string>
+    <string name="places_wifi_done">Done</string>
 </resources>

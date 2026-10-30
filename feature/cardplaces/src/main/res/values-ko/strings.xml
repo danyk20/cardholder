@@ -39,4 +39,26 @@
     <string name="places_deleted">장소를 삭제했습니다</string>
     <string name="places_forgotten">모든 장소를 잊었습니다</string>
     <string name="places_not_saved">장소를 저장할 수 없습니다.</string>
+    <string name="places_edit_wifi">Wi‑Fi 편집</string>
+    <string name="places_wifi_title">장소 %1$d의 Wi‑Fi</string>
+    <string name="places_wifi_explainer">여기에서 카드를 사용할 때 감지된 네트워크입니다. 이웃집 네트워크처럼 이 장소에 속하지 않는 네트워크는 제거하면 더 이상 카드를 제안하지 않습니다.</string>
+    <string name="places_wifi_none">이 장소에 남은 Wi‑Fi 네트워크가 없습니다.</string>
+    <string name="places_wifi_nothing_left">이 장소에는 지도 위치도 남은 Wi‑Fi도 없어 카드를 제안할 수 없습니다. 지도에서 설정하거나 삭제하세요.</string>
+    <string name="places_wifi_hidden">숨겨진 네트워크 (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="other">액세스 포인트 %d개</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="other">%1$d회 감지됨, 마지막 %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">강한 신호</string>
+    <string name="places_wifi_signal_good">양호한 신호</string>
+    <string name="places_wifi_signal_weak">약한 신호</string>
+    <string name="places_wifi_remove">%1$s 제거</string>
+    <string name="places_wifi_removed_message">%1$s 제거됨</string>
+    <string name="places_wifi_undo">실행 취소</string>
+    <string name="places_wifi_removed_header">제거된 네트워크 (%1$d)</string>
+    <string name="places_wifi_removed_hint">제거된 네트워크는 이 장소에서 다시 학습되지 않으며 카드를 제안하지 않습니다.</string>
+    <string name="places_wifi_restore">복원</string>
+    <string name="places_wifi_done">완료</string>
 </resources>

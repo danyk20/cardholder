@@ -55,6 +55,7 @@ import io.github.danyk20.cardholder.core.map.PlacesMap
 import io.github.danyk20.cardholder.core.ui.R as UiR
 import io.github.danyk20.cardholder.core.ui.secureDialogProperties
 import io.github.danyk20.cardholder.feature.cardplaces.ui.PlaceRow
+import io.github.danyk20.cardholder.feature.cardplaces.ui.WifiEditorSheet
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -93,6 +94,10 @@ class CardPlacesActions(
     val onRequestDelete: (Long) -> Unit = {},
     val onCancelDelete: () -> Unit = {},
     val onConfirmDelete: () -> Unit = {},
+    val onOpenWifi: (Long) -> Unit = {},
+    val onCloseWifi: () -> Unit = {},
+    val onRemoveNetwork: (NetworkItem) -> Unit = {},
+    val onRestoreNetwork: (NetworkItem) -> Unit = {},
     val onRequestForgetAll: () -> Unit = {},
     val onCancelForgetAll: () -> Unit = {},
     val onConfirmForgetAll: () -> Unit = {},
@@ -115,6 +120,10 @@ fun CardPlacesRoute(onBack: () -> Unit, viewModel: CardPlacesViewModel = hiltVie
             onRequestDelete = viewModel::onRequestDelete,
             onCancelDelete = viewModel::onCancelDelete,
             onConfirmDelete = viewModel::onConfirmDelete,
+            onOpenWifi = viewModel::onOpenWifi,
+            onCloseWifi = viewModel::onCloseWifi,
+            onRemoveNetwork = viewModel::onRemoveNetwork,
+            onRestoreNetwork = viewModel::onRestoreNetwork,
             onRequestForgetAll = viewModel::onRequestForgetAll,
             onCancelForgetAll = viewModel::onCancelForgetAll,
             onConfirmForgetAll = viewModel::onConfirmForgetAll,
@@ -223,6 +232,14 @@ internal fun CardPlacesScreen(
         }
     }
 
+    state.wifiEditor?.let { editor ->
+        WifiEditorSheet(
+            state = editor,
+            onRemove = actions.onRemoveNetwork,
+            onRestore = actions.onRestoreNetwork,
+            onDismiss = actions.onCloseWifi,
+        )
+    }
     state.pendingDelete?.let {
         AlertDialog(
             onDismissRequest = actions.onCancelDelete,
@@ -339,6 +356,7 @@ private fun PlacesPane(state: CardPlacesUiState, actions: CardPlacesActions, mod
                     isSelected = state.selectedId == item.id,
                     onClick = { actions.onPlaceSelected(item.id) },
                     onMove = { actions.onStartMove(item.id) },
+                    onEditWifi = { actions.onOpenWifi(item.id) },
                     onDelete = { actions.onRequestDelete(item.id) },
                 )
                 HorizontalDivider()

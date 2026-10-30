@@ -42,4 +42,28 @@
     <string name="places_deleted">Το μέρος διαγράφηκε</string>
     <string name="places_forgotten">Όλα τα μέρη διαγράφηκαν</string>
     <string name="places_not_saved">Το μέρος δεν μπόρεσε να αποθηκευτεί.</string>
+    <string name="places_edit_wifi">Επεξεργασία Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi στο μέρος %1$d</string>
+    <string name="places_wifi_explainer">Δίκτυα που εντοπίστηκαν όταν χρησιμοποιήσατε την κάρτα εδώ. Αφαιρέστε όσα δεν ανήκουν σε αυτό το μέρος, όπως ενός γείτονα, ώστε να μην προτείνουν πια την κάρτα.</string>
+    <string name="places_wifi_none">Δεν έμειναν δίκτυα Wi‑Fi σε αυτό το μέρος.</string>
+    <string name="places_wifi_nothing_left">Αυτό το μέρος δεν έχει θέση στον χάρτη ούτε Wi‑Fi, επομένως δεν μπορεί να προτείνει την κάρτα. Ορίστε το στον χάρτη ή διαγράψτε το.</string>
+    <string name="places_wifi_hidden">Κρυφό δίκτυο (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d σημείο πρόσβασης</item>
+        <item quantity="other">%d σημεία πρόσβασης</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Εντοπίστηκε %1$d φορά, τελευταία %2$s</item>
+        <item quantity="other">Εντοπίστηκε %1$d φορές, τελευταία %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Ισχυρό σήμα</string>
+    <string name="places_wifi_signal_good">Καλό σήμα</string>
+    <string name="places_wifi_signal_weak">Ασθενές σήμα</string>
+    <string name="places_wifi_remove">Αφαίρεση %1$s</string>
+    <string name="places_wifi_removed_message">Αφαιρέθηκε: %1$s</string>
+    <string name="places_wifi_undo">Αναίρεση</string>
+    <string name="places_wifi_removed_header">Αφαιρεμένα δίκτυα (%1$d)</string>
+    <string name="places_wifi_removed_hint">Τα αφαιρεμένα δίκτυα δεν θα μαθαίνονται ξανά σε αυτό το μέρος και δεν προτείνουν την κάρτα.</string>
+    <string name="places_wifi_restore">Επαναφορά</string>
+    <string name="places_wifi_done">Τέλος</string>
 </resources>

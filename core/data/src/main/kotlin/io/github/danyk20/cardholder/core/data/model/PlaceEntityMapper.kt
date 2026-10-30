@@ -14,17 +14,26 @@ import io.github.danyk20.cardholder.core.domain.location.Centre
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.LocationFix
 import io.github.danyk20.cardholder.core.domain.location.Place
+import io.github.danyk20.cardholder.core.domain.location.StoredAccessPoint
 import io.github.danyk20.cardholder.core.domain.location.VisitPlan
 import io.github.danyk20.cardholder.core.model.CardId
 import java.time.Instant
 
-internal fun PlaceWithAccessPoints.toPlace(): Place = place.toPlace(
-    accessPoints = accessPoints.map { it.toAccessPoint() },
-    fixCount = fixes.size,
-)
+internal fun PlaceWithAccessPoints.toPlace(): Place {
+    val (blocked, active) = accessPoints.partition { it.blocked }
+    return place.toPlace(
+        accessPoints = active.map { it.toAccessPoint() },
+        blockedAccessPoints = blocked.map { it.toAccessPoint() },
+        fixCount = fixes.size,
+    )
+}
 
-/** A place without its loaded [accessPoints] and [fixCount], e.g. for geofences that need neither. */
-internal fun PlaceEntity.toPlace(accessPoints: List<AccessPoint> = emptyList(), fixCount: Int = 0): Place = Place(
+/** A place without its loaded access points and [fixCount], e.g. for geofences that need neither. */
+internal fun PlaceEntity.toPlace(
+    accessPoints: List<AccessPoint> = emptyList(),
+    blockedAccessPoints: List<AccessPoint> = emptyList(),
+    fixCount: Int = 0,
+): Place = Place(
     id = id,
     cardId = CardId(cardId),
     centre = latitude?.let { lat -> longitude?.let { lon -> GeoPoint(lat, lon) } },
@@ -33,12 +42,20 @@ internal fun PlaceEntity.toPlace(accessPoints: List<AccessPoint> = emptyList(), 
     lastUsedAt = Instant.ofEpochMilli(lastUsedAt),
     lastNotifiedAt = lastNotifiedAt?.let(Instant::ofEpochMilli),
     accessPoints = accessPoints,
+    blockedAccessPoints = blockedAccessPoints,
     isPinned = pinned,
     createdAt = Instant.ofEpochMilli(createdAt),
     fixCount = fixCount,
 )
 
 private fun PlaceAccessPointEntity.toAccessPoint() = AccessPoint(Bssid(bssid), ssid, rssi)
+
+internal fun PlaceAccessPointEntity.toStored() = StoredAccessPoint(
+    accessPoint = toAccessPoint(),
+    seenCount = seenCount,
+    lastSeenAt = Instant.ofEpochMilli(lastSeenAt),
+    isBlocked = blocked,
+)
 
 internal fun PlaceFixEntity.toFix() =
     LocationFix(GeoPoint(latitude, longitude), accuracyMeters, Instant.ofEpochMilli(recordedAt))

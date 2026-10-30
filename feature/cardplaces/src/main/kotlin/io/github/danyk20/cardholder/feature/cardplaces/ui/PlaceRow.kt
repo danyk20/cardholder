@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -31,8 +32,8 @@ import java.time.format.FormatStyle
 import java.util.Locale
 
 /**
- * One place in the list. Tapping it selects it, which opens its actions: move it on the map, delete it,
- * or, for a place without a map position, set it on the map.
+ * One place in the list. Tapping it selects it, which opens its actions: move it on the map, edit its
+ * Wi‑Fi networks, delete it, or, for a place without a map position, set it on the map.
  */
 @Composable
 internal fun PlaceRow(
@@ -40,6 +41,7 @@ internal fun PlaceRow(
     isSelected: Boolean,
     onClick: () -> Unit,
     onMove: () -> Unit,
+    onEditWifi: () -> Unit,
     onDelete: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -69,7 +71,7 @@ internal fun PlaceRow(
             }
         }
         if (isSelected) {
-            Row(
+            FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.padding(start = 44.dp),
             ) {
@@ -79,6 +81,9 @@ internal fun PlaceRow(
                             if (item.point != null) R.string.places_move else R.string.places_set_on_map,
                         ),
                     )
+                }
+                if (item.hasWifi) {
+                    OutlinedButton(onClick = onEditWifi) { Text(stringResource(R.string.places_edit_wifi)) }
                 }
                 TextButton(onClick = onDelete) { Text(stringResource(R.string.places_delete)) }
             }
@@ -130,7 +135,7 @@ private fun usageOf(item: PlaceItem): String = pluralStringResource(
     dateOf(item.lastUsedAt),
 )
 
-private fun dateOf(instant: Instant): String = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
+internal fun dateOf(instant: Instant): String = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
     .withLocale(Locale.getDefault())
     .withZone(ZoneId.systemDefault())
     .format(instant)

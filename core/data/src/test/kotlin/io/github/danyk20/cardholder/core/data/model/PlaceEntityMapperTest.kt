@@ -1,8 +1,10 @@
 package io.github.danyk20.cardholder.core.data.model
 
+import io.github.danyk20.cardholder.core.database.model.PlaceAccessPointEntity
 import io.github.danyk20.cardholder.core.database.model.PlaceEntity
 import io.github.danyk20.cardholder.core.database.model.PlaceFixEntity
 import io.github.danyk20.cardholder.core.database.model.PlaceWithAccessPoints
+import io.github.danyk20.cardholder.core.domain.location.Bssid
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import java.time.Instant
 import kotlin.test.assertEquals
@@ -36,6 +38,18 @@ class PlaceEntityMapperTest {
         val place = PlaceWithAccessPoints(entity(), emptyList(), fixes = listOf(fix(1), fix(2), fix(3))).toPlace()
 
         assertEquals(3, place.fixCount)
+    }
+
+    @Test
+    fun `removed access points are kept apart from the ones that count`() {
+        val place = PlaceWithAccessPoints(
+            entity(),
+            listOf(accessPoint(1, blocked = false), accessPoint(2, blocked = true)),
+            emptyList(),
+        ).toPlace()
+
+        assertEquals(listOf(Bssid(1)), place.accessPoints.map { it.bssid })
+        assertEquals(listOf(Bssid(2)), place.blockedAccessPoints.map { it.bssid })
     }
 
     @Test
@@ -84,5 +98,15 @@ class PlaceEntityMapperTest {
         longitude = 17.0,
         accuracyMeters = 10f,
         recordedAt = seed.toLong(),
+    )
+
+    private fun accessPoint(bssid: Long, blocked: Boolean) = PlaceAccessPointEntity(
+        placeId = 1,
+        bssid = bssid,
+        ssid = "net-$bssid",
+        rssi = -60,
+        seenCount = 1,
+        lastSeenAt = 0,
+        blocked = blocked,
     )
 }

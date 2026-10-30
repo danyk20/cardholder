@@ -7,6 +7,8 @@ import java.time.Instant
  * Somewhere a card was used: the centre of its last location fixes (if any were accurate enough)
  * and the Wi‑Fi access points seen there.
  *
+ * @property blockedAccessPoints access points the user removed from the place: they say nothing about
+ *   it, and visits don't add them back.
  * @property isPinned the user set the place's position on the map; later visits don't move it.
  * @property fixCount how many location fixes the centre is computed from, when they were loaded
  *   with the place.
@@ -20,9 +22,21 @@ data class Place(
     val lastUsedAt: Instant,
     val lastNotifiedAt: Instant? = null,
     val accessPoints: List<AccessPoint> = emptyList(),
+    val blockedAccessPoints: List<AccessPoint> = emptyList(),
     val isPinned: Boolean = false,
     val createdAt: Instant = lastUsedAt,
     val fixCount: Int = 0,
+)
+
+/**
+ * A Wi‑Fi access point stored at a place, as the user reviews it: how often and when it was seen, and
+ * whether the user removed it.
+ */
+data class StoredAccessPoint(
+    val accessPoint: AccessPoint,
+    val seenCount: Int,
+    val lastSeenAt: Instant,
+    val isBlocked: Boolean,
 )
 
 /** A card suggested because the user seems to be near where it's used. */

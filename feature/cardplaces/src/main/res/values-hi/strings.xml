@@ -42,4 +42,28 @@
     <string name="places_deleted">जगह हटाई गई</string>
     <string name="places_forgotten">सभी जगहें भुलाई गईं</string>
     <string name="places_not_saved">जगह सहेजी नहीं जा सकी।</string>
+    <string name="places_edit_wifi">Wi‑Fi संपादित करें</string>
+    <string name="places_wifi_title">जगह %1$d पर Wi‑Fi</string>
+    <string name="places_wifi_explainer">कार्ड यहां इस्तेमाल करते समय दिखे नेटवर्क। जो नेटवर्क इस जगह के नहीं हैं, जैसे पड़ोसी का, उन्हें हटा दें ताकि वे कार्ड का सुझाव न दें।</string>
+    <string name="places_wifi_none">इस जगह पर कोई Wi‑Fi नेटवर्क नहीं बचा है।</string>
+    <string name="places_wifi_nothing_left">इस जगह की नक्शे पर कोई स्थिति नहीं है और कोई Wi‑Fi भी नहीं बचा है, इसलिए यह कार्ड का सुझाव नहीं दे सकती। इसे नक्शे पर सेट करें या हटा दें।</string>
+    <string name="places_wifi_hidden">छिपा हुआ नेटवर्क (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d एक्सेस पॉइंट</item>
+        <item quantity="other">%d एक्सेस पॉइंट</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">%1$d बार दिखा, आखिरी बार %2$s</item>
+        <item quantity="other">%1$d बार दिखा, आखिरी बार %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">मजबूत सिग्नल</string>
+    <string name="places_wifi_signal_good">अच्छा सिग्नल</string>
+    <string name="places_wifi_signal_weak">कमज़ोर सिग्नल</string>
+    <string name="places_wifi_remove">%1$s हटाएं</string>
+    <string name="places_wifi_removed_message">%1$s हटाया गया</string>
+    <string name="places_wifi_undo">पूर्ववत करें</string>
+    <string name="places_wifi_removed_header">हटाए गए नेटवर्क (%1$d)</string>
+    <string name="places_wifi_removed_hint">हटाए गए नेटवर्क इस जगह पर दोबारा नहीं सीखे जाएंगे और कार्ड का सुझाव नहीं देंगे।</string>
+    <string name="places_wifi_restore">वापस लाएं</string>
+    <string name="places_wifi_done">हो गया</string>
 </resources>

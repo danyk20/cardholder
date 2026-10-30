@@ -1,8 +1,10 @@
 package io.github.danyk20.cardholder.core.testing.repository
 
+import io.github.danyk20.cardholder.core.domain.location.Bssid
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
 import io.github.danyk20.cardholder.core.domain.location.PlaceClustering
+import io.github.danyk20.cardholder.core.domain.location.StoredAccessPoint
 import io.github.danyk20.cardholder.core.domain.location.Surroundings
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
@@ -103,9 +105,37 @@ class FakePlaceRepository(private val cards: CardRepository) : PlaceRepository {
         return id
     }
 
+    override fun observeAccessPoints(placeId: Long): Flow<List<StoredAccessPoint>> = places.map { all ->
+        val place = all.firstOrNull { it.id == placeId } ?: return@map emptyList()
+        val active = place.accessPoints.map { StoredAccessPoint(it, SEEN_ONCE, place.lastUsedAt, isBlocked = false) }
+        val blocked = place.blockedAccessPoints.map {
+            StoredAccessPoint(it, SEEN_ONCE, place.lastUsedAt, isBlocked = true)
+        }
+        active + blocked
+    }
+
+    override suspend fun setAccessPointsBlocked(placeId: Long, bssids: Collection<Bssid>, blocked: Boolean) =
+        places.update { all ->
+            all.map { place ->
+                if (place.id != placeId) return@map place
+                val active = place.accessPoints.filterNot { it.bssid in bssids }
+                val removed = place.blockedAccessPoints.filterNot { it.bssid in bssids }
+                val changed = (place.accessPoints + place.blockedAccessPoints).filter { it.bssid in bssids }
+                if (blocked) {
+                    place.copy(accessPoints = active, blockedAccessPoints = removed + changed)
+                } else {
+                    place.copy(accessPoints = active + changed, blockedAccessPoints = removed)
+                }
+            }
+        }
+
     override suspend fun forget(placeId: Long) = places.update { all -> all.filterNot { it.id == placeId } }
 
     override suspend fun forgetCard(cardId: CardId) = places.update { all -> all.filterNot { it.cardId == cardId } }
 
     override suspend fun forgetAll() = places.update { emptyList() }
+
+    private companion object {
+        const val SEEN_ONCE = 1
+    }
 }

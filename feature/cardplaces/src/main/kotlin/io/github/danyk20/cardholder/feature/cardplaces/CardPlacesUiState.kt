@@ -1,7 +1,9 @@
 package io.github.danyk20.cardholder.feature.cardplaces
 
+import io.github.danyk20.cardholder.core.domain.location.Bssid
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
+import io.github.danyk20.cardholder.core.domain.location.StoredAccessPoint
 import io.github.danyk20.cardholder.core.map.MapCamera
 import io.github.danyk20.cardholder.core.map.MapMarker
 import java.time.Instant
@@ -18,6 +20,36 @@ data class PlaceItem(
     val useCount: Int,
     val lastUsedAt: Instant,
     val wifiNames: List<String>,
+    /** Whether the place has Wi‑Fi networks to edit, removed ones included. */
+    val hasWifi: Boolean = false,
+)
+
+/**
+ * One Wi‑Fi network of a place: its access points broadcasting the same name, or one access point of a
+ * hidden network. Removing it removes all of them.
+ */
+data class NetworkItem(
+    /** Stable for the list: the name, or the address of a hidden network. */
+    val key: String,
+    /** `null` for a hidden network, shown by its [address]. */
+    val name: String?,
+    val address: String,
+    val bssids: List<Bssid>,
+    /** The strongest signal of its access points when they were last seen, in dBm. */
+    val rssi: Int,
+    /** On how many visits it was seen: the most of its access points. */
+    val seenCount: Int,
+    val lastSeenAt: Instant,
+)
+
+/** The Wi‑Fi editor of place [placeId], shown as number [number]. */
+data class WifiEditorState(
+    val placeId: Long,
+    val number: Int,
+    val networks: List<NetworkItem>,
+    val removed: List<NetworkItem>,
+    /** The place has no map position and no networks left, so it can't suggest the card any more. */
+    val isUseless: Boolean,
 )
 
 /** What the user is doing on the screen. */
@@ -57,6 +89,8 @@ data class CardPlacesUiState(
     /** The place whose deletion awaits confirmation. */
     val pendingDelete: Long? = null,
     val confirmForgetAll: Boolean = false,
+    /** The place whose Wi‑Fi networks are being edited. */
+    val wifiEditor: WifiEditorState? = null,
 ) {
     /** The places on the map: the one being moved shows its old spot faded. */
     val markers: List<MapMarker>
@@ -95,5 +129,36 @@ internal fun List<Place>.toPlaceItems(): List<PlaceItem> = mapIndexed { index, p
         useCount = place.useCount,
         lastUsedAt = place.lastUsedAt,
         wifiNames = place.accessPoints.mapNotNull { it.ssid?.takeIf(String::isNotBlank) }.distinct(),
+        hasWifi = place.accessPoints.isNotEmpty() || place.blockedAccessPoints.isNotEmpty(),
     )
 }
+
+/** The editor of [place]'s Wi‑Fi from its stored [accessPoints]. */
+internal fun wifiEditorOf(place: PlaceItem, accessPoints: List<StoredAccessPoint>): WifiEditorState {
+    val (removed, kept) = accessPoints.partition { it.isBlocked }
+    val networks = kept.toNetworkItems()
+    return WifiEditorState(
+        placeId = place.id,
+        number = place.number,
+        networks = networks,
+        removed = removed.toNetworkItems(),
+        isUseless = place.point == null && networks.isEmpty(),
+    )
+}
+
+/** Groups access points into networks by name, the most seen first. */
+internal fun List<StoredAccessPoint>.toNetworkItems(): List<NetworkItem> =
+    groupBy { it.accessPoint.ssid?.takeIf(String::isNotBlank) ?: it.accessPoint.bssid.toString() }
+        .map { (key, group) ->
+            val strongest = group.maxBy { it.accessPoint.rssi }
+            NetworkItem(
+                key = key,
+                name = strongest.accessPoint.ssid?.takeIf(String::isNotBlank),
+                address = strongest.accessPoint.bssid.toString(),
+                bssids = group.map { it.accessPoint.bssid },
+                rssi = strongest.accessPoint.rssi,
+                seenCount = group.maxOf { it.seenCount },
+                lastSeenAt = group.maxOf { it.lastSeenAt },
+            )
+        }
+        .sortedWith(compareByDescending<NetworkItem> { it.seenCount }.thenByDescending { it.rssi })

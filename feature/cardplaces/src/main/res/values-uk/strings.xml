@@ -48,4 +48,32 @@
     <string name="places_deleted">Місце видалено</string>
     <string name="places_forgotten">Усі місця забуто</string>
     <string name="places_not_saved">Не вдалося зберегти місце.</string>
+    <string name="places_edit_wifi">Змінити Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi в місці %1$d</string>
+    <string name="places_wifi_explainer">Мережі, виявлені, коли ви використовували тут картку. Вилучіть ті, що не стосуються цього місця, наприклад сусідські, щоб вони більше не пропонували картку.</string>
+    <string name="places_wifi_none">У цьому місці не залишилось мереж Wi‑Fi.</string>
+    <string name="places_wifi_nothing_left">Це місце не має позиції на карті й не має Wi‑Fi, тому воно не може пропонувати картку. Вкажіть його на карті або видаліть.</string>
+    <string name="places_wifi_hidden">Прихована мережа (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d точка доступу</item>
+        <item quantity="few">%d точки доступу</item>
+        <item quantity="many">%d точок доступу</item>
+        <item quantity="other">%d точки доступу</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Виявлено %1$d раз, востаннє %2$s</item>
+        <item quantity="few">Виявлено %1$d рази, востаннє %2$s</item>
+        <item quantity="many">Виявлено %1$d разів, востаннє %2$s</item>
+        <item quantity="other">Виявлено %1$d разу, востаннє %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Сильний сигнал</string>
+    <string name="places_wifi_signal_good">Хороший сигнал</string>
+    <string name="places_wifi_signal_weak">Слабкий сигнал</string>
+    <string name="places_wifi_remove">Вилучити %1$s</string>
+    <string name="places_wifi_removed_message">Вилучено: %1$s</string>
+    <string name="places_wifi_undo">Скасувати</string>
+    <string name="places_wifi_removed_header">Вилучені мережі (%1$d)</string>
+    <string name="places_wifi_removed_hint">Вилучені мережі більше не запам’ятовуються в цьому місці й не пропонують картку.</string>
+    <string name="places_wifi_restore">Відновити</string>
+    <string name="places_wifi_done">Готово</string>
 </resources>

@@ -1,8 +1,10 @@
 package io.github.danyk20.cardholder.core.domain.usecase
 
+import io.github.danyk20.cardholder.core.domain.location.Bssid
 import io.github.danyk20.cardholder.core.domain.location.GeoMath
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
+import io.github.danyk20.cardholder.core.domain.location.StoredAccessPoint
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
 import io.github.danyk20.cardholder.core.domain.repository.UserPreferencesRepository
@@ -71,6 +73,18 @@ class CardPlaces @Inject constructor(
         val id = placeRepository.addPlace(cardId, valid)
         findNearbyCards.invalidate()
         return id
+    }
+
+    /** The Wi‑Fi access points of a place, removed ones too, the most seen first. */
+    fun observeNetworks(placeId: Long): Flow<List<StoredAccessPoint>> = placeRepository.observeAccessPoints(placeId)
+
+    /**
+     * Removes networks that were learned at a place but don't belong to it, e.g. a neighbour's, so they no
+     * longer suggest the card; or restores them when [removed] is `false`.
+     */
+    suspend fun setNetworksRemoved(placeId: Long, bssids: Collection<Bssid>, removed: Boolean) {
+        placeRepository.setAccessPointsBlocked(placeId, bssids, removed)
+        findNearbyCards.invalidate()
     }
 
     /** Forgets one place, e.g. one the user doesn't want suggested. */
