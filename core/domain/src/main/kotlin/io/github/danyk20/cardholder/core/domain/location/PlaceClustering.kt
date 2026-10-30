@@ -58,16 +58,41 @@ object PlaceClustering {
     ): VisitPlan? {
         val fix = surroundings.fix?.takeIf { it.accuracyMeters <= MAX_STORED_ACCURACY_METERS }
         val newlyTravelling = fix?.let { travellingAccessPoints(knownPlaces + cardPlaces, surroundings, it) }.orEmpty()
-        val accessPoints = WifiSignals.usable(surroundings.accessPoints, travelling + newlyTravelling)
+        val ignored = travelling + newlyTravelling
+        val seen = WifiSignals.usable(surroundings.accessPoints, ignored)
+        val place = placeSharingAccessPoints(cardPlaces, seen) ?: fix?.let { nearestPlace(cardPlaces, it) }
+        val accessPoints = withoutRemoved(surroundings.accessPoints, place, cardPlaces, ignored)
         if (fix == null && accessPoints.isEmpty()) return null
 
-        val place = placeSharingAccessPoints(cardPlaces, accessPoints) ?: fix?.let { nearestPlace(cardPlaces, it) }
         return VisitPlan(
             placeId = place?.id,
             fix = fix,
             sameVisit = place != null && Duration.between(place.lastUsedAt, now) < SameVisit,
             accessPoints = accessPoints,
             travelling = newlyTravelling,
+        )
+    }
+
+    /**
+     * The usable access points of a scan without the ones the user removed. At a known [place] a removed
+     * network stays removed under every address it shows up with; for a new place only the removed
+     * addresses of the card's other places are left out, since they're known not to belong to the card.
+     */
+    private fun withoutRemoved(
+        scanned: List<AccessPoint>,
+        place: Place?,
+        cardPlaces: List<Place>,
+        ignored: Set<Bssid>,
+    ): List<AccessPoint> {
+        val removed = place?.blockedAccessPoints ?: cardPlaces.flatMap { it.blockedAccessPoints }
+        val removedNames = if (place == null) {
+            emptySet()
+        } else {
+            removed.mapNotNullTo(HashSet()) { it.ssid?.takeIf(String::isNotBlank) }
+        }
+        return WifiSignals.usable(
+            scanned.filterNot { it.ssid in removedNames },
+            ignored + removed.map { it.bssid },
         )
     }
 

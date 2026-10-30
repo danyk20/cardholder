@@ -3,8 +3,10 @@ package io.github.danyk20.cardholder.core.data.repository
 import io.github.danyk20.cardholder.core.data.model.toColumns
 import io.github.danyk20.cardholder.core.data.model.toFix
 import io.github.danyk20.cardholder.core.data.model.toPlace
+import io.github.danyk20.cardholder.core.data.model.toStored
 import io.github.danyk20.cardholder.core.data.model.toWrite
 import io.github.danyk20.cardholder.core.database.dao.PlaceDao
+import io.github.danyk20.cardholder.core.database.model.PlaceAccessPointEntity
 import io.github.danyk20.cardholder.core.database.model.PlaceWithAccessPoints
 import io.github.danyk20.cardholder.core.domain.di.IoDispatcher
 import io.github.danyk20.cardholder.core.domain.location.Bssid
@@ -12,6 +14,7 @@ import io.github.danyk20.cardholder.core.domain.location.GeoMath
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
 import io.github.danyk20.cardholder.core.domain.location.PlaceClustering
+import io.github.danyk20.cardholder.core.domain.location.StoredAccessPoint
 import io.github.danyk20.cardholder.core.domain.location.Surroundings
 import io.github.danyk20.cardholder.core.domain.location.WifiSignals
 import io.github.danyk20.cardholder.core.domain.repository.PlaceRepository
@@ -29,6 +32,7 @@ import kotlinx.coroutines.withContext
 
 /** [PlaceRepository] in the encrypted Room database; places never leave the device, not even in backups. */
 @Singleton
+@Suppress("TooManyFunctions") // Implements PlaceRepository.
 internal class OfflinePlaceRepository @Inject constructor(
     private val dao: PlaceDao,
     private val clock: Clock,
@@ -108,6 +112,15 @@ internal class OfflinePlaceRepository @Inject constructor(
             )
         }
     }
+
+    override fun observeAccessPoints(placeId: Long): Flow<List<StoredAccessPoint>> =
+        dao.observeAccessPoints(placeId).map { accessPoints -> accessPoints.map(PlaceAccessPointEntity::toStored) }
+
+    override suspend fun setAccessPointsBlocked(placeId: Long, bssids: Collection<Bssid>, blocked: Boolean) =
+        withContext(ioDispatcher) {
+            if (bssids.isEmpty()) return@withContext
+            writeMutex.withLock { dao.setAccessPointsBlocked(placeId, bssids.map { it.value }, blocked) }
+        }
 
     override suspend fun forget(placeId: Long) = withContext(ioDispatcher) { dao.delete(placeId) }
 

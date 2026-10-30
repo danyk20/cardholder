@@ -21,7 +21,7 @@ import io.github.danyk20.cardholder.core.database.model.TravellingAccessPointEnt
         PlaceAccessPointEntity::class,
         TravellingAccessPointEntity::class,
     ],
-    version = 8,
+    version = 9,
     exportSchema = true,
     autoMigrations = [
         // 1 -> 2: card logos
@@ -38,6 +38,8 @@ import io.github.danyk20.cardholder.core.database.model.TravellingAccessPointEnt
         AutoMigration(from = 6, to = 7),
         // 7 -> 8: places set by the user on the map; existing places are learned, not pinned
         AutoMigration(from = 7, to = 8),
+        // 8 -> 9: Wi‑Fi networks the user removed from a place; existing ones stay
+        AutoMigration(from = 8, to = 9),
     ],
 )
 abstract class CardholderDatabase : RoomDatabase() {

@@ -16,7 +16,9 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import io.github.danyk20.cardholder.core.domain.location.Bssid
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.map.MapCamera
 import io.github.danyk20.cardholder.core.map.MapMarker
@@ -27,6 +29,7 @@ import kotlinx.coroutines.flow.emptyFlow
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.annotation.Config
 
 @RunWith(AndroidJUnit4::class)
 class CardPlacesScreenTest {
@@ -46,6 +49,7 @@ class CardPlacesScreenTest {
         useCount = 12,
         lastUsedAt = Instant.parse("2026-10-03T10:00:00Z"),
         wifiNames = listOf("Migros-Guest"),
+        hasWifi = true,
     )
     private val pinned = learned.copy(
         id = 2,
@@ -56,6 +60,7 @@ class CardPlacesScreenTest {
         fixCount = 1,
         useCount = 3,
         wifiNames = emptyList(),
+        hasWifi = false,
     )
     private val wifiOnly = learned.copy(
         id = 3,
@@ -63,6 +68,27 @@ class CardPlacesScreenTest {
         point = null,
         accuracyMeters = null,
         wifiNames = listOf("Shop-WiFi"),
+    )
+
+    private val wifiEditor = WifiEditorState(
+        placeId = 1,
+        number = 1,
+        networks = listOf(
+            network("Migros-Guest", listOf(Bssid(1), Bssid(2)), rssi = -55),
+            network(null, listOf(Bssid(3)), rssi = -82),
+        ),
+        removed = listOf(network("Neighbour", listOf(Bssid(4)), rssi = -78)),
+        isUseless = false,
+    )
+
+    private fun network(name: String?, bssids: List<Bssid>, rssi: Int) = NetworkItem(
+        key = name ?: bssids.first().toString(),
+        name = name,
+        address = bssids.first().toString(),
+        bssids = bssids,
+        rssi = rssi,
+        seenCount = 4,
+        lastSeenAt = Instant.parse("2026-10-03T10:00:00Z"),
     )
 
     /** A map that shows what it was given, and reports taps and marker taps like the real one. */
@@ -120,6 +146,7 @@ class CardPlacesScreenTest {
     }
 
     @Test
+    @Config(qualifiers = "w360dp-h720dp") // The default window is so small the add button covers the actions.
     fun `tapping a place expands its Move and Delete actions`() {
         var moved = 0
         var deleted = 0
@@ -133,6 +160,64 @@ class CardPlacesScreenTest {
 
         assertEquals(1, moved)
         assertEquals(1, deleted)
+    }
+
+    @Test
+    fun `a place with Wi-Fi offers to edit it, one without doesn't`() {
+        var opened = -1L
+        show(
+            CardPlacesUiState(title = "Kaufland", places = listOf(learned), selectedId = 1),
+            CardPlacesActions(onOpenWifi = { opened = it }),
+        )
+
+        composeRule.onNodeWithText("Edit Wi‑Fi").performClick()
+
+        assertEquals(1L, opened)
+    }
+
+    @Test
+    fun `a place without Wi-Fi has nothing to edit`() {
+        show(CardPlacesUiState(title = "Kaufland", places = listOf(pinned), selectedId = 2))
+
+        composeRule.onAllNodesWithText("Edit Wi‑Fi").assertCountEquals(0)
+    }
+
+    @Test
+    fun `the Wi-Fi editor lists networks, removes one with undo and restores removed ones`() {
+        val removedNetworks = mutableListOf<NetworkItem>()
+        val restored = mutableListOf<NetworkItem>()
+        show(
+            CardPlacesUiState(title = "Kaufland", places = listOf(learned), wifiEditor = wifiEditor),
+            CardPlacesActions(onRemoveNetwork = { removedNetworks += it }, onRestoreNetwork = { restored += it }),
+        )
+
+        composeRule.onNodeWithText("Wi‑Fi at place 1").assertIsDisplayed()
+        composeRule.onNodeWithText("Migros-Guest").assertIsDisplayed()
+        composeRule.onNodeWithText("Strong signal · 2 access points", substring = true).assertIsDisplayed()
+        composeRule.onNodeWithText("Hidden network (00:00:00:00:00:03)").assertIsDisplayed()
+
+        composeRule.onNodeWithContentDescription("Remove Migros-Guest").performClick()
+        assertEquals(listOf("Migros-Guest"), removedNetworks.map { it.name })
+        composeRule.onNodeWithText("Undo").performClick()
+        assertEquals(listOf("Migros-Guest"), restored.map { it.name })
+
+        composeRule.onNodeWithText("Removed networks (1)").performScrollTo().performClick()
+        composeRule.onNodeWithText("Neighbour").performScrollTo().assertIsDisplayed()
+        composeRule.onNodeWithText("Restore").performScrollTo().performClick()
+        assertEquals(listOf("Migros-Guest", "Neighbour"), restored.map { it.name })
+    }
+
+    @Test
+    fun `a Wi-Fi only place left without networks says it can't suggest the card`() {
+        show(
+            CardPlacesUiState(
+                title = "Kaufland",
+                places = listOf(wifiOnly),
+                wifiEditor = wifiEditor.copy(placeId = 3, number = 3, networks = emptyList(), isUseless = true),
+            ),
+        )
+
+        composeRule.onNodeWithText("no map position and no Wi‑Fi left", substring = true).assertIsDisplayed()
     }
 
     @Test

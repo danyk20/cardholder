@@ -42,4 +42,28 @@
     <string name="places_deleted">Paikka poistettu</string>
     <string name="places_forgotten">Kaikki paikat unohdettu</string>
     <string name="places_not_saved">Paikkaa ei voitu tallentaa.</string>
+    <string name="places_edit_wifi">Muokkaa Wi‑Fi-verkkoja</string>
+    <string name="places_wifi_title">Wi‑Fi paikassa %1$d</string>
+    <string name="places_wifi_explainer">Verkot, jotka havaittiin, kun käytit korttia täällä. Poista ne, jotka eivät kuulu tähän paikkaan, kuten naapurin verkko, jotta ne eivät enää ehdota korttia.</string>
+    <string name="places_wifi_none">Tässä paikassa ei ole enää Wi‑Fi-verkkoja.</string>
+    <string name="places_wifi_nothing_left">Tällä paikalla ei ole sijaintia kartalla eikä Wi‑Fi-verkkoja jäljellä, joten se ei voi ehdottaa korttia. Aseta se kartalle tai poista se.</string>
+    <string name="places_wifi_hidden">Piilotettu verkko (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d tukiasema</item>
+        <item quantity="other">%d tukiasemaa</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Nähty %1$d kerran, viimeksi %2$s</item>
+        <item quantity="other">Nähty %1$d kertaa, viimeksi %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Vahva signaali</string>
+    <string name="places_wifi_signal_good">Hyvä signaali</string>
+    <string name="places_wifi_signal_weak">Heikko signaali</string>
+    <string name="places_wifi_remove">Poista %1$s</string>
+    <string name="places_wifi_removed_message">%1$s poistettu</string>
+    <string name="places_wifi_undo">Kumoa</string>
+    <string name="places_wifi_removed_header">Poistetut verkot (%1$d)</string>
+    <string name="places_wifi_removed_hint">Poistettuja verkkoja ei opita tässä paikassa uudelleen, eivätkä ne ehdota korttia.</string>
+    <string name="places_wifi_restore">Palauta</string>
+    <string name="places_wifi_done">Valmis</string>
 </resources>

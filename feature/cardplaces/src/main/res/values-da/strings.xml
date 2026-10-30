@@ -42,4 +42,28 @@
     <string name="places_deleted">Sted slettet</string>
     <string name="places_forgotten">Alle steder glemt</string>
     <string name="places_not_saved">Stedet kunne ikke gemmes.</string>
+    <string name="places_edit_wifi">Rediger Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi ved sted %1$d</string>
+    <string name="places_wifi_explainer">Netværk, der blev set, da du brugte kortet her. Fjern dem, der ikke hører til dette sted, f.eks. en nabos, så de ikke længere foreslår kortet.</string>
+    <string name="places_wifi_none">Der er ingen Wi‑Fi-netværk tilbage ved dette sted.</string>
+    <string name="places_wifi_nothing_left">Dette sted har ingen placering på kortet og ingen Wi‑Fi tilbage, så det kan ikke foreslå kortet. Angiv det på kortet, eller slet det.</string>
+    <string name="places_wifi_hidden">Skjult netværk (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d adgangspunkt</item>
+        <item quantity="other">%d adgangspunkter</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Set %1$d gang, senest %2$s</item>
+        <item quantity="other">Set %1$d gange, senest %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Stærkt signal</string>
+    <string name="places_wifi_signal_good">Godt signal</string>
+    <string name="places_wifi_signal_weak">Svagt signal</string>
+    <string name="places_wifi_remove">Fjern %1$s</string>
+    <string name="places_wifi_removed_message">%1$s fjernet</string>
+    <string name="places_wifi_undo">Fortryd</string>
+    <string name="places_wifi_removed_header">Fjernede netværk (%1$d)</string>
+    <string name="places_wifi_removed_hint">Fjernede netværk læres ikke igen ved dette sted og foreslår ikke kortet.</string>
+    <string name="places_wifi_restore">Gendan</string>
+    <string name="places_wifi_done">Færdig</string>
 </resources>

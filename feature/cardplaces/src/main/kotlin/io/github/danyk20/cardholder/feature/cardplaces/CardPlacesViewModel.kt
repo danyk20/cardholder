@@ -9,6 +9,7 @@ import io.github.danyk20.cardholder.core.domain.location.FixRequest
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.LocationAccess
 import io.github.danyk20.cardholder.core.domain.location.LocationPermission
+import io.github.danyk20.cardholder.core.domain.location.StoredAccessPoint
 import io.github.danyk20.cardholder.core.domain.location.SurroundingsProvider
 import io.github.danyk20.cardholder.core.domain.repository.CardRepository
 import io.github.danyk20.cardholder.core.domain.usecase.CardPlaces
@@ -17,6 +18,7 @@ import io.github.danyk20.cardholder.core.model.CardId
 import io.github.danyk20.cardholder.core.ui.launchSafely
 import io.github.danyk20.cardholder.feature.cardplaces.navigation.CardPlacesDestination
 import javax.inject.Inject
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,15 +26,19 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 
 /**
- * The places of one card: selecting them, moving, adding and deleting them, and forgetting them all.
- * A move or an addition is kept in [SavedStateHandle], so rotation doesn't lose the pending pin.
+ * The places of one card: selecting them, moving, adding and deleting them, removing Wi‑Fi networks
+ * that don't belong to them, and forgetting them all. A move or an addition, and the place whose Wi‑Fi
+ * is being edited, are kept in [SavedStateHandle], so rotation doesn't lose them.
  */
+@OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 @Suppress("TooManyFunctions") // One handler per user action on the screen.
 class CardPlacesViewModel @Inject constructor(
@@ -51,6 +57,10 @@ class CardPlacesViewModel @Inject constructor(
     private val editing = MutableStateFlow(restoreEditing())
     private val transient = MutableStateFlow(Transient())
     private val events = Channel<CardPlacesEvent>(Channel.BUFFERED)
+    private val wifiPlaceId = MutableStateFlow(handle.get<Long>(KEY_WIFI_PLACE_ID))
+    private val wifi: Flow<Pair<Long, List<StoredAccessPoint>>?> = wifiPlaceId.flatMapLatest { placeId ->
+        if (placeId == null) flowOf(null) else cardPlaces.observeNetworks(placeId).map { placeId to it }
+    }
 
     /** Everything the user can see but that isn't a saved place or card. */
     private data class Transient(
@@ -71,7 +81,8 @@ class CardPlacesViewModel @Inject constructor(
         placeItems,
         transient,
         editing,
-    ) { card, places, shown, edit ->
+        wifi,
+    ) { card, places, shown, edit, networks ->
         CardPlacesUiState(
             title = card?.title.orEmpty(),
             places = places,
@@ -93,6 +104,10 @@ class CardPlacesViewModel @Inject constructor(
             tilesUnreachable = shown.tilesUnreachable,
             pendingDelete = shown.pendingDelete,
             confirmForgetAll = shown.confirmForgetAll,
+            // A deleted place takes its editor with it.
+            wifiEditor = networks?.let { (placeId, accessPoints) ->
+                places.firstOrNull { it.id == placeId }?.let { wifiEditorOf(it, accessPoints) }
+            },
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), CardPlacesUiState())
 
@@ -168,9 +183,32 @@ class CardPlacesViewModel @Inject constructor(
         transient.update { it.copy(pendingDelete = null) }
         launchSafely(onError = { events.trySend(CardPlacesEvent.Show(PlacesMessage.NOT_SAVED)) }) {
             cardPlaces.delete(placeId)
+            if (wifiPlaceId.value == placeId) setWifiPlace(null)
             transient.update { if (it.selectedId == placeId) it.copy(selectedId = null) else it }
             events.send(CardPlacesEvent.Show(PlacesMessage.DELETED))
         }
+    }
+
+    fun onOpenWifi(placeId: Long) = setWifiPlace(placeId)
+
+    fun onCloseWifi() = setWifiPlace(null)
+
+    /** Removes [network] from the place being edited, so it's not learned there again. */
+    fun onRemoveNetwork(network: NetworkItem) = setNetworkRemoved(network, removed = true)
+
+    /** Puts a removed [network] back, also to undo a removal. */
+    fun onRestoreNetwork(network: NetworkItem) = setNetworkRemoved(network, removed = false)
+
+    private fun setNetworkRemoved(network: NetworkItem, removed: Boolean) {
+        val placeId = wifiPlaceId.value ?: return
+        launchSafely(onError = { events.trySend(CardPlacesEvent.Show(PlacesMessage.NOT_SAVED)) }) {
+            cardPlaces.setNetworksRemoved(placeId, network.bssids, removed)
+        }
+    }
+
+    private fun setWifiPlace(placeId: Long?) {
+        wifiPlaceId.value = placeId
+        handle[KEY_WIFI_PLACE_ID] = placeId
     }
 
     fun onRequestForgetAll() = transient.update { it.copy(confirmForgetAll = true) }
@@ -179,6 +217,7 @@ class CardPlacesViewModel @Inject constructor(
 
     fun onConfirmForgetAll() {
         transient.update { it.copy(confirmForgetAll = false, selectedId = null) }
+        setWifiPlace(null)
         launchSafely(onError = { events.trySend(CardPlacesEvent.Show(PlacesMessage.NOT_SAVED)) }) {
             cardPlaces.forget(cardId)
             events.send(CardPlacesEvent.Show(PlacesMessage.FORGOTTEN))
@@ -220,6 +259,7 @@ class CardPlacesViewModel @Inject constructor(
         const val KEY_PLACE_ID = "editingPlaceId"
         const val KEY_PIN_LAT = "pinLatitude"
         const val KEY_PIN_LON = "pinLongitude"
+        const val KEY_WIFI_PLACE_ID = "wifiPlaceId"
         const val STOP_TIMEOUT_MILLIS = 5_000L
         const val CENTRE_ON_ME_ZOOM = 16.0
     }

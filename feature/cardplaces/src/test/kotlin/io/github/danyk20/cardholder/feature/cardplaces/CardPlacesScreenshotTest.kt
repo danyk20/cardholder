@@ -46,6 +46,7 @@ class CardPlacesScreenshotTest {
             useCount = 12,
             lastUsedAt = Instant.parse("2026-10-03T10:00:00Z"),
             wifiNames = listOf("Migros-Guest"),
+            hasWifi = true,
         ),
         PlaceItem(
             id = 2,
@@ -68,6 +69,7 @@ class CardPlacesScreenshotTest {
             useCount = 1,
             lastUsedAt = Instant.parse("2026-09-20T10:00:00Z"),
             wifiNames = listOf("Shop-WiFi"),
+            hasWifi = true,
         ),
     )
 

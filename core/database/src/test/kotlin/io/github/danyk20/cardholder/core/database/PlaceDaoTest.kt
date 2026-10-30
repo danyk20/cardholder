@@ -299,6 +299,56 @@ class PlaceDaoTest {
         assertEquals(setOf(1L, 2L), observed.accessPoints.map { it.bssid }.toSet())
     }
 
+    @Test
+    fun `a removed access point stays removed on later visits and keeps what was learned`() = runTest {
+        val id = dao.applyVisit(visit(accessPoints = listOf(accessPoint(1), accessPoint(2))), ::latest)
+        dao.setAccessPointsBlocked(id, listOf(1), blocked = true)
+
+        dao.applyVisit(visit(placeId = id, accessPoints = listOf(accessPoint(1), accessPoint(2)), now = 1), ::latest)
+
+        val stored = dao.accessPoints(id).associateBy { it.bssid }
+        assertTrue(stored.getValue(1).blocked)
+        assertEquals(1, stored.getValue(1).seenCount)
+        assertEquals(0, stored.getValue(1).lastSeenAt)
+        assertFalse(stored.getValue(2).blocked)
+        assertEquals(2, stored.getValue(2).seenCount)
+    }
+
+    @Test
+    fun `removed access points don't count among the ones a place keeps and are never trimmed`() = runTest {
+        val id = dao.applyVisit(visit(accessPoints = (1L..20L).map(::accessPoint)), ::latest)
+        dao.setAccessPointsBlocked(id, listOf(1, 2), blocked = true)
+
+        dao.applyVisit(visit(placeId = id, accessPoints = (21L..22L).map(::accessPoint), now = 1), ::latest)
+
+        val stored = dao.accessPoints(id)
+        assertEquals(setOf(1L, 2L), stored.filter { it.blocked }.map { it.bssid }.toSet())
+        assertEquals((3L..22L).toSet(), stored.filterNot { it.blocked }.map { it.bssid }.toSet())
+    }
+
+    @Test
+    fun `restoring an access point makes it count again`() = runTest {
+        val id = dao.applyVisit(visit(accessPoints = listOf(accessPoint(1), accessPoint(2))), ::latest)
+        dao.setAccessPointsBlocked(id, listOf(1, 2), blocked = true)
+
+        dao.setAccessPointsBlocked(id, listOf(1), blocked = false)
+
+        val observed = dao.observeAccessPoints(id).first().associateBy { it.bssid }
+        assertFalse(observed.getValue(1).blocked)
+        assertTrue(observed.getValue(2).blocked)
+    }
+
+    @Test
+    fun `removing an access point at one place leaves it at others`() = runTest {
+        val first = dao.applyVisit(visit(accessPoints = listOf(accessPoint(1))), ::latest)
+        val second = dao.applyVisit(visit(cardId = "other", accessPoints = listOf(accessPoint(1))), ::latest)
+
+        dao.setAccessPointsBlocked(first, listOf(1), blocked = true)
+
+        assertTrue(dao.accessPoints(first).single().blocked)
+        assertFalse(dao.accessPoints(second).single().blocked)
+    }
+
     /** The centre of the latest fix, enough to see that the centre follows the stored fixes. */
     private fun latest(fixes: List<PlaceFixEntity>) =
         fixes.firstOrNull()?.let { PlaceCentre(it.latitude, it.longitude, it.accuracyMeters) }

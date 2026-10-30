@@ -496,5 +496,95 @@ class CardPlacesViewModelTest {
         assertFalse(viewModel.uiState.value.tilesUnreachable)
     }
 
+    @Test
+    fun `the Wi-Fi editor groups a place's access points into networks by name`() = runTest {
+        addKaufland()
+        val guest1 = AccessPoint(Bssid(1), "Kaufland-Guest", -75)
+        val guest2 = AccessPoint(Bssid(2), "Kaufland-Guest", -55)
+        val hidden = AccessPoint(Bssid(3), null, -60)
+        places.places.add(place(1, accessPoints = listOf(guest1, guest2, hidden)))
+        val viewModel = viewModel()
+        observe(viewModel)
+
+        viewModel.onOpenWifi(1L)
+
+        val editor = viewModel.uiState.value.wifiEditor!!
+        assertEquals(1, editor.number)
+        assertEquals(listOf("Kaufland-Guest", null), editor.networks.map { it.name })
+        assertEquals(listOf(Bssid(1), Bssid(2)), editor.networks[0].bssids)
+        assertEquals(-55, editor.networks[0].rssi)
+        assertEquals("00:00:00:00:00:03", editor.networks[1].address)
+        assertTrue(editor.removed.isEmpty())
+    }
+
+    @Test
+    fun `removing a network moves it to the removed ones, and restoring brings it back`() = runTest {
+        addKaufland()
+        places.places.add(place(1, accessPoints = listOf(ap("Kaufland-Guest"), ap("Neighbour"))))
+        val viewModel = viewModel()
+        observe(viewModel)
+        viewModel.onOpenWifi(1L)
+        val neighbour = viewModel.uiState.value.wifiEditor!!.networks.single { it.name == "Neighbour" }
+
+        viewModel.onRemoveNetwork(neighbour)
+
+        val editor = viewModel.uiState.value.wifiEditor!!
+        assertEquals(listOf("Kaufland-Guest"), editor.networks.map { it.name })
+        assertEquals(listOf("Neighbour"), editor.removed.map { it.name })
+        assertEquals(listOf("Kaufland-Guest"), viewModel.uiState.value.places.single().wifiNames)
+        assertEquals(listOf("Neighbour"), places.places.places.value.single().blockedAccessPoints.map { it.ssid })
+
+        viewModel.onRestoreNetwork(editor.removed.single())
+
+        assertEquals(2, viewModel.uiState.value.wifiEditor!!.networks.size)
+        assertTrue(viewModel.uiState.value.wifiEditor!!.removed.isEmpty())
+    }
+
+    @Test
+    fun `a place without a position is useless once its last network is removed`() = runTest {
+        addKaufland()
+        places.places.add(place(1, centre = null, accessPoints = listOf(ap("Neighbour"))))
+        val viewModel = viewModel()
+        observe(viewModel)
+        viewModel.onOpenWifi(1L)
+
+        viewModel.onRemoveNetwork(viewModel.uiState.value.wifiEditor!!.networks.single())
+
+        assertTrue(viewModel.uiState.value.wifiEditor!!.isUseless)
+        assertTrue(viewModel.uiState.value.places.single().hasWifi)
+    }
+
+    @Test
+    fun `the Wi-Fi editor closes, and closes with its deleted place`() = runTest {
+        addKaufland()
+        places.places.add(place(1, accessPoints = listOf(ap("Neighbour"))))
+        val viewModel = viewModel()
+        observe(viewModel)
+
+        viewModel.onOpenWifi(1L)
+        viewModel.onCloseWifi()
+        assertNull(viewModel.uiState.value.wifiEditor)
+
+        viewModel.onOpenWifi(1L)
+        viewModel.onRequestDelete(1L)
+        viewModel.onConfirmDelete()
+        assertNull(viewModel.uiState.value.wifiEditor)
+    }
+
+    @Test
+    fun `the Wi-Fi editor stays open when the screen is recreated`() = runTest {
+        addKaufland()
+        places.places.add(place(1, accessPoints = listOf(ap("Neighbour"))))
+        val saved = handle()
+        val first = viewModel(saved)
+        observe(first)
+        first.onOpenWifi(1L)
+
+        val recreated = viewModel(saved)
+        observe(recreated)
+
+        assertEquals(1L, recreated.uiState.value.wifiEditor?.placeId)
+    }
+
     private fun ap(ssid: String) = AccessPoint(Bssid(ssid.hashCode().toLong()), ssid, -60)
 }

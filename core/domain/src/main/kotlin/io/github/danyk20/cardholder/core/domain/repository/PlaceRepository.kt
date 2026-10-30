@@ -1,7 +1,9 @@
 package io.github.danyk20.cardholder.core.domain.repository
 
+import io.github.danyk20.cardholder.core.domain.location.Bssid
 import io.github.danyk20.cardholder.core.domain.location.GeoPoint
 import io.github.danyk20.cardholder.core.domain.location.Place
+import io.github.danyk20.cardholder.core.domain.location.StoredAccessPoint
 import io.github.danyk20.cardholder.core.domain.location.Surroundings
 import io.github.danyk20.cardholder.core.model.CardId
 import java.time.Instant
@@ -43,6 +45,15 @@ interface PlaceRepository {
 
     /** Adds a pinned place for [cardId] at [point] and returns its id. */
     suspend fun addPlace(cardId: CardId, point: GeoPoint): Long
+
+    /** The Wi‑Fi access points of a place, removed ones too, the most seen first. */
+    fun observeAccessPoints(placeId: Long): Flow<List<StoredAccessPoint>>
+
+    /**
+     * Removes [bssids] from a place, or restores them when [blocked] is `false`. A removed access point
+     * no longer suggests the card and isn't learned at the place again.
+     */
+    suspend fun setAccessPointsBlocked(placeId: Long, bssids: Collection<Bssid>, blocked: Boolean)
 
     suspend fun forget(placeId: Long)
 

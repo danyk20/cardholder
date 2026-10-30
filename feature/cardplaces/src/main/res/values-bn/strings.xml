@@ -42,4 +42,28 @@
     <string name="places_deleted">জায়গা মুছে ফেলা হয়েছে</string>
     <string name="places_forgotten">সব জায়গা ভোলা হয়েছে</string>
     <string name="places_not_saved">জায়গাটি সংরক্ষণ করা যায়নি।</string>
+    <string name="places_edit_wifi">Wi‑Fi সম্পাদনা করুন</string>
+    <string name="places_wifi_title">জায়গা %1$d-এ Wi‑Fi</string>
+    <string name="places_wifi_explainer">এখানে কার্ড ব্যবহারের সময় দেখা নেটওয়ার্কগুলো। যেগুলো এই জায়গার নয়, যেমন প্রতিবেশীর নেটওয়ার্ক, সেগুলো সরিয়ে দিন, যাতে সেগুলো আর কার্ড প্রস্তাব না করে।</string>
+    <string name="places_wifi_none">এই জায়গায় আর কোনো Wi‑Fi নেটওয়ার্ক নেই।</string>
+    <string name="places_wifi_nothing_left">এই জায়গার মানচিত্রে কোনো অবস্থান নেই এবং কোনো Wi‑Fi-ও বাকি নেই, তাই এটি কার্ড প্রস্তাব করতে পারবে না। এটি মানচিত্রে ঠিক করুন বা মুছে ফেলুন।</string>
+    <string name="places_wifi_hidden">লুকানো নেটওয়ার্ক (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d অ্যাক্সেস পয়েন্ট</item>
+        <item quantity="other">%d অ্যাক্সেস পয়েন্ট</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">%1$d বার দেখা গেছে, সর্বশেষ %2$s</item>
+        <item quantity="other">%1$d বার দেখা গেছে, সর্বশেষ %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">শক্তিশালী সিগন্যাল</string>
+    <string name="places_wifi_signal_good">ভালো সিগন্যাল</string>
+    <string name="places_wifi_signal_weak">দুর্বল সিগন্যাল</string>
+    <string name="places_wifi_remove">%1$s সরান</string>
+    <string name="places_wifi_removed_message">%1$s সরানো হয়েছে</string>
+    <string name="places_wifi_undo">পূর্বাবস্থায় ফেরান</string>
+    <string name="places_wifi_removed_header">সরানো নেটওয়ার্ক (%1$d)</string>
+    <string name="places_wifi_removed_hint">সরানো নেটওয়ার্ক এই জায়গায় আর শেখা হবে না এবং কার্ড প্রস্তাব করবে না।</string>
+    <string name="places_wifi_restore">ফিরিয়ে আনুন</string>
+    <string name="places_wifi_done">হয়েছে</string>
 </resources>

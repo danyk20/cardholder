@@ -74,6 +74,14 @@ interface PlaceDao {
     @Query("SELECT * FROM place_access_points WHERE place_id = :placeId")
     suspend fun accessPoints(placeId: Long): List<PlaceAccessPointEntity>
 
+    /** The access points of a place, removed ones too, the most seen first. */
+    @Query("SELECT * FROM place_access_points WHERE place_id = :placeId ORDER BY seen_count DESC, rssi DESC")
+    fun observeAccessPoints(placeId: Long): Flow<List<PlaceAccessPointEntity>>
+
+    /** Removes [bssids] from a place for good, or restores them; they keep what was learned about them. */
+    @Query("UPDATE place_access_points SET blocked = :blocked WHERE place_id = :placeId AND bssid IN (:bssids)")
+    suspend fun setAccessPointsBlocked(placeId: Long, bssids: List<Long>, blocked: Boolean)
+
     @Query("UPDATE places SET last_notified_at = :at WHERE id = :id")
     suspend fun markNotified(id: Long, at: Long)
 
@@ -223,11 +231,11 @@ interface PlaceDao {
     @Upsert
     suspend fun upsertAccessPoints(accessPoints: List<PlaceAccessPointEntity>)
 
-    /** Deletes all but the [keep] access points of a place seen on most visits. */
+    /** Deletes all but the [keep] access points of a place seen on most visits; removed ones stay. */
     @Query(
         """
-        DELETE FROM place_access_points WHERE place_id = :placeId AND bssid NOT IN (
-            SELECT bssid FROM place_access_points WHERE place_id = :placeId
+        DELETE FROM place_access_points WHERE place_id = :placeId AND blocked = 0 AND bssid NOT IN (
+            SELECT bssid FROM place_access_points WHERE place_id = :placeId AND blocked = 0
             ORDER BY seen_count DESC, last_seen_at DESC LIMIT :keep
         )
         """,
@@ -268,8 +276,11 @@ private suspend fun PlaceDao.addFix(placeId: Long, visit: VisitWrite) {
 private suspend fun PlaceDao.mergeAccessPoints(placeId: Long, visit: VisitWrite) {
     if (visit.accessPoints.isEmpty()) return
     val stored = accessPoints(placeId).associateBy { it.bssid }
+    // The plan leaves out the ones the user removed; this only makes sure they stay removed.
+    val seenHere = visit.accessPoints.filterNot { stored[it.bssid]?.blocked == true }
+    if (seenHere.isEmpty()) return
     upsertAccessPoints(
-        visit.accessPoints.map { seen ->
+        seenHere.map { seen ->
             val known = stored[seen.bssid]
             PlaceAccessPointEntity(
                 placeId = placeId,

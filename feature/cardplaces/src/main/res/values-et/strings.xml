@@ -42,4 +42,28 @@
     <string name="places_deleted">Koht kustutatud</string>
     <string name="places_forgotten">Kõik kohad unustatud</string>
     <string name="places_not_saved">Kohta ei õnnestunud salvestada.</string>
+    <string name="places_edit_wifi">Muuda Wi‑Fi-d</string>
+    <string name="places_wifi_title">Wi‑Fi kohas %1$d</string>
+    <string name="places_wifi_explainer">Võrgud, mis tuvastati, kui kasutasite siin kaarti. Eemaldage need, mis sellele kohale ei kuulu, näiteks naabri oma, et need enam kaarti ei soovitaks.</string>
+    <string name="places_wifi_none">Sellesse kohta ei ole Wi‑Fi-võrke järele jäänud.</string>
+    <string name="places_wifi_nothing_left">Sellel kohal puudub asukoht kaardil ja Wi‑Fi-võrke pole järel, mistõttu see ei saa kaarti soovitada. Määrake see kaardil või kustutage.</string>
+    <string name="places_wifi_hidden">Peidetud võrk (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d pääsupunkt</item>
+        <item quantity="other">%d pääsupunkti</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Nähtud %1$d kord, viimati %2$s</item>
+        <item quantity="other">Nähtud %1$d korda, viimati %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Tugev signaal</string>
+    <string name="places_wifi_signal_good">Hea signaal</string>
+    <string name="places_wifi_signal_weak">Nõrk signaal</string>
+    <string name="places_wifi_remove">Eemalda %1$s</string>
+    <string name="places_wifi_removed_message">%1$s eemaldati</string>
+    <string name="places_wifi_undo">Võta tagasi</string>
+    <string name="places_wifi_removed_header">Eemaldatud võrgud (%1$d)</string>
+    <string name="places_wifi_removed_hint">Eemaldatud võrke selles kohas enam ei õpita ja need ei soovita kaarti.</string>
+    <string name="places_wifi_restore">Taasta</string>
+    <string name="places_wifi_done">Valmis</string>
 </resources>

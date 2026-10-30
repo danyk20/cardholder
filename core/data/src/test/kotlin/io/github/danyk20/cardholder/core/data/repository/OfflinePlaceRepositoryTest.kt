@@ -221,6 +221,33 @@ class OfflinePlaceRepositoryTest {
 
     private fun fix(point: GeoPoint) = LocationFix(point, 10f, now)
 
+    @Test
+    fun `a removed network stops matching and isn't learned again, until it's restored`() = runTest {
+        repository.recordVisit(Kaufland, Surroundings(listOf(ap(1), ap(7)), fix(Shop)))
+        val id = repository.suggestionPlaces().single().id
+
+        repository.setAccessPointsBlocked(id, listOf(Bssid(7)), blocked = true)
+        now = now.plusSeconds(86_400)
+        repository.recordVisit(Kaufland, Surroundings(listOf(ap(1), ap(7)), fix(Shop)))
+
+        val place = repository.suggestionPlaces().single()
+        assertEquals(listOf(Bssid(1)), place.accessPoints.map { it.bssid })
+        assertEquals(listOf(Bssid(7)), place.blockedAccessPoints.map { it.bssid })
+        val stored = repository.observeAccessPoints(id).first().associateBy { it.accessPoint.bssid }
+        assertTrue(stored.getValue(Bssid(7)).isBlocked)
+        assertEquals(1, stored.getValue(Bssid(7)).seenCount)
+        assertEquals(2, stored.getValue(Bssid(1)).seenCount)
+
+        repository.setAccessPointsBlocked(id, listOf(Bssid(7)), blocked = false)
+
+        assertEquals(
+            setOf(Bssid(1), Bssid(7)),
+            repository.suggestionPlaces().single().accessPoints.map {
+                it.bssid
+            }.toSet(),
+        )
+    }
+
     private fun ap(bssid: Long) = AccessPoint(Bssid(bssid), "net-$bssid", -60)
 
     private fun GeoPoint.north(meters: Double) = copy(latitude = latitude + meters / 111_195.0)

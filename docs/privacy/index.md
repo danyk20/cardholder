@@ -5,7 +5,7 @@ permalink: /privacy/
 
 # Cardholder privacy policy
 
-_Last updated: 22 October 2026 (map of places)_
+_Last updated: 30 October 2026 (removing Wi‑Fi networks from a place)_
 
 Cardholder is an open-source app for storing bank, ID and loyalty cards on an Android phone. It is developed by Daniel Košč ("I", "me"). This policy explains what happens to your data when you use the app.
 
@@ -53,6 +53,8 @@ Card suggestions are off unless you turn them on in Settings. When they are on:
 - **When you use a card** (you show a loyalty card's code, or tap "Remember this place" on another card), the app reads your location once and the Wi‑Fi networks around you (their hardware addresses, names and signal strength). It stores them as a place of that card: at most the 10 latest locations per place.
 - **While the card list is open** (at most once a minute), the app reads the Wi‑Fi networks around you and, if that doesn't settle it, your approximate location, to show the cards you used nearby at the top.
 - **With arrival notifications**, the app gives Google Play services circles around your most used places. Play services watches them on your phone and tells the app when you stay at one, so it can show the right card. Google's handling of location in Play services is covered by the [Google privacy policy](https://policies.google.com/privacy).
+
+On a card's Places screen you can remove Wi‑Fi networks that don't belong to a place. A removed network stays stored with the place, marked as removed, so the app doesn't learn it there again; you can restore it, and it's deleted with the place.
 
 Learned places are stored only in the app's encrypted database. They are not included in backups or in cards you share, and they are never sent to me or anyone else. You can turn suggestions off for any card, forget a card's places in its details, or forget all places in Settings. Deleting a card deletes its places. You can withdraw the location permissions in Android's settings at any time.
 

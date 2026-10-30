@@ -84,6 +84,52 @@ class PlaceClusteringTest {
         assertFalse(plan(Surroundings(emptyList(), fix(Shop))) { earlier }!!.sameVisit)
     }
 
+    @Test
+    fun `a network removed from the place isn't learned there again, under any of its addresses`() {
+        val shop = place(1, accessPoints = listOf(ap(1))).copy(blockedAccessPoints = listOf(ap(5, ssid = "Neighbour")))
+
+        val plan = plan(Surroundings(listOf(ap(1), ap(5, ssid = "Neighbour"), ap(6, ssid = "Neighbour")), fix(Shop))) {
+            listOf(shop)
+        }
+
+        assertEquals(1L, plan?.placeId)
+        assertEquals(listOf(ap(1)), plan?.accessPoints)
+    }
+
+    @Test
+    fun `a removed network alone, without a fix, stores nothing`() {
+        val shop = place(1, accessPoints = listOf(ap(1))).copy(blockedAccessPoints = listOf(ap(5)))
+
+        assertNull(plan(Surroundings(listOf(ap(5)), null)) { listOf(shop) })
+    }
+
+    @Test
+    fun `a new place leaves out addresses removed at the card's other places, but not their names`() {
+        val shop = place(1).copy(blockedAccessPoints = listOf(ap(5, ssid = "Chain Guest")))
+
+        val scan = listOf(ap(5, ssid = "Chain Guest"), ap(6, ssid = "Chain Guest"))
+
+        val plan = assertNotNull(plan(Surroundings(scan, fix(Shop.north(5_000.0)))) { listOf(shop) })
+
+        assertNull(plan.placeId)
+        assertEquals(listOf(ap(6, ssid = "Chain Guest")), plan.accessPoints)
+    }
+
+    @Test
+    fun `a network removed at another card's place is still learned`() {
+        val elsewhere = place(9, card = "other").copy(blockedAccessPoints = listOf(ap(5)))
+
+        val plan = PlaceClustering.plan(
+            cardPlaces = emptyList(),
+            knownPlaces = listOf(elsewhere),
+            surroundings = Surroundings(listOf(ap(5)), fix(Shop)),
+            travelling = emptySet(),
+            now = Now,
+        )
+
+        assertEquals(listOf(ap(5)), plan?.accessPoints)
+    }
+
     private fun plan(surroundings: Surroundings, places: () -> List<Place> = { emptyList() }) =
         PlaceClustering.plan(places(), emptyList(), surroundings, emptySet(), Now)
 

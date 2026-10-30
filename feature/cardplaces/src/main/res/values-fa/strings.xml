@@ -42,4 +42,28 @@
     <string name="places_deleted">مکان حذف شد</string>
     <string name="places_forgotten">همه مکان‌ها فراموش شدند</string>
     <string name="places_not_saved">مکان ذخیره نشد.</string>
+    <string name="places_edit_wifi">ویرایش Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi در مکان %1$d</string>
+    <string name="places_wifi_explainer">شبکه‌هایی که هنگام استفاده از کارت در اینجا دیده شدند. شبکه‌هایی را که به این مکان تعلق ندارند، مثلاً شبکهٔ همسایه، حذف کنید تا دیگر کارت را پیشنهاد ندهند.</string>
+    <string name="places_wifi_none">هیچ شبکهٔ Wi‑Fi در این مکان باقی نمانده است.</string>
+    <string name="places_wifi_nothing_left">این مکان موقعیتی روی نقشه ندارد و Wi‑Fi هم برایش باقی نمانده است، پس نمی‌تواند کارت را پیشنهاد دهد. آن را روی نقشه تنظیم کنید یا حذف کنید.</string>
+    <string name="places_wifi_hidden">شبکهٔ پنهان (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d نقطهٔ دسترسی</item>
+        <item quantity="other">%d نقطهٔ دسترسی</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">%1$d بار دیده شد، آخرین بار %2$s</item>
+        <item quantity="other">%1$d بار دیده شد، آخرین بار %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">سیگنال قوی</string>
+    <string name="places_wifi_signal_good">سیگنال خوب</string>
+    <string name="places_wifi_signal_weak">سیگنال ضعیف</string>
+    <string name="places_wifi_remove">حذف %1$s</string>
+    <string name="places_wifi_removed_message">%1$s حذف شد</string>
+    <string name="places_wifi_undo">واگرد</string>
+    <string name="places_wifi_removed_header">شبکه‌های حذف‌شده (%1$d)</string>
+    <string name="places_wifi_removed_hint">شبکه‌های حذف‌شده دیگر در این مکان یاد گرفته نمی‌شوند و کارت را پیشنهاد نمی‌دهند.</string>
+    <string name="places_wifi_restore">بازیابی</string>
+    <string name="places_wifi_done">تمام</string>
 </resources>

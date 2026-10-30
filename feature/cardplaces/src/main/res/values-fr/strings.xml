@@ -45,4 +45,30 @@
     <string name="places_deleted">Lieu supprimé</string>
     <string name="places_forgotten">Tous les lieux oubliés</string>
     <string name="places_not_saved">Le lieu n\'a pas pu être enregistré.</string>
+    <string name="places_edit_wifi">Modifier le Wi‑Fi</string>
+    <string name="places_wifi_title">Wi‑Fi du lieu %1$d</string>
+    <string name="places_wifi_explainer">Réseaux repérés lorsque vous avez utilisé la carte ici. Retirez ceux qui n\'appartiennent pas à ce lieu, comme celui d\'un voisin, afin qu\'ils ne suggèrent plus la carte.</string>
+    <string name="places_wifi_none">Il ne reste aucun réseau Wi‑Fi pour ce lieu.</string>
+    <string name="places_wifi_nothing_left">Ce lieu n\'a plus de position sur la carte ni de Wi‑Fi, il ne peut donc pas suggérer la carte. Placez-le sur la carte ou supprimez-le.</string>
+    <string name="places_wifi_hidden">Réseau masqué (%1$s)</string>
+    <plurals name="places_wifi_access_points">
+        <item quantity="one">%d point d\'accès</item>
+        <item quantity="many">%d de points d\'accès</item>
+        <item quantity="other">%d points d\'accès</item>
+    </plurals>
+    <plurals name="places_wifi_seen">
+        <item quantity="one">Repéré %1$d fois, dernière fois %2$s</item>
+        <item quantity="many">Repéré %1$d de fois, dernière fois %2$s</item>
+        <item quantity="other">Repéré %1$d fois, dernière fois %2$s</item>
+    </plurals>
+    <string name="places_wifi_signal_strong">Signal fort</string>
+    <string name="places_wifi_signal_good">Bon signal</string>
+    <string name="places_wifi_signal_weak">Signal faible</string>
+    <string name="places_wifi_remove">Retirer %1$s</string>
+    <string name="places_wifi_removed_message">Retiré : %1$s</string>
+    <string name="places_wifi_undo">Annuler</string>
+    <string name="places_wifi_removed_header">Réseaux retirés (%1$d)</string>
+    <string name="places_wifi_removed_hint">Les réseaux retirés ne sont plus appris pour ce lieu et ne suggèrent plus la carte.</string>
+    <string name="places_wifi_restore">Restaurer</string>
+    <string name="places_wifi_done">Terminé</string>
 </resources>
