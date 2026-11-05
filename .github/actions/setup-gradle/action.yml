@@ -34,7 +34,11 @@ runs:
       if: inputs.configuration-cache-key != '' && inputs.cache-encryption-key != '' && github.ref == 'refs/heads/main'
       uses: actions/cache@v6
       with:
-        path: .gradle/configuration-cache
+        # The plugin descriptors build-logic generates are inputs of the cached configuration; without them
+        # Gradle rejects it in a fresh checkout.
+        path: |
+          .gradle/configuration-cache
+          build-logic/convention/build
         key: >-
           configuration-cache-${{ inputs.configuration-cache-key }}-${{ hashFiles('**/*.gradle.kts',
           'gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties',
@@ -43,7 +47,11 @@ runs:
       if: inputs.configuration-cache-key != '' && inputs.cache-encryption-key != '' && github.ref != 'refs/heads/main'
       uses: actions/cache/restore@v6
       with:
-        path: .gradle/configuration-cache
+        # The plugin descriptors build-logic generates are inputs of the cached configuration; without them
+        # Gradle rejects it in a fresh checkout.
+        path: |
+          .gradle/configuration-cache
+          build-logic/convention/build
         key: >-
           configuration-cache-${{ inputs.configuration-cache-key }}-${{ hashFiles('**/*.gradle.kts',
           'gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties',

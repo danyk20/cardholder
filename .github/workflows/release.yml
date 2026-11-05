@@ -3,6 +3,8 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  # A dry run: builds both signed files and keeps them as workflow artifacts, without publishing anything.
+  workflow_dispatch:
 
 # Never build two releases at once, and never cancel one halfway through publishing.
 concurrency:
@@ -12,22 +14,122 @@ concurrency:
 permissions:
   contents: read
 
+# The checks, the APK and the AAB run on separate runners at the same time; publishing waits for all three.
 jobs:
-  release:
-    name: Build & publish
+  check:
+    name: Check version & CI
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
     permissions:
-      contents: write
+      contents: read
+      actions: read
     steps:
       - uses: actions/checkout@v7
 
       - name: Check tag matches versionName
+        if: github.ref_type == 'tag'
         run: |
           version_name=$(grep -m1 -E 'versionName = "' app/build.gradle.kts | cut -d'"' -f2)
           if [ "v$version_name" != "$GITHUB_REF_NAME" ]; then
             echo "::error::Tag $GITHUB_REF_NAME doesn't match versionName $version_name in app/build.gradle.kts"; exit 1
           fi
+
+      - name: Check release notes in CHANGELOG.md
+        if: github.ref_type == 'tag'
+        run: |
+          grep -qE "^## \[${GITHUB_REF_NAME#v}\]" CHANGELOG.md || {
+            echo "::error::CHANGELOG.md has no section for ${GITHUB_REF_NAME#v}"; exit 1
+          }
+
+      # The release isn't tested again: it must be a commit whose CI on main passed (tests, lint, build).
+      # A tag pushed right after merging waits here for that CI to finish.
+      - name: Wait for CI of this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run_id=$(gh run list --workflow ci.yml --commit "$GITHUB_SHA" --event push --limit 1 \
+            --json databaseId --jq '.[0].databaseId // empty')
+          if [ -z "$run_id" ]; then
+            echo "::error::CI never ran on $GITHUB_SHA. Release only commits that were merged to main."; exit 1
+          fi
+          gh run watch "$run_id" --interval 30 > /dev/null || true
+          conclusion=$(gh run view "$run_id" --json conclusion --jq .conclusion)
+          if [ "$conclusion" != "success" ]; then
+            echo "::error::CI of $GITHUB_SHA ended with '$conclusion': $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$run_id"
+            exit 1
+          fi
+
+  build:
+    name: Build ${{ matrix.file }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        include:
+          # The APK on GitHub updates itself from GitHub releases; the AAB is for Google Play, which updates it.
+          - file: apk
+            task: assembleGithubRelease
+            output: app/build/outputs/apk/github/release
+          - file: aab
+            task: bundlePlayRelease
+            output: app/build/outputs/bundle/playRelease
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/setup-gradle
+
+      - name: Decode signing keystore
+        env:
+          SIGNING_KEYSTORE_BASE64: ${{ secrets.SIGNING_KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$SIGNING_KEYSTORE_BASE64" ]; then
+            echo "::error::SIGNING_KEYSTORE_BASE64 secret is not configured"; exit 1
+          fi
+          echo "$SIGNING_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.jks"
+
+      - name: Build signed release
+        env:
+          SIGNING_STORE_FILE: ${{ runner.temp }}/release.jks
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        run: ./gradlew ${{ matrix.task }}
+
+      - name: Remove signing keystore
+        if: always()
+        run: rm -f "$RUNNER_TEMP/release.jks"
+
+      # Gradle names them app-release.*; users should see what they downloaded, e.g. Cardholder-1.3.1.apk.
+      - name: Name the file after the app and version
+        env:
+          EXT: ${{ matrix.file }}
+          OUTPUT: ${{ matrix.output }}
+        run: |
+          version_name=$(grep -m1 -E 'versionName = "' app/build.gradle.kts | cut -d'"' -f2)
+          files=("$OUTPUT"/*."$EXT")
+          if [ "${#files[@]}" -ne 1 ] || [ ! -f "${files[0]}" ]; then
+            echo "::error::Expected exactly one .$EXT in $OUTPUT"; exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/dist"
+          cp "${files[0]}" "$RUNNER_TEMP/dist/Cardholder-$version_name.$EXT"
+          ls -l "$RUNNER_TEMP/dist"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release-${{ matrix.file }}
+          path: ${{ runner.temp }}/dist/
+          retention-days: 7
+
+  publish:
+    name: Publish
+    needs: [check, build]
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
 
       - name: Extract release notes from CHANGELOG.md
         run: |
@@ -41,40 +143,11 @@ jobs:
             echo "::error::CHANGELOG.md has no section for ${GITHUB_REF_NAME#v}"; exit 1
           fi
 
-      - uses: ./.github/actions/setup-gradle
-
-      - name: Decode signing keystore
-        env:
-          SIGNING_KEYSTORE_BASE64: ${{ secrets.SIGNING_KEYSTORE_BASE64 }}
-        run: |
-          if [ -z "$SIGNING_KEYSTORE_BASE64" ]; then
-            echo "::error::SIGNING_KEYSTORE_BASE64 secret is not configured"; exit 1
-          fi
-          echo "$SIGNING_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.jks"
-
-      - name: Test and build signed release
-        env:
-          SIGNING_STORE_FILE: ${{ runner.temp }}/release.jks
-          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
-          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
-        # The APK on GitHub updates itself from GitHub releases; the AAB is for Google Play, which updates it.
-        run: ./gradlew testDebugUnitTest assembleGithubRelease bundlePlayRelease
-
-      # Gradle names them app-release.*; users should see what they downloaded, e.g. Cardholder-1.3.1.apk.
-      - name: Name files after the app and version
-        run: |
-          name="Cardholder-${GITHUB_REF_NAME#v}"
-          mkdir -p "$RUNNER_TEMP/dist"
-          for ext in apk aab; do
-            dir=app/build/outputs/$([ "$ext" = apk ] && echo apk/github/release || echo bundle/playRelease)
-            files=("$dir"/*."$ext")
-            if [ "${#files[@]}" -ne 1 ] || [ ! -f "${files[0]}" ]; then
-              echo "::error::Expected exactly one .$ext in $dir"; exit 1
-            fi
-            cp "${files[0]}" "$RUNNER_TEMP/dist/$name.$ext"
-          done
-          ls -l "$RUNNER_TEMP/dist"
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: release-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/dist
 
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v3
@@ -84,7 +157,3 @@ jobs:
           files: |
             ${{ runner.temp }}/dist/*.apk
             ${{ runner.temp }}/dist/*.aab
-
-      - name: Remove signing keystore
-        if: always()
-        run: rm -f "$RUNNER_TEMP/release.jks"

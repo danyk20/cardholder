@@ -18,6 +18,12 @@ android {
         buildConfig = true
     }
 
+    lint {
+        // Release builds would otherwise run lint's "vital" checks over every module again (~1 min per flavor).
+        // CI runs the full lint on every change, and a release is only published for a commit that passed it.
+        checkReleaseBuilds = false
+    }
+
     androidResources {
         // Lets users pick the app language in system settings (Android 13+).
         generateLocaleConfig = true
