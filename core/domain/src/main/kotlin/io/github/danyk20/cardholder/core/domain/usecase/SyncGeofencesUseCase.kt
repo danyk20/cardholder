@@ -48,6 +48,20 @@ class SyncGeofencesUseCase @Inject constructor(
         placeRepository.observeGeofencePlaces(MAX_GEOFENCES).first(),
     )
 
+    /**
+     * Registers the geofences again even if this process already did. Play services may have dropped
+     * them meanwhile, e.g. when it was updated or location accuracy was off, without the app noticing;
+     * so this is done whenever the app comes to the foreground. Does nothing while arrival
+     * notifications are off.
+     */
+    suspend fun restore() {
+        forget()
+        sync()
+    }
+
+    /** Play services removed the geofences, e.g. because location accuracy was off; the next sync registers them. */
+    suspend fun forget() = mutex.withLock { registered = null }
+
     /** Removes the geofences, e.g. when one fires although arrival notifications were turned off. */
     suspend fun clear() = mutex.withLock {
         registrar.clear()

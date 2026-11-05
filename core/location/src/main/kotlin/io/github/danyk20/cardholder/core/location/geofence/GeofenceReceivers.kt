@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.google.android.gms.location.Geofence
+import com.google.android.gms.location.GeofenceStatusCodes
 import com.google.android.gms.location.GeofencingEvent
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -48,8 +49,17 @@ private fun BroadcastReceiver.handle(context: Context, block: suspend GeofenceEn
 /** Receives Google Play services' reports of staying at or leaving a learned place. */
 internal class GeofenceTransitionReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        val event = GeofencingEvent.fromIntent(intent)
-        if (event == null || event.hasError()) return
+        val event = GeofencingEvent.fromIntent(intent) ?: return
+        if (event.hasError()) {
+            // Play services removed every geofence, e.g. location accuracy was turned off. They're registered
+            // again when the app next comes to the foreground or the places change.
+            if (event.errorCode ==
+                GeofenceStatusCodes.GEOFENCE_NOT_AVAILABLE
+            ) {
+                handle(context) { syncGeofences().forget() }
+            }
+            return
+        }
         val placeIds = event.triggeringGeofences.orEmpty().mapNotNull { GeofenceIds.placeId(it.requestId) }
         if (placeIds.isEmpty()) return
         when (event.geofenceTransition) {

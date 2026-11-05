@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Arrival notifications no longer stop silently when Google Play services drops the app's geofences (e.g. after
+  its own update, or when its data is cleared): they're registered again whenever the app is opened.
 
 ## [1.7.0] - 2026-10-30
 ### Added

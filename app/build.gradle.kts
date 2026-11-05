@@ -95,6 +95,7 @@ dependencies {
     ksp(libs.androidx.hilt.compiler)
     implementation(libs.androidx.work.runtime)
     implementation(libs.androidx.glance.appwidget)
+    implementation(libs.androidx.lifecycle.process)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.coil.compose)

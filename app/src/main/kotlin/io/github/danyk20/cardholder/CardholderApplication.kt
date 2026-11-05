@@ -4,6 +4,9 @@ import android.app.Application
 import android.util.Log
 import androidx.glance.appwidget.updateAll
 import androidx.hilt.work.HiltWorkerFactory
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.work.Configuration
 import coil3.ImageLoader
 import coil3.PlatformContext
@@ -121,18 +124,31 @@ class CardholderApplication :
 
     /**
      * Arrival notifications watch the learned places. Geofences are lost when the app is force-stopped,
-     * so they're registered again on every start, and whenever places or the mode change.
+     * so they're registered again on every start, and whenever places or the mode change. Play services
+     * can also drop them while the app runs (after its update, or with location accuracy off), so they're
+     * registered again whenever the app comes to the foreground.
      */
     private fun keepGeofencesUpToDate() {
         applicationScope.launch(Dispatchers.IO) {
-            try {
-                syncGeofences.get().keepUpToDate().collect()
-            } catch (e: CancellationException) {
-                throw e
-            } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
-                // E.g. Play services are unavailable; geofences are registered again on the next change.
-                Log.w(TAG, "Couldn't update geofences", e)
-            }
+            geofencesSafely { syncGeofences.get().keepUpToDate().collect() }
+        }
+        ProcessLifecycleOwner.get().lifecycle.addObserver(
+            object : DefaultLifecycleObserver {
+                override fun onStart(owner: LifecycleOwner) {
+                    applicationScope.launch(Dispatchers.IO) { geofencesSafely { syncGeofences.get().restore() } }
+                }
+            },
+        )
+    }
+
+    private suspend fun geofencesSafely(block: suspend () -> Unit) {
+        try {
+            block()
+        } catch (e: CancellationException) {
+            throw e
+        } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
+            // E.g. Play services are unavailable; geofences are registered again on the next change or start.
+            Log.w(TAG, "Couldn't update geofences", e)
         }
     }
 
