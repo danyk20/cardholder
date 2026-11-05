@@ -52,7 +52,8 @@ The app comes in two flavors: `github` (the APK on GitHub releases, updates itse
 ./gradlew testDebugUnitTest                  # unit & Robolectric tests
 ./gradlew spotlessCheck detekt lintDebug     # static analysis
 ./gradlew connectedDebugAndroidTest          # instrumented tests (device/emulator)
-./gradlew koverHtmlReport                    # coverage report
+./gradlew koverHtmlReportUnit                # coverage report
+./gradlew recordRoborazziDebug               # re-record screenshots (skipped by plain test runs)
 ```
 Releases are built by GitHub Actions; see [docs/RELEASING.md](docs/RELEASING.md) and the [changelog](CHANGELOG.md).
 

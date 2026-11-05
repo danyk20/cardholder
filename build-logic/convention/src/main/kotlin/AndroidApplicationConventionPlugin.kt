@@ -4,6 +4,7 @@ import io.github.danyk20.cardholder.buildlogic.configureLintDefaults
 import io.github.danyk20.cardholder.buildlogic.configureStaticAnalysis
 import io.github.danyk20.cardholder.buildlogic.libs
 import io.github.danyk20.cardholder.buildlogic.plugin
+import io.github.danyk20.cardholder.buildlogic.registerUnitTests
 import io.github.danyk20.cardholder.buildlogic.version
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -25,6 +26,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
             }
             configureStaticAnalysis()
+            // Both flavors share the test sources, so the GitHub flavor's run covers them; Play-only tests, if
+            // any are ever added, run too.
+            val playTests = "testPlayDebugUnitTest".takeIf { file("src/testPlay").exists() }
+            registerUnitTests(*listOfNotNull("testGithubDebugUnitTest", playTests).toTypedArray())
         }
     }
 }
