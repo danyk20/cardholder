@@ -73,6 +73,40 @@ class ArrivalUseCasesTest {
     }
 
     @Test
+    fun `restoring registers again what Play services dropped`() = runTest {
+        preferences.setPlaceSuggestions(PlaceSuggestions.ARRIVAL)
+        sync.sync()
+        registrar.dropAll()
+
+        sync.sync()
+        assertNull(registrar.registered)
+
+        sync.restore()
+        assertEquals(listOf(PlaceGeofence(1, GeoPoint(48.1486, 17.1077), 150f)), registrar.registered)
+        assertEquals(2, registrar.replaceCalls)
+    }
+
+    @Test
+    fun `restoring does nothing while arrival notifications are off`() = runTest {
+        sync.restore()
+
+        assertNull(registrar.registered)
+        assertEquals(0, registrar.replaceCalls)
+    }
+
+    @Test
+    fun `after geofencing was unavailable the next sync registers again`() = runTest {
+        preferences.setPlaceSuggestions(PlaceSuggestions.ARRIVAL)
+        sync.sync()
+        registrar.dropAll()
+
+        sync.forget()
+        sync.sync()
+
+        assertEquals(listOf(PlaceGeofence(1, GeoPoint(48.1486, 17.1077), 150f)), registrar.registered)
+    }
+
+    @Test
     fun `removes geofences without location all the time`() = runTest {
         preferences.setPlaceSuggestions(PlaceSuggestions.ARRIVAL)
         sync.sync()

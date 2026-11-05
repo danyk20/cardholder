@@ -69,6 +69,11 @@ class FakeGeofenceRegistrar : GeofenceRegistrar {
     override suspend fun clear() {
         registered = null
     }
+
+    /** Play services drops every geofence on its own, as after its update, without the app knowing. */
+    fun dropAll() {
+        registered = null
+    }
 }
 
 /** [NetworkCountrySource] returning what tests set, counting the reads. */
