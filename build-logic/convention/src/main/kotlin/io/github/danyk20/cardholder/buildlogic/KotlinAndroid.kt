@@ -55,9 +55,17 @@ private inline fun <reified T> Project.configureKotlin()
     }
 
 private fun Project.configureTests() {
+    val screenshots = SCREENSHOT_PROPERTIES.any { providers.gradleProperty(it).isPresent } ||
+        gradle.startParameter.taskNames.any { "Roborazzi" in it }
     tasks.withType<Test>().configureEach {
         // Not every module has tests (yet); an empty test task must not fail the build.
         failOnNoDiscoveredTests = false
+        // Robolectric with Compose needs more than Gradle's default 512 MB to avoid constant garbage collection.
+        maxHeapSize = "1536m"
+        jvmArgs("-XX:+UseParallelGC")
+        // Screenshot tests render with native graphics, which is slow, and only do something when recording or
+        // verifying (`./gradlew recordRoborazziDebug` / `verifyRoborazziDebug`, or `-Pscreenshots`).
+        if (!screenshots) filter.excludeTestsMatching("*ScreenshotTest")
     }
     dependencies {
         add("testImplementation", libs.library("junit"))
@@ -66,6 +74,25 @@ private fun Project.configureTests() {
         add("testImplementation", libs.library("turbine"))
     }
 }
+
+/**
+ * Registers `unitTests`, the module's share of the unit tests CI runs: one variant only, since every variant
+ * runs the same test sources. The root project groups these into `unitTestsCore` and `unitTestsFeatures`.
+ */
+internal fun Project.registerUnitTests(vararg testTasks: String) {
+    tasks.register("unitTests") {
+        group = "verification"
+        description = "Runs the unit tests CI runs for this module."
+        dependsOn(*testTasks)
+    }
+}
+
+private val SCREENSHOT_PROPERTIES = listOf(
+    "screenshots",
+    "roborazzi.test.record",
+    "roborazzi.test.verify",
+    "roborazzi.test.compare",
+)
 
 /** Lint settings shared by the app and library modules. */
 internal fun Lint.configureLintDefaults() {

@@ -10,6 +10,12 @@ inputs:
       configuration cache simply isn't saved.
     required: false
     default: ""
+  configuration-cache-key:
+    description: >-
+      Names this job's configuration cache entry, e.g. the job and its matrix values. Needs cache-encryption-key.
+      Without it the configuration is calculated on every run (~25 s).
+    required: false
+    default: ""
 
 runs:
   using: composite
@@ -21,3 +27,24 @@ runs:
     - uses: gradle/actions/setup-gradle@v6
       with:
         cache-encryption-key: ${{ inputs.cache-encryption-key }}
+    # setup-gradle restores the configuration cache only when the whole Gradle cache matches exactly, which never
+    # happens on a new commit (its key contains the commit). This entry is keyed on the build's own files instead,
+    # so it stays valid until the build setup changes. Like the Gradle cache, only main saves it.
+    - name: Cache configuration (main)
+      if: inputs.configuration-cache-key != '' && inputs.cache-encryption-key != '' && github.ref == 'refs/heads/main'
+      uses: actions/cache@v6
+      with:
+        path: .gradle/configuration-cache
+        key: >-
+          configuration-cache-${{ inputs.configuration-cache-key }}-${{ hashFiles('**/*.gradle.kts',
+          'gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties',
+          'build-logic/**') }}
+    - name: Restore cached configuration
+      if: inputs.configuration-cache-key != '' && inputs.cache-encryption-key != '' && github.ref != 'refs/heads/main'
+      uses: actions/cache/restore@v6
+      with:
+        path: .gradle/configuration-cache
+        key: >-
+          configuration-cache-${{ inputs.configuration-cache-key }}-${{ hashFiles('**/*.gradle.kts',
+          'gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties',
+          'build-logic/**') }}

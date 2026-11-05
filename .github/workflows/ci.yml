@@ -63,13 +63,47 @@ jobs:
       - uses: ./.github/actions/setup-gradle
         with:
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+          configuration-cache-key: static-analysis
       # Neither needs compiled code, so this finishes first and gives the quickest feedback.
       - run: ./gradlew spotlessCheck detekt
 
   unit-tests:
-    name: Unit tests & coverage
+    # Two halves on separate runners: the feature modules' Robolectric/Compose tests alone keep a runner busy.
+    # The core half doesn't need the features or the app compiled, so it finishes well before.
+    name: Unit tests (${{ matrix.shard }})
     needs: changes
     if: needs.changes.outputs.code == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [Core, Features]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-gradle
+        with:
+          cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+          configuration-cache-key: unit-tests-${{ matrix.shard }}
+      - uses: ./.github/actions/robolectric-cache
+      # unitTestsCore / unitTestsFeatures (root build.gradle.kts): each module's tests on one variant, without
+      # screenshot tests (they only do something when recording) or coverage (main only, see below).
+      - run: ./gradlew unitTests${{ matrix.shard }}
+      - name: Upload reports
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-reports-${{ matrix.shard }}
+          path: |
+            **/build/reports/tests/
+            **/build/test-results/
+          retention-days: 14
+
+  coverage:
+    # Not part of the required check: pull requests don't wait for it. Main keeps a coverage report per commit.
+    name: Coverage report
+    needs: changes
+    if: github.event_name == 'push' && needs.changes.outputs.code == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -77,27 +111,15 @@ jobs:
       - uses: ./.github/actions/setup-gradle
         with:
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
-      # Robolectric downloads its Android framework jar (~200 MB) into ~/.m2 at test time, outside Gradle's cache.
-      # Keyed on Robolectric's version only, so unrelated dependency updates keep the cache.
-      - name: Read Robolectric version
-        id: robolectric
-        run: echo "version=$(grep -m1 -E '^robolectric = "' gradle/libs.versions.toml | cut -d'"' -f2)" >> "$GITHUB_OUTPUT"
-      - uses: actions/cache@v6
+          configuration-cache-key: coverage
+      - uses: ./.github/actions/robolectric-cache
+      # Runs every module's unit tests with Kover's agent, which only attaches when a Kover task is requested.
+      - run: ./gradlew koverXmlReportUnit
+      - uses: actions/upload-artifact@v7
         with:
-          path: ~/.m2/repository/org/robolectric
-          key: robolectric-${{ steps.robolectric.outputs.version }}-${{ hashFiles('config/robolectric/**') }}
-      # One invocation: Kover instruments the tests once instead of running them a second time for coverage.
-      - run: ./gradlew testDebugUnitTest koverXmlReport
-      - name: Upload reports
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: test-reports
-          path: |
-            **/build/reports/tests/
-            **/build/reports/kover/
-            **/build/test-results/
-          retention-days: 14
+          name: coverage-report
+          path: build/reports/kover/
+          retention-days: 30
 
   lint-and-build:
     name: Android Lint & debug APK
@@ -110,12 +132,13 @@ jobs:
       - uses: ./.github/actions/setup-gradle
         with:
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+          configuration-cache-key: lint-and-build
       # The app's lint checks all modules it depends on (checkDependencies); linting each module again would
       # analyse everything twice. core:testing isn't an app dependency, so it's linted on its own.
       # :app:lintDebug covers both distribution flavors (play, github); the CI APK is the GitHub one.
       - run: ./gradlew :app:lintDebug :core:testing:lint :app:assembleGithubDebug
       - name: Upload lint reports
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v7
         with:
           name: lint-reports

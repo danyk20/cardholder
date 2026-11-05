@@ -15,7 +15,7 @@ plugins {
 }
 
 dependencies {
-    // Aggregated coverage report of every module with tests: ./gradlew koverHtmlReport
+    // Aggregated coverage report of every module with tests: ./gradlew koverHtmlReportUnit
     listOf(
         projects.app,
         projects.core.barcode,
@@ -37,6 +37,10 @@ dependencies {
 }
 
 kover {
+    currentProject {
+        // The modules' "unit" variants: debug builds only (see StaticAnalysis.kt).
+        createVariant("unit") {}
+    }
     reports {
         filters {
             excludes {
@@ -46,4 +50,19 @@ kover {
             }
         }
     }
+}
+
+// CI runs the unit tests in two halves on separate machines. Modules join their half by their path.
+tasks.register("unitTestsCore") {
+    group = "verification"
+    description = "Runs the unit tests of the core modules."
+    dependsOn(subprojects.filter { it.path.startsWith(":core:") }.map { "${it.path}:unitTests" })
+}
+
+tasks.register("unitTestsFeatures") {
+    group = "verification"
+    description = "Runs the unit tests of the feature modules and the app."
+    dependsOn(
+        subprojects.filter { it.path.startsWith(":feature:") || it.path == ":app" }.map { "${it.path}:unitTests" },
+    )
 }

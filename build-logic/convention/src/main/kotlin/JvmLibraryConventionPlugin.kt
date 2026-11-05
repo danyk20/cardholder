@@ -2,6 +2,7 @@ import io.github.danyk20.cardholder.buildlogic.configureKotlinJvm
 import io.github.danyk20.cardholder.buildlogic.configureStaticAnalysis
 import io.github.danyk20.cardholder.buildlogic.libs
 import io.github.danyk20.cardholder.buildlogic.plugin
+import io.github.danyk20.cardholder.buildlogic.registerUnitTests
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -12,6 +13,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
             pluginManager.apply(libs.plugin("android-lint"))
             configureKotlinJvm()
             configureStaticAnalysis()
+            registerUnitTests("test")
         }
     }
 }

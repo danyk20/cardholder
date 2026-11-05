@@ -4,6 +4,7 @@ import io.github.danyk20.cardholder.buildlogic.configureLintDefaults
 import io.github.danyk20.cardholder.buildlogic.configureStaticAnalysis
 import io.github.danyk20.cardholder.buildlogic.libs
 import io.github.danyk20.cardholder.buildlogic.plugin
+import io.github.danyk20.cardholder.buildlogic.registerUnitTests
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -24,6 +25,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 lint.configureLintDefaults()
             }
             configureStaticAnalysis()
+            registerUnitTests("testDebugUnitTest")
         }
     }
 }
