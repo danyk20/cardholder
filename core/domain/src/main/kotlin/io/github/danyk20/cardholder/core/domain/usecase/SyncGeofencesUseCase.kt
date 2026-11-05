@@ -22,7 +22,8 @@ import kotlinx.coroutines.sync.withLock
 
 /**
  * Keeps the system's geofences in line with the learned places while arrival notifications are on,
- * and removes them otherwise. Geofences are only handed over again when they actually changed.
+ * and removes them otherwise.
+ * Geofences are only handed over again when they actually changed.
  */
 @Singleton
 class SyncGeofencesUseCase @Inject constructor(
