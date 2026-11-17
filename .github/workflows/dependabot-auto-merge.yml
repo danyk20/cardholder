@@ -1,0 +1,38 @@
+name: Dependabot auto-merge
+
+# Dependabot's weekly PRs merge themselves once the required check "Static analysis, tests & build" passes
+# (GitHub's auto-merge waits for it; a failing check leaves the PR open). Major versions can break APIs or
+# change behaviour, so those wait for a person.
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    name: Enable auto-merge
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'danyk20/cardholder'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read update metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v3
+
+      # For a grouped PR, update-type is the biggest update in the group.
+      - name: Merge when CI passes
+        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge --auto --merge "$PR_URL"
+
+      - name: Ask for a review of major updates
+        if: steps.metadata.outputs.update-type == 'version-update:semver-major' && github.event.action == 'opened'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          DEPENDENCIES: ${{ steps.metadata.outputs.dependency-names }}
+        run: |
+          gh pr comment "$PR_URL" --body "Contains a major version update ($DEPENDENCIES), so it isn't merged automatically. Check the release notes, then merge by hand."
